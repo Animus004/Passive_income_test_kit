@@ -1,24 +1,24 @@
 {
-  "topic": "High-Frequency Trading Fiber Cables",
-  "videoTitle": "HFT Cables: The Ocean's Secret Race! 🤯",
-  "youtubeDescription": "Ever wondered how High-Frequency Trading works? It's not just code! Dive into the hidden world of deep-sea fiber cables, physical bottlenecks, and the race for mere milliseconds. Discover the surprising reality behind the fastest trades! #HFT #FiberOptics #DataDetective #Trading #Finance",
+  "topic": "GPS Satellites Relativity Correction",
+  "videoTitle": "Why GPS Clocks Lie Everyday! 🛰️🤯",
+  "youtubeDescription": "Discover the hidden physics and crazy data bottlenecks behind GPS satellite relativity corrections. Will our atomic clocks survive the space-time bend?\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#GPS #Relativity #Physics #TechSecrets #DataDetective #Satellites #DataScience #Space",
   "tags": [
-    "HighFrequencyTrading",
-    "HFT",
-    "FiberOptics",
-    "SubseaCables",
-    "DataBottlenecks",
-    "AlgorithmicTrading",
-    "Finance",
-    "TechExplained"
+    "GPS",
+    "Relativity",
+    "Physics",
+    "Satellites",
+    "Data Science",
+    "Space",
+    "Technology",
+    "Data Detective"
   ],
-  "fullVoiceover": "Think high-frequency trading is just digital clicks? Wrong! The battle for milliseconds happens deep underwater, driven by physical cables. Many believe data travels instantly. But a whopping 70% of HFT firms optimize physical cable routes, not just software, for an edge. We're talking colossal subsea networks! A transatlantic cable project costs over $300 MILLION, shaving mere 3 MILLISECONDS. But this physical reality faces constant threats: 🦈 SHARK BITES, ⚓ ANCHOR DRAGS, and 🌊 SEISMIC SHIFTS. These choke points are critical vulnerabilities. The fastest trade isn't just code; it's the physical path. This hidden infrastructure is the true limit, leaving everyone still asking...",
+  "fullVoiceover": "Did you know your phone relies on orbiting clocks defying Einstein every single second? Most think satellite time adjustments are totally instant and flawless. In reality, gravity shifts time by thirty-eight microseconds daily! Without massive code intervention, navigation fails instantly due to ionosphere drift, clock drift, and orbital decay. This proves space-time is secretly breaking our maps, leaving everyone still asking...",
   "scenes": [
     {
       "sceneId": 1,
       "badge": "DATA REALITY CHECK // 01",
-      "headline": "THE MILLISECOND BATTLEGROUND",
-      "voiceoverText": "Think high-frequency trading is just digital clicks? Wrong! The battle for milliseconds happens deep underwater, driven by physical cables.",
+      "headline": "DO YOUR MAPS DEFY EINSTEIN?",
+      "voiceoverText": "Did you know your phone relies on orbiting clocks defying Einstein every single second?",
       "visualType": "hook",
       "mascotEmotion": "pointing"
     },
@@ -26,10 +26,10 @@
       "sceneId": 2,
       "badge": "THE SPEED MYTH // 02",
       "statHighlight": {
-        "number": "70%",
-        "label": "HFT FIRMS OPTIMIZE PHYSICAL PATHS"
+        "number": "100%",
+        "label": "PERFECT SYNC MYTH"
       },
-      "voiceoverText": "Many believe data travels instantly. But a whopping 70% of HFT firms optimize physical cable routes, not just software, for an edge.",
+      "voiceoverText": "Most think satellite time adjustments are totally instant and flawless.",
       "visualType": "myth",
       "mascotEmotion": "facepalm"
     },
@@ -37,14 +37,14 @@
       "sceneId": 3,
       "badge": "THE PHYSICAL TRUTH // 03",
       "statHighlight": {
-        "number": "3ms",
-        "label": "SPEED GAIN PER TRADE"
+        "number": "38µs",
+        "label": "DAILY TIME SHIFT"
       },
       "subMetrics": [
-        "$300 MILLION PROJECT",
-        "SUBSEA FIBER NETWORKS"
+        "14,000 MPH SPEED OFFSET",
+        "GRAVITATIONAL TIME DILATION"
       ],
-      "voiceoverText": "We're talking colossal subsea networks! A transatlantic cable project costs over $300 MILLION, shaving mere 3 MILLISECONDS.",
+      "voiceoverText": "In reality, gravity shifts time by thirty-eight microseconds daily!",
       "visualType": "reality",
       "mascotEmotion": "scanning"
     },
@@ -53,35 +53,23 @@
       "badge": "CRITICAL BOTTLENECK ALERT // 04",
       "headline": "PHYSICAL FRAGILITY AT RISK",
       "chipList": [
-        "🦈 SHARK BITES",
-        "⚓ ANCHOR DRAGS",
-        "🌊 SEISMIC SHIFTS"
+        "🌩️ IONOSPHERE DRIFT",
+        "⏱️ CLOCK DRIFT",
+        "🌍 ORBITAL DECAY"
       ],
-      "voiceoverText": "But this physical reality faces constant threats: 🦈 SHARK BITES, ⚓ ANCHOR DRAGS, and 🌊 SEISMIC SHIFTS. These choke points are critical vulnerabilities.",
+      "voiceoverText": "Without massive code intervention, navigation fails instantly due to ionosphere drift, clock drift, and orbital decay.",
       "visualType": "danger",
       "mascotEmotion": "shocked"
     },
     {
       "sceneId": 5,
       "badge": "THE DATA VERDICT // 05",
-      "headline": "INFRASTRUCTURE IS THE LIMIT",
-      "subheadline": "PHYSICAL PATH OVER SOFTWARE",
+      "headline": "SPACE-TIME BREAKS MAPS",
+      "subheadline": "RELATIVITY IS ALWAYS WATCHING",
       "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "The fastest trade isn't just code; it's the physical path. This hidden infrastructure is the true limit, leaving everyone still asking...",
+      "voiceoverText": "This proves space-time is secretly breaking our maps, leaving everyone still asking...",
       "visualType": "resolution",
       "mascotEmotion": "celebrating"
     }
-  ],
-  "sceneTimings": {
-    "s1": 277,
-    "s2": 309,
-    "s3": 289,
-    "s4": 349,
-    "s5": 289,
-    "chipRelFrames": [
-      123,
-      163,
-      217
-    ]
-  }
+  ]
 }

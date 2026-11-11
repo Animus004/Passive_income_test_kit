@@ -82,6 +82,41 @@ function markTopicUsed(topicObj) {
   }
 }
 
+function formatMonetizedDescription(rawDescription, tags = []) {
+  const affiliateUrl = process.env.MONETIZATION_AFFILIATE_URL || 'https://bit.ly/data-detective-tools';
+  const newsletterUrl = process.env.MONETIZATION_NEWSLETTER_URL || 'https://datadetective.substack.com';
+
+  // Extract hashtags from the raw description
+  const hashtagRegex = /#\w+/g;
+  const existingHashtags = rawDescription.match(hashtagRegex) || [];
+  const cleanBody = rawDescription.replace(hashtagRegex, '').trim();
+
+  // Deduplicate tags and create clean hashtags
+  const defaultTags = ['Shorts', 'Tech', 'DataDetective', 'Facts'];
+  const allTagNames = Array.from(
+    new Set([
+      ...existingHashtags.map((h) => h.replace(/^#/, '')),
+      ...(Array.isArray(tags) ? tags : []),
+      ...defaultTags,
+    ])
+  ).slice(0, 8);
+
+  const hashtagLine = allTagNames.map((t) => `#${t.replace(/[\s-]/g, '')}`).join(' ');
+
+  const formattedDescription = [
+    cleanBody,
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    `🔍 FREE Tech & Data Newsletter: ${newsletterUrl}`,
+    `⚡ Top Recommended Tech & Security Toolkit: ${affiliateUrl}`,
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '',
+    hashtagLine,
+  ].join('\n');
+
+  return formattedDescription;
+}
+
 async function generateScript() {
   const { topicArg } = parseArgs();
   const selected = selectTopic(topicArg);
@@ -180,9 +215,13 @@ Return ONLY valid JSON with this exact schema:
 }`;
 
   const primaryModel = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-  const modelsToTry = [primaryModel, 'gemini-2.0-flash', 'gemini-1.5-flash'].filter(
-    (v, i, a) => a.indexOf(v) === i
-  );
+  const modelsToTry = [
+    primaryModel,
+    'gemini-2.5-flash',
+    'gemini-3.5-flash',
+    'gemini-3.5-flash-lite',
+    'gemini-flash-latest',
+  ].filter((v, i, a) => a.indexOf(v) === i);
 
   let response = null;
   let lastErr = null;
@@ -204,7 +243,7 @@ Return ONLY valid JSON with this exact schema:
     } catch (err) {
       console.warn(`⚠️ Model ${model} returned error (${err.status || err.message}). Trying fallback...`);
       lastErr = err;
-      await new Promise((r) => setTimeout(r, 1200));
+      await new Promise((r) => setTimeout(r, 2000));
     }
   }
 
@@ -225,9 +264,16 @@ Return ONLY valid JSON with this exact schema:
   const sceneTexts = parsed.scenes.map((s) => s.voiceoverText.trim());
   parsed.fullVoiceover = sceneTexts.join(' ');
 
+  // Inject monetization footer & structured hashtags into youtubeDescription
+  parsed.youtubeDescription = formatMonetizedDescription(
+    parsed.youtubeDescription || '',
+    parsed.tags || []
+  );
+
   const totalWords = parsed.fullVoiceover.split(/\s+/).length;
   console.log(`✅ Script generated successfully! (${totalWords} words total)`);
   console.log(`🎬 Title: "${parsed.videoTitle}"`);
+  console.log(`💰 Monetized Description:\n${parsed.youtubeDescription}\n`);
 
   // Save to src/data/current_short.json
   const outDir = path.dirname(OUTPUT_PATH);

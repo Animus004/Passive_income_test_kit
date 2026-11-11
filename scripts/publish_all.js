@@ -79,6 +79,37 @@ function loadMetadata() {
   };
 }
 
+async function postDiscussionComment(youtube, videoId, metadata) {
+  const affiliateUrl = process.env.MONETIZATION_AFFILIATE_URL || 'https://bit.ly/data-detective-tools';
+  const newsletterUrl = process.env.MONETIZATION_NEWSLETTER_URL || 'https://datadetective.substack.com';
+  const topic = metadata.topic || 'this tech breakdown';
+
+  const commentText = [
+    `What part of ${topic} surprised you the most? Drop your theory below! 👇`,
+    '',
+    `⚡ FREE Tech & Data Newsletter: ${newsletterUrl}`,
+    `🔒 Top Recommended Tech & Security Toolkit: ${affiliateUrl}`,
+  ].join('\n');
+
+  console.log(`💬 Posting automated discussion/CTA comment for video ${videoId}...`);
+  const commentRes = await youtube.commentThreads.insert({
+    part: ['snippet'],
+    requestBody: {
+      snippet: {
+        videoId: videoId,
+        topLevelComment: {
+          snippet: {
+            textOriginal: commentText,
+          },
+        },
+      },
+    },
+  });
+
+  console.log(`✅ Automated comment posted successfully (Comment ID: ${commentRes.data.id})`);
+  return commentRes.data;
+}
+
 async function uploadToYouTube(videoPath, metadata, isDryRun = false) {
   console.log('\n----------------------------------------------------');
   console.log('▶️ [PUBLISHER] Uploading to YouTube Shorts...');
@@ -124,6 +155,16 @@ async function uploadToYouTube(videoPath, metadata, isDryRun = false) {
     console.log('🧪 [DRY RUN] Verifying YouTube credentials & OAuth token refresh...');
     await oauth2Client.getAccessToken();
     console.log('✅ YouTube OAuth authentication verified successfully! Access token retrieved.');
+
+    const affiliateUrl = process.env.MONETIZATION_AFFILIATE_URL || 'https://bit.ly/data-detective-tools';
+    const newsletterUrl = process.env.MONETIZATION_NEWSLETTER_URL || 'https://datadetective.substack.com';
+    console.log(`🧪 [DRY RUN] Configured Newsletter Link: ${newsletterUrl}`);
+    console.log(`🧪 [DRY RUN] Configured Affiliate Link: ${affiliateUrl}`);
+    console.log('🧪 [DRY RUN] Preview of Automated Discussion Comment:');
+    console.log('----------------------------------------------------');
+    console.log(`What part of ${metadata.topic || 'this tech breakdown'} surprised you the most? Drop your theory below! 👇\n\n⚡ FREE Tech & Data Newsletter: ${newsletterUrl}\n🔒 Top Recommended Tech & Security Toolkit: ${affiliateUrl}`);
+    console.log('----------------------------------------------------');
+
     return { success: true, platform: 'YouTube', dryRun: true };
   }
 
@@ -137,7 +178,8 @@ async function uploadToYouTube(videoPath, metadata, isDryRun = false) {
     title = `${title.substring(0, 85)} #Shorts`;
   }
 
-  const description = `${metadata.youtubeDescription || ''}\n\n#Shorts #DataDetective #Technology #Facts`;
+  // Use monetized description directly from metadata
+  const description = metadata.youtubeDescription || `${title}\n\n#Shorts #DataDetective #Technology #Facts`;
   const tags = Array.isArray(metadata.tags) ? metadata.tags : ['Shorts', 'Tech'];
 
   console.log(`🎬 Title: "${title}"`);
@@ -170,6 +212,14 @@ async function uploadToYouTube(videoPath, metadata, isDryRun = false) {
   const shortsUrl = `https://youtube.com/shorts/${videoId}`;
   console.log(`✅ YouTube Upload Successful!`);
   console.log(`🔗 Shorts URL: ${shortsUrl}`);
+
+  // Post automated pinned / discussion comment with monetization CTA
+  try {
+    await postDiscussionComment(youtube, videoId, metadata);
+  } catch (commentErr) {
+    console.warn(`⚠️ Automated discussion comment could not be posted: ${commentErr.message}`);
+    console.log('   (Video upload remains successful and unaffected)');
+  }
 
   return { success: true, platform: 'YouTube', videoId, url: shortsUrl };
 }
