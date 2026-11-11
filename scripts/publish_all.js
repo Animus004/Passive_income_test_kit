@@ -298,9 +298,15 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
     body: videoBuffer,
   });
 
-  const uploadResult = await uploadRes.json();
+  let uploadResult;
+  try {
+    uploadResult = await uploadRes.json();
+  } catch (e) {
+    uploadResult = { status: uploadRes.status };
+  }
+
   if (!uploadRes.ok) {
-    throw new Error(`Instagram binary upload failed: ${JSON.stringify(uploadResult)}`);
+    throw new Error(`Instagram binary upload failed (HTTP ${uploadRes.status}): ${JSON.stringify(uploadResult)}`);
   }
   console.log('📤 Video bytes transferred to Instagram servers. Polling status...');
 
