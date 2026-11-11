@@ -28,8 +28,8 @@
     "topic": "Extreme UV Chip Photolithography",
     "hookAngle": "How ASML shoots molten tin droplets twice with a CO2 laser 50,000 times a second to print 2-nanometer transistors.",
     "category": "semiconductors",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-11T19:38:46.698Z"
   },
   {
     "id": "maritime-chokepoints",

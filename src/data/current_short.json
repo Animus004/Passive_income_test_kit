@@ -1,25 +1,25 @@
 {
-  "topic": "Deep Ocean Polymetallic Mining",
-  "visualTheme": "ocean",
-  "videoTitle": "Deep Ocean's $TRILLION Secret! 🌊💰",
-  "youtubeDescription": "Trillions of dollars in battery metals hide 4,000 meters deep in the Clarion-Clipperton Zone. But is it worth the environmental cost? Uncover the immense challenges of deep-sea polymetallic mining!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#DeepSeaMining #BatteryMetals #OceanExploration #DataDetective #FutureTech #DeepOceanMining #PolymetallicNodules #ClarionClippertonZone",
+  "topic": "Extreme UV Chip Photolithography",
+  "visualTheme": "infrastructure",
+  "videoTitle": "ASML's Secret: Laser Tin 🤯 Chip Printing!",
+  "youtubeDescription": "Ever wondered how 2-nanometer chips are made? Dive into ASML's insane EUV tech! Lasers blast molten tin 50,000 times/sec to print the future.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#ASML #EUV #ChipManufacturing #TechExplained #DataDetective #Photolithography #Chips #Semiconductors",
   "tags": [
-    "DeepOceanMining",
-    "PolymetallicNodules",
-    "BatteryMetals",
-    "ClarionClippertonZone",
-    "OceanExploration",
-    "EnvironmentalImpact",
-    "FutureTechnology",
-    "ResourceMining"
+    "ASML",
+    "EUV",
+    "Photolithography",
+    "Chips",
+    "Semiconductors",
+    "Tech",
+    "Nanotechnology",
+    "DataDetective"
   ],
-  "fullVoiceover": "Trillions in battery metals, just waiting? Not on land! These resources sit 4,000 meters deep in ocean darkness. Many assume deep-sea mining is simple. Just scoop them up! But 95% of the deep ocean remains unexplored. No easy grab. Reaching the Clarion-Clipperton Zone demands massive robotic collectors. Machines, size of buildings, operate under 400 atmospheres of pressure. This fragile ecosystem faces huge risks: 🌊 Sediment Plumes, 🚨 Habitat Destruction, and 💥 Noise Pollution. Each poses immense challenges to deep-sea life. So, while these metals hold immense value, the true cost and method remain debated, leaving everyone still asking...",
+  "fullVoiceover": "How do we print transistors smaller than a virus? It’s not ink, it’s physics! ASML’s Extreme UV machines are mind-bogglingly precise. Most think chip printing is like a fancy inkjet. But 90% don't grasp the insane engineering. We're talking 2-nanometer lines! ASML uses CO2 lasers to blast molten tin droplets. Twice! 50,000 times a second. This generates the Extreme UV light needed. But this isn't easy. Critical choke points include precise laser alignment, preventing tin splatter, and avoiding optic degradation on the mirrors. This ballet of light and liquid metal builds our future, one atomic layer at a time. An engineering marvel, leaving everyone still asking...",
   "scenes": [
     {
       "sceneId": 1,
       "badge": "DATA REALITY CHECK // 01",
-      "headline": "TRILLIONS DEEP, BATTERY METALS?",
-      "voiceoverText": "Trillions in battery metals, just waiting? Not on land! These resources sit 4,000 meters deep in ocean darkness.",
+      "headline": "TINY CHIPS, MASSIVE TECH",
+      "voiceoverText": "How do we print transistors smaller than a virus? It’s not ink, it’s physics! ASML’s Extreme UV machines are mind-bogglingly precise.",
       "visualType": "hook",
       "mascotEmotion": "pointing"
     },
@@ -27,10 +27,10 @@
       "sceneId": 2,
       "badge": "THE SPEED MYTH // 02",
       "statHighlight": {
-        "number": "95%",
-        "label": "UNEXPLORED OCEAN"
+        "number": "90%",
+        "label": "DON'T KNOW EUV"
       },
-      "voiceoverText": "Many assume deep-sea mining is simple. Just scoop them up! But 95% of the deep ocean remains unexplored. No easy grab.",
+      "voiceoverText": "Most think chip printing is like a fancy inkjet. But 90% don't grasp the insane engineering. We're talking 2-nanometer lines!",
       "visualType": "myth",
       "mascotEmotion": "facepalm"
     },
@@ -38,14 +38,14 @@
       "sceneId": 3,
       "badge": "THE PHYSICAL TRUTH // 03",
       "statHighlight": {
-        "number": "4000M",
-        "label": "DEEP ZONE"
+        "number": "50,000",
+        "label": "LASER SHOTS/SEC"
       },
       "subMetrics": [
-        "ROBOTIC COLLECTORS",
-        "400 ATMOSPHERES"
+        "MOLTEN TIN TARGETS",
+        "MIRROR VACUUM CHAMBERS"
       ],
-      "voiceoverText": "Reaching the Clarion-Clipperton Zone demands massive robotic collectors. Machines, size of buildings, operate under 400 atmospheres of pressure.",
+      "voiceoverText": "ASML uses CO2 lasers to blast molten tin droplets. Twice! 50,000 times a second. This generates the Extreme UV light needed.",
       "visualType": "reality",
       "mascotEmotion": "scanning"
     },
@@ -54,47 +54,40 @@
       "badge": "CRITICAL BOTTLENECK ALERT // 04",
       "headline": "PHYSICAL FRAGILITY AT RISK",
       "chipList": [
-        "🌊 SEDIMENT PLUMES",
-        "🚨 HABITAT DESTRUCTION",
-        "💥 NOISE POLLUTION"
+        "🎯 LASER ALIGNMENT",
+        "💧 TIN SPLATTER",
+        "🔍 OPTIC DEGRADATION"
       ],
-      "voiceoverText": "This fragile ecosystem faces huge risks: 🌊 Sediment Plumes, 🚨 Habitat Destruction, and 💥 Noise Pollution. Each poses immense challenges to deep-sea life.",
+      "voiceoverText": "But this isn't easy. Critical choke points include precise laser alignment, preventing tin splatter, and avoiding optic degradation on the mirrors.",
       "visualType": "danger",
       "mascotEmotion": "shocked"
     },
     {
       "sceneId": 5,
       "badge": "THE DATA VERDICT // 05",
-      "headline": "PRICE TAG BEYOND DOLLARS",
-      "subheadline": "ENVIRONMENTAL VS. ECONOMIC",
+      "headline": "MICROSCOPIC MARVELS",
+      "subheadline": "2-NANOMETER PRECISION",
       "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "So, while these metals hold immense value, the true cost and method remain debated, leaving everyone still asking...",
+      "voiceoverText": "This ballet of light and liquid metal builds our future, one atomic layer at a time. An engineering marvel, leaving everyone still asking...",
       "visualType": "resolution",
       "mascotEmotion": "celebrating"
     }
   ],
+  "themeConfig": {
+    "primary": "#f97316",
+    "accent": "#eab308",
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)"
+  },
   "sceneTimings": {
-<<<<<<< HEAD
-    "s1": 262,
-    "s2": 333,
-    "s3": 300,
-    "s4": 378,
-    "s5": 243,
-    "chipRelFrames": [
-      131,
-      190,
-      245
-=======
-    "s1": 135,
-    "s2": 133,
-    "s3": 147,
-    "s4": 238,
-    "s5": 188,
+    "s1": 300,
+    "s2": 299,
+    "s3": 372,
+    "s4": 285,
+    "s5": 301,
     "chipRelFrames": [
       141,
-      162,
-      214
->>>>>>> ce53446 (feat(themes): implement dynamic multi-theme visual engine (space, cyber, ocean, finance, quantum, infra))
+      189,
+      236
     ]
   }
 }
