@@ -239,8 +239,22 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
   }
 
   if (isDryRun) {
-    console.log('🧪 [DRY RUN] Verifying Instagram credentials format...');
-    return { success: true, platform: 'Instagram', dryRun: true };
+    console.log('🧪 [DRY RUN] Verifying Instagram credentials format & account details...');
+    try {
+      const verifyRes = await fetch(
+        `https://graph.facebook.com/v21.0/${igUserId}?fields=id,username,name&access_token=${accessToken}`
+      );
+      const verifyData = await verifyRes.json();
+      if (verifyData.id) {
+        console.log(`✅ Instagram Graph API verified! Connected account: @${verifyData.username} (${verifyData.name || verifyData.id})`);
+        return { success: true, platform: 'Instagram', dryRun: true, username: verifyData.username };
+      } else {
+        throw new Error(verifyData.error?.message || JSON.stringify(verifyData));
+      }
+    } catch (e) {
+      console.warn(`⚠️ Instagram verification warning: ${e.message}`);
+      return { success: false, platform: 'Instagram', error: e.message };
+    }
   }
 
   const caption = `${metadata.videoTitle}\n\n${metadata.youtubeDescription || ''}\n\n#reels #tech #datadetective #technology`;
