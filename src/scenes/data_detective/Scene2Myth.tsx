@@ -6,6 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
   Audio,
+  Sequence,
   staticFile,
 } from "remotion";
 import { Mascot } from "../../components/Mascot";
@@ -37,11 +38,12 @@ export const Scene2Myth: React.FC<SceneProps> = ({
     config: { damping: 10, mass: 0.5, stiffness: 120 },
   });
 
-  // Dynamic Exit transition
-  const exitWhip = interpolate(
+  // Dynamic Exit Transition: High-Velocity Downward Whip-Pan pulling into Scene 3
+  const exitFrameTrigger = Math.max(0, durationInFrames - 15);
+  const exitPanY = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 17), durationInFrames],
-    [0, -1200],
+    [exitFrameTrigger, durationInFrames],
+    [0, 1920],
     {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
@@ -49,7 +51,7 @@ export const Scene2Myth: React.FC<SceneProps> = ({
   );
   const exitOpacity = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 12), durationInFrames],
+    [Math.max(0, durationInFrames - 8), durationInFrames],
     [1, 0],
     {
       extrapolateLeft: "clamp",
@@ -78,7 +80,7 @@ export const Scene2Myth: React.FC<SceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        transform: `translateX(${exitWhip}px) scale(${entrySpring})`,
+        transform: `translateY(${exitPanY}px) scale(${entrySpring})`,
         opacity: exitOpacity,
         overflow: "hidden",
         pointerEvents: "none",
@@ -87,8 +89,13 @@ export const Scene2Myth: React.FC<SceneProps> = ({
     >
       <Audio src={staticFile("sfx/whoosh.mp3")} volume={0.7} />
 
-      {/* Layer 0: Dynamic Background Particle Texture & Vignette */}
-      <BackgroundMedia themeColor={colors.primary} opacity={0.32} />
+      {/* Exit Downward Dive SFX */}
+      <Sequence from={exitFrameTrigger} durationInFrames={15}>
+        <Audio src={staticFile("sfx/sonar.mp3")} volume={0.75} />
+      </Sequence>
+
+      {/* Layer 0: Dynamic B-Roll & Background Particles */}
+      <BackgroundMedia sceneKey="scene2" themeColor={colors.primary} opacity={0.35} />
 
       {/* Dynamic Themed Atmosphere */}
       <ThemeAtmosphere theme={theme} frame={frame} />

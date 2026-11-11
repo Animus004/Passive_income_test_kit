@@ -6,6 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
   Audio,
+  Sequence,
   staticFile,
 } from "remotion";
 import { Mascot } from "../../components/Mascot";
@@ -37,24 +38,23 @@ export const Scene3Reality: React.FC<SceneProps> = ({
     config: { damping: 10, mass: 0.5, stiffness: 120 },
   });
 
-  // Dynamic Exit transition whip-out
-  const exitWhip = interpolate(
+  // Dynamic Exit Transition: Violent Camera Tremor & Sub-Boom Snap Cut into Scene 4 Danger
+  const exitFrameTrigger = Math.max(0, durationInFrames - 12);
+  const isExitShaking = frame >= exitFrameTrigger;
+  const exitShakeX = isExitShaking ? Math.sin(frame * 4.2) * 18 : 0;
+  const exitShakeY = isExitShaking ? Math.cos(frame * 3.7) * 14 : 0;
+  const exitProgress = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 16), durationInFrames],
-    [0, -1200],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    }
+    [exitFrameTrigger, durationInFrames],
+    [0, 1],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
   );
+  const exitScale = 1.0 + exitProgress * 0.15;
   const exitOpacity = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 12), durationInFrames],
+    [Math.max(0, durationInFrames - 4), durationInFrames],
     [1, 0],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    }
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
   );
 
   const statNumStr = sceneData?.statHighlight?.number || "99%";
@@ -79,7 +79,7 @@ export const Scene3Reality: React.FC<SceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        transform: `translateX(${exitWhip}px) scale(${entrySpring})`,
+        transform: `translate(${exitShakeX}px, ${exitShakeY}px) scale(${entrySpring * exitScale})`,
         opacity: exitOpacity,
         overflow: "hidden",
         pointerEvents: "none",
@@ -88,8 +88,13 @@ export const Scene3Reality: React.FC<SceneProps> = ({
     >
       <Audio src={staticFile("sfx/riser.mp3")} volume={0.8} />
 
-      {/* Layer 0: Background Texture */}
-      <BackgroundMedia themeColor={colors.primary} opacity={0.32} />
+      {/* Exit Sub-Boom & Glitch Transition SFX */}
+      <Sequence from={exitFrameTrigger} durationInFrames={12}>
+        <Audio src={staticFile("sfx/sub_boom.mp3")} volume={0.85} />
+      </Sequence>
+
+      {/* Layer 0: Dynamic B-Roll & Background Particles */}
+      <BackgroundMedia sceneKey="scene3" themeColor={colors.primary} opacity={0.35} />
 
       {/* Dynamic Themed Atmosphere */}
       <ThemeAtmosphere theme={theme} frame={frame} />

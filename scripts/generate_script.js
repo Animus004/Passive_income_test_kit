@@ -169,6 +169,11 @@ Return ONLY valid JSON with this exact schema:
 {
   "topic": "${selected.topic}",
   "visualTheme": "One of: space | cyber | finance | quantum | ocean | infrastructure that best fits the subject",
+  "mediaQueries": [
+    "2-3 word visual search query for Scene 1 B-roll footage",
+    "2-3 word visual search query for Scene 2 B-roll footage",
+    "2-3 word visual search query for Scene 3 B-roll footage"
+  ],
   "videoTitle": "Catchy YouTube Shorts title with emoji (< 60 chars)",
   "youtubeDescription": "2-3 engaging sentences explaining the short with 4-5 relevant #hashtags.",
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8"],

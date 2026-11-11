@@ -6,6 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
   Audio,
+  Sequence,
   staticFile,
 } from "remotion";
 import { Mascot } from "../../components/Mascot";
@@ -37,19 +38,21 @@ export const Scene1Hook: React.FC<SceneProps> = ({
     config: { damping: 9, mass: 0.4, stiffness: 140 },
   });
 
-  // Dynamic Exit transition whip-out on last 16 frames
-  const exitWhip = interpolate(
+  // Dynamic Exit Transition: Explosive Scale Punch Zoom-Through into Scene 2
+  const exitFrameTrigger = Math.max(0, durationInFrames - 14);
+  const exitPunchProgress = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 18), durationInFrames],
-    [0, -1200],
+    [exitFrameTrigger, durationInFrames],
+    [0, 1],
     {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     }
   );
+  const exitScale = 1.0 + Math.pow(exitPunchProgress, 2) * 1.5;
   const exitOpacity = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 14), durationInFrames],
+    [Math.max(0, durationInFrames - 10), durationInFrames],
     [1, 0],
     {
       extrapolateLeft: "clamp",
@@ -64,7 +67,8 @@ export const Scene1Hook: React.FC<SceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        transform: `translateX(${exitWhip}px) scale(${zoomSpring})`,
+        transform: `scale(${zoomSpring * exitScale})`,
+        transformOrigin: "center center",
         opacity: exitOpacity,
         overflow: "hidden",
         pointerEvents: "none",
@@ -73,8 +77,13 @@ export const Scene1Hook: React.FC<SceneProps> = ({
     >
       <Audio src={staticFile("sfx/thud.mp3")} volume={0.85} />
 
-      {/* Layer 0: Dynamic Background Particle Texture & Vignette */}
-      <BackgroundMedia themeColor={colors.primary} opacity={0.32} />
+      {/* Exit Zoom-Through Laser/Whoosh SFX */}
+      <Sequence from={exitFrameTrigger} durationInFrames={14}>
+        <Audio src={staticFile("sfx/laser.mp3")} volume={0.7} />
+      </Sequence>
+
+      {/* Layer 0: Dynamic B-Roll & Background Particles */}
+      <BackgroundMedia sceneKey="scene1" themeColor={colors.primary} opacity={0.35} />
 
       {/* Dynamic Themed Atmosphere */}
       <ThemeAtmosphere theme={theme} frame={frame} />

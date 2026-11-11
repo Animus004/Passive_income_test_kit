@@ -1,368 +1,590 @@
 [
   {
-    "word": "Did",
+    "word": "Trillions",
     "start": 0.098,
-    "end": 0.266,
-    "duration": 0.168
+    "end": 0.579,
+    "duration": 0.481
   },
   {
-    "word": "you",
-    "start": 0.278,
-    "end": 0.387,
+    "word": "in",
+    "start": 0.591,
+    "end": 0.699,
     "duration": 0.108
   },
   {
-    "word": "know",
-    "start": 0.399,
-    "end": 0.591,
-    "duration": 0.192
+    "word": "battery",
+    "start": 0.711,
+    "end": 1.084,
+    "duration": 0.373
   },
   {
-    "word": "your",
-    "start": 0.603,
-    "end": 0.759,
-    "duration": 0.156
+    "word": "metals,",
+    "start": 1.096,
+    "end": 1.528,
+    "duration": 0.433
   },
   {
-    "word": "phone",
-    "start": 0.771,
-    "end": 1.072,
-    "duration": 0.3
+    "word": "just",
+    "start": 1.685,
+    "end": 1.949,
+    "duration": 0.264
   },
   {
-    "word": "relies",
-    "start": 1.084,
-    "end": 1.504,
-    "duration": 0.421
+    "word": "waiting?",
+    "start": 1.961,
+    "end": 2.37,
+    "duration": 0.409
+  },
+  {
+    "word": "Not",
+    "start": 3.197,
+    "end": 3.51,
+    "duration": 0.312
   },
   {
     "word": "on",
-    "start": 1.516,
-    "end": 1.649,
-    "duration": 0.132
+    "start": 3.522,
+    "end": 3.69,
+    "duration": 0.168
   },
   {
-    "word": "orbiting",
-    "start": 1.661,
-    "end": 2.021,
-    "duration": 0.361
-  },
-  {
-    "word": "clocks",
-    "start": 2.033,
-    "end": 2.37,
-    "duration": 0.337
-  },
-  {
-    "word": "defying",
-    "start": 2.382,
-    "end": 2.862,
-    "duration": 0.481
-  },
-  {
-    "word": "Einstein",
-    "start": 2.874,
-    "end": 3.427,
-    "duration": 0.553
-  },
-  {
-    "word": "every",
-    "start": 3.439,
-    "end": 3.68,
-    "duration": 0.24
-  },
-  {
-    "word": "single",
-    "start": 3.692,
-    "end": 4.028,
-    "duration": 0.337
-  },
-  {
-    "word": "second?",
-    "start": 4.04,
-    "end": 4.509,
-    "duration": 0.469
-  },
-  {
-    "word": "Most",
-    "start": 5.337,
-    "end": 5.673,
-    "duration": 0.337
-  },
-  {
-    "word": "think",
-    "start": 5.685,
-    "end": 5.865,
-    "duration": 0.18
-  },
-  {
-    "word": "satellite",
-    "start": 5.877,
-    "end": 6.37,
-    "duration": 0.493
-  },
-  {
-    "word": "time",
-    "start": 6.382,
-    "end": 6.635,
-    "duration": 0.252
-  },
-  {
-    "word": "adjustments",
-    "start": 6.647,
-    "end": 7.175,
-    "duration": 0.529
-  },
-  {
-    "word": "are",
-    "start": 7.188,
-    "end": 7.308,
-    "duration": 0.12
-  },
-  {
-    "word": "totally",
-    "start": 7.32,
-    "end": 7.776,
-    "duration": 0.457
-  },
-  {
-    "word": "instant",
-    "start": 7.788,
-    "end": 8.185,
-    "duration": 0.397
-  },
-  {
-    "word": "and",
-    "start": 8.197,
-    "end": 8.281,
-    "duration": 0.084
-  },
-  {
-    "word": "flawless.",
-    "start": 8.293,
-    "end": 8.954,
-    "duration": 0.661
-  },
-  {
-    "word": "In",
-    "start": 9.784,
-    "end": 9.964,
-    "duration": 0.18
-  },
-  {
-    "word": "reality,",
-    "start": 9.976,
-    "end": 10.529,
-    "duration": 0.553
-  },
-  {
-    "word": "gravity",
-    "start": 10.757,
-    "end": 11.166,
-    "duration": 0.409
-  },
-  {
-    "word": "shifts",
-    "start": 11.178,
-    "end": 11.587,
-    "duration": 0.409
-  },
-  {
-    "word": "time",
-    "start": 11.599,
-    "end": 11.923,
-    "duration": 0.325
-  },
-  {
-    "word": "by",
-    "start": 11.935,
-    "end": 12.091,
-    "duration": 0.156
-  },
-  {
-    "word": "thirty-eight",
-    "start": 12.103,
-    "end": 12.62,
-    "duration": 0.517
-  },
-  {
-    "word": "microseconds",
-    "start": 12.632,
-    "end": 13.353,
-    "duration": 0.721
-  },
-  {
-    "word": "daily!",
-    "start": 13.365,
-    "end": 13.846,
-    "duration": 0.481
-  },
-  {
-    "word": "Without",
-    "start": 14.675,
-    "end": 15.072,
-    "duration": 0.397
-  },
-  {
-    "word": "massive",
-    "start": 15.084,
-    "end": 15.529,
-    "duration": 0.445
-  },
-  {
-    "word": "code",
-    "start": 15.541,
-    "end": 15.817,
-    "duration": 0.276
-  },
-  {
-    "word": "intervention,",
-    "start": 15.829,
-    "end": 16.454,
-    "duration": 0.625
-  },
-  {
-    "word": "navigation",
-    "start": 16.695,
-    "end": 17.308,
-    "duration": 0.613
-  },
-  {
-    "word": "fails",
-    "start": 17.32,
-    "end": 17.68,
-    "duration": 0.361
-  },
-  {
-    "word": "instantly",
-    "start": 17.692,
-    "end": 18.197,
+    "word": "land!",
+    "start": 3.702,
+    "end": 4.207,
     "duration": 0.505
   },
   {
-    "word": "due",
-    "start": 18.209,
-    "end": 18.413,
-    "duration": 0.204
+    "word": "These",
+    "start": 5.036,
+    "end": 5.349,
+    "duration": 0.312
   },
   {
-    "word": "to",
-    "start": 18.425,
-    "end": 18.546,
-    "duration": 0.12
+    "word": "resources",
+    "start": 5.361,
+    "end": 5.95,
+    "duration": 0.589
   },
   {
-    "word": "ionosphere",
-    "start": 18.558,
-    "end": 19.231,
-    "duration": 0.673
+    "word": "sit",
+    "start": 5.962,
+    "end": 6.178,
+    "duration": 0.216
   },
   {
-    "word": "drift,",
-    "start": 19.243,
-    "end": 19.687,
-    "duration": 0.445
+    "word": "4,000",
+    "start": 6.19,
+    "end": 6.935,
+    "duration": 0.745
   },
   {
-    "word": "clock",
-    "start": 19.892,
-    "end": 20.228,
-    "duration": 0.337
+    "word": "meters",
+    "start": 6.947,
+    "end": 7.296,
+    "duration": 0.349
   },
   {
-    "word": "drift,",
-    "start": 20.24,
-    "end": 20.637,
-    "duration": 0.397
+    "word": "deep",
+    "start": 7.308,
+    "end": 7.596,
+    "duration": 0.288
   },
   {
-    "word": "and",
-    "start": 20.817,
-    "end": 20.962,
-    "duration": 0.144
+    "word": "in",
+    "start": 7.608,
+    "end": 7.776,
+    "duration": 0.168
   },
   {
-    "word": "orbital",
-    "start": 20.974,
-    "end": 21.298,
-    "duration": 0.325
-  },
-  {
-    "word": "decay.",
-    "start": 21.31,
-    "end": 21.791,
-    "duration": 0.481
-  },
-  {
-    "word": "This",
-    "start": 22.62,
-    "end": 22.861,
-    "duration": 0.24
-  },
-  {
-    "word": "proves",
-    "start": 22.873,
-    "end": 23.173,
+    "word": "ocean",
+    "start": 7.788,
+    "end": 8.089,
     "duration": 0.3
   },
   {
-    "word": "space-time",
-    "start": 23.185,
-    "end": 23.834,
-    "duration": 0.649
+    "word": "darkness.",
+    "start": 8.101,
+    "end": 8.738,
+    "duration": 0.637
+  },
+  {
+    "word": "Many",
+    "start": 9.567,
+    "end": 9.892,
+    "duration": 0.325
+  },
+  {
+    "word": "assume",
+    "start": 9.904,
+    "end": 10.312,
+    "duration": 0.409
+  },
+  {
+    "word": "deep-sea",
+    "start": 10.325,
+    "end": 10.793,
+    "duration": 0.469
+  },
+  {
+    "word": "mining",
+    "start": 10.805,
+    "end": 11.25,
+    "duration": 0.445
   },
   {
     "word": "is",
-    "start": 23.846,
-    "end": 23.966,
-    "duration": 0.12
+    "start": 11.262,
+    "end": 11.37,
+    "duration": 0.108
   },
   {
-    "word": "secretly",
-    "start": 23.978,
-    "end": 24.411,
+    "word": "simple.",
+    "start": 11.382,
+    "end": 11.863,
+    "duration": 0.481
+  },
+  {
+    "word": "Just",
+    "start": 12.692,
+    "end": 12.993,
+    "duration": 0.3
+  },
+  {
+    "word": "scoop",
+    "start": 13.005,
+    "end": 13.317,
+    "duration": 0.312
+  },
+  {
+    "word": "them",
+    "start": 13.329,
+    "end": 13.462,
+    "duration": 0.132
+  },
+  {
+    "word": "up!",
+    "start": 13.474,
+    "end": 13.75,
+    "duration": 0.276
+  },
+  {
+    "word": "But",
+    "start": 14.579,
+    "end": 14.76,
+    "duration": 0.18
+  },
+  {
+    "word": "95%",
+    "start": 14.772,
+    "end": 15.829,
+    "duration": 1.058
+  },
+  {
+    "word": "of",
+    "start": 15.841,
+    "end": 15.913,
+    "duration": 0.072
+  },
+  {
+    "word": "the",
+    "start": 15.925,
+    "end": 16.034,
+    "duration": 0.108
+  },
+  {
+    "word": "deep",
+    "start": 16.046,
+    "end": 16.298,
+    "duration": 0.252
+  },
+  {
+    "word": "ocean",
+    "start": 16.31,
+    "end": 16.671,
+    "duration": 0.361
+  },
+  {
+    "word": "remains",
+    "start": 16.683,
+    "end": 17.139,
+    "duration": 0.457
+  },
+  {
+    "word": "unexplored.",
+    "start": 17.151,
+    "end": 17.909,
+    "duration": 0.757
+  },
+  {
+    "word": "No",
+    "start": 18.738,
+    "end": 19.05,
+    "duration": 0.312
+  },
+  {
+    "word": "easy",
+    "start": 19.062,
+    "end": 19.399,
+    "duration": 0.337
+  },
+  {
+    "word": "grab.",
+    "start": 19.411,
+    "end": 19.844,
     "duration": 0.433
   },
   {
-    "word": "breaking",
-    "start": 24.423,
-    "end": 24.82,
+    "word": "Reaching",
+    "start": 20.673,
+    "end": 21.07,
     "duration": 0.397
   },
   {
-    "word": "our",
-    "start": 24.832,
-    "end": 24.952,
-    "duration": 0.12
+    "word": "the",
+    "start": 21.082,
+    "end": 21.166,
+    "duration": 0.084
   },
   {
-    "word": "maps,",
-    "start": 24.964,
-    "end": 25.397,
+    "word": "Clarion-Clipperton",
+    "start": 21.178,
+    "end": 22.115,
+    "duration": 0.938
+  },
+  {
+    "word": "Zone",
+    "start": 22.127,
+    "end": 22.404,
+    "duration": 0.276
+  },
+  {
+    "word": "demands",
+    "start": 22.416,
+    "end": 22.885,
+    "duration": 0.469
+  },
+  {
+    "word": "massive",
+    "start": 22.897,
+    "end": 23.305,
+    "duration": 0.409
+  },
+  {
+    "word": "robotic",
+    "start": 23.317,
+    "end": 23.75,
     "duration": 0.433
   },
   {
+    "word": "collectors.",
+    "start": 23.762,
+    "end": 24.459,
+    "duration": 0.697
+  },
+  {
+    "word": "Machines,",
+    "start": 25.288,
+    "end": 25.901,
+    "duration": 0.613
+  },
+  {
+    "word": "size",
+    "start": 26.106,
+    "end": 26.502,
+    "duration": 0.397
+  },
+  {
+    "word": "of",
+    "start": 26.514,
+    "end": 26.635,
+    "duration": 0.12
+  },
+  {
+    "word": "buildings,",
+    "start": 26.647,
+    "end": 27.151,
+    "duration": 0.505
+  },
+  {
+    "word": "operate",
+    "start": 27.368,
+    "end": 27.8,
+    "duration": 0.433
+  },
+  {
+    "word": "under",
+    "start": 27.812,
+    "end": 28.029,
+    "duration": 0.216
+  },
+  {
+    "word": "400",
+    "start": 28.041,
+    "end": 28.57,
+    "duration": 0.529
+  },
+  {
+    "word": "atmospheres",
+    "start": 28.582,
+    "end": 29.195,
+    "duration": 0.613
+  },
+  {
+    "word": "of",
+    "start": 29.207,
+    "end": 29.291,
+    "duration": 0.084
+  },
+  {
+    "word": "pressure.",
+    "start": 29.303,
+    "end": 29.832,
+    "duration": 0.529
+  },
+  {
+    "word": "This",
+    "start": 30.661,
+    "end": 30.925,
+    "duration": 0.264
+  },
+  {
+    "word": "fragile",
+    "start": 30.938,
+    "end": 31.346,
+    "duration": 0.409
+  },
+  {
+    "word": "ecosystem",
+    "start": 31.358,
+    "end": 32.031,
+    "duration": 0.673
+  },
+  {
+    "word": "faces",
+    "start": 32.043,
+    "end": 32.476,
+    "duration": 0.433
+  },
+  {
+    "word": "huge",
+    "start": 32.488,
+    "end": 32.8,
+    "duration": 0.312
+  },
+  {
+    "word": "risks:",
+    "start": 32.812,
+    "end": 33.317,
+    "duration": 0.505
+  },
+  {
+    "word": "🌊",
+    "start": 33.606,
+    "end": 34.195,
+    "duration": 0.589
+  },
+  {
+    "word": "Sediment",
+    "start": 34.207,
+    "end": 34.603,
+    "duration": 0.397
+  },
+  {
+    "word": "Plumes,",
+    "start": 34.615,
+    "end": 35.096,
+    "duration": 0.481
+  },
+  {
+    "word": "🚨",
+    "start": 35.288,
+    "end": 36.154,
+    "duration": 0.865
+  },
+  {
+    "word": "Habitat",
+    "start": 36.166,
+    "end": 36.635,
+    "duration": 0.469
+  },
+  {
+    "word": "Destruction,",
+    "start": 36.647,
+    "end": 37.248,
+    "duration": 0.601
+  },
+  {
+    "word": "and",
+    "start": 37.428,
+    "end": 37.548,
+    "duration": 0.12
+  },
+  {
+    "word": "💥",
+    "start": 37.56,
+    "end": 37.981,
+    "duration": 0.421
+  },
+  {
+    "word": "Noise",
+    "start": 37.993,
+    "end": 38.233,
+    "duration": 0.24
+  },
+  {
+    "word": "Pollution.",
+    "start": 38.245,
+    "end": 38.822,
+    "duration": 0.577
+  },
+  {
+    "word": "Each",
+    "start": 39.651,
+    "end": 39.94,
+    "duration": 0.288
+  },
+  {
+    "word": "poses",
+    "start": 39.952,
+    "end": 40.385,
+    "duration": 0.433
+  },
+  {
+    "word": "immense",
+    "start": 40.397,
+    "end": 40.781,
+    "duration": 0.385
+  },
+  {
+    "word": "challenges",
+    "start": 40.793,
+    "end": 41.358,
+    "duration": 0.565
+  },
+  {
+    "word": "to",
+    "start": 41.37,
+    "end": 41.466,
+    "duration": 0.096
+  },
+  {
+    "word": "deep-sea",
+    "start": 41.478,
+    "end": 41.947,
+    "duration": 0.469
+  },
+  {
+    "word": "life.",
+    "start": 41.959,
+    "end": 42.416,
+    "duration": 0.457
+  },
+  {
+    "word": "So,",
+    "start": 43.245,
+    "end": 43.702,
+    "duration": 0.457
+  },
+  {
+    "word": "while",
+    "start": 43.882,
+    "end": 44.087,
+    "duration": 0.204
+  },
+  {
+    "word": "these",
+    "start": 44.099,
+    "end": 44.315,
+    "duration": 0.216
+  },
+  {
+    "word": "metals",
+    "start": 44.327,
+    "end": 44.687,
+    "duration": 0.361
+  },
+  {
+    "word": "hold",
+    "start": 44.7,
+    "end": 44.916,
+    "duration": 0.216
+  },
+  {
+    "word": "immense",
+    "start": 44.928,
+    "end": 45.252,
+    "duration": 0.325
+  },
+  {
+    "word": "value,",
+    "start": 45.264,
+    "end": 45.685,
+    "duration": 0.421
+  },
+  {
+    "word": "the",
+    "start": 45.877,
+    "end": 45.986,
+    "duration": 0.108
+  },
+  {
+    "word": "true",
+    "start": 45.998,
+    "end": 46.262,
+    "duration": 0.264
+  },
+  {
+    "word": "cost",
+    "start": 46.274,
+    "end": 46.695,
+    "duration": 0.421
+  },
+  {
+    "word": "and",
+    "start": 46.707,
+    "end": 46.791,
+    "duration": 0.084
+  },
+  {
+    "word": "method",
+    "start": 46.803,
+    "end": 47.115,
+    "duration": 0.312
+  },
+  {
+    "word": "remain",
+    "start": 47.127,
+    "end": 47.452,
+    "duration": 0.325
+  },
+  {
+    "word": "debated,",
+    "start": 47.464,
+    "end": 47.921,
+    "duration": 0.457
+  },
+  {
     "word": "leaving",
-    "start": 25.649,
-    "end": 25.998,
+    "start": 48.149,
+    "end": 48.498,
     "duration": 0.349
   },
   {
     "word": "everyone",
-    "start": 26.01,
-    "end": 26.394,
+    "start": 48.51,
+    "end": 48.894,
     "duration": 0.385
   },
   {
     "word": "still",
-    "start": 26.406,
-    "end": 26.719,
+    "start": 48.906,
+    "end": 49.219,
     "duration": 0.312
   },
   {
     "word": "asking...",
-    "start": 26.731,
-    "end": 27.224,
-    "duration": 0.493
+    "start": 49.231,
+    "end": 49.736,
+    "duration": 0.505
   }
 ]

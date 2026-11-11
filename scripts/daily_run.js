@@ -14,6 +14,7 @@ require('dotenv').config();
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const GENERATE_SCRIPT = 'scripts/generate_script.js';
+const FETCH_BROLL = 'scripts/fetch_broll.js';
 const GENERATE_AUDIO = 'scripts/generate_audio.js';
 const CURRENT_SHORT_PATH = path.join(PROJECT_ROOT, 'src', 'data', 'current_short.json');
 const OUT_DIR = path.join(PROJECT_ROOT, 'out');
@@ -94,8 +95,11 @@ async function main() {
   const currentShort = JSON.parse(fs.readFileSync(CURRENT_SHORT_PATH, 'utf-8'));
   console.log(`\n📝 Generated Video Title: "${currentShort.videoTitle}"`);
 
-  // STEP 2: TTS Synthesis & Timeline Synchronization
-  await runCommand('node', [GENERATE_AUDIO], 'Step 2: TTS Synthesis & Timeline Synchronization');
+  // STEP 2: Automated B-Roll Media Fetcher
+  await runCommand('node', [FETCH_BROLL], 'Step 2: Automated Topic B-Roll & Visual Asset Downloader');
+
+  // STEP 3: TTS Synthesis & Timeline Synchronization
+  await runCommand('node', [GENERATE_AUDIO], 'Step 3: TTS Synthesis & Timeline Synchronization');
 
   if (dryRun) {
     console.log('\n🏁 [DRY RUN] Script and audio generated. Skipping Remotion render.');

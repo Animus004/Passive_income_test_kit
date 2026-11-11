@@ -57,19 +57,13 @@ export const Scene4Danger: React.FC<SceneProps> = ({ subtitles = [], sceneData, 
     config: { damping: 12, mass: 0.45, stiffness: 160 },
   });
 
-  // Dynamic Exit transition
-  const exitWhip = interpolate(
-    frame,
-    [Math.max(0, durationInFrames - 16), durationInFrames],
-    [0, -1200],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    }
-  );
+  // Dynamic Exit Transition: High-Energy Glitch Wipe into Scene 5 Resolution
+  const exitFrameTrigger = Math.max(0, durationInFrames - 15);
+  const isGlitching = frame >= exitFrameTrigger;
+  const glitchX = isGlitching ? ((frame % 2 === 0 ? 45 : -40) * Math.sin(frame * 2)) : 0;
   const exitOpacity = interpolate(
     frame,
-    [Math.max(0, durationInFrames - 12), durationInFrames],
+    [Math.max(0, durationInFrames - 5), durationInFrames],
     [1, 0],
     {
       extrapolateLeft: "clamp",
@@ -113,15 +107,20 @@ export const Scene4Danger: React.FC<SceneProps> = ({ subtitles = [], sceneData, 
   return (
     <AbsoluteFill
       style={{
-        transform: `translate(${shakeX}px, ${shakeY}px) translateX(${exitWhip}px) scale(${entrySpring})`,
+        transform: `translate(${shakeX + glitchX}px, ${shakeY}px) scale(${entrySpring})`,
         opacity: exitOpacity,
         overflow: "hidden",
         pointerEvents: "none",
         backgroundColor: "#090102",
       }}
     >
-      <Audio src={staticFile("sfx/thud.mp3")} volume={0.9} />
-      <Audio src={staticFile("sfx/pop.mp3")} volume={0.75} />
+      <Audio src={staticFile("sfx/alarm.mp3")} volume={0.35} />
+      <Audio src={staticFile("sfx/thud.mp3")} volume={0.85} />
+
+      {/* Glitch Exit Strobe SFX */}
+      <Sequence from={exitFrameTrigger} durationInFrames={15}>
+        <Audio src={staticFile("sfx/glitch.mp3")} volume={0.7} />
+      </Sequence>
 
       {/* Layer 0: Emergency Particle Noise & Edge Vignette */}
       <BackgroundMedia themeColor="#ef4444" opacity={0.35} />
