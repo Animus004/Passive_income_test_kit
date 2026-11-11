@@ -46,30 +46,32 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: 📦 Install Python TTS Engine
         run: |
-          pip install --upgrade pip
-          pip install edge-tts
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: 🐧 Install Ubuntu System Dependencies & Headless Chromium
+      - name: 🐧 Install Ubuntu System Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             ffmpeg \
-            chromium-browser \
             libgbm-dev \
             fonts-noto-color-emoji \
             fonts-roboto
           
-          # Detect Chromium binary location and export for Puppeteer & Remotion
-          CHROME_PATH=$(which chromium-browser || which chromium || which google-chrome)
-          echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_PATH" >> $GITHUB_ENV
-          echo "Using Chromium binary at: $CHROME_PATH"
+          # Detect pre-installed Google Chrome on ubuntu-latest
+          CHROME_PATH=$(which google-chrome || which google-chrome-stable || which chromium-browser || which chromium || true)
+          if [ -n "$CHROME_PATH" ]; then
+            echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_PATH" >> $GITHUB_ENV
+            echo "Using browser binary at: $CHROME_PATH"
+          fi
 
-      - name: 📦 Install NPM Dependencies
-        run: npm ci
+      - name: 📦 Install NPM Dependencies & Ensure Browser
+        run: |
+          npm ci
+          npx remotion browser ensure || true
 
       - name: 🎬 Execute Autonomous Production Pipeline
         env:
@@ -78,19 +80,19 @@ jobs:
         run: |
           BUILD_CMD="npm run build:daily"
           
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             BUILD_CMD="$BUILD_CMD -- --dry-run"
           fi
           
-          if [ -n "${{ inputs.topic }}" ]; then
-            BUILD_CMD="$BUILD_CMD -- --topic \"${{ inputs.topic }}\""
+          if [ -n "${{ github.event.inputs.topic }}" ]; then
+            BUILD_CMD="$BUILD_CMD -- --topic \"${{ github.event.inputs.topic }}\""
           fi
           
           echo "Executing: $BUILD_CMD"
           eval $BUILD_CMD
 
       - name: 🚀 Publish Video to YouTube Shorts & Instagram Reels
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -101,7 +103,7 @@ jobs:
         run: node scripts/publish_all.js
 
       - name: 💾 Commit & Push Updated Topic Queue
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -115,7 +117,7 @@ jobs:
           fi
 
       - name: 📤 Archive Rendered Video Artifact
-        if: always() && inputs.dry_run != true
+        if: always() && github.event.inputs.dry_run != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: daily-short-${{ github.run_id }}
