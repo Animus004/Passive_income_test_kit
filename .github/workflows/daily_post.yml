@@ -123,4 +123,3 @@ jobs:
           path: out/*.mp4
           retention-days: 7
           if-no-files-found: ignore
-
