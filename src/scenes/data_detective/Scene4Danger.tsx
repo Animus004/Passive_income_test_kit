@@ -12,16 +12,21 @@ import {
 import { Mascot } from "../../components/Mascot";
 import { BackgroundMedia } from "../../components/BackgroundMedia";
 import { SubtitleWord } from "../../types";
+import { ThemeAtmosphere, getThemeConfig } from "./ThemeVisuals";
 
 interface SceneProps {
   subtitles?: SubtitleWord[];
   sceneData?: any;
   chipRelFrames?: number[];
+  visualTheme?: string;
 }
 
-export const Scene4Danger: React.FC<SceneProps> = ({ subtitles = [], sceneData, chipRelFrames }) => {
+export const Scene4Danger: React.FC<SceneProps> = ({ subtitles = [], sceneData, chipRelFrames, visualTheme }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
+
+  const theme = visualTheme || sceneData?.visualTheme || "space";
+  const colors = getThemeConfig(theme);
 
   // Entrance Spring
   const entrySpring = spring({

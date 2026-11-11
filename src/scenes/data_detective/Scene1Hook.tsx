@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import {
   AbsoluteFill,
   interpolate,
@@ -11,15 +11,24 @@ import {
 import { Mascot } from "../../components/Mascot";
 import { BackgroundMedia } from "../../components/BackgroundMedia";
 import { SubtitleWord } from "../../types";
+import { ThemeAtmosphere, ThemeHookGraphic, getThemeConfig } from "./ThemeVisuals";
 
 interface SceneProps {
   subtitles?: SubtitleWord[];
   sceneData?: any;
+  visualTheme?: string;
 }
 
-export const Scene1Hook: React.FC<SceneProps> = ({ subtitles = [], sceneData }) => {
+export const Scene1Hook: React.FC<SceneProps> = ({
+  subtitles = [],
+  sceneData,
+  visualTheme,
+}) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
+
+  const theme = visualTheme || sceneData?.visualTheme || "space";
+  const colors = getThemeConfig(theme);
 
   // Entrance Punch Zoom
   const zoomSpring = spring({
@@ -49,26 +58,8 @@ export const Scene1Hook: React.FC<SceneProps> = ({ subtitles = [], sceneData }) 
   );
 
   const badgeText = sceneData?.badge || "🔎 DATA REALITY CHECK // 01";
-  const headline = sceneData?.headline || "WHERE DOES THE INTERNET ACTUALLY LIVE?";
+  const headline = sceneData?.headline || "WHERE DOES THE DATA ACTUALLY LIVE?";
   const mascotPose = sceneData?.mascotEmotion || "pointing";
-
-  // Animated Earth wireframe rotation and pulse
-  const earthRot = interpolate(frame, [0, 274], [0, 180]);
-  const earthPulse = 1 + Math.sin(frame * 0.08) * 0.04;
-
-  // Network Nodes for the global mesh
-  const networkNodes = useMemo(() => {
-    return Array.from({ length: 24 }).map((_, i) => {
-      const angle = (i / 24) * Math.PI * 2;
-      const radius = 240 + ((i * 19) % 80);
-      return {
-        id: i,
-        x: 540 + Math.cos(angle) * radius,
-        y: 680 + Math.sin(angle) * (radius * 0.75),
-        size: (i % 3) * 3 + 5,
-      };
-    });
-  }, []);
 
   return (
     <AbsoluteFill
@@ -77,110 +68,32 @@ export const Scene1Hook: React.FC<SceneProps> = ({ subtitles = [], sceneData }) 
         opacity: exitOpacity,
         overflow: "hidden",
         pointerEvents: "none",
-        backgroundColor: "#020617",
+        backgroundColor: colors.bg,
       }}
     >
       <Audio src={staticFile("sfx/thud.mp3")} volume={0.85} />
 
       {/* Layer 0: Dynamic Background Particle Texture & Vignette */}
-      <BackgroundMedia themeColor="#38bdf8" opacity={0.32} />
+      <BackgroundMedia themeColor={colors.primary} opacity={0.32} />
 
-      {/* --- FULL-BLEED NETWORK MESH BACKGROUND --- */}
-      <svg
-        width={1080}
-        height={1920}
-        style={{ position: "absolute", top: 0, left: 0, opacity: 0.75 }}
+      {/* Dynamic Themed Atmosphere */}
+      <ThemeAtmosphere theme={theme} frame={frame} />
+
+      {/* Themed Centerpiece Graphic */}
+      <div
+        style={{
+          position: "absolute",
+          top: 360,
+          left: 190,
+          width: 700,
+          height: 700,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <defs>
-          <radialGradient id="earthGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.35" />
-            <stop offset="70%" stopColor="#0284c7" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="transparent" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-
-        {/* Outer Bioluminescent Atmosphere */}
-        <circle cx={540} cy={680} r={340} fill="url(#earthGlow)" />
-
-        {/* Global Network Interconnect Lines */}
-        {networkNodes.map((n, i) => {
-          const next = networkNodes[(i + 5) % networkNodes.length];
-          const linePulse = 0.2 + Math.sin(frame * 0.1 + i) * 0.15;
-          return (
-            <line
-              key={`line-${i}`}
-              x1={n.x}
-              y1={n.y}
-              x2={next.x}
-              y2={next.y}
-              stroke="#38bdf8"
-              strokeWidth={1.5}
-              strokeDasharray="8 6"
-              opacity={linePulse}
-            />
-          );
-        })}
-
-        {/* Network Nodes */}
-        {networkNodes.map((n) => (
-          <g key={`node-${n.id}`}>
-            {/* Soft Ambient Glow Halo */}
-            <circle
-              cx={n.x}
-              cy={n.y}
-              r={n.size * 1.8}
-              fill="#38bdf8"
-              opacity={0.35}
-            />
-            {/* Core Node */}
-            <circle
-              cx={n.x}
-              cy={n.y}
-              r={n.size}
-              fill="#ffffff"
-            />
-            <circle
-              cx={n.x}
-              cy={n.y}
-              r={n.size * 2.5}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth={1}
-              opacity={0.4}
-            />
-          </g>
-        ))}
-
-        {/* Rotating 3D Wireframe Earth Sphere */}
-        <g transform={`translate(540, 680) scale(${earthPulse}) rotate(${earthRot}) translate(-540, -680)`}>
-          {/* Outer Ring Glow Halo */}
-          <circle
-            cx={540}
-            cy={680}
-            r={240}
-            fill="none"
-            stroke="#0284c7"
-            strokeWidth={8}
-            opacity={0.35}
-          />
-          <circle
-            cx={540}
-            cy={680}
-            r={240}
-            fill="none"
-            stroke="#38bdf8"
-            strokeWidth={3}
-          />
-          {/* Latitude Lines */}
-          <ellipse cx={540} cy={680} rx={240} ry={160} fill="none" stroke="#38bdf8" strokeWidth={1.5} opacity={0.6} />
-          <ellipse cx={540} cy={680} rx={240} ry={80} fill="none" stroke="#38bdf8" strokeWidth={1.5} opacity={0.6} />
-          <line x1={300} y1={680} x2={780} y2={680} stroke="#38bdf8" strokeWidth={2} opacity={0.8} />
-          {/* Longitude Lines */}
-          <ellipse cx={540} cy={680} rx={160} ry={240} fill="none" stroke="#38bdf8" strokeWidth={1.5} opacity={0.6} />
-          <ellipse cx={540} cy={680} rx={80} ry={240} fill="none" stroke="#38bdf8" strokeWidth={1.5} opacity={0.6} />
-          <line x1={540} y1={440} x2={540} y2={920} stroke="#38bdf8" strokeWidth={2} opacity={0.8} />
-        </g>
-      </svg>
+        <ThemeHookGraphic theme={theme} frame={frame} />
+      </div>
 
       {/* --- TOP HOOK TYPOGRAPHY (FULL-BLEED BOLD) --- */}
       <div
@@ -202,9 +115,9 @@ export const Scene1Hook: React.FC<SceneProps> = ({ subtitles = [], sceneData }) 
           style={{
             padding: "10px 32px",
             borderRadius: 999,
-            background: "linear-gradient(90deg, #0369a1, #0284c7)",
+            background: `linear-gradient(90deg, ${colors.primary}, ${colors.secondary})`,
             border: "2px solid #ffffff",
-            boxShadow: "0 0 35px #38bdf8, 0 10px 20px rgba(0,0,0,0.6)",
+            boxShadow: `0 0 35px ${colors.glow}, 0 10px 20px rgba(0,0,0,0.6)`,
             color: "#ffffff",
             fontSize: 22,
             fontWeight: 950,
@@ -216,53 +129,47 @@ export const Scene1Hook: React.FC<SceneProps> = ({ subtitles = [], sceneData }) 
           {badgeText}
         </div>
 
-        <div style={{ fontSize: 44, fontWeight: 900, color: "#94a3b8", letterSpacing: 3, marginBottom: 8 }}>
+        <div
+          style={{
+            fontSize: 44,
+            fontWeight: 900,
+            color: "#94a3b8",
+            letterSpacing: 3,
+            marginBottom: 8,
+          }}
+        >
           DO YOU REALLY KNOW?
         </div>
 
+        {/* Dynamic Main Question */}
         <div
           style={{
-            fontSize: 78,
+            fontSize: 56,
             fontWeight: 950,
             color: "#ffffff",
-            lineHeight: 1.08,
-            textShadow: "0 0 50px #38bdf8, 0 0 100px #0284c7",
-            fontFamily: "'Impact', 'Arial Black', sans-serif",
+            letterSpacing: 2,
+            lineHeight: 1.15,
             textTransform: "uppercase",
             maxWidth: 960,
+            textShadow: `0 0 30px ${colors.glow}`,
           }}
         >
           {headline}
         </div>
       </div>
 
-      {/* Floating Curious Question Mark reacting to opening hook */}
+      {/* --- MASCOT: EXPRESSIVE AT BOTTOM-CENTER --- */}
       <div
         style={{
           position: "absolute",
-          top: 720,
-          left: "calc(50% - 45px)",
-          fontSize: 90,
-          textShadow: "0 0 35px #38bdf8",
-          transform: `translateY(${Math.sin(frame * 0.15) * 14}px) scale(${1 + Math.sin(frame * 0.2) * 0.12})`,
+          bottom: 70,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
         }}
       >
-        ❓
+        <Mascot subtitles={subtitles} pose={mascotPose} />
       </div>
-
-      {/* --- MASCOT CENTER-STAGE & EXPRESSIVE --- */}
-      <Mascot
-        pose={mascotPose}
-        subtitles={subtitles}
-        themeColor="#38bdf8"
-        accentColor="#f59e0b"
-        scale={1.15}
-        style={{
-          left: "calc(50% - 170px)",
-          bottom: 90,
-          zIndex: 5,
-        }}
-      />
     </AbsoluteFill>
   );
 };

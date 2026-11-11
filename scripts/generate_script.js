@@ -82,6 +82,25 @@ function markTopicUsed(topicObj) {
   }
 }
 
+const THEME_CONFIGS = {
+  space: { primary: '#38bdf8', accent: '#f59e0b', bgGradient: 'radial-gradient(ellipse at 50% 25%, #1e1b4b 0%, #030712 75%)' },
+  cyber: { primary: '#10b981', accent: '#eab308', bgGradient: 'radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)' },
+  ocean: { primary: '#06b6d4', accent: '#38bdf8', bgGradient: 'radial-gradient(ellipse at 50% 25%, #082f49 0%, #020617 75%)' },
+  finance: { primary: '#f59e0b', accent: '#ef4444', bgGradient: 'radial-gradient(ellipse at 50% 25%, #451a03 0%, #0a0601 75%)' },
+  quantum: { primary: '#c084fc', accent: '#38bdf8', bgGradient: 'radial-gradient(ellipse at 50% 25%, #3b0764 0%, #07010d 75%)' },
+  infrastructure: { primary: '#f97316', accent: '#eab308', bgGradient: 'radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)' },
+};
+
+function detectVisualTheme(topic, angle = '') {
+  const text = `${topic} ${angle}`.toLowerCase();
+  if (/gps|satellite|orbit|space|relativity|einstein|planet|cosmos|gravity/i.test(text)) return 'space';
+  if (/chip|silicon|transistor|lithography|microprocessor|computer|code|software|hack|ai|gpu|photolithography/i.test(text)) return 'cyber';
+  if (/ocean|sea|cable|submarine|underwater|depth|trench|shark|abyssal|water/i.test(text)) return 'ocean';
+  if (/trade|trading|wall street|hft|finance|market|money|stock|bitcoin|crypto/i.test(text)) return 'finance';
+  if (/quantum|atom|qubit|superposition|particle|laser|collider|physics|energy/i.test(text)) return 'quantum';
+  return 'infrastructure';
+}
+
 function formatMonetizedDescription(rawDescription, tags = []) {
   const affiliateUrl = process.env.MONETIZATION_AFFILIATE_URL || 'https://bit.ly/data-detective-tools';
   const newsletterUrl = process.env.MONETIZATION_NEWSLETTER_URL || 'https://datadetective.substack.com';
@@ -149,6 +168,7 @@ CRITICAL PRODUCTION RULES:
 Return ONLY valid JSON with this exact schema:
 {
   "topic": "${selected.topic}",
+  "visualTheme": "One of: space | cyber | finance | quantum | ocean | infrastructure that best fits the subject",
   "videoTitle": "Catchy YouTube Shorts title with emoji (< 60 chars)",
   "youtubeDescription": "2-3 engaging sentences explaining the short with 4-5 relevant #hashtags.",
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8"],
@@ -259,6 +279,14 @@ Return ONLY valid JSON with this exact schema:
     console.error('Failed to parse Gemini output:', rawJson);
     throw err;
   }
+
+  // Assign dynamic visual theme & palette
+  const detected = detectVisualTheme(selected.topic, selected.hookAngle);
+  parsed.visualTheme = (parsed.visualTheme && THEME_CONFIGS[parsed.visualTheme.toLowerCase()])
+    ? parsed.visualTheme.toLowerCase()
+    : detected;
+  parsed.themeConfig = THEME_CONFIGS[parsed.visualTheme] || THEME_CONFIGS.space;
+  console.log(`🎨 Visual Theme Assigned: "${parsed.visualTheme.toUpperCase()}"`);
 
   // Ensure fullVoiceover is present and cleanly concatenated from scenes
   const sceneTexts = parsed.scenes.map((s) => s.voiceoverText.trim());

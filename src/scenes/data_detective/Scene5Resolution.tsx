@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import {
   AbsoluteFill,
   interpolate,
@@ -12,15 +12,24 @@ import {
 import { Mascot } from "../../components/Mascot";
 import { BackgroundMedia } from "../../components/BackgroundMedia";
 import { SubtitleWord } from "../../types";
+import { ThemeAtmosphere, ThemeLoopPortal, getThemeConfig } from "./ThemeVisuals";
 
 interface SceneProps {
   subtitles?: SubtitleWord[];
   sceneData?: any;
+  visualTheme?: string;
 }
 
-export const Scene5Resolution: React.FC<SceneProps> = ({ subtitles = [], sceneData }) => {
+export const Scene5Resolution: React.FC<SceneProps> = ({
+  subtitles = [],
+  sceneData,
+  visualTheme,
+}) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
+
+  const theme = visualTheme || sceneData?.visualTheme || "space";
+  const colors = getThemeConfig(theme);
 
   const entrySpring = spring({
     frame,
@@ -40,23 +49,10 @@ export const Scene5Resolution: React.FC<SceneProps> = ({ subtitles = [], sceneDa
   const loopPunchScale = 1.0 + Math.pow(punchProgress, 2) * 0.15;
 
   const badgeText = sceneData?.badge || "💡 THE DATA VERDICT // 05";
-  const headline = sceneData?.headline || "THE CLOUD IS UNDERWATER!";
-  const subheadline = sceneData?.subheadline || "🌊 99% OF ALL DATA IS ON OCEAN FLOORS";
+  const headline = sceneData?.headline || "THE REVEAL IS UNSTOPPABLE!";
+  const subheadline = sceneData?.subheadline || "PHYSICAL REALITY ALWAYS WINS";
   const loopKicker = sceneData?.loopKicker || "⚡ LEAVING EVERYONE STILL ASKING... ⚡";
   const mascotPose = sceneData?.mascotEmotion || "celebrating";
-
-  const portalSpin = frame * 2.2;
-  const loopPillPulse = 1 + Math.sin(frame * 0.15) * 0.04;
-
-  // Floating ambient embers / data particles
-  const particles = useMemo(() => {
-    return Array.from({ length: 30 }).map((_, i) => ({
-      x: ((i * 37 + 13) % 94) + 3,
-      startY: (i * 59 + 17) % 100,
-      size: (i % 3) * 2 + 3,
-      speed: 0.25 + (i % 3) * 0.2,
-    }));
-  }, []);
 
   return (
     <AbsoluteFill
@@ -65,103 +61,65 @@ export const Scene5Resolution: React.FC<SceneProps> = ({ subtitles = [], sceneDa
         transformOrigin: "540px 780px",
         overflow: "hidden",
         pointerEvents: "none",
-        backgroundColor: "#030712",
+        backgroundColor: colors.bg,
       }}
     >
-      <Audio src={staticFile("sfx/pop.mp3")} volume={0.85} />
+      <Audio src={staticFile("sfx/pop.mp3")} volume={0.8} />
 
-      {/* Trailing 15-frame buffer: quick riser / whoosh sound effect during the loop wipe */}
-      <Sequence from={punchStartFrame}>
+      {/* Trailing 15-frame buffer whoosh SFX into infinite retention loop */}
+      <Sequence from={punchStartFrame} durationInFrames={15}>
         <Audio src={staticFile("sfx/whoosh.mp3")} volume={0.9} />
       </Sequence>
 
-      {/* Layer 0: Full-Bleed Background Media Texture & Vignette */}
-      <BackgroundMedia themeColor="#38bdf8" opacity={0.32} />
+      {/* Layer 0: Background Texture */}
+      <BackgroundMedia themeColor={colors.primary} opacity={0.32} />
 
-      {/* Floating Ambient Sparks */}
-      {particles.map((p, i) => {
-        const currentY = ((p.startY * 19.2 - frame * p.speed * 4) % 1920 + 1920) % 1920;
-        return (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              left: `${p.x}%`,
-              top: currentY,
-              width: p.size,
-              height: p.size,
-              borderRadius: "50%",
-              backgroundColor: "#38bdf8",
-              boxShadow: "0 0 15px #38bdf8",
-              opacity: 0.35 + Math.sin(frame * 0.1 + i) * 0.25,
-            }}
-          />
-        );
-      })}
+      {/* Dynamic Themed Atmosphere */}
+      <ThemeAtmosphere theme={theme} frame={frame} />
 
-      {/* Mind Blown Header Badge */}
+      {/* --- TOP VERDICT BADGE & HEADLINE --- */}
       <div
         style={{
           position: "absolute",
-          top: 140,
+          top: 130,
           left: 0,
-          right: 0,
+          width: "100%",
+          textAlign: "center",
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "0 40px",
+          boxSizing: "border-box",
         }}
       >
         <div
           style={{
-            padding: "12px 36px",
+            padding: "8px 28px",
             borderRadius: 999,
-            background: "linear-gradient(90deg, #dc2626, #f59e0b)",
-            border: "2px solid #ffffff",
-            boxShadow: "0 0 50px rgba(245, 158, 11, 0.8), 0 10px 30px rgba(0,0,0,0.8)",
+            background: `linear-gradient(90deg, ${colors.primary}, ${colors.secondary})`,
+            border: "1.5px solid #ffffff",
+            boxShadow: `0 0 35px ${colors.glow}`,
             color: "#ffffff",
-            fontSize: 22,
-            fontWeight: 950,
+            fontSize: 20,
+            fontWeight: 900,
             letterSpacing: 3,
             textTransform: "uppercase",
+            marginBottom: 16,
           }}
         >
           {badgeText}
         </div>
-      </div>
-
-      {/* Full-Bleed Hero Resolution Typography */}
-      <div
-        style={{
-          position: "absolute",
-          top: 250,
-          left: 0,
-          right: 0,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          padding: "0 40px",
-        }}
-      >
-        <div
-          style={{
-            fontSize: 92,
-            marginBottom: 10,
-            filter: "drop-shadow(0 0 35px rgba(56, 189, 248, 0.8))",
-          }}
-        >
-          ☁️ ➔ 🌊
-        </div>
 
         <div
           style={{
-            fontSize: 70,
+            fontSize: 48,
             fontWeight: 950,
             color: "#ffffff",
-            fontFamily: "'Impact', 'Montserrat', sans-serif",
-            letterSpacing: 3,
-            lineHeight: 1.05,
-            textShadow:
-              "0 0 35px #38bdf8, 0 0 80px #0284c7, 0 10px 25px rgba(0,0,0,0.9)",
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            textShadow: `0 0 30px ${colors.glow}`,
+            lineHeight: 1.15,
+            maxWidth: 960,
           }}
         >
           {headline}
@@ -169,118 +127,48 @@ export const Scene5Resolution: React.FC<SceneProps> = ({ subtitles = [], sceneDa
 
         <div
           style={{
-            marginTop: 18,
-            fontSize: 30,
+            fontSize: 22,
             fontWeight: 800,
-            color: "#38bdf8",
-            letterSpacing: 2,
+            color: colors.accent,
+            letterSpacing: 3,
             textTransform: "uppercase",
-            textShadow: "0 0 20px rgba(56, 189, 248, 0.6)",
+            marginTop: 10,
           }}
         >
           {subheadline}
         </div>
-
-        {/* --- INFINITE RETENTION LOOP PORTAL (Seamless Loop Bridge) --- */}
-        {/* Replaces static Subscribe card so the video loops endlessly back to hook */}
-        <div
-          style={{
-            marginTop: 40,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            position: "relative",
-          }}
-        >
-          {/* Animated Cybernetic Vortex Tunnel */}
-          <svg
-            width={340}
-            height={340}
-            style={{
-              position: "absolute",
-              top: -30,
-              transform: `rotate(${portalSpin}deg)`,
-              filter: "drop-shadow(0 0 30px rgba(56, 189, 248, 0.6))",
-            }}
-          >
-            <circle
-              cx={170}
-              cy={170}
-              r={150}
-              fill="none"
-              stroke="#0284c7"
-              strokeWidth={3}
-              strokeDasharray="25 15"
-              opacity={0.7}
-            />
-            <circle
-              cx={170}
-              cy={170}
-              r={125}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth={2.5}
-              strokeDasharray="15 20"
-              opacity={0.8}
-            />
-            <circle
-              cx={170}
-              cy={170}
-              r={100}
-              fill="none"
-              stroke="#f59e0b"
-              strokeWidth={2}
-              strokeDasharray="8 12"
-              opacity={0.65}
-            />
-          </svg>
-
-          {/* Glowing Retention Bridge Kicker */}
-          <div
-            style={{
-              transform: `scale(${loopPillPulse})`,
-              marginTop: 105,
-              padding: "18px 36px",
-              borderRadius: 999,
-              background:
-                "linear-gradient(90deg, rgba(14, 165, 233, 0.9), rgba(2, 132, 199, 0.95))",
-              border: "2px solid #ffffff",
-              boxShadow:
-                "0 0 50px rgba(56, 189, 248, 0.85), 0 10px 30px rgba(0,0,0,0.8)",
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'Impact', 'Arial Black', -apple-system, sans-serif",
-                fontSize: 27,
-                fontWeight: 950,
-                color: "#ffffff",
-                letterSpacing: 2,
-                textTransform: "uppercase",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {loopKicker}
-            </span>
-          </div>
-        </div>
       </div>
 
-      {/* Mascot: Anchored Bottom-Left pointing into the loop portal */}
+      {/* --- CENTER THEMED INFINITE LOOP PORTAL --- */}
+      <div
+        style={{
+          position: "absolute",
+          top: 480,
+          left: 240,
+          width: 600,
+          height: 600,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ThemeLoopPortal
+          theme={theme}
+          frame={frame}
+          kickerText={loopKicker}
+        />
+      </div>
+
+      {/* --- MASCOT: CELEBRATING / DANCING IN LOWER RIGHT --- */}
       <div
         style={{
           position: "absolute",
           bottom: 40,
-          left: 60,
-          width: 340,
-          height: 385,
-          zIndex: 5,
+          right: 50,
+          zIndex: 10,
         }}
       >
-        <Mascot pose={mascotPose} subtitles={subtitles} />
+        <Mascot subtitles={subtitles} pose={mascotPose} />
       </div>
     </AbsoluteFill>
   );

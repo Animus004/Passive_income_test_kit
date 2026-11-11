@@ -1,614 +1,368 @@
 [
   {
-    "word": "Think",
+    "word": "Did",
     "start": 0.098,
-    "end": 0.338,
-    "duration": 0.24
-  },
-  {
-    "word": "high-frequency",
-    "start": 0.35,
-    "end": 1.072,
-    "duration": 0.721
-  },
-  {
-    "word": "trading",
-    "start": 1.084,
-    "end": 1.48,
-    "duration": 0.397
-  },
-  {
-    "word": "is",
-    "start": 1.492,
-    "end": 1.6,
-    "duration": 0.108
-  },
-  {
-    "word": "just",
-    "start": 1.613,
-    "end": 1.865,
-    "duration": 0.252
-  },
-  {
-    "word": "digital",
-    "start": 1.877,
-    "end": 2.213,
-    "duration": 0.337
-  },
-  {
-    "word": "clicks?",
-    "start": 2.225,
-    "end": 2.718,
-    "duration": 0.493
-  },
-  {
-    "word": "Wrong!",
-    "start": 3.546,
-    "end": 4.123,
-    "duration": 0.577
-  },
-  {
-    "word": "The",
-    "start": 4.94,
-    "end": 5.072,
-    "duration": 0.132
-  },
-  {
-    "word": "battle",
-    "start": 5.084,
-    "end": 5.421,
-    "duration": 0.337
-  },
-  {
-    "word": "for",
-    "start": 5.433,
-    "end": 5.553,
-    "duration": 0.12
-  },
-  {
-    "word": "milliseconds",
-    "start": 5.565,
-    "end": 6.178,
-    "duration": 0.613
-  },
-  {
-    "word": "happens",
-    "start": 6.19,
-    "end": 6.611,
-    "duration": 0.421
-  },
-  {
-    "word": "deep",
-    "start": 6.623,
-    "end": 6.863,
-    "duration": 0.24
-  },
-  {
-    "word": "underwater,",
-    "start": 6.875,
-    "end": 7.416,
-    "duration": 0.541
-  },
-  {
-    "word": "driven",
-    "start": 7.68,
-    "end": 8.029,
-    "duration": 0.349
-  },
-  {
-    "word": "by",
-    "start": 8.041,
-    "end": 8.185,
-    "duration": 0.144
-  },
-  {
-    "word": "physical",
-    "start": 8.197,
-    "end": 8.63,
-    "duration": 0.433
-  },
-  {
-    "word": "cables.",
-    "start": 8.642,
-    "end": 9.231,
-    "duration": 0.589
-  },
-  {
-    "word": "Many",
-    "start": 10.06,
-    "end": 10.373,
-    "duration": 0.312
-  },
-  {
-    "word": "believe",
-    "start": 10.385,
-    "end": 10.721,
-    "duration": 0.337
-  },
-  {
-    "word": "data",
-    "start": 10.733,
-    "end": 11.01,
-    "duration": 0.276
-  },
-  {
-    "word": "travels",
-    "start": 11.022,
-    "end": 11.454,
-    "duration": 0.433
-  },
-  {
-    "word": "instantly.",
-    "start": 11.466,
-    "end": 12.103,
-    "duration": 0.637
-  },
-  {
-    "word": "But",
-    "start": 12.933,
-    "end": 13.077,
-    "duration": 0.144
-  },
-  {
-    "word": "a",
-    "start": 13.089,
-    "end": 13.149,
-    "duration": 0.06
-  },
-  {
-    "word": "whopping",
-    "start": 13.161,
-    "end": 13.558,
-    "duration": 0.397
-  },
-  {
-    "word": "70%",
-    "start": 13.57,
-    "end": 14.315,
-    "duration": 0.745
-  },
-  {
-    "word": "of",
-    "start": 14.327,
-    "end": 14.423,
-    "duration": 0.096
-  },
-  {
-    "word": "HFT",
-    "start": 14.435,
-    "end": 15.024,
-    "duration": 0.589
-  },
-  {
-    "word": "firms",
-    "start": 15.036,
-    "end": 15.445,
-    "duration": 0.409
-  },
-  {
-    "word": "optimize",
-    "start": 15.457,
-    "end": 15.974,
-    "duration": 0.517
-  },
-  {
-    "word": "physical",
-    "start": 15.986,
-    "end": 16.394,
-    "duration": 0.409
-  },
-  {
-    "word": "cable",
-    "start": 16.406,
-    "end": 16.755,
-    "duration": 0.349
-  },
-  {
-    "word": "routes,",
-    "start": 16.767,
-    "end": 17.175,
-    "duration": 0.409
-  },
-  {
-    "word": "not",
-    "start": 17.44,
-    "end": 17.656,
-    "duration": 0.216
-  },
-  {
-    "word": "just",
-    "start": 17.668,
-    "end": 17.897,
-    "duration": 0.228
-  },
-  {
-    "word": "software,",
-    "start": 17.909,
-    "end": 18.486,
-    "duration": 0.577
-  },
-  {
-    "word": "for",
-    "start": 18.75,
-    "end": 18.918,
+    "end": 0.266,
     "duration": 0.168
   },
   {
-    "word": "an",
-    "start": 18.93,
-    "end": 19.038,
+    "word": "you",
+    "start": 0.278,
+    "end": 0.387,
     "duration": 0.108
   },
   {
-    "word": "edge.",
-    "start": 19.05,
-    "end": 19.531,
-    "duration": 0.481
+    "word": "know",
+    "start": 0.399,
+    "end": 0.591,
+    "duration": 0.192
   },
   {
-    "word": "We're",
-    "start": 20.361,
-    "end": 20.541,
-    "duration": 0.18
+    "word": "your",
+    "start": 0.603,
+    "end": 0.759,
+    "duration": 0.156
   },
   {
-    "word": "talking",
-    "start": 20.553,
-    "end": 20.938,
-    "duration": 0.385
-  },
-  {
-    "word": "colossal",
-    "start": 20.95,
-    "end": 21.418,
-    "duration": 0.469
-  },
-  {
-    "word": "subsea",
-    "start": 21.43,
-    "end": 21.923,
-    "duration": 0.493
-  },
-  {
-    "word": "networks!",
-    "start": 21.935,
-    "end": 22.608,
-    "duration": 0.673
-  },
-  {
-    "word": "A",
-    "start": 23.438,
-    "end": 23.546,
-    "duration": 0.108
-  },
-  {
-    "word": "transatlantic",
-    "start": 23.558,
-    "end": 24.327,
-    "duration": 0.769
-  },
-  {
-    "word": "cable",
-    "start": 24.339,
-    "end": 24.651,
-    "duration": 0.312
-  },
-  {
-    "word": "project",
-    "start": 24.663,
-    "end": 25.132,
-    "duration": 0.469
-  },
-  {
-    "word": "costs",
-    "start": 25.144,
-    "end": 25.589,
-    "duration": 0.445
-  },
-  {
-    "word": "over",
-    "start": 25.601,
-    "end": 25.817,
-    "duration": 0.216
-  },
-  {
-    "word": "$300",
-    "start": 25.829,
-    "end": 26.719,
-    "duration": 0.889
-  },
-  {
-    "word": "MILLION,",
-    "start": 26.731,
-    "end": 27.127,
-    "duration": 0.397
-  },
-  {
-    "word": "shaving",
-    "start": 27.416,
-    "end": 27.825,
-    "duration": 0.409
-  },
-  {
-    "word": "mere",
-    "start": 27.837,
-    "end": 28.077,
-    "duration": 0.24
-  },
-  {
-    "word": "3",
-    "start": 28.089,
-    "end": 28.353,
-    "duration": 0.264
-  },
-  {
-    "word": "MILLISECONDS.",
-    "start": 28.365,
-    "end": 29.159,
-    "duration": 0.793
-  },
-  {
-    "word": "But",
-    "start": 29.988,
-    "end": 30.168,
-    "duration": 0.18
-  },
-  {
-    "word": "this",
-    "start": 30.18,
-    "end": 30.397,
-    "duration": 0.216
-  },
-  {
-    "word": "physical",
-    "start": 30.409,
-    "end": 30.817,
-    "duration": 0.409
-  },
-  {
-    "word": "reality",
-    "start": 30.829,
-    "end": 31.298,
-    "duration": 0.469
-  },
-  {
-    "word": "faces",
-    "start": 31.31,
-    "end": 31.755,
-    "duration": 0.445
-  },
-  {
-    "word": "constant",
-    "start": 31.767,
-    "end": 32.236,
-    "duration": 0.469
-  },
-  {
-    "word": "threats:",
-    "start": 32.248,
-    "end": 32.692,
-    "duration": 0.445
-  },
-  {
-    "word": "🦈",
-    "start": 32.921,
-    "end": 33.233,
-    "duration": 0.312
-  },
-  {
-    "word": "SHARK",
-    "start": 33.245,
-    "end": 33.606,
-    "duration": 0.361
-  },
-  {
-    "word": "BITES,",
-    "start": 33.618,
-    "end": 33.99,
-    "duration": 0.373
-  },
-  {
-    "word": "⚓",
-    "start": 34.231,
-    "end": 34.591,
-    "duration": 0.361
-  },
-  {
-    "word": "ANCHOR",
-    "start": 34.603,
-    "end": 34.844,
-    "duration": 0.24
-  },
-  {
-    "word": "DRAGS,",
-    "start": 34.856,
-    "end": 35.385,
-    "duration": 0.529
-  },
-  {
-    "word": "and",
-    "start": 35.613,
-    "end": 35.793,
-    "duration": 0.18
-  },
-  {
-    "word": "🌊",
-    "start": 35.805,
-    "end": 36.394,
-    "duration": 0.589
-  },
-  {
-    "word": "SEISMIC",
-    "start": 36.406,
-    "end": 36.887,
-    "duration": 0.481
-  },
-  {
-    "word": "SHIFTS.",
-    "start": 36.899,
-    "end": 37.476,
-    "duration": 0.577
-  },
-  {
-    "word": "These",
-    "start": 38.305,
-    "end": 38.594,
-    "duration": 0.288
-  },
-  {
-    "word": "choke",
-    "start": 38.606,
-    "end": 38.918,
-    "duration": 0.312
-  },
-  {
-    "word": "points",
-    "start": 38.93,
-    "end": 39.267,
-    "duration": 0.337
-  },
-  {
-    "word": "are",
-    "start": 39.279,
-    "end": 39.399,
-    "duration": 0.12
-  },
-  {
-    "word": "critical",
-    "start": 39.411,
-    "end": 39.808,
-    "duration": 0.397
-  },
-  {
-    "word": "vulnerabilities.",
-    "start": 39.82,
-    "end": 40.805,
-    "duration": 0.986
-  },
-  {
-    "word": "The",
-    "start": 41.635,
-    "end": 41.767,
-    "duration": 0.132
-  },
-  {
-    "word": "fastest",
-    "start": 41.779,
-    "end": 42.272,
-    "duration": 0.493
-  },
-  {
-    "word": "trade",
-    "start": 42.284,
-    "end": 42.584,
+    "word": "phone",
+    "start": 0.771,
+    "end": 1.072,
     "duration": 0.3
   },
   {
-    "word": "isn't",
-    "start": 42.596,
-    "end": 42.849,
+    "word": "relies",
+    "start": 1.084,
+    "end": 1.504,
+    "duration": 0.421
+  },
+  {
+    "word": "on",
+    "start": 1.516,
+    "end": 1.649,
+    "duration": 0.132
+  },
+  {
+    "word": "orbiting",
+    "start": 1.661,
+    "end": 2.021,
+    "duration": 0.361
+  },
+  {
+    "word": "clocks",
+    "start": 2.033,
+    "end": 2.37,
+    "duration": 0.337
+  },
+  {
+    "word": "defying",
+    "start": 2.382,
+    "end": 2.862,
+    "duration": 0.481
+  },
+  {
+    "word": "Einstein",
+    "start": 2.874,
+    "end": 3.427,
+    "duration": 0.553
+  },
+  {
+    "word": "every",
+    "start": 3.439,
+    "end": 3.68,
+    "duration": 0.24
+  },
+  {
+    "word": "single",
+    "start": 3.692,
+    "end": 4.028,
+    "duration": 0.337
+  },
+  {
+    "word": "second?",
+    "start": 4.04,
+    "end": 4.509,
+    "duration": 0.469
+  },
+  {
+    "word": "Most",
+    "start": 5.337,
+    "end": 5.673,
+    "duration": 0.337
+  },
+  {
+    "word": "think",
+    "start": 5.685,
+    "end": 5.865,
+    "duration": 0.18
+  },
+  {
+    "word": "satellite",
+    "start": 5.877,
+    "end": 6.37,
+    "duration": 0.493
+  },
+  {
+    "word": "time",
+    "start": 6.382,
+    "end": 6.635,
     "duration": 0.252
   },
   {
-    "word": "just",
-    "start": 42.861,
-    "end": 43.089,
-    "duration": 0.228
+    "word": "adjustments",
+    "start": 6.647,
+    "end": 7.175,
+    "duration": 0.529
   },
   {
-    "word": "code;",
-    "start": 43.101,
-    "end": 43.449,
-    "duration": 0.349
+    "word": "are",
+    "start": 7.188,
+    "end": 7.308,
+    "duration": 0.12
   },
   {
-    "word": "it's",
-    "start": 43.75,
-    "end": 43.894,
-    "duration": 0.144
+    "word": "totally",
+    "start": 7.32,
+    "end": 7.776,
+    "duration": 0.457
   },
   {
-    "word": "the",
-    "start": 43.906,
-    "end": 44.002,
-    "duration": 0.096
-  },
-  {
-    "word": "physical",
-    "start": 44.014,
-    "end": 44.411,
+    "word": "instant",
+    "start": 7.788,
+    "end": 8.185,
     "duration": 0.397
   },
   {
-    "word": "path.",
-    "start": 44.423,
-    "end": 44.916,
-    "duration": 0.493
+    "word": "and",
+    "start": 8.197,
+    "end": 8.281,
+    "duration": 0.084
   },
   {
-    "word": "This",
-    "start": 45.745,
-    "end": 45.986,
-    "duration": 0.24
+    "word": "flawless.",
+    "start": 8.293,
+    "end": 8.954,
+    "duration": 0.661
   },
   {
-    "word": "hidden",
-    "start": 45.998,
-    "end": 46.262,
-    "duration": 0.264
+    "word": "In",
+    "start": 9.784,
+    "end": 9.964,
+    "duration": 0.18
   },
   {
-    "word": "infrastructure",
-    "start": 46.274,
-    "end": 47.007,
-    "duration": 0.733
+    "word": "reality,",
+    "start": 9.976,
+    "end": 10.529,
+    "duration": 0.553
   },
   {
-    "word": "is",
-    "start": 47.019,
-    "end": 47.151,
-    "duration": 0.132
+    "word": "gravity",
+    "start": 10.757,
+    "end": 11.166,
+    "duration": 0.409
   },
   {
-    "word": "the",
-    "start": 47.163,
-    "end": 47.26,
-    "duration": 0.096
+    "word": "shifts",
+    "start": 11.178,
+    "end": 11.587,
+    "duration": 0.409
   },
   {
-    "word": "true",
-    "start": 47.272,
-    "end": 47.512,
-    "duration": 0.24
+    "word": "time",
+    "start": 11.599,
+    "end": 11.923,
+    "duration": 0.325
   },
   {
-    "word": "limit,",
-    "start": 47.524,
-    "end": 47.825,
-    "duration": 0.3
+    "word": "by",
+    "start": 11.935,
+    "end": 12.091,
+    "duration": 0.156
   },
   {
-    "word": "leaving",
-    "start": 48.077,
-    "end": 48.413,
+    "word": "thirty-eight",
+    "start": 12.103,
+    "end": 12.62,
+    "duration": 0.517
+  },
+  {
+    "word": "microseconds",
+    "start": 12.632,
+    "end": 13.353,
+    "duration": 0.721
+  },
+  {
+    "word": "daily!",
+    "start": 13.365,
+    "end": 13.846,
+    "duration": 0.481
+  },
+  {
+    "word": "Without",
+    "start": 14.675,
+    "end": 15.072,
+    "duration": 0.397
+  },
+  {
+    "word": "massive",
+    "start": 15.084,
+    "end": 15.529,
+    "duration": 0.445
+  },
+  {
+    "word": "code",
+    "start": 15.541,
+    "end": 15.817,
+    "duration": 0.276
+  },
+  {
+    "word": "intervention,",
+    "start": 15.829,
+    "end": 16.454,
+    "duration": 0.625
+  },
+  {
+    "word": "navigation",
+    "start": 16.695,
+    "end": 17.308,
+    "duration": 0.613
+  },
+  {
+    "word": "fails",
+    "start": 17.32,
+    "end": 17.68,
+    "duration": 0.361
+  },
+  {
+    "word": "instantly",
+    "start": 17.692,
+    "end": 18.197,
+    "duration": 0.505
+  },
+  {
+    "word": "due",
+    "start": 18.209,
+    "end": 18.413,
+    "duration": 0.204
+  },
+  {
+    "word": "to",
+    "start": 18.425,
+    "end": 18.546,
+    "duration": 0.12
+  },
+  {
+    "word": "ionosphere",
+    "start": 18.558,
+    "end": 19.231,
+    "duration": 0.673
+  },
+  {
+    "word": "drift,",
+    "start": 19.243,
+    "end": 19.687,
+    "duration": 0.445
+  },
+  {
+    "word": "clock",
+    "start": 19.892,
+    "end": 20.228,
     "duration": 0.337
   },
   {
+    "word": "drift,",
+    "start": 20.24,
+    "end": 20.637,
+    "duration": 0.397
+  },
+  {
+    "word": "and",
+    "start": 20.817,
+    "end": 20.962,
+    "duration": 0.144
+  },
+  {
+    "word": "orbital",
+    "start": 20.974,
+    "end": 21.298,
+    "duration": 0.325
+  },
+  {
+    "word": "decay.",
+    "start": 21.31,
+    "end": 21.791,
+    "duration": 0.481
+  },
+  {
+    "word": "This",
+    "start": 22.62,
+    "end": 22.861,
+    "duration": 0.24
+  },
+  {
+    "word": "proves",
+    "start": 22.873,
+    "end": 23.173,
+    "duration": 0.3
+  },
+  {
+    "word": "space-time",
+    "start": 23.185,
+    "end": 23.834,
+    "duration": 0.649
+  },
+  {
+    "word": "is",
+    "start": 23.846,
+    "end": 23.966,
+    "duration": 0.12
+  },
+  {
+    "word": "secretly",
+    "start": 23.978,
+    "end": 24.411,
+    "duration": 0.433
+  },
+  {
+    "word": "breaking",
+    "start": 24.423,
+    "end": 24.82,
+    "duration": 0.397
+  },
+  {
+    "word": "our",
+    "start": 24.832,
+    "end": 24.952,
+    "duration": 0.12
+  },
+  {
+    "word": "maps,",
+    "start": 24.964,
+    "end": 25.397,
+    "duration": 0.433
+  },
+  {
+    "word": "leaving",
+    "start": 25.649,
+    "end": 25.998,
+    "duration": 0.349
+  },
+  {
     "word": "everyone",
-    "start": 48.425,
-    "end": 48.81,
+    "start": 26.01,
+    "end": 26.394,
     "duration": 0.385
   },
   {
     "word": "still",
-    "start": 48.822,
-    "end": 49.135,
+    "start": 26.406,
+    "end": 26.719,
     "duration": 0.312
   },
   {
     "word": "asking...",
-    "start": 49.147,
-    "end": 49.639,
+    "start": 26.731,
+    "end": 27.224,
     "duration": 0.493
   }
 ]
