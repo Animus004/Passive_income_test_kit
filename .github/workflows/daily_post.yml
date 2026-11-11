@@ -52,16 +52,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🐧 Install Ubuntu System Dependencies
+      - name: 🎬 Setup FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+
+      - name: 🐧 Detect Headless Browser
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            ffmpeg \
-            libgbm-dev \
-            fonts-noto-color-emoji \
-            fonts-roboto
-          
-          # Detect pre-installed Google Chrome on ubuntu-latest
           CHROME_PATH=$(which google-chrome || which google-chrome-stable || which chromium-browser || which chromium || true)
           if [ -n "$CHROME_PATH" ]; then
             echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_PATH" >> $GITHUB_ENV
