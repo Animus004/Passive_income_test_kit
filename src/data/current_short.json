@@ -1,24 +1,24 @@
 {
-  "topic": "GPS Satellites Relativity Correction",
-  "videoTitle": "Why GPS Clocks Lie Everyday! 🛰️🤯",
-  "youtubeDescription": "Discover the hidden physics and crazy data bottlenecks behind GPS satellite relativity corrections. Will our atomic clocks survive the space-time bend?\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#GPS #Relativity #Physics #TechSecrets #DataDetective #Satellites #DataScience #Space",
+  "topic": "Deep Ocean Polymetallic Mining",
+  "videoTitle": "Deep Ocean's $TRILLION Secret! 🌊💰",
+  "youtubeDescription": "Trillions of dollars in battery metals hide 4,000 meters deep in the Clarion-Clipperton Zone. But is it worth the environmental cost? Uncover the immense challenges of deep-sea polymetallic mining!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#DeepSeaMining #BatteryMetals #OceanExploration #DataDetective #FutureTech #DeepOceanMining #PolymetallicNodules #ClarionClippertonZone",
   "tags": [
-    "GPS",
-    "Relativity",
-    "Physics",
-    "Satellites",
-    "Data Science",
-    "Space",
-    "Technology",
-    "Data Detective"
+    "DeepOceanMining",
+    "PolymetallicNodules",
+    "BatteryMetals",
+    "ClarionClippertonZone",
+    "OceanExploration",
+    "EnvironmentalImpact",
+    "FutureTechnology",
+    "ResourceMining"
   ],
-  "fullVoiceover": "Did you know your phone relies on orbiting clocks defying Einstein every single second? Most think satellite time adjustments are totally instant and flawless. In reality, gravity shifts time by thirty-eight microseconds daily! Without massive code intervention, navigation fails instantly due to ionosphere drift, clock drift, and orbital decay. This proves space-time is secretly breaking our maps, leaving everyone still asking...",
+  "fullVoiceover": "Trillions in battery metals, just waiting? Not on land! These resources sit 4,000 meters deep in ocean darkness. Many assume deep-sea mining is simple. Just scoop them up! But 95% of the deep ocean remains unexplored. No easy grab. Reaching the Clarion-Clipperton Zone demands massive robotic collectors. Machines, size of buildings, operate under 400 atmospheres of pressure. This fragile ecosystem faces huge risks: 🌊 Sediment Plumes, 🚨 Habitat Destruction, and 💥 Noise Pollution. Each poses immense challenges to deep-sea life. So, while these metals hold immense value, the true cost and method remain debated, leaving everyone still asking...",
   "scenes": [
     {
       "sceneId": 1,
       "badge": "DATA REALITY CHECK // 01",
-      "headline": "DO YOUR MAPS DEFY EINSTEIN?",
-      "voiceoverText": "Did you know your phone relies on orbiting clocks defying Einstein every single second?",
+      "headline": "TRILLIONS DEEP, BATTERY METALS?",
+      "voiceoverText": "Trillions in battery metals, just waiting? Not on land! These resources sit 4,000 meters deep in ocean darkness.",
       "visualType": "hook",
       "mascotEmotion": "pointing"
     },
@@ -26,10 +26,10 @@
       "sceneId": 2,
       "badge": "THE SPEED MYTH // 02",
       "statHighlight": {
-        "number": "100%",
-        "label": "PERFECT SYNC MYTH"
+        "number": "95%",
+        "label": "UNEXPLORED OCEAN"
       },
-      "voiceoverText": "Most think satellite time adjustments are totally instant and flawless.",
+      "voiceoverText": "Many assume deep-sea mining is simple. Just scoop them up! But 95% of the deep ocean remains unexplored. No easy grab.",
       "visualType": "myth",
       "mascotEmotion": "facepalm"
     },
@@ -37,14 +37,14 @@
       "sceneId": 3,
       "badge": "THE PHYSICAL TRUTH // 03",
       "statHighlight": {
-        "number": "38µs",
-        "label": "DAILY TIME SHIFT"
+        "number": "4000M",
+        "label": "DEEP ZONE"
       },
       "subMetrics": [
-        "14,000 MPH SPEED OFFSET",
-        "GRAVITATIONAL TIME DILATION"
+        "ROBOTIC COLLECTORS",
+        "400 ATMOSPHERES"
       ],
-      "voiceoverText": "In reality, gravity shifts time by thirty-eight microseconds daily!",
+      "voiceoverText": "Reaching the Clarion-Clipperton Zone demands massive robotic collectors. Machines, size of buildings, operate under 400 atmospheres of pressure.",
       "visualType": "reality",
       "mascotEmotion": "scanning"
     },
@@ -53,23 +53,35 @@
       "badge": "CRITICAL BOTTLENECK ALERT // 04",
       "headline": "PHYSICAL FRAGILITY AT RISK",
       "chipList": [
-        "🌩️ IONOSPHERE DRIFT",
-        "⏱️ CLOCK DRIFT",
-        "🌍 ORBITAL DECAY"
+        "🌊 SEDIMENT PLUMES",
+        "🚨 HABITAT DESTRUCTION",
+        "💥 NOISE POLLUTION"
       ],
-      "voiceoverText": "Without massive code intervention, navigation fails instantly due to ionosphere drift, clock drift, and orbital decay.",
+      "voiceoverText": "This fragile ecosystem faces huge risks: 🌊 Sediment Plumes, 🚨 Habitat Destruction, and 💥 Noise Pollution. Each poses immense challenges to deep-sea life.",
       "visualType": "danger",
       "mascotEmotion": "shocked"
     },
     {
       "sceneId": 5,
       "badge": "THE DATA VERDICT // 05",
-      "headline": "SPACE-TIME BREAKS MAPS",
-      "subheadline": "RELATIVITY IS ALWAYS WATCHING",
+      "headline": "PRICE TAG BEYOND DOLLARS",
+      "subheadline": "ENVIRONMENTAL VS. ECONOMIC",
       "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "This proves space-time is secretly breaking our maps, leaving everyone still asking...",
+      "voiceoverText": "So, while these metals hold immense value, the true cost and method remain debated, leaving everyone still asking...",
       "visualType": "resolution",
       "mascotEmotion": "celebrating"
     }
-  ]
+  ],
+  "sceneTimings": {
+    "s1": 262,
+    "s2": 333,
+    "s3": 300,
+    "s4": 378,
+    "s5": 243,
+    "chipRelFrames": [
+      131,
+      190,
+      245
+    ]
+  }
 }
