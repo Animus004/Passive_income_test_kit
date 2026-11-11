@@ -1,0 +1,125 @@
+name: Autonomous Daily Shorts & Reels Pipeline
+
+on:
+  schedule:
+    # Runs 3 times a day at optimal Shorts/Reels engagement hours: 05:00 UTC, 13:00 UTC, 21:00 UTC
+    - cron: '0 5,13,21 * * *'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Custom Topic Override (leave empty to pick next from queue)'
+        required: false
+        default: ''
+        type: string
+      dry_run:
+        description: 'Dry Run (generate script and audio only, skip render and upload)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-shorts-pipeline
+  cancel-in-progress: false
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: 🟢 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install Python TTS Engine
+        run: |
+          pip install --upgrade pip
+          pip install edge-tts
+
+      - name: 🐧 Install Ubuntu System Dependencies & Headless Chromium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg \
+            chromium-browser \
+            libgbm-dev \
+            fonts-noto-color-emoji \
+            fonts-roboto
+          
+          # Detect Chromium binary location and export for Puppeteer & Remotion
+          CHROME_PATH=$(which chromium-browser || which chromium || which google-chrome)
+          echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_PATH" >> $GITHUB_ENV
+          echo "Using Chromium binary at: $CHROME_PATH"
+
+      - name: 📦 Install NPM Dependencies
+        run: npm ci
+
+      - name: 🎬 Execute Autonomous Production Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ secrets.GEMINI_MODEL || 'gemini-2.5-flash' }}
+        run: |
+          BUILD_CMD="npm run build:daily"
+          
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            BUILD_CMD="$BUILD_CMD -- --dry-run"
+          fi
+          
+          if [ -n "${{ inputs.topic }}" ]; then
+            BUILD_CMD="$BUILD_CMD -- --topic \"${{ inputs.topic }}\""
+          fi
+          
+          echo "Executing: $BUILD_CMD"
+          eval $BUILD_CMD
+
+      - name: 🚀 Publish Video to YouTube Shorts & Instagram Reels
+        if: ${{ inputs.dry_run != true }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: ${{ secrets.YOUTUBE_PRIVACY_STATUS || 'public' }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+        run: node scripts/publish_all.js
+
+      - name: 💾 Commit & Push Updated Topic Queue
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add data/topics.json src/data/current_short.json
+          if git diff --staged --quiet; then
+            echo "No queue changes to commit."
+          else
+            git commit -m "chore: advance topic queue [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: 📤 Archive Rendered Video Artifact
+        if: always() && inputs.dry_run != true
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-short-${{ github.run_id }}
+          path: out/*.mp4
+          retention-days: 7
+          if-no-files-found: ignore
+

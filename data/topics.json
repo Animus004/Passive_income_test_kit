@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hft-fiber",
+    "topic": "High-Frequency Trading Fiber Cables",
+    "hookAngle": "How Wall Street drilled straight through the Allegheny Mountains to shave 3 milliseconds off trading time.",
+    "category": "finance-infrastructure",
+    "used": true,
+    "lastUsedAt": "2026-11-11T12:22:35.429Z"
+  },
+  {
+    "id": "gps-relativity",
+    "topic": "GPS General Relativity Math",
+    "hookAngle": "Why GPS satellites must correct their atomic clocks by 38 microseconds every day or Google Maps would drift by 10 kilometers.",
+    "category": "space-physics",
+    "used": true,
+    "lastUsedAt": "2026-11-11T12:28:09.381Z"
+  },
+  {
+    "id": "subsea-mining",
+    "topic": "Deep Ocean Polymetallic Mining",
+    "hookAngle": "Trillions of dollars of battery metals sitting 4,000 meters deep in the Clarion-Clipperton Zone in complete darkness.",
+    "category": "earth-resources",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "euv-lithography",
+    "topic": "Extreme UV Chip Photolithography",
+    "hookAngle": "How ASML shoots molten tin droplets twice with a CO2 laser 50,000 times a second to print 2-nanometer transistors.",
+    "category": "semiconductors",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "maritime-chokepoints",
+    "topic": "Global Maritime Choke Points",
+    "hookAngle": "Why 80% of all global maritime cargo passes through just four razor-thin straits that can shut down world trade overnight.",
+    "category": "geopolitics-trade",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "internet-undersea-cables",
+    "topic": "Undersea Fiber Optic Backbone",
+    "hookAngle": "Why 99% of all global internet traffic travels through thin rubber cables on the ocean floor rather than space satellites.",
+    "category": "telecom-networks",
+    "used": true,
+    "lastUsedAt": "2026-11-11T12:00:00Z"
+  },
+  {
+    "id": "stratum-atomic-clocks",
+    "topic": "Atomic Clock Internet Synchronization",
+    "hookAngle": "How atomic stratum clocks in deep vaults keep the entire financial system and cloud servers from desynchronizing and crashing.",
+    "category": "computing-time",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "datacenter-cooling",
+    "topic": "Hyperscale AI Data Center Cooling",
+    "hookAngle": "Why tech giants are submerging multi-million dollar GPU clusters into liquid fluorochemical baths and ocean trenches to survive thermal meltdown.",
+    "category": "ai-datacenter",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "project-silica",
+    "topic": "10,000-Year Quartz Glass Archiving",
+    "hookAngle": "How femtosecond lasers are etching petabytes of humanity's knowledge inside indestructible fused quartz glass plates.",
+    "category": "data-storage",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "dark-fleet-tankers",
+    "topic": "Dark Fleet Tankers & Satellite AIS Spoofing",
+    "hookAngle": "How ghost oil tankers manipulate GPS signals and fake circular orbit tracks to transport billions in secret cargo.",
+    "category": "maritime-intelligence",
+    "used": false,
+    "lastUsedAt": null
+  }
+]

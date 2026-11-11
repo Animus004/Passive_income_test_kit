@@ -1,0 +1,254 @@
+/**
+ * Automated Gemini Script Generator for YouTube Shorts
+ * Powered by Gemini 2.5 Flash via @google/genai
+ * 
+ * Generates structured 5-scene scripts for "Data Detective" Shorts:
+ * - Scene 1: The Dramatic Hook
+ * - Scene 2: The Space/Speed Myth
+ * - Scene 3: The Mind-Blowing Physical Reality
+ * - Scene 4: Critical Bottlenecks & Hazards (3 synchronized chips)
+ * - Scene 5: Resolution & Infinite Retention Loop Bridge
+ * 
+ * Usage:
+ *   node scripts/generate_script.js --topic "High-Frequency Trading Fiber Cables"
+ *   node scripts/generate_script.js (picks next topic from data/topics.json)
+ */
+
+const fs = require('fs');
+const path = require('path');
+require('dotenv').config();
+const { GoogleGenAI } = require('@google/genai');
+
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+const TOPICS_PATH = path.join(PROJECT_ROOT, 'data', 'topics.json');
+const OUTPUT_PATH = path.join(PROJECT_ROOT, 'src', 'data', 'current_short.json');
+
+function parseArgs() {
+  const args = process.argv.slice(2);
+  let topicArg = null;
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--topic' && args[i + 1]) {
+      topicArg = args[i + 1];
+      i++;
+    }
+  }
+  return { topicArg };
+}
+
+function selectTopic(topicArg) {
+  if (topicArg) {
+    return {
+      topic: topicArg,
+      hookAngle: `The hidden physical reality and data bottlenecks behind ${topicArg}.`,
+      isCustom: true,
+    };
+  }
+
+  if (!fs.existsSync(TOPICS_PATH)) {
+    throw new Error(`Topics file not found at ${TOPICS_PATH}`);
+  }
+
+  const topics = JSON.parse(fs.readFileSync(TOPICS_PATH, 'utf-8'));
+  let chosen = topics.find((t) => !t.used);
+
+  // If all are used, reset all and pick the first
+  if (!chosen && topics.length > 0) {
+    console.log('🔄 All topics previously used. Resetting queue...');
+    topics.forEach((t) => (t.used = false));
+    chosen = topics[0];
+  }
+
+  if (!chosen) {
+    return {
+      topic: 'High-Frequency Trading Fiber Cables',
+      hookAngle: 'How Wall Street drilled straight through the Allegheny Mountains to shave 3 milliseconds off trading time.',
+      isCustom: true,
+    };
+  }
+
+  return { ...chosen, isCustom: false };
+}
+
+function markTopicUsed(topicObj) {
+  if (topicObj.isCustom || !fs.existsSync(TOPICS_PATH)) return;
+
+  const topics = JSON.parse(fs.readFileSync(TOPICS_PATH, 'utf-8'));
+  const found = topics.find((t) => t.id === topicObj.id || t.topic === topicObj.topic);
+  if (found) {
+    found.used = true;
+    found.lastUsedAt = new Date().toISOString();
+    fs.writeFileSync(TOPICS_PATH, JSON.stringify(topics, null, 2), 'utf-8');
+    console.log(`📌 Marked topic [${found.topic}] as used in data/topics.json`);
+  }
+}
+
+async function generateScript() {
+  const { topicArg } = parseArgs();
+  const selected = selectTopic(topicArg);
+
+  console.log('====================================================');
+  console.log('🤖 GEMINI 2.5 FLASH SCRIPT GENERATOR');
+  console.log('====================================================');
+  console.log(`🎯 Topic: "${selected.topic}"`);
+  console.log(`💡 Angle: "${selected.hookAngle}"`);
+
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error('GEMINI_API_KEY is missing from .env');
+  }
+
+  const ai = new GoogleGenAI({ apiKey, apiVersion: 'v1beta' });
+  const prompt = `You are the lead showrunner and motion graphics scriptwriter for a viral YouTube Shorts channel called "Data Detective".
+Create a 30-35 second high-retention vertical video script about: "${selected.topic}".
+Key angle: "${selected.hookAngle}".
+
+CRITICAL PRODUCTION RULES:
+1. TOTAL WORD COUNT: STRICTLY 75 to 95 words total across all 5 scenes. Keep sentences punchy, conversational, and energetic.
+2. 5-SCENE STRUCTURE:
+   - Scene 1 (The Hook): Start with a dramatic question or startling contrast. Must hook the viewer in the first 2 seconds. Mascot pose: "pointing".
+   - Scene 2 (The Myth): Highlight a widespread misconception. Must have a specific percentage/stat in "statHighlight". Mascot pose: "facepalm".
+   - Scene 3 (The Deep-Sea / Physical Reality): Reveal the mind-blowing physical infrastructure with a massive number in "statHighlight". Mascot pose: "scanning".
+   - Scene 4 (Danger / Choke Points): Highlight the physical bottlenecks/threats. Must contain exactly 3 hazard stamps in "chipList". The voiceover in Scene 4 MUST explicitly speak the exact names of the 3 danger chips in order! Mascot pose: "shocked".
+   - Scene 5 (Resolution & Retention Loop Bridge): Deliver the punchline verdict. The final line of the voiceover MUST end with an infinite retention loop phrase like "...leaving everyone still asking..." so it seamlessly connects directly back into Scene 1's opening hook question! Mascot pose: "celebrating".
+
+Return ONLY valid JSON with this exact schema:
+{
+  "topic": "${selected.topic}",
+  "videoTitle": "Catchy YouTube Shorts title with emoji (< 60 chars)",
+  "youtubeDescription": "2-3 engaging sentences explaining the short with 4-5 relevant #hashtags.",
+  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8"],
+  "fullVoiceover": "The entire concatenated voiceover script (75-95 words).",
+  "scenes": [
+    {
+      "sceneId": 1,
+      "badge": "DATA REALITY CHECK // 01",
+      "headline": "PUNCHY 3-6 WORD HOOK HEADLINE IN CAPS",
+      "voiceoverText": "Scene 1 spoken words (15-20 words).",
+      "visualType": "hook",
+      "mascotEmotion": "pointing"
+    },
+    {
+      "sceneId": 2,
+      "badge": "THE SPEED MYTH // 02",
+      "statHighlight": {
+        "number": "e.g. 70% or 80%",
+        "label": "CONCISE LABEL IN CAPS"
+      },
+      "voiceoverText": "Scene 2 spoken words (15-20 words).",
+      "visualType": "myth",
+      "mascotEmotion": "facepalm"
+    },
+    {
+      "sceneId": 3,
+      "badge": "THE PHYSICAL TRUTH // 03",
+      "statHighlight": {
+        "number": "e.g. 3ms or 99%",
+        "label": "HERO STAT LABEL IN CAPS"
+      },
+      "subMetrics": [
+        "e.g. $300 MILLION TUNNEL",
+        "SPEED OF LIGHT IN GLASS"
+      ],
+      "voiceoverText": "Scene 3 spoken words (15-20 words).",
+      "visualType": "reality",
+      "mascotEmotion": "scanning"
+    },
+    {
+      "sceneId": 4,
+      "badge": "CRITICAL BOTTLENECK ALERT // 04",
+      "headline": "PHYSICAL FRAGILITY AT RISK",
+      "chipList": [
+        "ICON + 2-3 WORD DANGER 1 (e.g. 🏔️ ROCK FRACTURES)",
+        "ICON + 2-3 WORD DANGER 2 (e.g. ⚡ DISPERSION DELAY)",
+        "ICON + 2-3 WORD DANGER 3 (e.g. 📡 MICROWAVE COMPETITION)"
+      ],
+      "voiceoverText": "Scene 4 spoken words explicitly speaking the 3 dangers in order (18-24 words).",
+      "visualType": "danger",
+      "mascotEmotion": "shocked"
+    },
+    {
+      "sceneId": 5,
+      "badge": "THE DATA VERDICT // 05",
+      "headline": "PUNCHLINE CONCLUSION IN CAPS",
+      "subheadline": "SECONDARY METRIC IN CAPS",
+      "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
+      "voiceoverText": "Scene 5 spoken words ending with loop bridge: '...leaving everyone still asking...' (12-18 words).",
+      "visualType": "resolution",
+      "mascotEmotion": "celebrating"
+    }
+  ]
+}`;
+
+  const primaryModel = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+  const modelsToTry = [primaryModel, 'gemini-2.0-flash', 'gemini-1.5-flash'].filter(
+    (v, i, a) => a.indexOf(v) === i
+  );
+
+  let response = null;
+  let lastErr = null;
+
+  for (const model of modelsToTry) {
+    try {
+      console.log(`📡 Sending request to Gemini (${model})...`);
+      response = await ai.models.generateContent({
+        model,
+        contents: prompt,
+        config: {
+          responseMimeType: 'application/json',
+          temperature: 0.7,
+        },
+      });
+      if (response && response.text) {
+        break;
+      }
+    } catch (err) {
+      console.warn(`⚠️ Model ${model} returned error (${err.status || err.message}). Trying fallback...`);
+      lastErr = err;
+      await new Promise((r) => setTimeout(r, 1200));
+    }
+  }
+
+  if (!response || !response.text) {
+    throw lastErr || new Error('All Gemini models failed to generate content');
+  }
+
+  const rawJson = response.text;
+  let parsed;
+  try {
+    parsed = JSON.parse(rawJson);
+  } catch (err) {
+    console.error('Failed to parse Gemini output:', rawJson);
+    throw err;
+  }
+
+  // Ensure fullVoiceover is present and cleanly concatenated from scenes
+  const sceneTexts = parsed.scenes.map((s) => s.voiceoverText.trim());
+  parsed.fullVoiceover = sceneTexts.join(' ');
+
+  const totalWords = parsed.fullVoiceover.split(/\s+/).length;
+  console.log(`✅ Script generated successfully! (${totalWords} words total)`);
+  console.log(`🎬 Title: "${parsed.videoTitle}"`);
+
+  // Save to src/data/current_short.json
+  const outDir = path.dirname(OUTPUT_PATH);
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(parsed, null, 2), 'utf-8');
+  console.log(`💾 Saved to ${OUTPUT_PATH}`);
+
+  // Mark topic used
+  markTopicUsed(selected);
+
+  return parsed;
+}
+
+if (require.main === module) {
+  generateScript().catch((err) => {
+    console.error('❌ Script generation failed:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { generateScript, selectTopic };
+

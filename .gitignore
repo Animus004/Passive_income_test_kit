@@ -2,6 +2,11 @@ node_modules
 dist
 .DS_Store
 .env
+.env.local
+client_secret*.json
+tokens*.json
+Pi node/
+*.vhdx
 
 # Ignore the output video from Git but not videos you import into src/.
 out

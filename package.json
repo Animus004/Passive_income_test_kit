@@ -9,7 +9,10 @@
   },
   "private": true,
   "dependencies": {
+    "@google/genai": "^3.1.0",
     "@remotion/cli": "4.0.542",
+    "dotenv": "^18.0.10",
+    "googleapis": "^189.0.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remotion": "4.0.542"
@@ -23,7 +26,18 @@
     "typescript": "5.9.3"
   },
   "scripts": {
+    "build:daily": "node scripts/daily_run.js",
+    "publish:all": "node scripts/publish_all.js",
     "dev": "remotion studio",
+    "generate-audio": "node scripts/generate_audio.js",
+    "render": "remotion render src/index.ts ShortVideo out/final_short.mp4",
+    "render:style-advisor": "remotion render src/index.ts StyleAdvisor out/style_advisor_short.mp4",
+    "render:data-detective": "remotion render src/index.ts DataDetective out/data_detective_short.mp4",
+    "build-short": "node scripts/run_pipeline.js",
+    "auth": "node scripts/upload_youtube.js --auth-only",
+    "upload": "node scripts/upload_youtube.js",
+    "auto-publish": "node scripts/auto_publish.js",
+    "schedule": "node scripts/scheduler.js",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"

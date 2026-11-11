@@ -1,0 +1,51 @@
+[
+  {
+    "id": "relativity-gps",
+    "title": "Why Einstein Saves Google Maps Every Single Day! 🛰️⏳ #Shorts #Tech",
+    "hook": "Did you know that without Albert Einstein, Google Maps would drift by six miles every single day?",
+    "script": "Without Albert Einstein, your Google Maps would be completely useless in just twenty four hours! GPS satellites orbit twelve thousand miles above Earth, traveling at nine thousand miles per hour. According to Einstein's relativity, gravity bends time itself. Satellite atomic clocks run thirty eight microseconds faster every day than clocks on Earth. If software engineers didn't program Einstein's exact time dilation formula into GPS satellites, your location would drift by six miles every day! Next time your Uber finds you, thank Einstein! Subscribe for more mind bending tech secrets!",
+    "tags": ["Shorts", "Tech", "GPS", "Science", "Physics", "GoogleMaps", "Einstein", "Space"],
+    "hashtags": "#Shorts #Tech #GPS #Science #Space"
+  },
+  {
+    "id": "ariane5-overflow",
+    "title": "The $500 Million Single Line Of Code Disaster! 🚀💥 #Shorts #Coding",
+    "hook": "In 1996, the world's most expensive software bug detonated a five hundred million dollar rocket in thirty seven seconds!",
+    "script": "In nineteen ninety six, a single line of computer code detonated a five hundred million dollar rocket in just thirty seven seconds! The Ariane Five rocket tried to convert a sixty four bit floating point velocity into a sixteen bit signed integer. But the number was too huge! It triggered an integer overflow error. The primary computer crashed instantly. Seconds later, the backup computer crashed from the exact same bug! The rocket believed it was veering off course, tried to make an impossible correction, and tore itself to shreds. All because of one line of code! Subscribe for more insane tech disasters!",
+    "tags": ["Shorts", "Coding", "SoftwareEngineering", "Bugs", "TechDisaster", "Space", "Programming"],
+    "hashtags": "#Shorts #Coding #Programming #Tech #Rocket"
+  },
+  {
+    "id": "quantum-crypto",
+    "title": "Quantum Computers Are About To Shatter Encryption! 🔓⚡ #Shorts #CyberSecurity",
+    "hook": "Every password, bank account, and encrypted message on Earth could be unlocked in minutes by a quantum computer!",
+    "script": "Every bank vault, encrypted chat, and password on Earth could soon be cracked in minutes! Modern cryptography relies on multiplying massive prime numbers that take supercomputers trillions of years to factor. But quantum computers use qubits that can exist in multiple states simultaneously. Using Shor's quantum algorithm, a powerful quantum processor can reverse engineer RSA keys almost instantly! Intelligence agencies are already harvesting encrypted internet traffic today, waiting for the day quantum decryption goes live. Is your data safe? Subscribe for daily cyber security warnings!",
+    "tags": ["Shorts", "CyberSecurity", "QuantumComputing", "Tech", "Encryption", "Hacking", "FutureTech"],
+    "hashtags": "#Shorts #CyberSecurity #Quantum #Tech #Future"
+  },
+  {
+    "id": "cpu-speed-limit",
+    "title": "Why CPU Speeds Have Been Stuck At 5 GHz For 20 Years! 💻🔥 #Shorts #Hardware",
+    "hook": "Why did computer processors hit five gigahertz twenty years ago, and never got much faster?",
+    "script": "Have you ever wondered why computer CPU speeds hit five gigahertz twenty years ago and basically stopped? In the nineteen nineties, clock speeds doubled every eighteen months. But around four gigahertz, engineers slammed into the thermal wall! Pumping electricity that fast turns silicon into a miniature stove that literally melts solder joints. Even worse, transistors became so microscopic that electrons began teleporting through barriers via quantum tunneling! Instead of making single cores faster, chipmakers were forced to go multi core. Subscribe for more crazy hardware facts!",
+    "tags": ["Shorts", "Hardware", "CPU", "GamingPC", "Tech", "Electronics", "Physics"],
+    "hashtags": "#Shorts #Hardware #CPU #Tech #PCMasterRace"
+  },
+  {
+    "id": "stuxnet-cyber-weapon",
+    "title": "The First Digital Weapon That Physically Destroyed A Facility! ☢️💻 #Shorts #CyberSecurity",
+    "hook": "Did you know a computer virus physically ripped a secret nuclear facility to pieces from the inside?",
+    "script": "In twenty ten, the world discovered the first cyber weapon that caused physical destruction in the real world: Stuxnet! The target was an air gapped uranium enrichment plant deep underground with zero internet connection. The virus secretly jumped the gap on a thumb drive, infiltrated Siemens industrial controllers, and secretly spun centrifuge rotors until they violently shattered into shrapnel! Meanwhile, it played back normal sensor readings so operators had no idea until it was too late. Software can literally be a physical weapon. Subscribe for more unbelievable cyber facts!",
+    "tags": ["Shorts", "CyberSecurity", "Stuxnet", "Hacking", "Tech", "MilitaryTech", "Malware"],
+    "hashtags": "#Shorts #CyberSecurity #Hacking #Tech #TrueStory"
+  },
+  {
+    "id": "voyager-computer",
+    "title": "This 1977 Spacecraft Has Less Memory Than A Key Fob! 🛰️🌌 #Shorts #Space",
+    "hook": "Voyager One is fifteen billion miles away in deep space, running on just sixty nine kilobytes of memory!",
+    "script": "Voyager One is currently fifteen billion miles away from Earth in freezing interstellar space, running on less computer memory than an electronic car key! Built in nineteen seventy seven, its computers possess just sixty nine kilobytes of RAM. That is ten million times less memory than your smartphone! Yet its eight track tape recorder and vintage code still fire thrusters, power antennas, and beam signals back across the solar system at the speed of light. NASA engineers still patch it in assembly code from billions of miles away! Subscribe for more epic space exploration facts!",
+    "tags": ["Shorts", "Space", "NASA", "Voyager", "Tech", "Astronomy", "RetroTech"],
+    "hashtags": "#Shorts #Space #NASA #Tech #Science"
+  }
+]
+

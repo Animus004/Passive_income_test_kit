@@ -11,3 +11,20 @@ Config.setRspack(true);
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.setDefaultPremountInSeconds(2);
+
+// Cloud CI Puppeteer & Chromium configuration
+if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+  Config.setBrowserExecutable(process.env.PUPPETEER_EXECUTABLE_PATH);
+}
+
+Config.setChromiumOptions({
+  enableMultiProcessOnLinux: true,
+  args: [
+    "--no-sandbox",
+    "--disable-setuid-sandbox",
+    "--disable-dev-shm-usage",
+    "--disable-gpu",
+    "--no-first-run",
+    "--no-zygote",
+  ],
+});

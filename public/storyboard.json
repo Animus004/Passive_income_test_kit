@@ -1,0 +1,67 @@
+{
+  "id": "gps-time-drift-relativity",
+  "title": "GPS Clocks Are Faster Than Yours! 🤯⏰ #Shorts #Tech",
+  "hook": "Did you know GPS satellites move so fast, their clocks tick FASTER than yours on Earth?",
+  "script": "Did you know GPS satellites move so fast, their clocks tick FASTER than yours on Earth? This isn't science fiction; it's Einstein's Relativity in action. Without constant correction, these atomic clocks would drift by thirty-eight microseconds every single day. That tiny difference would throw off your navigation by over six miles daily. Imagine your Uber driver missing your house by an entire city block, every single day. To keep GPS accurate, engineers apply both Special and General Relativity. Without Einstein's equations from nineteen-fifteen, global navigation would simply fail. So next time your phone guides you perfectly, remember: you're using a century-old physics masterpiece to find your way. Mind blown? Like and subscribe for more tech secrets.",
+  "tags": [
+    "Shorts",
+    "Tech",
+    "Science",
+    "Relativity",
+    "GPS",
+    "Physics",
+    "Einstein",
+    "Time"
+  ],
+  "hashtags": "#Shorts #Tech #Science #Physics",
+  "storyboard": {
+    "themeColor": "#38bdf8",
+    "accentColor": "#f59e0b",
+    "dangerColor": "#ef4444",
+    "scenes": [
+      {
+        "index": 1,
+        "type": "metric_gauge",
+        "title": "GPS CLOCKS DRIFT",
+        "value": 38,
+        "suffix": "μs / DAY",
+        "subtitle": "Time Dilation in Orbit",
+        "icon": "⏰"
+      },
+      {
+        "index": 2,
+        "type": "comparison",
+        "title": "THE RELATIVITY EFFECT",
+        "itemA": "Earth Clocks (Slower)",
+        "itemB": "Satellite Clocks (Faster)",
+        "highlight": "EINSTEIN'S RELATIVITY",
+        "icon": "⏳"
+      },
+      {
+        "index": 3,
+        "type": "alert_threat",
+        "title": "WITHOUT CORRECTION",
+        "subtitle": "6 MILE DRIFT DAILY",
+        "alertText": "GLOBAL NAVIGATION SYSTEM FAILURE",
+        "icon": "⚠️"
+      },
+      {
+        "index": 4,
+        "type": "tech_terminal",
+        "title": "THE EINSTEIN PATCH",
+        "codeSnippet": "calculate_relativistic_offset(gravity_potential, velocity_vector)",
+        "status": "APPLYING GENERAL AND SPECIAL RELATIVITY...",
+        "icon": "💻"
+      },
+      {
+        "index": 5,
+        "type": "reveal_outro",
+        "badge": "MIND BLOWN",
+        "headline": "EINSTEIN SAVES YOUR GPS",
+        "subline": "Every navigation relies on 1915 physics",
+        "cta": "SUBSCRIBE FOR DAILY TECH SECRETS",
+        "icon": "🔥"
+      }
+    ]
+  }
+}
