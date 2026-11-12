@@ -81,6 +81,33 @@ async function fetchPexelsVideo(query) {
   return null;
 }
 
+async function fetchUnsplashPhoto(query) {
+  const accessKey = process.env.UNSPLASH_ACCESS_KEY;
+  if (!accessKey) return null;
+
+  try {
+    const cleanQuery = query.replace(/[^\w\s-]/g, ' ').trim();
+    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(cleanQuery)}&orientation=portrait&per_page=3`;
+    const res = await fetch(url, {
+      headers: {
+        'Authorization': `Client-ID ${accessKey}`,
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[Unsplash] HTTP ${res.status} for "${query}"`);
+      return null;
+    }
+    const data = await res.json();
+    if (data.results && data.results.length > 0) {
+      const photo = data.results[0];
+      return photo.urls?.regular || photo.urls?.full || null;
+    }
+  } catch (e) {
+    console.warn(`[Unsplash] Query "${query}" failed:`, e.message);
+  }
+  return null;
+}
+
 async function fetchWikimediaImage(query) {
   try {
     const cleanQuery = query.replace(/[^\w\s-]/g, ' ').trim();
@@ -166,7 +193,29 @@ async function main() {
       }
     }
 
-    // 2. Try Wikimedia High-Res Photo if video not found
+    // 2. Try Unsplash High-Definition Photo
+    if (!downloaded) {
+      const unsplashUrl = await fetchUnsplashPhoto(query);
+      if (unsplashUrl) {
+        const destFile = path.join(BROLL_DIR, `scene${sceneNum}.jpg`);
+        try {
+          console.log(`  📷 Downloading Unsplash cinematic photo...`);
+          await downloadFile(unsplashUrl, destFile);
+          manifest.scenes[`scene${sceneNum}`] = {
+            type: 'image',
+            file: `broll/scene${sceneNum}.jpg`,
+            query,
+            source: 'unsplash',
+          };
+          downloaded = true;
+          console.log(`  ✅ Saved Unsplash image to public/broll/scene${sceneNum}.jpg`);
+        } catch (err) {
+          console.warn(`  ⚠️ Unsplash download failed, falling back to Wikimedia:`, err.message);
+        }
+      }
+    }
+
+    // 3. Try Wikimedia High-Res Photo if Unsplash not found
     if (!downloaded) {
       const imgUrl = await fetchWikimediaImage(query);
       if (imgUrl) {
@@ -178,6 +227,7 @@ async function main() {
             type: 'image',
             file: `broll/scene${sceneNum}.jpg`,
             query,
+            source: 'wikimedia',
           };
           downloaded = true;
           console.log(`  ✅ Saved image to public/broll/scene${sceneNum}.jpg`);

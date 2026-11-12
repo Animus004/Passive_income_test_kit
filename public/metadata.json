@@ -1,22 +1,22 @@
 {
   "voice": "en-US-ChristopherNeural",
-  "wordCount": 94,
-  "speechDurationSeconds": 49.23,
-  "totalDurationSeconds": 50.03,
-  "totalFrames": 1501,
+  "wordCount": 61,
+  "speechDurationSeconds": 27.24,
+  "totalDurationSeconds": 28.04,
+  "totalFrames": 841,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "sceneTimings": {
-    "s1": 249,
-    "s2": 298,
-    "s3": 364,
-    "s4": 375,
-    "s5": 215,
+    "s1": 138,
+    "s2": 171,
+    "s3": 159,
+    "s4": 165,
+    "s5": 208,
     "chipRelFrames": [
-      131,
-      206,
-      281
+      57,
+      89,
+      129
     ]
   }
 }

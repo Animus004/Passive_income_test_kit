@@ -1,21 +1,24 @@
 {
-  "updatedAt": "2026-11-12T01:55:54.035Z",
-  "topic": "Global Maritime Choke Points",
+  "updatedAt": "2026-11-12T02:30:08.562Z",
+  "topic": "Atomic Clock Internet Synchronization",
   "scenes": {
     "scene1": {
       "type": "image",
       "file": "broll/scene1.jpg",
-      "query": "cargo ship traffic"
+      "query": "atomic clock vault",
+      "source": "unsplash"
     },
     "scene2": {
       "type": "image",
       "file": "broll/scene2.jpg",
-      "query": "vast open ocean"
+      "query": "global stock market",
+      "source": "unsplash"
     },
     "scene3": {
       "type": "image",
       "file": "broll/scene3.jpg",
-      "query": "strait of hormuz narrow"
+      "query": "fiber optic cables",
+      "source": "unsplash"
     }
   }
 }

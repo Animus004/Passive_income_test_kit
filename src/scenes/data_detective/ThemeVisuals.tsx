@@ -159,14 +159,11 @@ export const ThemeHookGraphic: React.FC<{ theme: string; frame: number }> = ({
   const pulse = 1 + Math.sin(frame * 0.08) * 0.04;
 
   if (theme === "cyber") {
-    // Silicon Chip Wafer Centerpiece
+    // Neural / Processor Core Matrix (clean, abstract, dynamic)
     return (
       <svg width={700} height={700} viewBox="0 0 700 700" style={{ transform: `scale(${pulse})` }}>
-        <rect x={180} y={180} width={340} height={340} rx={24} fill="#022c22" stroke={colors.primary} strokeWidth={6} />
-        <rect x={220} y={220} width={260} height={260} rx={16} fill="#064e3b" stroke={colors.accent} strokeWidth={4} />
-        <text x={350} y={360} textAnchor="middle" fill="#ffffff" fontSize={36} fontWeight={900} fontFamily="monospace">
-          2nm WAFER
-        </text>
+        <rect x={180} y={180} width={340} height={340} rx={24} fill="rgba(6, 78, 59, 0.45)" stroke={colors.primary} strokeWidth={5} />
+        <rect x={220} y={220} width={260} height={260} rx={16} fill="rgba(2, 44, 34, 0.65)" stroke={colors.accent} strokeWidth={3} />
         {/* Radiating Bus Lines */}
         {Array.from({ length: 8 }).map((_, i) => {
           const offset = ((frame * 6 + i * 40) % 200);
@@ -186,15 +183,9 @@ export const ThemeHookGraphic: React.FC<{ theme: string; frame: number }> = ({
     return (
       <svg width={700} height={700} viewBox="0 0 700 700">
         <circle cx={350} cy={350} r={240} fill="none" stroke={colors.primary} strokeWidth={3} strokeDasharray="10 10" opacity={0.6} />
-        <circle cx={350} cy={350} r={160} fill="#1c1917" stroke={colors.accent} strokeWidth={5} />
+        <circle cx={350} cy={350} r={160} fill="rgba(28, 25, 23, 0.55)" stroke={colors.accent} strokeWidth={4} />
         {/* Radar Sweep */}
-        <line x1={350} y1={350} x2={350 + Math.cos(rot * 0.05) * 230} y2={350 + Math.sin(rot * 0.05) * 230} stroke={colors.primary} strokeWidth={5} />
-        <text x={350} y={345} textAnchor="middle" fill={colors.accent} fontSize={32} fontWeight={900}>
-          HFT RADAR
-        </text>
-        <text x={350} y={385} textAnchor="middle" fill="#ffffff" fontSize={24} fontWeight={800} fontFamily="monospace">
-          0.0003s LATENCY
-        </text>
+        <line x1={350} y1={350} x2={350 + Math.cos(rot * 0.05) * 230} y2={350 + Math.sin(rot * 0.05) * 230} stroke={colors.primary} strokeWidth={4} />
       </svg>
     );
   }
@@ -238,13 +229,10 @@ export const ThemeMythGraphic: React.FC<{ theme: string; frame: number; statNumb
     const scanY = 180 + ((frame * 8) % 340);
     return (
       <svg width={700} height={700} viewBox="0 0 700 700">
-        <polygon points="350,140 540,240 540,480 350,580 160,480 160,240" fill="#022c22" stroke={colors.primary} strokeWidth={5} />
-        <line x1={180} y1={scanY} x2={520} y2={scanY} stroke={colors.accent} strokeWidth={6} opacity={0.8} />
-        <text x={350} y={350} textAnchor="middle" fill="#ffffff" fontSize={70} fontWeight={900} fontFamily="monospace">
+        <polygon points="350,140 540,240 540,480 350,580 160,480 160,240" fill="rgba(2, 44, 34, 0.45)" stroke={colors.primary} strokeWidth={4} />
+        <line x1={180} y1={scanY} x2={520} y2={scanY} stroke={colors.accent} strokeWidth={5} opacity={0.8} />
+        <text x={350} y={370} textAnchor="middle" fill="#ffffff" fontSize={80} fontWeight={900} fontFamily="monospace">
           {statNumber}
-        </text>
-        <text x={350} y={410} textAnchor="middle" fill={colors.accent} fontSize={24} fontWeight={800}>
-          SOFTWARE LIMIT
         </text>
       </svg>
     );
@@ -254,12 +242,9 @@ export const ThemeMythGraphic: React.FC<{ theme: string; frame: number; statNumb
     // Fast Stock Ticker Distortion
     return (
       <svg width={700} height={700} viewBox="0 0 700 700">
-        <rect x={160} y={200} width={380} height={280} rx={24} fill="#1c1917" stroke={colors.accent} strokeWidth={6} />
-        <text x={350} y={330} textAnchor="middle" fill={colors.accent} fontSize={80} fontWeight={900} fontFamily="monospace">
+        <rect x={160} y={200} width={380} height={280} rx={24} fill="rgba(28, 25, 23, 0.55)" stroke={colors.accent} strokeWidth={5} />
+        <text x={350} y={360} textAnchor="middle" fill={colors.accent} fontSize={85} fontWeight={900} fontFamily="monospace">
           {statNumber}
-        </text>
-        <text x={350} y={395} textAnchor="middle" fill="#ffffff" fontSize={26} fontWeight={800}>
-          TRADERS ASSUME
         </text>
       </svg>
     );
@@ -348,19 +333,34 @@ export const ThemeRealityGraphic: React.FC<{
     );
   }
 
-  // Default / Ocean: Undersea Fiber-Optic Cables Highway
-  const pulseOffset = -frame * 12;
+  if (theme === "ocean") {
+    // Undersea Fiber-Optic Cables Highway
+    const pulseOffset = -frame * 12;
+    return (
+      <svg width={1080} height={1920} style={{ position: "absolute", top: 0, left: 0 }}>
+        {/* Cable 1 */}
+        <path d="M -100 480 C 250 420, 480 620, 800 490 S 1050 460, 1180 540" fill="none" stroke="#0c4a6e" strokeWidth={16} opacity={0.5} />
+        <path d="M -100 480 C 250 420, 480 620, 800 490 S 1050 460, 1180 540" fill="none" stroke={colors.primary} strokeWidth={6} strokeDasharray="20 40" strokeDashoffset={pulseOffset} />
+        {/* Cable 2 (Center Spine) */}
+        <path d="M -80 780 C 300 700, 520 920, 820 760 S 1060 840, 1180 810" fill="none" stroke={colors.secondary} strokeWidth={20} opacity={0.65} />
+        <path d="M -80 780 C 300 700, 520 920, 820 760 S 1060 840, 1180 810" fill="none" stroke="#ffffff" strokeWidth={7} strokeDasharray="25 45" strokeDashoffset={pulseOffset} />
+        {/* Cable 3 */}
+        <path d="M -60 1060 C 200 1140, 540 980, 850 1120 S 1040 1080, 1160 1150" fill="none" stroke="#0284c7" strokeWidth={16} opacity={0.55} />
+        <path d="M -60 1060 C 200 1140, 540 980, 850 1120 S 1040 1080, 1160 1150" fill="none" stroke={colors.accent} strokeWidth={6} strokeDasharray="20 40" strokeDashoffset={pulseOffset} />
+      </svg>
+    );
+  }
+
+  // Default / Infrastructure / Quantum: Modern HUD Coordinate Telemetry Frame
   return (
-    <svg width={1080} height={1920} style={{ position: "absolute", top: 0, left: 0 }}>
-      {/* Cable 1 */}
-      <path d="M -100 480 C 250 420, 480 620, 800 490 S 1050 460, 1180 540" fill="none" stroke="#0c4a6e" strokeWidth={16} opacity={0.5} />
-      <path d="M -100 480 C 250 420, 480 620, 800 490 S 1050 460, 1180 540" fill="none" stroke={colors.primary} strokeWidth={6} strokeDasharray="20 40" strokeDashoffset={pulseOffset} />
-      {/* Cable 2 (Center Spine) */}
-      <path d="M -80 780 C 300 700, 520 920, 820 760 S 1060 840, 1180 810" fill="none" stroke={colors.secondary} strokeWidth={20} opacity={0.65} />
-      <path d="M -80 780 C 300 700, 520 920, 820 760 S 1060 840, 1180 810" fill="none" stroke="#ffffff" strokeWidth={7} strokeDasharray="25 45" strokeDashoffset={pulseOffset} />
-      {/* Cable 3 */}
-      <path d="M -60 1060 C 200 1140, 540 980, 850 1120 S 1040 1080, 1160 1150" fill="none" stroke="#0284c7" strokeWidth={16} opacity={0.55} />
-      <path d="M -60 1060 C 200 1140, 540 980, 850 1120 S 1040 1080, 1160 1150" fill="none" stroke={colors.accent} strokeWidth={6} strokeDasharray="20 40" strokeDashoffset={pulseOffset} />
+    <svg width={900} height={900} viewBox="0 0 900 900">
+      <circle cx={450} cy={450} r={280} fill="none" stroke={colors.primary} strokeWidth={2} strokeDasharray="8 8" opacity={0.5} />
+      <circle cx={450} cy={450} r={340} fill="none" stroke={colors.secondary} strokeWidth={1.5} opacity={0.4} />
+      {/* Corner crosshairs */}
+      <line x1={450} y1={120} x2={450} y2={180} stroke={colors.accent} strokeWidth={3} />
+      <line x1={450} y1={720} x2={450} y2={780} stroke={colors.accent} strokeWidth={3} />
+      <line x1={120} y1={450} x2={180} y2={450} stroke={colors.accent} strokeWidth={3} />
+      <line x1={720} y1={450} x2={780} y2={450} stroke={colors.accent} strokeWidth={3} />
     </svg>
   );
 };
