@@ -108,6 +108,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
+          git pull --rebase origin ${{ github.ref_name }}
           git add data/topics.json src/data/current_short.json
           if git diff --staged --quiet; then
             echo "No queue changes to commit."
