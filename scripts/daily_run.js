@@ -24,6 +24,8 @@ function parseArgs() {
   const args = rawArgs.filter((a) => a !== '--');
   let topic = null;
   let dryRun = false;
+  let publish = false;
+  let composition = process.env.REMOTION_COMPOSITION || 'KurzgesagtExplainer';
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--topic' && args[i + 1]) {
@@ -31,10 +33,15 @@ function parseArgs() {
       i++;
     } else if (args[i] === '--dry-run') {
       dryRun = true;
+    } else if (args[i] === '--publish') {
+      publish = true;
+    } else if (args[i] === '--composition' && args[i + 1]) {
+      composition = args[i + 1];
+      i++;
     }
   }
 
-  return { topic, dryRun };
+  return { topic, dryRun, publish, composition };
 }
 
 function runCommand(command, args, description) {
@@ -70,12 +77,14 @@ function runCommand(command, args, description) {
 
 async function main() {
   const startTime = Date.now();
-  const { topic, dryRun } = parseArgs();
+  const { topic, dryRun, publish, composition } = parseArgs();
 
   console.log('####################################################');
-  console.log('🎬 AUTONOMOUS SHORTS PIPELINE: DAILY RUN INITIALIZED');
+  console.log('🎬 AUTONOMOUS SHORTS PIPELINE: MASTER RUN INITIALIZED');
   console.log(`Timestamp: ${new Date().toISOString()}`);
+  console.log(`Composition Engine: "${composition}"`);
   if (topic) console.log(`Custom Topic Override: "${topic}"`);
+  if (publish) console.log(`Auto-Publish: ENABLED (YouTube & Instagram)`);
   console.log('####################################################');
 
   if (!fs.existsSync(OUT_DIR)) {
@@ -106,7 +115,7 @@ async function main() {
     return;
   }
 
-  // STEP 3: Headless Remotion Render (DailyShort)
+  // STEP 3: Headless Remotion Render
   const now = new Date();
   const pad = (n) => String(n).padStart(2, '0');
   const timestampStr = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
@@ -118,9 +127,9 @@ async function main() {
     'remotion',
     'render',
     'src/index.ts',
-    'DailyShort',
+    composition,
     relativeOutputPath,
-    '--concurrency=1',
+    '--concurrency=4',
     '--image-format=jpeg',
     '--overwrite',
   ];
@@ -133,7 +142,7 @@ async function main() {
     renderArgs.push('--enable-multiprocess-on-linux');
   }
 
-  await runCommand('npx', renderArgs, `Step 3: Headless Remotion Render (${outputFileName})`);
+  await runCommand('npx', renderArgs, `Step 3: Headless Remotion Render [${composition}] (${outputFileName})`);
 
   // STEP 4: Verification
   if (!fs.existsSync(outputPath)) {
@@ -145,12 +154,17 @@ async function main() {
   const elapsedSec = ((Date.now() - startTime) / 1000).toFixed(1);
 
   console.log('\n====================================================');
-  console.log('🎉 PIPELINE COMPLETED SUCCESSFULLY!');
+  console.log('🎉 RENDER COMPLETED SUCCESSFULLY!');
   console.log(`📁 Master Video: ${outputPath}`);
   console.log(`📦 File Size: ${sizeMB} MB`);
   console.log(`⏱️ Total Execution Time: ${elapsedSec}s`);
   console.log(`🏷️ Title: "${currentShort.videoTitle}"`);
   console.log('====================================================\n');
+
+  // STEP 5: Automated Multi-Platform Publishing (if --publish is enabled)
+  if (publish) {
+    await runCommand('node', ['scripts/publish_all.js', '--video', outputPath], 'Step 4: Autonomous YouTube / Social Publishing');
+  }
 }
 
 if (require.main === module) {

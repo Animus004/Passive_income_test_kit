@@ -78,5 +78,165 @@
     "category": "maritime-intelligence",
     "used": false,
     "lastUsedAt": null
+  },
+  {
+    "id": "bgp-hijacking",
+    "topic": "The BGP Internet Routing Hijack",
+    "hookAngle": "How a small internet provider in Nigeria accidentally rerouted the entire global web traffic of Google and Cloudflare into a black hole.",
+    "category": "cybersecurity-networking",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "tsmc-seismic-dampers",
+    "topic": "TSMC 2nm Cleanroom Vibration Isolators",
+    "hookAngle": "How semiconductor megafabs sit on giant active pneumatic air cushions so passing bullet trains do not ruin atomic lithography.",
+    "category": "semiconductors-engineering",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "y2k38-epoch-bug",
+    "topic": "The Year 2038 Unix Time Apocalypse",
+    "hookAngle": "Why 32-bit Unix servers, airplanes, and medical equipment will reset to 1901 on January 19, 2038 unless re-engineered.",
+    "category": "software-computing",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "cosmic-ray-bit-flips",
+    "topic": "Cosmic Ray Single Event Upset Bit Flips",
+    "hookAngle": "How ionizing particles from exploded supernova stars hit computer RAM and altered national election tallies.",
+    "category": "space-computing",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "dns-root-ceremony",
+    "topic": "The Secret DNS Root Key Ceremony",
+    "hookAngle": "The classified bi-annual ritual where 14 keyholders meet in high-security bank vaults to guard the master keys of the internet.",
+    "category": "cybersecurity",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "subsea-cable-sharks",
+    "topic": "Deep Ocean Sharks vs Fiber Optic Armor",
+    "hookAngle": "Why undersea fiber cables require Kevlar and braided double-steel armor because ocean sharks mistake optical repeaters for prey.",
+    "category": "telecom-ocean",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "salt-cavern-oil-vaults",
+    "topic": "Subterranean Salt Cavern Strategic Oil Reserves",
+    "hookAngle": "How hundreds of millions of barrels of emergency crude oil are stored 2,000 feet deep inside hollowed-out prehistoric salt domes.",
+    "category": "infrastructure-energy",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "sr71-titanium-leaks",
+    "topic": "SR-71 Blackbird Thermal Expansion Fuel Leaks",
+    "hookAngle": "Why the world's fastest spy plane leaked jet fuel constantly on the tarmac until atmospheric friction heated its titanium skin to 500 degrees.",
+    "category": "aerospace-materials",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "nuclear-diamond-batteries",
+    "topic": "28,000-Year Nuclear Diamond Batteries",
+    "hookAngle": "How irradiated graphite from decommissioned nuclear reactors is compressed into lab diamonds to power pacemakers and deep-space probes forever.",
+    "category": "nuclear-physics",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "starlink-laser-mesh",
+    "topic": "Starlink Optical Laser Crosslinks in Space Vacuum",
+    "hookAngle": "Why data moves 40 percent faster through laser beams between satellites in space vacuum than through glass fiber cables on Earth.",
+    "category": "telecom-space",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "svalbard-seed-vault",
+    "topic": "The Svalbard Arctic Doomsday Seed Vault",
+    "hookAngle": "A vault built deep inside an Arctic permafrost mountain designed to survive nuclear war and preserve 1.3 million species of human crops.",
+    "category": "survival-agriculture",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "asml-zeiss-mirrors",
+    "topic": "ASML Extreme Ultraviolet Mirrors",
+    "hookAngle": "Mirrors manufactured with such atomic flatness that if scaled to the size of Germany, the highest bump would be one millimeter.",
+    "category": "optics-nanotech",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "chernobyl-robot-failures",
+    "topic": "Chernobyl Robot Electronics Radiation Death",
+    "hookAngle": "Why the most advanced robots in 1986 died in minutes on Chernobyl's roof as gamma radiation turned microchip circuits into conductive mush.",
+    "category": "robotics-physics",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "icecube-neutrino-observatory",
+    "topic": "Antarctic IceCube Neutrino Observatory",
+    "hookAngle": "How scientists turned a cubic kilometer of Antarctic glacier ice into a giant telescope to detect invisible particles from black holes.",
+    "category": "astrophysics",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "taipei-101-tuned-mass-damper",
+    "topic": "The 660-Ton Tuned Mass Damper of Taipei 101",
+    "hookAngle": "A giant golden steel sphere suspended on eight hydraulic cables inside a skyscraper that swings to fight typhoon winds and 7.0 earthquakes.",
+    "category": "megastructure-engineering",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "hft-microwave-towers",
+    "topic": "Ultra-Low Latency Financial Microwave Relay Towers",
+    "hookAngle": "Why Wall Street firms erected direct line-of-sight microwave towers across the English Channel to shave 2.5 milliseconds off stock trades.",
+    "category": "finance-telecom",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "underground-copper-telephone-grid",
+    "topic": "The Phantom Underground Copper Telephone Grid",
+    "hookAngle": "Why millions of miles of pressurized, lead-sheathed copper cables from the 1930s still quietly power air traffic control and 911 dispatch centers.",
+    "category": "infrastructure-telecom",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "quantum-crypto-break",
+    "topic": "Harvest Now Decrypt Later Quantum Espionage",
+    "hookAngle": "Why intelligence agencies are hoovering up petabytes of encrypted internet traffic today to unlock it once quantum computers arrive.",
+    "category": "quantum-cybersecurity",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "norway-fjords-data-vaults",
+    "topic": "Subterranean Mine Cold Data Centers in Norwegian Fjords",
+    "hookAngle": "How former olive and ammunition mines inside arctic Norwegian granite mountains became the world's most secure zero-emission data centers.",
+    "category": "green-computing",
+    "used": false,
+    "lastUsedAt": null
+  },
+  {
+    "id": "gps-spoofing-black-sea",
+    "topic": "Black Sea GPS Circle Spoofing Mystery",
+    "hookAngle": "How dozens of commercial cargo ships suddenly saw their GPS navigation jump 20 miles inland to an international airport runway.",
+    "category": "electronic-warfare",
+    "used": false,
+    "lastUsedAt": null
   }
 ]
