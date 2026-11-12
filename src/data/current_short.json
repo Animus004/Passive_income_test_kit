@@ -1,65 +1,62 @@
 {
-  "topic": "10,000-Year Quartz Glass Archiving",
+  "topic": "Dark Fleet Tankers & Satellite AIS Spoofing",
   "visualTheme": "cyber",
-  "videoTitle": "Indestructible Data: 10,000-Year Quartz Archiving! 🤯",
-  "youtubeDescription": "Imagine our entire digital history lasting millennia. Discover how femtosecond lasers are etching petabytes of data into indestructible fused quartz glass, preserving humanity's knowledge for 10,000 years. This isn't sci-fi, it's our future!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#DataArchiving #QuartzGlass #FemtosecondLaser #FutureTech #DataStorage #DigitalPreservation #TechExplained #ScienceFacts",
+  "videoTitle": "Ghost Tankers: The Vanishing Fleet 👻⚓️",
+  "youtubeDescription": "Uncover the shadowy world of 'Dark Fleet' oil tankers manipulating satellite signals to disappear from global maps. Learn how these ghost ships transport billions in illicit cargo, leaving a trail of fake GPS data.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#DarkFleet #AISspoofing #GhostShips #MaritimeMystery #DataDetective #DarkFleet #AISSpoofing #GhostShips",
   "tags": [
-    "DataArchiving",
-    "QuartzGlass",
-    "FemtosecondLaser",
-    "FutureTech",
-    "DataStorage",
-    "DigitalPreservation",
-    "TechExplained",
-    "ScienceFacts"
+    "Dark Fleet",
+    "AIS Spoofing",
+    "Ghost Ships",
+    "Oil Tankers",
+    "GPS Manipulation",
+    "Maritime Security",
+    "Illegal Trade",
+    "Satellite Tracking"
   ],
   "cuts": [
     {
       "cutId": 1,
-      "voiceoverText": "What if your digital photos, our entire internet, could last 10,000 years?",
-      "visualQuery": "Ancient cave paintings",
+      "voiceoverText": "Ghost oil tankers vanish from maps, carrying billions in illicit cargo. This isn't fiction; it's the 'Dark Fleet'.",
+      "visualQuery": "satellite ship tracking anomaly",
       "cameraMotion": "zoom_in",
       "statHighlight": null
     },
     {
       "cutId": 2,
-      "voiceoverText": "Current data storage degrades fast; hard drives fail, leaving huge gaps in our history.",
-      "visualQuery": "Corrupt data glitch",
-      "cameraMotion": "pan_right",
+      "voiceoverText": "These ships manipulate satellite AIS signals, faking GPS coordinates. They create phantom circular orbit routes.",
+      "visualQuery": "AIS spoofing signal diagram",
+      "cameraMotion": "zoom_out",
       "statHighlight": null
     },
     {
       "cutId": 3,
-      "voiceoverText": "But femtosecond lasers are now etching petabytes of data into indestructible fused quartz glass.",
-      "visualQuery": "Femtosecond laser etching",
-      "cameraMotion": "track_forward",
-      "statHighlight": null
+      "voiceoverText": "Transporting $50 billion in illicit oil, they bypass sanctions and evade global oversight.",
+      "visualQuery": "oil tanker vast ocean",
+      "cameraMotion": "pan_left",
+      "statHighlight": {
+        "number": "$50B",
+        "label": "ILLICIT CARGO VALUE"
+      }
     },
     {
       "cutId": 4,
-      "voiceoverText": "Each tiny glass plate holds over 360 terabytes, resisting heat, water, and time.",
-      "visualQuery": "Micro etched quartz",
-      "cameraMotion": "zoom_in",
-      "statHighlight": {
-        "number": "360TB",
-        "label": "PER PLATE CAPACITY"
-      }
+      "voiceoverText": "Fake circular tracks confuse algorithms, designed to spot direct routes, making detection incredibly complex.",
+      "visualQuery": "satellite AIS circular track",
+      "cameraMotion": "tilt_up",
+      "statHighlight": null
     },
     {
       "cutId": 5,
-      "voiceoverText": "Imagine libraries of human knowledge preserved, accessible for the next ten millennia.",
-      "visualQuery": "Future archive vault",
-      "cameraMotion": "pan_left",
-      "statHighlight": {
-        "number": "10,000",
-        "label": "YEARS ARCHIVED"
-      }
+      "voiceoverText": "This shadow economy undermines international law, fueling conflicts, and posing immense environmental risks globally.",
+      "visualQuery": "global shipping routes map",
+      "cameraMotion": "dolly_in",
+      "statHighlight": null
     },
     {
       "cutId": 6,
-      "voiceoverText": "This isn't sci-fi; it's our future, leaving everyone still asking...",
-      "visualQuery": "Quartz glass plate",
-      "cameraMotion": "tilt_up",
+      "voiceoverText": "With each manipulated signal, vast fortunes vanish into the maritime abyss, leaving everyone still asking...",
+      "visualQuery": "dark ocean horizon",
+      "cameraMotion": "dolly_out",
       "statHighlight": null
     }
   ],
@@ -68,115 +65,112 @@
     "accent": "#eab308",
     "bgGradient": "radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)"
   },
-  "fullVoiceover": "What if your digital photos, our entire internet, could last 10,000 years? Current data storage degrades fast; hard drives fail, leaving huge gaps in our history. But femtosecond lasers are now etching petabytes of data into indestructible fused quartz glass. Each tiny glass plate holds over 360 terabytes, resisting heat, water, and time. Imagine libraries of human knowledge preserved, accessible for the next ten millennia. This isn't sci-fi; it's our future, leaving everyone still asking...",
+  "fullVoiceover": "Ghost oil tankers vanish from maps, carrying billions in illicit cargo. This isn't fiction; it's the 'Dark Fleet'. These ships manipulate satellite AIS signals, faking GPS coordinates. They create phantom circular orbit routes. Transporting $50 billion in illicit oil, they bypass sanctions and evade global oversight. Fake circular tracks confuse algorithms, designed to spot direct routes, making detection incredibly complex. This shadow economy undermines international law, fueling conflicts, and posing immense environmental risks globally. With each manipulated signal, vast fortunes vanish into the maritime abyss, leaving everyone still asking...",
   "mediaQueries": [
-    "Ancient cave paintings",
-    "Corrupt data glitch",
-    "Femtosecond laser etching",
-    "Micro etched quartz",
-    "Future archive vault",
-    "Quartz glass plate"
+    "satellite ship tracking anomaly",
+    "AIS spoofing signal diagram",
+    "oil tanker vast ocean",
+    "satellite AIS circular track",
+    "global shipping routes map",
+    "dark ocean horizon"
   ],
   "scenes": [
     {
       "sceneId": 1,
-      "voiceoverText": "What if your digital photos, our entire internet, could last 10,000 years?",
+      "voiceoverText": "Ghost oil tankers vanish from maps, carrying billions in illicit cargo. This isn't fiction; it's the 'Dark Fleet'.",
       "statHighlight": null
     },
     {
       "sceneId": 2,
-      "voiceoverText": "Current data storage degrades fast; hard drives fail, leaving huge gaps in our history.",
+      "voiceoverText": "These ships manipulate satellite AIS signals, faking GPS coordinates. They create phantom circular orbit routes.",
       "statHighlight": null
     },
     {
       "sceneId": 3,
-      "voiceoverText": "But femtosecond lasers are now etching petabytes of data into indestructible fused quartz glass.",
-      "statHighlight": null
+      "voiceoverText": "Transporting $50 billion in illicit oil, they bypass sanctions and evade global oversight.",
+      "statHighlight": {
+        "number": "$50B",
+        "label": "ILLICIT CARGO VALUE"
+      }
     },
     {
       "sceneId": 4,
-      "voiceoverText": "Each tiny glass plate holds over 360 terabytes, resisting heat, water, and time.",
-      "statHighlight": {
-        "number": "360TB",
-        "label": "PER PLATE CAPACITY"
-      }
+      "voiceoverText": "Fake circular tracks confuse algorithms, designed to spot direct routes, making detection incredibly complex.",
+      "statHighlight": null
     },
     {
       "sceneId": 5,
-      "voiceoverText": "Imagine libraries of human knowledge preserved, accessible for the next ten millennia.",
-      "statHighlight": {
-        "number": "10,000",
-        "label": "YEARS ARCHIVED"
-      }
+      "voiceoverText": "This shadow economy undermines international law, fueling conflicts, and posing immense environmental risks globally.",
+      "statHighlight": null
     },
     {
       "sceneId": 6,
-      "voiceoverText": "This isn't sci-fi; it's our future, leaving everyone still asking...",
+      "voiceoverText": "With each manipulated signal, vast fortunes vanish into the maritime abyss, leaving everyone still asking...",
       "statHighlight": null
     }
   ],
   "cutTimings": [
     {
       "cutId": 1,
-      "durationInFrames": 173
+      "durationInFrames": 224
     },
     {
       "cutId": 2,
-      "durationInFrames": 178
+      "durationInFrames": 263
     },
     {
       "cutId": 3,
-      "durationInFrames": 188
+      "durationInFrames": 224
     },
     {
       "cutId": 4,
-      "durationInFrames": 212
+      "durationInFrames": 217
     },
     {
       "cutId": 5,
-      "durationInFrames": 151
+      "durationInFrames": 229
     },
     {
       "cutId": 6,
-      "durationInFrames": 135
+      "durationInFrames": 199
     }
   ],
   "sceneTimings": {
     "cutTimings": [
       {
         "cutId": 1,
-        "durationInFrames": 173
+        "durationInFrames": 224
       },
       {
         "cutId": 2,
-        "durationInFrames": 178
+        "durationInFrames": 263
       },
       {
         "cutId": 3,
-        "durationInFrames": 188
+        "durationInFrames": 224
       },
       {
         "cutId": 4,
-        "durationInFrames": 212
+        "durationInFrames": 217
       },
       {
         "cutId": 5,
-        "durationInFrames": 151
+        "durationInFrames": 229
       },
       {
         "cutId": 6,
-        "durationInFrames": 135
+        "durationInFrames": 199
       }
     ],
-    "s1": 173,
-    "s2": 178,
-    "s3": 188,
-    "s4": 212,
-    "s5": 286,
+    "s1": 224,
+    "s2": 263,
+    "s3": 224,
+    "s4": 217,
+    "s5": 428,
     "chipRelFrames": [
-      74,
-      117,
-      159
+      76,
+      119,
+      163
     ]
   }
 }

@@ -192,7 +192,7 @@ async function main() {
 
   if (!scriptText) {
     scriptText =
-      "Where does the internet actually live? You think the entire web beams down from space? The real data reveals a shocking reality. Over seventy percent of people believe their international data comes from satellites. But real telemetry reveals space carries almost none of it! Ninety-nine percent of all global internet traffic travels through thin fiber-optic cables resting on the dark ocean floor! Yet these fragile lines are constantly threatened by commercial ship anchors, deep subsea quakes, and even shark attacks before reaching your phone! The cloud isn't in the sky; it's deep underwater, leaving everyone still asking...";
+      "Where does the internet actually live? You think the entire web beams down from space? The real data reveals a shocking reality. Over seventy percent of people believe their international data comes from satellites. But real telemetry reveals space carries almost none of it! Ninety-nine percent of all global internet traffic travels through thin fiber-optic cables resting on the dark ocean floor! Yet these fragile lines are constantly threatened by commercial ship anchors, deep subsea quakes, and even shark attacks before reaching your phone! The cloud isn't in the sky; the entire digital world lives on the ocean floor.";
   }
 
   const selectedVoice = voice || DEFAULT_VOICE;

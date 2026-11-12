@@ -76,8 +76,8 @@
     "topic": "Dark Fleet Tankers & Satellite AIS Spoofing",
     "hookAngle": "How ghost oil tankers manipulate GPS signals and fake circular orbit tracks to transport billions in secret cargo.",
     "category": "maritime-intelligence",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-12T06:32:16.172Z"
   },
   {
     "id": "bgp-hijacking",

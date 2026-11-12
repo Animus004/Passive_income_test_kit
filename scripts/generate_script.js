@@ -162,7 +162,7 @@ CRITICAL DOCUMENTARY PRODUCTION RULES:
    - Do NOT use rigid slides or PowerPoint templates. Instead, structure the script as 5 to 7 dynamic cinematic cuts corresponding to natural speech beats.
    - Cut 1 (The Hook): A gripping question or startling paradox that hooks the viewer in the first 2 seconds.
    - Middle Cuts: Contrast widespread myths with jaw-dropping physical realities, engineering extremes, and real-world bottlenecks.
-   - Final Cut: Concludes with an infinite retention loop bridge ending with "...leaving everyone still asking..." so it seamlessly replays right into Cut 1's opening hook!
+   - Final Cut (The Conclusion): End on a powerful, authoritative, and complete mic-drop conclusion that delivers the core takeaway or a profound realization. NEVER use incomplete trailing phrases like "leaving everyone still asking..." or cliffhangers. The final sentence MUST be grammatically complete, impactful, and memorable.
 3. AUTHENTIC B-ROLL QUERIES:
    - For every single cut, provide a specific 2-4 word visual query targeting real photography or footage (e.g., "server immersion cooling liquid", "microchip silicon wafer glow", "undersea telecommunications cable deck", "high speed data center fiber").
    - NEVER use generic or cartoon queries.

@@ -11,7 +11,6 @@ import {
 } from "remotion";
 import { KurzgesagtCharacter, CharacterEmotion, CharacterProp } from "../../components/kurzgesagt/KurzgesagtCharacter";
 import { KurzgesagtBackground } from "../../components/kurzgesagt/KurzgesagtBackground";
-import { CartoonGaugeProp } from "../../components/kurzgesagt/KurzgesagtProps";
 import { CutData } from "../data_detective/DynamicCut";
 import { SubtitleWord } from "../../types";
 
@@ -98,14 +97,14 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
       {/* 1. Kurzgesagt Aesthetic Background */}
       <KurzgesagtBackground primaryColor={themeConfig.primary} />
 
-      {/* 2. Top-Middle Area: Dynamic Story Portal / Gauge (100% Tied to this Cut) */}
+      {/* 2. Top-Middle Area: Dynamic Story Portal with Context-Aware Telemetry Overlay */}
       <div
         style={{
           position: "absolute",
           top: "8%",
           left: "6%",
           width: "88%",
-          height: 760,
+          height: 640,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -115,72 +114,140 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           zIndex: 5,
         }}
       >
-        {hasStat ? (
-          // Dynamic Gauge for Stat Highlights
-          <CartoonGaugeProp
-            frame={frame}
-            valueText={cut.statHighlight!.number}
-            labelText={cut.statHighlight!.label}
-            scale={1.35}
+        {/* Dynamic Holo-Portal Frame displaying the topic's actual B-roll */}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            borderRadius: 36,
+            overflow: "hidden",
+            border: `5px solid ${themeConfig.primary}`,
+            boxShadow: `0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px ${themeConfig.primary}44`,
+            background: "#030712",
+          }}
+        >
+          <Img
+            src={mediaSrc}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: `scale(${brollZoom})`,
+              transformOrigin: "center center",
+              display: "block",
+            }}
+            onError={(e) => {
+              (e.target as HTMLElement).style.display = "none";
+            }}
           />
-        ) : (
-          // Dynamic Holo-Portal Frame displaying the topic's actual B-roll
+          {/* Glossy Reflection Overlay */}
           <div
             style={{
-              position: "relative",
-              width: "100%",
-              height: 580,
-              borderRadius: 36,
-              overflow: "hidden",
-              border: `5px solid ${themeConfig.primary}`,
-              boxShadow: `0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px ${themeConfig.primary}44`,
-              background: "#030712",
+              position: "absolute",
+              inset: 0,
+              background: `linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.4) 100%)`,
+              pointerEvents: "none",
+            }}
+          />
+          {/* Tech Corner Accents */}
+          <div
+            style={{
+              position: "absolute",
+              top: 18,
+              left: 20,
+              padding: "6px 16px",
+              borderRadius: 100,
+              background: "rgba(15, 23, 42, 0.85)",
+              border: `1.5px solid ${themeConfig.primary}`,
+              color: themeConfig.primary,
+              fontSize: 16,
+              fontWeight: 800,
+              letterSpacing: 2,
+              textTransform: "uppercase",
             }}
           >
-            <Img
-              src={mediaSrc}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                transform: `scale(${brollZoom})`,
-                transformOrigin: "center center",
-                display: "block",
-              }}
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = "none";
-              }}
-            />
-            {/* Glossy Reflection Overlay */}
+            VISUAL REEL #{cut.cutId}
+          </div>
+
+          {/* Contextual Metric Telemetry Overlay (Rendered when this cut has a stat) */}
+          {hasStat && (
             <div
               style={{
                 position: "absolute",
-                inset: 0,
-                background: `linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.4) 100%)`,
-                pointerEvents: "none",
-              }}
-            />
-            {/* Tech Corner Accents */}
-            <div
-              style={{
-                position: "absolute",
-                top: 18,
+                bottom: 20,
                 left: 20,
-                padding: "6px 16px",
-                borderRadius: 100,
-                background: "rgba(15, 23, 42, 0.85)",
-                border: `1.5px solid ${themeConfig.primary}`,
-                color: themeConfig.primary,
-                fontSize: 16,
-                fontWeight: 800,
-                letterSpacing: 2,
-                textTransform: "uppercase",
+                right: 20,
+                padding: "16px 24px",
+                borderRadius: 24,
+                background: "rgba(10, 15, 30, 0.92)",
+                backdropFilter: "blur(20px)",
+                border: `2.5px solid ${
+                  cut.statHighlight!.number.includes("$")
+                    ? "#f59e0b"
+                    : themeConfig.primary
+                }`,
+                boxShadow: "0 15px 35px rgba(0,0,0,0.8)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                animation: "popIn 0.3s ease-out",
               }}
             >
-              VISUAL REEL #{cut.cutId}
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span
+                  style={{
+                    color: "rgba(255, 255, 255, 0.75)",
+                    fontSize: 16,
+                    fontWeight: 800,
+                    letterSpacing: 3,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {cut.statHighlight!.label}
+                </span>
+                <span
+                  style={{
+                    color: cut.statHighlight!.number.includes("$")
+                      ? "#fbbf24"
+                      : "#38bdf8",
+                    fontSize: 54,
+                    fontWeight: 900,
+                    letterSpacing: -1,
+                    lineHeight: 1.1,
+                    textShadow: `0 0 25px ${
+                      cut.statHighlight!.number.includes("$")
+                        ? "rgba(245, 158, 11, 0.6)"
+                        : "rgba(56, 189, 248, 0.6)"
+                    }`,
+                  }}
+                >
+                  {cut.statHighlight!.number}
+                </span>
+              </div>
+              <div
+                style={{
+                  padding: "8px 18px",
+                  borderRadius: 100,
+                  backgroundColor: cut.statHighlight!.number.includes("$")
+                    ? "rgba(245, 158, 11, 0.2)"
+                    : "rgba(56, 189, 248, 0.2)",
+                  border: `1.5px solid ${
+                    cut.statHighlight!.number.includes("$")
+                      ? "#f59e0b"
+                      : themeConfig.primary
+                  }`,
+                  color: "#ffffff",
+                  fontSize: 16,
+                  fontWeight: 800,
+                  letterSpacing: 2,
+                }}
+              >
+                {cut.statHighlight!.number.includes("$") ? "FINANCE" : "DATA"}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {/* 3. Bottom Third: Hero Scale Kurzgesagt Duck Scientist Character */}
