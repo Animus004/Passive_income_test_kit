@@ -1,98 +1,182 @@
 {
-  "topic": "Atomic Clock Internet Synchronization",
-  "visualTheme": "cyber",
-  "mediaQueries": [
-    "atomic clock vault",
-    "global stock market",
-    "fiber optic cables"
-  ],
-  "videoTitle": "Why The Internet Doesn't Crash ⏰💥",
-  "youtubeDescription": "Discover how deep underground atomic clocks keep global stock markets and cloud servers perfectly synchronized.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#AtomicClock #TechSecrets #DataDetective #CyberSecurity #CloudComputing #atomicclock #internettime #stratumclocks",
+  "topic": "Hyperscale AI Data Center Cooling",
+  "visualTheme": "infrastructure",
+  "videoTitle": "AI's Thermal Meltdown: Liquid Cooled GPUs & Ocean Trenches! 🤯",
+  "youtubeDescription": "Discover how tech giants are battling extreme heat from AI's insatiable demand for processing power. From liquid immersion cooling to deep-sea data centers, witness the cutting-edge engineering preventing thermal meltdown.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#AICooling #DataCenter #LiquidImmersion #TechGiants #AI #AIcooling #datacenter #GPUcooling",
   "tags": [
-    "atomic clock",
-    "internet time",
-    "stratum clocks",
-    "finance crash",
-    "servers",
-    "data detective",
-    "network sync",
-    "time servers"
+    "AI cooling",
+    "data center",
+    "GPU cooling",
+    "liquid immersion",
+    "hyperscale AI",
+    "thermal management",
+    "tech innovation",
+    "future tech"
   ],
-  "fullVoiceover": "What stops the entire global financial system from instantly crashing into chaos? Most people think your Wi-Fi router keeps exact time. Not even close! Hidden deep in concrete vaults, atomic stratum clocks pulse with laser precision. But what happens during rock fractures, dispersion delay, or microwave competition? Without these ultra-precise vault clocks keeping the grid locked together, leaving everyone still asking...",
-  "scenes": [
+  "cuts": [
     {
-      "sceneId": 1,
-      "badge": "DATA REALITY CHECK // 01",
-      "headline": "WHAT STOPS GLOBAL FINANCIAL COLLAPSE?",
-      "voiceoverText": "What stops the entire global financial system from instantly crashing into chaos?",
-      "visualType": "hook",
-      "mascotEmotion": "pointing"
+      "cutId": 1,
+      "voiceoverText": "AI's insatiable hunger for processing power generates insane heat. How do tech giants stop meltdown?",
+      "visualQuery": "glowing AI server rack",
+      "cameraMotion": "zoom_in",
+      "statHighlight": null
     },
     {
-      "sceneId": 2,
-      "badge": "THE SPEED MYTH // 02",
+      "cutId": 2,
+      "voiceoverText": "Traditional air cooling simply can't handle GPUs pushing past 100°C, risking critical failure.",
+      "visualQuery": "hot server exhaust fan",
+      "cameraMotion": "zoom_out",
       "statHighlight": {
-        "number": "99%",
-        "label": "THINK WI-FI KEEPS TIME"
-      },
-      "voiceoverText": "Most people think your Wi-Fi router keeps exact time. Not even close!",
-      "visualType": "myth",
-      "mascotEmotion": "facepalm"
+        "number": "100°C",
+        "label": "GPU TEMP LIMIT"
+      }
     },
     {
-      "sceneId": 3,
-      "badge": "THE PHYSICAL TRUTH // 03",
+      "cutId": 3,
+      "voiceoverText": "So, they're submerging multi-million dollar GPU clusters into liquid fluorochemical baths.",
+      "visualQuery": "server immersion cooling liquid",
+      "cameraMotion": "pan_left",
+      "statHighlight": null
+    },
+    {
+      "cutId": 4,
+      "voiceoverText": "Others are building data centers in ocean trenches, using the deep sea's natural chill.",
+      "visualQuery": "underwater server farm",
+      "cameraMotion": "dolly_out",
+      "statHighlight": null
+    },
+    {
+      "cutId": 5,
+      "voiceoverText": "These extreme cooling solutions are now essential for AI's survival and future growth, costing billions.",
+      "visualQuery": "futuristic server room",
+      "cameraMotion": "tilt_up",
       "statHighlight": {
-        "number": "1B",
-        "label": "NANOSECOND PRECISION"
-      },
-      "subMetrics": [
-        "UNDERGROUND VAULTS",
-        "LASER OSCILLATORS"
-      ],
-      "voiceoverText": "Hidden deep in concrete vaults, atomic stratum clocks pulse with laser precision.",
-      "visualType": "reality",
-      "mascotEmotion": "scanning"
+        "number": "Billions",
+        "label": "COOLING INVESTMENT"
+      }
     },
     {
-      "sceneId": 4,
-      "badge": "CRITICAL BOTTLENECK ALERT // 04",
-      "headline": "PHYSICAL FRAGILITY AT RISK",
-      "chipList": [
-        "🏔️ ROCK FRACTURES",
-        "⚡ DISPERSION DELAY",
-        "📡 MICROWAVE COMPETITION"
-      ],
-      "voiceoverText": "But what happens during rock fractures, dispersion delay, or microwave competition?",
-      "visualType": "danger",
-      "mascotEmotion": "shocked"
-    },
-    {
-      "sceneId": 5,
-      "badge": "THE DATA VERDICT // 05",
-      "headline": "ATOMIC VAULTS SAVE THE WEB",
-      "subheadline": "ABSOLUTE TIME SYNCHRONIZATION",
-      "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "Without these ultra-precise vault clocks keeping the grid locked together, leaving everyone still asking...",
-      "visualType": "resolution",
-      "mascotEmotion": "celebrating"
+      "cutId": 6,
+      "voiceoverText": "The race for sustainable AI compute is on, leaving everyone still asking...",
+      "visualQuery": "AI processor close-up",
+      "cameraMotion": "rotate_360",
+      "statHighlight": null
     }
   ],
   "themeConfig": {
-    "primary": "#10b981",
+    "primary": "#f97316",
     "accent": "#eab308",
-    "bgGradient": "radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)"
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)"
   },
+  "fullVoiceover": "AI's insatiable hunger for processing power generates insane heat. How do tech giants stop meltdown? Traditional air cooling simply can't handle GPUs pushing past 100°C, risking critical failure. So, they're submerging multi-million dollar GPU clusters into liquid fluorochemical baths. Others are building data centers in ocean trenches, using the deep sea's natural chill. These extreme cooling solutions are now essential for AI's survival and future growth, costing billions. The race for sustainable AI compute is on, leaving everyone still asking...",
+  "mediaQueries": [
+    "glowing AI server rack",
+    "hot server exhaust fan",
+    "server immersion cooling liquid",
+    "underwater server farm",
+    "futuristic server room",
+    "AI processor close-up"
+  ],
+  "scenes": [
+    {
+      "sceneId": 1,
+      "voiceoverText": "AI's insatiable hunger for processing power generates insane heat. How do tech giants stop meltdown?",
+      "statHighlight": null
+    },
+    {
+      "sceneId": 2,
+      "voiceoverText": "Traditional air cooling simply can't handle GPUs pushing past 100°C, risking critical failure.",
+      "statHighlight": {
+        "number": "100°C",
+        "label": "GPU TEMP LIMIT"
+      }
+    },
+    {
+      "sceneId": 3,
+      "voiceoverText": "So, they're submerging multi-million dollar GPU clusters into liquid fluorochemical baths.",
+      "statHighlight": null
+    },
+    {
+      "sceneId": 4,
+      "voiceoverText": "Others are building data centers in ocean trenches, using the deep sea's natural chill.",
+      "statHighlight": null
+    },
+    {
+      "sceneId": 5,
+      "voiceoverText": "These extreme cooling solutions are now essential for AI's survival and future growth, costing billions.",
+      "statHighlight": {
+        "number": "Billions",
+        "label": "COOLING INVESTMENT"
+      }
+    },
+    {
+      "sceneId": 6,
+      "voiceoverText": "The race for sustainable AI compute is on, leaving everyone still asking...",
+      "statHighlight": null
+    }
+  ],
+  "cutTimings": [
+    {
+      "cutId": 1,
+      "durationInFrames": 202
+    },
+    {
+      "cutId": 2,
+      "durationInFrames": 220
+    },
+    {
+      "cutId": 3,
+      "durationInFrames": 186
+    },
+    {
+      "cutId": 4,
+      "durationInFrames": 165
+    },
+    {
+      "cutId": 5,
+      "durationInFrames": 211
+    },
+    {
+      "cutId": 6,
+      "durationInFrames": 176
+    }
+  ],
   "sceneTimings": {
-    "s1": 138,
-    "s2": 171,
-    "s3": 159,
+    "cutTimings": [
+      {
+        "cutId": 1,
+        "durationInFrames": 202
+      },
+      {
+        "cutId": 2,
+        "durationInFrames": 220
+      },
+      {
+        "cutId": 3,
+        "durationInFrames": 186
+      },
+      {
+        "cutId": 4,
+        "durationInFrames": 165
+      },
+      {
+        "cutId": 5,
+        "durationInFrames": 211
+      },
+      {
+        "cutId": 6,
+        "durationInFrames": 176
+      }
+    ],
+    "s1": 202,
+    "s2": 220,
+    "s3": 186,
     "s4": 165,
-    "s5": 208,
+    "s5": 387,
     "chipRelFrames": [
-      57,
-      89,
-      129
+      58,
+      91,
+      124
     ]
   }
 }

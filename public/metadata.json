@@ -1,22 +1,74 @@
 {
   "voice": "en-US-ChristopherNeural",
-  "wordCount": 61,
-  "speechDurationSeconds": 27.24,
-  "totalDurationSeconds": 28.04,
-  "totalFrames": 841,
+  "wordCount": 80,
+  "speechDurationSeconds": 37.87,
+  "totalDurationSeconds": 38.67,
+  "totalFrames": 1160,
   "fps": 30,
   "width": 1080,
   "height": 1920,
+  "cutTimings": [
+    {
+      "cutId": 1,
+      "durationInFrames": 202
+    },
+    {
+      "cutId": 2,
+      "durationInFrames": 220
+    },
+    {
+      "cutId": 3,
+      "durationInFrames": 186
+    },
+    {
+      "cutId": 4,
+      "durationInFrames": 165
+    },
+    {
+      "cutId": 5,
+      "durationInFrames": 211
+    },
+    {
+      "cutId": 6,
+      "durationInFrames": 176
+    }
+  ],
   "sceneTimings": {
-    "s1": 138,
-    "s2": 171,
-    "s3": 159,
+    "cutTimings": [
+      {
+        "cutId": 1,
+        "durationInFrames": 202
+      },
+      {
+        "cutId": 2,
+        "durationInFrames": 220
+      },
+      {
+        "cutId": 3,
+        "durationInFrames": 186
+      },
+      {
+        "cutId": 4,
+        "durationInFrames": 165
+      },
+      {
+        "cutId": 5,
+        "durationInFrames": 211
+      },
+      {
+        "cutId": 6,
+        "durationInFrames": 176
+      }
+    ],
+    "s1": 202,
+    "s2": 220,
+    "s3": 186,
     "s4": 165,
-    "s5": 208,
+    "s5": 387,
     "chipRelFrames": [
-      57,
-      89,
-      129
+      58,
+      91,
+      124
     ]
   }
 }

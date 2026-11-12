@@ -78,9 +78,18 @@ function runPythonTTS(scriptText, selectedVoice) {
 }
 
 function calculateSceneTimings(currentShort, subtitles, totalFrames) {
-  if (!currentShort || !currentShort.scenes || !Array.isArray(currentShort.scenes)) {
-    console.log('⚠️ No structured scenes found. Using default frame proportions.');
+  const cuts = (currentShort && (currentShort.cuts || currentShort.scenes)) || [];
+  
+  if (!cuts || cuts.length === 0) {
+    console.log('⚠️ No structured cuts or scenes found. Using default frame proportions.');
+    const defaultCutCount = 5;
+    const perCut = Math.floor(totalFrames / defaultCutCount);
+    const cutTimings = Array.from({ length: defaultCutCount }, (_, i) => ({
+      cutId: i + 1,
+      durationInFrames: i === defaultCutCount - 1 ? totalFrames - perCut * (defaultCutCount - 1) : perCut,
+    }));
     return {
+      cutTimings,
       s1: Math.round(totalFrames * 0.23),
       s2: Math.round(totalFrames * 0.23),
       s3: Math.round(totalFrames * 0.18),
@@ -89,67 +98,79 @@ function calculateSceneTimings(currentShort, subtitles, totalFrames) {
     };
   }
 
-  console.log('⏱️ Calculating exact audio-visual frame sync per scene...');
-  const scenes = currentShort.scenes;
+  console.log(`⏱️ Calculating exact audio-visual frame sync for ${cuts.length} dynamic cuts...`);
   let cumulativeWordCount = 0;
-  const sceneEndTimes = [];
+  const cutEndTimes = [];
 
-  for (let i = 0; i < scenes.length; i++) {
-    const sc = scenes[i];
-    const words = sc.voiceoverText.trim().split(/\s+/).filter(Boolean);
+  for (let i = 0; i < cuts.length; i++) {
+    const cut = cuts[i];
+    const text = cut.voiceoverText || '';
+    const words = text.trim().split(/\s+/).filter(Boolean);
     cumulativeWordCount += words.length;
 
     // Word index in global subtitles array (clamped)
-    const wordIdx = Math.min(cumulativeWordCount - 1, subtitles.length - 1);
+    const wordIdx = Math.min(cumulativeWordCount - 1, Math.max(0, subtitles.length - 1));
     const subWord = subtitles[wordIdx];
-    const endTime = subWord ? subWord.end : (i + 1) * (totalFrames / (scenes.length * FPS));
-    sceneEndTimes.push(endTime);
-    console.log(`  Scene ${sc.sceneId} (${sc.visualType}): ends at word "${subWord?.word}" (${endTime.toFixed(2)}s)`);
+    const endTime = subWord ? subWord.end : ((i + 1) * totalFrames) / (cuts.length * FPS);
+    cutEndTimes.push(endTime);
+    console.log(`  Cut ${cut.cutId || i + 1}: ends at word "${subWord?.word || ''}" (${endTime.toFixed(2)}s)`);
   }
 
-  const s1 = Math.max(60, Math.round(sceneEndTimes[0] * FPS));
-  const s2 = Math.max(60, Math.round((sceneEndTimes[1] - sceneEndTimes[0]) * FPS));
-  const s3 = Math.max(60, Math.round((sceneEndTimes[2] - sceneEndTimes[1]) * FPS));
-  const s4 = Math.max(60, Math.round((sceneEndTimes[3] - sceneEndTimes[2]) * FPS));
-  const s5 = Math.max(45, totalFrames - (s1 + s2 + s3 + s4));
+  // Calculate per-cut frame durations
+  const cutTimings = [];
+  let allocatedFrames = 0;
 
-  console.log(`🎯 Frame Allocation: Scene 1: ${s1}f | Scene 2: ${s2}f | Scene 3: ${s3}f | Scene 4: ${s4}f | Scene 5: ${s5}f | Total: ${totalFrames}f`);
+  for (let i = 0; i < cuts.length; i++) {
+    const cut = cuts[i];
+    const cutId = cut.cutId || i + 1;
+    let duration;
 
-  // Detect relative frame timing for Scene 4 hazard chips
-  let chipRelFrames = [Math.round(s4 * 0.35), Math.round(s4 * 0.55), Math.round(s4 * 0.75)];
-  if (scenes[3] && scenes[3].chipList && Array.isArray(scenes[3].chipList)) {
-    const s4StartSec = sceneEndTimes[2];
-    const s4EndSec = sceneEndTimes[3];
-    const s4Words = subtitles.filter(w => w.start >= s4StartSec - 0.2 && w.end <= s4EndSec + 0.5);
-
-    const detected = [];
-    scenes[3].chipList.forEach((chip) => {
-      const cleanChip = chip.replace(/[^\w\s]/g, '').toLowerCase().split(/\s+/).filter(Boolean);
-      for (const w of s4Words) {
-        const cleanW = w.word.replace(/[^\w]/g, '').toLowerCase();
-        if (cleanChip.includes(cleanW)) {
-          const relSec = Math.max(0, w.start - s4StartSec);
-          detected.push(Math.round(relSec * FPS));
-          break;
-        }
-      }
-    });
-
-    if (detected.length === 3 && detected[0] < detected[1] && detected[1] < detected[2]) {
-      chipRelFrames = detected;
-      console.log(`📍 Synchronized Scene 4 hazard chip triggers to frames: ${chipRelFrames.join(', ')}`);
+    if (i === 0) {
+      duration = Math.max(30, Math.round(cutEndTimes[0] * FPS));
+    } else if (i === cuts.length - 1) {
+      // Final cut takes all remaining frames to perfectly match totalFrames
+      duration = Math.max(30, totalFrames - allocatedFrames);
     } else {
-      console.log(`📍 Using standard staggered hazard chip triggers: ${chipRelFrames.join(', ')}`);
+      const startSec = cutEndTimes[i - 1];
+      const endSec = cutEndTimes[i];
+      duration = Math.max(30, Math.round((endSec - startSec) * FPS));
     }
+
+    allocatedFrames += duration;
+    cutTimings.push({
+      cutId,
+      durationInFrames: duration,
+    });
   }
+
+  // Normalization pass if sum differs from totalFrames
+  const totalAllocated = cutTimings.reduce((sum, c) => sum + c.durationInFrames, 0);
+  const diff = totalFrames - totalAllocated;
+  if (diff !== 0 && cutTimings.length > 0) {
+    cutTimings[cutTimings.length - 1].durationInFrames += diff;
+  }
+
+  console.log(`🎯 Dynamic Cut Frame Allocation:`);
+  cutTimings.forEach((c) => {
+    console.log(`   - Cut ${c.cutId}: ${c.durationInFrames} frames (${(c.durationInFrames / FPS).toFixed(2)}s)`);
+  });
+  console.log(`   Total Frames: ${totalFrames}f (${(totalFrames / FPS).toFixed(2)}s)`);
+
+  // Build legacy s1-s5 mapping for backward compatibility
+  const s1 = cutTimings[0]?.durationInFrames || Math.round(totalFrames * 0.2);
+  const s2 = cutTimings[1]?.durationInFrames || Math.round(totalFrames * 0.2);
+  const s3 = cutTimings[2]?.durationInFrames || Math.round(totalFrames * 0.2);
+  const s4 = cutTimings[3]?.durationInFrames || Math.round(totalFrames * 0.2);
+  const s5 = cutTimings.slice(4).reduce((sum, c) => sum + c.durationInFrames, 0) || Math.max(30, totalFrames - (s1 + s2 + s3 + s4));
 
   return {
+    cutTimings,
     s1,
     s2,
     s3,
     s4,
     s5,
-    chipRelFrames,
+    chipRelFrames: [Math.round(s4 * 0.35), Math.round(s4 * 0.55), Math.round(s4 * 0.75)],
   };
 }
 
@@ -188,13 +209,15 @@ async function main() {
 
   const timings = calculateSceneTimings(currentShort, subtitles, metadata.totalFrames);
 
-  // Write scene timings into current_short.json and metadata.json
+  // Write cut timings and scene timings into current_short.json and metadata.json
   if (currentShort) {
+    currentShort.cutTimings = timings.cutTimings;
     currentShort.sceneTimings = timings;
     fs.writeFileSync(CURRENT_SHORT_PATH, JSON.stringify(currentShort, null, 2), 'utf-8');
-    console.log(`💾 Saved scene timings into ${CURRENT_SHORT_PATH}`);
+    console.log(`💾 Saved cut timings and scene timings into ${CURRENT_SHORT_PATH}`);
   }
 
+  metadata.cutTimings = timings.cutTimings;
   metadata.sceneTimings = timings;
   fs.writeFileSync(METADATA_OUTPUT, JSON.stringify(metadata, null, 2), 'utf-8');
 

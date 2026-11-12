@@ -1,23 +1,79 @@
 {
-  "updatedAt": "2026-11-12T02:30:08.562Z",
-  "topic": "Atomic Clock Internet Synchronization",
+  "updatedAt": "2026-11-12T03:02:38.416Z",
+  "topic": "Hyperscale AI Data Center Cooling",
+  "cuts": {
+    "cut_1": {
+      "type": "image",
+      "file": "broll/cut_1.jpg",
+      "query": "glowing AI server rack",
+      "source": "unsplash"
+    },
+    "cut_2": {
+      "type": "image",
+      "file": "broll/cut_2.jpg",
+      "query": "hot server exhaust fan",
+      "source": "unsplash"
+    },
+    "cut_3": {
+      "type": "image",
+      "file": "broll/cut_3.jpg",
+      "query": "server immersion cooling liquid",
+      "source": "unsplash"
+    },
+    "cut_4": {
+      "type": "image",
+      "file": "broll/cut_4.jpg",
+      "query": "underwater server farm",
+      "source": "unsplash"
+    },
+    "cut_5": {
+      "type": "image",
+      "file": "broll/cut_5.jpg",
+      "query": "futuristic server room",
+      "source": "unsplash"
+    },
+    "cut_6": {
+      "type": "image",
+      "file": "broll/cut_6.jpg",
+      "query": "AI processor close-up",
+      "source": "unsplash"
+    }
+  },
   "scenes": {
     "scene1": {
       "type": "image",
-      "file": "broll/scene1.jpg",
-      "query": "atomic clock vault",
+      "file": "broll/cut_1.jpg",
+      "query": "glowing AI server rack",
       "source": "unsplash"
     },
     "scene2": {
       "type": "image",
-      "file": "broll/scene2.jpg",
-      "query": "global stock market",
+      "file": "broll/cut_2.jpg",
+      "query": "hot server exhaust fan",
       "source": "unsplash"
     },
     "scene3": {
       "type": "image",
-      "file": "broll/scene3.jpg",
-      "query": "fiber optic cables",
+      "file": "broll/cut_3.jpg",
+      "query": "server immersion cooling liquid",
+      "source": "unsplash"
+    },
+    "scene4": {
+      "type": "image",
+      "file": "broll/cut_4.jpg",
+      "query": "underwater server farm",
+      "source": "unsplash"
+    },
+    "scene5": {
+      "type": "image",
+      "file": "broll/cut_5.jpg",
+      "query": "futuristic server room",
+      "source": "unsplash"
+    },
+    "scene6": {
+      "type": "image",
+      "file": "broll/cut_6.jpg",
+      "query": "AI processor close-up",
       "source": "unsplash"
     }
   }

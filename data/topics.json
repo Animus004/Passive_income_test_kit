@@ -60,8 +60,8 @@
     "topic": "Hyperscale AI Data Center Cooling",
     "hookAngle": "Why tech giants are submerging multi-million dollar GPU clusters into liquid fluorochemical baths and ocean trenches to survive thermal meltdown.",
     "category": "ai-datacenter",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-12T03:00:19.306Z"
   },
   {
     "id": "project-silica",

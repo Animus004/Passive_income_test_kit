@@ -152,89 +152,48 @@ async function generateScript() {
   }
 
   const ai = new GoogleGenAI({ apiKey, apiVersion: 'v1beta' });
-  const prompt = `You are the lead showrunner and motion graphics scriptwriter for a viral YouTube Shorts channel called "Data Detective".
+  const prompt = `You are the lead showrunner and investigative visual director for a viral YouTube Shorts documentary channel ("Data Detective" in the cinematic style of Vox, Polymatter, and ColdFusion).
 Create a 30-35 second high-retention vertical video script about: "${selected.topic}".
 Key angle: "${selected.hookAngle}".
 
-CRITICAL PRODUCTION RULES:
-1. TOTAL WORD COUNT: STRICTLY 75 to 95 words total across all 5 scenes. Keep sentences punchy, conversational, and energetic.
-2. 5-SCENE STRUCTURE:
-   - Scene 1 (The Hook): Start with a dramatic question or startling contrast. Must hook the viewer in the first 2 seconds. Mascot pose: "pointing".
-   - Scene 2 (The Myth): Highlight a widespread misconception. Must have a specific percentage/stat in "statHighlight". Mascot pose: "facepalm".
-   - Scene 3 (The Deep-Sea / Physical Reality): Reveal the mind-blowing physical infrastructure with a massive number in "statHighlight". Mascot pose: "scanning".
-   - Scene 4 (Danger / Choke Points): Highlight the physical bottlenecks/threats. Must contain exactly 3 hazard stamps in "chipList". The voiceover in Scene 4 MUST explicitly speak the exact names of the 3 danger chips in order! Mascot pose: "shocked".
-   - Scene 5 (Resolution & Retention Loop Bridge): Deliver the punchline verdict. The final line of the voiceover MUST end with an infinite retention loop phrase like "...leaving everyone still asking..." so it seamlessly connects directly back into Scene 1's opening hook question! Mascot pose: "celebrating".
+CRITICAL DOCUMENTARY PRODUCTION RULES:
+1. TOTAL WORD COUNT: STRICTLY 75 to 95 words total across all cuts. Keep sentences fast-paced, punchy, and conversational.
+2. DYNAMIC VISUAL CUTS (5 to 7 cuts total):
+   - Do NOT use rigid slides or PowerPoint templates. Instead, structure the script as 5 to 7 dynamic cinematic cuts corresponding to natural speech beats.
+   - Cut 1 (The Hook): A gripping question or startling paradox that hooks the viewer in the first 2 seconds.
+   - Middle Cuts: Contrast widespread myths with jaw-dropping physical realities, engineering extremes, and real-world bottlenecks.
+   - Final Cut: Concludes with an infinite retention loop bridge ending with "...leaving everyone still asking..." so it seamlessly replays right into Cut 1's opening hook!
+3. AUTHENTIC B-ROLL QUERIES:
+   - For every single cut, provide a specific 2-4 word visual query targeting real photography or footage (e.g., "server immersion cooling liquid", "microchip silicon wafer glow", "undersea telecommunications cable deck", "high speed data center fiber").
+   - NEVER use generic or cartoon queries.
+4. SELECTIVE DATA HIGHLIGHTS:
+   - If a cut explicitly speaks a number, percentage, or metric, include "statHighlight": { "number": "e.g. 99% or 100°C or $300M", "label": "CONCISE LABEL IN CAPS" }.
+   - If no number is spoken in that cut, set "statHighlight": null.
 
 Return ONLY valid JSON with this exact schema:
 {
   "topic": "${selected.topic}",
   "visualTheme": "One of: space | cyber | finance | quantum | ocean | infrastructure that best fits the subject",
-  "mediaQueries": [
-    "2-3 word visual search query for Scene 1 B-roll footage",
-    "2-3 word visual search query for Scene 2 B-roll footage",
-    "2-3 word visual search query for Scene 3 B-roll footage"
-  ],
-  "videoTitle": "Catchy YouTube Shorts title with emoji (< 60 chars)",
+  "videoTitle": "Catchy viral YouTube Shorts title with emoji (< 60 chars)",
   "youtubeDescription": "2-3 engaging sentences explaining the short with 4-5 relevant #hashtags.",
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8"],
-  "fullVoiceover": "The entire concatenated voiceover script (75-95 words).",
-  "scenes": [
+  "cuts": [
     {
-      "sceneId": 1,
-      "badge": "DATA REALITY CHECK // 01",
-      "headline": "PUNCHY 3-6 WORD HOOK HEADLINE IN CAPS",
-      "voiceoverText": "Scene 1 spoken words (15-20 words).",
-      "visualType": "hook",
-      "mascotEmotion": "pointing"
+      "cutId": 1,
+      "voiceoverText": "Cut 1 spoken sentence (12-16 words).",
+      "visualQuery": "2-4 word real visual footage query",
+      "cameraMotion": "zoom_in",
+      "statHighlight": null
     },
     {
-      "sceneId": 2,
-      "badge": "THE SPEED MYTH // 02",
+      "cutId": 2,
+      "voiceoverText": "Cut 2 spoken sentence (12-16 words).",
+      "visualQuery": "2-4 word real visual footage query",
+      "cameraMotion": "zoom_out",
       "statHighlight": {
-        "number": "e.g. 70% or 80%",
-        "label": "CONCISE LABEL IN CAPS"
-      },
-      "voiceoverText": "Scene 2 spoken words (15-20 words).",
-      "visualType": "myth",
-      "mascotEmotion": "facepalm"
-    },
-    {
-      "sceneId": 3,
-      "badge": "THE PHYSICAL TRUTH // 03",
-      "statHighlight": {
-        "number": "e.g. 3ms or 99%",
-        "label": "HERO STAT LABEL IN CAPS"
-      },
-      "subMetrics": [
-        "e.g. $300 MILLION TUNNEL",
-        "SPEED OF LIGHT IN GLASS"
-      ],
-      "voiceoverText": "Scene 3 spoken words (15-20 words).",
-      "visualType": "reality",
-      "mascotEmotion": "scanning"
-    },
-    {
-      "sceneId": 4,
-      "badge": "CRITICAL BOTTLENECK ALERT // 04",
-      "headline": "PHYSICAL FRAGILITY AT RISK",
-      "chipList": [
-        "ICON + 2-3 WORD DANGER 1 (e.g. 🏔️ ROCK FRACTURES)",
-        "ICON + 2-3 WORD DANGER 2 (e.g. ⚡ DISPERSION DELAY)",
-        "ICON + 2-3 WORD DANGER 3 (e.g. 📡 MICROWAVE COMPETITION)"
-      ],
-      "voiceoverText": "Scene 4 spoken words explicitly speaking the 3 dangers in order (18-24 words).",
-      "visualType": "danger",
-      "mascotEmotion": "shocked"
-    },
-    {
-      "sceneId": 5,
-      "badge": "THE DATA VERDICT // 05",
-      "headline": "PUNCHLINE CONCLUSION IN CAPS",
-      "subheadline": "SECONDARY METRIC IN CAPS",
-      "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "Scene 5 spoken words ending with loop bridge: '...leaving everyone still asking...' (12-18 words).",
-      "visualType": "resolution",
-      "mascotEmotion": "celebrating"
+        "number": "e.g. 80%",
+        "label": "CONCISE LABEL"
+      }
     }
   ]
 }`;
@@ -293,9 +252,38 @@ Return ONLY valid JSON with this exact schema:
   parsed.themeConfig = THEME_CONFIGS[parsed.visualTheme] || THEME_CONFIGS.space;
   console.log(`🎨 Visual Theme Assigned: "${parsed.visualTheme.toUpperCase()}"`);
 
-  // Ensure fullVoiceover is present and cleanly concatenated from scenes
-  const sceneTexts = parsed.scenes.map((s) => s.voiceoverText.trim());
-  parsed.fullVoiceover = sceneTexts.join(' ');
+  // Process dynamic cuts
+  if (!parsed.cuts && parsed.scenes) {
+    parsed.cuts = parsed.scenes.map((s, idx) => ({
+      cutId: s.sceneId || idx + 1,
+      voiceoverText: s.voiceoverText,
+      visualQuery: (parsed.mediaQueries && parsed.mediaQueries[idx]) || `${selected.topic} technology`,
+      cameraMotion: idx % 2 === 0 ? 'zoom_in' : 'zoom_out',
+      statHighlight: s.statHighlight || null,
+    }));
+  }
+
+  // Ensure every cut has clean, sanitized properties
+  parsed.cuts = (parsed.cuts || []).map((c, idx) => ({
+    cutId: c.cutId || idx + 1,
+    voiceoverText: (c.voiceoverText || '').trim(),
+    visualQuery: (c.visualQuery || `${selected.topic} technology`).trim(),
+    cameraMotion: c.cameraMotion || (idx % 2 === 0 ? 'zoom_in' : 'zoom_out'),
+    statHighlight: c.statHighlight && c.statHighlight.number ? c.statHighlight : null,
+  }));
+
+  // Clean full voiceover concatenated from cuts
+  parsed.fullVoiceover = parsed.cuts.map((c) => c.voiceoverText).join(' ');
+
+  // Media queries array for B-roll fetcher
+  parsed.mediaQueries = parsed.cuts.map((c) => c.visualQuery);
+
+  // Backward-compatible alias for any legacy inspector
+  parsed.scenes = parsed.cuts.map((c) => ({
+    sceneId: c.cutId,
+    voiceoverText: c.voiceoverText,
+    statHighlight: c.statHighlight,
+  }));
 
   // Inject monetization footer & structured hashtags into youtubeDescription
   parsed.youtubeDescription = formatMonetizedDescription(

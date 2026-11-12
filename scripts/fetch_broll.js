@@ -85,25 +85,33 @@ async function fetchUnsplashPhoto(query) {
   const accessKey = process.env.UNSPLASH_ACCESS_KEY;
   if (!accessKey) return null;
 
-  try {
-    const cleanQuery = query.replace(/[^\w\s-]/g, ' ').trim();
-    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(cleanQuery)}&orientation=portrait&per_page=3`;
-    const res = await fetch(url, {
-      headers: {
-        'Authorization': `Client-ID ${accessKey}`,
-      },
-    });
-    if (!res.ok) {
-      console.warn(`[Unsplash] HTTP ${res.status} for "${query}"`);
-      return null;
+  const cleanWords = query.replace(/[^\w\s-]/g, ' ').trim().split(/\s+/).filter(Boolean);
+  const candidates = [
+    cleanWords.join(' '),
+    cleanWords.slice(-2).join(' '), // e.g. "cooling liquid" or "server farm"
+    cleanWords.slice(0, 2).join(' '), // e.g. "server immersion" or "underwater server"
+    cleanWords[cleanWords.length - 1], // last keyword
+  ].filter((q, idx, arr) => q && q.length > 2 && arr.indexOf(q) === idx);
+
+  for (const q of candidates) {
+    try {
+      const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(q)}&orientation=portrait&per_page=3`;
+      const res = await fetch(url, {
+        headers: {
+          'Authorization': `Client-ID ${accessKey}`,
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.results && data.results.length > 0) {
+          const photo = data.results[0];
+          console.log(`  [Unsplash] Found photo using query variant: "${q}"`);
+          return photo.urls?.regular || photo.urls?.full || null;
+        }
+      }
+    } catch (e) {
+      console.warn(`[Unsplash] Query "${q}" error:`, e.message);
     }
-    const data = await res.json();
-    if (data.results && data.results.length > 0) {
-      const photo = data.results[0];
-      return photo.urls?.regular || photo.urls?.full || null;
-    }
-  } catch (e) {
-    console.warn(`[Unsplash] Query "${query}" failed:`, e.message);
   }
   return null;
 }
@@ -158,91 +166,122 @@ async function main() {
   console.log(`🎯 Topic: "${topic}"`);
   console.log(`🔍 Media Queries:`, queries);
 
+  const cuts = shortData.cuts || shortData.scenes || [];
+  const count = Math.max(cuts.length, queries.length);
+
+  console.log('====================================================');
+  console.log('🎬 AUTOMATED TOPIC B-ROLL & VISUAL MEDIA FETCHER');
+  console.log('====================================================');
+  console.log(`🎯 Topic: "${topic}"`);
+  console.log(`🎬 Dynamic Cuts: ${count}`);
+
   const manifest = {
     updatedAt: new Date().toISOString(),
     topic,
+    cuts: {},
     scenes: {},
   };
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < count; i++) {
     if (i > 0) {
       await new Promise((r) => setTimeout(r, 1200));
     }
-    const sceneNum = i + 1;
-    const query = queries[i] || `${topic} real`;
-    console.log(`\n[Scene ${sceneNum}] Searching media for: "${query}"...`);
+    const cutId = i + 1;
+    const cutObj = cuts[i] || {};
+    const query = cutObj.visualQuery || queries[i] || `${topic} real`;
+    console.log(`\n[Cut ${cutId}] Searching media for: "${query}"...`);
 
     let downloaded = false;
 
-    // 1. Try Pexels Video
-    const videoUrl = await fetchPexelsVideo(query);
-    if (videoUrl) {
-      const destFile = path.join(BROLL_DIR, `scene${sceneNum}.mp4`);
+    // 1. Try Unsplash High-Definition Photo first (verified key!)
+    const unsplashUrl = await fetchUnsplashPhoto(query);
+    if (unsplashUrl) {
+      const destFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
       try {
-        console.log(`  ▶️ Downloading Pexels HD video...`);
-        await downloadFile(videoUrl, destFile);
-        manifest.scenes[`scene${sceneNum}`] = {
-          type: 'video',
-          file: `broll/scene${sceneNum}.mp4`,
+        console.log(`  📷 Downloading Unsplash cinematic photo...`);
+        await downloadFile(unsplashUrl, destFile);
+        const cutEntry = {
+          type: 'image',
+          file: `broll/cut_${cutId}.jpg`,
           query,
+          source: 'unsplash',
         };
+        manifest.cuts[`cut_${cutId}`] = cutEntry;
+        manifest.scenes[`scene${cutId}`] = cutEntry;
         downloaded = true;
-        console.log(`  ✅ Saved video to public/broll/scene${sceneNum}.mp4`);
+        console.log(`  ✅ Saved Unsplash image to public/broll/cut_${cutId}.jpg`);
       } catch (err) {
-        console.warn(`  ⚠️ Pexels download failed, falling back to image:`, err.message);
+        console.warn(`  ⚠️ Unsplash download failed, falling back to Wikimedia:`, err.message);
       }
     }
 
-    // 2. Try Unsplash High-Definition Photo
-    if (!downloaded) {
-      const unsplashUrl = await fetchUnsplashPhoto(query);
-      if (unsplashUrl) {
-        const destFile = path.join(BROLL_DIR, `scene${sceneNum}.jpg`);
-        try {
-          console.log(`  📷 Downloading Unsplash cinematic photo...`);
-          await downloadFile(unsplashUrl, destFile);
-          manifest.scenes[`scene${sceneNum}`] = {
-            type: 'image',
-            file: `broll/scene${sceneNum}.jpg`,
-            query,
-            source: 'unsplash',
-          };
-          downloaded = true;
-          console.log(`  ✅ Saved Unsplash image to public/broll/scene${sceneNum}.jpg`);
-        } catch (err) {
-          console.warn(`  ⚠️ Unsplash download failed, falling back to Wikimedia:`, err.message);
-        }
-      }
-    }
-
-    // 3. Try Wikimedia High-Res Photo if Unsplash not found
+    // 2. Try Wikimedia High-Res Photo if Unsplash not found
     if (!downloaded) {
       const imgUrl = await fetchWikimediaImage(query);
       if (imgUrl) {
-        const destFile = path.join(BROLL_DIR, `scene${sceneNum}.jpg`);
+        const destFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
         try {
           console.log(`  📷 Downloading Wikimedia high-res photo...`);
           await downloadFile(imgUrl, destFile);
-          manifest.scenes[`scene${sceneNum}`] = {
+          const cutEntry = {
             type: 'image',
-            file: `broll/scene${sceneNum}.jpg`,
+            file: `broll/cut_${cutId}.jpg`,
             query,
             source: 'wikimedia',
           };
+          manifest.cuts[`cut_${cutId}`] = cutEntry;
+          manifest.scenes[`scene${cutId}`] = cutEntry;
           downloaded = true;
-          console.log(`  ✅ Saved image to public/broll/scene${sceneNum}.jpg`);
+          console.log(`  ✅ Saved Wikimedia image to public/broll/cut_${cutId}.jpg`);
         } catch (err) {
           console.warn(`  ⚠️ Wikimedia download failed:`, err.message);
         }
       }
     }
 
+    // 3. Try Pexels Video
     if (!downloaded) {
-      console.log(`  ℹ️ Using high-energy procedural graphics for Scene ${sceneNum}`);
-      manifest.scenes[`scene${sceneNum}`] = {
+      const videoUrl = await fetchPexelsVideo(query);
+      if (videoUrl) {
+        const destFile = path.join(BROLL_DIR, `cut_${cutId}.mp4`);
+        try {
+          console.log(`  ▶️ Downloading Pexels HD video...`);
+          await downloadFile(videoUrl, destFile);
+          const cutEntry = {
+            type: 'video',
+            file: `broll/cut_${cutId}.mp4`,
+            query,
+            source: 'pexels',
+          };
+          manifest.cuts[`cut_${cutId}`] = cutEntry;
+          manifest.scenes[`scene${cutId}`] = cutEntry;
+          downloaded = true;
+          console.log(`  ✅ Saved video to public/broll/cut_${cutId}.mp4`);
+        } catch (err) {
+          console.warn(`  ⚠️ Pexels download failed:`, err.message);
+        }
+      }
+    }
+
+    // Mirror to legacy scene${cutId}.jpg for backward compatibility
+    if (downloaded && cutId <= 5) {
+      try {
+        const srcJpg = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
+        const legacyJpg = path.join(BROLL_DIR, `scene${cutId}.jpg`);
+        if (fs.existsSync(srcJpg)) {
+          fs.copyFileSync(srcJpg, legacyJpg);
+        }
+      } catch (e) {}
+    }
+
+    if (!downloaded) {
+      console.log(`  ℹ️ Using high-energy procedural graphics for Cut ${cutId}`);
+      const cutEntry = {
         type: 'procedural',
         query,
       };
+      manifest.cuts[`cut_${cutId}`] = cutEntry;
+      manifest.scenes[`scene${cutId}`] = cutEntry;
     }
   }
 
