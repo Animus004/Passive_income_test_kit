@@ -171,90 +171,118 @@ export const DynamicCut: React.FC<DynamicCutProps> = ({
       )}
 
       {/* Layer 5: Dynamic Data HUD Card (Rendered ONLY when this cut mentions a stat) */}
-      {hasStat && (
-        <div
-          style={{
-            position: "absolute",
-            top: 240,
-            left: 80,
-            width: 920,
-            transform: `scale(${0.9 + statSpring * 0.1})`,
-            opacity: statSpring,
-            borderRadius: 24,
-            background: "rgba(10, 15, 30, 0.85)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
-            border: `2px solid ${themeConfig.primary}88`,
-            boxShadow: `0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px ${themeConfig.primary}33`,
-            padding: "24px 36px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-            zIndex: 30,
-          }}
-        >
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span
-              style={{
-                fontSize: 22,
-                fontWeight: 800,
-                letterSpacing: 4,
-                color: "rgba(255, 255, 255, 0.8)",
-                textTransform: "uppercase",
-              }}
-            >
-              {cut.statHighlight?.label}
-            </span>
-            <span
-              style={{
-                fontSize: 82,
-                fontWeight: 900,
-                color: themeConfig.accent || "#eab308",
-                lineHeight: 1.05,
-                textShadow: `0 0 35px ${themeConfig.accent}88`,
-                letterSpacing: -1,
-                marginTop: 4,
-              }}
-            >
-              {cut.statHighlight?.number}
-            </span>
-          </div>
+      {hasStat && (() => {
+        const num = cut.statHighlight!.number;
+        const isFinance = num.includes("$") || /billion|million|trillion/i.test(num);
+        const isThermal = /°|deg|kelvin/i.test(num);
+        const isStorage = /tb|gb|pb|mb|kb|byte|bit/i.test(num);
+        const isPercent = num.includes("%");
 
-          {/* Minimalist Tech HUD Badge Indicator */}
+        const accentColor = isFinance
+          ? "#f59e0b"
+          : isThermal
+          ? "#ef4444"
+          : isStorage
+          ? "#a855f7"
+          : isPercent
+          ? "#10b981"
+          : themeConfig.accent || "#eab308";
+
+        const badgeLabel = isFinance
+          ? "FINANCIAL TELEMETRY"
+          : isThermal
+          ? "THERMAL TELEMETRY"
+          : isStorage
+          ? "STORAGE TELEMETRY"
+          : isPercent
+          ? "RATIO TELEMETRY"
+          : "SYSTEM TELEMETRY";
+
+        return (
           <div
             style={{
+              position: "absolute",
+              top: 240,
+              left: 80,
+              width: 920,
+              transform: `scale(${0.9 + statSpring * 0.1})`,
+              opacity: statSpring,
+              borderRadius: 24,
+              background: "rgba(10, 15, 30, 0.85)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              border: `2px solid ${accentColor}88`,
+              boxShadow: `0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px ${accentColor}33`,
+              padding: "24px 36px",
               display: "flex",
               alignItems: "center",
-              gap: 12,
-              padding: "10px 18px",
-              borderRadius: 100,
-              background: `${themeConfig.primary}22`,
-              border: `1px solid ${themeConfig.primary}55`,
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+              zIndex: 30,
             }}
           >
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span
+                style={{
+                  fontSize: 22,
+                  fontWeight: 800,
+                  letterSpacing: 4,
+                  color: "rgba(255, 255, 255, 0.8)",
+                  textTransform: "uppercase",
+                }}
+              >
+                {cut.statHighlight?.label}
+              </span>
+              <span
+                style={{
+                  fontSize: 82,
+                  fontWeight: 900,
+                  color: accentColor,
+                  lineHeight: 1.05,
+                  textShadow: `0 0 35px ${accentColor}88`,
+                  letterSpacing: -1,
+                  marginTop: 4,
+                }}
+              >
+                {num}
+              </span>
+            </div>
+
+            {/* Dynamic Metric Indicator Badge */}
             <div
               style={{
-                width: 10,
-                height: 10,
-                borderRadius: "50%",
-                backgroundColor: themeConfig.primary,
-                boxShadow: `0 0 10px ${themeConfig.primary}`,
-              }}
-            />
-            <span
-              style={{
-                color: "#ffffff",
-                fontSize: 18,
-                fontWeight: 700,
-                letterSpacing: 2,
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                padding: "10px 18px",
+                borderRadius: 100,
+                background: `${accentColor}22`,
+                border: `1px solid ${accentColor}55`,
               }}
             >
-              TELEMETRY
-            </span>
+              <div
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: "50%",
+                  backgroundColor: accentColor,
+                  boxShadow: `0 0 10px ${accentColor}`,
+                }}
+              />
+              <span
+                style={{
+                  color: "#ffffff",
+                  fontSize: 18,
+                  fontWeight: 700,
+                  letterSpacing: 2,
+                }}
+              >
+                {badgeLabel}
+              </span>
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </AbsoluteFill>
   );
 };

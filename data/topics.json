@@ -84,8 +84,8 @@
     "topic": "The BGP Internet Routing Hijack",
     "hookAngle": "How a small internet provider in Nigeria accidentally rerouted the entire global web traffic of Google and Cloudflare into a black hole.",
     "category": "cybersecurity-networking",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-12T06:50:01.778Z"
   },
   {
     "id": "tsmc-seismic-dampers",

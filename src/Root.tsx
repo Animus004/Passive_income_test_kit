@@ -6,6 +6,9 @@ import {
   initialDurationInFrames,
 } from "./Composition";
 import { ShortCompositionProps } from "./types";
+import currentShortData from "./data/current_short.json";
+
+const activeTitle = (currentShortData as any)?.videoTitle || "DATA DETECTIVE";
 
 const calculateMetadata: CalculateMetadataFunction<ShortCompositionProps> = ({
   props,
@@ -57,7 +60,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           ...defaultProps,
           genre: "style-advisor",
-          hookBadge: "🛑 STOP BUYING CHEAP DESK CHAIRS!",
+          hookBadge: activeTitle,
         }}
         calculateMetadata={calculateMetadata}
       />
@@ -73,7 +76,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           ...defaultProps,
           genre: "data-detective",
-          hookBadge: "🔎 THE SATELLITE INTERNET MYTH!",
+          hookBadge: activeTitle,
         }}
         calculateMetadata={calculateMetadata}
       />
@@ -89,7 +92,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           ...defaultProps,
           genre: "kurzgesagt-explainer",
-          hookBadge: "🦆 DATA DETECTIVE • EXPLAINED",
+          hookBadge: activeTitle,
         }}
         calculateMetadata={calculateMetadata}
       />
@@ -105,7 +108,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           ...defaultProps,
           genre: "data-detective",
-          hookBadge: "🔎 DATA DETECTIVE DAILY",
+          hookBadge: activeTitle,
         }}
         calculateMetadata={calculateMetadata}
       />

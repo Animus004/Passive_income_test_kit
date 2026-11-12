@@ -12,10 +12,13 @@ import { ShortCompositionProps, SubtitleWord } from "./types";
 import defaultSubtitles from "../public/subtitles.json";
 import defaultMetadata from "../public/metadata.json";
 import defaultStoryboard from "../public/storyboard.json";
+import currentShortData from "./data/current_short.json";
+
+const fallbackTitle = (currentShortData as any)?.videoTitle || "DATA DETECTIVE";
 
 export const ShortComposition: React.FC<ShortCompositionProps> = ({
   genre = "tech-fact",
-  hookBadge = defaultStoryboard?.title || "⚡ MIND-BLOWING INSIGHTS",
+  hookBadge = fallbackTitle,
   subtitles = (defaultSubtitles as SubtitleWord[]),
 }) => {
   return (
@@ -70,7 +73,7 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
 
 export const defaultProps: ShortCompositionProps = {
   genre: "tech-fact",
-  hookBadge: defaultStoryboard?.title || "⚡ MIND-BLOWING INSIGHTS",
+  hookBadge: fallbackTitle,
   subtitles: defaultSubtitles as SubtitleWord[],
 };
 

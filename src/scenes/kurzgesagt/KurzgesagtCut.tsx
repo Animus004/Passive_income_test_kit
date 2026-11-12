@@ -171,82 +171,96 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           </div>
 
           {/* Contextual Metric Telemetry Overlay (Rendered when this cut has a stat) */}
-          {hasStat && (
-            <div
-              style={{
-                position: "absolute",
-                bottom: 20,
-                left: 20,
-                right: 20,
-                padding: "16px 24px",
-                borderRadius: 24,
-                background: "rgba(10, 15, 30, 0.92)",
-                backdropFilter: "blur(20px)",
-                border: `2.5px solid ${
-                  cut.statHighlight!.number.includes("$")
-                    ? "#f59e0b"
-                    : themeConfig.primary
-                }`,
-                boxShadow: "0 15px 35px rgba(0,0,0,0.8)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                animation: "popIn 0.3s ease-out",
-              }}
-            >
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.75)",
-                    fontSize: 16,
-                    fontWeight: 800,
-                    letterSpacing: 3,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {cut.statHighlight!.label}
-                </span>
-                <span
-                  style={{
-                    color: cut.statHighlight!.number.includes("$")
-                      ? "#fbbf24"
-                      : "#38bdf8",
-                    fontSize: 54,
-                    fontWeight: 900,
-                    letterSpacing: -1,
-                    lineHeight: 1.1,
-                    textShadow: `0 0 25px ${
-                      cut.statHighlight!.number.includes("$")
-                        ? "rgba(245, 158, 11, 0.6)"
-                        : "rgba(56, 189, 248, 0.6)"
-                    }`,
-                  }}
-                >
-                  {cut.statHighlight!.number}
-                </span>
-              </div>
+          {hasStat && (() => {
+            const num = cut.statHighlight!.number;
+            const isFinance = num.includes("$") || /billion|million|trillion/i.test(num);
+            const isThermal = /°|deg|kelvin/i.test(num);
+            const isSpeed = /ms|μs|us|s|hz|ghz|km|mph/i.test(num);
+            const isStorage = /tb|gb|pb|mb|kb|byte|bit/i.test(num);
+            const isPercent = num.includes("%");
+
+            const accentColor = isFinance
+              ? "#f59e0b"
+              : isThermal
+              ? "#ef4444"
+              : isStorage
+              ? "#a855f7"
+              : isPercent
+              ? "#10b981"
+              : themeConfig.primary;
+
+            const categoryLabel = isFinance
+              ? "FINANCE"
+              : isThermal
+              ? "THERMAL"
+              : isSpeed
+              ? "SPEED"
+              : isStorage
+              ? "STORAGE"
+              : isPercent
+              ? "RATIO"
+              : "DATA";
+
+            return (
               <div
                 style={{
-                  padding: "8px 18px",
-                  borderRadius: 100,
-                  backgroundColor: cut.statHighlight!.number.includes("$")
-                    ? "rgba(245, 158, 11, 0.2)"
-                    : "rgba(56, 189, 248, 0.2)",
-                  border: `1.5px solid ${
-                    cut.statHighlight!.number.includes("$")
-                      ? "#f59e0b"
-                      : themeConfig.primary
-                  }`,
-                  color: "#ffffff",
-                  fontSize: 16,
-                  fontWeight: 800,
-                  letterSpacing: 2,
+                  position: "absolute",
+                  bottom: 20,
+                  left: 20,
+                  right: 20,
+                  padding: "16px 24px",
+                  borderRadius: 24,
+                  background: "rgba(10, 15, 30, 0.92)",
+                  backdropFilter: "blur(20px)",
+                  border: `2.5px solid ${accentColor}`,
+                  boxShadow: "0 15px 35px rgba(0,0,0,0.8)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
                 }}
               >
-                {cut.statHighlight!.number.includes("$") ? "FINANCE" : "DATA"}
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <span
+                    style={{
+                      color: "rgba(255, 255, 255, 0.75)",
+                      fontSize: 16,
+                      fontWeight: 800,
+                      letterSpacing: 3,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {cut.statHighlight!.label}
+                  </span>
+                  <span
+                    style={{
+                      color: accentColor,
+                      fontSize: 54,
+                      fontWeight: 900,
+                      letterSpacing: -1,
+                      lineHeight: 1.1,
+                      textShadow: `0 0 25px ${accentColor}88`,
+                    }}
+                  >
+                    {num}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    padding: "8px 18px",
+                    borderRadius: 100,
+                    backgroundColor: `${accentColor}22`,
+                    border: `1.5px solid ${accentColor}`,
+                    color: "#ffffff",
+                    fontSize: 16,
+                    fontWeight: 800,
+                    letterSpacing: 2,
+                  }}
+                >
+                  {categoryLabel}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>
       </div>
 

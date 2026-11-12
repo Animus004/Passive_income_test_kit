@@ -1,176 +1,176 @@
 {
-  "topic": "Dark Fleet Tankers & Satellite AIS Spoofing",
-  "visualTheme": "cyber",
-  "videoTitle": "Ghost Tankers: The Vanishing Fleet 👻⚓️",
-  "youtubeDescription": "Uncover the shadowy world of 'Dark Fleet' oil tankers manipulating satellite signals to disappear from global maps. Learn how these ghost ships transport billions in illicit cargo, leaving a trail of fake GPS data.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#DarkFleet #AISspoofing #GhostShips #MaritimeMystery #DataDetective #DarkFleet #AISSpoofing #GhostShips",
+  "topic": "The BGP Internet Routing Hijack",
+  "visualTheme": "infrastructure",
+  "videoTitle": "Internet Hijack: Nigeria Reroutes Google! 🤯",
+  "youtubeDescription": "Ever wonder how the internet really works? This short reveals a shocking 2018 incident where a small Nigerian ISP accidentally hijacked Google and Cloudflare's global traffic. Discover the fragility of BGP routing!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#InternetSecurity #BGP #CyberSecurity #DataDetective #TechExplained #InternetHijack #Cybersecurity #Google",
   "tags": [
-    "Dark Fleet",
-    "AIS Spoofing",
-    "Ghost Ships",
-    "Oil Tankers",
-    "GPS Manipulation",
-    "Maritime Security",
-    "Illegal Trade",
-    "Satellite Tracking"
+    "BGP",
+    "Internet Hijack",
+    "Cybersecurity",
+    "Google",
+    "Cloudflare",
+    "Internet Routing",
+    "Tech Explained",
+    "Data Detective"
   ],
   "cuts": [
     {
       "cutId": 1,
-      "voiceoverText": "Ghost oil tankers vanish from maps, carrying billions in illicit cargo. This isn't fiction; it's the 'Dark Fleet'.",
-      "visualQuery": "satellite ship tracking anomaly",
-      "cameraMotion": "zoom_in",
-      "statHighlight": null
-    },
-    {
-      "cutId": 2,
-      "voiceoverText": "These ships manipulate satellite AIS signals, faking GPS coordinates. They create phantom circular orbit routes.",
-      "visualQuery": "AIS spoofing signal diagram",
+      "voiceoverText": "The internet almost vanished in 2018. A Nigerian ISP rerouted Google and Cloudflare traffic globally.",
+      "visualQuery": "fiber optic network map",
       "cameraMotion": "zoom_out",
       "statHighlight": null
     },
     {
-      "cutId": 3,
-      "voiceoverText": "Transporting $50 billion in illicit oil, they bypass sanctions and evade global oversight.",
-      "visualQuery": "oil tanker vast ocean",
+      "cutId": 2,
+      "voiceoverText": "Not a hack, but accidental BGP hijack. Incorrect routing redirected global traffic into a digital black hole.",
+      "visualQuery": "server rack blackhole",
       "cameraMotion": "pan_left",
-      "statHighlight": {
-        "number": "$50B",
-        "label": "ILLICIT CARGO VALUE"
-      }
+      "statHighlight": null
+    },
+    {
+      "cutId": 3,
+      "voiceoverText": "BGP, the internet's GPS, tells data packets their fastest route. Essential, yet vulnerable, system.",
+      "visualQuery": "data packet flow",
+      "cameraMotion": "track_forward",
+      "statHighlight": null
     },
     {
       "cutId": 4,
-      "voiceoverText": "Fake circular tracks confuse algorithms, designed to spot direct routes, making detection incredibly complex.",
-      "visualQuery": "satellite AIS circular track",
-      "cameraMotion": "tilt_up",
+      "voiceoverText": "The Nigerian provider, MainOne, mistakenly announced Google and Cloudflare's IP addresses.",
+      "visualQuery": "network topology diagram",
+      "cameraMotion": "zoom_in",
       "statHighlight": null
     },
     {
       "cutId": 5,
-      "voiceoverText": "This shadow economy undermines international law, fueling conflicts, and posing immense environmental risks globally.",
-      "visualQuery": "global shipping routes map",
-      "cameraMotion": "dolly_in",
-      "statHighlight": null
+      "voiceoverText": "For 74 minutes, vast internet traffic for these giants simply vanished.",
+      "visualQuery": "server room darkness",
+      "cameraMotion": "dolly_out",
+      "statHighlight": {
+        "number": "74 minutes",
+        "label": "TRAFFIC BLACKOUT"
+      }
     },
     {
       "cutId": 6,
-      "voiceoverText": "With each manipulated signal, vast fortunes vanish into the maritime abyss, leaving everyone still asking...",
-      "visualQuery": "dark ocean horizon",
-      "cameraMotion": "dolly_out",
+      "voiceoverText": "This exposed internet fragility: a single BGP misconfiguration can disrupt global connectivity instantly.",
+      "visualQuery": "global internet cables",
+      "cameraMotion": "pan_right",
       "statHighlight": null
     }
   ],
   "themeConfig": {
-    "primary": "#10b981",
+    "primary": "#f97316",
     "accent": "#eab308",
-    "bgGradient": "radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)"
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)"
   },
-  "fullVoiceover": "Ghost oil tankers vanish from maps, carrying billions in illicit cargo. This isn't fiction; it's the 'Dark Fleet'. These ships manipulate satellite AIS signals, faking GPS coordinates. They create phantom circular orbit routes. Transporting $50 billion in illicit oil, they bypass sanctions and evade global oversight. Fake circular tracks confuse algorithms, designed to spot direct routes, making detection incredibly complex. This shadow economy undermines international law, fueling conflicts, and posing immense environmental risks globally. With each manipulated signal, vast fortunes vanish into the maritime abyss, leaving everyone still asking...",
+  "fullVoiceover": "The internet almost vanished in 2018. A Nigerian ISP rerouted Google and Cloudflare traffic globally. Not a hack, but accidental BGP hijack. Incorrect routing redirected global traffic into a digital black hole. BGP, the internet's GPS, tells data packets their fastest route. Essential, yet vulnerable, system. The Nigerian provider, MainOne, mistakenly announced Google and Cloudflare's IP addresses. For 74 minutes, vast internet traffic for these giants simply vanished. This exposed internet fragility: a single BGP misconfiguration can disrupt global connectivity instantly.",
   "mediaQueries": [
-    "satellite ship tracking anomaly",
-    "AIS spoofing signal diagram",
-    "oil tanker vast ocean",
-    "satellite AIS circular track",
-    "global shipping routes map",
-    "dark ocean horizon"
+    "fiber optic network map",
+    "server rack blackhole",
+    "data packet flow",
+    "network topology diagram",
+    "server room darkness",
+    "global internet cables"
   ],
   "scenes": [
     {
       "sceneId": 1,
-      "voiceoverText": "Ghost oil tankers vanish from maps, carrying billions in illicit cargo. This isn't fiction; it's the 'Dark Fleet'.",
+      "voiceoverText": "The internet almost vanished in 2018. A Nigerian ISP rerouted Google and Cloudflare traffic globally.",
       "statHighlight": null
     },
     {
       "sceneId": 2,
-      "voiceoverText": "These ships manipulate satellite AIS signals, faking GPS coordinates. They create phantom circular orbit routes.",
+      "voiceoverText": "Not a hack, but accidental BGP hijack. Incorrect routing redirected global traffic into a digital black hole.",
       "statHighlight": null
     },
     {
       "sceneId": 3,
-      "voiceoverText": "Transporting $50 billion in illicit oil, they bypass sanctions and evade global oversight.",
-      "statHighlight": {
-        "number": "$50B",
-        "label": "ILLICIT CARGO VALUE"
-      }
+      "voiceoverText": "BGP, the internet's GPS, tells data packets their fastest route. Essential, yet vulnerable, system.",
+      "statHighlight": null
     },
     {
       "sceneId": 4,
-      "voiceoverText": "Fake circular tracks confuse algorithms, designed to spot direct routes, making detection incredibly complex.",
+      "voiceoverText": "The Nigerian provider, MainOne, mistakenly announced Google and Cloudflare's IP addresses.",
       "statHighlight": null
     },
     {
       "sceneId": 5,
-      "voiceoverText": "This shadow economy undermines international law, fueling conflicts, and posing immense environmental risks globally.",
-      "statHighlight": null
+      "voiceoverText": "For 74 minutes, vast internet traffic for these giants simply vanished.",
+      "statHighlight": {
+        "number": "74 minutes",
+        "label": "TRAFFIC BLACKOUT"
+      }
     },
     {
       "sceneId": 6,
-      "voiceoverText": "With each manipulated signal, vast fortunes vanish into the maritime abyss, leaving everyone still asking...",
+      "voiceoverText": "This exposed internet fragility: a single BGP misconfiguration can disrupt global connectivity instantly.",
       "statHighlight": null
     }
   ],
   "cutTimings": [
     {
       "cutId": 1,
-      "durationInFrames": 224
+      "durationInFrames": 260
     },
     {
       "cutId": 2,
-      "durationInFrames": 263
+      "durationInFrames": 269
     },
     {
       "cutId": 3,
-      "durationInFrames": 224
+      "durationInFrames": 239
     },
     {
       "cutId": 4,
-      "durationInFrames": 217
+      "durationInFrames": 191
     },
     {
       "cutId": 5,
-      "durationInFrames": 229
+      "durationInFrames": 158
     },
     {
       "cutId": 6,
-      "durationInFrames": 199
+      "durationInFrames": 209
     }
   ],
   "sceneTimings": {
     "cutTimings": [
       {
         "cutId": 1,
-        "durationInFrames": 224
+        "durationInFrames": 260
       },
       {
         "cutId": 2,
-        "durationInFrames": 263
+        "durationInFrames": 269
       },
       {
         "cutId": 3,
-        "durationInFrames": 224
+        "durationInFrames": 239
       },
       {
         "cutId": 4,
-        "durationInFrames": 217
+        "durationInFrames": 191
       },
       {
         "cutId": 5,
-        "durationInFrames": 229
+        "durationInFrames": 158
       },
       {
         "cutId": 6,
-        "durationInFrames": 199
+        "durationInFrames": 209
       }
     ],
-    "s1": 224,
-    "s2": 263,
-    "s3": 224,
-    "s4": 217,
-    "s5": 428,
+    "s1": 260,
+    "s2": 269,
+    "s3": 239,
+    "s4": 191,
+    "s5": 367,
     "chipRelFrames": [
-      76,
-      119,
-      163
+      67,
+      105,
+      143
     ]
   }
 }

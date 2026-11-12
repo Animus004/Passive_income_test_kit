@@ -1,41 +1,41 @@
 {
-  "updatedAt": "2026-11-12T06:32:16.321Z",
-  "topic": "Dark Fleet Tankers & Satellite AIS Spoofing",
+  "updatedAt": "2026-11-12T06:50:01.963Z",
+  "topic": "The BGP Internet Routing Hijack",
   "cuts": {
     "cut_1": {
       "type": "image",
       "file": "broll/cut_1.jpg",
-      "query": "satellite ship tracking anomaly",
+      "query": "fiber optic network map",
       "source": "unsplash"
     },
     "cut_2": {
       "type": "image",
       "file": "broll/cut_2.jpg",
-      "query": "AIS spoofing signal diagram",
+      "query": "server rack blackhole",
       "source": "unsplash"
     },
     "cut_3": {
       "type": "image",
       "file": "broll/cut_3.jpg",
-      "query": "oil tanker vast ocean",
+      "query": "data packet flow",
       "source": "unsplash"
     },
     "cut_4": {
       "type": "image",
       "file": "broll/cut_4.jpg",
-      "query": "satellite AIS circular track",
+      "query": "network topology diagram",
       "source": "unsplash"
     },
     "cut_5": {
       "type": "image",
       "file": "broll/cut_5.jpg",
-      "query": "global shipping routes map",
+      "query": "server room darkness",
       "source": "unsplash"
     },
     "cut_6": {
       "type": "image",
       "file": "broll/cut_6.jpg",
-      "query": "dark ocean horizon",
+      "query": "global internet cables",
       "source": "unsplash"
     }
   },
@@ -43,37 +43,37 @@
     "scene1": {
       "type": "image",
       "file": "broll/cut_1.jpg",
-      "query": "satellite ship tracking anomaly",
+      "query": "fiber optic network map",
       "source": "unsplash"
     },
     "scene2": {
       "type": "image",
       "file": "broll/cut_2.jpg",
-      "query": "AIS spoofing signal diagram",
+      "query": "server rack blackhole",
       "source": "unsplash"
     },
     "scene3": {
       "type": "image",
       "file": "broll/cut_3.jpg",
-      "query": "oil tanker vast ocean",
+      "query": "data packet flow",
       "source": "unsplash"
     },
     "scene4": {
       "type": "image",
       "file": "broll/cut_4.jpg",
-      "query": "satellite AIS circular track",
+      "query": "network topology diagram",
       "source": "unsplash"
     },
     "scene5": {
       "type": "image",
       "file": "broll/cut_5.jpg",
-      "query": "global shipping routes map",
+      "query": "server room darkness",
       "source": "unsplash"
     },
     "scene6": {
       "type": "image",
       "file": "broll/cut_6.jpg",
-      "query": "dark ocean horizon",
+      "query": "global internet cables",
       "source": "unsplash"
     }
   }
