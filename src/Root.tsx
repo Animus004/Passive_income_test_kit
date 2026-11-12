@@ -62,7 +62,7 @@ export const RemotionRoot: React.FC = () => {
         calculateMetadata={calculateMetadata}
       />
 
-      {/* Genre B: Data Detective */}
+      {/* Genre B: Data Detective (Cinematic B-Roll) */}
       <Composition
         id="DataDetective"
         component={ShortComposition}
@@ -74,6 +74,22 @@ export const RemotionRoot: React.FC = () => {
           ...defaultProps,
           genre: "data-detective",
           hookBadge: "🔎 THE SATELLITE INTERNET MYTH!",
+        }}
+        calculateMetadata={calculateMetadata}
+      />
+
+      {/* Genre C: 2D Cartoon Explainer (Kurzgesagt Style) */}
+      <Composition
+        id="KurzgesagtExplainer"
+        component={ShortComposition}
+        durationInFrames={initialDurationInFrames}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          ...defaultProps,
+          genre: "kurzgesagt-explainer",
+          hookBadge: "🦆 DATA DETECTIVE • EXPLAINED",
         }}
         calculateMetadata={calculateMetadata}
       />

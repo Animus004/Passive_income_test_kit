@@ -24,7 +24,7 @@ export interface VideoMetadata {
 }
 
 export interface ShortCompositionProps extends Record<string, unknown> {
-  genre?: "style-advisor" | "data-detective" | "tech-fact";
+  genre?: "style-advisor" | "data-detective" | "tech-fact" | "kurzgesagt-explainer";
   hookBadge?: string;
   subtitles?: SubtitleWord[];
 }

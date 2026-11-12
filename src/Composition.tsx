@@ -6,6 +6,7 @@ import { ProgressOverlay } from "./components/ProgressOverlay";
 import { DynamicVisuals } from "./components/DynamicVisuals";
 import { StyleAdvisor } from "./scenes/StyleAdvisor";
 import { DataDetective } from "./scenes/DataDetective";
+import { KurzgesagtExplainer } from "./scenes/KurzgesagtExplainer";
 import { Mascot } from "./components/Mascot";
 import { ShortCompositionProps, SubtitleWord } from "./types";
 import defaultSubtitles from "../public/subtitles.json";
@@ -44,6 +45,8 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
       {/* Dynamic Visual Genre Scene (Layer 3 & Character Mascot) */}
       {genre === "style-advisor" ? (
         <StyleAdvisor subtitles={subtitles} />
+      ) : genre === "kurzgesagt-explainer" ? (
+        <KurzgesagtExplainer subtitles={subtitles} />
       ) : genre === "data-detective" ? (
         <DataDetective subtitles={subtitles} />
       ) : (
