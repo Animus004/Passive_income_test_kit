@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AbsoluteFill,
+  Img,
   interpolate,
   spring,
   staticFile,
@@ -10,12 +11,7 @@ import {
 } from "remotion";
 import { KurzgesagtCharacter, CharacterEmotion, CharacterProp } from "../../components/kurzgesagt/KurzgesagtCharacter";
 import { KurzgesagtBackground } from "../../components/kurzgesagt/KurzgesagtBackground";
-import {
-  SweatingServerProp,
-  LiquidTankProp,
-  UnderwaterSubmarineProp,
-  CartoonGaugeProp,
-} from "../../components/kurzgesagt/KurzgesagtProps";
+import { CartoonGaugeProp } from "../../components/kurzgesagt/KurzgesagtProps";
 import { CutData } from "../data_detective/DynamicCut";
 import { SubtitleWord } from "../../types";
 
@@ -54,50 +50,34 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
     extrapolateRight: "clamp",
   });
 
-  // Determine Character Emotion & Props based on Cut Index and Stat
-  let emotion: CharacterEmotion = "explaining";
-  let handProp: CharacterProp = "none";
-  let renderVisualProp: React.ReactNode = null;
+  // Dynamic B-Roll Image Zoom inside the Holo-Portal
+  const brollZoom = interpolate(frame, [0, durationInFrames], [1.0, 1.12], {
+    extrapolateRight: "clamp",
+  });
 
   // Alternating character position for visual energy (Left on even, Right on odd facing in)
   const isRightSide = cutIndex % 2 === 1;
 
-  if (cutIndex === 0) {
+  // Determine Character Emotion & Props dynamically based on actual cut content
+  const hasStat = Boolean(cut.statHighlight && cut.statHighlight.number);
+  let emotion: CharacterEmotion = "explaining";
+  let handProp: CharacterProp = "none";
+
+  if (hasStat) {
+    emotion = "shocked";
+    handProp = "none";
+  } else if (cutIndex === 0) {
     emotion = "pointing";
     handProp = "magnifying_glass";
-    renderVisualProp = <SweatingServerProp frame={frame} scale={1.35} />;
-  } else if (cutIndex === 1) {
-    emotion = "shocked";
-    handProp = "thermometer";
-    renderVisualProp = (
-      <CartoonGaugeProp
-        frame={frame}
-        valueText={cut.statHighlight?.number || "100°C"}
-        labelText={cut.statHighlight?.label || "GPU MELTDOWN LIMIT"}
-        scale={1.35}
-      />
-    );
-  } else if (cutIndex === 2) {
-    emotion = "pointing";
-    handProp = "flask";
-    renderVisualProp = <LiquidTankProp frame={frame} scale={1.35} />;
-  } else if (cutIndex === 3) {
-    emotion = "explaining";
-    renderVisualProp = <UnderwaterSubmarineProp frame={frame} scale={1.35} />;
-  } else if (cutIndex === 4) {
-    emotion = "pointing";
-    renderVisualProp = (
-      <CartoonGaugeProp
-        frame={frame}
-        valueText={cut.statHighlight?.number || "BILLIONS"}
-        labelText={cut.statHighlight?.label || "AI COOLING SCALE"}
-        scale={1.35}
-      />
-    );
-  } else {
+  } else if (cutIndex === totalCuts - 1) {
     emotion = "thinking";
-    renderVisualProp = <LiquidTankProp frame={frame} scale={1.25} />;
+    handProp = "none";
+  } else {
+    emotion = cutIndex % 2 === 0 ? "pointing" : "explaining";
+    handProp = "none";
   }
+
+  const mediaSrc = staticFile(`broll/cut_${cut.cutId}.jpg`);
 
   return (
     <AbsoluteFill
@@ -118,15 +98,16 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
       {/* 1. Kurzgesagt Aesthetic Background */}
       <KurzgesagtBackground primaryColor={themeConfig.primary} />
 
-      {/* 2. Top-Middle Area: Hero Scale Dynamic Cartoon Prop & Story Graphics */}
+      {/* 2. Top-Middle Area: Dynamic Story Portal / Gauge (100% Tied to this Cut) */}
       <div
         style={{
           position: "absolute",
           top: "8%",
-          left: "5%",
-          width: "90%",
-          height: 780,
+          left: "6%",
+          width: "88%",
+          height: 760,
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           transform: `scale(${0.88 + sceneEntry * 0.12})`,
@@ -134,7 +115,72 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           zIndex: 5,
         }}
       >
-        {renderVisualProp}
+        {hasStat ? (
+          // Dynamic Gauge for Stat Highlights
+          <CartoonGaugeProp
+            frame={frame}
+            valueText={cut.statHighlight!.number}
+            labelText={cut.statHighlight!.label}
+            scale={1.35}
+          />
+        ) : (
+          // Dynamic Holo-Portal Frame displaying the topic's actual B-roll
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: 580,
+              borderRadius: 36,
+              overflow: "hidden",
+              border: `5px solid ${themeConfig.primary}`,
+              boxShadow: `0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px ${themeConfig.primary}44`,
+              background: "#030712",
+            }}
+          >
+            <Img
+              src={mediaSrc}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                transform: `scale(${brollZoom})`,
+                transformOrigin: "center center",
+                display: "block",
+              }}
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = "none";
+              }}
+            />
+            {/* Glossy Reflection Overlay */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: `linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.4) 100%)`,
+                pointerEvents: "none",
+              }}
+            />
+            {/* Tech Corner Accents */}
+            <div
+              style={{
+                position: "absolute",
+                top: 18,
+                left: 20,
+                padding: "6px 16px",
+                borderRadius: 100,
+                background: "rgba(15, 23, 42, 0.85)",
+                border: `1.5px solid ${themeConfig.primary}`,
+                color: themeConfig.primary,
+                fontSize: 16,
+                fontWeight: 800,
+                letterSpacing: 2,
+                textTransform: "uppercase",
+              }}
+            >
+              VISUAL REEL #{cut.cutId}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 3. Bottom Third: Hero Scale Kurzgesagt Duck Scientist Character */}

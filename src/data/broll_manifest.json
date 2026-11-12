@@ -1,41 +1,41 @@
 {
-  "updatedAt": "2026-11-12T03:02:38.416Z",
-  "topic": "Hyperscale AI Data Center Cooling",
+  "updatedAt": "2026-11-12T06:09:02.238Z",
+  "topic": "10,000-Year Quartz Glass Archiving",
   "cuts": {
     "cut_1": {
       "type": "image",
       "file": "broll/cut_1.jpg",
-      "query": "glowing AI server rack",
+      "query": "Ancient cave paintings",
       "source": "unsplash"
     },
     "cut_2": {
       "type": "image",
       "file": "broll/cut_2.jpg",
-      "query": "hot server exhaust fan",
+      "query": "Corrupt data glitch",
       "source": "unsplash"
     },
     "cut_3": {
       "type": "image",
       "file": "broll/cut_3.jpg",
-      "query": "server immersion cooling liquid",
+      "query": "Femtosecond laser etching",
       "source": "unsplash"
     },
     "cut_4": {
       "type": "image",
       "file": "broll/cut_4.jpg",
-      "query": "underwater server farm",
+      "query": "Micro etched quartz",
       "source": "unsplash"
     },
     "cut_5": {
       "type": "image",
       "file": "broll/cut_5.jpg",
-      "query": "futuristic server room",
+      "query": "Future archive vault",
       "source": "unsplash"
     },
     "cut_6": {
       "type": "image",
       "file": "broll/cut_6.jpg",
-      "query": "AI processor close-up",
+      "query": "Quartz glass plate",
       "source": "unsplash"
     }
   },
@@ -43,37 +43,37 @@
     "scene1": {
       "type": "image",
       "file": "broll/cut_1.jpg",
-      "query": "glowing AI server rack",
+      "query": "Ancient cave paintings",
       "source": "unsplash"
     },
     "scene2": {
       "type": "image",
       "file": "broll/cut_2.jpg",
-      "query": "hot server exhaust fan",
+      "query": "Corrupt data glitch",
       "source": "unsplash"
     },
     "scene3": {
       "type": "image",
       "file": "broll/cut_3.jpg",
-      "query": "server immersion cooling liquid",
+      "query": "Femtosecond laser etching",
       "source": "unsplash"
     },
     "scene4": {
       "type": "image",
       "file": "broll/cut_4.jpg",
-      "query": "underwater server farm",
+      "query": "Micro etched quartz",
       "source": "unsplash"
     },
     "scene5": {
       "type": "image",
       "file": "broll/cut_5.jpg",
-      "query": "futuristic server room",
+      "query": "Future archive vault",
       "source": "unsplash"
     },
     "scene6": {
       "type": "image",
       "file": "broll/cut_6.jpg",
-      "query": "AI processor close-up",
+      "query": "Quartz glass plate",
       "source": "unsplash"
     }
   }

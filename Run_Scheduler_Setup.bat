@@ -9,3 +9,4 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\setup_wind
 echo.
 echo Setup finished! Press any key to exit.
 pause >nul
+

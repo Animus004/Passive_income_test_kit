@@ -1,11 +1,11 @@
 @echo off
-title Produce & Publish 1 YouTube Short Now
+title Generate & Preview 1 YouTube Short (Local Render Only)
 echo =======================================================
-echo 🚀 Running Master Pipeline (Phase 1 Engine)
-echo Topic -> Script -> Audio -> Remotion -> YouTube Upload
+echo 🎬 Rendering 1 Video Locally (NO Auto-Upload)
+echo Topic -> Dynamic Script -> Audio -> Remotion Render
 echo =======================================================
 echo.
-npm run auto-publish
+npm run build:daily
 echo.
-echo Completed! Press any key to exit.
-pause >nul
+echo Video rendered to out\ folder!
+pause

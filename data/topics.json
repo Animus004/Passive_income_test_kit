@@ -68,8 +68,8 @@
     "topic": "10,000-Year Quartz Glass Archiving",
     "hookAngle": "How femtosecond lasers are etching petabytes of humanity's knowledge inside indestructible fused quartz glass plates.",
     "category": "data-storage",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-12T06:09:02.017Z"
   },
   {
     "id": "dark-fleet-tankers",

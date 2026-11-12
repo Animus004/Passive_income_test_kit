@@ -1,74 +1,74 @@
 {
   "voice": "en-US-ChristopherNeural",
-  "wordCount": 80,
-  "speechDurationSeconds": 37.87,
-  "totalDurationSeconds": 38.67,
-  "totalFrames": 1160,
+  "wordCount": 74,
+  "speechDurationSeconds": 33.76,
+  "totalDurationSeconds": 34.56,
+  "totalFrames": 1037,
   "fps": 30,
   "width": 1080,
   "height": 1920,
   "cutTimings": [
     {
       "cutId": 1,
-      "durationInFrames": 202
+      "durationInFrames": 173
     },
     {
       "cutId": 2,
-      "durationInFrames": 220
+      "durationInFrames": 178
     },
     {
       "cutId": 3,
-      "durationInFrames": 186
+      "durationInFrames": 188
     },
     {
       "cutId": 4,
-      "durationInFrames": 165
+      "durationInFrames": 212
     },
     {
       "cutId": 5,
-      "durationInFrames": 211
+      "durationInFrames": 151
     },
     {
       "cutId": 6,
-      "durationInFrames": 176
+      "durationInFrames": 135
     }
   ],
   "sceneTimings": {
     "cutTimings": [
       {
         "cutId": 1,
-        "durationInFrames": 202
+        "durationInFrames": 173
       },
       {
         "cutId": 2,
-        "durationInFrames": 220
+        "durationInFrames": 178
       },
       {
         "cutId": 3,
-        "durationInFrames": 186
+        "durationInFrames": 188
       },
       {
         "cutId": 4,
-        "durationInFrames": 165
+        "durationInFrames": 212
       },
       {
         "cutId": 5,
-        "durationInFrames": 211
+        "durationInFrames": 151
       },
       {
         "cutId": 6,
-        "durationInFrames": 176
+        "durationInFrames": 135
       }
     ],
-    "s1": 202,
-    "s2": 220,
-    "s3": 186,
-    "s4": 165,
-    "s5": 387,
+    "s1": 173,
+    "s2": 178,
+    "s3": 188,
+    "s4": 212,
+    "s5": 286,
     "chipRelFrames": [
-      58,
-      91,
-      124
+      74,
+      117,
+      159
     ]
   }
 }

@@ -1,482 +1,446 @@
 [
   {
-    "word": "AI's",
+    "word": "What",
     "start": 0.098,
-    "end": 0.603,
-    "duration": 0.505
+    "end": 0.314,
+    "duration": 0.216
   },
   {
-    "word": "insatiable",
-    "start": 0.615,
-    "end": 1.288,
-    "duration": 0.673
-  },
-  {
-    "word": "hunger",
-    "start": 1.3,
-    "end": 1.637,
-    "duration": 0.337
-  },
-  {
-    "word": "for",
-    "start": 1.649,
-    "end": 1.793,
-    "duration": 0.144
-  },
-  {
-    "word": "processing",
-    "start": 1.805,
-    "end": 2.406,
-    "duration": 0.601
-  },
-  {
-    "word": "power",
-    "start": 2.418,
-    "end": 2.718,
-    "duration": 0.3
-  },
-  {
-    "word": "generates",
-    "start": 2.73,
-    "end": 3.223,
-    "duration": 0.493
-  },
-  {
-    "word": "insane",
-    "start": 3.235,
-    "end": 3.644,
-    "duration": 0.409
-  },
-  {
-    "word": "heat.",
-    "start": 3.656,
-    "end": 4.052,
-    "duration": 0.397
-  },
-  {
-    "word": "How",
-    "start": 4.88,
-    "end": 5.06,
-    "duration": 0.18
-  },
-  {
-    "word": "do",
-    "start": 5.072,
-    "end": 5.204,
-    "duration": 0.132
-  },
-  {
-    "word": "tech",
-    "start": 5.216,
-    "end": 5.481,
-    "duration": 0.264
-  },
-  {
-    "word": "giants",
-    "start": 5.493,
-    "end": 5.901,
-    "duration": 0.409
-  },
-  {
-    "word": "stop",
-    "start": 5.913,
-    "end": 6.166,
-    "duration": 0.252
-  },
-  {
-    "word": "meltdown?",
-    "start": 6.178,
-    "end": 6.743,
-    "duration": 0.565
-  },
-  {
-    "word": "Traditional",
-    "start": 7.572,
-    "end": 8.137,
-    "duration": 0.565
-  },
-  {
-    "word": "air",
-    "start": 8.149,
-    "end": 8.341,
-    "duration": 0.192
-  },
-  {
-    "word": "cooling",
-    "start": 8.353,
-    "end": 8.69,
-    "duration": 0.337
-  },
-  {
-    "word": "simply",
-    "start": 8.702,
-    "end": 9.038,
-    "duration": 0.337
-  },
-  {
-    "word": "can't",
-    "start": 9.05,
-    "end": 9.315,
-    "duration": 0.264
-  },
-  {
-    "word": "handle",
-    "start": 9.327,
-    "end": 9.675,
-    "duration": 0.349
-  },
-  {
-    "word": "GPUs",
-    "start": 9.688,
-    "end": 10.361,
-    "duration": 0.673
-  },
-  {
-    "word": "pushing",
-    "start": 10.373,
-    "end": 10.745,
-    "duration": 0.373
-  },
-  {
-    "word": "past",
-    "start": 10.757,
-    "end": 11.094,
-    "duration": 0.337
-  },
-  {
-    "word": "100°C,",
-    "start": 11.106,
-    "end": 12.512,
-    "duration": 1.406
-  },
-  {
-    "word": "risking",
-    "start": 12.776,
-    "end": 13.149,
-    "duration": 0.373
-  },
-  {
-    "word": "critical",
-    "start": 13.161,
-    "end": 13.534,
-    "duration": 0.373
-  },
-  {
-    "word": "failure.",
-    "start": 13.546,
-    "end": 14.074,
-    "duration": 0.529
-  },
-  {
-    "word": "So,",
-    "start": 14.904,
-    "end": 15.361,
-    "duration": 0.457
-  },
-  {
-    "word": "they're",
-    "start": 15.517,
-    "end": 15.685,
-    "duration": 0.168
-  },
-  {
-    "word": "submerging",
-    "start": 15.697,
-    "end": 16.25,
-    "duration": 0.553
-  },
-  {
-    "word": "multi-million",
-    "start": 16.262,
-    "end": 16.911,
-    "duration": 0.649
-  },
-  {
-    "word": "dollar",
-    "start": 16.923,
-    "end": 17.236,
-    "duration": 0.312
-  },
-  {
-    "word": "GPU",
-    "start": 17.248,
-    "end": 17.861,
-    "duration": 0.613
-  },
-  {
-    "word": "clusters",
-    "start": 17.873,
-    "end": 18.401,
-    "duration": 0.529
-  },
-  {
-    "word": "into",
-    "start": 18.413,
-    "end": 18.642,
-    "duration": 0.228
-  },
-  {
-    "word": "liquid",
-    "start": 18.654,
-    "end": 18.966,
-    "duration": 0.312
-  },
-  {
-    "word": "fluorochemical",
-    "start": 18.978,
-    "end": 19.7,
-    "duration": 0.721
-  },
-  {
-    "word": "baths.",
-    "start": 19.712,
-    "end": 20.264,
-    "duration": 0.553
-  },
-  {
-    "word": "Others",
-    "start": 21.094,
-    "end": 21.478,
-    "duration": 0.385
-  },
-  {
-    "word": "are",
-    "start": 21.49,
-    "end": 21.611,
-    "duration": 0.12
-  },
-  {
-    "word": "building",
-    "start": 21.623,
-    "end": 21.983,
-    "duration": 0.361
-  },
-  {
-    "word": "data",
-    "start": 21.995,
-    "end": 22.26,
-    "duration": 0.264
-  },
-  {
-    "word": "centers",
-    "start": 22.272,
-    "end": 22.668,
-    "duration": 0.397
-  },
-  {
-    "word": "in",
-    "start": 22.68,
-    "end": 22.812,
-    "duration": 0.132
-  },
-  {
-    "word": "ocean",
-    "start": 22.825,
-    "end": 23.113,
-    "duration": 0.288
-  },
-  {
-    "word": "trenches,",
-    "start": 23.125,
-    "end": 23.654,
-    "duration": 0.529
-  },
-  {
-    "word": "using",
-    "start": 23.894,
-    "end": 24.195,
-    "duration": 0.3
-  },
-  {
-    "word": "the",
-    "start": 24.207,
-    "end": 24.327,
-    "duration": 0.12
-  },
-  {
-    "word": "deep",
-    "start": 24.339,
-    "end": 24.579,
-    "duration": 0.24
-  },
-  {
-    "word": "sea's",
-    "start": 24.591,
-    "end": 24.904,
-    "duration": 0.312
-  },
-  {
-    "word": "natural",
-    "start": 24.916,
-    "end": 25.325,
-    "duration": 0.409
-  },
-  {
-    "word": "chill.",
-    "start": 25.337,
-    "end": 25.769,
-    "duration": 0.433
-  },
-  {
-    "word": "These",
-    "start": 26.599,
-    "end": 26.875,
-    "duration": 0.276
-  },
-  {
-    "word": "extreme",
-    "start": 26.887,
-    "end": 27.416,
-    "duration": 0.529
-  },
-  {
-    "word": "cooling",
-    "start": 27.428,
-    "end": 27.8,
-    "duration": 0.373
-  },
-  {
-    "word": "solutions",
-    "start": 27.812,
-    "end": 28.401,
-    "duration": 0.589
-  },
-  {
-    "word": "are",
-    "start": 28.413,
-    "end": 28.534,
-    "duration": 0.12
-  },
-  {
-    "word": "now",
-    "start": 28.546,
-    "end": 28.81,
-    "duration": 0.264
-  },
-  {
-    "word": "essential",
-    "start": 28.822,
-    "end": 29.303,
-    "duration": 0.481
-  },
-  {
-    "word": "for",
-    "start": 29.315,
-    "end": 29.555,
-    "duration": 0.24
-  },
-  {
-    "word": "AI's",
-    "start": 29.567,
-    "end": 30.012,
-    "duration": 0.445
-  },
-  {
-    "word": "survival",
-    "start": 30.024,
-    "end": 30.589,
-    "duration": 0.565
-  },
-  {
-    "word": "and",
-    "start": 30.601,
-    "end": 30.709,
+    "word": "if",
+    "start": 0.326,
+    "end": 0.435,
     "duration": 0.108
   },
   {
-    "word": "future",
-    "start": 30.721,
-    "end": 31.106,
-    "duration": 0.385
+    "word": "your",
+    "start": 0.447,
+    "end": 0.567,
+    "duration": 0.12
   },
   {
-    "word": "growth,",
-    "start": 31.118,
-    "end": 31.514,
-    "duration": 0.397
+    "word": "digital",
+    "start": 0.579,
+    "end": 0.939,
+    "duration": 0.361
   },
   {
-    "word": "costing",
-    "start": 31.743,
-    "end": 32.187,
+    "word": "photos,",
+    "start": 0.951,
+    "end": 1.504,
+    "duration": 0.553
+  },
+  {
+    "word": "our",
+    "start": 1.733,
+    "end": 1.865,
+    "duration": 0.132
+  },
+  {
+    "word": "entire",
+    "start": 1.877,
+    "end": 2.322,
     "duration": 0.445
   },
   {
-    "word": "billions.",
-    "start": 32.2,
-    "end": 32.8,
-    "duration": 0.601
+    "word": "internet,",
+    "start": 2.334,
+    "end": 2.79,
+    "duration": 0.457
   },
   {
-    "word": "The",
-    "start": 33.63,
-    "end": 33.774,
-    "duration": 0.144
+    "word": "could",
+    "start": 3.043,
+    "end": 3.199,
+    "duration": 0.156
   },
   {
-    "word": "race",
-    "start": 33.786,
-    "end": 34.074,
-    "duration": 0.288
+    "word": "last",
+    "start": 3.211,
+    "end": 3.524,
+    "duration": 0.312
   },
   {
-    "word": "for",
-    "start": 34.087,
-    "end": 34.219,
-    "duration": 0.132
+    "word": "10,000 years",
+    "start": 3.536,
+    "end": 4.629,
+    "duration": 1.094
   },
   {
-    "word": "sustainable",
-    "start": 34.231,
-    "end": 34.892,
-    "duration": 0.661
+    "word": "Current",
+    "start": 5.457,
+    "end": 5.769,
+    "duration": 0.312
   },
   {
-    "word": "AI",
-    "start": 34.904,
-    "end": 35.228,
-    "duration": 0.325
+    "word": "data",
+    "start": 5.781,
+    "end": 6.034,
+    "duration": 0.252
   },
   {
-    "word": "compute",
-    "start": 35.24,
-    "end": 35.661,
+    "word": "storage",
+    "start": 6.046,
+    "end": 6.49,
+    "duration": 0.445
+  },
+  {
+    "word": "degrades",
+    "start": 6.502,
+    "end": 6.923,
     "duration": 0.421
   },
   {
-    "word": "is",
-    "start": 35.673,
-    "end": 35.805,
-    "duration": 0.132
+    "word": "fast;",
+    "start": 6.935,
+    "end": 7.404,
+    "duration": 0.469
   },
   {
-    "word": "on,",
-    "start": 35.817,
-    "end": 36.082,
-    "duration": 0.264
+    "word": "hard",
+    "start": 7.656,
+    "end": 7.861,
+    "duration": 0.204
+  },
+  {
+    "word": "drives",
+    "start": 7.873,
+    "end": 8.233,
+    "duration": 0.361
+  },
+  {
+    "word": "fail,",
+    "start": 8.245,
+    "end": 8.606,
+    "duration": 0.361
   },
   {
     "word": "leaving",
-    "start": 36.322,
-    "end": 36.635,
+    "start": 8.858,
+    "end": 9.159,
+    "duration": 0.3
+  },
+  {
+    "word": "huge",
+    "start": 9.171,
+    "end": 9.543,
+    "duration": 0.373
+  },
+  {
+    "word": "gaps",
+    "start": 9.555,
+    "end": 9.904,
+    "duration": 0.349
+  },
+  {
+    "word": "in",
+    "start": 9.916,
+    "end": 10.036,
+    "duration": 0.12
+  },
+  {
+    "word": "our",
+    "start": 10.048,
+    "end": 10.168,
+    "duration": 0.12
+  },
+  {
+    "word": "history.",
+    "start": 10.18,
+    "end": 10.685,
+    "duration": 0.505
+  },
+  {
+    "word": "But",
+    "start": 11.514,
+    "end": 11.695,
+    "duration": 0.18
+  },
+  {
+    "word": "femtosecond",
+    "start": 11.707,
+    "end": 12.332,
+    "duration": 0.625
+  },
+  {
+    "word": "lasers",
+    "start": 12.344,
+    "end": 12.776,
+    "duration": 0.433
+  },
+  {
+    "word": "are",
+    "start": 12.788,
+    "end": 12.897,
+    "duration": 0.108
+  },
+  {
+    "word": "now",
+    "start": 12.909,
+    "end": 13.197,
+    "duration": 0.288
+  },
+  {
+    "word": "etching",
+    "start": 13.209,
+    "end": 13.558,
+    "duration": 0.349
+  },
+  {
+    "word": "petabytes",
+    "start": 13.57,
+    "end": 14.099,
+    "duration": 0.529
+  },
+  {
+    "word": "of",
+    "start": 14.111,
+    "end": 14.195,
+    "duration": 0.084
+  },
+  {
+    "word": "data",
+    "start": 14.207,
+    "end": 14.567,
+    "duration": 0.361
+  },
+  {
+    "word": "into",
+    "start": 14.579,
+    "end": 14.832,
+    "duration": 0.252
+  },
+  {
+    "word": "indestructible",
+    "start": 14.844,
+    "end": 15.517,
+    "duration": 0.673
+  },
+  {
+    "word": "fused",
+    "start": 15.529,
+    "end": 15.913,
+    "duration": 0.385
+  },
+  {
+    "word": "quartz",
+    "start": 15.925,
+    "end": 16.238,
+    "duration": 0.312
+  },
+  {
+    "word": "glass.",
+    "start": 16.25,
+    "end": 16.815,
+    "duration": 0.565
+  },
+  {
+    "word": "Each",
+    "start": 17.644,
+    "end": 17.945,
+    "duration": 0.3
+  },
+  {
+    "word": "tiny",
+    "start": 17.957,
+    "end": 18.293,
+    "duration": 0.337
+  },
+  {
+    "word": "glass",
+    "start": 18.305,
+    "end": 18.678,
+    "duration": 0.373
+  },
+  {
+    "word": "plate",
+    "start": 18.69,
+    "end": 18.954,
+    "duration": 0.264
+  },
+  {
+    "word": "holds",
+    "start": 18.966,
+    "end": 19.303,
+    "duration": 0.337
+  },
+  {
+    "word": "over",
+    "start": 19.315,
+    "end": 19.507,
+    "duration": 0.192
+  },
+  {
+    "word": "360",
+    "start": 19.519,
+    "end": 20.469,
+    "duration": 0.95
+  },
+  {
+    "word": "terabytes,",
+    "start": 20.481,
+    "end": 21.142,
+    "duration": 0.661
+  },
+  {
+    "word": "resisting",
+    "start": 21.37,
+    "end": 21.875,
+    "duration": 0.505
+  },
+  {
+    "word": "heat,",
+    "start": 21.887,
+    "end": 22.212,
+    "duration": 0.325
+  },
+  {
+    "word": "water,",
+    "start": 22.464,
+    "end": 22.849,
+    "duration": 0.385
+  },
+  {
+    "word": "and",
+    "start": 23.041,
+    "end": 23.173,
+    "duration": 0.132
+  },
+  {
+    "word": "time.",
+    "start": 23.185,
+    "end": 23.642,
+    "duration": 0.457
+  },
+  {
+    "word": "Imagine",
+    "start": 24.471,
+    "end": 25.0,
+    "duration": 0.529
+  },
+  {
+    "word": "libraries",
+    "start": 25.012,
+    "end": 25.565,
+    "duration": 0.553
+  },
+  {
+    "word": "of",
+    "start": 25.577,
+    "end": 25.673,
+    "duration": 0.096
+  },
+  {
+    "word": "human",
+    "start": 25.685,
+    "end": 25.986,
+    "duration": 0.3
+  },
+  {
+    "word": "knowledge",
+    "start": 25.998,
+    "end": 26.358,
+    "duration": 0.361
+  },
+  {
+    "word": "preserved,",
+    "start": 26.37,
+    "end": 26.899,
+    "duration": 0.529
+  },
+  {
+    "word": "accessible",
+    "start": 27.115,
+    "end": 27.716,
+    "duration": 0.601
+  },
+  {
+    "word": "for",
+    "start": 27.728,
+    "end": 27.849,
+    "duration": 0.12
+  },
+  {
+    "word": "the",
+    "start": 27.861,
+    "end": 27.921,
+    "duration": 0.06
+  },
+  {
+    "word": "next",
+    "start": 27.933,
+    "end": 28.209,
+    "duration": 0.276
+  },
+  {
+    "word": "ten",
+    "start": 28.221,
+    "end": 28.413,
+    "duration": 0.192
+  },
+  {
+    "word": "millennia.",
+    "start": 28.425,
+    "end": 28.966,
+    "duration": 0.541
+  },
+  {
+    "word": "This",
+    "start": 29.796,
+    "end": 30.036,
+    "duration": 0.24
+  },
+  {
+    "word": "isn't",
+    "start": 30.048,
+    "end": 30.3,
+    "duration": 0.252
+  },
+  {
+    "word": "sci-fi;",
+    "start": 30.312,
+    "end": 30.889,
+    "duration": 0.577
+  },
+  {
+    "word": "it's",
+    "start": 31.19,
+    "end": 31.346,
+    "duration": 0.156
+  },
+  {
+    "word": "our",
+    "start": 31.358,
+    "end": 31.49,
+    "duration": 0.132
+  },
+  {
+    "word": "future,",
+    "start": 31.502,
+    "end": 31.947,
+    "duration": 0.445
+  },
+  {
+    "word": "leaving",
+    "start": 32.188,
+    "end": 32.5,
     "duration": 0.312
   },
   {
     "word": "everyone",
-    "start": 36.647,
-    "end": 37.031,
-    "duration": 0.385
+    "start": 32.512,
+    "end": 32.921,
+    "duration": 0.409
   },
   {
     "word": "still",
-    "start": 37.043,
-    "end": 37.356,
+    "start": 32.933,
+    "end": 33.245,
     "duration": 0.312
   },
   {
     "word": "asking...",
-    "start": 37.368,
-    "end": 37.873,
+    "start": 33.257,
+    "end": 33.762,
     "duration": 0.505
   }
 ]

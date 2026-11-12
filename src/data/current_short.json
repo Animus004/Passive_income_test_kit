@@ -1,182 +1,182 @@
 {
-  "topic": "Hyperscale AI Data Center Cooling",
-  "visualTheme": "infrastructure",
-  "videoTitle": "AI's Thermal Meltdown: Liquid Cooled GPUs & Ocean Trenches! 🤯",
-  "youtubeDescription": "Discover how tech giants are battling extreme heat from AI's insatiable demand for processing power. From liquid immersion cooling to deep-sea data centers, witness the cutting-edge engineering preventing thermal meltdown.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#AICooling #DataCenter #LiquidImmersion #TechGiants #AI #AIcooling #datacenter #GPUcooling",
+  "topic": "10,000-Year Quartz Glass Archiving",
+  "visualTheme": "cyber",
+  "videoTitle": "Indestructible Data: 10,000-Year Quartz Archiving! 🤯",
+  "youtubeDescription": "Imagine our entire digital history lasting millennia. Discover how femtosecond lasers are etching petabytes of data into indestructible fused quartz glass, preserving humanity's knowledge for 10,000 years. This isn't sci-fi, it's our future!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#DataArchiving #QuartzGlass #FemtosecondLaser #FutureTech #DataStorage #DigitalPreservation #TechExplained #ScienceFacts",
   "tags": [
-    "AI cooling",
-    "data center",
-    "GPU cooling",
-    "liquid immersion",
-    "hyperscale AI",
-    "thermal management",
-    "tech innovation",
-    "future tech"
+    "DataArchiving",
+    "QuartzGlass",
+    "FemtosecondLaser",
+    "FutureTech",
+    "DataStorage",
+    "DigitalPreservation",
+    "TechExplained",
+    "ScienceFacts"
   ],
   "cuts": [
     {
       "cutId": 1,
-      "voiceoverText": "AI's insatiable hunger for processing power generates insane heat. How do tech giants stop meltdown?",
-      "visualQuery": "glowing AI server rack",
+      "voiceoverText": "What if your digital photos, our entire internet, could last 10,000 years?",
+      "visualQuery": "Ancient cave paintings",
       "cameraMotion": "zoom_in",
       "statHighlight": null
     },
     {
       "cutId": 2,
-      "voiceoverText": "Traditional air cooling simply can't handle GPUs pushing past 100°C, risking critical failure.",
-      "visualQuery": "hot server exhaust fan",
-      "cameraMotion": "zoom_out",
-      "statHighlight": {
-        "number": "100°C",
-        "label": "GPU TEMP LIMIT"
-      }
+      "voiceoverText": "Current data storage degrades fast; hard drives fail, leaving huge gaps in our history.",
+      "visualQuery": "Corrupt data glitch",
+      "cameraMotion": "pan_right",
+      "statHighlight": null
     },
     {
       "cutId": 3,
-      "voiceoverText": "So, they're submerging multi-million dollar GPU clusters into liquid fluorochemical baths.",
-      "visualQuery": "server immersion cooling liquid",
-      "cameraMotion": "pan_left",
+      "voiceoverText": "But femtosecond lasers are now etching petabytes of data into indestructible fused quartz glass.",
+      "visualQuery": "Femtosecond laser etching",
+      "cameraMotion": "track_forward",
       "statHighlight": null
     },
     {
       "cutId": 4,
-      "voiceoverText": "Others are building data centers in ocean trenches, using the deep sea's natural chill.",
-      "visualQuery": "underwater server farm",
-      "cameraMotion": "dolly_out",
-      "statHighlight": null
+      "voiceoverText": "Each tiny glass plate holds over 360 terabytes, resisting heat, water, and time.",
+      "visualQuery": "Micro etched quartz",
+      "cameraMotion": "zoom_in",
+      "statHighlight": {
+        "number": "360TB",
+        "label": "PER PLATE CAPACITY"
+      }
     },
     {
       "cutId": 5,
-      "voiceoverText": "These extreme cooling solutions are now essential for AI's survival and future growth, costing billions.",
-      "visualQuery": "futuristic server room",
-      "cameraMotion": "tilt_up",
+      "voiceoverText": "Imagine libraries of human knowledge preserved, accessible for the next ten millennia.",
+      "visualQuery": "Future archive vault",
+      "cameraMotion": "pan_left",
       "statHighlight": {
-        "number": "Billions",
-        "label": "COOLING INVESTMENT"
+        "number": "10,000",
+        "label": "YEARS ARCHIVED"
       }
     },
     {
       "cutId": 6,
-      "voiceoverText": "The race for sustainable AI compute is on, leaving everyone still asking...",
-      "visualQuery": "AI processor close-up",
-      "cameraMotion": "rotate_360",
+      "voiceoverText": "This isn't sci-fi; it's our future, leaving everyone still asking...",
+      "visualQuery": "Quartz glass plate",
+      "cameraMotion": "tilt_up",
       "statHighlight": null
     }
   ],
   "themeConfig": {
-    "primary": "#f97316",
+    "primary": "#10b981",
     "accent": "#eab308",
-    "bgGradient": "radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)"
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)"
   },
-  "fullVoiceover": "AI's insatiable hunger for processing power generates insane heat. How do tech giants stop meltdown? Traditional air cooling simply can't handle GPUs pushing past 100°C, risking critical failure. So, they're submerging multi-million dollar GPU clusters into liquid fluorochemical baths. Others are building data centers in ocean trenches, using the deep sea's natural chill. These extreme cooling solutions are now essential for AI's survival and future growth, costing billions. The race for sustainable AI compute is on, leaving everyone still asking...",
+  "fullVoiceover": "What if your digital photos, our entire internet, could last 10,000 years? Current data storage degrades fast; hard drives fail, leaving huge gaps in our history. But femtosecond lasers are now etching petabytes of data into indestructible fused quartz glass. Each tiny glass plate holds over 360 terabytes, resisting heat, water, and time. Imagine libraries of human knowledge preserved, accessible for the next ten millennia. This isn't sci-fi; it's our future, leaving everyone still asking...",
   "mediaQueries": [
-    "glowing AI server rack",
-    "hot server exhaust fan",
-    "server immersion cooling liquid",
-    "underwater server farm",
-    "futuristic server room",
-    "AI processor close-up"
+    "Ancient cave paintings",
+    "Corrupt data glitch",
+    "Femtosecond laser etching",
+    "Micro etched quartz",
+    "Future archive vault",
+    "Quartz glass plate"
   ],
   "scenes": [
     {
       "sceneId": 1,
-      "voiceoverText": "AI's insatiable hunger for processing power generates insane heat. How do tech giants stop meltdown?",
+      "voiceoverText": "What if your digital photos, our entire internet, could last 10,000 years?",
       "statHighlight": null
     },
     {
       "sceneId": 2,
-      "voiceoverText": "Traditional air cooling simply can't handle GPUs pushing past 100°C, risking critical failure.",
-      "statHighlight": {
-        "number": "100°C",
-        "label": "GPU TEMP LIMIT"
-      }
+      "voiceoverText": "Current data storage degrades fast; hard drives fail, leaving huge gaps in our history.",
+      "statHighlight": null
     },
     {
       "sceneId": 3,
-      "voiceoverText": "So, they're submerging multi-million dollar GPU clusters into liquid fluorochemical baths.",
+      "voiceoverText": "But femtosecond lasers are now etching petabytes of data into indestructible fused quartz glass.",
       "statHighlight": null
     },
     {
       "sceneId": 4,
-      "voiceoverText": "Others are building data centers in ocean trenches, using the deep sea's natural chill.",
-      "statHighlight": null
+      "voiceoverText": "Each tiny glass plate holds over 360 terabytes, resisting heat, water, and time.",
+      "statHighlight": {
+        "number": "360TB",
+        "label": "PER PLATE CAPACITY"
+      }
     },
     {
       "sceneId": 5,
-      "voiceoverText": "These extreme cooling solutions are now essential for AI's survival and future growth, costing billions.",
+      "voiceoverText": "Imagine libraries of human knowledge preserved, accessible for the next ten millennia.",
       "statHighlight": {
-        "number": "Billions",
-        "label": "COOLING INVESTMENT"
+        "number": "10,000",
+        "label": "YEARS ARCHIVED"
       }
     },
     {
       "sceneId": 6,
-      "voiceoverText": "The race for sustainable AI compute is on, leaving everyone still asking...",
+      "voiceoverText": "This isn't sci-fi; it's our future, leaving everyone still asking...",
       "statHighlight": null
     }
   ],
   "cutTimings": [
     {
       "cutId": 1,
-      "durationInFrames": 202
+      "durationInFrames": 173
     },
     {
       "cutId": 2,
-      "durationInFrames": 220
+      "durationInFrames": 178
     },
     {
       "cutId": 3,
-      "durationInFrames": 186
+      "durationInFrames": 188
     },
     {
       "cutId": 4,
-      "durationInFrames": 165
+      "durationInFrames": 212
     },
     {
       "cutId": 5,
-      "durationInFrames": 211
+      "durationInFrames": 151
     },
     {
       "cutId": 6,
-      "durationInFrames": 176
+      "durationInFrames": 135
     }
   ],
   "sceneTimings": {
     "cutTimings": [
       {
         "cutId": 1,
-        "durationInFrames": 202
+        "durationInFrames": 173
       },
       {
         "cutId": 2,
-        "durationInFrames": 220
+        "durationInFrames": 178
       },
       {
         "cutId": 3,
-        "durationInFrames": 186
+        "durationInFrames": 188
       },
       {
         "cutId": 4,
-        "durationInFrames": 165
+        "durationInFrames": 212
       },
       {
         "cutId": 5,
-        "durationInFrames": 211
+        "durationInFrames": 151
       },
       {
         "cutId": 6,
-        "durationInFrames": 176
+        "durationInFrames": 135
       }
     ],
-    "s1": 202,
-    "s2": 220,
-    "s3": 186,
-    "s4": 165,
-    "s5": 387,
+    "s1": 173,
+    "s2": 178,
+    "s3": 188,
+    "s4": 212,
+    "s5": 286,
     "chipRelFrames": [
-      58,
-      91,
-      124
+      74,
+      117,
+      159
     ]
   }
 }
