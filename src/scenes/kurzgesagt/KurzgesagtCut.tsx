@@ -59,11 +59,13 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
   let handProp: CharacterProp = "none";
   let renderVisualProp: React.ReactNode = null;
 
-  // Decide based on cut index and content
+  // Alternating character position for visual energy (Left on even, Right on odd facing in)
+  const isRightSide = cutIndex % 2 === 1;
+
   if (cutIndex === 0) {
     emotion = "pointing";
     handProp = "magnifying_glass";
-    renderVisualProp = <SweatingServerProp frame={frame} scale={1.15} />;
+    renderVisualProp = <SweatingServerProp frame={frame} scale={1.35} />;
   } else if (cutIndex === 1) {
     emotion = "shocked";
     handProp = "thermometer";
@@ -72,16 +74,16 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
         frame={frame}
         valueText={cut.statHighlight?.number || "100°C"}
         labelText={cut.statHighlight?.label || "GPU MELTDOWN LIMIT"}
-        scale={1.2}
+        scale={1.35}
       />
     );
   } else if (cutIndex === 2) {
     emotion = "pointing";
     handProp = "flask";
-    renderVisualProp = <LiquidTankProp frame={frame} scale={1.15} />;
+    renderVisualProp = <LiquidTankProp frame={frame} scale={1.35} />;
   } else if (cutIndex === 3) {
     emotion = "explaining";
-    renderVisualProp = <UnderwaterSubmarineProp frame={frame} scale={1.2} />;
+    renderVisualProp = <UnderwaterSubmarineProp frame={frame} scale={1.35} />;
   } else if (cutIndex === 4) {
     emotion = "pointing";
     renderVisualProp = (
@@ -89,12 +91,12 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
         frame={frame}
         valueText={cut.statHighlight?.number || "BILLIONS"}
         labelText={cut.statHighlight?.label || "AI COOLING SCALE"}
-        scale={1.2}
+        scale={1.35}
       />
     );
   } else {
     emotion = "thinking";
-    renderVisualProp = <LiquidTankProp frame={frame} scale={1.05} />;
+    renderVisualProp = <LiquidTankProp frame={frame} scale={1.25} />;
   }
 
   return (
@@ -116,18 +118,18 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
       {/* 1. Kurzgesagt Aesthetic Background */}
       <KurzgesagtBackground primaryColor={themeConfig.primary} />
 
-      {/* 2. Top Half: Dynamic Cartoon Prop & Story Graphics */}
+      {/* 2. Top-Middle Area: Hero Scale Dynamic Cartoon Prop & Story Graphics */}
       <div
         style={{
           position: "absolute",
-          top: "12%",
+          top: "8%",
           left: "5%",
           width: "90%",
-          height: 620,
+          height: 780,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          transform: `scale(${0.9 + sceneEntry * 0.1})`,
+          transform: `scale(${0.88 + sceneEntry * 0.12})`,
           opacity: sceneEntry,
           zIndex: 5,
         }}
@@ -135,12 +137,13 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
         {renderVisualProp}
       </div>
 
-      {/* 3. Bottom Half: Kurzgesagt Duck Scientist Character */}
+      {/* 3. Bottom Third: Hero Scale Kurzgesagt Duck Scientist Character */}
       <div
         style={{
           position: "absolute",
-          bottom: 40,
-          left: 60,
+          bottom: 15,
+          left: isRightSide ? "auto" : 40,
+          right: isRightSide ? 40 : "auto",
           zIndex: 20,
         }}
       >
@@ -148,40 +151,41 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           emotion={emotion}
           prop={handProp}
           subtitles={subtitles}
-          scale={1.08}
+          scale={1.48}
+          flipX={isRightSide}
         />
       </div>
 
-      {/* 4. Playful Kurzgesagt Speech / Telemetry Pill at Top */}
+      {/* 4. Playful Kurzgesagt Channel Header Pill at Top */}
       <div
         style={{
           position: "absolute",
-          top: 70,
+          top: 60,
           left: 60,
           display: "flex",
           alignItems: "center",
           gap: 12,
-          padding: "10px 22px",
+          padding: "12px 26px",
           borderRadius: 100,
-          background: "rgba(15, 23, 42, 0.8)",
-          border: `2px solid ${themeConfig.primary}`,
-          boxShadow: `0 8px 24px rgba(0,0,0,0.4)`,
+          background: "rgba(15, 23, 42, 0.88)",
+          border: `2.5px solid ${themeConfig.primary}`,
+          boxShadow: `0 10px 30px rgba(0,0,0,0.5)`,
           zIndex: 30,
         }}
       >
         <div
           style={{
-            width: 12,
-            height: 12,
+            width: 14,
+            height: 14,
             borderRadius: "50%",
             backgroundColor: "#facc15",
-            boxShadow: "0 0 10px #facc15",
+            boxShadow: "0 0 12px #facc15",
           }}
         />
         <span
           style={{
             color: "#ffffff",
-            fontSize: 20,
+            fontSize: 22,
             fontWeight: 900,
             letterSpacing: 2,
             textTransform: "uppercase",
@@ -193,4 +197,3 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
     </AbsoluteFill>
   );
 };
-
