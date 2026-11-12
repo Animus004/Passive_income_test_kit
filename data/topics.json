@@ -36,8 +36,8 @@
     "topic": "Global Maritime Choke Points",
     "hookAngle": "Why 80% of all global maritime cargo passes through just four razor-thin straits that can shut down world trade overnight.",
     "category": "geopolitics-trade",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-12T01:28:07.469Z"
   },
   {
     "id": "internet-undersea-cables",

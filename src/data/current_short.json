@@ -1,25 +1,30 @@
 {
-  "topic": "Extreme UV Chip Photolithography",
-  "visualTheme": "infrastructure",
-  "videoTitle": "ASML's Secret: Laser Tin 🤯 Chip Printing!",
-  "youtubeDescription": "Ever wondered how 2-nanometer chips are made? Dive into ASML's insane EUV tech! Lasers blast molten tin 50,000 times/sec to print the future.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#ASML #EUV #ChipManufacturing #TechExplained #DataDetective #Photolithography #Chips #Semiconductors",
-  "tags": [
-    "ASML",
-    "EUV",
-    "Photolithography",
-    "Chips",
-    "Semiconductors",
-    "Tech",
-    "Nanotechnology",
-    "DataDetective"
+  "topic": "Global Maritime Choke Points",
+  "visualTheme": "ocean",
+  "mediaQueries": [
+    "cargo ship traffic",
+    "vast open ocean",
+    "strait of hormuz narrow"
   ],
-  "fullVoiceover": "How do we print transistors smaller than a virus? It’s not ink, it’s physics! ASML’s Extreme UV machines are mind-bogglingly precise. Most think chip printing is like a fancy inkjet. But 90% don't grasp the insane engineering. We're talking 2-nanometer lines! ASML uses CO2 lasers to blast molten tin droplets. Twice! 50,000 times a second. This generates the Extreme UV light needed. But this isn't easy. Critical choke points include precise laser alignment, preventing tin splatter, and avoiding optic degradation on the mirrors. This ballet of light and liquid metal builds our future, one atomic layer at a time. An engineering marvel, leaving everyone still asking...",
+  "videoTitle": "World Trade's Secret Bottlenecks! 🚢🚨",
+  "youtubeDescription": "Discover why 80% of global maritime trade relies on just four razor-thin straits. Learn how these critical choke points could shut down world trade overnight!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#MaritimeTrade #ChokePoints #GlobalEconomy #SupplyChain #DataDetective #GlobalTrade #Maritime #ChokePoints",
+  "tags": [
+    "Global Trade",
+    "Maritime",
+    "Choke Points",
+    "Supply Chain",
+    "Suez Canal",
+    "Strait of Hormuz",
+    "Geopolitics",
+    "World Economy"
+  ],
+  "fullVoiceover": "Four razor-thin straits control 80% of global trade. One blockage, and the world stops. How is this possible? Think oceans mean endless routes? Nope! 80% of all cargo funnels through just a few chokepoints. A total myth! The reality: just four razor-thin straits. Like Hormuz, barely 21 miles wide. That's where 80% of global trade squeezes! This creates massive vulnerability. Block the Strait of Hormuz, Suez Canal, or Strait of Malacca, and global supply chains instantly collapse. Global trade stops! Global trade's fate hinges on these few fragile points. An overlooked vulnerability, leaving everyone still asking...",
   "scenes": [
     {
       "sceneId": 1,
       "badge": "DATA REALITY CHECK // 01",
-      "headline": "TINY CHIPS, MASSIVE TECH",
-      "voiceoverText": "How do we print transistors smaller than a virus? It’s not ink, it’s physics! ASML’s Extreme UV machines are mind-bogglingly precise.",
+      "headline": "WORLD TRADE'S SECRET BOTTLENECK",
+      "voiceoverText": "Four razor-thin straits control 80% of global trade. One blockage, and the world stops. How is this possible?",
       "visualType": "hook",
       "mascotEmotion": "pointing"
     },
@@ -27,10 +32,10 @@
       "sceneId": 2,
       "badge": "THE SPEED MYTH // 02",
       "statHighlight": {
-        "number": "90%",
-        "label": "DON'T KNOW EUV"
+        "number": "80%",
+        "label": "GLOBAL CARGO FUNNELS"
       },
-      "voiceoverText": "Most think chip printing is like a fancy inkjet. But 90% don't grasp the insane engineering. We're talking 2-nanometer lines!",
+      "voiceoverText": "Think oceans mean endless routes? Nope! 80% of all cargo funnels through just a few chokepoints. A total myth!",
       "visualType": "myth",
       "mascotEmotion": "facepalm"
     },
@@ -38,14 +43,14 @@
       "sceneId": 3,
       "badge": "THE PHYSICAL TRUTH // 03",
       "statHighlight": {
-        "number": "50,000",
-        "label": "LASER SHOTS/SEC"
+        "number": "FOUR",
+        "label": "RAZOR-THIN STRAITS"
       },
       "subMetrics": [
-        "MOLTEN TIN TARGETS",
-        "MIRROR VACUUM CHAMBERS"
+        "HORUMZ: 21 MILES WIDE",
+        "80% GLOBAL TRADE"
       ],
-      "voiceoverText": "ASML uses CO2 lasers to blast molten tin droplets. Twice! 50,000 times a second. This generates the Extreme UV light needed.",
+      "voiceoverText": "The reality: just four razor-thin straits. Like Hormuz, barely 21 miles wide. That's where 80% of global trade squeezes!",
       "visualType": "reality",
       "mascotEmotion": "scanning"
     },
@@ -54,40 +59,40 @@
       "badge": "CRITICAL BOTTLENECK ALERT // 04",
       "headline": "PHYSICAL FRAGILITY AT RISK",
       "chipList": [
-        "🎯 LASER ALIGNMENT",
-        "💧 TIN SPLATTER",
-        "🔍 OPTIC DEGRADATION"
+        "⛔ STRAIT OF HORMUZ",
+        "⛔ SUEZ CANAL",
+        "⛔ STRAIT OF MALACCA"
       ],
-      "voiceoverText": "But this isn't easy. Critical choke points include precise laser alignment, preventing tin splatter, and avoiding optic degradation on the mirrors.",
+      "voiceoverText": "This creates massive vulnerability. Block the Strait of Hormuz, Suez Canal, or Strait of Malacca, and global supply chains instantly collapse. Global trade stops!",
       "visualType": "danger",
       "mascotEmotion": "shocked"
     },
     {
       "sceneId": 5,
       "badge": "THE DATA VERDICT // 05",
-      "headline": "MICROSCOPIC MARVELS",
-      "subheadline": "2-NANOMETER PRECISION",
+      "headline": "GLOBAL TRADE'S FRAGILE FATE",
+      "subheadline": "OVERLOOKED VULNERABILITY",
       "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "This ballet of light and liquid metal builds our future, one atomic layer at a time. An engineering marvel, leaving everyone still asking...",
+      "voiceoverText": "Global trade's fate hinges on these few fragile points. An overlooked vulnerability, leaving everyone still asking...",
       "visualType": "resolution",
       "mascotEmotion": "celebrating"
     }
   ],
   "themeConfig": {
-    "primary": "#f97316",
-    "accent": "#eab308",
-    "bgGradient": "radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)"
+    "primary": "#06b6d4",
+    "accent": "#38bdf8",
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #082f49 0%, #020617 75%)"
   },
   "sceneTimings": {
-    "s1": 300,
-    "s2": 299,
-    "s3": 372,
-    "s4": 285,
-    "s5": 301,
+    "s1": 249,
+    "s2": 298,
+    "s3": 364,
+    "s4": 375,
+    "s5": 215,
     "chipRelFrames": [
-      141,
-      189,
-      236
+      131,
+      206,
+      281
     ]
   }
 }
