@@ -1,30 +1,30 @@
 {
-  "topic": "Global Maritime Choke Points",
-  "visualTheme": "ocean",
+  "topic": "Atomic Clock Internet Synchronization",
+  "visualTheme": "cyber",
   "mediaQueries": [
-    "cargo ship traffic",
-    "vast open ocean",
-    "strait of hormuz narrow"
+    "atomic clock vault",
+    "global stock market",
+    "fiber optic cables"
   ],
-  "videoTitle": "World Trade's Secret Bottlenecks! 🚢🚨",
-  "youtubeDescription": "Discover why 80% of global maritime trade relies on just four razor-thin straits. Learn how these critical choke points could shut down world trade overnight!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#MaritimeTrade #ChokePoints #GlobalEconomy #SupplyChain #DataDetective #GlobalTrade #Maritime #ChokePoints",
+  "videoTitle": "Why The Internet Doesn't Crash ⏰💥",
+  "youtubeDescription": "Discover how deep underground atomic clocks keep global stock markets and cloud servers perfectly synchronized.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#AtomicClock #TechSecrets #DataDetective #CyberSecurity #CloudComputing #atomicclock #internettime #stratumclocks",
   "tags": [
-    "Global Trade",
-    "Maritime",
-    "Choke Points",
-    "Supply Chain",
-    "Suez Canal",
-    "Strait of Hormuz",
-    "Geopolitics",
-    "World Economy"
+    "atomic clock",
+    "internet time",
+    "stratum clocks",
+    "finance crash",
+    "servers",
+    "data detective",
+    "network sync",
+    "time servers"
   ],
-  "fullVoiceover": "Four razor-thin straits control 80% of global trade. One blockage, and the world stops. How is this possible? Think oceans mean endless routes? Nope! 80% of all cargo funnels through just a few chokepoints. A total myth! The reality: just four razor-thin straits. Like Hormuz, barely 21 miles wide. That's where 80% of global trade squeezes! This creates massive vulnerability. Block the Strait of Hormuz, Suez Canal, or Strait of Malacca, and global supply chains instantly collapse. Global trade stops! Global trade's fate hinges on these few fragile points. An overlooked vulnerability, leaving everyone still asking...",
+  "fullVoiceover": "What stops the entire global financial system from instantly crashing into chaos? Most people think your Wi-Fi router keeps exact time. Not even close! Hidden deep in concrete vaults, atomic stratum clocks pulse with laser precision. But what happens during rock fractures, dispersion delay, or microwave competition? Without these ultra-precise vault clocks keeping the grid locked together, leaving everyone still asking...",
   "scenes": [
     {
       "sceneId": 1,
       "badge": "DATA REALITY CHECK // 01",
-      "headline": "WORLD TRADE'S SECRET BOTTLENECK",
-      "voiceoverText": "Four razor-thin straits control 80% of global trade. One blockage, and the world stops. How is this possible?",
+      "headline": "WHAT STOPS GLOBAL FINANCIAL COLLAPSE?",
+      "voiceoverText": "What stops the entire global financial system from instantly crashing into chaos?",
       "visualType": "hook",
       "mascotEmotion": "pointing"
     },
@@ -32,10 +32,10 @@
       "sceneId": 2,
       "badge": "THE SPEED MYTH // 02",
       "statHighlight": {
-        "number": "80%",
-        "label": "GLOBAL CARGO FUNNELS"
+        "number": "99%",
+        "label": "THINK WI-FI KEEPS TIME"
       },
-      "voiceoverText": "Think oceans mean endless routes? Nope! 80% of all cargo funnels through just a few chokepoints. A total myth!",
+      "voiceoverText": "Most people think your Wi-Fi router keeps exact time. Not even close!",
       "visualType": "myth",
       "mascotEmotion": "facepalm"
     },
@@ -43,14 +43,14 @@
       "sceneId": 3,
       "badge": "THE PHYSICAL TRUTH // 03",
       "statHighlight": {
-        "number": "FOUR",
-        "label": "RAZOR-THIN STRAITS"
+        "number": "1B",
+        "label": "NANOSECOND PRECISION"
       },
       "subMetrics": [
-        "HORUMZ: 21 MILES WIDE",
-        "80% GLOBAL TRADE"
+        "UNDERGROUND VAULTS",
+        "LASER OSCILLATORS"
       ],
-      "voiceoverText": "The reality: just four razor-thin straits. Like Hormuz, barely 21 miles wide. That's where 80% of global trade squeezes!",
+      "voiceoverText": "Hidden deep in concrete vaults, atomic stratum clocks pulse with laser precision.",
       "visualType": "reality",
       "mascotEmotion": "scanning"
     },
@@ -59,40 +59,40 @@
       "badge": "CRITICAL BOTTLENECK ALERT // 04",
       "headline": "PHYSICAL FRAGILITY AT RISK",
       "chipList": [
-        "⛔ STRAIT OF HORMUZ",
-        "⛔ SUEZ CANAL",
-        "⛔ STRAIT OF MALACCA"
+        "🏔️ ROCK FRACTURES",
+        "⚡ DISPERSION DELAY",
+        "📡 MICROWAVE COMPETITION"
       ],
-      "voiceoverText": "This creates massive vulnerability. Block the Strait of Hormuz, Suez Canal, or Strait of Malacca, and global supply chains instantly collapse. Global trade stops!",
+      "voiceoverText": "But what happens during rock fractures, dispersion delay, or microwave competition?",
       "visualType": "danger",
       "mascotEmotion": "shocked"
     },
     {
       "sceneId": 5,
       "badge": "THE DATA VERDICT // 05",
-      "headline": "GLOBAL TRADE'S FRAGILE FATE",
-      "subheadline": "OVERLOOKED VULNERABILITY",
+      "headline": "ATOMIC VAULTS SAVE THE WEB",
+      "subheadline": "ABSOLUTE TIME SYNCHRONIZATION",
       "loopKicker": "⚡ LEAVING EVERYONE STILL ASKING... ⚡",
-      "voiceoverText": "Global trade's fate hinges on these few fragile points. An overlooked vulnerability, leaving everyone still asking...",
+      "voiceoverText": "Without these ultra-precise vault clocks keeping the grid locked together, leaving everyone still asking...",
       "visualType": "resolution",
       "mascotEmotion": "celebrating"
     }
   ],
   "themeConfig": {
-    "primary": "#06b6d4",
-    "accent": "#38bdf8",
-    "bgGradient": "radial-gradient(ellipse at 50% 25%, #082f49 0%, #020617 75%)"
+    "primary": "#10b981",
+    "accent": "#eab308",
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)"
   },
   "sceneTimings": {
-    "s1": 249,
-    "s2": 298,
-    "s3": 364,
-    "s4": 375,
-    "s5": 215,
+    "s1": 138,
+    "s2": 171,
+    "s3": 159,
+    "s4": 165,
+    "s5": 208,
     "chipRelFrames": [
-      131,
-      206,
-      281
+      57,
+      89,
+      129
     ]
   }
 }

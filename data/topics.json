@@ -52,8 +52,8 @@
     "topic": "Atomic Clock Internet Synchronization",
     "hookAngle": "How atomic stratum clocks in deep vaults keep the entire financial system and cloud servers from desynchronizing and crashing.",
     "category": "computing-time",
-    "used": false,
-    "lastUsedAt": null
+    "used": true,
+    "lastUsedAt": "2026-11-12T02:05:48.958Z"
   },
   {
     "id": "datacenter-cooling",
