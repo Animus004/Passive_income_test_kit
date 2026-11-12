@@ -214,11 +214,11 @@ export const ThemeHookGraphic: React.FC<{ theme: string; frame: number }> = ({
   // Default: Planetary Orbit Wireframe (Space / Ocean / Infra)
   return (
     <svg width={700} height={700} viewBox="0 0 700 700" style={{ transform: `scale(${pulse})` }}>
-      <circle cx={350} cy={350} r={210} fill="#090d16" stroke={colors.primary} strokeWidth={5} opacity={0.8} />
+      <circle cx={350} cy={350} r={210} fill="rgba(15, 23, 42, 0.35)" stroke={colors.primary} strokeWidth={4} />
       <ellipse cx={350} cy={350} rx={210} ry={85} fill="none" stroke={colors.primary} strokeWidth={3} strokeDasharray="14 14" opacity={0.7} transform={`rotate(${rot * 0.5}, 350, 350)`} />
       <ellipse cx={350} cy={350} rx={85} ry={210} fill="none" stroke={colors.secondary} strokeWidth={3} strokeDasharray="14 14" opacity={0.7} transform={`rotate(${rot * 0.5}, 350, 350)`} />
       {/* Center Globe Glow */}
-      <circle cx={350} cy={350} r={140} fill="none" stroke={colors.accent} strokeWidth={2} opacity={0.5} />
+      <circle cx={350} cy={350} r={140} fill="none" stroke={colors.accent} strokeWidth={2} opacity={0.4} />
     </svg>
   );
 };
@@ -270,7 +270,7 @@ export const ThemeMythGraphic: React.FC<{ theme: string; frame: number; statNumb
   const satAngle2 = (frame * 0.03 + 2.5) % (Math.PI * 2);
   return (
     <svg width={700} height={700} viewBox="0 0 700 700">
-      <circle cx={350} cy={350} r={170} fill="#090d16" stroke={colors.primary} strokeWidth={5} />
+      <circle cx={350} cy={350} r={170} fill="rgba(15, 23, 42, 0.45)" stroke={colors.primary} strokeWidth={4} />
       {/* Orbit 1 */}
       <ellipse cx={350} cy={350} rx={270} ry={110} fill="none" stroke={colors.primary} strokeWidth={3} strokeDasharray="12 12" opacity={0.6} transform="rotate(-25, 350, 350)" />
       {/* Satellite 1 */}

@@ -45,6 +45,8 @@ export const BackgroundMedia: React.FC<BackgroundMediaProps> = ({
     } catch (e) {}
   }
 
+  const hasMedia = !!(resolvedVideo || resolvedImage);
+
   return (
     <div
       style={{
@@ -65,8 +67,8 @@ export const BackgroundMedia: React.FC<BackgroundMediaProps> = ({
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            opacity,
-            filter: "brightness(0.65) contrast(1.25)",
+            opacity: 0.9,
+            filter: "brightness(0.85) contrast(1.15)",
             transform: `scale(${kenBurnsScale})`,
           }}
           loop
@@ -83,30 +85,48 @@ export const BackgroundMedia: React.FC<BackgroundMediaProps> = ({
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            opacity,
-            filter: "brightness(0.65) contrast(1.25)",
-            transform: `scale(${kenBurnsScale}) translate(${driftX * 0.5}px, ${driftY * 0.5}px)`,
+            opacity: 0.88,
+            filter: "brightness(0.85) contrast(1.15)",
+            transform: `scale(${kenBurnsScale}) translate(${driftX * 0.4}px, ${driftY * 0.4}px)`,
           }}
         />
       )}
 
-      {/* 3. Deep Atmospheric Ambient Mesh Texture */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-20%",
-          left: "-20%",
-          width: "140%",
-          height: "140%",
-          transform: `translate(${driftX}px, ${driftY}px)`,
-          background: `
-            radial-gradient(circle at 30% 30%, ${themeColor}26 0%, transparent 55%),
-            radial-gradient(circle at 75% 70%, rgba(147, 51, 234, 0.16) 0%, transparent 55%),
-            radial-gradient(circle at 50% 50%, rgba(2, 6, 23, 0.9) 0%, #030712 100%)
-          `,
-          opacity: 0.85,
-        }}
-      />
+      {/* 3. Cinematic Documentary Vignette Overlay */}
+      {hasMedia ? (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: `
+              linear-gradient(to bottom, 
+                rgba(2, 6, 23, 0.85) 0%, 
+                rgba(2, 6, 23, 0.25) 22%, 
+                rgba(2, 6, 23, 0.2) 65%, 
+                rgba(2, 6, 23, 0.9) 100%
+              )
+            `,
+          }}
+        />
+      ) : (
+        /* Procedural Ambient Mesh Texture (Fallback only if no media exists) */
+        <div
+          style={{
+            position: "absolute",
+            top: "-20%",
+            left: "-20%",
+            width: "140%",
+            height: "140%",
+            transform: `translate(${driftX}px, ${driftY}px)`,
+            background: `
+              radial-gradient(circle at 30% 30%, ${themeColor}26 0%, transparent 55%),
+              radial-gradient(circle at 75% 70%, rgba(147, 51, 234, 0.16) 0%, transparent 55%),
+              radial-gradient(circle at 50% 50%, rgba(2, 6, 23, 0.9) 0%, #030712 100%)
+            `,
+            opacity: 0.85,
+          }}
+        />
+      )}
 
       {/* High-Performance Micro-Dot Film Grain */}
       {enableNoise && (

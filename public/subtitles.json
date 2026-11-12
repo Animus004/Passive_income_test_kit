@@ -1,590 +1,566 @@
 [
   {
-    "word": "Trillions",
+    "word": "Four",
     "start": 0.098,
-    "end": 0.579,
-    "duration": 0.481
+    "end": 0.326,
+    "duration": 0.228
   },
   {
-    "word": "in",
-    "start": 0.591,
-    "end": 0.699,
-    "duration": 0.108
-  },
-  {
-    "word": "battery",
-    "start": 0.711,
-    "end": 1.084,
-    "duration": 0.373
-  },
-  {
-    "word": "metals,",
-    "start": 1.096,
-    "end": 1.528,
-    "duration": 0.433
-  },
-  {
-    "word": "just",
-    "start": 1.685,
-    "end": 1.949,
-    "duration": 0.264
-  },
-  {
-    "word": "waiting?",
-    "start": 1.961,
-    "end": 2.37,
-    "duration": 0.409
-  },
-  {
-    "word": "Not",
-    "start": 3.197,
-    "end": 3.51,
-    "duration": 0.312
-  },
-  {
-    "word": "on",
-    "start": 3.522,
-    "end": 3.69,
-    "duration": 0.168
-  },
-  {
-    "word": "land!",
-    "start": 3.702,
-    "end": 4.207,
-    "duration": 0.505
-  },
-  {
-    "word": "These",
-    "start": 5.036,
-    "end": 5.349,
-    "duration": 0.312
-  },
-  {
-    "word": "resources",
-    "start": 5.361,
-    "end": 5.95,
+    "word": "razor-thin",
+    "start": 0.338,
+    "end": 0.927,
     "duration": 0.589
   },
   {
-    "word": "sit",
-    "start": 5.962,
-    "end": 6.178,
-    "duration": 0.216
-  },
-  {
-    "word": "4,000",
-    "start": 6.19,
-    "end": 6.935,
-    "duration": 0.745
-  },
-  {
-    "word": "meters",
-    "start": 6.947,
-    "end": 7.296,
-    "duration": 0.349
-  },
-  {
-    "word": "deep",
-    "start": 7.308,
-    "end": 7.596,
-    "duration": 0.288
-  },
-  {
-    "word": "in",
-    "start": 7.608,
-    "end": 7.776,
-    "duration": 0.168
-  },
-  {
-    "word": "ocean",
-    "start": 7.788,
-    "end": 8.089,
-    "duration": 0.3
-  },
-  {
-    "word": "darkness.",
-    "start": 8.101,
-    "end": 8.738,
-    "duration": 0.637
-  },
-  {
-    "word": "Many",
-    "start": 9.567,
-    "end": 9.892,
-    "duration": 0.325
-  },
-  {
-    "word": "assume",
-    "start": 9.904,
-    "end": 10.312,
-    "duration": 0.409
-  },
-  {
-    "word": "deep-sea",
-    "start": 10.325,
-    "end": 10.793,
-    "duration": 0.469
-  },
-  {
-    "word": "mining",
-    "start": 10.805,
-    "end": 11.25,
-    "duration": 0.445
-  },
-  {
-    "word": "is",
-    "start": 11.262,
-    "end": 11.37,
-    "duration": 0.108
-  },
-  {
-    "word": "simple.",
-    "start": 11.382,
-    "end": 11.863,
-    "duration": 0.481
-  },
-  {
-    "word": "Just",
-    "start": 12.692,
-    "end": 12.993,
-    "duration": 0.3
-  },
-  {
-    "word": "scoop",
-    "start": 13.005,
-    "end": 13.317,
-    "duration": 0.312
-  },
-  {
-    "word": "them",
-    "start": 13.329,
-    "end": 13.462,
-    "duration": 0.132
-  },
-  {
-    "word": "up!",
-    "start": 13.474,
-    "end": 13.75,
-    "duration": 0.276
-  },
-  {
-    "word": "But",
-    "start": 14.579,
-    "end": 14.76,
-    "duration": 0.18
-  },
-  {
-    "word": "95%",
-    "start": 14.772,
-    "end": 15.829,
-    "duration": 1.058
-  },
-  {
-    "word": "of",
-    "start": 15.841,
-    "end": 15.913,
-    "duration": 0.072
-  },
-  {
-    "word": "the",
-    "start": 15.925,
-    "end": 16.034,
-    "duration": 0.108
-  },
-  {
-    "word": "deep",
-    "start": 16.046,
-    "end": 16.298,
-    "duration": 0.252
-  },
-  {
-    "word": "ocean",
-    "start": 16.31,
-    "end": 16.671,
-    "duration": 0.361
-  },
-  {
-    "word": "remains",
-    "start": 16.683,
-    "end": 17.139,
-    "duration": 0.457
-  },
-  {
-    "word": "unexplored.",
-    "start": 17.151,
-    "end": 17.909,
-    "duration": 0.757
-  },
-  {
-    "word": "No",
-    "start": 18.738,
-    "end": 19.05,
-    "duration": 0.312
-  },
-  {
-    "word": "easy",
-    "start": 19.062,
-    "end": 19.399,
-    "duration": 0.337
-  },
-  {
-    "word": "grab.",
-    "start": 19.411,
-    "end": 19.844,
-    "duration": 0.433
-  },
-  {
-    "word": "Reaching",
-    "start": 20.673,
-    "end": 21.07,
-    "duration": 0.397
-  },
-  {
-    "word": "the",
-    "start": 21.082,
-    "end": 21.166,
-    "duration": 0.084
-  },
-  {
-    "word": "Clarion-Clipperton",
-    "start": 21.178,
-    "end": 22.115,
-    "duration": 0.938
-  },
-  {
-    "word": "Zone",
-    "start": 22.127,
-    "end": 22.404,
-    "duration": 0.276
-  },
-  {
-    "word": "demands",
-    "start": 22.416,
-    "end": 22.885,
-    "duration": 0.469
-  },
-  {
-    "word": "massive",
-    "start": 22.897,
-    "end": 23.305,
-    "duration": 0.409
-  },
-  {
-    "word": "robotic",
-    "start": 23.317,
-    "end": 23.75,
-    "duration": 0.433
-  },
-  {
-    "word": "collectors.",
-    "start": 23.762,
-    "end": 24.459,
-    "duration": 0.697
-  },
-  {
-    "word": "Machines,",
-    "start": 25.288,
-    "end": 25.901,
-    "duration": 0.613
-  },
-  {
-    "word": "size",
-    "start": 26.106,
-    "end": 26.502,
-    "duration": 0.397
-  },
-  {
-    "word": "of",
-    "start": 26.514,
-    "end": 26.635,
-    "duration": 0.12
-  },
-  {
-    "word": "buildings,",
-    "start": 26.647,
-    "end": 27.151,
-    "duration": 0.505
-  },
-  {
-    "word": "operate",
-    "start": 27.368,
-    "end": 27.8,
-    "duration": 0.433
-  },
-  {
-    "word": "under",
-    "start": 27.812,
-    "end": 28.029,
-    "duration": 0.216
-  },
-  {
-    "word": "400",
-    "start": 28.041,
-    "end": 28.57,
-    "duration": 0.529
-  },
-  {
-    "word": "atmospheres",
-    "start": 28.582,
-    "end": 29.195,
-    "duration": 0.613
-  },
-  {
-    "word": "of",
-    "start": 29.207,
-    "end": 29.291,
-    "duration": 0.084
-  },
-  {
-    "word": "pressure.",
-    "start": 29.303,
-    "end": 29.832,
-    "duration": 0.529
-  },
-  {
-    "word": "This",
-    "start": 30.661,
-    "end": 30.925,
-    "duration": 0.264
-  },
-  {
-    "word": "fragile",
-    "start": 30.938,
-    "end": 31.346,
-    "duration": 0.409
-  },
-  {
-    "word": "ecosystem",
-    "start": 31.358,
-    "end": 32.031,
-    "duration": 0.673
-  },
-  {
-    "word": "faces",
-    "start": 32.043,
-    "end": 32.476,
-    "duration": 0.433
-  },
-  {
-    "word": "huge",
-    "start": 32.488,
-    "end": 32.8,
-    "duration": 0.312
-  },
-  {
-    "word": "risks:",
-    "start": 32.812,
-    "end": 33.317,
-    "duration": 0.505
-  },
-  {
-    "word": "🌊",
-    "start": 33.606,
-    "end": 34.195,
-    "duration": 0.589
-  },
-  {
-    "word": "Sediment",
-    "start": 34.207,
-    "end": 34.603,
-    "duration": 0.397
-  },
-  {
-    "word": "Plumes,",
-    "start": 34.615,
-    "end": 35.096,
-    "duration": 0.481
-  },
-  {
-    "word": "🚨",
-    "start": 35.288,
-    "end": 36.154,
-    "duration": 0.865
-  },
-  {
-    "word": "Habitat",
-    "start": 36.166,
-    "end": 36.635,
-    "duration": 0.469
-  },
-  {
-    "word": "Destruction,",
-    "start": 36.647,
-    "end": 37.248,
-    "duration": 0.601
-  },
-  {
-    "word": "and",
-    "start": 37.428,
-    "end": 37.548,
-    "duration": 0.12
-  },
-  {
-    "word": "💥",
-    "start": 37.56,
-    "end": 37.981,
-    "duration": 0.421
-  },
-  {
-    "word": "Noise",
-    "start": 37.993,
-    "end": 38.233,
-    "duration": 0.24
-  },
-  {
-    "word": "Pollution.",
-    "start": 38.245,
-    "end": 38.822,
-    "duration": 0.577
-  },
-  {
-    "word": "Each",
-    "start": 39.651,
-    "end": 39.94,
-    "duration": 0.288
-  },
-  {
-    "word": "poses",
-    "start": 39.952,
-    "end": 40.385,
-    "duration": 0.433
-  },
-  {
-    "word": "immense",
-    "start": 40.397,
-    "end": 40.781,
+    "word": "straits",
+    "start": 0.939,
+    "end": 1.324,
     "duration": 0.385
   },
   {
-    "word": "challenges",
-    "start": 40.793,
-    "end": 41.358,
-    "duration": 0.565
+    "word": "control",
+    "start": 1.336,
+    "end": 1.817,
+    "duration": 0.481
   },
   {
-    "word": "to",
-    "start": 41.37,
-    "end": 41.466,
-    "duration": 0.096
+    "word": "80%",
+    "start": 1.829,
+    "end": 2.43,
+    "duration": 0.601
   },
   {
-    "word": "deep-sea",
-    "start": 41.478,
-    "end": 41.947,
-    "duration": 0.469
-  },
-  {
-    "word": "life.",
-    "start": 41.959,
-    "end": 42.416,
-    "duration": 0.457
-  },
-  {
-    "word": "So,",
-    "start": 43.245,
-    "end": 43.702,
-    "duration": 0.457
-  },
-  {
-    "word": "while",
-    "start": 43.882,
-    "end": 44.087,
-    "duration": 0.204
-  },
-  {
-    "word": "these",
-    "start": 44.099,
-    "end": 44.315,
-    "duration": 0.216
-  },
-  {
-    "word": "metals",
-    "start": 44.327,
-    "end": 44.687,
-    "duration": 0.361
-  },
-  {
-    "word": "hold",
-    "start": 44.7,
-    "end": 44.916,
-    "duration": 0.216
-  },
-  {
-    "word": "immense",
-    "start": 44.928,
-    "end": 45.252,
-    "duration": 0.325
-  },
-  {
-    "word": "value,",
-    "start": 45.264,
-    "end": 45.685,
-    "duration": 0.421
-  },
-  {
-    "word": "the",
-    "start": 45.877,
-    "end": 45.986,
+    "word": "of",
+    "start": 2.442,
+    "end": 2.55,
     "duration": 0.108
   },
   {
-    "word": "true",
-    "start": 45.998,
-    "end": 46.262,
-    "duration": 0.264
-  },
-  {
-    "word": "cost",
-    "start": 46.274,
-    "end": 46.695,
-    "duration": 0.421
-  },
-  {
-    "word": "and",
-    "start": 46.707,
-    "end": 46.791,
-    "duration": 0.084
-  },
-  {
-    "word": "method",
-    "start": 46.803,
-    "end": 47.115,
+    "word": "global",
+    "start": 2.562,
+    "end": 2.874,
     "duration": 0.312
   },
   {
-    "word": "remain",
-    "start": 47.127,
-    "end": 47.452,
+    "word": "trade.",
+    "start": 2.887,
+    "end": 3.331,
+    "duration": 0.445
+  },
+  {
+    "word": "One",
+    "start": 4.159,
+    "end": 4.459,
+    "duration": 0.3
+  },
+  {
+    "word": "blockage,",
+    "start": 4.471,
+    "end": 5.012,
+    "duration": 0.541
+  },
+  {
+    "word": "and",
+    "start": 5.204,
+    "end": 5.312,
+    "duration": 0.108
+  },
+  {
+    "word": "the",
+    "start": 5.324,
+    "end": 5.409,
+    "duration": 0.084
+  },
+  {
+    "word": "world",
+    "start": 5.421,
+    "end": 5.709,
+    "duration": 0.288
+  },
+  {
+    "word": "stops.",
+    "start": 5.721,
+    "end": 6.334,
+    "duration": 0.613
+  },
+  {
+    "word": "How",
+    "start": 7.163,
+    "end": 7.416,
+    "duration": 0.252
+  },
+  {
+    "word": "is",
+    "start": 7.428,
+    "end": 7.512,
+    "duration": 0.084
+  },
+  {
+    "word": "this",
+    "start": 7.524,
+    "end": 7.704,
+    "duration": 0.18
+  },
+  {
+    "word": "possible?",
+    "start": 7.716,
+    "end": 8.293,
+    "duration": 0.577
+  },
+  {
+    "word": "Think",
+    "start": 9.123,
+    "end": 9.411,
+    "duration": 0.288
+  },
+  {
+    "word": "oceans",
+    "start": 9.423,
+    "end": 9.808,
+    "duration": 0.385
+  },
+  {
+    "word": "mean",
+    "start": 9.82,
+    "end": 10.072,
+    "duration": 0.252
+  },
+  {
+    "word": "endless",
+    "start": 10.084,
+    "end": 10.445,
+    "duration": 0.361
+  },
+  {
+    "word": "routes?",
+    "start": 10.457,
+    "end": 10.95,
+    "duration": 0.493
+  },
+  {
+    "word": "Nope!",
+    "start": 11.779,
+    "end": 12.26,
+    "duration": 0.481
+  },
+  {
+    "word": "80%",
+    "start": 13.077,
+    "end": 13.75,
+    "duration": 0.673
+  },
+  {
+    "word": "of",
+    "start": 13.762,
+    "end": 13.846,
+    "duration": 0.084
+  },
+  {
+    "word": "all",
+    "start": 13.858,
+    "end": 14.062,
+    "duration": 0.204
+  },
+  {
+    "word": "cargo",
+    "start": 14.075,
+    "end": 14.483,
+    "duration": 0.409
+  },
+  {
+    "word": "funnels",
+    "start": 14.495,
+    "end": 14.916,
+    "duration": 0.421
+  },
+  {
+    "word": "through",
+    "start": 14.928,
+    "end": 15.12,
+    "duration": 0.192
+  },
+  {
+    "word": "just",
+    "start": 15.132,
+    "end": 15.385,
+    "duration": 0.252
+  },
+  {
+    "word": "a",
+    "start": 15.397,
+    "end": 15.445,
+    "duration": 0.048
+  },
+  {
+    "word": "few",
+    "start": 15.457,
+    "end": 15.661,
+    "duration": 0.204
+  },
+  {
+    "word": "chokepoints.",
+    "start": 15.673,
+    "end": 16.478,
+    "duration": 0.805
+  },
+  {
+    "word": "A",
+    "start": 17.308,
+    "end": 17.428,
+    "duration": 0.12
+  },
+  {
+    "word": "total",
+    "start": 17.44,
+    "end": 17.788,
+    "duration": 0.349
+  },
+  {
+    "word": "myth!",
+    "start": 17.8,
+    "end": 18.221,
+    "duration": 0.421
+  },
+  {
+    "word": "The",
+    "start": 19.05,
+    "end": 19.183,
+    "duration": 0.132
+  },
+  {
+    "word": "reality:",
+    "start": 19.195,
+    "end": 19.784,
+    "duration": 0.589
+  },
+  {
+    "word": "just",
+    "start": 20.0,
+    "end": 20.276,
+    "duration": 0.276
+  },
+  {
+    "word": "four",
+    "start": 20.288,
+    "end": 20.565,
+    "duration": 0.276
+  },
+  {
+    "word": "razor-thin",
+    "start": 20.577,
+    "end": 21.13,
+    "duration": 0.553
+  },
+  {
+    "word": "straits.",
+    "start": 21.142,
+    "end": 21.719,
+    "duration": 0.577
+  },
+  {
+    "word": "Like",
+    "start": 22.548,
+    "end": 22.8,
+    "duration": 0.252
+  },
+  {
+    "word": "Hormuz,",
+    "start": 22.812,
+    "end": 23.389,
+    "duration": 0.577
+  },
+  {
+    "word": "barely",
+    "start": 23.618,
+    "end": 23.99,
+    "duration": 0.373
+  },
+  {
+    "word": "21 miles wide",
+    "start": 24.002,
+    "end": 25.409,
+    "duration": 1.406
+  },
+  {
+    "word": "That's",
+    "start": 26.238,
+    "end": 26.514,
+    "duration": 0.276
+  },
+  {
+    "word": "where",
+    "start": 26.526,
+    "end": 26.743,
+    "duration": 0.216
+  },
+  {
+    "word": "80%",
+    "start": 26.755,
+    "end": 27.344,
+    "duration": 0.589
+  },
+  {
+    "word": "of",
+    "start": 27.356,
+    "end": 27.464,
+    "duration": 0.108
+  },
+  {
+    "word": "global",
+    "start": 27.476,
+    "end": 27.812,
+    "duration": 0.337
+  },
+  {
+    "word": "trade",
+    "start": 27.825,
+    "end": 28.125,
+    "duration": 0.3
+  },
+  {
+    "word": "squeezes!",
+    "start": 28.137,
+    "end": 28.846,
+    "duration": 0.709
+  },
+  {
+    "word": "This",
+    "start": 29.675,
+    "end": 29.916,
+    "duration": 0.24
+  },
+  {
+    "word": "creates",
+    "start": 29.928,
+    "end": 30.349,
+    "duration": 0.421
+  },
+  {
+    "word": "massive",
+    "start": 30.361,
+    "end": 30.793,
+    "duration": 0.433
+  },
+  {
+    "word": "vulnerability.",
+    "start": 30.805,
+    "end": 31.659,
+    "duration": 0.853
+  },
+  {
+    "word": "Block",
+    "start": 32.488,
+    "end": 32.812,
     "duration": 0.325
   },
   {
-    "word": "debated,",
-    "start": 47.464,
-    "end": 47.921,
-    "duration": 0.457
+    "word": "the",
+    "start": 32.825,
+    "end": 32.921,
+    "duration": 0.096
+  },
+  {
+    "word": "Strait",
+    "start": 32.933,
+    "end": 33.245,
+    "duration": 0.312
+  },
+  {
+    "word": "of",
+    "start": 33.257,
+    "end": 33.341,
+    "duration": 0.084
+  },
+  {
+    "word": "Hormuz,",
+    "start": 33.353,
+    "end": 33.882,
+    "duration": 0.529
+  },
+  {
+    "word": "Suez",
+    "start": 34.099,
+    "end": 34.531,
+    "duration": 0.433
+  },
+  {
+    "word": "Canal,",
+    "start": 34.543,
+    "end": 35.024,
+    "duration": 0.481
+  },
+  {
+    "word": "or",
+    "start": 35.24,
+    "end": 35.349,
+    "duration": 0.108
+  },
+  {
+    "word": "Strait",
+    "start": 35.361,
+    "end": 35.685,
+    "duration": 0.325
+  },
+  {
+    "word": "of",
+    "start": 35.697,
+    "end": 35.769,
+    "duration": 0.072
+  },
+  {
+    "word": "Malacca,",
+    "start": 35.781,
+    "end": 36.322,
+    "duration": 0.541
+  },
+  {
+    "word": "and",
+    "start": 36.575,
+    "end": 36.743,
+    "duration": 0.168
+  },
+  {
+    "word": "global",
+    "start": 36.755,
+    "end": 37.115,
+    "duration": 0.361
+  },
+  {
+    "word": "supply",
+    "start": 37.127,
+    "end": 37.536,
+    "duration": 0.409
+  },
+  {
+    "word": "chains",
+    "start": 37.548,
+    "end": 37.921,
+    "duration": 0.373
+  },
+  {
+    "word": "instantly",
+    "start": 37.933,
+    "end": 38.425,
+    "duration": 0.493
+  },
+  {
+    "word": "collapse.",
+    "start": 38.438,
+    "end": 39.062,
+    "duration": 0.625
+  },
+  {
+    "word": "Global",
+    "start": 39.892,
+    "end": 40.3,
+    "duration": 0.409
+  },
+  {
+    "word": "trade",
+    "start": 40.312,
+    "end": 40.625,
+    "duration": 0.312
+  },
+  {
+    "word": "stops!",
+    "start": 40.637,
+    "end": 41.262,
+    "duration": 0.625
+  },
+  {
+    "word": "Global",
+    "start": 42.091,
+    "end": 42.464,
+    "duration": 0.373
+  },
+  {
+    "word": "trade's",
+    "start": 42.476,
+    "end": 42.861,
+    "duration": 0.385
+  },
+  {
+    "word": "fate",
+    "start": 42.873,
+    "end": 43.077,
+    "duration": 0.204
+  },
+  {
+    "word": "hinges",
+    "start": 43.089,
+    "end": 43.462,
+    "duration": 0.373
+  },
+  {
+    "word": "on",
+    "start": 43.474,
+    "end": 43.594,
+    "duration": 0.12
+  },
+  {
+    "word": "these",
+    "start": 43.606,
+    "end": 43.822,
+    "duration": 0.216
+  },
+  {
+    "word": "few",
+    "start": 43.834,
+    "end": 44.038,
+    "duration": 0.204
+  },
+  {
+    "word": "fragile",
+    "start": 44.05,
+    "end": 44.471,
+    "duration": 0.421
+  },
+  {
+    "word": "points.",
+    "start": 44.483,
+    "end": 45.012,
+    "duration": 0.529
+  },
+  {
+    "word": "An",
+    "start": 45.841,
+    "end": 46.034,
+    "duration": 0.192
+  },
+  {
+    "word": "overlooked",
+    "start": 46.046,
+    "end": 46.526,
+    "duration": 0.481
+  },
+  {
+    "word": "vulnerability,",
+    "start": 46.538,
+    "end": 47.344,
+    "duration": 0.805
   },
   {
     "word": "leaving",
-    "start": 48.149,
-    "end": 48.498,
+    "start": 47.608,
+    "end": 47.957,
     "duration": 0.349
   },
   {
     "word": "everyone",
-    "start": 48.51,
-    "end": 48.894,
-    "duration": 0.385
+    "start": 47.969,
+    "end": 48.377,
+    "duration": 0.409
   },
   {
     "word": "still",
-    "start": 48.906,
-    "end": 49.219,
-    "duration": 0.312
+    "start": 48.389,
+    "end": 48.714,
+    "duration": 0.325
   },
   {
     "word": "asking...",
-    "start": 49.231,
-    "end": 49.736,
+    "start": 48.726,
+    "end": 49.231,
     "duration": 0.505
   }
 ]

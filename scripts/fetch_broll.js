@@ -24,7 +24,12 @@ const DATA_MANIFEST_PATH = path.join(PROJECT_ROOT, 'src', 'data', 'broll_manifes
 function downloadFile(url, destPath) {
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(destPath);
-    const request = https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } }, (response) => {
+    const headers = {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Referer': 'https://commons.wikimedia.org/',
+      'Accept': '*/*',
+    };
+    const request = https.get(url, { headers }, (response) => {
       // Handle redirects
       if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
         file.close();
@@ -78,9 +83,10 @@ async function fetchPexelsVideo(query) {
 
 async function fetchWikimediaImage(query) {
   try {
-    const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=${encodeURIComponent(query + ' filetype:bitmap')}&gsrlimit=3&prop=imageinfo&iiprop=url|mime`;
+    const cleanQuery = query.replace(/[^\w\s-]/g, ' ').trim();
+    const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=${encodeURIComponent(cleanQuery)}&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url|mime`;
     const res = await fetch(apiUrl, {
-      headers: { 'User-Agent': 'DataDetectiveShorts/1.0 (https://github.com/Animus004)' },
+      headers: { 'User-Agent': 'DataDetectiveShorts/1.0 (https://github.com/Animus004/Passive_income_test_kit; test@example.com)' },
     });
     if (!res.ok) return null;
     const data = await res.json();
@@ -89,6 +95,7 @@ async function fetchWikimediaImage(query) {
       for (const key of Object.keys(pages)) {
         const info = pages[key]?.imageinfo?.[0];
         if (info && info.url && (info.mime === 'image/jpeg' || info.mime === 'image/png')) {
+          // Avoid tiny SVGs or icons, prefer photos
           return info.url;
         }
       }
@@ -131,6 +138,9 @@ async function main() {
   };
 
   for (let i = 0; i < 3; i++) {
+    if (i > 0) {
+      await new Promise((r) => setTimeout(r, 1200));
+    }
     const sceneNum = i + 1;
     const query = queries[i] || `${topic} real`;
     console.log(`\n[Scene ${sceneNum}] Searching media for: "${query}"...`);

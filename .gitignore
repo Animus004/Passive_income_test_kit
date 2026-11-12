@@ -10,3 +10,10 @@ Pi node/
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Ephemeral runtime B-roll downloads
+public/broll/*.jpg
+public/broll/*.png
+public/broll/*.mp4
+public/broll/*.jpeg
+

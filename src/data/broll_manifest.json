@@ -1,18 +1,21 @@
 {
-  "updatedAt": "2026-11-11T20:00:32.641Z",
-  "topic": "Deep Sea Technology",
+  "updatedAt": "2026-11-12T01:55:54.035Z",
+  "topic": "Global Maritime Choke Points",
   "scenes": {
     "scene1": {
-      "type": "procedural",
-      "query": "Deep Sea Technology technology"
+      "type": "image",
+      "file": "broll/scene1.jpg",
+      "query": "cargo ship traffic"
     },
     "scene2": {
-      "type": "procedural",
-      "query": "Deep Sea Technology hardware"
+      "type": "image",
+      "file": "broll/scene2.jpg",
+      "query": "vast open ocean"
     },
     "scene3": {
-      "type": "procedural",
-      "query": "Deep Sea Technology science"
+      "type": "image",
+      "file": "broll/scene3.jpg",
+      "query": "strait of hormuz narrow"
     }
   }
 }

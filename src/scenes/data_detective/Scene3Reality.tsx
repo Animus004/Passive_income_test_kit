@@ -58,23 +58,26 @@ export const Scene3Reality: React.FC<SceneProps> = ({
   );
 
   const statNumStr = sceneData?.statHighlight?.number || "99%";
-  const targetCounter = parseInt(statNumStr.replace(/\D/g, "")) || 99;
-  const statUnit = statNumStr.replace(/[0-9]/g, "") || "%";
+  const hasDigits = /\d/.test(statNumStr);
+  const targetCounter = hasDigits ? (parseInt(statNumStr.replace(/\D/g, "")) || 0) : 0;
+  const statUnit = hasDigits ? statNumStr.replace(/[0-9,]/g, "") : "";
   const statLabel = sceneData?.statHighlight?.label || "THE PHYSICAL REALITY";
   const badgeText = sceneData?.badge || "⚡ THE PHYSICAL TRUTH // 03";
   const subMetrics = sceneData?.subMetrics || ["SPEED OF LIGHT", "MASSIVE SCALE"];
   const mascotPose = sceneData?.mascotEmotion || "scanning";
 
   // Rapid 0 -> Target Counter with strict clamping
-  const realityCounter = Math.max(
-    0,
-    Math.round(
-      interpolate(frame, [15, 65], [0, targetCounter], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
-    )
-  );
+  const realityCounter = hasDigits
+    ? Math.max(
+        0,
+        Math.round(
+          interpolate(frame, [15, 65], [0, targetCounter], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          })
+        )
+      )
+    : 0;
 
   return (
     <AbsoluteFill
@@ -182,24 +185,32 @@ export const Scene3Reality: React.FC<SceneProps> = ({
           pointerEvents: "none",
         }}
       >
-        {/* Massive 160px Counter */}
+        {/* Massive Stat Readout */}
         <div
           style={{
-            fontSize: 160,
+            fontSize: hasDigits ? 160 : 130,
             fontWeight: 950,
             color: "#ffffff",
             lineHeight: 1,
-            letterSpacing: -2,
+            letterSpacing: hasDigits ? -2 : 4,
             textShadow: `0 0 60px ${colors.glow}, 0 10px 40px rgba(0,0,0,0.9)`,
             display: "flex",
             alignItems: "baseline",
             justifyContent: "center",
           }}
         >
-          <span>{realityCounter}</span>
-          <span style={{ fontSize: 90, color: colors.accent, marginLeft: 8 }}>
-            {statUnit}
-          </span>
+          {hasDigits ? (
+            <>
+              <span>{realityCounter}</span>
+              <span style={{ fontSize: 90, color: colors.accent, marginLeft: 8 }}>
+                {statUnit}
+              </span>
+            </>
+          ) : (
+            <span style={{ color: "#ffffff", textTransform: "uppercase" }}>
+              {statNumStr}
+            </span>
+          )}
         </div>
 
         {/* Hero Stat Label */}
