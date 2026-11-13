@@ -15,6 +15,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 const { google } = require('googleapis');
 require('dotenv').config();
 
@@ -258,7 +259,23 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
   }
 
   const caption = `${metadata.videoTitle}\n\n${metadata.youtubeDescription || ''}\n\n#reels #tech #datadetective #technology`;
-  const fileSize = fs.statSync(videoPath).size;
+  
+  // Ensure video meets Instagram Reels strict standards (H.264 Main 4.0 + yuv420p + 48kHz AAC + faststart)
+  let targetVideoPath = videoPath;
+  const normalizedPath = path.join(path.dirname(videoPath), `ig_norm_${path.basename(videoPath)}`);
+  try {
+    const { execSync } = require('child_process');
+    console.log('🔄 Optimizing video encoding for Instagram Reels compatibility (H.264 Main 4.0 + faststart)...');
+    execSync(`ffmpeg -y -i "${videoPath}" -c:v libx264 -profile:v main -level 4.0 -pix_fmt yuv420p -r 30 -c:a aac -ar 48000 -b:a 128k -movflags +faststart "${normalizedPath}"`, { stdio: 'ignore' });
+    if (fs.existsSync(normalizedPath)) {
+      targetVideoPath = normalizedPath;
+      console.log('✅ Video optimized for Instagram Reels!');
+    }
+  } catch (e) {
+    console.warn('⚠️ FFmpeg Instagram normalization skipped:', e.message);
+  }
+
+  const fileSize = fs.statSync(targetVideoPath).size;
 
   console.log(`📱 Uploading to IG User ID: ${igUserId}`);
   console.log(`📦 File Size: ${(fileSize / (1024 * 1024)).toFixed(2)} MB`);
@@ -278,6 +295,7 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
 
   const initData = await initRes.json();
   if (!initRes.ok || !initData.id || !initData.uri) {
+    if (fs.existsSync(normalizedPath)) fs.unlinkSync(normalizedPath);
     throw new Error(`Instagram container initialization failed: ${JSON.stringify(initData)}`);
   }
 
@@ -285,29 +303,41 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
   const uploadUri = initData.uri;
   console.log(`📥 Resumable upload session created: ${containerId}`);
 
-  // Step 2: Upload Video Binary Bytes
-  const videoBuffer = fs.readFileSync(videoPath);
-  const uploadRes = await fetch(uploadUri, {
-    method: 'POST',
-    headers: {
-      Authorization: `OAuth ${accessToken}`,
-      offset: '0',
-      file_size: fileSize.toString(),
-      'Content-Type': 'application/octet-stream',
-    },
-    body: videoBuffer,
+  // Step 2: Upload Video Binary Bytes with exact Content-Length
+  await new Promise((resolve) => {
+    const uploadUrl = new URL(uploadUri);
+    const req = https.request(
+      uploadUrl,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `OAuth ${accessToken}`,
+          offset: '0',
+          file_size: fileSize.toString(),
+          'Content-Type': 'application/octet-stream',
+          'Content-Length': fileSize.toString(),
+        },
+      },
+      (res) => {
+        let body = '';
+        res.on('data', (d) => (body += d));
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve();
+          } else {
+            console.warn(`⚠️ Instagram rupload socket closed with HTTP ${res.statusCode} (${body}). Verifying container status...`);
+            resolve(); // Don't reject yet: container may already be received and processing
+          }
+        });
+      }
+    );
+
+    req.on('error', (err) => {
+      console.warn(`⚠️ Socket warning during upload: ${err.message}. Checking container status...`);
+      resolve();
+    });
+    fs.createReadStream(targetVideoPath).pipe(req);
   });
-
-  let uploadResult;
-  try {
-    uploadResult = await uploadRes.json();
-  } catch (e) {
-    uploadResult = { status: uploadRes.status };
-  }
-
-  if (!uploadRes.ok) {
-    throw new Error(`Instagram binary upload failed (HTTP ${uploadRes.status}): ${JSON.stringify(uploadResult)}`);
-  }
   console.log('📤 Video bytes transferred to Instagram servers. Polling status...');
 
   // Step 3: Poll Container Status until READY
@@ -323,12 +353,14 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
       isReady = true;
       break;
     } else if (statusData.status_code === 'ERROR') {
+      if (fs.existsSync(normalizedPath)) fs.unlinkSync(normalizedPath);
       throw new Error(`Instagram media processing error: ${JSON.stringify(statusData)}`);
     }
     process.stdout.write(`⏳ Processing status: ${statusData.status_code || 'IN_PROGRESS'}...\r`);
   }
 
   if (!isReady) {
+    if (fs.existsSync(normalizedPath)) fs.unlinkSync(normalizedPath);
     throw new Error('Instagram container processing timed out after 120 seconds.');
   }
 
@@ -339,12 +371,115 @@ async function uploadToInstagram(videoPath, metadata, isDryRun = false) {
   });
 
   const publishData = await publishRes.json();
+  if (fs.existsSync(normalizedPath)) fs.unlinkSync(normalizedPath);
   if (!publishRes.ok || !publishData.id) {
     throw new Error(`Instagram media publish failed: ${JSON.stringify(publishData)}`);
   }
 
   console.log(`\n✅ Instagram Reels Upload Successful! Media ID: ${publishData.id}`);
   return { success: true, platform: 'Instagram', mediaId: publishData.id };
+}
+
+async function uploadToFacebook(videoPath, metadata, isDryRun = false) {
+  console.log('\n----------------------------------------------------');
+  console.log('📘 [PUBLISHER] Uploading to Facebook Page Reels...');
+  console.log('----------------------------------------------------');
+
+  const pageId = process.env.FACEBOOK_PAGE_ID;
+  const pageToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN || process.env.INSTAGRAM_ACCESS_TOKEN;
+
+  if (!pageId || !pageToken) {
+    console.log('ℹ️ Facebook credentials (FACEBOOK_PAGE_ID / FACEBOOK_PAGE_ACCESS_TOKEN) not configured.');
+    return { success: false, platform: 'Facebook', skipped: true, reason: 'Credentials not provided' };
+  }
+
+  if (isDryRun) {
+    console.log(`🧪 [DRY RUN] Verifying Facebook Page ID: ${pageId}...`);
+    const testRes = await fetch(`https://graph.facebook.com/v21.0/${pageId}?fields=id,name&access_token=${pageToken}`);
+    const testData = await testRes.json();
+    if (testData.id) {
+      console.log(`✅ Facebook Page verified: ${testData.name} (${testData.id})`);
+      return { success: true, platform: 'Facebook', dryRun: true };
+    }
+    throw new Error(`Facebook Page verification failed: ${JSON.stringify(testData)}`);
+  }
+
+  const caption = `${metadata.videoTitle}\n\n${metadata.youtubeDescription || ''}\n\n#Reels #Tech #DataDetective`;
+  const fileSize = fs.statSync(videoPath).size;
+
+  console.log(`📘 Uploading to Facebook Page: ${pageId}`);
+  console.log(`📦 File Size: ${(fileSize / (1024 * 1024)).toFixed(2)} MB`);
+
+  // Step 1: Initialize Facebook Reel Session
+  const initUrl = `https://graph.facebook.com/v21.0/${pageId}/video_reels`;
+  const initRes = await fetch(initUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      upload_phase: 'start',
+      access_token: pageToken,
+    }),
+  });
+  const initData = await initRes.json();
+  if (!initRes.ok || !initData.video_id || !initData.upload_url) {
+    throw new Error(`Facebook Reels initialization failed: ${JSON.stringify(initData)}`);
+  }
+
+  const fbVideoId = initData.video_id;
+  const fbUploadUrl = initData.upload_url;
+  console.log(`📥 Facebook Reel Session Initialized: ${fbVideoId}`);
+
+  // Step 2: Stream Video Bytes with exact Content-Length
+  await new Promise((resolve, reject) => {
+    const uploadUrlObj = new URL(fbUploadUrl);
+    const req = https.request(
+      uploadUrlObj,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `OAuth ${pageToken}`,
+          offset: '0',
+          file_size: fileSize.toString(),
+          'Content-Type': 'application/octet-stream',
+          'Content-Length': fileSize.toString(),
+        },
+      },
+      (res) => {
+        let body = '';
+        res.on('data', (d) => (body += d));
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve();
+          } else {
+            reject(new Error(`Facebook Reel binary upload failed (HTTP ${res.statusCode}): ${body}`));
+          }
+        });
+      }
+    );
+    req.on('error', reject);
+    fs.createReadStream(videoPath).pipe(req);
+  });
+  console.log('📤 Video bytes transferred to Facebook servers. Finalizing publish...');
+
+  // Step 3: Finish and Publish Facebook Reel
+  const finishRes = await fetch(initUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      upload_phase: 'finish',
+      video_id: fbVideoId,
+      video_state: 'PUBLISHED',
+      description: caption,
+      access_token: pageToken,
+    }),
+  });
+  const finishData = await finishRes.json();
+  if (!finishRes.ok || finishData.success === false) {
+    throw new Error(`Facebook Reels publish finalization failed: ${JSON.stringify(finishData)}`);
+  }
+
+  console.log(`✅ Facebook Page Reel Published Successfully! (Post ID: ${finishData.post_id || fbVideoId})`);
+  return { success: true, platform: 'Facebook', mediaId: finishData.post_id || fbVideoId };
 }
 
 async function main() {
@@ -377,6 +512,15 @@ async function main() {
   } catch (err) {
     console.error(`❌ Instagram Upload Failed:`, err.message || err);
     results.push({ success: false, platform: 'Instagram', error: err.message });
+  }
+
+  // Facebook Page Reels Upload
+  try {
+    const fbResult = await uploadToFacebook(videoPath, metadata, dryRun);
+    results.push(fbResult);
+  } catch (err) {
+    console.error(`❌ Facebook Upload Failed:`, err.message || err);
+    results.push({ success: false, platform: 'Facebook', error: err.message });
   }
 
   console.log('\n====================================================');

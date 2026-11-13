@@ -2,6 +2,7 @@ import React from "react";
 import {
   AbsoluteFill,
   Img,
+  Video,
   interpolate,
   spring,
   staticFile,
@@ -13,6 +14,7 @@ import { KurzgesagtCharacter, CharacterEmotion, CharacterProp } from "../../comp
 import { KurzgesagtBackground } from "../../components/kurzgesagt/KurzgesagtBackground";
 import { CutData } from "../data_detective/DynamicCut";
 import { SubtitleWord } from "../../types";
+import brollManifest from "../../data/broll_manifest.json";
 
 interface KurzgesagtCutProps {
   cut: CutData;
@@ -76,7 +78,9 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
     handProp = "none";
   }
 
-  const mediaSrc = staticFile(`broll/cut_${cut.cutId}.jpg`);
+  const cutManifest = (brollManifest as any)?.cuts?.[`cut_${cut.cutId}`];
+  const isVideo = cutManifest?.type === "video" && cutManifest?.file?.endsWith(".mp4");
+  const mediaSrc = staticFile(cutManifest?.file || `broll/cut_${cut.cutId}.jpg`);
 
   return (
     <AbsoluteFill
@@ -94,39 +98,32 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
         <Audio src={staticFile("sfx/whoosh.mp3")} volume={0.45} />
       )}
 
-      {/* 1. Kurzgesagt Aesthetic Background */}
-      <KurzgesagtBackground primaryColor={themeConfig.primary} />
-
-      {/* 2. Top-Middle Area: Dynamic Story Portal with Context-Aware Telemetry Overlay */}
+      {/* 1. Full-Bleed 1080x1920 Cinematic Video / Motion Footage */}
       <div
         style={{
           position: "absolute",
-          top: "8%",
-          left: "6%",
-          width: "88%",
-          height: 640,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          transform: `scale(${0.88 + sceneEntry * 0.12})`,
-          opacity: sceneEntry,
-          zIndex: 5,
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          overflow: "hidden",
+          zIndex: 1,
         }}
       >
-        {/* Dynamic Holo-Portal Frame displaying the topic's actual B-roll */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-            borderRadius: 36,
-            overflow: "hidden",
-            border: `5px solid ${themeConfig.primary}`,
-            boxShadow: `0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px ${themeConfig.primary}44`,
-            background: "#030712",
-          }}
-        >
+        {isVideo ? (
+          <Video
+            src={mediaSrc}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: `scale(${brollZoom})`,
+              transformOrigin: "center center",
+              display: "block",
+            }}
+            loop
+            muted
+          />
+        ) : (
           <Img
             src={mediaSrc}
             style={{
@@ -141,136 +138,154 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
               (e.target as HTMLElement).style.display = "none";
             }}
           />
-          {/* Glossy Reflection Overlay */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: `linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.4) 100%)`,
-              pointerEvents: "none",
-            }}
-          />
-          {/* Tech Corner Accents */}
-          <div
-            style={{
-              position: "absolute",
-              top: 18,
-              left: 20,
-              padding: "6px 16px",
-              borderRadius: 100,
-              background: "rgba(15, 23, 42, 0.85)",
-              border: `1.5px solid ${themeConfig.primary}`,
-              color: themeConfig.primary,
-              fontSize: 16,
-              fontWeight: 800,
-              letterSpacing: 2,
-              textTransform: "uppercase",
-            }}
-          >
-            VISUAL REEL #{cut.cutId}
-          </div>
+        )}
 
-          {/* Contextual Metric Telemetry Overlay (Rendered when this cut has a stat) */}
-          {hasStat && (() => {
-            const num = cut.statHighlight!.number;
-            const isFinance = num.includes("$") || /billion|million|trillion/i.test(num);
-            const isThermal = /°|deg|kelvin/i.test(num);
-            const isSpeed = /ms|μs|us|s|hz|ghz|km|mph/i.test(num);
-            const isStorage = /tb|gb|pb|mb|kb|byte|bit/i.test(num);
-            const isPercent = num.includes("%");
-
-            const accentColor = isFinance
-              ? "#f59e0b"
-              : isThermal
-              ? "#ef4444"
-              : isStorage
-              ? "#a855f7"
-              : isPercent
-              ? "#10b981"
-              : themeConfig.primary;
-
-            const categoryLabel = isFinance
-              ? "FINANCE"
-              : isThermal
-              ? "THERMAL"
-              : isSpeed
-              ? "SPEED"
-              : isStorage
-              ? "STORAGE"
-              : isPercent
-              ? "RATIO"
-              : "DATA";
-
-            return (
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 20,
-                  left: 20,
-                  right: 20,
-                  padding: "16px 24px",
-                  borderRadius: 24,
-                  background: "rgba(10, 15, 30, 0.92)",
-                  backdropFilter: "blur(20px)",
-                  border: `2.5px solid ${accentColor}`,
-                  boxShadow: "0 15px 35px rgba(0,0,0,0.8)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.75)",
-                      fontSize: 16,
-                      fontWeight: 800,
-                      letterSpacing: 3,
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {cut.statHighlight!.label}
-                  </span>
-                  <span
-                    style={{
-                      color: accentColor,
-                      fontSize: 54,
-                      fontWeight: 900,
-                      letterSpacing: -1,
-                      lineHeight: 1.1,
-                      textShadow: `0 0 25px ${accentColor}88`,
-                    }}
-                  >
-                    {num}
-                  </span>
-                </div>
-                <div
-                  style={{
-                    padding: "8px 18px",
-                    borderRadius: 100,
-                    backgroundColor: `${accentColor}22`,
-                    border: `1.5px solid ${accentColor}`,
-                    color: "#ffffff",
-                    fontSize: 16,
-                    fontWeight: 800,
-                    letterSpacing: 2,
-                  }}
-                >
-                  {categoryLabel}
-                </div>
-              </div>
-            );
-          })()}
-        </div>
+        {/* Cinematic Vignette Overlay (keeps subtitles and HUD crystal clear) */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(180deg, rgba(3, 7, 18, 0.78) 0%, rgba(3, 7, 18, 0.18) 22%, rgba(3, 7, 18, 0.15) 55%, rgba(3, 7, 18, 0.88) 100%)",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Subtle Tech Grid / Vignette Accents */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(3, 7, 18, 0.6) 100%)`,
+            pointerEvents: "none",
+          }}
+        />
       </div>
 
-      {/* 3. Bottom Third: Hero Scale Kurzgesagt Duck Scientist Character */}
+      {/* 2. Visual Reel Indicator Tag (Top Right) */}
       <div
         style={{
           position: "absolute",
-          bottom: 15,
-          left: isRightSide ? "auto" : 40,
-          right: isRightSide ? 40 : "auto",
+          top: 60,
+          right: 60,
+          padding: "10px 22px",
+          borderRadius: 100,
+          background: "rgba(15, 23, 42, 0.88)",
+          border: `2px solid ${themeConfig.primary}`,
+          color: themeConfig.primary,
+          fontSize: 18,
+          fontWeight: 800,
+          letterSpacing: 2,
+          textTransform: "uppercase",
+          boxShadow: `0 8px 25px rgba(0,0,0,0.5)`,
+          zIndex: 30,
+        }}
+      >
+        REEL #{cut.cutId}
+      </div>
+
+      {/* 3. Floating Contextual Metric Telemetry Card (when this cut has a key statistic) */}
+      {hasStat && (() => {
+        const num = cut.statHighlight!.number;
+        const isFinance = num.includes("$") || /billion|million|trillion/i.test(num);
+        const isThermal = /°|deg|kelvin/i.test(num);
+        const isSpeed = /ms|μs|us|s|hz|ghz|km|mph/i.test(num);
+        const isStorage = /tb|gb|pb|mb|kb|byte|bit/i.test(num);
+        const isPercent = num.includes("%");
+
+        const accentColor = isFinance
+          ? "#f59e0b"
+          : isThermal
+          ? "#ef4444"
+          : isStorage
+          ? "#a855f7"
+          : isPercent
+          ? "#10b981"
+          : themeConfig.primary;
+
+        const categoryLabel = isFinance
+          ? "FINANCE"
+          : isThermal
+          ? "THERMAL"
+          : isSpeed
+          ? "SPEED"
+          : isStorage
+          ? "STORAGE"
+          : isPercent
+          ? "RATIO"
+          : "DATA";
+
+        return (
+          <div
+            style={{
+              position: "absolute",
+              top: 150,
+              left: "6%",
+              width: "88%",
+              padding: "20px 28px",
+              borderRadius: 28,
+              background: "rgba(10, 15, 30, 0.90)",
+              backdropFilter: "blur(24px)",
+              border: `2.5px solid ${accentColor}`,
+              boxShadow: `0 20px 50px rgba(0,0,0,0.8), 0 0 35px ${accentColor}44`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              transform: `scale(${0.9 + sceneEntry * 0.1})`,
+              opacity: sceneEntry,
+              zIndex: 25,
+            }}
+          >
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span
+                style={{
+                  color: "rgba(255, 255, 255, 0.8)",
+                  fontSize: 18,
+                  fontWeight: 800,
+                  letterSpacing: 3,
+                  textTransform: "uppercase",
+                }}
+              >
+                {cut.statHighlight!.label}
+              </span>
+              <span
+                style={{
+                  color: accentColor,
+                  fontSize: 60,
+                  fontWeight: 900,
+                  letterSpacing: -1,
+                  lineHeight: 1.1,
+                  textShadow: `0 0 25px ${accentColor}88`,
+                }}
+              >
+                {num}
+              </span>
+            </div>
+            <div
+              style={{
+                padding: "10px 22px",
+                borderRadius: 100,
+                backgroundColor: `${accentColor}22`,
+                border: `2px solid ${accentColor}`,
+                color: "#ffffff",
+                fontSize: 18,
+                fontWeight: 800,
+                letterSpacing: 2,
+              }}
+            >
+              {categoryLabel}
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* 4. Bottom Co-Host: Animated Mascot Character */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 25,
+          left: isRightSide ? "auto" : 35,
+          right: isRightSide ? 35 : "auto",
+          filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.9))",
           zIndex: 20,
         }}
       >
@@ -278,7 +293,7 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           emotion={emotion}
           prop={handProp}
           subtitles={subtitles}
-          scale={1.48}
+          scale={1.15}
           flipX={isRightSide}
         />
       </div>

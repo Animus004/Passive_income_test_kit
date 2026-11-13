@@ -1,80 +1,68 @@
 {
-  "updatedAt": "2026-11-12T06:50:01.963Z",
-  "topic": "The BGP Internet Routing Hijack",
+  "updatedAt": "2026-11-13T14:28:25.822Z",
+  "topic": "The Svalbard Arctic Doomsday Seed Vault",
   "cuts": {
     "cut_1": {
       "type": "image",
       "file": "broll/cut_1.jpg",
-      "query": "fiber optic network map",
-      "source": "unsplash"
+      "source": "unsplash",
+      "query": "cracked earth drought"
     },
     "cut_2": {
       "type": "image",
       "file": "broll/cut_2.jpg",
-      "query": "server rack blackhole",
-      "source": "unsplash"
+      "source": "wikimedia",
+      "query": "Svalbard Global Seed Vault Exterior"
     },
     "cut_3": {
       "type": "image",
       "file": "broll/cut_3.jpg",
-      "query": "data packet flow",
-      "source": "unsplash"
+      "source": "wikimedia",
+      "query": "Svalbard Seed Vault Storage Boxes"
     },
     "cut_4": {
       "type": "image",
       "file": "broll/cut_4.jpg",
-      "query": "network topology diagram",
-      "source": "unsplash"
+      "source": "unsplash",
+      "query": "ice tunnel cave"
     },
     "cut_5": {
       "type": "image",
       "file": "broll/cut_5.jpg",
-      "query": "server room darkness",
-      "source": "unsplash"
-    },
-    "cut_6": {
-      "type": "image",
-      "file": "broll/cut_6.jpg",
-      "query": "global internet cables",
-      "source": "unsplash"
+      "query": "arctic mountain tundra aerial",
+      "source": "nasa"
     }
   },
   "scenes": {
     "scene1": {
       "type": "image",
       "file": "broll/cut_1.jpg",
-      "query": "fiber optic network map",
+      "query": "barren dry farmland crack",
       "source": "unsplash"
     },
     "scene2": {
       "type": "image",
       "file": "broll/cut_2.jpg",
-      "query": "server rack blackhole",
+      "query": "svalbard seed vault exterior",
       "source": "unsplash"
     },
     "scene3": {
-      "type": "image",
-      "file": "broll/cut_3.jpg",
-      "query": "data packet flow",
-      "source": "unsplash"
+      "type": "video",
+      "file": "broll/cut_3.mp4",
+      "query": "black box seed vault storage",
+      "source": "coverr"
     },
     "scene4": {
       "type": "image",
       "file": "broll/cut_4.jpg",
-      "query": "network topology diagram",
+      "query": "frozen underground ice tunnel",
       "source": "unsplash"
     },
     "scene5": {
       "type": "image",
       "file": "broll/cut_5.jpg",
-      "query": "server room darkness",
-      "source": "unsplash"
-    },
-    "scene6": {
-      "type": "image",
-      "file": "broll/cut_6.jpg",
-      "query": "global internet cables",
-      "source": "unsplash"
+      "query": "arctic mountain tundra aerial",
+      "source": "nasa"
     }
   }
 }

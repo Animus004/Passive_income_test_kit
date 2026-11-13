@@ -29,7 +29,7 @@ export const ShortComposition: React.FC<ShortCompositionProps> = ({
       }}
     >
       {/* 5-Layer Cinematic Depth Background (for non-full-bleed genres) */}
-      {genre !== "data-detective" && (
+      {genre !== "data-detective" && genre !== "kurzgesagt-explainer" && (
         <Background
           themeColor={
             genre === "style-advisor"

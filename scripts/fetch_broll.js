@@ -4,10 +4,12 @@
  * Automatically fetches real, topic-matching video footage or high-resolution
  * cinematic imagery for each scene based on Gemini search queries.
  * 
- * Supports:
- * 1. Pexels Videos API (if PEXELS_API_KEY is present in env)
- * 2. Keyless Wikimedia Commons High-Res Imagery API (100% free fallback)
- * 3. Graceful fallback to rich procedural visual textures if offline
+ * Multi-Tier Media Pipeline:
+ * 1. Coverr Stock Video API (Free 1080p MP4 loops & footage)
+ * 2. Pexels Videos API (if PEXELS_API_KEY is present)
+ * 3. NASA Open Archive API (keyless space/tech imagery & footage)
+ * 4. Unsplash High-Definition Cinematic Photos
+ * 5. Wikimedia Commons Technical & Historical Imagery (keyless open archive)
  */
 
 const fs = require('fs');
@@ -20,15 +22,41 @@ const CURRENT_SHORT_PATH = path.join(PROJECT_ROOT, 'src', 'data', 'current_short
 const BROLL_DIR = path.join(PROJECT_ROOT, 'public', 'broll');
 const MANIFEST_PATH = path.join(BROLL_DIR, 'manifest.json');
 const DATA_MANIFEST_PATH = path.join(PROJECT_ROOT, 'src', 'data', 'broll_manifest.json');
+const MEDIA_HISTORY_PATH = path.join(PROJECT_ROOT, 'data', 'media_history.json');
+
+function loadMediaHistory() {
+  if (fs.existsSync(MEDIA_HISTORY_PATH)) {
+    try {
+      return new Set(JSON.parse(fs.readFileSync(MEDIA_HISTORY_PATH, 'utf-8')));
+    } catch (e) {}
+  }
+  return new Set();
+}
+
+const mediaHistory = loadMediaHistory();
+
+function recordMediaUse(idOrUrl) {
+  if (!idOrUrl) return;
+  mediaHistory.add(String(idOrUrl));
+  try {
+    fs.writeFileSync(MEDIA_HISTORY_PATH, JSON.stringify(Array.from(mediaHistory), null, 2), 'utf-8');
+  } catch (e) {}
+}
 
 function downloadFile(url, destPath) {
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(destPath);
-    const headers = {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Referer': 'https://commons.wikimedia.org/',
-      'Accept': '*/*',
-    };
+    const isWikimedia = url.includes('wikimedia.org');
+    const headers = isWikimedia
+      ? {
+          'User-Agent': 'FocusFuelEduDoc/1.0 (https://youtube.com/@DataDetective; animus@datadetective.com)',
+          'Accept': 'image/*,*/*',
+        }
+      : {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Referer': 'https://coverr.co/',
+          'Accept': '*/*',
+        };
     const request = https.get(url, { headers }, (response) => {
       // Handle redirects
       if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
@@ -58,40 +86,203 @@ function downloadFile(url, destPath) {
   });
 }
 
-async function fetchPexelsVideo(query) {
-  const apiKey = process.env.PEXELS_API_KEY;
+const NOISE_WORDS = new Set([
+  'exterior', 'interior', 'crack', 'box', 'shot', 'view', 'aerial', 'clip',
+  'footage', 'real', 'action', 'macro', 'background', 'wide', 'closeup', 'angle',
+  'video', 'image', 'photo', 'picture', 'scene', 'visual', 'texture', 'concept',
+]);
+
+const IRRELEVANT_TITLE_WORDS = [
+  'dog', 'cat', 'puppy', 'pet', 'fashion', 'model', 'posing',
+  'street', 'textile', 'pattern', 'fabric', 'portrait', 'dance', 'dancing',
+  'workout', 'fitness', 'clothing', 'dress', 'makeup', 'party', 'bar', 'club', 'hotel', 'popcorn',
+];
+
+function isRelevantHit(title, queryWords = []) {
+  if (!title) return true;
+  const lower = title.toLowerCase();
+  for (const bad of IRRELEVANT_TITLE_WORDS) {
+    if (lower.includes(bad)) {
+      const userAskedForIt = queryWords.some((w) => w.toLowerCase().includes(bad));
+      if (!userAskedForIt) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function buildSmartCandidates(query, topic) {
+  const cleanTopic = (topic || '').replace(/[^\w\s-]/g, ' ').trim();
+  const cleanWords = query
+    .replace(/[^\w\s-]/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  const meaningfulWords = cleanWords.filter((w) => !NOISE_WORDS.has(w.toLowerCase()));
+
+  const candidates = [];
+  // 1. Full meaningful query (e.g. "svalbard seed vault", "barren dry farmland")
+  if (meaningfulWords.length >= 2) {
+    candidates.push(meaningfulWords.join(' '));
+  } else if (cleanWords.length >= 2) {
+    candidates.push(cleanWords.join(' '));
+  }
+
+  // 2. Query combined with topic anchor (e.g. "svalbard seed vault dry farmland")
+  if (cleanTopic && meaningfulWords.length > 0) {
+    const topicKeywords = cleanTopic.split(/\s+/).slice(0, 3).join(' ');
+    candidates.push(`${topicKeywords} ${meaningfulWords.slice(0, 2).join(' ')}`.trim());
+  }
+
+  // 3. Meaningful 2-word phrase
+  if (meaningfulWords.length >= 2) {
+    candidates.push(meaningfulWords.slice(0, 2).join(' '));
+    candidates.push(meaningfulWords.slice(-2).join(' '));
+  }
+
+  // 4. Topic core alone (e.g. "svalbard seed vault" or "arctic bunker")
+  if (cleanTopic) {
+    candidates.push(cleanTopic);
+  }
+
+  // Deduplicate and strictly ensure candidates are multi-word phrases and not noise words
+  return Array.from(new Set(candidates)).filter(
+    (c) => c && c.length >= 4 && !NOISE_WORDS.has(c.toLowerCase()) && c.includes(' ')
+  );
+}
+
+async function fetchCoverrVideo(query, topic = '') {
+  const apiKey = process.env.COVERR_API_KEY;
   if (!apiKey) return null;
 
-  try {
-    const url = `https://api.pexels.com/videos/search?query=${encodeURIComponent(query)}&orientation=portrait&per_page=1&size=medium`;
-    const res = await fetch(url, {
-      headers: { Authorization: apiKey },
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data.videos && data.videos.length > 0) {
-      const videoFiles = data.videos[0].video_files;
-      // Find best portrait HD file
-      const best = videoFiles.find((f) => f.width <= 1080 && f.height <= 1920 && f.link) || videoFiles[0];
-      return best?.link || null;
+  const candidates = buildSmartCandidates(query, topic);
+
+  for (const q of candidates) {
+    try {
+      const url = `https://api.coverr.co/videos?query=${encodeURIComponent(q)}&page_size=5`;
+      const res = await fetch(url, {
+        headers: { Authorization: `Bearer ${apiKey}` },
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data.hits && data.hits.length > 0) {
+        // Pick the first hit that hasn't been used yet and is strictly relevant to the scene
+        const hit = data.hits.find((h) => {
+          const u = h.urls?.mp4 || `https://cdn.coverr.co/videos/${h.base_filename}/1080p.mp4`;
+          const title = h.title || '';
+          return !mediaHistory.has(u) && isRelevantHit(title, q.split(/\s+/));
+        });
+
+        if (hit) {
+          const videoUrl = hit.urls?.mp4 || `https://cdn.coverr.co/videos/${hit.base_filename}/1080p.mp4`;
+          recordMediaUse(videoUrl);
+          console.log(`  [Coverr] Found strictly relevant stock video for "${q}": "${hit.title}"`);
+          return videoUrl;
+        }
+      }
+    } catch (e) {
+      console.warn(`[Coverr] Query "${q}" failed:`, e.message);
     }
-  } catch (e) {
-    console.warn(`[Pexels] Query "${query}" failed:`, e.message);
   }
   return null;
 }
 
-async function fetchUnsplashPhoto(query) {
+async function fetchPexelsVideo(query, topic = '') {
+  const apiKey = process.env.PEXELS_API_KEY;
+  if (!apiKey) return null;
+
+  const candidates = buildSmartCandidates(query, topic);
+
+  for (const q of candidates) {
+    try {
+      const url = `https://api.pexels.com/videos/search?query=${encodeURIComponent(q)}&orientation=portrait&per_page=5&size=medium`;
+      const res = await fetch(url, {
+        headers: { Authorization: apiKey },
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data.videos && data.videos.length > 0) {
+        const vid = data.videos.find((v) => !mediaHistory.has(String(v.id))) || data.videos[0];
+        recordMediaUse(String(vid.id));
+        const videoFiles = vid.video_files || [];
+        const best = videoFiles.find((f) => f.width <= 1080 && f.height <= 1920 && f.link) || videoFiles[0];
+        if (best?.link) {
+          console.log(`  [Pexels] Found stock video footage for "${q}"`);
+          return best.link;
+        }
+      }
+    } catch (e) {
+      console.warn(`[Pexels] Query "${q}" failed:`, e.message);
+    }
+  }
+  return null;
+}
+
+async function fetchNasaMedia(query) {
+  try {
+    const isRelevant = /space|satellite|earth|ocean|planet|orbit|nasa|telescope|starlink|vacuum|gravity|laser|solar|science|arctic|physics|vault|seed/i.test(query);
+    if (!isRelevant) return null;
+
+    const cleanWords = query.replace(/[^\w\s-]/g, ' ').trim().split(/\s+/).filter(Boolean);
+    const searchTerms = [cleanWords.join(' '), cleanWords.slice(0, 2).join(' ')];
+
+    for (const term of searchTerms) {
+      // 1. Try NASA authentic Video Archive first
+      try {
+        const vidUrl = `https://images-api.nasa.gov/search?q=${encodeURIComponent(term)}&media_type=video`;
+        const vidRes = await fetch(vidUrl);
+        if (vidRes.ok) {
+          const vidData = await vidRes.json();
+          const items = vidData?.collection?.items;
+          if (items && items.length > 0) {
+            const item = items[0];
+            const manifestUrl = item.href;
+            if (manifestUrl) {
+              const manifestRes = await fetch(manifestUrl);
+              if (manifestRes.ok) {
+                const files = await manifestRes.json();
+                const mp4Files = Array.isArray(files) ? files.filter((f) => typeof f === 'string' && f.endsWith('.mp4')) : [];
+                const chosen = mp4Files.find((f) => f.includes('~medium.mp4') || f.includes('~large.mp4') || f.includes('~orig.mp4')) || mp4Files[0];
+                if (chosen) {
+                  const secureUrl = chosen.startsWith('http://') ? chosen.replace('http://', 'https://') : chosen;
+                  console.log(`  [NASA] Found authentic archive VIDEO for "${term}": "${item.data?.[0]?.title}"`);
+                  return { url: secureUrl, type: 'video' };
+                }
+              }
+            }
+          }
+        }
+      } catch (vidErr) {}
+
+      // 2. Fallback to NASA High-Res Image Archive
+      const url = `https://images-api.nasa.gov/search?q=${encodeURIComponent(term)}&media_type=image`;
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const items = data?.collection?.items;
+      if (items && items.length > 0) {
+        for (const item of items.slice(0, 3)) {
+          const link = item.links?.find((l) => l.render === 'image' || l.href?.endsWith('.jpg') || l.href?.endsWith('.png'));
+          if (link?.href) {
+            console.log(`  [NASA] Found authentic archive imagery for "${term}": "${item.data?.[0]?.title}"`);
+            return { url: link.href, type: 'image' };
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.warn(`[NASA] Query "${query}" failed:`, e.message);
+  }
+  return null;
+}
+
+async function fetchUnsplashPhoto(query, topic = '') {
   const accessKey = process.env.UNSPLASH_ACCESS_KEY;
   if (!accessKey) return null;
 
-  const cleanWords = query.replace(/[^\w\s-]/g, ' ').trim().split(/\s+/).filter(Boolean);
-  const candidates = [
-    cleanWords.join(' '),
-    cleanWords.slice(-2).join(' '), // e.g. "cooling liquid" or "server farm"
-    cleanWords.slice(0, 2).join(' '), // e.g. "server immersion" or "underwater server"
-    cleanWords[cleanWords.length - 1], // last keyword
-  ].filter((q, idx, arr) => q && q.length > 2 && arr.indexOf(q) === idx);
+  const candidates = buildSmartCandidates(query, topic);
 
   for (const q of candidates) {
     try {
@@ -104,9 +295,15 @@ async function fetchUnsplashPhoto(query) {
       if (res.ok) {
         const data = await res.json();
         if (data.results && data.results.length > 0) {
-          const photo = data.results[0];
-          console.log(`  [Unsplash] Found photo using query variant: "${q}"`);
-          return photo.urls?.regular || photo.urls?.full || null;
+          const photo = data.results.find((p) => {
+            const desc = `${p.description || ''} ${p.alt_description || ''}`;
+            return !mediaHistory.has(p.id) && isRelevantHit(desc, q.split(/\s+/));
+          });
+          if (photo) {
+            recordMediaUse(photo.id);
+            console.log(`  [Unsplash] Found relevant photo for "${q}": "${photo.alt_description || photo.description || q}"`);
+            return photo.urls?.regular || photo.urls?.full || null;
+          }
         }
       }
     } catch (e) {
@@ -130,7 +327,6 @@ async function fetchWikimediaImage(query) {
       for (const key of Object.keys(pages)) {
         const info = pages[key]?.imageinfo?.[0];
         if (info && info.url && (info.mime === 'image/jpeg' || info.mime === 'image/png')) {
-          // Avoid tiny SVGs or icons, prefer photos
           return info.url;
         }
       }
@@ -193,36 +389,123 @@ async function main() {
 
     let downloaded = false;
 
-    // 1. Try Unsplash High-Definition Photo first (verified key!)
-    const unsplashUrl = await fetchUnsplashPhoto(query);
-    if (unsplashUrl) {
-      const destFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
-      try {
-        console.log(`  📷 Downloading Unsplash cinematic photo...`);
-        await downloadFile(unsplashUrl, destFile);
-        const cutEntry = {
-          type: 'image',
-          file: `broll/cut_${cutId}.jpg`,
-          query,
-          source: 'unsplash',
-        };
-        manifest.cuts[`cut_${cutId}`] = cutEntry;
-        manifest.scenes[`scene${cutId}`] = cutEntry;
-        downloaded = true;
-        console.log(`  ✅ Saved Unsplash image to public/broll/cut_${cutId}.jpg`);
-      } catch (err) {
-        console.warn(`  ⚠️ Unsplash download failed, falling back to Wikimedia:`, err.message);
+    // 1. Try Coverr Stock Video Footage (Free HD 1080p MP4)
+    if (process.env.COVERR_API_KEY) {
+      const coverrUrl = await fetchCoverrVideo(query, topic);
+      if (coverrUrl) {
+        const destFile = path.join(BROLL_DIR, `cut_${cutId}.mp4`);
+        const altFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
+        try {
+          console.log(`  🎥 Downloading Coverr 1080p video footage...`);
+          await downloadFile(coverrUrl, destFile);
+          if (fs.existsSync(altFile)) fs.unlinkSync(altFile);
+          const cutEntry = {
+            type: 'video',
+            file: `broll/cut_${cutId}.mp4`,
+            query,
+            source: 'coverr',
+          };
+          manifest.cuts[`cut_${cutId}`] = cutEntry;
+          manifest.scenes[`scene${cutId}`] = cutEntry;
+          downloaded = true;
+          console.log(`  ✅ Saved Coverr 1080p video to public/broll/cut_${cutId}.mp4`);
+        } catch (err) {
+          console.warn(`  ⚠️ Coverr video download failed:`, err.message);
+        }
       }
     }
 
-    // 2. Try Wikimedia High-Res Photo if Unsplash not found
+    // 2. Try Pexels Video (if PEXELS_API_KEY is configured)
+    if (!downloaded && process.env.PEXELS_API_KEY) {
+      const videoUrl = await fetchPexelsVideo(query, topic);
+      if (videoUrl) {
+        const destFile = path.join(BROLL_DIR, `cut_${cutId}.mp4`);
+        const altFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
+        try {
+          console.log(`  🎥 Downloading Pexels HD video footage...`);
+          await downloadFile(videoUrl, destFile);
+          if (fs.existsSync(altFile)) fs.unlinkSync(altFile);
+          const cutEntry = {
+            type: 'video',
+            file: `broll/cut_${cutId}.mp4`,
+            query,
+            source: 'pexels',
+          };
+          manifest.cuts[`cut_${cutId}`] = cutEntry;
+          manifest.scenes[`scene${cutId}`] = cutEntry;
+          downloaded = true;
+          console.log(`  ✅ Saved Pexels HD video to public/broll/cut_${cutId}.mp4`);
+        } catch (err) {
+          console.warn(`  ⚠️ Pexels video download failed:`, err.message);
+        }
+      }
+    }
+
+    // 3. Try NASA Open Archive (Keyless authentic space/earth/physics media & video)
+    if (!downloaded) {
+      const nasaMedia = await fetchNasaMedia(query);
+      if (nasaMedia) {
+        const isVid = nasaMedia.type === 'video';
+        const ext = isVid ? 'mp4' : 'jpg';
+        const altExt = isVid ? 'jpg' : 'mp4';
+        const destFile = path.join(BROLL_DIR, `cut_${cutId}.${ext}`);
+        const altFile = path.join(BROLL_DIR, `cut_${cutId}.${altExt}`);
+        try {
+          console.log(`  🚀 Downloading NASA authentic ${isVid ? '1080p HD VIDEO footage' : 'space/tech imagery'}...`);
+          await downloadFile(nasaMedia.url, destFile);
+          if (fs.existsSync(altFile)) fs.unlinkSync(altFile);
+          const cutEntry = {
+            type: isVid ? 'video' : 'image',
+            file: `broll/cut_${cutId}.${ext}`,
+            query,
+            source: 'nasa',
+          };
+          manifest.cuts[`cut_${cutId}`] = cutEntry;
+          manifest.scenes[`scene${cutId}`] = cutEntry;
+          downloaded = true;
+          console.log(`  ✅ Saved NASA ${isVid ? 'video footage' : 'imagery'} to public/broll/cut_${cutId}.${ext}`);
+        } catch (err) {
+          console.warn(`  ⚠️ NASA download failed:`, err.message);
+        }
+      }
+    }
+
+    // 4. Try Unsplash High-Definition Cinematic Photo
+    if (!downloaded) {
+      const unsplashUrl = await fetchUnsplashPhoto(query, topic);
+      if (unsplashUrl) {
+        const destFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
+        const altFile = path.join(BROLL_DIR, `cut_${cutId}.mp4`);
+        try {
+          console.log(`  📷 Downloading Unsplash cinematic photo...`);
+          await downloadFile(unsplashUrl, destFile);
+          if (fs.existsSync(altFile)) fs.unlinkSync(altFile);
+          const cutEntry = {
+            type: 'image',
+            file: `broll/cut_${cutId}.jpg`,
+            query,
+            source: 'unsplash',
+          };
+          manifest.cuts[`cut_${cutId}`] = cutEntry;
+          manifest.scenes[`scene${cutId}`] = cutEntry;
+          downloaded = true;
+          console.log(`  ✅ Saved Unsplash image to public/broll/cut_${cutId}.jpg`);
+        } catch (err) {
+          console.warn(`  ⚠️ Unsplash download failed, falling back to Wikimedia:`, err.message);
+        }
+      }
+    }
+
+    // 5. Try Wikimedia High-Res Technical/Historical Image (100% keyless fallback)
     if (!downloaded) {
       const imgUrl = await fetchWikimediaImage(query);
       if (imgUrl) {
         const destFile = path.join(BROLL_DIR, `cut_${cutId}.jpg`);
+        const altFile = path.join(BROLL_DIR, `cut_${cutId}.mp4`);
         try {
           console.log(`  📷 Downloading Wikimedia high-res photo...`);
           await downloadFile(imgUrl, destFile);
+          if (fs.existsSync(altFile)) fs.unlinkSync(altFile);
           const cutEntry = {
             type: 'image',
             file: `broll/cut_${cutId}.jpg`,
@@ -235,30 +518,6 @@ async function main() {
           console.log(`  ✅ Saved Wikimedia image to public/broll/cut_${cutId}.jpg`);
         } catch (err) {
           console.warn(`  ⚠️ Wikimedia download failed:`, err.message);
-        }
-      }
-    }
-
-    // 3. Try Pexels Video
-    if (!downloaded) {
-      const videoUrl = await fetchPexelsVideo(query);
-      if (videoUrl) {
-        const destFile = path.join(BROLL_DIR, `cut_${cutId}.mp4`);
-        try {
-          console.log(`  ▶️ Downloading Pexels HD video...`);
-          await downloadFile(videoUrl, destFile);
-          const cutEntry = {
-            type: 'video',
-            file: `broll/cut_${cutId}.mp4`,
-            query,
-            source: 'pexels',
-          };
-          manifest.cuts[`cut_${cutId}`] = cutEntry;
-          manifest.scenes[`scene${cutId}`] = cutEntry;
-          downloaded = true;
-          console.log(`  ✅ Saved video to public/broll/cut_${cutId}.mp4`);
-        } catch (err) {
-          console.warn(`  ⚠️ Pexels download failed:`, err.message);
         }
       }
     }
