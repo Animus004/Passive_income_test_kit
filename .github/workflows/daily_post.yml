@@ -1,9 +1,9 @@
 name: Autonomous Daily Shorts & Reels Pipeline
 
 on:
-  schedule:
-    # Runs 3 times a day at optimal Shorts/Reels engagement hours: 05:00 UTC, 13:00 UTC, 21:00 UTC
-    - cron: '0 5,13,21 * * *'
+  # Automated schedule disabled: Local PC Task Scheduler handles daily publishing with full 1080p Coverr video footage
+  # schedule:
+  #   - cron: '0 5,13,21 * * *'
   workflow_dispatch:
     inputs:
       topic:
