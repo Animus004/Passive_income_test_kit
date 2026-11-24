@@ -35,7 +35,7 @@ const BLENDER_BIN = process.env.BLENDER_BIN || (fs.existsSync('D:\\Programs\\ble
 const ARTIFACT_DIR = process.env.ARTIFACT_DIR || path.join(PROJECT_ROOT, 'out', 'artifacts');
 const HISTORY_FILE = path.join(PROJECT_ROOT, 'scratch', 'phase2_history.json');
 
-function getRecentEnvironments(days = 3) {
+export function getRecentEnvironments(days = 3) {
   if (!fs.existsSync(HISTORY_FILE)) return [];
   try {
     const history = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf-8'));
@@ -45,7 +45,7 @@ function getRecentEnvironments(days = 3) {
   }
 }
 
-function getRecentTopics(count = 10) {
+export function getRecentTopics(count = 10) {
   if (!fs.existsSync(HISTORY_FILE)) return [];
   try {
     const history = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf-8'));
@@ -55,7 +55,7 @@ function getRecentTopics(count = 10) {
   }
 }
 
-function getRecentHistory(count = 10) {
+export function getRecentHistory(count = 10) {
   if (!fs.existsSync(HISTORY_FILE)) return [];
   try {
     const history = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf-8'));
@@ -65,7 +65,7 @@ function getRecentHistory(count = 10) {
   }
 }
 
-function recordHistoryEntry(entry) {
+export function recordHistoryEntry(entry) {
   let history = [];
   if (fs.existsSync(HISTORY_FILE)) {
     try {
@@ -83,13 +83,25 @@ function recordHistoryEntry(entry) {
 // =========================================================================
 // EXPANDED MULTI-GENRE MATRIX (AUTONOMOUS TOPIC POOL - HIGH-STAKES RELATABLE COMEDY)
 // =========================================================================
-const EXPANDED_GENRE_MATRIX = [
+export const EXPANDED_GENRE_MATRIX = [
   // --- LIFESTYLE RELATABILITY, BESTIE DYNAMICS & BRAND-FRIENDLY TROPES ---
   {
     genre: 'cafe_and_urban_life',
     env: 'cafe_corner',
     slot: 'daytime',
     topic: "Human refuses to start any productive work until his 'emotional support iced coffee' is placed at the exact 45-degree angle beside his keyboard"
+  },
+  {
+    genre: 'cafe_and_urban_life',
+    env: 'daylight_walk',
+    slot: 'daytime',
+    topic: "Human treats carrying his morning cold brew down the street like balancing the Olympic torch, terrified of a single rogue pavement crack"
+  },
+  {
+    genre: 'cafe_and_urban_life',
+    env: 'park_garden',
+    slot: 'daytime',
+    topic: "Human buys an artisan lavender iced latte to read a classic novel on a park bench, only to spend 45 minutes trying to photograph the cup on grass"
   },
   {
     genre: 'late_night_thoughts_and_self_realisation',
@@ -104,6 +116,18 @@ const EXPANDED_GENRE_MATRIX = [
     topic: "Human wears noise-canceling headphones with absolutely zero music playing just to legally avoid making eye contact in public, much to Gemini's amused diagnosis"
   },
   {
+    genre: 'touching_grass_and_awkwardness',
+    env: 'park_garden',
+    slot: 'daytime',
+    topic: "Human ventures into the local botanical park to 'commune with nature', but ends up paralyzed in fear when a territorial duck makes unblinking eye contact"
+  },
+  {
+    genre: 'touching_grass_and_awkwardness',
+    env: 'cafe_corner',
+    slot: 'daytime',
+    topic: "Human stands awkwardly outside a bustling cafe trying to decipher if people are queuing for takeaway or just vibing in front of the door"
+  },
+  {
     genre: 'late_night_thoughts_and_self_realisation',
     env: 'cozy_living_couch',
     slot: 'evening',
@@ -114,6 +138,12 @@ const EXPANDED_GENRE_MATRIX = [
     env: 'latenight_desk',
     slot: 'evening',
     topic: "Human buys a fancy leather-bound life planner hoping it will magically organize his chaotic life, while Gemini asks who will actually remember to open it"
+  },
+  {
+    genre: 'late_night_thoughts_and_self_realisation',
+    env: 'neon_datacenter',
+    slot: 'evening',
+    topic: "Human sits in the ambient blue glow of the server room at midnight wondering if artificial intelligence will ever feel the sweet nostalgia of old flash games"
   },
   // --- 1. LATE NIGHT (2 AM) — LIVING COUCH & BALCONY SANCTUARY ---
   {
@@ -178,6 +208,12 @@ const EXPANDED_GENRE_MATRIX = [
     slot: 'evening',
     topic: "Human asks Gemini to build an automated budget tracker, but specifies that all purchases after 11 PM must be categorized as 'spiritual healing'"
   },
+  {
+    genre: 'ai_demands_and_roasts',
+    env: 'neon_datacenter',
+    slot: 'evening',
+    topic: "Human asks Gemini to deploy an AI agent directly to enterprise servers, but confesses his only requirement is that it generates an 'All Systems Optimal' green chart so management stops asking questions"
+  },
 
   // --- NEW: HEARTWARMING & EMOTIONAL RELATABLE (LATE NIGHT BURNOUT & GROUNDING) ---
   {
@@ -197,6 +233,24 @@ const EXPANDED_GENRE_MATRIX = [
     env: 'night_balcony_skyline',
     slot: 'evening',
     topic: "Human wonders why everyone online seems 10 steps ahead, and Gemini reminds him that social media is an edited highlight reel while real character is built in the quiet moments"
+  },
+  {
+    genre: 'heartwarming_and_emotional_relatable',
+    env: 'latenight_desk',
+    slot: 'evening',
+    topic: "Human stares at his messy desk at 2:30 AM overwhelmed by how slow his personal growth feels, and Gemini gently points out how much courage it took to just keep showing up"
+  },
+  {
+    genre: 'heartwarming_and_emotional_relatable',
+    env: 'cozy_living_couch',
+    slot: 'evening',
+    topic: "Human sitting with a warm blanket admits he feels guilty taking an entire evening off to rest, and Gemini reminds him that machines need cooldown cycles and humans need grace"
+  },
+  {
+    genre: 'heartwarming_and_emotional_relatable',
+    env: 'park_garden',
+    slot: 'evening',
+    topic: "Human takes a quiet twilight walk through the park to decompress after an exhausting week, and Gemini gives a deeply grounding perspective on taking life one breath at a time"
   },
 
   // --- 2. MORNING OFFICE DESK & CORPORATE SURVIVAL ---
@@ -236,6 +290,24 @@ const EXPANDED_GENRE_MATRIX = [
     slot: 'daytime',
     topic: "Human joins a 40-person Zoom meeting with camera and mic off, sweating in pure terror praying nobody says 'Let us hear from our developer'"
   },
+  {
+    genre: 'office_jokes_and_corporate_absurdities',
+    env: 'cafe_corner',
+    slot: 'daytime',
+    topic: "Human attempts to 'work from a trendy cafe' to feel cosmopolitan, spending 40 minutes hunting for a power outlet and 3 hours drinking cold foam"
+  },
+  {
+    genre: 'office_jokes_and_corporate_absurdities',
+    env: 'park_garden',
+    slot: 'daytime',
+    topic: "Human gets trapped in an outdoor 'walking 1-on-1 catchup' with his manager, desperately panting while pretending an Olympic power-walk pace is totally chill"
+  },
+  {
+    genre: 'office_jokes_and_corporate_absurdities',
+    env: 'neon_datacenter',
+    slot: 'daytime',
+    topic: "Human gets sent down to the freezing server room to find a blinking warning LED, treating the corridor like an intense high-stakes sci-fi submarine mission"
+  },
 
   // --- 3. EVENING DEBUGGING DESK & HIGH-STAKES CODE CHAOS ---
   {
@@ -274,6 +346,12 @@ const EXPANDED_GENRE_MATRIX = [
     slot: 'evening',
     topic: "Human fixes a critical bug with a sketchy hack he doesn't understand, and now the company's entire multi-million dollar cloud architecture depends on that hack"
   },
+  {
+    genre: 'debugger_humor_and_chaos',
+    env: 'corporate_office',
+    slot: 'daytime',
+    topic: "Human accidentally triggers an automated staging alert 5 minutes before the company all-hands and aggressively pretends his laptop battery died"
+  },
 
   // --- 4. CODER SARCASM & TECH IRONY ---
   {
@@ -306,6 +384,18 @@ const EXPANDED_GENRE_MATRIX = [
     slot: 'evening',
     topic: "Human spends 4 hours customizing his IDE color scheme, font ligatures, and terminal blur effects before writing a single character of actual code"
   },
+  {
+    genre: 'coder_sarcasm_and_tech_irony',
+    env: 'cafe_corner',
+    slot: 'daytime',
+    topic: "Human sets up a dual-screen portable monitor and a mechanical keyboard with clicky switches in a quiet cafe, oblivious to the seething rage around him"
+  },
+  {
+    genre: 'coder_sarcasm_and_tech_irony',
+    env: 'neon_datacenter',
+    slot: 'evening',
+    topic: "Human gazes in awe at racks containing 200,000 teraflops of enterprise computing power, realizing it is mostly being used to generate cute sticker emojis"
+  },
 
   // --- 5. MORNING COFFEE SHOP & STREET WALK (OUTDOOR SOCIAL AWKWARDNESS) ---
   {
@@ -337,6 +427,12 @@ const EXPANDED_GENRE_MATRIX = [
     env: 'daylight_walk',
     slot: 'daytime',
     topic: "Human tries to walk naturally past strangers on the sidewalk and suddenly forgets how arms move, walking like a glitching NPC"
+  },
+  {
+    genre: 'touching_grass_and_awkwardness',
+    env: 'park_garden',
+    slot: 'daytime',
+    topic: "Human sits on a sunny park bench trying to look like a deep, mysterious intellectual while frantically swatting away an imaginary wasp"
   },
 
   // --- 6. WEEKEND SCI-FI ADVENTURES & PETTY EVERYDAY SURREALISM ---
@@ -387,12 +483,24 @@ const EXPANDED_GENRE_MATRIX = [
     env: 'time_travel_1995',
     slot: 'weekend',
     topic: "Human travels to 1995 and suffers a nervous breakdown trying to explain cloud computing to someone holding a 1.44 MB floppy disk"
+  },
+  {
+    genre: 'weekend_scifi_adventures',
+    env: 'time_travel_1995',
+    slot: 'weekend',
+    topic: "Human travels back to 1995 hoping to impress people with a smartphone, only to realize there are no cell towers, no Wi-Fi, and his battery is at 12%"
+  },
+  {
+    genre: 'weekend_scifi_adventures',
+    env: 'park_garden',
+    slot: 'weekend',
+    topic: "Human and Gemini test an experimental gravity-boots prototype in a public park, accidentally hovering 6 inches off the grass while a golden retriever watches in shock"
   }
 ];
 
-const WEEKEND_ENVS = ['martian_surface_expedition', 'spaceship_bridge', 'time_travel_1995', 'park_garden', 'cafe_corner'];
-const EVENING_ENVS = ['cozy_living_couch', 'night_balcony_skyline', 'latenight_desk', 'neon_datacenter'];
-const DAYTIME_ENVS = ['corporate_office', 'cafe_corner', 'daylight_walk', 'park_garden'];
+export const WEEKEND_ENVS = ['martian_surface_expedition', 'spaceship_bridge', 'time_travel_1995', 'park_garden', 'cafe_corner', 'daylight_walk'];
+export const EVENING_ENVS = ['cozy_living_couch', 'night_balcony_skyline', 'latenight_desk', 'neon_datacenter', 'park_garden'];
+export const DAYTIME_ENVS = ['corporate_office', 'cafe_corner', 'daylight_walk', 'park_garden', 'neon_datacenter'];
 
 export const WEEKEND_STAGE_RECIPES = {
   martian_surface_expedition: {
@@ -465,7 +573,7 @@ function inferEnvironmentFromTopic(topicText) {
 // AGENT 0: AUTONOMOUS TOPIC & GENRE DECIDER
 // =========================================================================
 
-async function decideViralTopicAndScene(requestedTopic = null, requestedEnv = null, requestedGenre = null) {
+export async function decideViralTopicAndScene(requestedTopic = null, requestedEnv = null, requestedGenre = null) {
   if (requestedTopic) {
     let env = requestedEnv || inferEnvironmentFromTopic(requestedTopic);
     return { topic: requestedTopic, environment: env, genre: requestedGenre || 'custom', slot: 'custom' };
@@ -482,10 +590,13 @@ async function decideViralTopicAndScene(requestedTopic = null, requestedEnv = nu
   const slot = isEvening ? 'evening' : (isWeekend ? 'weekend' : 'daytime');
   const recentEnvs = getRecentEnvironments(3);
   const recentTopics = getRecentTopics(10);
+  const slotEnvs = (slot === 'weekend' ? WEEKEND_ENVS : (slot === 'evening' ? EVENING_ENVS : DAYTIME_ENVS));
+  const lastUsedEnv = recentEnvs.length > 0 ? recentEnvs[recentEnvs.length - 1] : null;
 
   console.log(`\n🧠 [TOPIC DECIDER AGENT] Determining today's episode genre, premise & setting...`);
   console.log(`   • Current Time: ${now.toLocaleTimeString()} | ${slot === 'evening' ? '🌙 Evening/Night' : (slot === 'weekend' ? '🎉 WILD WEEKEND ADVENTURE' : '☀️ Morning/Day')} Slot`);
   console.log(`   • Anti-Repeat Filter - Recent Environments: [${recentEnvs.join(', ')}]`);
+  console.log(`   • Eligible Slot Environments: [${slotEnvs.join(', ')}]`);
 
   // Candidate genres weighted by weekend vs weekday time-of-day
   const weekendGenres = [
@@ -538,15 +649,38 @@ async function decideViralTopicAndScene(requestedTopic = null, requestedEnv = nu
   // Filter pool matching genre & slot
   let pool = EXPANDED_GENRE_MATRIX.filter(item => item.genre === chosenGenre);
   if (pool.length === 0) {
-    pool = EXPANDED_GENRE_MATRIX.filter(item => item.slot === slot);
+    pool = EXPANDED_GENRE_MATRIX.filter(item => item.slot === slot || slotEnvs.includes(item.env));
   }
 
   if (requestedEnv) {
     const envPool = pool.filter(item => item.env === requestedEnv);
     if (envPool.length > 0) pool = envPool;
   } else {
-    // Avoid recent environments if candidates exist
-    const envEligible = pool.filter(item => !recentEnvs.includes(item.env));
+    // Multi-tier anti-repeat & anti-consecutive environment filtering
+    // Tier 1: Environments in this genre not used in the last 3 episodes
+    let envEligible = pool.filter(item => !recentEnvs.includes(item.env));
+
+    // Tier 2: If all genre environments were recently used, widen to slot environments not used recently
+    if (envEligible.length === 0) {
+      const slotPool = EXPANDED_GENRE_MATRIX.filter(item => item.slot === slot || slotEnvs.includes(item.env));
+      const slotEligible = slotPool.filter(item => !recentEnvs.includes(item.env));
+      if (slotEligible.length > 0) {
+        console.log(`   🔄 [SCENE CYCLE EXPANSION] All ${chosenGenre} environments were in recent history [${recentEnvs.join(', ')}]. Widening to fresh slot candidates: [${[...new Set(slotEligible.map(e => e.env))].join(', ')}]`);
+        envEligible = slotEligible;
+      }
+    }
+
+    // Tier 3: Strict Anti-Consecutive Fallback - absolutely never repeat the immediate previous environment!
+    if (envEligible.length === 0 && lastUsedEnv) {
+      const nonConsecutivePool = pool.filter(item => item.env !== lastUsedEnv);
+      if (nonConsecutivePool.length > 0) {
+        envEligible = nonConsecutivePool;
+      } else {
+        const slotNonConsecutive = EXPANDED_GENRE_MATRIX.filter(item => (item.slot === slot || slotEnvs.includes(item.env)) && item.env !== lastUsedEnv);
+        if (slotNonConsecutive.length > 0) envEligible = slotNonConsecutive;
+      }
+    }
+
     if (envEligible.length > 0) pool = envEligible;
   }
 
@@ -599,12 +733,20 @@ Rules:
       const parsed = JSON.parse(cleanJson);
       if (parsed.topic && parsed.topic.length > 10) {
         finalTopic = parsed.topic;
-        if (parsed.environment) finalEnv = parsed.environment;
-        if (parsed.genre) finalGenre = parsed.genre;
-        if (chosenGenre === 'heartwarming_and_emotional_relatable') {
-          finalGenre = 'heartwarming_and_emotional_relatable';
-        } else if (parsed.genre && EXPANDED_GENRE_MATRIX.some(m => m.genre === parsed.genre)) {
-          finalGenre = parsed.genre;
+        // Safeguard: Never let AI polish override into a consecutive repeated scene
+        if (parsed.environment && !requestedEnv) {
+          if (lastUsedEnv && parsed.environment === lastUsedEnv) {
+            console.log(`   🛡️ [SCENE ANTI-CONSECUTIVE] AI suggested repeating "${parsed.environment}". Retaining cycled environment "${finalEnv}".`);
+          } else if (slotEnvs.includes(parsed.environment)) {
+            finalEnv = parsed.environment;
+          }
+        }
+        if (parsed.genre) {
+          if (chosenGenre === 'heartwarming_and_emotional_relatable') {
+            finalGenre = 'heartwarming_and_emotional_relatable';
+          } else if (EXPANDED_GENRE_MATRIX.some(m => m.genre === parsed.genre)) {
+            finalGenre = parsed.genre;
+          }
         }
         console.log(`✨ [TOPIC DECIDER AGENT] AI Creative Polish: "${finalTopic}"`);
         if (parsed.creativeHook) console.log(`   • Hook Angle: ${parsed.creativeHook}`);
@@ -612,6 +754,14 @@ Rules:
     }
   } catch (err) {
     console.log(`ℹ️ [TOPIC DECIDER AGENT] Using curated seed topic: "${finalTopic}"`);
+  }
+
+  // FINAL SAFETY GUARANTEE: Never allow consecutive environment repeat under any circumstances unless explicitly requested by user
+  if (!requestedEnv && lastUsedEnv && finalEnv === lastUsedEnv) {
+    const validAlternatives = slotEnvs.filter(e => e !== lastUsedEnv);
+    const freshAlt = validAlternatives.find(e => !recentEnvs.includes(e)) || validAlternatives[Math.floor(Math.random() * validAlternatives.length)];
+    console.log(`🔄 [SCENE ANTI-CONSECUTIVE OVERRIDE] Replaced back-to-back "${finalEnv}" -> Rotated to: "${freshAlt}"`);
+    finalEnv = freshAlt;
   }
 
   console.log(`🎯 [TOPIC DECIDER AGENT] Final Decision:`);
@@ -2056,7 +2206,5 @@ if (process.argv[1] && process.argv[1].includes('run_relatable_autonomous.js')) 
 export {
   generateRelatableScript,
   sanitizeAndValidateScript,
-  decideViralTopicAndScene,
-  containsSurrealHallucination,
-  EXPANDED_GENRE_MATRIX
+  containsSurrealHallucination
 };
