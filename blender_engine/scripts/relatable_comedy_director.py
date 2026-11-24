@@ -2530,6 +2530,10 @@ def setup_master_cinematography_and_acting(manifest):
             cam_wide.location = base_cam_wide_loc
             cam_wide.rotation_euler = (math.radians(88), 0, 0)
 
+    base_cam_human_rot = cam_human.rotation_euler.copy() if cam_human else Euler((math.radians(85.5), 0, 0))
+    base_cam_gemini_rot = cam_gemini.rotation_euler.copy() if cam_gemini else Euler((math.radians(87.5), 0, 0))
+    base_cam_wide_rot = cam_wide.rotation_euler.copy() if cam_wide else Euler((math.radians(88.0), 0, 0))
+
     base_arm_r_rot = arm_r.rotation_euler.copy() if arm_r else Euler((math.radians(10), 0, math.radians(5)))
     base_mouth_scale = mouth.scale.copy() if mouth else Vector((1.0, 1.0, 1.0))
     base_nozzle_scale = gemini_nozzle.scale.copy() if gemini_nozzle else Vector((1.0, 1.0, 1.0))
@@ -2695,31 +2699,6 @@ def setup_master_cinematography_and_acting(manifest):
                 )
                 gemini_root.keyframe_insert(data_path="location", frame=f)
 
-            # RETENTION HOOK: Frame 1 Visual Crash-Zoom Punch-In (first 8 frames / 0.26s)
-            crash_zoom_offset = 0.0
-            crash_dutch_roll = 0.0
-            if f <= 8:
-                crash_prog = f / 8.0
-                crash_zoom_offset = -0.35 * math.pow(1.0 - crash_prog, 2.5)  # 0.35m back, punching in
-                crash_dutch_roll = math.radians(4.0) * math.pow(1.0 - crash_prog, 2.0)  # 4-degree Dutch roll settling to 0
-
-            # Cameras Dolly along -Y
-            if cam_wide:
-                cam_wide.location = (base_cam_wide_loc.x, base_cam_wide_loc.y + y_walk, base_cam_wide_loc.z)
-                cam_wide.keyframe_insert(data_path="location", frame=f)
-            if cam_human:
-                cam_human.location = (base_cam_human_loc.x, base_cam_human_loc.y + y_walk + crash_zoom_offset, base_cam_human_loc.z)
-                cam_human.rotation_euler.y = crash_dutch_roll
-                cam_human.keyframe_insert(data_path="location", frame=f)
-                cam_human.keyframe_insert(data_path="rotation_euler", frame=f)
-            if cam_gemini:
-                gemini_cam_offset = crash_zoom_offset if shot1_cam == cam_gemini else 0.0
-                cam_gemini.location = (base_cam_gemini_loc.x, base_cam_gemini_loc.y + y_walk + gemini_cam_offset, base_cam_gemini_loc.z)
-                if shot1_cam == cam_gemini:
-                    cam_gemini.rotation_euler.y = crash_dutch_roll
-                    cam_gemini.keyframe_insert(data_path="rotation_euler", frame=f)
-                cam_gemini.keyframe_insert(data_path="location", frame=f)
-
             # Environmental Detail: Gentle Wind Sway on Tree Canopies (Daylight Walk Only)
             if env_type == 'daylight_walk':
                 tree_y_pos = [18, 11, 4, -3, -10, -17, -24, -31, -38]
@@ -2830,6 +2809,37 @@ def setup_master_cinematography_and_acting(manifest):
                     base_gemini_loc.z + hover_bob
                 )
                 gemini_root.keyframe_insert(data_path="location", frame=f)
+
+        # 4b. RETENTION HOOK: Frame 1 Visual Crash-Zoom Punch-In & Dutch Tilt (Universal across ALL stages)
+        # YouTube Shorts Retention Rule: Lead with unexpected visual motion & dynamic angle in Frame 1 (< 0.5s).
+        # Starts 0.70m pulled back with a 7.5 deg Dutch roll at Frame 1, punch-zooming exponentially
+        # into tight chest-and-face framing by frame 10 (0.33s).
+        crash_zoom_offset = 0.0
+        crash_dutch_roll = 0.0
+        if f <= 10:
+            crash_prog = (f - 1) / 9.0
+            crash_zoom_offset = -0.70 * math.pow(1.0 - crash_prog, 2.2)
+            crash_dutch_roll = math.radians(7.5) * math.pow(1.0 - crash_prog, 2.0)
+
+        if cam_wide:
+            cam_wide.location = (base_cam_wide_loc.x, base_cam_wide_loc.y + y_walk, base_cam_wide_loc.z)
+            cam_wide.keyframe_insert(data_path="location", frame=f)
+
+        if cam_human:
+            human_cam_offset = crash_zoom_offset if shot1_cam == cam_human else 0.0
+            human_cam_roll = crash_dutch_roll if shot1_cam == cam_human else 0.0
+            cam_human.location = (base_cam_human_loc.x, base_cam_human_loc.y + y_walk + human_cam_offset, base_cam_human_loc.z)
+            cam_human.rotation_euler = (base_cam_human_rot.x, base_cam_human_rot.y + human_cam_roll, base_cam_human_rot.z)
+            cam_human.keyframe_insert(data_path="location", frame=f)
+            cam_human.keyframe_insert(data_path="rotation_euler", frame=f)
+
+        if cam_gemini:
+            gemini_cam_offset = crash_zoom_offset if shot1_cam == cam_gemini else 0.0
+            gemini_cam_roll = crash_dutch_roll if shot1_cam == cam_gemini else 0.0
+            cam_gemini.location = (base_cam_gemini_loc.x, base_cam_gemini_loc.y + y_walk + gemini_cam_offset, base_cam_gemini_loc.z)
+            cam_gemini.rotation_euler = (base_cam_gemini_rot.x, base_cam_gemini_rot.y + gemini_cam_roll, base_cam_gemini_rot.z)
+            cam_gemini.keyframe_insert(data_path="location", frame=f)
+            cam_gemini.keyframe_insert(data_path="rotation_euler", frame=f)
 
         # 5. Natural Conversational Head Nodding & Dynamic Expressive Tilts
         if head_pivot and not handled_human:
@@ -2945,7 +2955,7 @@ def setup_master_cinematography_and_acting(manifest):
 # MAIN DIRECTOR ENTRYPOINT
 # =========================================================================
 
-def execute_comedy_production(manifest_path, output_path, is_qa_mode=False, corrections_path=None):
+def execute_comedy_production(manifest_path, output_path, is_qa_mode=False, corrections_path=None, start_frame=None, end_frame=None):
     manifest_path = os.path.abspath(manifest_path)
     output_path = os.path.abspath(output_path)
     if corrections_path:
@@ -2978,8 +2988,8 @@ def execute_comedy_production(manifest_path, output_path, is_qa_mode=False, corr
     scene.render.resolution_x = 1080
     scene.render.resolution_y = 1920
     scene.render.fps = fps
-    scene.frame_start = 1
-    scene.frame_end = total_frames
+    scene.frame_start = int(start_frame) if start_frame is not None else 1
+    scene.frame_end = int(end_frame) if end_frame is not None else total_frames
 
     # Dynamic Environment Switching: Check for Declarative Procedural Stage Recipe first
     stage_recipe = manifest.get('stage_recipe')
@@ -3070,10 +3080,12 @@ if __name__ == "__main__":
     parser.add_argument("--qa-stills", action="store_true", help="Render QA stills for dialogue lines")
     parser.add_argument("--frames", action="store_true", help="Render full sequence as image frames")
     parser.add_argument("--corrections", default=None, help="Path to watchdog corrections.json")
+    parser.add_argument("--start-frame", type=int, default=None, help="Start frame for sequence render")
+    parser.add_argument("--end-frame", type=int, default=None, help="End frame for sequence render")
     if "--" in sys.argv:
         script_args = sys.argv[sys.argv.index("--") + 1:]
     else:
         script_args = sys.argv[1:]
     args = parser.parse_args(script_args)
 
-    execute_comedy_production(args.manifest, args.output, is_qa_mode=args.qa_stills, corrections_path=args.corrections)
+    execute_comedy_production(args.manifest, args.output, is_qa_mode=args.qa_stills, corrections_path=args.corrections, start_frame=args.start_frame, end_frame=args.end_frame)
