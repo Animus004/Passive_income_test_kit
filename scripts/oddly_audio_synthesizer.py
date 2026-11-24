@@ -15,6 +15,8 @@ import asyncio
 import subprocess
 import requests
 import edge_tts
+import numpy as np
+import soundfile as sf
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -506,18 +508,84 @@ async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="pi
                 all_words.append({"word": tok, "start": w_start, "end": w_end})
                 curr_w_time += w_dur
 
-    # Mix with Ducked Music and SFX
+    # -------------------------------------------------------------
+    # Multi-Beat Procedural Sound Design Engine (Zero-Latency NumPy Staging)
+    # -------------------------------------------------------------
     ambient_mp3 = os.path.join(PROJECT_ROOT, "public", "ambient.mp3").replace("\\", "/")
-    pop_sfx = os.path.join(PROJECT_ROOT, "public", "sfx", "pop.mp3").replace("\\", "/")
-    whoosh_sfx = os.path.join(PROJECT_ROOT, "public", "sfx", "whoosh.mp3").replace("\\", "/")
-    thud_sfx = os.path.join(PROJECT_ROOT, "public", "sfx", "thud.mp3").replace("\\", "/")
-    stamp_sfx = os.path.join(PROJECT_ROOT, "public", "sfx", "stamp_slam.mp3").replace("\\", "/")
-
-    beat3_ms = max(0, beat_starts_ms[2] - 100) if len(beat_starts_ms) > 2 else 5000
-    beat4_ms = beat_starts_ms[3] + 450 if len(beat_starts_ms) > 3 else 8000
-    beat6_ms = beat_starts_ms[5] + 900 if len(beat_starts_ms) > 5 else 12000
-
     master_mp3 = os.path.join(PROJECT_ROOT, "public", f"oddly_master_{lang_code}.mp3")
+
+    sfx_dir = os.path.join(PROJECT_ROOT, "public", "sfx")
+    sfx_files = {
+        "whoosh": os.path.join(sfx_dir, "whoosh.mp3"),
+        "pop": os.path.join(sfx_dir, "pop.mp3"),
+        "thud": os.path.join(sfx_dir, "thud.mp3"),
+        "stamp": os.path.join(sfx_dir, "stamp_slam.mp3"),
+        "sub_boom": os.path.join(sfx_dir, "sub_boom.mp3"),
+        "blip": os.path.join(sfx_dir, "blip.mp3"),
+        "paper_slide": os.path.join(sfx_dir, "paper_slide.mp3"),
+    }
+
+    sample_rate = 48000
+    total_samples = int(full_dur * sample_rate) + sample_rate
+    sfx_track = np.zeros(total_samples, dtype=np.float32)
+
+    cached_sfx = {}
+    for name, fpath in sfx_files.items():
+        if os.path.exists(fpath):
+            try:
+                data, sr = sf.read(fpath, dtype='float32')
+                if data.ndim > 1:
+                    data = data.mean(axis=1)  # Mono
+                if sr != sample_rate:
+                    dur = len(data) / sr
+                    new_len = int(dur * sample_rate)
+                    data = np.interp(np.linspace(0, len(data), new_len, endpoint=False), np.arange(len(data)), data)
+                cached_sfx[name] = data
+            except Exception as e:
+                pass
+
+    def overlay_sfx(name, time_sec, volume=0.35):
+        if name not in cached_sfx:
+            return
+        audio = cached_sfx[name] * volume
+        start_idx = int(time_sec * sample_rate)
+        end_idx = min(start_idx + len(audio), total_samples)
+        add_len = end_idx - start_idx
+        if add_len > 0:
+            sfx_track[start_idx:end_idx] += audio[:add_len]
+
+    # Procedurally schedule multi-beat micro-SFX across all beats
+    total_beats = len(manifest_beats)
+    for idx, beat in enumerate(manifest_beats):
+        b_start = beat["startSec"]
+        if idx == 0:
+            # Beat 1: Hook Swish, Badge Pop & Heavy Impact
+            overlay_sfx("whoosh", 0.02, volume=0.45)
+            overlay_sfx("pop", 0.12, volume=0.42)
+            overlay_sfx("thud", 0.28, volume=0.45)
+        else:
+            # Scene Cut Transition Whoosh
+            overlay_sfx("whoosh", max(0, b_start - 0.04), volume=0.28)
+            # Badge Punch Pop (snappy Frame 4 = ~0.13s)
+            overlay_sfx("pop", b_start + 0.13, volume=0.35)
+
+            # Prop impact / Climax Revelation
+            if idx == total_beats - 1:
+                # Comment Trap / Outro Call
+                overlay_sfx("blip", b_start + 0.35, volume=0.40)
+            elif idx >= total_beats - 3:
+                # Climax Revelation
+                overlay_sfx("sub_boom", b_start + 0.28, volume=0.42)
+            else:
+                overlay_sfx("stamp" if idx % 2 == 0 else "thud", b_start + 0.26, volume=0.32)
+
+    # Normalize to prevent clipping
+    max_val = np.max(np.abs(sfx_track))
+    if max_val > 0.95:
+        sfx_track = sfx_track / max_val * 0.95
+
+    sfx_track_wav = os.path.join(SCRATCH_DIR, f"procedural_sfx_{lang_code}.wav")
+    sf.write(sfx_track_wav, sfx_track, sample_rate)
 
     # Option B: Deep Storyteller Broadcast Mastering Chain
     # - highpass=f=75: Cuts sub-rumble
@@ -536,21 +604,15 @@ async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="pi
     filter_complex = (
         f"[0:a]{vocal_mastering}[vocal];"
         f"[1:a]volume=0.065[bg];"
-        f"[3:a]adelay=30|30,volume=0.35[sfx_whoosh];"
-        f"[4:a]adelay=200|200,volume=0.45[sfx_thud];"
-        f"[5:a]adelay=280|280,volume=0.35[sfx_stamp];"
-        f"[2:a]adelay={beat3_ms}|{beat3_ms},volume=0.30[sfx_pop];"
-        f"[vocal][bg][sfx_whoosh][sfx_thud][sfx_stamp][sfx_pop]amix=inputs=6:duration=first:dropout_transition=0:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=10[aout]"
+        f"[2:a]volume=0.90[sfx];"
+        f"[vocal][bg][sfx]amix=inputs=3:duration=first:dropout_transition=0:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=10[aout]"
     )
 
     cmd_mix = [
         "ffmpeg", "-y",
         "-i", full_voice_wav,
         "-stream_loop", "-1", "-i", ambient_mp3,
-        "-i", pop_sfx,
-        "-i", whoosh_sfx,
-        "-i", thud_sfx,
-        "-i", stamp_sfx,
+        "-i", sfx_track_wav,
         "-filter_complex", filter_complex,
         "-map", "[aout]",
         "-c:a", "libmp3lame",

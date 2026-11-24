@@ -6,82 +6,168 @@ export const Scene2: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Rule 10: Temporal Choreography Mandate
-  // 1. Frame 0: Scene establishes. Top Status Badge punches in.
-  const badgeSpring = spring({ frame, fps, config: { damping: 12, stiffness: 220 } });
+  // 1. Frame 0: Status Badge punches in with snappy overshoot
+  const badgeSpring = spring({
+    frame,
+    fps,
+    config: { damping: 12, stiffness: 220 },
+  });
 
-  // 2. Prop entrance and spin. Milestone: [0:04.6] (frame 13.8). Start prop actions at frame 13.
-  const propSpring = spring({ frame: Math.max(0, frame - 13), fps, config: { damping: 14, stiffness: 190 } });
-  // Custom rotation for the two-faced mask to reveal its sinister side.
-  // The spin should align with the prop's overall entrance timing.
-  const maskRotationProgress = spring({ frame: Math.max(0, frame - 13), fps, config: { damping: 10, stiffness: 100 } });
-  const maskRotation = interpolate(maskRotationProgress, [0, 1], [0, -180]); // Spin 180 degrees to reveal the "other face"
+  // 2. Frame 8: Hero Prop (Chanakya Scroll) lands with impact decay
+  //    Also handles the golden glow pulse (peaks around frame 93 = 0:03.1)
+  const propSpring = spring({
+    frame: Math.max(0, frame - 8),
+    fps,
+    config: { damping: 14, stiffness: 190 },
+  });
+  const scrollGlow = interpolate(
+    frame,
+    [8, 93, 142],
+    [0, 1, 0.65],
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+  );
 
-  // 3. Character emergence. Milestone: [0:05.2] (frame 15.6). Start character actions at frame 16.
-  const charSpring = spring({ frame: Math.max(0, frame - 16), fps, config: { damping: 15, stiffness: 160 } });
+  // 3. Frame 15: Hero Character (Chanakya) emerges from the vault shadows
+  //    Also handles the knowing smile pulse (peaks around frame 54 = 0:01.8)
+  const charSpring = spring({
+    frame: Math.max(0, frame - 15),
+    fps,
+    config: { damping: 15, stiffness: 160 },
+  });
   const charSlide = interpolate(charSpring, [0, 1], [35, 0]);
+  const faceSmile = interpolate(
+    frame,
+    [15, 54, 142],
+    [0, 1, 0.75],
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+  );
 
-  // 4. Dynamic Arm Kinematics & Tugging (for StageConnector)
+  // 4. Sub-beat: Tension cords tugging (manifests as character arm kinematics)
   const handTug = Math.sin((frame / fps) * Math.PI * 4) * 6;
 
-  // 6. Camera Creep
-  const cameraZoom = interpolate(frame, [0, 130], [1.0, 1.05], { extrapolateRight: 'clamp' });
+  // 5. Cinematic camera creep to maintain visual tension across the 142 frames
+  const cameraZoom = interpolate(frame, [0, 142], [1.0, 1.05], {
+    extrapolateRight: 'clamp',
+  });
 
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
-      <div style={{ width: '100%', height: '100%', transform: `scale(${cameraZoom})`, transformOrigin: '50% 60%' }}>
-        {/* Rule 7: RoomEnvironment for background */}
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          transform: `scale(${cameraZoom})`,
+          transformOrigin: '50% 60%',
+        }}
+      >
         <RoomEnvironment type="subterranean_dungeon_vault">
-          {/* Rule 9: Punchy Comic Status Badge */}
-          <div style={{
-            position: 'absolute', top: 130, left: '50%',
-            transform: `translateX(-50%) scale(${badgeSpring})`,
-            backgroundColor: '#6D28D9', // Deep purple for mystery/secrets, matching "HIDDEN TRUTH"
-            color: '#FFFFFF',
-            border: '8px solid #000000', borderRadius: 36,
-            padding: '14px 40px', fontSize: 32, fontWeight: 900,
-            boxShadow: '0 10px 0 #000000', zIndex: 40,
-            display: 'flex', alignItems: 'center', gap: 14,
-            whiteSpace: 'nowrap'
-          }}>
-            <span>🎭</span> {/* Mask emoji for "two_faced_mask" and "HIDDEN TRUTH" */}
-            <span>HIDDEN TRUTH</span>
+          {/* Top Status Badge */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 130,
+              left: '50%',
+              transform: `translateX(-50%) scale(${badgeSpring})`,
+              backgroundColor: '#D97706',
+              color: '#FFFFFF',
+              border: '8px solid #000000',
+              borderRadius: 36,
+              padding: '14px 40px',
+              fontSize: 32,
+              fontWeight: 900,
+              boxShadow: '0 10px 0 #000000',
+              zIndex: 40,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 14,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <span>🤫</span>
+            <span>THE SECRET</span>
           </div>
 
-          {/* ARCHETYPE B: CLEAN SPLIT DUO - HeroProp on Left, CharacterRig on Right */}
-          {/* Rule 3.1: Absolute Zero-Collision Mandate (Prop at x=380, Character at x=760 ensures no overlap) */}
+          {/* LEFT STAGE: Hero Prop (Chanakya Scroll) */}
           <HeroProp
-            type="two_faced_mask" // Hero Element to Feature
-            x={380} // LEFT STAGE position as per prompt
-            y={960} // Rule 5: Grounding Horizon
+            type="chanakya_scroll"
+            x={340}
+            y={960}
             scale={1.15}
-            shakeIntensity={propSpring} // Rule 8: Clean physics with impact decay
-            rotation={maskRotation} // Custom rotation to reveal the other side of the mask
+            shakeIntensity={propSpring}
+            customText="SEC. 2300 YRS"
           />
 
-          <div style={{ opacity: charSpring, transform: `translateY(${charSlide}px)` }}>
+          {/* Cinematic Golden Glow behind the scroll (peaks at 0:03.1) */}
+          <div
+            style={{
+              position: 'absolute',
+              left: 340,
+              top: 960,
+              width: 640,
+              height: 640,
+              marginLeft: -320,
+              marginTop: -320,
+              background:
+                'radial-gradient(circle, rgba(255, 215, 0, 0.45) 0%, rgba(255, 215, 0, 0) 65%)',
+              opacity: scrollGlow,
+              pointerEvents: 'none',
+              zIndex: 10,
+            }}
+          />
+
+          {/* RIGHT STAGE: Character Rig (Chanakya) */}
+          <div
+            style={{
+              opacity: charSpring,
+              transform: `translateY(${charSlide}px)`,
+              position: 'relative',
+              zIndex: 20,
+            }}
+          >
             <CharacterRig
-              era="ancient" // Rule 2: era="ancient" MUST be passed
-              role="shakuni" // RIGHT STAGE role as per prompt (Krishna acting as Shakuni)
-              pose="whispering_sly" // RIGHT STAGE pose as per prompt ("knowing smirk" and "gestures")
-              x={760} // RIGHT STAGE position as per prompt
-              y={940} // Rule 5: Grounding Horizon
+              era="ancient"
+              role="chanakya"
+              face="bliss_dreaming"
+              pose="chanakya_pointing"
+              x={760}
+              y={940}
               scale={1.15}
-              breathing={true} // Rule 10: Living Characters
-              blinking={true} // Rule 10: Living Characters
+              clothColor="#EA580C"
+              facialHair="clean_shaven"
+              attireOverlay="dhoti_janeu"
+              breathing={true}
+              blinking={true}
             />
           </div>
 
-          {/* StageConnector for visual metaphor: Krishna (Shakuni) manipulating the truth/mask with a psychological game */}
+          {/* Cinematic Smile Pulse overlay (peaks at 0:01.8) */}
+          <div
+            style={{
+              position: 'absolute',
+              left: 760,
+              top: 620,
+              width: 200,
+              height: 200,
+              marginLeft: -100,
+              marginTop: -100,
+              background:
+                'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%)',
+              opacity: faceSmile * 0.85,
+              pointerEvents: 'none',
+              zIndex: 30,
+            }}
+          />
+
+          {/* StageConnector: Tethering the character to the scroll across the 420px gap */}
           <StageConnector
-            type="puppet_strings" // Thematic for "psychological game" and "mastermind unveils"
-            fromX={760} // Shakuni's X position
-            fromY={640} // Approximate hand height for Shakuni's gesturing pose
-            toX={380} // Mask's X position
-            toY={760} // Approximate top of mask height, where puppet strings would attach
+            type="tension_cords"
+            fromX={760}
+            fromY={640}
+            toX={340}
+            toY={860}
             tension={1.0}
-            tugIntensity={handTug} // Subtle continuous tension
-            opacity={charSpring} // Connector appears as the character emerges
+            tugIntensity={handTug}
+            opacity={charSpring}
           />
         </RoomEnvironment>
       </div>

@@ -1,90 +1,125 @@
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from 'remotion';
-import { RoomEnvironment, CharacterRig, HeroProp } from '../../components/rigs'; // Import HeroProp
+import { RoomEnvironment, CharacterRig, HeroProp, StageConnector } from '../../components/rigs';
 
 export const Scene5: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // 1. Badge snaps in with bounce: 'THE REVELATION' at [0:16.0] (frame 0)
+  // --- TEMPORAL CHOREOGRAPHY (STAGGERED SUB-BEATS) ---
+
+  // 1. Frame 0: Badge punch-in
   const badgeSpring = spring({ frame, fps, config: { damping: 12, stiffness: 220 } });
 
-  // 2. HeroProp (dagger) emergence and slight shake
-  // Rule 5: Prop appears around frame 10-15
-  const propEntryDelay = 10;
-  const propSpring = spring({ frame: Math.max(0, frame - propEntryDelay), fps, config: { damping: 12, stiffness: 180 } });
-  const propSlide = interpolate(propSpring, [0, 1], [30, 0]); // Slight drop effect for entry
-  const propShakeIntensity = spring({ // Rule 8: Use spring for shakeIntensity
-    frame: Math.max(0, frame - propEntryDelay - 10), // Shake starts a bit after prop is fully visible
-    fps,
-    config: { damping: 8, stiffness: 200 },
-    durationInFrames: 30 // Shake for a limited duration
-  });
+  // 2. Frame ~8: HeroProp (Weighing Scale) impact & shake
+  const propSpring = spring({ frame: Math.max(0, frame - 8), fps, config: { damping: 14, stiffness: 190 } });
 
-  // 3. Character (Krishna) emergence and pose execution
-  // Rule 5: Character appears around frame 25-35
-  const krishnaCharEntryDelay = 25;
-  const krishnaCharSpring = spring({ frame: Math.max(0, frame - krishnaCharEntryDelay), fps, config: { damping: 15, stiffness: 160 } });
-  const krishnaCharSlide = interpolate(krishnaCharSpring, [0, 1], [35, 0]);
-  // Krishna's pointing action animates after his entry
-  const krishnaArmSweepDelay = krishnaCharEntryDelay + 10; // Pointing starts after 10 frames of entry
-  const krishnaArmSweep = spring({ frame: Math.max(0, frame - krishnaArmSweepDelay), fps, config: { damping: 14, stiffness: 180 } });
+  // 3. Frame ~15: Character emergence (slide up)
+  const charSpring = spring({ frame: Math.max(0, frame - 15), fps, config: { damping: 15, stiffness: 160 } });
+  const charSlide = interpolate(charSpring, [0, 1], [35, 0]);
 
-  // 4. Camera Creep for cinematic feel
-  const cameraZoom = interpolate(frame, [0, 135], [1.0, 1.05], { extrapolateRight: 'clamp' });
+  // 4. Arm Kinematics for "shock_hands_on_head"
+  const armSweep = spring({ frame: Math.max(0, frame - 35), fps, config: { damping: 14, stiffness: 180 } });
+  const handTug = Math.sin((frame / fps) * Math.PI * 4) * 6;
+
+  // 5. Camera Creep
+  const cameraZoom = interpolate(frame, [0, 170], [1.0, 1.05], { extrapolateRight: 'clamp' });
+
+  // 6. Word Hit Punches (Scale/Spring on specific frames)
+  const wordPunches = [
+    { word: 'Money', relativeFrame: 0 },
+    { word: 'Not', relativeFrame: 29 },
+    { word: 'Working?', relativeFrame: 46 },
+    { word: 'Makes', relativeFrame: 92 },
+    { word: 'You', relativeFrame: 120 }
+  ];
+
+  const getWordPunch = (word: string) => {
+    const timing = wordPunches.find(w => w.word === word);
+    if (!timing) return 1;
+    return spring({ frame: Math.max(0, frame - timing.relativeFrame), fps, config: { damping: 10, stiffness: 250 } });
+  };
+
+  // Subtle global shake on word hits to emphasize "Money Not Working"
+  const globalPunch = Math.max(
+    getWordPunch('Money'),
+    getWordPunch('Not'),
+    getWordPunch('Working?')
+  );
 
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
-      <div style={{ width: '100%', height: '100%', transform: `scale(${cameraZoom})`, transformOrigin: '50% 60%' }}>
-        {/* Rule 2: Ground the scene with a proper RoomEnvironment */}
-        <RoomEnvironment type="ancient_palace">
-          {/* Rule 9: Punchy Comic Status Badge */}
+      <div 
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          transform: `scale(${cameraZoom})`, 
+          transformOrigin: '50% 60%',
+          // Subtle red tint flash on word hits
+          filter: `brightness(${1 + (globalPunch - 1) * 0.2})` 
+        }}
+      >
+        <RoomEnvironment type="subterranean_dungeon_vault">
+          
+          {/* BADGE: STATIC CASH */}
           <div style={{
             position: 'absolute', top: 130, left: '50%',
             transform: `translateX(-50%) scale(${badgeSpring})`,
-            backgroundColor: '#B91C1C', // Red for intensity of revelation/blood
-            color: '#FFFFFF',
+            backgroundColor: '#EF4444', color: '#FFFFFF',
             border: '8px solid #000000', borderRadius: 36,
             padding: '14px 40px', fontSize: 32, fontWeight: 900,
             boxShadow: '0 10px 0 #000000', zIndex: 40,
             display: 'flex', alignItems: 'center', gap: 14,
             whiteSpace: 'nowrap'
           }}>
-            <span>🩸</span>
-            <span>THE REVELATION</span>
+            <span>⚖️</span>
+            <span>STATIC CASH</span>
           </div>
 
-          {/* Introduce the 'dagger' as HeroProp (Rule 1, AD Fix 1) */}
-          {/* Adhere to Archetype B: Clean Split Duo (Rule 3, AD Fix 2) */}
-          <div style={{ opacity: propSpring, transform: `translateY(${propSlide}px)` }}>
-            <HeroProp
-              type="sword_shield_emblem" // Rule 9: Closest allowed prop type for 'dagger'
-              x={340} // AD Fix 5: Centered at X=340
-              y={960} // Rule 6 & Archetype B: Grounded position for prop scale 1.15
-              scale={1.15} // Archetype B requirement
-              shakeIntensity={propShakeIntensity} // Rule 8: Use spring for shake
-            />
-          </div>
+          {/* LEFT STAGE: HERO PROP (Weighing Scale) */}
+          {/* Placed at x=340, y=960 to ground on floor and avoid collision */}
+          <HeroProp 
+            type="weighing_scale_gold" 
+            x={340} 
+            y={960} 
+            scale={1.15} 
+            shakeIntensity={propSpring} 
+          />
 
-          {/* Krishna (primary character, AD Fix 3) */}
-          {/* Remove Karna (AD Fix 4) */}
-          <div style={{ opacity: krishnaCharSpring, transform: `translateY(${krishnaCharSlide}px)` }}>
+          {/* RIGHT STAGE: CHARACTER (Ancient Commoner reacting) */}
+          {/* Placed at x=760, y=940 for clean split duo */}
+          <div style={{ opacity: charSpring, transform: `translateY(${charSlide}px)` }}>
             <CharacterRig
               era="ancient"
-              role="shakuni" // Krishna represented by Shakuni rig (AD Fix 3)
-              pose="chanakya_pointing" // Accusatory pointing pose
-              x={740} // AD Fix 6: Centered at X=740
-              y={940} // Rule 6 & Archetype B: Grounded position for character scale 1.15
-              scale={1.15} // Archetype B requirement
-              armProgress={krishnaArmSweep} // Animates the pointing arm
+              role="ancient_commoner"
+              pose="shock_hands_on_head"
+              x={760}
+              y={940}
+              scale={1.15}
+              clothColor="#78350F"
+              hairColor="#1C1917"
+              skinColor="#D97706"
+              facialHair="stubble"
+              face="shock_alarm"
+              armProgress={armSweep}
+              handTug={handTug}
               breathing={true}
               blinking={true}
             />
           </div>
 
-          {/* The StageConnector and Karna character have been removed as per Art Director's Fixes */}
-          {/* The new composition strictly adheres to 'Archetype B: Clean Split Duo' with one HeroProp and one CharacterRig. */}
-          {/* The 80px buffer between HeroProp (X=340) and CharacterRig (X=740) is naturally met with standard rig widths. */}
+          {/* STAGE CONNECTOR: Tension/Tethering visual link between character and scale */}
+          <StageConnector
+            type="tension_cords"
+            fromX={760}
+            fromY={640}
+            toX={340}
+            toY={860}
+            tension={1.0}
+            tugIntensity={handTug}
+            opacity={charSpring}
+          />
+
         </RoomEnvironment>
       </div>
     </AbsoluteFill>

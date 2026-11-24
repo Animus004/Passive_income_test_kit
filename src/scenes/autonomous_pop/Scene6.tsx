@@ -6,39 +6,40 @@ export const Scene6: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // --- Sub-beat choreography springs ---
-  // 1. Badge punch (frame 0)
+  // Badge punch
   const badgeSpring = spring({
     frame,
     fps,
     config: { damping: 12, stiffness: 220 },
   });
 
-  // 2. Hero Prop impact (frame 8 -> matches [0:20.6] character/prop window)
+  // Prop impact (starts ~frame 12)
   const propSpring = spring({
-    frame: Math.max(0, frame - 8),
+    frame: Math.max(0, frame - 12),
     fps,
     config: { damping: 14, stiffness: 190 },
   });
 
-  // 3. Character emergence (frame 15 -> matches [0:21.2] Karna reveal)
+  // Character entrance (starts ~frame 30)
   const charSpring = spring({
-    frame: Math.max(0, frame - 15),
+    frame: Math.max(0, frame - 30),
     fps,
     config: { damping: 15, stiffness: 160 },
   });
   const charSlide = interpolate(charSpring, [0, 1], [35, 0]);
 
-  // 4. Arm kinematics (conflicted warrior gesture)
+  // Arm sweep for pointing gesture (starts ~frame 35)
   const armSweep = spring({
-    frame: Math.max(0, frame - 30),
+    frame: Math.max(0, frame - 35),
     fps,
     config: { damping: 14, stiffness: 180 },
   });
+
+  // Hand tug for StageConnector tension
   const handTug = Math.sin((frame / fps) * Math.PI * 4) * 6;
 
-  // 5. Camera creep (subtle cinematic push for tension)
-  const cameraZoom = interpolate(frame, [0, 137], [1.0, 1.05], {
+  // Subtle camera zoom
+  const cameraZoom = interpolate(frame, [0, 156], [1.0, 1.05], {
     extrapolateRight: 'clamp',
   });
 
@@ -52,15 +53,15 @@ export const Scene6: React.FC = () => {
           transformOrigin: '50% 60%',
         }}
       >
-        <RoomEnvironment type="subterranean_dungeon_vault">
-          {/* Top Status Badge - INTERNAL CONFLICT */}
+        <RoomEnvironment type="ancient_palace">
+          {/* Top Badge */}
           <div
             style={{
               position: 'absolute',
               top: 130,
               left: '50%',
               transform: `translateX(-50%) scale(${badgeSpring})`,
-              backgroundColor: '#B91C1C',
+              backgroundColor: '#EF4444',
               color: '#FFFFFF',
               border: '8px solid #000000',
               borderRadius: 36,
@@ -75,20 +76,20 @@ export const Scene6: React.FC = () => {
               whiteSpace: 'nowrap',
             }}
           >
-            <span>💔</span>
-            <span>INTERNAL CONFLICT</span>
+            <span>📈</span>
+            <span>COMPOUNDING</span>
           </div>
 
-          {/* LEFT STAGE: Hero Prop - Sword & Shield Emblem (inner battle) */}
+          {/* Solo Hero Centered - Ashoka Pillar Emblem */}
           <HeroProp
-            type="sword_shield_emblem"
-            x={340}
-            y={960}
-            scale={1.15}
+            type="ashoka_pillar_emblem"
+            x={540}
+            y={820}
+            scale={1.4}
             shakeIntensity={propSpring}
           />
 
-          {/* RIGHT STAGE: Karna (Duryodhana rig) - conflicted warrior */}
+          {/* Right Character – Chanakya pointing */}
           <div
             style={{
               opacity: charSpring,
@@ -97,36 +98,29 @@ export const Scene6: React.FC = () => {
           >
             <CharacterRig
               era="ancient"
-              role="duryodhana"
-              head="royal_mukut"
-              face="dread_loop"
-              pose="warrior_stand"
+              role="chanakya"
+              pose="chanakya_pointing"
               x={760}
               y={940}
               scale={1.15}
-              clothColor="#991B1B"
-              hairColor="#1F2937"
-              skinColor="#C68642"
-              facialHair="royal_moustache"
-              attireOverlay="warrior_kavach"
-              glasses={false}
-              flipHorizontal={false}
+              clothColor="#EA580C"
               breathing={true}
               blinking={true}
               armProgress={armSweep}
-              handTug={handTug}
             />
           </div>
 
-          {/* StageConnector: Tension tether from Karna to the emblem (duty vs blood) */}
+          {/* Puppet strings connecting Chanakya to the pillar */}
           <StageConnector
-            type="tension_cords"
+            type="puppet_strings"
             fromX={760}
             fromY={640}
-            toX={340}
-            toY={860}
+            toX={540}
+            toY={620}
             tension={1.0}
             tugIntensity={handTug}
+            attachCrowns={true}
+            crownBob={handTug * 1.5}
             opacity={charSpring}
           />
         </RoomEnvironment>
