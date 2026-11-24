@@ -1598,28 +1598,114 @@ async function synthesizeDialogueAudio(scriptData, runDir, lang = 'en', engine =
   const rawDialogue = path.join(audioDir, 'raw_dialogue.wav');
   execSync(`ffmpeg -y -f concat -safe 0 -i "${concatTxt}" -c:a pcm_s16le "${rawDialogue}"`, { stdio: 'ignore' });
 
-  // Layered Sound Design: Ambient Music + Micro-SFX
-  console.log(`   • Layering background comedy beat & micro-SFX foley (${langTag})...`);
+  // Layered Procedural Sound Design: Ambient Music + Dynamic Micro-SFX on Cuts & Punchlines
+  console.log(`   • Synthesizing procedural foley & micro-SFX on camera cuts & punchlines (${langTag})...`);
   const bgMusicPath = path.join(PROJECT_ROOT, 'public', 'ambient.mp3').replace(/\\/g, '/');
-  const whooshPath = path.join(PROJECT_ROOT, 'public', 'sfx', 'whoosh.mp3').replace(/\\/g, '/');
-  const boomPath = path.join(PROJECT_ROOT, 'public', 'sfx', 'sub_boom.mp3').replace(/\\/g, '/');
-  const blipPath = path.join(PROJECT_ROOT, 'public', 'sfx', 'blip.mp3').replace(/\\/g, '/');
+  const sfxDir = path.join(PROJECT_ROOT, 'public', 'sfx');
+
+  // Discover hook camera profile for contextual hook SFX
+  const hookProfile = scriptData.camera_hook_profile || 'crisis_low_angle';
+  
+  // Dynamic SFX schedule: { file, timeMs, volume, label }
+  const sfxEvents = [];
+
+  // 1. Frame 0 Hook Disruption SFX (0.0s)
+  sfxEvents.push({
+    file: path.join(sfxDir, 'whoosh.mp3').replace(/\\/g, '/'),
+    timeMs: 0,
+    volume: 0.45,
+    label: 'hook_whoosh'
+  });
+
+  if (hookProfile === 'mockumentary_snap') {
+    sfxEvents.push({
+      file: path.join(sfxDir, 'camera_snap.mp3').replace(/\\/g, '/'),
+      timeMs: 180,
+      volume: 0.40,
+      label: 'snap_shutter'
+    });
+  } else if (hookProfile === 'panic_overhead') {
+    sfxEvents.push({
+      file: path.join(sfxDir, 'glitch.mp3').replace(/\\/g, '/'),
+      timeMs: 120,
+      volume: 0.35,
+      label: 'panic_glitch'
+    });
+  }
+
+  // 2. Camera Cuts / Speaker Switch Micro-SFX (Pacing & Subconscious Transition)
+  for (let i = 1; i < manifestLines.length; i++) {
+    const line = manifestLines[i];
+    const cutTimeMs = Math.round((line.startFrame / fps) * 1000);
+    sfxEvents.push({
+      file: path.join(sfxDir, 'pop.mp3').replace(/\\/g, '/'),
+      timeMs: Math.max(0, cutTimeMs - 25),
+      volume: 0.22,
+      label: `cut_pop_${i}`
+    });
+  }
+
+  // 3. Comedic Climax / Roast Punchline Accent
+  const roastLine = manifestLines.slice(1).find(l => 
+    (l.speaker.toLowerCase().includes('gemini') || l.speaker.toLowerCase().includes('popapus') || l.speaker.toLowerCase().includes('ai')) &&
+    (l.emotion === 'roast' || l.emotion === 'smug' || l.emotion === 'sarcasm')
+  ) || manifestLines[Math.max(1, manifestLines.length - 2)];
+
+  if (roastLine) {
+    const punchlineTimeMs = Math.round((roastLine.startFrame / fps) * 1000);
+    sfxEvents.push({
+      file: path.join(sfxDir, 'sub_boom.mp3').replace(/\\/g, '/'),
+      timeMs: Math.max(0, punchlineTimeMs - 40),
+      volume: 0.35,
+      label: 'roast_boom'
+    });
+    sfxEvents.push({
+      file: path.join(sfxDir, 'thud.mp3').replace(/\\/g, '/'),
+      timeMs: punchlineTimeMs + 100,
+      volume: 0.25,
+      label: 'roast_thud'
+    });
+  }
+
+  // 4. Seamless Loop Snap Outro Whoosh
+  if (totalFrames > 30) {
+    const loopTimeMs = Math.round(((totalFrames - 10) / fps) * 1000);
+    sfxEvents.push({
+      file: path.join(sfxDir, 'whoosh.mp3').replace(/\\/g, '/'),
+      timeMs: loopTimeMs,
+      volume: 0.30,
+      label: 'loop_whoosh'
+    });
+  }
 
   const masterAudio = path.join(audioDir, 'master_audio.wav');
   const totalDurationSec = (totalFrames / fps).toFixed(2);
-  const filterComplex = [
+
+  // Build dynamic FFmpeg multi-track inputs & amix filter graph
+  const inputArgs = [`-i "${rawDialogue}"`, `-stream_loop -1 -i "${bgMusicPath}"`];
+  sfxEvents.forEach(e => inputArgs.push(`-i "${e.file}"`));
+
+  const filterParts = [
     `[0:a]volume=1.20[v_clean]`,
-    `[1:a]volume=0.07[bg_ducked]`,
-    `[2:a]adelay=0|0,volume=0.45[sfx_whoosh]`,
-    `[3:a]adelay=3200|3200,volume=0.35[sfx_boom]`,
-    `[4:a]adelay=7500|7500,volume=0.30[sfx_blip]`,
-    `[v_clean][bg_ducked][sfx_whoosh][sfx_boom][sfx_blip]amix=inputs=5:duration=first:dropout_transition=2[a_out]`
-  ].join(';');
+    `[1:a]volume=0.07[bg_ducked]`
+  ];
+  const mixLabels = ['[v_clean]', '[bg_ducked]'];
+
+  sfxEvents.forEach((e, idx) => {
+    const inputIdx = idx + 2;
+    const label = `sfx_${idx}`;
+    filterParts.push(`[${inputIdx}:a]adelay=${e.timeMs}|${e.timeMs},volume=${e.volume}[${label}]`);
+    mixLabels.push(`[${label}]`);
+  });
+
+  filterParts.push(`${mixLabels.join('')}amix=inputs=${mixLabels.length}:duration=first:dropout_transition=2[a_out]`);
+  const filterComplex = filterParts.join(';');
 
   try {
-    const mixCmd = `ffmpeg -y -i "${rawDialogue}" -stream_loop -1 -i "${bgMusicPath}" -i "${whooshPath}" -i "${boomPath}" -i "${blipPath}" -filter_complex "${filterComplex}" -map "[a_out]" -t ${totalDurationSec} -c:a pcm_s16le "${masterAudio}"`;
+    const mixCmd = `ffmpeg -y ${inputArgs.join(' ')} -filter_complex "${filterComplex}" -map "[a_out]" -t ${totalDurationSec} -c:a pcm_s16le "${masterAudio}"`;
     execSync(mixCmd, { stdio: 'ignore' });
   } catch (mixErr) {
+    console.warn(`⚠️ Procedural SFX mix fallback to dialogue + ambient... (${mixErr.message})`);
     execSync(`ffmpeg -y -i "${rawDialogue}" -af "volume=1.15" -c:a pcm_s16le "${masterAudio}"`, { stdio: 'ignore' });
   }
 
