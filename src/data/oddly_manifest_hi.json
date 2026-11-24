@@ -1,94 +1,226 @@
 {
   "language": "hi",
-  "totalFrames": 1810,
-  "totalDurationSec": 60.32,
+  "totalFrames": 1369,
+  "totalDurationSec": 45.62,
   "fps": 30,
   "beats": [
     {
       "id": 1,
-      "title": "THE ILLUSION",
+      "title": "THE LIE FLYS",
       "badge": "RULE 1",
-      "badgeEmoji": "🎲",
-      "audio_text": "सब सोचते थे शकुनि सिर्फ एक चतुर अंकक है, लेकिन ये गलतफहमी थी। असली खेल तो बोर्ड के पीछे शुरू हो चुका था।",
+      "badgeEmoji": "📜",
+      "audio_text": "सुनो, जो हर बात में तुम्हारी तारीफ़ करता है, वो तुम्हें मारने की सबसे ज़्यादा चापलूसी है।",
       "display_tokens": [
-        "Shakuni",
-        "Sirf",
-        "Aank",
-        "Nahi",
-        "Khela..."
+        "HAAN",
+        "KAHNE",
+        "WALA",
+        "DOST",
+        "SLOW",
+        "POISON!"
       ],
-      "environment": "chaupar_board_arena",
-      "heroElement": "shakuni_dice",
-      "role": "shakuni",
-      "archetype": "CLOSE_UP_MYSTERY",
+      "environment": "ancient_palace",
+      "heroElement": "two_faced_mask",
+      "role": "chanakya",
+      "archetype": "MACRO_HOOK_PUNCH",
       "startSec": 0.06,
-      "durationSec": 7.67,
+      "durationSec": 5.9,
       "startFrame": 2,
-      "durationInFrames": 234,
-      "endFrame": 236,
+      "durationInFrames": 181,
+      "endFrame": 183,
       "character": {
-        "role": "shakuni",
-        "pose": "chanakya_pointing"
+        "role": "chanakya",
+        "pose": "shock_hands_on_head"
       },
       "director_staging": {
-        "archetype": "CLOSE_UP_MYSTERY"
+        "archetype": "MACRO_HOOK_PUNCH"
       }
     },
     {
       "id": 2,
-      "title": "SHATTERED TRUTH",
+      "title": "THE SLY WHISPER",
       "badge": "RULE 2",
-      "badgeEmoji": "💥",
-      "audio_text": "ये कोई साधारण जुआ नहीं था। ये एक ऐसी साजिश थी जिसमें राजाओं के दिमाग ही उनके सबसे बड़े दुश्मन बने।",
+      "badgeEmoji": "🐍",
+      "audio_text": "शकुन की तरह, वो दोस्त तुम्हें गुलाम बनाता है बिना किसी ज़बरदस्ती के, सिर्फ़ मीठे शब्दों से।",
       "display_tokens": [
-        "Koi",
-        "Jua",
-        "Nahi",
-        "Tha...",
-        "MIND_GAME!"
+        "SHAKUNI",
+        "NE",
+        "PHEKA",
+        "PASHA...",
+        "ASLI",
+        "KHATRA!"
       ],
-      "environment": "puppet_stage_shadow",
-      "heroElement": "puppet_control_cross",
+      "environment": "durbar_throne_room",
+      "heroElement": "shakuni_dice",
       "role": "shakuni",
-      "archetype": "SPLIT_SHADOW",
-      "startSec": 7.87,
-      "durationSec": 7.5,
-      "startFrame": 236,
-      "durationInFrames": 229,
-      "endFrame": 465,
+      "archetype": "DUAL_CONFRONTATION",
+      "startSec": 6.1,
+      "durationSec": 6.2,
+      "startFrame": 183,
+      "durationInFrames": 190,
+      "endFrame": 373,
       "character": {
         "role": "shakuni",
-        "pose": "chanakya_pointing"
+        "pose": "whispering_sly"
+      },
+      "secondCharacter": {
+        "role": "duryodhana",
+        "pose": "wealth_proud_chest"
       },
       "director_staging": {
-        "archetype": "SPLIT_SHADOW"
+        "archetype": "DUAL_CONFRONTATION"
       }
     },
     {
       "id": 3,
-      "title": "THE TRAP SET",
+      "title": "THE PUPPET STRING",
       "badge": "RULE 3",
-      "badgeEmoji": "⚔️",
-      "audio_text": "दुर्योधन को लगा कि वेजेंट्री के साथ जीत उनके हाथ में है। लेकिन शकुनि ने उनके अहंकार में ही जहरीला बीज बो दिया था।",
+      "badgeEmoji": "🎭",
+      "audio_text": "चौपड़ के खेल की तरह, वो तुम्हारी हर चाल को जानता है और तुम्हें अपने इरादों में उलझाता है।",
       "display_tokens": [
-        "Duryodhan",
-        "Socha",
-        "Jeet",
-        "Uski",
-        "Haath",
-        "Mein..."
+        "CHAUPAR",
+        "GAME",
+        "MEIN",
+        "TUM",
+        "HAI",
+        "PAISA!"
       ],
-      "environment": "durbar_throne_room",
-      "heroElement": "two_faced_mask",
+      "environment": "chaupar_board_arena",
+      "heroElement": "puppet_strings",
+      "role": "chanakya",
+      "archetype": "STRATEGY_MAP_ARENA",
+      "startSec": 12.44,
+      "durationSec": 5.87,
+      "startFrame": 373,
+      "durationInFrames": 180,
+      "endFrame": 553,
+      "character": {
+        "role": "chanakya",
+        "pose": "puppeteer_strings"
+      },
+      "director_staging": {
+        "archetype": "STRATEGY_MAP_ARENA"
+      }
+    },
+    {
+      "id": 4,
+      "title": "CHANAKYA'S EDICT",
+      "badge": "RULE 4",
+      "badgeEmoji": "⚖️",
+      "audio_text": "चार्णक्य ने लिखा है: वो दोस्त जो कभी आपस में मतलब न रखे, वो असल में तुम्हारा शत्रु है।",
+      "display_tokens": [
+        "CHANAKYA",
+        "SUKH",
+        "MEIN",
+        "SATHI",
+        "DUKHI",
+        "MEIN!",
+        "DUSHMAN!"
+      ],
+      "environment": "temple_vault",
+      "heroElement": "chanakya_scroll",
+      "role": "chanakya",
+      "archetype": "DOCUMENT_EDICT_UNROLL",
+      "startSec": 18.45,
+      "durationSec": 6.05,
+      "startFrame": 554,
+      "durationInFrames": 186,
+      "endFrame": 740,
+      "character": {
+        "role": "chanakya",
+        "pose": "chanakya_pointing"
+      },
+      "director_staging": {
+        "archetype": "DOCUMENT_EDICT_UNROLL"
+      }
+    },
+    {
+      "id": 5,
+      "title": "DECEIT GAUGE SPiking",
+      "badge": "RULE 5",
+      "badgeEmoji": "📈",
+      "audio_text": "जितना वो तुम्हारे साथ 'हाँ' बोलेगा, तुम्हारा भरोसा उतना ही कमजोर हो जाएगा।",
+      "display_tokens": [
+        "TRUST",
+        "LEVEL",
+        "DROP",
+        "HO",
+        "RAHA",
+        "HAI!"
+      ],
+      "environment": "subterranean_dungeon_vault",
+      "heroElement": "tension_gauge_hud",
+      "role": "ancient_commoner",
+      "archetype": "TENSION_HUD_METER",
+      "startSec": 24.64,
+      "durationSec": 4.49,
+      "startFrame": 739,
+      "durationInFrames": 139,
+      "endFrame": 878,
+      "character": {
+        "role": "ancient_commoner",
+        "pose": "shock_hands_on_head"
+      },
+      "director_staging": {
+        "archetype": "TENSION_HUD_METER"
+      }
+    },
+    {
+      "id": 6,
+      "title": "SHATTERED CROWN",
+      "badge": "RULE 6",
+      "badgeEmoji": "👑",
+      "audio_text": "अहंकार की ताज तुम्हारी बनावटी दोस्ती के थप्पड़ों में टूट जाएगा, और तब तक तुम अकेले रह जाओगे।",
+      "display_tokens": [
+        "AHANKAR",
+        "KI",
+        "TAJ",
+        "TOOT",
+        "JAAYE",
+        "GA!"
+      ],
+      "environment": "puppet_stage_shadow",
+      "heroElement": "shattered_crown",
       "role": "duryodhana",
-      "archetype": "CLEAN_SPLIT_DUO",
-      "startSec": 15.51,
-      "durationSec": 7.61,
-      "startFrame": 465,
-      "durationInFrames": 233,
-      "endFrame": 698,
+      "archetype": "METAPHOR_MONOLITH",
+      "startSec": 29.27,
+      "durationSec": 6.07,
+      "startFrame": 878,
+      "durationInFrames": 186,
+      "endFrame": 1064,
       "character": {
         "role": "duryodhana",
+        "pose": "shock_hands_on_head"
+      },
+      "director_staging": {
+        "archetype": "METAPHOR_MONOLITH"
+      }
+    },
+    {
+      "id": 7,
+      "title": "THE REAL TEST",
+      "badge": "RULE 7",
+      "badgeEmoji": "🛡️",
+      "audio_text": "असली दोस्त वो है जो तुम्हें सच बताए, भले ही वो बात कानों में खरोंचदार हो।",
+      "display_tokens": [
+        "ASLI",
+        "DOST",
+        "WO",
+        "HAI",
+        "JO",
+        "SACH",
+        "KAHE!"
+      ],
+      "environment": "ancient_palace",
+      "heroElement": "sword_shield_emblem",
+      "role": "pandava",
+      "archetype": "CLEAN_SPLIT_DUO",
+      "startSec": 35.48,
+      "durationSec": 4.43,
+      "startFrame": 1064,
+      "durationInFrames": 137,
+      "endFrame": 1201,
+      "character": {
+        "role": "pandava",
         "pose": "chanakya_pointing"
       },
       "director_staging": {
@@ -96,367 +228,287 @@
       }
     },
     {
-      "id": 4,
-      "title": "PSYCHOLOGICAL BREAK",
-      "badge": "RULE 4",
-      "badgeEmoji": "🧠",
-      "audio_text": "शकुनि ने तावत और लालच का इस्तेमाल करके राजाओं को इतना गुस्सा दिया कि वे अपने ही नियमों को तोड़ने लगे।",
-      "display_tokens": [
-        "Gussa",
-        "Niyam",
-        "Tod",
-        "Dene",
-        "Lage..."
-      ],
-      "environment": "subterranean_dungeon_vault",
-      "heroElement": "mystic_diya_flame",
-      "role": "king",
-      "archetype": "EMOTIONAL_EXPLOSION",
-      "startSec": 23.26,
-      "durationSec": 6.94,
-      "startFrame": 698,
-      "durationInFrames": 212,
-      "endFrame": 910,
-      "character": {
-        "role": "king",
-        "pose": "chanakya_pointing"
-      },
-      "director_staging": {
-        "archetype": "EMOTIONAL_EXPLOSION"
-      }
-    },
-    {
-      "id": 5,
-      "title": "THE HIDDEN RULE",
-      "badge": "RULE 5",
-      "badgeEmoji": "📜",
-      "audio_text": "असली नियम ये था: जो राजा अपने दिमाग पर काबू नहीं रख पाता, वो अपने ही हाथों से अपनी सत्ता का हिस्सा खो देता है।",
-      "display_tokens": [
-        "Asli",
-        "Niyam",
-        "Dimag",
-        "Kaabu",
-        "Nahi..."
-      ],
-      "environment": "temple_vault",
-      "heroElement": "chanakya_scroll",
-      "role": "chanakya",
-      "archetype": "SCROLL_REVEAL",
-      "startSec": 30.34,
-      "durationSec": 7.88,
-      "startFrame": 910,
-      "durationInFrames": 241,
-      "endFrame": 1151,
-      "character": {
-        "role": "chanakya",
-        "pose": "chanakya_pointing"
-      },
-      "director_staging": {
-        "archetype": "SCROLL_REVEAL"
-      }
-    },
-    {
-      "id": 6,
-      "title": "REALIZATION",
-      "badge": "RULE 6",
-      "badgeEmoji": "💡",
-      "audio_text": "पांडवों को समझ आ गया कि शत्रु खंडर में नही, बल्कि इन राजाओं के अंदर की कमजोरियों में छिपा है।",
-      "display_tokens": [
-        "Pandav",
-        "Samjha",
-        "Shatru",
-        "Andar",
-        "Chhupa",
-        "Hua..."
-      ],
-      "environment": "ancient_palace",
-      "heroElement": "golden_sparrow_bird",
-      "role": "pandava",
-      "archetype": "REALIZATION_FLASH",
-      "startSec": 38.36,
-      "durationSec": 6.11,
-      "startFrame": 1151,
-      "durationInFrames": 187,
-      "endFrame": 1338,
-      "character": {
-        "role": "pandava",
-        "pose": "chanakya_pointing"
-      },
-      "director_staging": {
-        "archetype": "REALIZATION_FLASH"
-      }
-    },
-    {
-      "id": 7,
-      "title": "TACTICAL STRIKE",
-      "badge": "RULE 7",
-      "badgeEmoji": "🎯",
-      "audio_text": "अब शकुनि की चालें पानी के दीवारों से टकराने लगीं। राजाओं का अहंकार टूटने लगा और सत्ता का खेल उल्टा पड़ने लगा।",
-      "display_tokens": [
-        "Chaale",
-        "Pani",
-        "Se",
-        "Takranyi..."
-      ],
-      "environment": "chaupar_board_arena",
-      "heroElement": "chaupar_board_macro",
-      "role": "shakuni",
-      "archetype": "ACTION_SEQUENCE",
-      "startSec": 44.61,
-      "durationSec": 7.79,
-      "startFrame": 1338,
-      "durationInFrames": 238,
-      "endFrame": 1576,
-      "character": {
-        "role": "shakuni",
-        "pose": "chanakya_pointing"
-      },
-      "director_staging": {
-        "archetype": "ACTION_SEQUENCE"
-      }
-    },
-    {
       "id": 8,
-      "title": "COMMENT TRAP",
+      "title": "THE POLARIZING QUESTION",
       "badge": "RULE 8",
       "badgeEmoji": "❓",
-      "audio_text": "आपका क्या खयाल है? क्या शकुनि का ये मनोवैज्ञानिक खेल आज की राजनीति में भी काम आ सकता है? कमेंट में बताएं!",
+      "audio_text": "बताओ, क्या तुम्हारे पास ऐसा दोस्त है जो कभी तुम्हारी गलती पर मुँह खोलता नहीं?",
       "display_tokens": [
-        "Aaj",
-        "Ki",
-        "Rajneeti",
-        "Mein",
-        "Bhi?",
-        "BATAIYE!"
+        "KYA",
+        "TUMHARE",
+        "PAS",
+        "AISA",
+        "DOST",
+        "HAI?"
       ],
-      "environment": "puppet_stage_shadow",
+      "environment": "temple_vault",
       "heroElement": "viral_comment_bubbles",
-      "role": "ancient_commoner",
-      "archetype": "DIRECT_ADDRESS",
-      "startSec": 52.54,
-      "durationSec": 7.53,
-      "startFrame": 1576,
-      "durationInFrames": 233,
-      "endFrame": 1809,
+      "role": "chanakya",
+      "archetype": "REACTION_CLOSEUP",
+      "startSec": 40.06,
+      "durationSec": 5.32,
+      "startFrame": 1202,
+      "durationInFrames": 167,
+      "endFrame": 1369,
       "character": {
-        "role": "ancient_commoner",
-        "pose": "chanakya_pointing"
+        "role": "chanakya",
+        "pose": "shock_hands_on_head"
       },
       "director_staging": {
-        "archetype": "DIRECT_ADDRESS"
+        "archetype": "REACTION_CLOSEUP"
       }
     }
   ],
   "words": [
     {
-      "word": "Shakuni",
+      "word": "HAAN",
       "start": 0.06,
-      "end": 2.05
+      "end": 0.9
     },
     {
-      "word": "Sirf",
-      "start": 2.05,
-      "end": 3.19
+      "word": "KAHNE",
+      "start": 0.9,
+      "end": 1.95
     },
     {
-      "word": "Aank",
-      "start": 3.18,
-      "end": 4.32
+      "word": "WALA",
+      "start": 1.96,
+      "end": 2.8
     },
     {
-      "word": "Nahi",
-      "start": 4.32,
-      "end": 5.46
+      "word": "DOST",
+      "start": 2.8,
+      "end": 3.64
     },
     {
-      "word": "Khela...",
-      "start": 5.46,
-      "end": 7.73
+      "word": "SLOW",
+      "start": 3.64,
+      "end": 4.48
     },
     {
-      "word": "Koi",
-      "start": 7.87,
-      "end": 8.74
+      "word": "POISON!",
+      "start": 4.49,
+      "end": 5.96
     },
     {
-      "word": "Jua",
-      "start": 8.74,
-      "end": 9.61
+      "word": "SHAKUNI",
+      "start": 6.1,
+      "end": 7.42
     },
     {
-      "word": "Nahi",
-      "start": 9.6,
-      "end": 10.75
+      "word": "NE",
+      "start": 7.42,
+      "end": 7.8
     },
     {
-      "word": "Tha...",
-      "start": 10.75,
-      "end": 12.48
+      "word": "PHEKA",
+      "start": 7.79,
+      "end": 8.73
     },
     {
-      "word": "MIND_GAME!",
-      "start": 12.49,
-      "end": 15.37
+      "word": "PASHA...",
+      "start": 8.73,
+      "end": 10.23
     },
     {
-      "word": "Duryodhan",
-      "start": 15.51,
-      "end": 17.52
+      "word": "ASLI",
+      "start": 10.23,
+      "end": 10.98
     },
     {
-      "word": "Socha",
-      "start": 17.52,
-      "end": 18.64
+      "word": "KHATRA!",
+      "start": 10.98,
+      "end": 12.3
     },
     {
-      "word": "Jeet",
-      "start": 18.64,
-      "end": 19.54
+      "word": "CHAUPAR",
+      "start": 12.44,
+      "end": 13.96
     },
     {
-      "word": "Uski",
-      "start": 19.54,
-      "end": 20.44
+      "word": "GAME",
+      "start": 13.96,
+      "end": 14.83
     },
     {
-      "word": "Haath",
-      "start": 20.43,
-      "end": 21.55
+      "word": "MEIN",
+      "start": 14.83,
+      "end": 15.7
     },
     {
-      "word": "Mein...",
-      "start": 21.55,
-      "end": 23.12
+      "word": "TUM",
+      "start": 15.7,
+      "end": 16.35
     },
     {
-      "word": "Gussa",
+      "word": "HAI",
+      "start": 16.35,
+      "end": 17
+    },
+    {
+      "word": "PAISA!",
+      "start": 17.01,
+      "end": 18.31
+    },
+    {
+      "word": "CHANAKYA",
+      "start": 18.45,
+      "end": 19.69
+    },
+    {
+      "word": "SUKH",
+      "start": 19.69,
+      "end": 20.31
+    },
+    {
+      "word": "MEIN",
+      "start": 20.31,
+      "end": 20.93
+    },
+    {
+      "word": "SATHI",
+      "start": 20.93,
+      "end": 21.71
+    },
+    {
+      "word": "DUKHI",
+      "start": 21.71,
+      "end": 22.49
+    },
+    {
+      "word": "MEIN!",
+      "start": 22.48,
+      "end": 23.26
+    },
+    {
+      "word": "DUSHMAN!",
       "start": 23.26,
-      "end": 24.71
+      "end": 24.5
     },
     {
-      "word": "Niyam",
-      "start": 24.71,
-      "end": 26.16
+      "word": "TRUST",
+      "start": 24.64,
+      "end": 25.58
     },
     {
-      "word": "Tod",
-      "start": 26.15,
-      "end": 27.02
+      "word": "LEVEL",
+      "start": 25.58,
+      "end": 26.52
     },
     {
-      "word": "Dene",
-      "start": 27.02,
-      "end": 28.18
+      "word": "DROP",
+      "start": 26.51,
+      "end": 27.26
     },
     {
-      "word": "Lage...",
-      "start": 28.18,
-      "end": 30.2
+      "word": "HO",
+      "start": 27.26,
+      "end": 27.63
     },
     {
-      "word": "Asli",
-      "start": 30.34,
+      "word": "RAHA",
+      "start": 27.63,
+      "end": 28.38
+    },
+    {
+      "word": "HAI!",
+      "start": 28.38,
+      "end": 29.13
+    },
+    {
+      "word": "AHANKAR",
+      "start": 29.27,
+      "end": 31.04
+    },
+    {
+      "word": "KI",
+      "start": 31.04,
       "end": 31.55
     },
     {
-      "word": "Niyam",
+      "word": "TAJ",
       "start": 31.55,
-      "end": 33.07
+      "end": 32.31
     },
     {
-      "word": "Dimag",
-      "start": 33.07,
-      "end": 34.59
+      "word": "TOOT",
+      "start": 32.3,
+      "end": 33.31
     },
     {
-      "word": "Kaabu",
+      "word": "JAAYE",
+      "start": 33.32,
+      "end": 34.58
+    },
+    {
+      "word": "GA!",
       "start": 34.58,
-      "end": 36.1
+      "end": 35.34
     },
     {
-      "word": "Nahi...",
-      "start": 36.1,
-      "end": 38.22
+      "word": "ASLI",
+      "start": 35.48,
+      "end": 36.22
     },
     {
-      "word": "Pandav",
-      "start": 38.36,
-      "end": 39.41
+      "word": "DOST",
+      "start": 36.22,
+      "end": 36.96
     },
     {
-      "word": "Samjha",
-      "start": 39.41,
-      "end": 40.46
+      "word": "WO",
+      "start": 36.96,
+      "end": 37.33
     },
     {
-      "word": "Shatru",
-      "start": 40.45,
-      "end": 41.5
+      "word": "HAI",
+      "start": 37.33,
+      "end": 37.88
     },
     {
-      "word": "Andar",
-      "start": 41.5,
-      "end": 42.37
+      "word": "JO",
+      "start": 37.88,
+      "end": 38.25
     },
     {
-      "word": "Chhupa",
-      "start": 42.38,
-      "end": 43.43
+      "word": "SACH",
+      "start": 38.25,
+      "end": 38.99
     },
     {
-      "word": "Hua...",
-      "start": 43.42,
-      "end": 44.47
+      "word": "KAHE!",
+      "start": 38.99,
+      "end": 39.91
     },
     {
-      "word": "Chaale",
-      "start": 44.61,
-      "end": 46.64
+      "word": "KYA",
+      "start": 40.06,
+      "end": 40.7
     },
     {
-      "word": "Pani",
-      "start": 46.64,
-      "end": 47.99
+      "word": "TUMHARE",
+      "start": 40.7,
+      "end": 42.19
     },
     {
-      "word": "Se",
-      "start": 48,
-      "end": 48.68
+      "word": "PAS",
+      "start": 42.19,
+      "end": 42.83
     },
     {
-      "word": "Takranyi...",
-      "start": 48.67,
-      "end": 52.4
+      "word": "AISA",
+      "start": 42.83,
+      "end": 43.68
     },
     {
-      "word": "Aaj",
-      "start": 52.54,
-      "end": 53.32
+      "word": "DOST",
+      "start": 43.68,
+      "end": 44.53
     },
     {
-      "word": "Ki",
-      "start": 53.32,
-      "end": 53.84
-    },
-    {
-      "word": "Rajneeti",
-      "start": 53.84,
-      "end": 55.92
-    },
-    {
-      "word": "Mein",
-      "start": 55.92,
-      "end": 56.96
-    },
-    {
-      "word": "Bhi?",
-      "start": 56.95,
-      "end": 57.99
-    },
-    {
-      "word": "BATAIYE!",
-      "start": 57.99,
-      "end": 60.07
+      "word": "HAI?",
+      "start": 44.53,
+      "end": 45.38
     }
   ]
 }

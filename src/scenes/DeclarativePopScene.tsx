@@ -177,7 +177,14 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
   })();
 
   // Staging Archetype
-  const archetype = beat.director_staging?.archetype || beat.staging?.archetype || 'CLEAN_SPLIT_DUO';
+  const archetype = beat.director_staging?.archetype || beat.staging?.archetype || (sceneIndex === 1 ? 'MACRO_HOOK_PUNCH' : 'CLEAN_SPLIT_DUO');
+
+  // Secondary Character for Confrontation Archetypes
+  const secondCharSpec = beat.secondCharacter || {};
+  const secondCharRole = secondCharSpec.role || (isAncient ? (charRole === 'shakuni' ? 'duryodhana' : 'king') : 'modern_commoner');
+  const secondCharPose = secondCharSpec.pose || (isAncient ? 'wealth_proud_chest' : 'standing_dazed');
+  const secondCharFace = secondCharSpec.face || 'shock_alarm';
+  const secondCharHead = secondCharSpec.head || (isAncient ? 'royal_mukut' : 'slick');
 
   // Badge text & color
   const badgeText = beat.badge || beat.title || 'ODDLY TOLD';
@@ -228,68 +235,341 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
             <span style={{ textTransform: 'uppercase' }}>{badgeText}</span>
           </div>
 
-          {/* STAGING LAYOUT */}
-          {archetype === 'SOLO_HERO_MONOLITH' ? (
-            /* Archetype A: Solo Hero Centered */
+          {/* ========================================================================= */}
+          {/* ARCHETYPE 1: MACRO HOOK PUNCH (Extreme Thumb-Stopping Impact)            */}
+          {/* ========================================================================= */}
+          {archetype === 'MACRO_HOOK_PUNCH' ? (
             <>
+              {/* Dynamic Comic Speed Lines Burst */}
+              <svg
+                width="1080"
+                height="1920"
+                viewBox="0 0 1080 1920"
+                fill="none"
+                style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 5 }}
+              >
+                {[0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 330, 345].map((deg) => (
+                  <line
+                    key={deg}
+                    x1="540"
+                    y1="850"
+                    x2={540 + 1200 * Math.cos((deg * Math.PI) / 180)}
+                    y2={850 + 1200 * Math.sin((deg * Math.PI) / 180)}
+                    stroke={isAncient ? '#F59E0B' : '#EF4444'}
+                    strokeWidth="8"
+                    strokeDasharray="40 120"
+                    opacity="0.35"
+                  />
+                ))}
+              </svg>
+
+              {/* Character Rig (Large Scale in Background) */}
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateY(${charSlide}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={charRole}
+                  head={charHead}
+                  face="shock_alarm"
+                  pose={isAncient && charRole === 'shakuni' ? 'rolling_dice' : 'shock_hands_on_head'}
+                  x={660}
+                  y={860}
+                  scale={1.42}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+
+              {/* Massive Foreground Hero Element Slamming into Camera */}
+              <HeroProp
+                type={heroPropType === 'chanakya_scroll' ? (isAncient ? 'shakuni_dice' : 'credit_card_trap') : heroPropType}
+                x={340}
+                y={920}
+                scale={1.65}
+                shakeIntensity={propSpring * 2.2}
+              />
+            </>
+          ) : archetype === 'DUAL_CONFRONTATION' ? (
+            <>
+              {/* Left Character (Schemer / Whisperer) */}
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateX(${interpolate(charSpring, [0, 1], [-40, 0])}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={charRole}
+                  head={charHead}
+                  face="dazed_asymmetric"
+                  pose="whispering_sly"
+                  x={300}
+                  y={980}
+                  scale={1.14}
+                  flipHorizontal={false}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+
+              {/* Central Conspiratorial Energy Spark & Question Mark */}
+              <svg
+                width="1080"
+                height="1920"
+                viewBox="0 0 1080 1920"
+                fill="none"
+                style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 25 }}
+              >
+                {/* Electric Tension Arc connecting their heads */}
+                <path
+                  d="M 360 700 Q 540 640 720 700"
+                  stroke="#F59E0B"
+                  strokeWidth="8"
+                  strokeDasharray="16 10"
+                  fill="none"
+                  opacity={charSpring}
+                />
+                <circle cx="540" cy="670" r="32" fill="#DC2626" stroke="#000000" strokeWidth="6" />
+                <text x="540" y="682" textAnchor="middle" fill="#FFFFFF" fontSize="28" fontWeight="900" fontFamily="sans-serif">
+                  ⚡
+                </text>
+              </svg>
+
+              {/* Right Character (Victim / Target / Partner in Crime) */}
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateX(${interpolate(charSpring, [0, 1], [40, 0])}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={secondCharRole}
+                  head={secondCharHead}
+                  face={secondCharFace}
+                  pose={secondCharPose}
+                  x={780}
+                  y={980}
+                  scale={1.14}
+                  flipHorizontal={true}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+            </>
+          ) : archetype === 'STRATEGY_MAP_ARENA' ? (
+            <>
+              {/* Strategist Character (Hovering Above as Puppet Master / Commander) */}
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateY(${charSlide}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={charRole}
+                  head={charHead}
+                  face="dead_inside"
+                  pose="puppeteer_strings"
+                  x={540}
+                  y={680}
+                  scale={1.05}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+
+              {/* Big Isometric Tactical Strategy Board / War Map */}
+              <HeroProp
+                type={isAncient ? 'ancient_war_map_bharat' : 'desk_laptop_open'}
+                x={540}
+                y={1060}
+                scale={1.55}
+                shakeIntensity={propSpring}
+              />
+            </>
+          ) : archetype === 'METAPHOR_MONOLITH' ? (
+            <>
+              {/* Overhead Spotlight Beam */}
+              <svg
+                width="1080"
+                height="1920"
+                viewBox="0 0 1080 1920"
+                fill="none"
+                style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
+              >
+                <polygon points="540,0 420,0 200,1500 880,1500" fill="#FDE047" opacity="0.08" />
+              </svg>
+
+              {/* Massive Centerpiece Symbolic Prop */}
               <HeroProp
                 type={heroPropType}
                 x={540}
-                y={940}
-                scale={1.38}
+                y={930}
+                scale={1.52}
                 shakeIntensity={propSpring}
               />
-              {/* Flanking ambient diya lamps */}
+
+              {/* Flanking Ambient Diya Torches */}
               {isAncient && (
                 <>
                   <HeroProp
                     type="mystic_diya_flame"
-                    x={160}
-                    y={1160}
-                    scale={0.82}
+                    x={140}
+                    y={1180}
+                    scale={0.88}
                     shakeIntensity={0}
                   />
                   <HeroProp
                     type="mystic_diya_flame"
-                    x={920}
-                    y={1160}
-                    scale={0.82}
+                    x={940}
+                    y={1180}
+                    scale={0.88}
                     shakeIntensity={0}
                   />
                 </>
               )}
             </>
-          ) : archetype === 'REACTION_CLOSEUP' ? (
-            /* Archetype C: Reaction Face Close-Up */
-            <div
-              style={{
-                opacity: charSpring,
-                transform: `translateY(${charSlide}px)`,
-              }}
-            >
-              <CharacterRig
-                era={isAncient ? 'ancient' : 'modern'}
-                role={charRole}
-                head={charHead}
-                face="shock_alarm"
-                pose="shock_hands_on_head"
-                x={540}
-                y={820}
-                scale={1.48}
-                breathing={true}
-                blinking={true}
-                armProgress={armProgress}
+          ) : archetype === 'DOCUMENT_EDICT_UNROLL' ? (
+            <>
+              {/* Unrolled Grand Edict / Scroll in Center */}
+              <HeroProp
+                type={isAncient ? 'chanakya_scroll' : 'incident_report_stack'}
+                x={440}
+                y={940}
+                scale={1.45}
+                shakeIntensity={propSpring}
               />
-            </div>
-          ) : (
-            /* Archetype B: Clean Split Duo (Standard Zero-Collision Layout) */
+
+              {/* Character Rig on Right Stamping Authority */}
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateY(${charSlide}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={charRole}
+                  head={charHead}
+                  face="dead_inside"
+                  pose="chanakya_pointing"
+                  x={820}
+                  y={960}
+                  scale={1.12}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+            </>
+          ) : archetype === 'TENSION_HUD_METER' ? (
+            <>
+              {/* Tactical Gauge Center-Left */}
+              <HeroProp
+                type="tension_gauge_hud"
+                x={380}
+                y={890}
+                scale={1.48}
+                shakeIntensity={propSpring * 1.5}
+              />
+
+              {/* Alarmed / Scheming Character on Right */}
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateY(${charSlide}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={charRole}
+                  head={charHead}
+                  face="shock_alarm"
+                  pose="shock_hands_on_head"
+                  x={780}
+                  y={940}
+                  scale={1.18}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+            </>
+          ) : archetype === 'REACTION_CLOSEUP' ? (
+            <>
+              {/* Comic Focus Speed Rays */}
+              <svg
+                width="1080"
+                height="1920"
+                viewBox="0 0 1080 1920"
+                fill="none"
+                style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 10 }}
+              >
+                {[0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340].map((deg) => (
+                  <line
+                    key={deg}
+                    x1="540"
+                    y1="820"
+                    x2={540 + 800 * Math.cos((deg * Math.PI) / 180)}
+                    y2={820 + 800 * Math.sin((deg * Math.PI) / 180)}
+                    stroke="#F59E0B"
+                    strokeWidth="10"
+                    strokeDasharray="60 140"
+                    opacity="0.4"
+                  />
+                ))}
+              </svg>
+
+              <div
+                style={{
+                  opacity: charSpring,
+                  transform: `translateY(${charSlide}px)`,
+                }}
+              >
+                <CharacterRig
+                  era={isAncient ? 'ancient' : 'modern'}
+                  role={charRole}
+                  head={charHead}
+                  face="shock_alarm"
+                  pose="shock_hands_on_head"
+                  x={540}
+                  y={820}
+                  scale={1.62}
+                  breathing={true}
+                  blinking={true}
+                  armProgress={armProgress}
+                />
+              </div>
+
+              {/* Floating Viral Comment Bubbles */}
+              <HeroProp
+                type="viral_comment_bubbles"
+                x={540}
+                y={1180}
+                scale={1.15}
+                shakeIntensity={propSpring}
+              />
+            </>
+          ) :
+          (
             <>
               {/* Left Stage: Hero Prop */}
               <HeroProp
                 type={heroPropType}
                 x={340}
                 y={960}
-                scale={1.15}
+                scale={1.18}
                 shakeIntensity={propSpring}
               />
 

@@ -1542,6 +1542,230 @@ export const HeroProp: React.FC<HeroPropProps> = ({
       }
 
       // =========================================================================
+      // 26f. SHAKUNI LOADED DICE (OMINOUS GLOWING PAIR WITH CRIMSON PIPS)
+      // =========================================================================
+      case 'shakuni_dice':
+      case 'loaded_dice': {
+        return (
+          <g id="prop_shakuni_loaded_dice">
+            {/* Ominous Crimson Aura Glow */}
+            <circle cx="250" cy="240" r="160" fill="#DC2626" opacity="0.22" />
+            <circle cx="250" cy="240" r="100" fill="#F59E0B" opacity="0.25" />
+
+            {/* Floor Contact Ground Shadow */}
+            <ellipse cx="250" cy="505" rx="130" ry="18" fill="#000000" opacity="0.4" />
+
+            {/* Obsidian Altar Base */}
+            <rect x="140" y="440" width="220" height="60" rx="8" fill="#1E293B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="120" y="415" width="260" height="28" rx="8" fill="#334155" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <line x1="130" y1="428" x2="370" y2="428" stroke="#DC2626" strokeWidth="4" />
+
+            {/* Primary Foreground Die (Angled Isometric Cube) */}
+            <g transform="translate(140, 160)">
+              {/* Top Face */}
+              <polygon points="110,30 190,75 110,120 30,75" fill="#FFFBEB" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinejoin="round" />
+              {/* Left Face */}
+              <polygon points="30,75 110,120 110,210 30,165" fill="#FEF3C7" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinejoin="round" />
+              {/* Right Face */}
+              <polygon points="110,120 190,75 190,165 110,210" fill="#FDE68A" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinejoin="round" />
+
+              {/* Crimson Pips on Top Face (Number 6) */}
+              <circle cx="80" cy="65" r="9" fill="#DC2626" />
+              <circle cx="110" cy="75" r="9" fill="#DC2626" />
+              <circle cx="140" cy="85" r="9" fill="#DC2626" />
+              <circle cx="80" cy="85" r="9" fill="#DC2626" />
+              <circle cx="110" cy="95" r="9" fill="#DC2626" />
+              <circle cx="140" cy="105" r="9" fill="#DC2626" />
+
+              {/* Left Face Pips (Number 5) */}
+              <circle cx="55" cy="115" r="8" fill="#DC2626" />
+              <circle cx="85" cy="130" r="8" fill="#DC2626" />
+              <circle cx="70" cy="142" r="8" fill="#DC2626" />
+              <circle cx="55" cy="155" r="8" fill="#DC2626" />
+              <circle cx="85" cy="170" r="8" fill="#DC2626" />
+
+              {/* Right Face Pips (Number 4) */}
+              <circle cx="135" cy="130" r="8" fill="#DC2626" />
+              <circle cx="165" cy="115" r="8" fill="#DC2626" />
+              <circle cx="135" cy="170" r="8" fill="#DC2626" />
+              <circle cx="165" cy="155" r="8" fill="#DC2626" />
+            </g>
+
+            {/* Secondary Tilted Die Floating Higher Left */}
+            <g transform="translate(60, 90) rotate(-22 80 80)">
+              <polygon points="80,20 140,55 80,90 20,55" fill="#FFFBEB" stroke={STROKE} strokeWidth="7" strokeLinejoin="round" />
+              <polygon points="20,55 80,90 80,160 20,125" fill="#FEF3C7" stroke={STROKE} strokeWidth="7" strokeLinejoin="round" />
+              <polygon points="80,90 140,55 140,125 80,160" fill="#FDE68A" stroke={STROKE} strokeWidth="7" strokeLinejoin="round" />
+              <circle cx="80" cy="55" r="8" fill="#DC2626" />
+              <circle cx="50" cy="105" r="7" fill="#DC2626" />
+              <circle cx="110" cy="105" r="7" fill="#DC2626" />
+            </g>
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 26g. SHATTERED CROWN (ROYAL GOLD WITH BLOOD RUBIES & FRACTURE LINES)
+      // =========================================================================
+      case 'shattered_crown': {
+        return (
+          <g id="prop_shattered_crown">
+            {/* Ominous Dark Gold Aura */}
+            <circle cx="250" cy="250" r="150" fill="#F59E0B" opacity="0.2" />
+
+            {/* Floor Contact Ground Shadow */}
+            <ellipse cx="250" cy="505" rx="120" ry="16" fill="#000000" opacity="0.38" />
+
+            {/* Regal Stone Plinth */}
+            <rect x="150" y="440" width="200" height="60" rx="8" fill="#334155" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="130" y="415" width="240" height="28" rx="8" fill="#475569" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Left Crown Fragment */}
+            <path
+              d="M 120 400 L 140 220 L 190 290 L 235 150 L 248 310 L 230 400 Z"
+              fill="#F59E0B"
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+            {/* Right Crown Fragment (Tilted from Impact) */}
+            <path
+              d="M 265 400 L 255 315 L 310 160 L 335 280 L 380 230 L 375 400 Z"
+              fill="#D97706"
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+
+            {/* Central Fracture Void / Lighting Crack */}
+            <path d="M 235 150 L 255 315 L 248 360 L 260 400" stroke="#DC2626" strokeWidth="6" fill="none" />
+
+            {/* Rubies & Emerald Jewels Embedded */}
+            <circle cx="165" cy="340" r="14" fill="#DC2626" stroke={STROKE} strokeWidth="5" />
+            <circle cx="335" cy="340" r="14" fill="#DC2626" stroke={STROKE} strokeWidth="5" />
+            <polygon points="235,145 240,130 230,130" fill="#10B981" stroke={STROKE} strokeWidth="4" />
+            <polygon points="310,155 315,140 305,140" fill="#10B981" stroke={STROKE} strokeWidth="4" />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 26h. WEIGHING SCALES DECEIT (TIPPING GOLD VS POISON DAGGER)
+      // =========================================================================
+      case 'weighing_scales_deceit': {
+        return (
+          <g id="prop_weighing_scales_deceit">
+            {/* Ground Shadow */}
+            <ellipse cx="250" cy="505" rx="100" ry="16" fill="#000000" opacity="0.35" />
+
+            {/* Central Ornate Brass Mast & Pedestal */}
+            <rect x="235" y="160" width="30" height="320" fill="#B45309" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="180" y="470" width="140" height="35" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <circle cx="250" cy="160" r="24" fill="#FACC15" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Severely Tilted Balance Beam (Left heavily weighted down, Right hoisted high) */}
+            <line x1="110" y1="230" x2="390" y2="150" stroke="#D97706" strokeWidth="18" strokeLinecap="round" />
+            <line x1="110" y1="230" x2="390" y2="150" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+
+            {/* Left Pan (Tipped LOW - The Weight of Deceit / Heavy Dagger) */}
+            <line x1="110" y1="230" x2="70" y2="340" stroke="#B45309" strokeWidth="4" />
+            <line x1="110" y1="230" x2="150" y2="340" stroke="#B45309" strokeWidth="4" />
+            <path d="M 60 340 Q 110 390 160 340 Z" fill="#92400E" stroke={STROKE} strokeWidth="7" />
+            {/* Dagger on Left Pan */}
+            <rect x="90" y="300" width="40" height="40" fill="#DC2626" stroke={STROKE} strokeWidth="4" transform="rotate(45 110 320)" />
+
+            {/* Right Pan (Tipped HIGH - Light True Words Floating Away) */}
+            <line x1="390" y1="150" x2="350" y2="240" stroke="#B45309" strokeWidth="4" />
+            <line x1="390" y1="150" x2="430" y2="240" stroke="#B45309" strokeWidth="4" />
+            <path d="M 340 240 Q 390 280 440 240 Z" fill="#92400E" stroke={STROKE} strokeWidth="7" />
+            {/* Tiny Gold Coin on Right Pan */}
+            <circle cx="390" cy="235" r="14" fill="#FACC15" stroke={STROKE} strokeWidth="4" />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 26i. ANCIENT STRATEGY MAP (BHARAT / CHAUPAR TACTICAL GRID)
+      // =========================================================================
+      case 'ancient_war_map_bharat':
+      case 'strategy_map': {
+        return (
+          <g id="prop_ancient_war_map_bharat">
+            {/* Floor Contact Ground Shadow */}
+            <ellipse cx="250" cy="505" rx="140" ry="18" fill="#000000" opacity="0.35" />
+
+            {/* Carved Wood War Table */}
+            <rect x="80" y="440" width="340" height="60" rx="10" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="60" y="415" width="380" height="28" rx="8" fill="#92400E" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Unrolled War Parchment with Curling Edges */}
+            <rect x="90" y="180" width="320" height="235" rx="14" fill="#FEF3C7" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="110" y="200" width="280" height="195" rx="8" fill="#FDE68A" />
+
+            {/* Territory Boundary Lines on Map */}
+            <path d="M 140 230 Q 190 210 240 250 Q 290 230 360 270" stroke="#B45309" strokeWidth="5" fill="none" strokeDasharray="8 6" />
+            <path d="M 160 300 Q 230 340 320 320" stroke="#B45309" strokeWidth="5" fill="none" strokeDasharray="8 6" />
+
+            {/* Crossed War Swords Emblem in Center */}
+            <line x1="220" y1="270" x2="280" y2="330" stroke="#DC2626" strokeWidth="6" strokeLinecap="round" />
+            <line x1="280" y1="270" x2="220" y2="330" stroke="#DC2626" strokeWidth="6" strokeLinecap="round" />
+
+            {/* Red & Gold Attack Tactical Vector Arrows */}
+            <line x1="160" y1="240" x2="210" y2="280" stroke="#DC2626" strokeWidth="6" markerEnd="url(#arrow)" />
+            <circle cx="160" cy="240" r="10" fill="#DC2626" />
+            <circle cx="340" cy="300" r="10" fill="#F59E0B" />
+
+            {/* Royal Wax Seal on Corner */}
+            <circle cx="365" cy="365" r="18" fill="#991B1B" stroke={STROKE} strokeWidth="4" />
+            <circle cx="365" cy="365" r="10" fill="#DC2626" />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 26j. TENSION GAUGE HUD (DYNAMIC HIGH-STAKES RISK METER)
+      // =========================================================================
+      case 'tension_gauge_hud': {
+        return (
+          <g id="prop_tension_gauge_hud">
+            {/* Glow Aura */}
+            <circle cx="250" cy="260" r="150" fill="#DC2626" opacity="0.18" />
+
+            {/* Dial Housing Backing */}
+            <circle cx="250" cy="260" r="140" fill="#0F172A" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <circle cx="250" cy="260" r="120" fill="#1E293B" />
+
+            {/* Semicircular Danger Arc */}
+            <path
+              d="M 160 290 A 100 100 0 1 1 340 290"
+              fill="none"
+              stroke="#334155"
+              strokeWidth="20"
+              strokeLinecap="round"
+            />
+            {/* Active Red/Amber Danger Fill */}
+            <path
+              d="M 160 290 A 100 100 0 1 1 320 220"
+              fill="none"
+              stroke="#DC2626"
+              strokeWidth="20"
+              strokeLinecap="round"
+            />
+
+            {/* Critical Indicator Needle pointing to 92% Danger */}
+            <line x1="250" y1="260" x2="310" y2="190" stroke="#FACC15" strokeWidth="10" strokeLinecap="round" />
+            <circle cx="250" cy="260" r="18" fill="#DC2626" stroke={STROKE} strokeWidth="5" />
+
+            {/* Alert Text Inside Gauge */}
+            <rect x="180" y="315" width="140" height="34" rx="8" fill="#DC2626" stroke={STROKE} strokeWidth="4" />
+            <text x="250" y="338" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="900" fontFamily="sans-serif">
+              99% DANGER
+            </text>
+          </g>
+        );
+      }
+
+      // =========================================================================
       // 27. DYNAMIC OPEN-SOURCE VECTOR RENDERER & UNIVERSAL ASHOKA SEAL
       // =========================================================================
       case 'ashoka_pillar_emblem':

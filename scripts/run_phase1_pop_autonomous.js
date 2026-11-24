@@ -41,6 +41,10 @@ const ERA_CATALOG = {
       'gold_coins_overflow_chest',
       'vault_b_door',
       'shakuni_dice',
+      'shattered_crown',
+      'weighing_scales_deceit',
+      'ancient_war_map_bharat',
+      'tension_gauge_hud',
       'chaupar_board_macro',
       'puppet_control_cross',
       'puppet_strings',
@@ -134,17 +138,20 @@ Target Era: ${era.toUpperCase()}
 MANDATES:
 1. Exactly 8 rapid micro-beats (~32-38 seconds total).
 2. Spoken Hindi ("narration_hi"): Conversational, intelligent Hindi (like Nitish Rajput / Think School). Avoid textbook archaic Sanskrit Hindi.
-3. Subtitle Tokens ("display_tokens_hi"): 3 to 6 Romanized Hinglish words per beat (e.g. ["Chanakya", "Ne", "Kaha", "Tha...", "ASLI KHATRA!"]).
+3. Subtitle Tokens ("display_tokens_hi"): 3 to 6 Romanized Hinglish words per beat (e.g. ["SHAKUNI", "NE", "PHEKA", "PASHA...", "ASLI KHATRA!"]).
 4. STRICT ERA ASSETS:
    - "environment" MUST be strictly one of: ${JSON.stringify(catalog.environments)}
    - "heroElement" MUST be strictly one of: ${JSON.stringify(catalog.props)}
    - "role" MUST be strictly one of: ${JSON.stringify(catalog.roles)}
-5. NARRATIVE PROGRESSION:
-   - Beat 1-2: Hook & Illusion Shatter
-   - Beat 3-4: The Trap / Real Danger
-   - Beat 5-6: The Hidden Rule / Revelation
-   - Beat 7: Tactical Action
-   - Beat 8: Polarizing Question / Comment Trap
+5. MANDATORY 7 DYNAMIC SCENE ARCHETYPES (Crucial to prevent visual monotony!):
+   - Beat 1: "MACRO_HOOK_PUNCH" (Extreme 1.4x thumb-stopping hook shot with dice/weapon flying into lens, pose: "rolling_dice" or "shock_hands_on_head")
+   - Beat 2: "DUAL_CONFRONTATION" (Two characters face-to-face conspiratorially, role: "shakuni", pose: "whispering_sly", secondCharacter: {"role": "duryodhana", "pose": "wealth_proud_chest"})
+   - Beat 3: "STRATEGY_MAP_ARENA" (Overview of tactical war map or Chaupar board, pose: "puppeteer_strings")
+   - Beat 4: "DOCUMENT_EDICT_UNROLL" (Unrolled ancient decree or parchment rule, pose: "chanakya_pointing")
+   - Beat 5: "TENSION_HUD_METER" (Dynamic risk/deceit gauge spiking to 99%, pose: "shock_hands_on_head")
+   - Beat 6: "METAPHOR_MONOLITH" (Massive symbolic centerpiece: shattered crown, tipping scales, or giant puppet shadow)
+   - Beat 7: "CLEAN_SPLIT_DUO" (Tactical advice, character pointing at emblem)
+   - Beat 8: "REACTION_CLOSEUP" (Extreme bust close-up with polarizing debate question)
 6. Return strictly valid JSON:
 {
   "title_hi": "Title in conversational Hindi",
@@ -160,7 +167,8 @@ MANDATES:
       "environment": "${catalog.environments[0]}",
       "heroElement": "${catalog.props[0]}",
       "role": "${catalog.roles[0]}",
-      "archetype": "CLEAN_SPLIT_DUO"
+      "pose": "rolling_dice",
+      "archetype": "MACRO_HOOK_PUNCH"
     }
   ]
 }`;
@@ -181,95 +189,103 @@ MANDATES:
     console.warn('⚠️ Showrunner LLM fallback notice:', err.message);
   }
 
-  // Fallback seed if needed
+  // Fallback seed with 7 Dynamic Scene Archetypes
   if (!scriptData || !scriptData.beats || scriptData.beats.length < 6) {
     console.log('ℹ️ Using high-quality curated seed fallback for script...');
     scriptData = {
-      title_hi: "मीठा बोलने वाला दोस्त सबसे बड़ा खतरा है",
-      title_hinglish: "CHANAKYA NITI: THE FAKE FRIEND TRAP",
+      title_hi: "शकुनि का वो ख़तरनाक दिमाग जिसने बिना लड़े पूरा कुरुवंश ख़त्म किया",
+      title_hinglish: "SHAKUNI'S PSYCHOLOGICAL WARFARE: UNARMED DESTRUCTION",
       beats: [
         {
           id: 1,
-          title: "MEETHA DOST",
-          badge: "RULE 1",
-          badgeEmoji: "📜",
-          narration_hi: "चाणक्य ने 2300 साल पहले एक brutal सच कहा था.",
-          display_tokens_hi: ["CHANAKYA", "NE", "KAHA", "THA..."],
-          environment: "ancient_palace",
-          heroElement: "chanakya_scroll",
-          role: "chanakya",
-          archetype: "CLEAN_SPLIT_DUO"
+          title: "FATAL ROLL",
+          badge: "HOOK",
+          badgeEmoji: "🎲",
+          narration_hi: "शकुनि ने बिना कोई हथियार उठाए पूरे कुरुक्षेत्र को आग में झोंक दिया.",
+          display_tokens_hi: ["BINA", "HATHIYAR", "PURAA", "VAMSH", "KHATAM!"],
+          environment: "chaupar_board_arena",
+          heroElement: "shakuni_dice",
+          role: "shakuni",
+          pose: "rolling_dice",
+          archetype: "MACRO_HOOK_PUNCH"
         },
         {
           id: 2,
-          title: "SLOW POISON",
-          badge: "DANGER",
-          badgeEmoji: "⚠️",
-          narration_hi: "जो दोस्त तुम्हारी हर गलती पर हाँ बोले, वो दोस्त नहीं... slow poison है.",
-          display_tokens_hi: ["HAR", "BAAT", "PAR", "HAAN", "SLOW", "POISON!"],
-          environment: "ancient_palace",
+          title: "THE POISON EAR",
+          badge: "CONSPIRACY",
+          badgeEmoji: "🤫",
+          narration_hi: "उसने दुर्योधन की आँखों पर पट्टी नहीं बांधी, बल्कि उसके कान में अहंकार का ज़हर घोला.",
+          display_tokens_hi: ["DUYODHANA", "KE", "KAAN", "MEIN", "ZAHAR!"],
+          environment: "durbar_throne_room",
           heroElement: "two_faced_mask",
-          role: "chanakya",
-          archetype: "CLEAN_SPLIT_DUO"
+          role: "shakuni",
+          pose: "whispering_sly",
+          secondCharacter: { role: "duryodhana", pose: "wealth_proud_chest", face: "shock_alarm" },
+          archetype: "DUAL_CONFRONTATION"
         },
         {
           id: 3,
-          title: "SWEET WORDS",
-          badge: "SECRET",
-          badgeEmoji: "🤫",
-          narration_hi: "मीठी बातें करने वाले लोग सामने तारीफ और पीठ पीछे गड्ढा खोदते हैं.",
-          display_tokens_hi: ["MEETHE", "LOG", "PEETH", "PEECHE", "KHATRA!"],
-          environment: "durbar_throne_room",
-          heroElement: "poison_kanya_goblet",
-          role: "ancient_commoner",
-          archetype: "CLEAN_SPLIT_DUO"
+          title: "CHAUPAR ARENA",
+          badge: "BATTLEFIELD",
+          badgeEmoji: "♟️",
+          narration_hi: "चौपड़ का खेल कोई जुआ नहीं था, वो एक psychological battlefield था जहाँ हर पाशा फिक्स्ड था.",
+          display_tokens_hi: ["KHEL", "NAHI", "PSYCHOLOGICAL", "WARFARE", "THA!"],
+          environment: "chaupar_board_arena",
+          heroElement: "ancient_war_map_bharat",
+          role: "shakuni",
+          pose: "puppeteer_strings",
+          archetype: "STRATEGY_MAP_ARENA"
         },
         {
           id: 4,
-          title: "BITTER TRUTH",
+          title: "UNWRITTEN RULE",
           badge: "WISDOM",
-          badgeEmoji: "💡",
-          narration_hi: "सच्चा दोस्त वही है जो कड़वी बात मुँह पर बोले, लेकिन तुम्हारी तरक्की चाहे.",
-          display_tokens_hi: ["SACCHA", "DOST", "KADWA", "SACH", "BOLTA", "HAI"],
-          environment: "durbar_throne_room",
-          heroElement: "sword_shield_emblem",
-          role: "king",
-          archetype: "CLEAN_SPLIT_DUO"
+          badgeEmoji: "📜",
+          narration_hi: "चाणक्य भी यही कहते हैं: जो इंसान तुम्हारे गुस्से का फायदा उठाए, वो तुम्हारा सबसे बड़ा दुश्मन है.",
+          display_tokens_hi: ["GUSSE", "KA", "FAYDA", "UTHANE", "WALA", "DUSHMAN!"],
+          environment: "ancient_palace",
+          heroElement: "chanakya_scroll",
+          role: "chanakya",
+          pose: "chanakya_pointing",
+          archetype: "DOCUMENT_EDICT_UNROLL"
         },
         {
           id: 5,
-          title: "CHANAKYA RULE",
-          badge: "TACTIC",
-          badgeEmoji: "⚖️",
-          narration_hi: "चाणक्य कहते हैं: कभी अपने secret plans ऐसे लोगों को मत बताओ.",
-          display_tokens_hi: ["SECRET", "PLANS", "KABHI", "MAT", "BATAO!"],
-          environment: "temple_vault",
-          heroElement: "gold_coins_overflow_chest",
-          role: "chanakya",
-          archetype: "CLEAN_SPLIT_DUO"
+          title: "EGO METER SPIKE",
+          badge: "DANGER",
+          badgeEmoji: "⚠️",
+          narration_hi: "जब इंसान का अहंकार निन्यानवे प्रतिशत पर पहुँचता है, तो विनाश तय हो जाता है.",
+          display_tokens_hi: ["AHANKAAR", "99%", "VINASH", "DEFINITE!"],
+          environment: "subterranean_dungeon_vault",
+          heroElement: "tension_gauge_hud",
+          role: "king",
+          pose: "shock_hands_on_head",
+          archetype: "TENSION_HUD_METER"
         },
         {
           id: 6,
-          title: "TEST OF TIME",
-          badge: "TEST",
-          badgeEmoji: "🔥",
-          narration_hi: "बुरे वक्त में जो साथ खड़ा रहे, वही असली हीरा है... बाकी सब सिर्फ भीड़ हैं.",
-          display_tokens_hi: ["BURE", "WAQT", "MEIN", "ASLI", "HEERA!"],
-          environment: "subterranean_dungeon_vault",
-          heroElement: "mystic_diya_flame",
-          role: "chanakya",
-          archetype: "CLEAN_SPLIT_DUO"
+          title: "SHATTERED CROWN",
+          badge: "METAPHOR",
+          badgeEmoji: "👑",
+          narration_hi: "जिस हस्तिनापुर के मुकुट के लिए यह साज़िश रची गई, वही मुकुट श्मशान की राख बन गया.",
+          display_tokens_hi: ["MUKUT", "SHMASHAN", "KI", "RAAKH", "BANA!"],
+          environment: "temple_vault",
+          heroElement: "shattered_crown",
+          role: "king",
+          pose: "wealth_proud_chest",
+          archetype: "METAPHOR_MONOLITH"
         },
         {
           id: 7,
-          title: "CHOOSE WISELY",
-          badge: "ACTION",
+          title: "PROTECT YOUR CIRCLE",
+          badge: "TACTIC",
           badgeEmoji: "🎯",
-          narration_hi: "आज ही अपने सर्कल को ऑडिट करो और fake चापलूसों को बाहर का रास्ता दिखाओ.",
-          display_tokens_hi: ["CIRCLE", "AUDIT", "KARO", "FAKE", "LOG", "OUT!"],
+          narration_hi: "अपनी ज़िंदगी से उन शकुनियों को बाहर निकालो जो तुम्हें तुम्हारी ही ग़लतियों पर उकसाते हैं.",
+          display_tokens_hi: ["SHAKUNIYO", "KO", "BAHAR", "NIKALO", "TODAY!"],
           environment: "ancient_palace",
-          heroElement: "ashoka_pillar_emblem",
-          role: "king",
+          heroElement: "sword_shield_emblem",
+          role: "chanakya",
+          pose: "chanakya_pointing",
           archetype: "CLEAN_SPLIT_DUO"
         },
         {
@@ -277,11 +293,12 @@ MANDATES:
           title: "COMMENT BELOW",
           badge: "DEBATE",
           badgeEmoji: "💬",
-          narration_hi: "क्या तुम्हारे पास ऐसा कोई सच्चा दोस्त है? कमेंट में उसका नाम Tag करो!",
-          display_tokens_hi: ["SACCHE", "DOST", "KO", "TAG", "KARO", "NICHE!"],
-          environment: "ancient_palace",
+          narration_hi: "क्या तुम्हारे सर्कल में भी कोई ऐसा मैनिपुलेटर है? कमेंट में यस या नो लिखो!",
+          display_tokens_hi: ["KYA", "TERE", "PASS", "MANIPULATOR", "HAI?"],
+          environment: "chaupar_board_arena",
           heroElement: "viral_comment_bubbles",
-          role: "chanakya",
+          role: "shakuni",
+          pose: "shock_hands_on_head",
           archetype: "REACTION_CLOSEUP"
         }
       ]
@@ -331,6 +348,15 @@ MANDATES:
   // Merge script beat recipe into manifest beats
   manifestHi.beats = manifestHi.beats.map((b, idx) => {
     const s = scriptData.beats[idx] || {};
+    const defaultArchetype = idx === 0 ? 'MACRO_HOOK_PUNCH' :
+                             idx === 1 ? 'DUAL_CONFRONTATION' :
+                             idx === 2 ? 'STRATEGY_MAP_ARENA' :
+                             idx === 3 ? 'DOCUMENT_EDICT_UNROLL' :
+                             idx === 4 ? 'TENSION_HUD_METER' :
+                             idx === 5 ? 'METAPHOR_MONOLITH' :
+                             idx === 6 ? 'CLEAN_SPLIT_DUO' : 'REACTION_CLOSEUP';
+    const chosenArchetype = s.archetype || defaultArchetype;
+
     return {
       ...b,
       title: s.title || b.title,
@@ -339,11 +365,22 @@ MANDATES:
       environment: s.environment || b.environment || (isAncient ? 'ancient_palace' : 'modern_finance'),
       heroElement: s.heroElement || b.heroElement || (isAncient ? 'chanakya_scroll' : 'salary_slip_drain'),
       character: {
-        role: s.role || (isAncient ? 'chanakya' : 'modern_creator'),
-        pose: s.archetype === 'REACTION_CLOSEUP' ? 'shock_hands_on_head' : (isAncient ? 'chanakya_pointing' : 'holding_phone')
+        role: s.role || (isAncient ? (chosenArchetype === 'STRATEGY_MAP_ARENA' || chosenArchetype === 'DOCUMENT_EDICT_UNROLL' ? 'chanakya' : 'shakuni') : 'modern_creator'),
+        pose: s.pose || (chosenArchetype === 'MACRO_HOOK_PUNCH' ? 'rolling_dice' :
+                         chosenArchetype === 'DUAL_CONFRONTATION' ? 'whispering_sly' :
+                         chosenArchetype === 'STRATEGY_MAP_ARENA' ? 'puppeteer_strings' :
+                         chosenArchetype === 'DOCUMENT_EDICT_UNROLL' ? 'chanakya_pointing' :
+                         chosenArchetype === 'TENSION_HUD_METER' ? 'shock_hands_on_head' :
+                         chosenArchetype === 'REACTION_CLOSEUP' ? 'shock_hands_on_head' :
+                         (isAncient ? 'chanakya_pointing' : 'holding_phone'))
       },
+      secondCharacter: s.secondCharacter || (chosenArchetype === 'DUAL_CONFRONTATION' ? {
+        role: isAncient ? 'duryodhana' : 'modern_commoner',
+        pose: isAncient ? 'wealth_proud_chest' : 'standing_dazed',
+        face: 'shock_alarm'
+      } : undefined),
       director_staging: {
-        archetype: s.archetype || 'CLEAN_SPLIT_DUO'
+        archetype: chosenArchetype
       }
     };
   });
@@ -366,14 +403,46 @@ MANDATES:
   console.log(`\n🎉 Remotion Master Rendered in ${renderSec}s! Size: ${fileSizeMb} MB`);
 
   // Step 5: Visual QA Stills & Artifact Extraction
-  console.log('\n📸 [STEP 5/5] Extracting 5 QA Keyframe Stills & Copying Artifacts...');
-  const keyframes = [
-    { name: 'p1_01_hook_punch', time: '00:00:00.500', label: 'Beat 1 Hook Crash Zoom' },
-    { name: 'p1_02_danger_split', time: '00:00:05.000', label: 'Beat 2 Split Duo & Mask' },
-    { name: 'p1_03_durbar_dialogue', time: '00:00:12.000', label: 'Beat 4 Throne Room Dialogue' },
-    { name: 'p1_04_vault_wisdom', time: '00:00:20.000', label: 'Beat 5 Temple Vault & Gold' },
-    { name: 'p1_05_climax_outro', time: '00:00:30.000', label: 'Beat 8 Climax Reaction' }
+  console.log('\n📸 [STEP 5/5] Extracting Dynamic Archetype QA Keyframe Stills & Copying Artifacts...');
+  // Extract stills near the middle of each distinct archetype beat
+  let accumSeconds = 0;
+  const keyframes = [];
+  const archetypeLabels = [
+    { name: 'p1_01_macro_hook_punch', label: 'Beat 1: Macro Hook Punch (Crash Zoom & Speed Rays)' },
+    { name: 'p1_02_dual_confrontation', label: 'Beat 2: Dual Confrontation (Shakuni vs Duryodhana)' },
+    { name: 'p1_03_strategy_arena', label: 'Beat 3: Strategy Map Arena (Tactical War Board)' },
+    { name: 'p1_04_document_edict', label: 'Beat 4: Document Edict Unroll (Chanakya Niti Rule)' },
+    { name: 'p1_05_tension_meter', label: 'Beat 5: Tension HUD Meter (99% Danger Gauge)' },
+    { name: 'p1_06_shattered_crown', label: 'Beat 6: Metaphor Monolith (Shattered Crown Altar)' },
+    { name: 'p1_07_reaction_closeup', label: 'Beat 8: Reaction Close-Up (Climax Question)' }
   ];
+
+  for (let i = 0; i < manifestHi.beats.length; i++) {
+    const b = manifestHi.beats[i];
+    const beatDurSec = (b.durationInFrames || 120) / 30;
+    const midSec = accumSeconds + beatDurSec * 0.45;
+    accumSeconds += beatDurSec;
+
+    const matchedLabel = archetypeLabels.find(a =>
+      (i === 0 && a.name.includes('hook')) ||
+      (i === 1 && a.name.includes('confrontation')) ||
+      (i === 2 && a.name.includes('strategy')) ||
+      (i === 3 && a.name.includes('document')) ||
+      (i === 4 && a.name.includes('tension')) ||
+      (i === 5 && a.name.includes('crown')) ||
+      (i === 7 && a.name.includes('reaction'))
+    );
+
+    if (matchedLabel) {
+      const mins = Math.floor(midSec / 60).toString().padStart(2, '0');
+      const secs = (midSec % 60).toFixed(3).padStart(6, '0');
+      keyframes.push({
+        name: matchedLabel.name,
+        time: `00:${mins}:${secs}`,
+        label: matchedLabel.label
+      });
+    }
+  }
 
   const extractedStills = [];
   for (const k of keyframes) {
