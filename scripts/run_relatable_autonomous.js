@@ -1718,6 +1718,7 @@ async function main() {
   fs.mkdirSync(runDir, { recursive: true });
   fs.mkdirSync(globalOutDir, { recursive: true });
   fs.mkdirSync(indiaOutDir, { recursive: true });
+  fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
 
   console.log('='.repeat(70));
   console.log(`🎬 RELATABLE COMEDY MASTER ENGINE (SMART DUAL-CHANNEL ARCHITECTURE)`);
@@ -1861,9 +1862,14 @@ async function main() {
       execSync(cpuMux, { stdio: 'inherit' });
     }
 
-    // Copy to Artifact Directory for User
+    // Copy to Artifact Directory for User (safe copy with directory assertion)
+    fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
     const artVideo = path.join(ARTIFACT_DIR, `${slug}_${chTag}.mp4`);
-    fs.copyFileSync(finalVideo, artVideo);
+    try {
+      fs.copyFileSync(finalVideo, artVideo);
+    } catch (artErr) {
+      console.warn(`⚠️ Warning: Could not copy video to artifact directory:`, artErr.message);
+    }
     renderedVideos[chTag] = { finalVideo, artVideo, manifest: chManifest };
 
     // Extract Proof Stills across dialogue turns
