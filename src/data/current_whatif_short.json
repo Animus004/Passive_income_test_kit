@@ -1,0 +1,112 @@
+{
+  "title": "What If Everyone Got $1,000,000 At Midnight?",
+  "seriesNumber": "#1",
+  "fullScript": "What if every single person on Earth received one million dollars at midnight tonight? At 12:00 AM, eight billion phones buzz with a direct deposit notification. Instantly, ninety-five percent of workers quit their jobs to celebrate. But by 9:00 AM, you rush out to buy a mansion, only to realize the real estate agents and builders quit too. When you get hungry, a single loaf of bread costs fifty thousand dollars because no one is driving delivery trucks. Within seventy-two hours, paper money is completely worthless, and society begins trading chocolate bars like gold bars. Proving that when everyone is rich, nobody is rich. Which is why if you woke up to a million dollars at midnight...",
+  "totalFrames": 1233,
+  "cuts": [
+    {
+      "sceneIndex": 1,
+      "name": "The Midnight Hook",
+      "startFrame": 0,
+      "endFrame": 135,
+      "startSec": 0.0,
+      "endSec": 4.5,
+      "headerTop": "WHAT IF EVERYONE GOT",
+      "tickerAmount": "$1,000,000",
+      "tickerColor": "#22c55e",
+      "statusLabel": "At midnight tonight",
+      "environment": "crowd_cheques"
+    },
+    {
+      "sceneIndex": 2,
+      "name": "8 Billion Phones Buzz",
+      "startFrame": 135,
+      "endFrame": 300,
+      "startSec": 4.5,
+      "endSec": 10.0,
+      "headerTop": "12:00:00 AM",
+      "tickerAmount": "+$1,000,000",
+      "tickerColor": "#22c55e",
+      "statusLabel": "8,000,000,000 Phones Buzzing",
+      "environment": "macro_phone_buzz"
+    },
+    {
+      "sceneIndex": 3,
+      "name": "95% Workers Quit & Celebrate",
+      "startFrame": 300,
+      "endFrame": 430,
+      "startSec": 10.0,
+      "endSec": 14.33,
+      "headerTop": "95% OF WORKERS",
+      "tickerAmount": "QUIT JOBS!",
+      "tickerColor": "#facc15",
+      "statusLabel": "12:05 AM • NO MORE WORK",
+      "environment": "office_cubicle_quit"
+    },
+    {
+      "sceneIndex": 4,
+      "name": "The Ghost City & House",
+      "startFrame": 430,
+      "endFrame": 630,
+      "startSec": 14.33,
+      "endSec": 21.0,
+      "headerTop": "#1",
+      "tickerAmount": "$580,000",
+      "tickerColor": "#22c55e",
+      "statusLabel": "Your money • Sunday",
+      "environment": "house_sold"
+    },
+    {
+      "sceneIndex": 5,
+      "name": "Hyperinflation Grocery Store",
+      "startFrame": 630,
+      "endFrame": 830,
+      "startSec": 21.0,
+      "endSec": 27.66,
+      "headerTop": "#1",
+      "tickerAmount": "$50,000",
+      "tickerColor": "#ef4444",
+      "statusLabel": "Bread • 2:00 PM",
+      "environment": "supermarket_inflation"
+    },
+    {
+      "sceneIndex": 6,
+      "name": "72 Hours Later: Money is Worthless",
+      "startFrame": 830,
+      "endFrame": 930,
+      "startSec": 27.66,
+      "endSec": 31.0,
+      "headerTop": "72 HOURS LATER",
+      "tickerAmount": "$0.00",
+      "tickerColor": "#ef4444",
+      "statusLabel": "CASH IS WORTHLESS TRASH",
+      "environment": "worthless_trash_money"
+    },
+    {
+      "sceneIndex": 7,
+      "name": "The Chocolate Barter Economy",
+      "startFrame": 930,
+      "endFrame": 1050,
+      "startSec": 31.0,
+      "endSec": 35.0,
+      "headerTop": "#1",
+      "tickerAmount": "BARTER ECONOMY",
+      "tickerColor": "#facc15",
+      "statusLabel": "1 Chocolate = 1 Gold",
+      "environment": "barter_chocolate"
+    },
+    {
+      "sceneIndex": 8,
+      "name": "The Paradox Loop",
+      "startFrame": 1050,
+      "endFrame": 1233,
+      "startSec": 35.0,
+      "endSec": 41.05,
+      "headerTop": "#1",
+      "tickerAmount": "$1,000,000",
+      "tickerColor": "#22c55e",
+      "statusLabel": "11:59:59 PM • MIDNIGHT",
+      "environment": "paradox_loop"
+    }
+  ]
+}

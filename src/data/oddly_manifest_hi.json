@@ -1,0 +1,890 @@
+{
+  "language": "hi",
+  "totalFrames": 900,
+  "totalDurationSec": 30.01,
+  "fps": 30,
+  "beats": [
+    {
+      "id": 1,
+      "title": "BRUTAL SACH",
+      "badge": "ANCIENT TRUTH",
+      "badgeEmoji": "🔥",
+      "audio_text": "चाणक्य ने 2300 साल पहले एक brutal सच बताया था।",
+      "display_tokens": [
+        "Chanakya",
+        "ne",
+        "2300",
+        "saal",
+        "pehle",
+        "brutal",
+        "sach",
+        "kaha"
+      ],
+      "heroElement": "chanakya_scroll",
+      "environment": "subterranean_dungeon_vault",
+      "director_staging": {
+        "archetype": "SOLO_HERO_MONOLITH",
+        "visual_metaphor": "A mastermind strategist revealing a hidden danger in a dark, conspiratorial vault.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "chanakya_scroll",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "chanakya",
+          "pose": "chanakya_pointing",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:00.0",
+            "focus": "badge",
+            "action": "Badge 'ANCIENT TRUTH' crashes onto screen with dust particles."
+          },
+          {
+            "time_sec": "0:00.5",
+            "focus": "character",
+            "action": "Chanakya steps out of shadow, pointing finger directly at camera."
+          },
+          {
+            "time_sec": "0:01.5",
+            "focus": "prop",
+            "action": "Scroll on left pulses with red alert light, emphasizing urgency."
+          }
+        ]
+      },
+      "startSec": 0.06,
+      "durationSec": 4.13,
+      "startFrame": 2,
+      "durationInFrames": 128,
+      "endFrame": 130
+    },
+    {
+      "id": 2,
+      "title": "NOT A DOST",
+      "badge": "FAKE ALLY",
+      "badgeEmoji": "😈",
+      "audio_text": "अगर कोई हर बात में हाँ बोले, वो दोस्त नहीं है।",
+      "display_tokens": [
+        "Agar",
+        "koi",
+        "har",
+        "baat",
+        "mein",
+        "HAAN",
+        "bole,",
+        "woh",
+        "dost",
+        "nahi"
+      ],
+      "heroElement": "two_faced_mask",
+      "environment": "ancient_palace",
+      "director_staging": {
+        "archetype": "CLEAN_SPLIT_DUO",
+        "visual_metaphor": "The illusion of friendship shattering to reveal deception behind the smile.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "two_faced_mask",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "commoner",
+          "pose": "whispering_sly",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:03.5",
+            "focus": "prop",
+            "action": "Mask rotates: Front face smiles warmly, back face reveals sharp dagger eyes."
+          },
+          {
+            "time_sec": "0:04.5",
+            "focus": "character",
+            "action": "Commoner character (fake friend) nods aggressively, mouthing 'Yes' repeatedly."
+          },
+          {
+            "time_sec": "0:05.5",
+            "focus": "transition",
+            "action": "Red 'X' stamp slams over the character's face."
+          }
+        ]
+      },
+      "startSec": 4.33,
+      "durationSec": 3.1,
+      "startFrame": 130,
+      "durationInFrames": 97,
+      "endFrame": 227
+    },
+    {
+      "id": 3,
+      "title": "TOXIC DOST",
+      "badge": "SLOW POISON",
+      "badgeEmoji": "☠️",
+      "audio_text": "ये तुम्हारा slow poison है, जो धीरे धीरे खाता है।",
+      "display_tokens": [
+        "Yeh",
+        "tumhara",
+        "slow",
+        "poison",
+        "hai,",
+        "dheere",
+        "dheere",
+        "khata",
+        "hai"
+      ],
+      "heroElement": "poison_kanya_goblet",
+      "environment": "durbar_throne_room",
+      "director_staging": {
+        "archetype": "SOLO_HERO_MONOLITH",
+        "visual_metaphor": "The subtle danger of accepting flattery like drinking poison without knowing it.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "poison_kanya_goblet",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "chanakya",
+          "pose": "calm_warning",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:07.5",
+            "focus": "prop",
+            "action": "Purple vapor rises slowly from the goblet, wrapping around the base."
+          },
+          {
+            "time_sec": "0:08.5",
+            "focus": "character",
+            "action": "Chanakya shakes his head slowly, looking disappointed at the viewer's gullibility."
+          },
+          {
+            "time_sec": "0:09.5",
+            "focus": "effect",
+            "action": "Screen tint turns slightly sickly green to represent the 'poison' effect."
+          }
+        ]
+      },
+      "startSec": 7.57,
+      "durationSec": 3.36,
+      "startFrame": 227,
+      "durationInFrames": 105,
+      "endFrame": 332
+    },
+    {
+      "id": 4,
+      "title": "YOUR FATAL FLAW",
+      "badge": "WEAKNESS LEAK",
+      "badgeEmoji": "🗡️",
+      "audio_text": "अपनी कमज़ोरी बताओगे, तो वही तुम्हारी सबसे बड़ी ताकत बनेगी।",
+      "display_tokens": [
+        "Kamzori",
+        "bataoge,",
+        "toh",
+        "wohi",
+        "tumhari",
+        "sabse",
+        "badi",
+        "taqat",
+        "banegi"
+      ],
+      "heroElement": "dagger",
+      "environment": "subterranean_dungeon_vault",
+      "director_staging": {
+        "archetype": "DYNAMIC_CONFRONTATION",
+        "visual_metaphor": "Handing over your defense (weakness) to an enemy who immediately weaponizes it.",
+        "left_stage": {
+          "type": "CharacterRig",
+          "role": "commoner",
+          "pose": "handing_over",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "HeroProp",
+          "prop": "dagger",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:11.5",
+            "focus": "character",
+            "action": "Commoner character hands a glowing blue orb (weakness) to a shadowy silhouette."
+          },
+          {
+            "time_sec": "0:12.5",
+            "focus": "prop",
+            "action": "Shadowy figure catches the orb, and it transforms into a sharp dagger."
+          },
+          {
+            "time_sec": "0:13.5",
+            "focus": "effect",
+            "action": "Dagger is thrust forward towards the viewer, creating a 'shock' ripple."
+          }
+        ]
+      },
+      "startSec": 11.07,
+      "durationSec": 4.3,
+      "startFrame": 332,
+      "durationInFrames": 133,
+      "endFrame": 465
+    },
+    {
+      "id": 5,
+      "title": "LONELY TALKS",
+      "badge": "RULE 01",
+      "badgeEmoji": "🕯️",
+      "audio_text": "Rule 1: वो जिससे तुम तनहाई में बात करते हो।",
+      "display_tokens": [
+        "Rule",
+        "1:",
+        "woh",
+        "jisse",
+        "tum",
+        "tanhai",
+        "mein",
+        "baat",
+        "karte",
+        "ho"
+      ],
+      "heroElement": "burning_torch",
+      "environment": "ancient_palace",
+      "director_staging": {
+        "archetype": "CLEAN_SPLIT_DUO",
+        "visual_metaphor": "The danger of sharing private thoughts with those who may not have your best interest.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "burning_torch",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "commoner",
+          "pose": "whispering_sly",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:15.5",
+            "focus": "prop",
+            "action": "Torch flickers, casting long, unstable shadows on the wall."
+          },
+          {
+            "time_sec": "0:16.5",
+            "focus": "character",
+            "action": "Commoner leans in close, whispering, with a 'recording' red dot appearing on their eye."
+          },
+          {
+            "time_sec": "0:17.5",
+            "focus": "text",
+            "action": "Text 'SECRET LEAKED' flashes briefly in the background."
+          }
+        ]
+      },
+      "startSec": 15.51,
+      "durationSec": 3.22,
+      "startFrame": 465,
+      "durationInFrames": 101,
+      "endFrame": 566
+    },
+    {
+      "id": 6,
+      "title": "MEMORY OF SINS",
+      "badge": "RULE 02",
+      "badgeEmoji": "📝",
+      "audio_text": "Rule 2: वो जो तुम्हारी हर गलती को याद रखता है।",
+      "display_tokens": [
+        "Rule",
+        "2:",
+        "woh",
+        "jo",
+        "tumhari",
+        "har",
+        "galti",
+        "ko",
+        "yaad",
+        "rakhta",
+        "hai"
+      ],
+      "heroElement": "chanakya_scroll",
+      "environment": "durbar_throne_room",
+      "director_staging": {
+        "archetype": "SOLO_HERO_MONOLITH",
+        "visual_metaphor": "The enemy's ledger: Every slip-up is recorded and saved for later use.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "chanakya_scroll",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "commoner",
+          "pose": "writing_intensely",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:19.5",
+            "focus": "character",
+            "action": "Commoner character frantically writes on the scroll with a chisel."
+          },
+          {
+            "time_sec": "0:20.5",
+            "focus": "prop",
+            "action": "The scroll fills up with red ink marks, showing accumulation of 'mistakes'."
+          },
+          {
+            "time_sec": "0:21.5",
+            "focus": "effect",
+            "action": "A 'ding' sound effect visualizes as a bell icon popping up."
+          }
+        ]
+      },
+      "startSec": 18.88,
+      "durationSec": 3.32,
+      "startFrame": 566,
+      "durationInFrames": 104,
+      "endFrame": 670
+    },
+    {
+      "id": 7,
+      "title": "ENJOY YOUR WIN?",
+      "badge": "RULE 03",
+      "badgeEmoji": "🏆",
+      "audio_text": "Rule 3: वो जो तुम्हारी सफलता पर सच में खुश नहीं।",
+      "display_tokens": [
+        "Rule",
+        "3:",
+        "woh",
+        "jo",
+        "tumhari",
+        "safalta",
+        "par",
+        "sach",
+        "mein",
+        "khush",
+        "nahi"
+      ],
+      "heroElement": "gold_coins_overflow_chest",
+      "environment": "temple_vault",
+      "director_staging": {
+        "archetype": "CLEAN_SPLIT_DUO",
+        "visual_metaphor": "Jealousy masked as friendship; the enemy celebrates your win only to plot your fall.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "gold_coins_overflow_chest",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "commoner",
+          "pose": "smiling_with_dagger",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:23.5",
+            "focus": "prop",
+            "action": "Gold coins spill out of the chest, symbolizing success/wealth."
+          },
+          {
+            "time_sec": "0:24.5",
+            "focus": "character",
+            "action": "Commoner character claps happily, but their shadow reveals a dagger shape."
+          },
+          {
+            "time_sec": "0:25.5",
+            "focus": "transition",
+            "action": "The shadow dagger stabs into the ground, cracking the floor."
+          }
+        ]
+      },
+      "startSec": 22.34,
+      "durationSec": 3.5,
+      "startFrame": 670,
+      "durationInFrames": 109,
+      "endFrame": 779
+    },
+    {
+      "id": 8,
+      "title": "ARE YOU SECURE?",
+      "badge": "COMMENT TRAP",
+      "badgeEmoji": "💬",
+      "audio_text": "अगर तुमने ये 3 लोगों को छुपाया, तो कमेंट में 'SECURE' लिखो।",
+      "display_tokens": [
+        "Agar",
+        "tumne",
+        "ye",
+        "3",
+        "logon",
+        "ko",
+        "chupaya,",
+        "toh",
+        "comment",
+        "mein",
+        "'SECURE'",
+        "likho"
+      ],
+      "heroElement": "viral_comment_bubbles",
+      "environment": "subterranean_dungeon_vault",
+      "director_staging": {
+        "archetype": "SOLO_HERO_MONOLITH",
+        "visual_metaphor": "The call to action: Secure your mind and prove you've applied the strategy.",
+        "left_stage": {
+          "type": "HeroProp",
+          "prop": "viral_comment_bubbles",
+          "x": 340,
+          "y": 960
+        },
+        "right_stage": {
+          "type": "CharacterRig",
+          "role": "chanakya",
+          "pose": "arms_folded_confident",
+          "x": 760,
+          "y": 940
+        },
+        "timeline": [
+          {
+            "time_sec": "0:27.5",
+            "focus": "character",
+            "action": "Chanakya stands with arms folded, looking unshakeable and confident."
+          },
+          {
+            "time_sec": "0:28.5",
+            "focus": "prop",
+            "action": "Three comment bubbles pop up: 'SECURE', 'TRAPPED', 'LEARNING'."
+          },
+          {
+            "time_sec": "0:29.5",
+            "focus": "cta",
+            "action": "Text 'WRITE SECURE' pulses in bright neon orange, urging immediate action."
+          }
+        ]
+      },
+      "startSec": 25.97,
+      "durationSec": 3.79,
+      "startFrame": 779,
+      "durationInFrames": 121,
+      "endFrame": 900
+    }
+  ],
+  "words": [
+    {
+      "word": "Chanakya",
+      "start": 0.06,
+      "end": 0.95
+    },
+    {
+      "word": "ne",
+      "start": 0.95,
+      "end": 1.17
+    },
+    {
+      "word": "2300",
+      "start": 1.18,
+      "end": 1.63
+    },
+    {
+      "word": "saal",
+      "start": 1.62,
+      "end": 2.07
+    },
+    {
+      "word": "pehle",
+      "start": 2.07,
+      "end": 2.63
+    },
+    {
+      "word": "brutal",
+      "start": 2.63,
+      "end": 3.3
+    },
+    {
+      "word": "sach",
+      "start": 3.3,
+      "end": 3.75
+    },
+    {
+      "word": "kaha",
+      "start": 3.74,
+      "end": 4.19
+    },
+    {
+      "word": "Agar",
+      "start": 4.33,
+      "end": 4.66
+    },
+    {
+      "word": "koi",
+      "start": 4.66,
+      "end": 4.9
+    },
+    {
+      "word": "har",
+      "start": 4.9,
+      "end": 5.14
+    },
+    {
+      "word": "baat",
+      "start": 5.15,
+      "end": 5.48
+    },
+    {
+      "word": "mein",
+      "start": 5.47,
+      "end": 5.8
+    },
+    {
+      "word": "HAAN",
+      "start": 5.8,
+      "end": 6.13
+    },
+    {
+      "word": "bole,",
+      "start": 6.12,
+      "end": 6.53
+    },
+    {
+      "word": "woh",
+      "start": 6.53,
+      "end": 6.77
+    },
+    {
+      "word": "dost",
+      "start": 6.78,
+      "end": 7.11
+    },
+    {
+      "word": "nahi",
+      "start": 7.1,
+      "end": 7.43
+    },
+    {
+      "word": "Yeh",
+      "start": 7.57,
+      "end": 7.8
+    },
+    {
+      "word": "tumhara",
+      "start": 7.8,
+      "end": 8.33
+    },
+    {
+      "word": "slow",
+      "start": 8.33,
+      "end": 8.64
+    },
+    {
+      "word": "poison",
+      "start": 8.64,
+      "end": 9.1
+    },
+    {
+      "word": "hai,",
+      "start": 9.1,
+      "end": 9.41
+    },
+    {
+      "word": "dheere",
+      "start": 9.4,
+      "end": 9.86
+    },
+    {
+      "word": "dheere",
+      "start": 9.86,
+      "end": 10.32
+    },
+    {
+      "word": "khata",
+      "start": 10.32,
+      "end": 10.7
+    },
+    {
+      "word": "hai",
+      "start": 10.7,
+      "end": 10.93
+    },
+    {
+      "word": "Kamzori",
+      "start": 11.07,
+      "end": 11.68
+    },
+    {
+      "word": "bataoge,",
+      "start": 11.68,
+      "end": 12.38
+    },
+    {
+      "word": "toh",
+      "start": 12.39,
+      "end": 12.65
+    },
+    {
+      "word": "wohi",
+      "start": 12.65,
+      "end": 13.0
+    },
+    {
+      "word": "tumhari",
+      "start": 13.0,
+      "end": 13.61
+    },
+    {
+      "word": "sabse",
+      "start": 13.61,
+      "end": 14.05
+    },
+    {
+      "word": "badi",
+      "start": 14.05,
+      "end": 14.4
+    },
+    {
+      "word": "taqat",
+      "start": 14.4,
+      "end": 14.84
+    },
+    {
+      "word": "banegi",
+      "start": 14.84,
+      "end": 15.37
+    },
+    {
+      "word": "Rule",
+      "start": 15.51,
+      "end": 15.85
+    },
+    {
+      "word": "1:",
+      "start": 15.85,
+      "end": 16.02
+    },
+    {
+      "word": "woh",
+      "start": 16.02,
+      "end": 16.27
+    },
+    {
+      "word": "jisse",
+      "start": 16.27,
+      "end": 16.69
+    },
+    {
+      "word": "tum",
+      "start": 16.7,
+      "end": 16.95
+    },
+    {
+      "word": "tanhai",
+      "start": 16.95,
+      "end": 17.46
+    },
+    {
+      "word": "mein",
+      "start": 17.46,
+      "end": 17.8
+    },
+    {
+      "word": "baat",
+      "start": 17.8,
+      "end": 18.14
+    },
+    {
+      "word": "karte",
+      "start": 18.14,
+      "end": 18.56
+    },
+    {
+      "word": "ho",
+      "start": 18.56,
+      "end": 18.73
+    },
+    {
+      "word": "Rule",
+      "start": 18.88,
+      "end": 19.2
+    },
+    {
+      "word": "2:",
+      "start": 19.2,
+      "end": 19.36
+    },
+    {
+      "word": "woh",
+      "start": 19.37,
+      "end": 19.61
+    },
+    {
+      "word": "jo",
+      "start": 19.61,
+      "end": 19.77
+    },
+    {
+      "word": "tumhari",
+      "start": 19.77,
+      "end": 20.34
+    },
+    {
+      "word": "har",
+      "start": 20.34,
+      "end": 20.58
+    },
+    {
+      "word": "galti",
+      "start": 20.58,
+      "end": 20.98
+    },
+    {
+      "word": "ko",
+      "start": 20.99,
+      "end": 21.15
+    },
+    {
+      "word": "yaad",
+      "start": 21.15,
+      "end": 21.47
+    },
+    {
+      "word": "rakhta",
+      "start": 21.47,
+      "end": 21.96
+    },
+    {
+      "word": "hai",
+      "start": 21.96,
+      "end": 22.2
+    },
+    {
+      "word": "Rule",
+      "start": 22.34,
+      "end": 22.65
+    },
+    {
+      "word": "3:",
+      "start": 22.65,
+      "end": 22.81
+    },
+    {
+      "word": "woh",
+      "start": 22.81,
+      "end": 23.04
+    },
+    {
+      "word": "jo",
+      "start": 23.04,
+      "end": 23.2
+    },
+    {
+      "word": "tumhari",
+      "start": 23.2,
+      "end": 23.74
+    },
+    {
+      "word": "safalta",
+      "start": 23.74,
+      "end": 24.28
+    },
+    {
+      "word": "par",
+      "start": 24.28,
+      "end": 24.51
+    },
+    {
+      "word": "sach",
+      "start": 24.52,
+      "end": 24.83
+    },
+    {
+      "word": "mein",
+      "start": 24.83,
+      "end": 25.14
+    },
+    {
+      "word": "khush",
+      "start": 25.14,
+      "end": 25.53
+    },
+    {
+      "word": "nahi",
+      "start": 25.53,
+      "end": 25.84
+    },
+    {
+      "word": "Agar",
+      "start": 25.97,
+      "end": 26.25
+    },
+    {
+      "word": "tumne",
+      "start": 26.25,
+      "end": 26.6
+    },
+    {
+      "word": "ye",
+      "start": 26.6,
+      "end": 26.74
+    },
+    {
+      "word": "3",
+      "start": 26.74,
+      "end": 26.81
+    },
+    {
+      "word": "logon",
+      "start": 26.81,
+      "end": 27.16
+    },
+    {
+      "word": "ko",
+      "start": 27.16,
+      "end": 27.3
+    },
+    {
+      "word": "chupaya,",
+      "start": 27.3,
+      "end": 27.86
+    },
+    {
+      "word": "toh",
+      "start": 27.86,
+      "end": 28.07
+    },
+    {
+      "word": "comment",
+      "start": 28.08,
+      "end": 28.57
+    },
+    {
+      "word": "mein",
+      "start": 28.57,
+      "end": 28.85
+    },
+    {
+      "word": "'SECURE'",
+      "start": 28.85,
+      "end": 29.41
+    },
+    {
+      "word": "likho",
+      "start": 29.41,
+      "end": 29.76
+    }
+  ]
+}

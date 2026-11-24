@@ -1,0 +1,697 @@
+{
+  "cute robot": [
+    {
+      "uid": "9b158486dfa1490eb9157966321283a0",
+      "name": "Sad toaster",
+      "likes": 997,
+      "faceCount": 63046,
+      "vertexCount": 32397,
+      "thumb": "https://media.sketchfab.com/models/9b158486dfa1490eb9157966321283a0/thumbnails/79592e74f32642fb9d0f14912f80856a/78c2e64784a74126abf1b80e66819ace.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "59fc99d8dcb146f3a6c16dbbcc4680da",
+      "name": "Robot Playground",
+      "likes": 983,
+      "faceCount": 11816,
+      "vertexCount": 8675,
+      "thumb": "https://media.sketchfab.com/models/59fc99d8dcb146f3a6c16dbbcc4680da/thumbnails/ec55d941287d4d9eb4b642a567fd1fcb/00d142ea6de34c0faaa844ffeb45ef3e.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "0d285c3d015a4573ae1100d298935cb9",
+      "name": "Autonomous Robot Sweeper",
+      "likes": 917,
+      "faceCount": 15644,
+      "vertexCount": 8203,
+      "thumb": "https://media.sketchfab.com/models/0d285c3d015a4573ae1100d298935cb9/thumbnails/a12aa4ef36d84aabb4ba48df82b6cb4f/7da172827c2749aa9d00be275a718b70.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "46640796f0dd4fbab5eba5262d542e25",
+      "name": "Cyber Girl",
+      "likes": 866,
+      "faceCount": 26152,
+      "vertexCount": 16094,
+      "thumb": "https://media.sketchfab.com/models/46640796f0dd4fbab5eba5262d542e25/thumbnails/c7b7a810ee1d4e7b93b5e97fe3a4d367/19f3e7883389407d8b9edc57bfad7cd8.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "240c1f80db55416a99fa2ccd33da0efc",
+      "name": "BOT VIPE ANIMATION by Oscar Creativo",
+      "likes": 759,
+      "faceCount": 37582,
+      "vertexCount": 18811,
+      "thumb": "https://media.sketchfab.com/models/240c1f80db55416a99fa2ccd33da0efc/thumbnails/bb9497df5c30444d9844527b94cc80b1/b8978c4d884440b2a58f53fc734b6689.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "ce248709dea64ec1844e8dd9b614f7c0",
+      "name": "Drone",
+      "likes": 649,
+      "faceCount": 1986,
+      "vertexCount": 1081,
+      "thumb": "https://media.sketchfab.com/models/ce248709dea64ec1844e8dd9b614f7c0/thumbnails/441fac5537b64924ab6fc0534350b3ba/640x360.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "de4014cdb8f14cbd9aa1f294ae259a8d",
+      "name": "Robot Police Little Helper",
+      "likes": 648,
+      "faceCount": 97814,
+      "vertexCount": 53218,
+      "thumb": "https://media.sketchfab.com/models/de4014cdb8f14cbd9aa1f294ae259a8d/thumbnails/2bba93b7f17a41cb8e11ba9a4fd0a8b4/2c67790cfdbc419ca76f29ad93cc09d0.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "af071bc3fe274e39aff2a22b5700bdcf",
+      "name": "Cyborg model 001",
+      "likes": 621,
+      "faceCount": 20851,
+      "vertexCount": 10844,
+      "thumb": "https://media.sketchfab.com/models/af071bc3fe274e39aff2a22b5700bdcf/thumbnails/c8e3d56b150f4f6aa00794282a26669c/efd54ac86ea94c8ebffb77fccf22b82b.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "companion robot": [
+    {
+      "uid": "723d462abb744d4f9abcfe30a66f5e7f",
+      "name": "Destiny - Ghost [Follower Giveaway]",
+      "likes": 224,
+      "faceCount": 4182,
+      "vertexCount": 2269,
+      "thumb": "https://media.sketchfab.com/models/723d462abb744d4f9abcfe30a66f5e7f/thumbnails/4eed8c2fcaa14a4aa874a3b89f284171/1024x576.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "a0bd28b7133648848427a5c27975611b",
+      "name": "360 Sphere Robot",
+      "likes": 221,
+      "faceCount": 30188,
+      "vertexCount": 15304,
+      "thumb": "https://media.sketchfab.com/models/a0bd28b7133648848427a5c27975611b/thumbnails/604ebcca3f694d14a4483fd805794f01/dfdd5458e3aa47c6a9200857b6db033a.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "7986dbee47cc43818a6e09dd4137b70f",
+      "name": "Companion Robot",
+      "likes": 90,
+      "faceCount": 6831,
+      "vertexCount": 6572,
+      "thumb": "https://media.sketchfab.com/models/7986dbee47cc43818a6e09dd4137b70f/thumbnails/9bc7fae6c4104f9dac9236ec136b6c7b/79a3521e7118459287af9b69df5fa926.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "076ffcee579046128e88c50689ada741",
+      "name": "Iron Eye Guardian",
+      "likes": 84,
+      "faceCount": 930731,
+      "vertexCount": 465284,
+      "thumb": "https://media.sketchfab.com/models/076ffcee579046128e88c50689ada741/thumbnails/81a5dd21d3b545c8b53fa74028606f34/00b437c1b5374dd18f865ae78a8d351b.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "68c1213f2c114ae791401023fef8aa9c",
+      "name": "HL2 Dog Rig",
+      "likes": 71,
+      "faceCount": 13981,
+      "vertexCount": 8322,
+      "thumb": "https://media.sketchfab.com/models/68c1213f2c114ae791401023fef8aa9c/thumbnails/5bf6f155f5cb4ad9904a1fadc3a1a634/d23491fbbd064f659e70c88d0ceb85eb.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "571baf9cfcd74cc69eaa22d423678b25",
+      "name": "Tour IA",
+      "likes": 64,
+      "faceCount": 2218,
+      "vertexCount": 1186,
+      "thumb": "https://media.sketchfab.com/models/571baf9cfcd74cc69eaa22d423678b25/thumbnails/3ca190f31e5742d8a2aca1e57e772c23/3686ba72f4c345fb891a909611eb3fcd.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "a1760eb7ba0c4005a33b27d6796a47aa",
+      "name": "Critical Medical Drone",
+      "likes": 62,
+      "faceCount": 18154,
+      "vertexCount": 9588,
+      "thumb": "https://media.sketchfab.com/models/a1760eb7ba0c4005a33b27d6796a47aa/thumbnails/d85dfc0d546349e0b67770476af86c94/ef3a7576b7e54ad6ac06a746deba5d9f.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "3b870ac6f99d462a88baca5ab27ebc82",
+      "name": "Robot Television",
+      "likes": 57,
+      "faceCount": 25184,
+      "vertexCount": 12760,
+      "thumb": "https://media.sketchfab.com/models/3b870ac6f99d462a88baca5ab27ebc82/thumbnails/aab9329198f54936ad5ab48ea2924ea2/3b0feef7c3af4d65855604ea390d7ec4.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "floating robot": [
+    {
+      "uid": "6b5b90dc52ae4933a103d0a71777ecbd",
+      "name": "Poddy M1 - Stylized Floating Robot - Posed",
+      "likes": 77,
+      "faceCount": 53684,
+      "vertexCount": 27034,
+      "thumb": "https://media.sketchfab.com/models/6b5b90dc52ae4933a103d0a71777ecbd/thumbnails/3a2536b39a64425f9eee93afbb2a8677/2127d6518df245b6b6332079ad2f30fb.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "196b53f726b8495b8c460554d2a2944a",
+      "name": "Guarding Eye",
+      "likes": 69,
+      "faceCount": 3500,
+      "vertexCount": 1776,
+      "thumb": "https://media.sketchfab.com/models/196b53f726b8495b8c460554d2a2944a/thumbnails/9cb5800fbf924a6e819df4f103e96ac7/19abc34b9969439e9a341392e8179f3a.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "20dd7f7bdc9a4c36aef491f12afa14d8",
+      "name": "Floating robot",
+      "likes": 69,
+      "faceCount": 23900,
+      "vertexCount": 12036,
+      "thumb": "https://media.sketchfab.com/models/20dd7f7bdc9a4c36aef491f12afa14d8/thumbnails/6c7d1e24ccbe43a4b54f2df5e6757496/a7fa5a1541d343ed85e40612761683dc.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "e0eb70fea0ef4f1f8eeaaa383b8be36f",
+      "name": "Sentinel Floating Robot",
+      "likes": 67,
+      "faceCount": 1710,
+      "vertexCount": 465,
+      "thumb": "https://media.sketchfab.com/models/e0eb70fea0ef4f1f8eeaaa383b8be36f/thumbnails/fa3b61c128ff4d27bf319a922b7cbf73/64x36.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "f46062371c9b42acb74b823e9912c915",
+      "name": "Chrono-Root",
+      "likes": 59,
+      "faceCount": 616064,
+      "vertexCount": 306659,
+      "thumb": "https://media.sketchfab.com/models/f46062371c9b42acb74b823e9912c915/thumbnails/c45ec2cbc59642e680d0a4cc5f738f26/beab523944944964ba02ef38362d6a5c.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "23809736bed644cfaeaf380ebab80921",
+      "name": "Giant Floating Robot Skibidi Toilet",
+      "likes": 43,
+      "faceCount": 105422,
+      "vertexCount": 60540,
+      "thumb": "https://media.sketchfab.com/models/23809736bed644cfaeaf380ebab80921/thumbnails/bc672ad471e345c7b8fa2d185c92a89b/73db9791a2d849e389f4b989004251f9.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "3b5e19d025bd47748096534a3775fbaf",
+      "name": "Desk | Design |  Sci-Fi Workstation | Neon Termi",
+      "likes": 34,
+      "faceCount": 79904,
+      "vertexCount": 40456,
+      "thumb": "https://media.sketchfab.com/models/3b5e19d025bd47748096534a3775fbaf/thumbnails/b423b7da7ced4bd6a311da6e0bd53b16/55728638fc7549bbad338954b76b7763.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "14cb626902e24eb493d1658823b08dd8",
+      "name": "Annoyatron 5000",
+      "likes": 34,
+      "faceCount": 190296,
+      "vertexCount": 95205,
+      "thumb": "https://media.sketchfab.com/models/14cb626902e24eb493d1658823b08dd8/thumbnails/1133e25336034519a9951039d259c444/a9c3ce0d15ee48fc854b067cb2d0c800.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "hover robot": [
+    {
+      "uid": "edf5ca5bd9f1459c81d8acc672c5a389",
+      "name": "D.S.E.V. Drone",
+      "likes": 524,
+      "faceCount": 163026,
+      "vertexCount": 155372,
+      "thumb": "https://media.sketchfab.com/models/edf5ca5bd9f1459c81d8acc672c5a389/thumbnails/919b891659ef42c5addd6d664e4580ba/1024x576.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "0c58c951883243a999129b68b95a7527",
+      "name": "Kitsune Harpy Rig",
+      "likes": 112,
+      "faceCount": 22826,
+      "vertexCount": 13998,
+      "thumb": "https://media.sketchfab.com/models/0c58c951883243a999129b68b95a7527/thumbnails/a30ee341d7df4befb98dfa10157700f7/939e2031c74b422985d2c457c42e44df.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "9d2125a226834767bb0d898263578ad7",
+      "name": "Drone Animated",
+      "likes": 91,
+      "faceCount": 4514,
+      "vertexCount": 2526,
+      "thumb": "https://media.sketchfab.com/models/9d2125a226834767bb0d898263578ad7/thumbnails/f134716dd53c478b837db70de5f4e0ab/2c91ab2f203e43759ce0fb257ecbaa7c.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "a9c9e3476eb54507978d3a6cf68e6ee2",
+      "name": "Jedi Training Droid",
+      "likes": 81,
+      "faceCount": 45428,
+      "vertexCount": 24508,
+      "thumb": "https://media.sketchfab.com/models/a9c9e3476eb54507978d3a6cf68e6ee2/thumbnails/e26c55e080ba46f3a51c91c35a02a7f3/7db69693f9fa408a882a8fa04a3c0304.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "290de0f82e9e4e4b9a8ae6524311a8db",
+      "name": "Scifi Drone",
+      "likes": 72,
+      "faceCount": 28100,
+      "vertexCount": 14096,
+      "thumb": "https://media.sketchfab.com/models/290de0f82e9e4e4b9a8ae6524311a8db/thumbnails/0faef46fe12c48468034b6a0876d5aeb/e81657c11e35469babdcef6cde4bf468.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "560447ce595146e387c0c54cbd3fb553",
+      "name": "simple FlyBot",
+      "likes": 27,
+      "faceCount": 5504,
+      "vertexCount": 3255,
+      "thumb": "https://media.sketchfab.com/models/560447ce595146e387c0c54cbd3fb553/thumbnails/f5cbb170abf94663903eecff6d9ebef7/bb69bde223674ecbabc17f6c8ffa6d20.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "8437215d6453478595e29f2be4e7d9e3",
+      "name": "Robot",
+      "likes": 21,
+      "faceCount": 3248,
+      "vertexCount": 1661,
+      "thumb": "https://media.sketchfab.com/models/8437215d6453478595e29f2be4e7d9e3/thumbnails/180957f24ce14e5fa3253a6e365f7ca3/2572fbbd5f214e97b35cc284c751e144.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "4100825ad7154b4aa6ba5faa0fe711c3",
+      "name": "ChronoDrift Sentinel (Rigged)",
+      "likes": 20,
+      "faceCount": 243849,
+      "vertexCount": 121882,
+      "thumb": "https://media.sketchfab.com/models/4100825ad7154b4aa6ba5faa0fe711c3/thumbnails/a6f76f8c77a44904ab9234fe050ccbca/dd37c299bd0f47598f211aecb3f5168a.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "assistant robot": [
+    {
+      "uid": "7b75f204eb3e42b6babd883773e0789d",
+      "name": "Cute Home Robot",
+      "likes": 414,
+      "faceCount": 3752,
+      "vertexCount": 2082,
+      "thumb": "https://media.sketchfab.com/models/7b75f204eb3e42b6babd883773e0789d/thumbnails/0716dd90e59e471dafb1319891577018/f75ea6bdb5b9487285a6ed2e6d1cc969.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "9d943813e89d433cbc68b3e8aaf114c7",
+      "name": "Corporate Patrol Droid",
+      "likes": 123,
+      "faceCount": 1687614,
+      "vertexCount": 849533,
+      "thumb": "https://media.sketchfab.com/models/9d943813e89d433cbc68b3e8aaf114c7/thumbnails/957d8c64a24543ba9e8c3f708c2f8e94/8e7ce2d86179480cb3cd9d1992bc8ffe.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "8afec4d921ca4b4fab7203a0fc706e87",
+      "name": "Assistant robot in dieselpunk style (OPTIMISED)",
+      "likes": 111,
+      "faceCount": 36706,
+      "vertexCount": 21110,
+      "thumb": "https://media.sketchfab.com/models/8afec4d921ca4b4fab7203a0fc706e87/thumbnails/8d2c3803c84e4a0fa5a6ee9459ba89c0/552cf18ac59d4807908d28b72000e70a.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "d09319ec6c8245f2bc7f20d96a4f328a",
+      "name": "Amazon Echo",
+      "likes": 90,
+      "faceCount": 29499,
+      "vertexCount": 29904,
+      "thumb": "https://media.sketchfab.com/models/d09319ec6c8245f2bc7f20d96a4f328a/thumbnails/e2b4c995b5c5408c9a9408a5de24f55b/64x36.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "5411e0d961af4395b90a3c6551af1d56",
+      "name": "Mega Man - Mega Man X Dive",
+      "likes": 79,
+      "faceCount": 2554,
+      "vertexCount": 1372,
+      "thumb": "https://media.sketchfab.com/models/5411e0d961af4395b90a3c6551af1d56/thumbnails/d19fdd193f1940c8967f6eef066f541f/f1fb516621e34d7aa1cef01c238e2987.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "4b6276d9ed32415287684a4f38a5d3dc",
+      "name": "Little Rusty Steampunk Robot-assistant",
+      "likes": 65,
+      "faceCount": 71884,
+      "vertexCount": 36214,
+      "thumb": "https://media.sketchfab.com/models/4b6276d9ed32415287684a4f38a5d3dc/thumbnails/5d1e81b8cad440288a273ca3535ef4e7/6d876a53d4fc40a1b98928118b90119a.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "66b033056e4d4099a2abce317fe0d0aa",
+      "name": "Mr. Bake",
+      "likes": 52,
+      "faceCount": 65118,
+      "vertexCount": 35236,
+      "thumb": "https://media.sketchfab.com/models/66b033056e4d4099a2abce317fe0d0aa/thumbnails/03a7f80aba7d40dc8ee196b7c57bdd26/417dec007b304d7ca94376d3b670f271.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "84761f55aa17493d9b226bb1f7101428",
+      "name": "Astra Lumen II, a rigged companion android",
+      "likes": 44,
+      "faceCount": 36508,
+      "vertexCount": 18330,
+      "thumb": "https://media.sketchfab.com/models/84761f55aa17493d9b226bb1f7101428/thumbnails/5afbf894087144abb091649b4f162449/e8adf5053d2942f99481a0fad4a71482.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "eve robot": [
+    {
+      "uid": "a41f75a4af0142c680e1a26e904e5bec",
+      "name": "Wall-E and Eve",
+      "likes": 610,
+      "faceCount": 250963,
+      "vertexCount": 132308,
+      "thumb": "https://media.sketchfab.com/models/a41f75a4af0142c680e1a26e904e5bec/thumbnails/63088b811a5e4c41bbf1620314191722/66c774cf4cda4b46ae61a3a6a7d6f544.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "a6758de2e5a04f9e821596592ef4279c",
+      "name": "Wall-E(Animated)",
+      "likes": 289,
+      "faceCount": 40218,
+      "vertexCount": 20467,
+      "thumb": "https://media.sketchfab.com/models/a6758de2e5a04f9e821596592ef4279c/thumbnails/4c53e055845a4e26be2ef66d57ab1b3a/ffe2bdd9c8a44e5790b2e19299c4be11.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "1095bf6b98514b368cf7f450297f6e54",
+      "name": "Wall-E",
+      "likes": 254,
+      "faceCount": 18080,
+      "vertexCount": 9944,
+      "thumb": "https://media.sketchfab.com/models/1095bf6b98514b368cf7f450297f6e54/thumbnails/6a7d0f15c35048aeb6645024f122a71f/0a8c8838b74a4829972e6e4982e96d53.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "c5b92c281dc444448e64c0607719c7a2",
+      "name": "Futuristic flying animated Robot - Low Poly",
+      "likes": 229,
+      "faceCount": 5774,
+      "vertexCount": 3435,
+      "thumb": "https://media.sketchfab.com/models/c5b92c281dc444448e64c0607719c7a2/thumbnails/f5b573ab7ab14e7aad6f4d2d8f1a5ac1/405518e6da64419e8087b5420d304ae3.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "79a0bff7dbc34d0098cabc3c5717b48c",
+      "name": "Wall-E",
+      "likes": 159,
+      "faceCount": 63401,
+      "vertexCount": 33174,
+      "thumb": "https://media.sketchfab.com/models/79a0bff7dbc34d0098cabc3c5717b48c/thumbnails/e6fb673dff4f4584a1363f445dd989a0/620efa74171d41deb5596a4d1bf8d6ae.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "12a83f8f84264a5989215a5408358871",
+      "name": "character_Eve",
+      "likes": 84,
+      "faceCount": 3556,
+      "vertexCount": 2075,
+      "thumb": "https://media.sketchfab.com/models/12a83f8f84264a5989215a5408358871/thumbnails/a7c0361905e3490bbb8475cbc4e8e74c/65950c2e836e453a9b3e4d2436cebf2f.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "02dc52d9032b4a05854ab7f12779329a",
+      "name": "Vector (Wall-E version)",
+      "likes": 66,
+      "faceCount": 1018480,
+      "vertexCount": 511937,
+      "thumb": "https://media.sketchfab.com/models/02dc52d9032b4a05854ab7f12779329a/thumbnails/11d0334f20b949fda152c1fab9ac3b18/20260d04d2f9467f9d32f4e0b9e7e147.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "5773b360ade74da89746317b345f7d8b",
+      "name": "EVE Ah!",
+      "likes": 60,
+      "faceCount": 41248,
+      "vertexCount": 20632,
+      "thumb": "https://media.sketchfab.com/models/5773b360ade74da89746317b345f7d8b/thumbnails/079d4767bd7b4d4898d3de78dfb8fe8b/40b2f03c37524e9aa1c1a85919f94a4f.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "chibi robot": [
+    {
+      "uid": "ce248709dea64ec1844e8dd9b614f7c0",
+      "name": "Drone",
+      "likes": 649,
+      "faceCount": 1986,
+      "vertexCount": 1081,
+      "thumb": "https://media.sketchfab.com/models/ce248709dea64ec1844e8dd9b614f7c0/thumbnails/441fac5537b64924ab6fc0534350b3ba/640x360.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "dd6f871e948e4241896ce4ebcd74748d",
+      "name": "Chibi Doll Roblox",
+      "likes": 441,
+      "faceCount": 12806,
+      "vertexCount": 6648,
+      "thumb": "https://media.sketchfab.com/models/dd6f871e948e4241896ce4ebcd74748d/thumbnails/9cbf6da0539f49aa8bbda9ed3bfca1e6/c2d099ad741b4f35b5f32c7a321f7d31.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "c1e3035d1ccb49df9c09aa86681faf30",
+      "name": "Tutoria",
+      "likes": 105,
+      "faceCount": 21832,
+      "vertexCount": 10981,
+      "thumb": "https://media.sketchfab.com/models/c1e3035d1ccb49df9c09aa86681faf30/thumbnails/4894919b83ab4c01ba35185e6c95f2e0/d33c730b57f04eef9de8ce356ae6ad4d.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "c4783878f12f4936bcf70402f4096f96",
+      "name": "{PBR} CHBI-09",
+      "likes": 80,
+      "faceCount": 9056,
+      "vertexCount": 9195,
+      "thumb": "https://media.sketchfab.com/models/c4783878f12f4936bcf70402f4096f96/thumbnails/01487b6fd18f4527995f959371caef5c/64x36.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "a383142ad231496eba5a3ff5afc0535b",
+      "name": "UE5 Female Mannequin - Chibi Quinn - Web Ready",
+      "likes": 71,
+      "faceCount": 87280,
+      "vertexCount": 43641,
+      "thumb": "https://media.sketchfab.com/models/a383142ad231496eba5a3ff5afc0535b/thumbnails/f5d6b6bfe42a4e3496fbec6ad3f0fc53/acdbe73322394d02b0ae3d109c7377c9.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "742e856e61734aefa033eb3d4a5a9c12",
+      "name": "Waifu Mk II",
+      "likes": 60,
+      "faceCount": 1176,
+      "vertexCount": 579,
+      "thumb": "https://media.sketchfab.com/models/742e856e61734aefa033eb3d4a5a9c12/thumbnails/ec5da97899c6458bbd086ecce92a7cb6/3caa4f6297fd4e2b87bee291dc9e5b2d.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "81cd385a1c7b4309bf1e54d865cf8749",
+      "name": "GAT X-303 Aegis Gundam",
+      "likes": 59,
+      "faceCount": 55714,
+      "vertexCount": 29158,
+      "thumb": "https://media.sketchfab.com/models/81cd385a1c7b4309bf1e54d865cf8749/thumbnails/ec49597ac2c6499ba7b05f3e4651ee3a/06a6ad4461c048cabae70711c5acdcd7.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "9200794d8715445a86adc8d88d84a1a6",
+      "name": "PSX  - Jun",
+      "likes": 48,
+      "faceCount": 634,
+      "vertexCount": 350,
+      "thumb": "https://media.sketchfab.com/models/9200794d8715445a86adc8d88d84a1a6/thumbnails/e0a99a5aeddd4a608968a39f3c8fe7be/0cbc3ca300594302986d038cb1056c92.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "scifi drone": [
+    {
+      "uid": "1b121a8965e241ada855288eef2732ba",
+      "name": "Aeriusu Drone Ship",
+      "likes": 766,
+      "faceCount": 489496,
+      "vertexCount": 260704,
+      "thumb": "https://media.sketchfab.com/models/1b121a8965e241ada855288eef2732ba/thumbnails/e232f029824e458382a0205a182695fa/5a655eb9cbb34b26a965c34c0413ec96.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "c5ddfa9e6309403083bbce60bdcc3d71",
+      "name": "First Aid DX2 - 300 Followers Celebration",
+      "likes": 683,
+      "faceCount": 59654,
+      "vertexCount": 32666,
+      "thumb": "https://media.sketchfab.com/models/c5ddfa9e6309403083bbce60bdcc3d71/thumbnails/faf97c332b604152b72e933458da435c/4851143701064ca78fb27d1f2b7a61d9.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "ce248709dea64ec1844e8dd9b614f7c0",
+      "name": "Drone",
+      "likes": 649,
+      "faceCount": 1986,
+      "vertexCount": 1081,
+      "thumb": "https://media.sketchfab.com/models/ce248709dea64ec1844e8dd9b614f7c0/thumbnails/441fac5537b64924ab6fc0534350b3ba/640x360.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "dd21953e81a24bd385d16eaf0c6a8ae7",
+      "name": "Scifi Drone 1.1",
+      "likes": 646,
+      "faceCount": 8512,
+      "vertexCount": 4428,
+      "thumb": "https://media.sketchfab.com/models/dd21953e81a24bd385d16eaf0c6a8ae7/thumbnails/361ead0a28da429eb022aab16d688d13/7bdf86ddb12147eeacdd41fa2a34dbea.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "3dbf07385d1b471a96dce6de6cba97d6",
+      "name": "Sci-Fi Camera Drone",
+      "likes": 613,
+      "faceCount": 5370,
+      "vertexCount": 2701,
+      "thumb": "https://media.sketchfab.com/models/3dbf07385d1b471a96dce6de6cba97d6/thumbnails/23eddf8b794e4728878db29276fd8309/fa6d2e4d6c1543709aa494e4ca2146e4.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "ca849f95d9874d58a19324eec223ccdf",
+      "name": "K07 Drone",
+      "likes": 579,
+      "faceCount": 9842,
+      "vertexCount": 5018,
+      "thumb": "https://media.sketchfab.com/models/ca849f95d9874d58a19324eec223ccdf/thumbnails/c29592a0c9414a93938f35ef21717e06/64x36.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "edf5ca5bd9f1459c81d8acc672c5a389",
+      "name": "D.S.E.V. Drone",
+      "likes": 524,
+      "faceCount": 163026,
+      "vertexCount": 155372,
+      "thumb": "https://media.sketchfab.com/models/edf5ca5bd9f1459c81d8acc672c5a389/thumbnails/919b891659ef42c5addd6d664e4580ba/1024x576.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "ac4d06d3a46d4d9cbc5beb33b896cde0",
+      "name": "Sci-fi Drone",
+      "likes": 474,
+      "faceCount": 567885,
+      "vertexCount": 283949,
+      "thumb": "https://media.sketchfab.com/models/ac4d06d3a46d4d9cbc5beb33b896cde0/thumbnails/548977a790f34728bca8e002479400f4/1f785ab8ac7a415eb71d179af7127917.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "hoverboard scifi": [
+    {
+      "uid": "4ae744c6a1ca4786bec92e61b49a7de1",
+      "name": "Hover Kick scooter",
+      "likes": 6,
+      "faceCount": 4468,
+      "vertexCount": 2362,
+      "thumb": "https://media.sketchfab.com/models/4ae744c6a1ca4786bec92e61b49a7de1/thumbnails/efc8a047566140e1947a41eb4ed23bcd/f98732c89c40477489a9aaab13e09655.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "4895661f2aa9425089ad5da9a848c653",
+      "name": "HoverBoard",
+      "likes": 5,
+      "faceCount": 91716,
+      "vertexCount": 42564,
+      "thumb": "https://media.sketchfab.com/models/4895661f2aa9425089ad5da9a848c653/thumbnails/84016e02a6fa44ee837e1d86a3b58ef7/9911a332d0a54dc9a525da7ea0a48133.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "b06f2e6365094872848bd192a58d70af",
+      "name": "Rigged Low Poly scifi 50/50 Hover Board",
+      "likes": 0,
+      "faceCount": 17052,
+      "vertexCount": 8788,
+      "thumb": "https://media.sketchfab.com/models/b06f2e6365094872848bd192a58d70af/thumbnails/0732d4f24c494e568470f41599f3c486/5a01b096516448a38b1aa88e4827a7e0.jpeg",
+      "isDownloadable": true
+    }
+  ],
+  "spring antenna": [
+    {
+      "uid": "5641af4ddb7a4efea8b7d6186cd5f0fa",
+      "name": "Menuet radio-gramophone",
+      "likes": 22,
+      "faceCount": 358463,
+      "vertexCount": 180064,
+      "thumb": "https://media.sketchfab.com/models/5641af4ddb7a4efea8b7d6186cd5f0fa/thumbnails/01cb0364a83641689c723a35a457fe28/590bfe8d7fc8450190cb154c574c2194.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "cfebef3005a743f0885fdc6f7b8bd9e9",
+      "name": "NASAMS AMRAAM Launcher (Textured)",
+      "likes": 8,
+      "faceCount": 37326,
+      "vertexCount": 20556,
+      "thumb": "https://media.sketchfab.com/models/cfebef3005a743f0885fdc6f7b8bd9e9/thumbnails/7aad2531c2594ba3b2b8cc6583a4095f/2335ba90b9d74a28927dcc3509c6ebd6.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "50590d32a11f485e89832243d5921038",
+      "name": "Farm Rabbit",
+      "likes": 6,
+      "faceCount": 13194,
+      "vertexCount": 6591,
+      "thumb": "https://media.sketchfab.com/models/50590d32a11f485e89832243d5921038/thumbnails/17c2b29e154e45a1a37ad9ac454441f5/1cc170de9ca24b32a5b1d70cc6cfb36a.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "6ff8c1627a034df4846fbdaea754edba",
+      "name": "YPM ENT.626342 Coleoptera: Polyphylla erratica",
+      "likes": 6,
+      "faceCount": 193253,
+      "vertexCount": 96646,
+      "thumb": "https://media.sketchfab.com/models/6ff8c1627a034df4846fbdaea754edba/thumbnails/786ca575dc704748aa6c424a7b3851ab/e284acec3dd24225858835dcc0f98849.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "bc08374e325c4493865cc07c31ae36f1",
+      "name": "GBU-53/B StormBreaker Glide Bomb",
+      "likes": 4,
+      "faceCount": 5960,
+      "vertexCount": 3352,
+      "thumb": "https://media.sketchfab.com/models/bc08374e325c4493865cc07c31ae36f1/thumbnails/da7bf2f2a41549d993fd166a2f049ae9/ad193bff86cf4fe6bf0514734610d18b.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "70fd49e5e48e458c8f9e8533f72d9f5a",
+      "name": "rusted robot",
+      "likes": 4,
+      "faceCount": 765384,
+      "vertexCount": 382713,
+      "thumb": "https://media.sketchfab.com/models/70fd49e5e48e458c8f9e8533f72d9f5a/thumbnails/c7e424e889e44710a5a685f871fbf531/dd2f9736beee45ab9e97ca187abe0c7d.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "d9e03cc7b46c4ba492e94a7f6618e121",
+      "name": "YPMENT.765441 Underwing moth, Catocala messalina",
+      "likes": 3,
+      "faceCount": 262825,
+      "vertexCount": 131422,
+      "thumb": "https://media.sketchfab.com/models/d9e03cc7b46c4ba492e94a7f6618e121/thumbnails/de9f93923c5c416ca551626e6906d019/e00a2aa1da6e450785e83dfe1a29671f.jpeg",
+      "isDownloadable": true
+    },
+    {
+      "uid": "eb63f3a402fb402289b0cba5dfe0e862",
+      "name": "lego mindstorms Gold Boar",
+      "likes": 2,
+      "faceCount": 184337,
+      "vertexCount": 134726,
+      "thumb": "https://media.sketchfab.com/models/eb63f3a402fb402289b0cba5dfe0e862/thumbnails/7fd17801ca884509a774af776878c0e6/9de3309312d54e378a97a03cd9af06e0.jpeg",
+      "isDownloadable": true
+    }
+  ]
+}

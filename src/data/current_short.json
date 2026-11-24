@@ -1,176 +1,288 @@
 {
-  "topic": "The BGP Internet Routing Hijack",
-  "visualTheme": "infrastructure",
-  "videoTitle": "Internet Hijack: Nigeria Reroutes Google! 🤯",
-  "youtubeDescription": "Ever wonder how the internet really works? This short reveals a shocking 2018 incident where a small Nigerian ISP accidentally hijacked Google and Cloudflare's global traffic. Discover the fragility of BGP routing!\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#InternetSecurity #BGP #CyberSecurity #DataDetective #TechExplained #InternetHijack #Cybersecurity #Google",
+  "topic": "Black Sea GPS Circle Spoofing Mystery",
+  "visualTheme": "cyber",
+  "videoTitle": "GPS Gone Wild: Black Sea Ships on Land?! 🤯",
+  "youtubeDescription": "In 2017, dozens of ships in the Black Sea reported their GPS suddenly placing them 20 miles inland on an airport runway. This viral short uncovers the baffling 'circle spoofing' mystery, revealing how sophisticated signal manipulation can hijack global navigation. Discover the terrifying vulnerability in our everyday tech.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🔍 FREE Tech & Data Newsletter: https://datadetective.substack.com\n⚡ Top Recommended Tech & Security Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#GPSSpoofing #BlackSeaMystery #MaritimeSecurity #CyberAttack #Navigation #GPSspoofing #BlackSeamystery #Maritimesecurity",
   "tags": [
-    "BGP",
-    "Internet Hijack",
-    "Cybersecurity",
-    "Google",
-    "Cloudflare",
-    "Internet Routing",
-    "Tech Explained",
-    "Data Detective"
+    "GPS spoofing",
+    "Black Sea mystery",
+    "Maritime security",
+    "Cyber attack",
+    "Navigation error",
+    "Shipping news",
+    "YouTube Shorts",
+    "Tech explained"
   ],
   "cuts": [
     {
       "cutId": 1,
-      "voiceoverText": "The internet almost vanished in 2018. A Nigerian ISP rerouted Google and Cloudflare traffic globally.",
-      "visualQuery": "fiber optic network map",
-      "cameraMotion": "zoom_out",
+      "voiceoverText": "Your ship's GPS suddenly shows you 20 miles inland, on an airport runway. This Black Sea mystery baffled.",
+      "animationArchetype": "alert_threat",
+      "visualMetaphor": "GPS signal disruption causing a ship to appear in an impossible location.",
+      "backgroundStage": "Dark, stormy Black Sea horizon with faint city lights in the distance, indicating land.",
+      "environmentalStage": "Dark, stormy Black Sea horizon with faint city lights in the distance, indicating land.",
+      "foregroundProps": [
+        "Ship radar screen with flickering GPS dot",
+        "Ship's bridge console with navigation charts",
+        "Flickering digital compass"
+      ],
+      "tangibleItems": [
+        "Ship radar screen with flickering GPS dot",
+        "Ship's bridge console with navigation charts",
+        "Flickering digital compass"
+      ],
+      "causeAndEffect": {
+        "initialState": "GPS dot stable on the sea, compass pointing north.",
+        "transformation": "GPS dot rapidly jumps inland, then begins to jitter erratically on a runway icon. Compass spins wildly.",
+        "finalState": "GPS dot locked on an airport runway symbol (20 miles inland) with a flashing 'ERROR: LOCATION ANOMALY' HUD badge."
+      },
+      "cameraChoreography": {
+        "startFraming": "Close-up on the radar screen showing the ship at sea.",
+        "motionTrajectory": "Zoom out slightly, then pan right to the digital compass, then zoom in on the runway icon.",
+        "endFraming": "Tight shot on the GPS dot, now stuck on an airport runway icon, with the flashing error."
+      },
+      "cameraTrajectory": "Zoom out slightly, then pan right to the digital compass, then zoom in on the runway icon.",
+      "visualQuery": "Ship bridge GPS screen error, Black Sea stormy, airport runway map overlay",
+      "cameraMotion": "zoom_out_pan_right",
       "statHighlight": null
     },
     {
       "cutId": 2,
-      "voiceoverText": "Not a hack, but accidental BGP hijack. Incorrect routing redirected global traffic into a digital black hole.",
-      "visualQuery": "server rack blackhole",
-      "cameraMotion": "pan_left",
-      "statHighlight": null
+      "voiceoverText": "In 2017, dozens of cargo vessels reported impossible navigation, their digital compasses spinning wildly.",
+      "animationArchetype": "globe_arcs",
+      "visualMetaphor": "Global GPS satellite network, then individual ship icons glitching out.",
+      "backgroundStage": "Deep space with a rotating 3D Earth, illuminated by sun rays, showing the Black Sea region.",
+      "environmentalStage": "Deep space with a rotating 3D Earth, illuminated by sun rays, showing the Black Sea region.",
+      "foregroundProps": [
+        "Orbital GPS satellites (multiple)",
+        "Luminous data arcs connecting satellites to Earth",
+        "Miniature cargo ship icons on the Black Sea"
+      ],
+      "tangibleItems": [
+        "Orbital GPS satellites (multiple)",
+        "Luminous data arcs connecting satellites to Earth",
+        "Miniature cargo ship icons on the Black Sea"
+      ],
+      "causeAndEffect": {
+        "initialState": "Smooth, consistent luminous arcs connecting satellites to ship icons on the Black Sea.",
+        "transformation": "As voiceover speaks, arcs above the Black Sea region become jagged and red. Ship icons on the Black Sea begin to blink rapidly and jump erratically.",
+        "finalState": "A cluster of ship icons on the Black Sea region are now clustered inland, with red 'SIGNAL INTERRUPTED' text next to them."
+      },
+      "cameraChoreography": {
+        "startFraming": "Wide shot of Earth with GPS satellites orbiting and signals reaching the Black Sea.",
+        "motionTrajectory": "Orbit around the Earth, focusing on the Black Sea, then zoom in on the affected ship icons.",
+        "endFraming": "Close-up on the Black Sea, showing multiple ship icons clustered inland."
+      },
+      "cameraTrajectory": "Orbit around the Earth, focusing on the Black Sea, then zoom in on the affected ship icons.",
+      "visualQuery": "3D Earth GPS satellite network, Black Sea ships glitching, data signal disruption",
+      "cameraMotion": "orbit_zoom_in",
+      "statHighlight": {
+        "number": "2017",
+        "label": "Year of Incident"
+      }
     },
     {
       "cutId": 3,
-      "voiceoverText": "BGP, the internet's GPS, tells data packets their fastest route. Essential, yet vulnerable, system.",
-      "visualQuery": "data packet flow",
-      "cameraMotion": "track_forward",
-      "statHighlight": null
+      "voiceoverText": "Their positions weren't just wrong; they orbited a phantom point, a perfect 20-mile circle. Unbelievable.",
+      "animationArchetype": "map_route",
+      "visualMetaphor": "A ship icon tracing an impossible, perfect circle on an inland map.",
+      "backgroundStage": "Stylized 3D topographic map of the Black Sea coast transitioning to inland terrain, with an airport visible.",
+      "environmentalStage": "Stylized 3D topographic map of the Black Sea coast transitioning to inland terrain, with an airport visible.",
+      "foregroundProps": [
+        "Isometric 3D map of coastal city and airport",
+        "Miniature cargo ship model",
+        "Glowing green GPS trace line"
+      ],
+      "tangibleItems": [
+        "Isometric 3D map of coastal city and airport",
+        "Miniature cargo ship model",
+        "Glowing green GPS trace line"
+      ],
+      "causeAndEffect": {
+        "initialState": "Ship model stationary on the sea, GPS trace line showing a straight path.",
+        "transformation": "The ship model rapidly moves inland, then begins tracing a perfect, glowing green 20-mile diameter circle around an airport icon.",
+        "finalState": "The ship model continuously orbits the airport, leaving a glowing green circular trail. A '20-MILE ORBIT' HUD badge appears."
+      },
+      "cameraChoreography": {
+        "startFraming": "Overhead shot of a ship moving normally on the sea on a 3D map.",
+        "motionTrajectory": "Smooth pan inland, then tilt down to focus on the ship as it begins its circular path around the airport.",
+        "endFraming": "Overhead shot, tracking the ship as it completes a circle around the airport, highlighting the 20-mile diameter."
+      },
+      "cameraTrajectory": "Smooth pan inland, then tilt down to focus on the ship as it begins its circular path around the airport.",
+      "visualQuery": "3D map ship tracing perfect circle inland, Black Sea airport, GPS spoofing visualization",
+      "cameraMotion": "pan_tilt_track",
+      "statHighlight": {
+        "number": "20",
+        "label": "Miles Diameter"
+      }
     },
     {
       "cutId": 4,
-      "voiceoverText": "The Nigerian provider, MainOne, mistakenly announced Google and Cloudflare's IP addresses.",
-      "visualQuery": "network topology diagram",
-      "cameraMotion": "zoom_in",
+      "voiceoverText": "This wasn't a glitch. Experts suspect sophisticated 'circle spoofing,' hijacking satellite signals for false locations.",
+      "animationArchetype": "terminal_bloom",
+      "visualMetaphor": "A hacker-like console showing code manipulating satellite signals, causing a false GPS reading.",
+      "backgroundStage": "Dark, high-tech control room environment with glowing screens and server racks.",
+      "environmentalStage": "Dark, high-tech control room environment with glowing screens and server racks.",
+      "foregroundProps": [
+        "Hacker console with scrolling code (binary/hex)",
+        "Schematic of a GPS signal waveform",
+        "Red signal emitter device (stylized)"
+      ],
+      "tangibleItems": [
+        "Hacker console with scrolling code (binary/hex)",
+        "Schematic of a GPS signal waveform",
+        "Red signal emitter device (stylized)"
+      ],
+      "causeAndEffect": {
+        "initialState": "Console displays benign GPS signal data. Signal waveform is stable.",
+        "transformation": "Console code rapidly changes, showing 'SPOOF_INJECT' commands. The signal waveform distorts and becomes a circular, repeating pattern. The emitter device pulses red.",
+        "finalState": "Console displays 'GPS OVERRIDE: LOCATION FABRICATED' with a flashing red warning. The distorted circular waveform is prominent."
+      },
+      "cameraChoreography": {
+        "startFraming": "Close-up on the scrolling code on the terminal.",
+        "motionTrajectory": "Pan out to reveal the control room, then zoom in on the signal emitter and distorted waveform.",
+        "endFraming": "Focus on the pulsing red emitter and the manipulated waveform, with the console's warning."
+      },
+      "cameraTrajectory": "Pan out to reveal the control room, then zoom in on the signal emitter and distorted waveform.",
+      "visualQuery": "Hacker console GPS spoofing, signal manipulation, red pulsing emitter, cyber attack visualization",
+      "cameraMotion": "pan_zoom_in",
       "statHighlight": null
     },
     {
       "cutId": 5,
-      "voiceoverText": "For 74 minutes, vast internet traffic for these giants simply vanished.",
-      "visualQuery": "server room darkness",
-      "cameraMotion": "dolly_out",
-      "statHighlight": {
-        "number": "74 minutes",
-        "label": "TRAFFIC BLACKOUT"
-      }
-    },
-    {
-      "cutId": 6,
-      "voiceoverText": "This exposed internet fragility: a single BGP misconfiguration can disrupt global connectivity instantly.",
-      "visualQuery": "global internet cables",
-      "cameraMotion": "pan_right",
+      "voiceoverText": "The Black Sea incident exposed a terrifying vulnerability: our global navigation systems can be silently rewritten.",
+      "animationArchetype": "the_iceberg",
+      "visualMetaphor": "The visible tip of the iceberg is common GPS use, the submerged part is its deep vulnerability to spoofing.",
+      "backgroundStage": "Deep, dark ocean environment with light filtering from the surface, creating an ominous mood.",
+      "environmentalStage": "Deep, dark ocean environment with light filtering from the surface, creating an ominous mood.",
+      "foregroundProps": [
+        "3D Iceberg model (partially submerged)",
+        "Top layer: 'Everyday GPS Navigation' text",
+        "Submerged layer: 'Global Navigation Vulnerability' text",
+        "Red warning indicators/sensors on submerged part"
+      ],
+      "tangibleItems": [
+        "3D Iceberg model (partially submerged)",
+        "Top layer: 'Everyday GPS Navigation' text",
+        "Submerged layer: 'Global Navigation Vulnerability' text",
+        "Red warning indicators/sensors on submerged part"
+      ],
+      "causeAndEffect": {
+        "initialState": "Iceberg floats serenely, top labeled 'GPS'. Submerged part is opaque.",
+        "transformation": "As voiceover speaks, the submerged part of the iceberg glows ominously red and becomes translucent, revealing complex, vulnerable circuitry and 'SPOOFING THREAT' warnings within.",
+        "finalState": "The iceberg's submerged section is fully visible, covered in flashing red 'CRITICAL VULNERABILITY' HUD labels, emphasizing the hidden risks."
+      },
+      "cameraChoreography": {
+        "startFraming": "Eye-level shot of the iceberg tip.",
+        "motionTrajectory": "Dolly out and tilt down, revealing the massive, glowing red submerged section.",
+        "endFraming": "Wide shot of the entire iceberg, with the ominous, glowing red submerged section dominating the frame, surrounded by warning lights."
+      },
+      "cameraTrajectory": "Dolly out and tilt down, revealing the massive, glowing red submerged section.",
+      "visualQuery": "3D iceberg GPS vulnerability, global navigation system threat, hidden cyber risk",
+      "cameraMotion": "dolly_out_tilt_down",
       "statHighlight": null
     }
   ],
   "themeConfig": {
-    "primary": "#f97316",
+    "primary": "#10b981",
     "accent": "#eab308",
-    "bgGradient": "radial-gradient(ellipse at 50% 25%, #431407 0%, #050507 75%)"
+    "bgGradient": "radial-gradient(ellipse at 50% 25%, #064e3b 0%, #020a06 75%)"
   },
-  "fullVoiceover": "The internet almost vanished in 2018. A Nigerian ISP rerouted Google and Cloudflare traffic globally. Not a hack, but accidental BGP hijack. Incorrect routing redirected global traffic into a digital black hole. BGP, the internet's GPS, tells data packets their fastest route. Essential, yet vulnerable, system. The Nigerian provider, MainOne, mistakenly announced Google and Cloudflare's IP addresses. For 74 minutes, vast internet traffic for these giants simply vanished. This exposed internet fragility: a single BGP misconfiguration can disrupt global connectivity instantly.",
+  "fullVoiceover": "Your ship's GPS suddenly shows you 20 miles inland, on an airport runway. This Black Sea mystery baffled. In 2017, dozens of cargo vessels reported impossible navigation, their digital compasses spinning wildly. Their positions weren't just wrong; they orbited a phantom point, a perfect 20-mile circle. Unbelievable. This wasn't a glitch. Experts suspect sophisticated 'circle spoofing,' hijacking satellite signals for false locations. The Black Sea incident exposed a terrifying vulnerability: our global navigation systems can be silently rewritten.",
   "mediaQueries": [
-    "fiber optic network map",
-    "server rack blackhole",
-    "data packet flow",
-    "network topology diagram",
-    "server room darkness",
-    "global internet cables"
+    "Ship bridge GPS screen error, Black Sea stormy, airport runway map overlay",
+    "3D Earth GPS satellite network, Black Sea ships glitching, data signal disruption",
+    "3D map ship tracing perfect circle inland, Black Sea airport, GPS spoofing visualization",
+    "Hacker console GPS spoofing, signal manipulation, red pulsing emitter, cyber attack visualization",
+    "3D iceberg GPS vulnerability, global navigation system threat, hidden cyber risk"
   ],
   "scenes": [
     {
       "sceneId": 1,
-      "voiceoverText": "The internet almost vanished in 2018. A Nigerian ISP rerouted Google and Cloudflare traffic globally.",
+      "voiceoverText": "Your ship's GPS suddenly shows you 20 miles inland, on an airport runway. This Black Sea mystery baffled.",
       "statHighlight": null
     },
     {
       "sceneId": 2,
-      "voiceoverText": "Not a hack, but accidental BGP hijack. Incorrect routing redirected global traffic into a digital black hole.",
-      "statHighlight": null
+      "voiceoverText": "In 2017, dozens of cargo vessels reported impossible navigation, their digital compasses spinning wildly.",
+      "statHighlight": {
+        "number": "2017",
+        "label": "Year of Incident"
+      }
     },
     {
       "sceneId": 3,
-      "voiceoverText": "BGP, the internet's GPS, tells data packets their fastest route. Essential, yet vulnerable, system.",
-      "statHighlight": null
+      "voiceoverText": "Their positions weren't just wrong; they orbited a phantom point, a perfect 20-mile circle. Unbelievable.",
+      "statHighlight": {
+        "number": "20",
+        "label": "Miles Diameter"
+      }
     },
     {
       "sceneId": 4,
-      "voiceoverText": "The Nigerian provider, MainOne, mistakenly announced Google and Cloudflare's IP addresses.",
+      "voiceoverText": "This wasn't a glitch. Experts suspect sophisticated 'circle spoofing,' hijacking satellite signals for false locations.",
       "statHighlight": null
     },
     {
       "sceneId": 5,
-      "voiceoverText": "For 74 minutes, vast internet traffic for these giants simply vanished.",
-      "statHighlight": {
-        "number": "74 minutes",
-        "label": "TRAFFIC BLACKOUT"
-      }
-    },
-    {
-      "sceneId": 6,
-      "voiceoverText": "This exposed internet fragility: a single BGP misconfiguration can disrupt global connectivity instantly.",
+      "voiceoverText": "The Black Sea incident exposed a terrifying vulnerability: our global navigation systems can be silently rewritten.",
       "statHighlight": null
     }
   ],
   "cutTimings": [
     {
       "cutId": 1,
-      "durationInFrames": 260
+      "durationInFrames": 285
     },
     {
       "cutId": 2,
-      "durationInFrames": 269
+      "durationInFrames": 212
     },
     {
       "cutId": 3,
-      "durationInFrames": 239
+      "durationInFrames": 229
     },
     {
       "cutId": 4,
-      "durationInFrames": 191
+      "durationInFrames": 264
     },
     {
       "cutId": 5,
-      "durationInFrames": 158
-    },
-    {
-      "cutId": 6,
-      "durationInFrames": 209
+      "durationInFrames": 202
     }
   ],
   "sceneTimings": {
     "cutTimings": [
       {
         "cutId": 1,
-        "durationInFrames": 260
+        "durationInFrames": 285
       },
       {
         "cutId": 2,
-        "durationInFrames": 269
+        "durationInFrames": 212
       },
       {
         "cutId": 3,
-        "durationInFrames": 239
+        "durationInFrames": 229
       },
       {
         "cutId": 4,
-        "durationInFrames": 191
+        "durationInFrames": 264
       },
       {
         "cutId": 5,
-        "durationInFrames": 158
-      },
-      {
-        "cutId": 6,
-        "durationInFrames": 209
+        "durationInFrames": 202
       }
     ],
-    "s1": 260,
-    "s2": 269,
-    "s3": 239,
-    "s4": 191,
-    "s5": 367,
+    "s1": 285,
+    "s2": 212,
+    "s3": 229,
+    "s4": 264,
+    "s5": 202,
     "chipRelFrames": [
-      67,
-      105,
-      143
+      92,
+      145,
+      198
     ]
   }
 }

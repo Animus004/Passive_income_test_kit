@@ -1,0 +1,43 @@
+{
+  "updatedAt": "2026-11-14T03:00:09.420Z",
+  "topPerformerTitle": "The Secret 14 Keys That Rule The Internet 🔑 #Shorts",
+  "topPerformerViews": 799,
+  "channelAverageViews": 96,
+  "provenFormulas": [
+    {
+      "name": "The Everyday Contrast Hook",
+      "description": "Pair a consumer item everyone owns (iPhone, WiFi, headphones) with an extreme physical force or scale.",
+      "example": "Why Bullet Trains Don't Break Your iPhone 🤯",
+      "weight": 1.5
+    },
+    {
+      "name": "The Secret Physical Ritual",
+      "description": "Reveal that something digital is actually governed by a secretive physical ceremony or physical lock.",
+      "example": "The Secret 14 Keys That Rule The Internet 🔑",
+      "weight": 1.3
+    },
+    {
+      "name": "The Impossible Precision",
+      "description": "Atomic-scale engineering extremes that seem like science fiction.",
+      "example": "ASML's Secret: Laser Tin 🤯 Chip Printing!",
+      "weight": 1.2
+    }
+  ],
+  "winningKeywords": [
+    "internet",
+    "cables",
+    "vault",
+    "secret",
+    "keys",
+    "iphone",
+    "train",
+    "speed",
+    "break",
+    "signals",
+    "fiber",
+    "chip",
+    "laser",
+    "nanometer",
+    "silicon"
+  ]
+}

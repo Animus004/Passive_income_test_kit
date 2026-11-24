@@ -1,0 +1,50 @@
+{
+  "topic": "Nvidia 100 Billion Blackwell Superpod",
+  "genre": "investigative_tech",
+  "videoTitle": "Nvidia's $100B AI Superpod: The Unseen Reality! 🤯",
+  "youtubeDescription": "Dive deep into the colossal engineering behind Nvidia's $100 Billion Blackwell Superpod. Discover the unseen infrastructure powering the future of AI. #Nvidia #Blackwell #AI #Superpod #TechDoc",
+  "recommendedVoice": "en-US-ChristopherNeural",
+  "cuts": [
+    {
+      "cutId": 1,
+      "voiceoverText": "Beyond the headlines, Nvidia's $100 billion Blackwell Superpod isn't just code; it's a physical titan transforming our world.",
+      "hudText": "AI MONOLITH",
+      "propId": "campus_monolith",
+      "cameraTrajectory": "dive_down",
+      "estimatedDurationSec": 7
+    },
+    {
+      "cutId": 2,
+      "voiceoverText": "But what truly fuels this unprecedented computational beast? It's a colossal, hidden infrastructure demanding unheard-of energy and cooling.",
+      "hudText": "TERAWATT DEMAND",
+      "propId": "cooling_tower",
+      "cameraTrajectory": "orbital_glide",
+      "estimatedDurationSec": 7
+    },
+    {
+      "cutId": 3,
+      "voiceoverText": "At its heart, the Blackwell GPU: billions of transistors etched with atomic precision, the very crucible of artificial intelligence.",
+      "hudText": "BLACKWELL CORE",
+      "propId": "semiconductor_wafer",
+      "cameraTrajectory": "low_sweep_up",
+      "estimatedDurationSec": 7
+    },
+    {
+      "cutId": 4,
+      "voiceoverText": "This immense power isn't abstract; it's already shaping our perceptions, feeding data into our daily lives through unseen interfaces.",
+      "hudText": "PERCEPTION SHIFT",
+      "propId": "smart_glasses",
+      "cameraTrajectory": "pullback_flyout",
+      "estimatedDurationSec": 7
+    },
+    {
+      "cutId": 5,
+      "voiceoverText": "The Blackwell Superpod is more than a computer; it's the foundational layer of a new digital reality, evolving faster than we comprehend.",
+      "hudText": "THE AWAKENING",
+      "propId": "datacenter_vault",
+      "cameraTrajectory": "orbital_glide",
+      "estimatedDurationSec": 7
+    }
+  ],
+  "fullVoiceover": "Beyond the headlines, Nvidia's $100 billion Blackwell Superpod isn't just code; it's a physical titan transforming our world. But what truly fuels this unprecedented computational beast? It's a colossal, hidden infrastructure demanding unheard-of energy and cooling. At its heart, the Blackwell GPU: billions of transistors etched with atomic precision, the very crucible of artificial intelligence. This immense power isn't abstract; it's already shaping our perceptions, feeding data into our daily lives through unseen interfaces. The Blackwell Superpod is more than a computer; it's the foundational layer of a new digital reality, evolving faster than we comprehend."
+}

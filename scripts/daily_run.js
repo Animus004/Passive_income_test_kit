@@ -25,7 +25,8 @@ function parseArgs() {
   let topic = null;
   let dryRun = false;
   let publish = false;
-  let composition = process.env.REMOTION_COMPOSITION || 'KurzgesagtExplainer';
+  let composition = process.env.REMOTION_COMPOSITION || 'InkDoodleExplainer';
+  let lockScript = process.env.LOCK_SCRIPT === 'true' || args.includes('--lock-script');
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--topic' && args[i + 1]) {
@@ -35,13 +36,15 @@ function parseArgs() {
       dryRun = true;
     } else if (args[i] === '--publish') {
       publish = true;
+    } else if (args[i] === '--lock-script') {
+      lockScript = true;
     } else if (args[i] === '--composition' && args[i + 1]) {
       composition = args[i + 1];
       i++;
     }
   }
 
-  return { topic, dryRun, publish, composition };
+  return { topic, dryRun, publish, composition, lockScript };
 }
 
 function runCommand(command, args, description) {
@@ -77,38 +80,57 @@ function runCommand(command, args, description) {
 
 async function main() {
   const startTime = Date.now();
-  const { topic, dryRun, publish, composition } = parseArgs();
+  const { topic, dryRun, publish, composition, lockScript } = parseArgs();
 
   console.log('####################################################');
   console.log('🎬 AUTONOMOUS SHORTS PIPELINE: MASTER RUN INITIALIZED');
   console.log(`Timestamp: ${new Date().toISOString()}`);
   console.log(`Composition Engine: "${composition}"`);
   if (topic) console.log(`Custom Topic Override: "${topic}"`);
-  if (publish) console.log(`Auto-Publish: ENABLED (YouTube & Instagram)`);
+  if (lockScript) console.log(`Script/Audio Status: LOCKED TO MASTER ASSETS`);
+  if (publish) console.log(`Auto-Publish: ENABLED (YouTube, Instagram & Facebook)`);
   console.log('####################################################');
 
   if (!fs.existsSync(OUT_DIR)) {
     fs.mkdirSync(OUT_DIR, { recursive: true });
   }
 
-  // STEP 1: Automated Gemini Script Generation
-  const scriptArgs = [GENERATE_SCRIPT];
-  if (topic) {
-    scriptArgs.push('--topic', topic);
+  let currentShort;
+
+  if (lockScript) {
+    console.log('\n🔒 [LOCKED ASSET MODE] Retaining calibrated script, voiceover, and subtitle timeline.');
+    if (!fs.existsSync(CURRENT_SHORT_PATH)) {
+      throw new Error(`Failed to find generated script at ${CURRENT_SHORT_PATH}`);
+    }
+    currentShort = JSON.parse(fs.readFileSync(CURRENT_SHORT_PATH, 'utf-8'));
+    console.log(`📝 Video Title: "${currentShort.videoTitle}"`);
+  } else {
+    // STEP 0: Adaptive Content Intelligence & Engagement Feedback Loop
+    try {
+      await runCommand('node', ['scripts/adaptive_ai_director.js'], 'Step 0: Adaptive Analytics & Content Optimization');
+    } catch (e) {
+      console.warn('⚠️ Adaptive intelligence warning, proceeding with scheduled topic:', e.message);
+    }
+
+    // STEP 1: Automated Gemini Script Generation
+    const scriptArgs = [GENERATE_SCRIPT];
+    if (topic) {
+      scriptArgs.push('--topic', topic);
+    }
+    await runCommand('node', scriptArgs, 'Step 1: Automated Gemini Script Generation');
+
+    if (!fs.existsSync(CURRENT_SHORT_PATH)) {
+      throw new Error(`Failed to find generated script at ${CURRENT_SHORT_PATH}`);
+    }
+    currentShort = JSON.parse(fs.readFileSync(CURRENT_SHORT_PATH, 'utf-8'));
+    console.log(`\n📝 Generated Video Title: "${currentShort.videoTitle}"`);
+
+    // STEP 2: Automated B-Roll Media Fetcher
+    await runCommand('node', [FETCH_BROLL], 'Step 2: Automated Topic B-Roll & Visual Asset Downloader');
+
+    // STEP 3: TTS Synthesis & Timeline Synchronization
+    await runCommand('node', [GENERATE_AUDIO], 'Step 3: TTS Synthesis & Timeline Synchronization');
   }
-  await runCommand('node', scriptArgs, 'Step 1: Automated Gemini Script Generation');
-
-  if (!fs.existsSync(CURRENT_SHORT_PATH)) {
-    throw new Error(`Failed to find generated script at ${CURRENT_SHORT_PATH}`);
-  }
-  const currentShort = JSON.parse(fs.readFileSync(CURRENT_SHORT_PATH, 'utf-8'));
-  console.log(`\n📝 Generated Video Title: "${currentShort.videoTitle}"`);
-
-  // STEP 2: Automated B-Roll Media Fetcher
-  await runCommand('node', [FETCH_BROLL], 'Step 2: Automated Topic B-Roll & Visual Asset Downloader');
-
-  // STEP 3: TTS Synthesis & Timeline Synchronization
-  await runCommand('node', [GENERATE_AUDIO], 'Step 3: TTS Synthesis & Timeline Synchronization');
 
   if (dryRun) {
     console.log('\n🏁 [DRY RUN] Script and audio generated. Skipping Remotion render.');
@@ -129,9 +151,10 @@ async function main() {
     'src/index.ts',
     composition,
     relativeOutputPath,
-    '--concurrency=4',
+    '--concurrency=1',
     '--image-format=jpeg',
     '--overwrite',
+    '--timeout=120000',
   ];
 
   if (process.env.PUPPETEER_EXECUTABLE_PATH) {

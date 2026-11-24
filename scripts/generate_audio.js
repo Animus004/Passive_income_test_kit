@@ -29,6 +29,7 @@ function parseArgs() {
   let genre = null;
   let text = null;
   let voice = null;
+  let inputPath = null;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--genre' && args[i + 1]) {
@@ -40,10 +41,15 @@ function parseArgs() {
     } else if (args[i] === '--voice' && args[i + 1]) {
       voice = args[i + 1];
       i++;
+    } else if (args[i] === '--input' && args[i + 1]) {
+      inputPath = path.resolve(PROJECT_ROOT, args[i + 1]);
+      i++;
+    } else if (args[i] === '--3d') {
+      inputPath = path.join(PROJECT_ROOT, 'src', 'data', 'current_3d_episode.json');
     }
   }
 
-  return { genre, text, voice };
+  return { genre, text, voice, inputPath };
 }
 
 function runPythonTTS(scriptText, selectedVoice) {
@@ -175,18 +181,19 @@ function calculateSceneTimings(currentShort, subtitles, totalFrames) {
 }
 
 async function main() {
-  const { genre, text, voice } = parseArgs();
+  const { genre, text, voice, inputPath } = parseArgs();
 
   let scriptText = text;
   let currentShort = null;
+  const targetJsonPath = inputPath || CURRENT_SHORT_PATH;
 
-  if (!scriptText && fs.existsSync(CURRENT_SHORT_PATH)) {
+  if (!scriptText && fs.existsSync(targetJsonPath)) {
     try {
-      currentShort = JSON.parse(fs.readFileSync(CURRENT_SHORT_PATH, 'utf-8'));
+      currentShort = JSON.parse(fs.readFileSync(targetJsonPath, 'utf-8'));
       scriptText = currentShort.fullVoiceover;
-      console.log(`📄 Loaded script from current_short.json: "${currentShort.videoTitle}"`);
+      console.log(`📄 Loaded script from ${path.basename(targetJsonPath)}: "${currentShort.videoTitle}"`);
     } catch (e) {
-      console.warn('Could not parse current_short.json, falling back.');
+      console.warn(`Could not parse ${targetJsonPath}, falling back.`);
     }
   }
 
@@ -209,12 +216,12 @@ async function main() {
 
   const timings = calculateSceneTimings(currentShort, subtitles, metadata.totalFrames);
 
-  // Write cut timings and scene timings into current_short.json and metadata.json
+  // Write cut timings and scene timings into target JSON and metadata.json
   if (currentShort) {
     currentShort.cutTimings = timings.cutTimings;
     currentShort.sceneTimings = timings;
-    fs.writeFileSync(CURRENT_SHORT_PATH, JSON.stringify(currentShort, null, 2), 'utf-8');
-    console.log(`💾 Saved cut timings and scene timings into ${CURRENT_SHORT_PATH}`);
+    fs.writeFileSync(targetJsonPath, JSON.stringify(currentShort, null, 2), 'utf-8');
+    console.log(`💾 Saved cut timings and scene timings into ${targetJsonPath}`);
   }
 
   metadata.cutTimings = timings.cutTimings;

@@ -1,0 +1,947 @@
+[
+  {
+    "word": "1919",
+    "start": 0.0,
+    "end": 0.545
+  },
+  {
+    "word": "mein,",
+    "start": 0.545,
+    "end": 1.09
+  },
+  {
+    "word": "25",
+    "start": 1.091,
+    "end": 1.636
+  },
+  {
+    "word": "lakh",
+    "start": 1.636,
+    "end": 2.181
+  },
+  {
+    "word": "gallon",
+    "start": 2.181,
+    "end": 2.726
+  },
+  {
+    "word": "meetha",
+    "start": 2.727,
+    "end": 3.272
+  },
+  {
+    "word": "syrup",
+    "start": 3.272,
+    "end": 3.817
+  },
+  {
+    "word": "35",
+    "start": 3.817,
+    "end": 4.362
+  },
+  {
+    "word": "mph",
+    "start": 4.363,
+    "end": 4.908
+  },
+  {
+    "word": "ki",
+    "start": 4.908,
+    "end": 5.453
+  },
+  {
+    "word": "speed",
+    "start": 5.453,
+    "end": 5.998
+  },
+  {
+    "word": "se",
+    "start": 5.999,
+    "end": 6.544
+  },
+  {
+    "word": "poore",
+    "start": 6.544,
+    "end": 7.089
+  },
+  {
+    "word": "shahar",
+    "start": 7.089,
+    "end": 7.634
+  },
+  {
+    "word": "ko",
+    "start": 7.635,
+    "end": 8.18
+  },
+  {
+    "word": "baha",
+    "start": 8.18,
+    "end": 8.725
+  },
+  {
+    "word": "le",
+    "start": 8.725,
+    "end": 9.27
+  },
+  {
+    "word": "gaya!",
+    "start": 9.271,
+    "end": 9.816
+  },
+  {
+    "word": "Lekin",
+    "start": 9.896,
+    "end": 10.34
+  },
+  {
+    "word": "company",
+    "start": 10.34,
+    "end": 10.784
+  },
+  {
+    "word": "ne",
+    "start": 10.784,
+    "end": 11.228
+  },
+  {
+    "word": "tank",
+    "start": 11.228,
+    "end": 11.672
+  },
+  {
+    "word": "itna",
+    "start": 11.672,
+    "end": 12.116
+  },
+  {
+    "word": "patla",
+    "start": 12.116,
+    "end": 12.56
+  },
+  {
+    "word": "banaya",
+    "start": 12.56,
+    "end": 13.004
+  },
+  {
+    "word": "tha",
+    "start": 13.004,
+    "end": 13.448
+  },
+  {
+    "word": "ki",
+    "start": 13.448,
+    "end": 13.892
+  },
+  {
+    "word": "syrup",
+    "start": 13.892,
+    "end": 14.336
+  },
+  {
+    "word": "tapakta",
+    "start": 14.336,
+    "end": 14.78
+  },
+  {
+    "word": "tha.",
+    "start": 14.78,
+    "end": 15.224
+  },
+  {
+    "word": "Unhone",
+    "start": 15.224,
+    "end": 15.668
+  },
+  {
+    "word": "is",
+    "start": 15.668,
+    "end": 16.112
+  },
+  {
+    "word": "leak",
+    "start": 16.112,
+    "end": 16.556
+  },
+  {
+    "word": "ko",
+    "start": 16.556,
+    "end": 17.0
+  },
+  {
+    "word": "theek",
+    "start": 17.0,
+    "end": 17.444
+  },
+  {
+    "word": "karne",
+    "start": 17.444,
+    "end": 17.888
+  },
+  {
+    "word": "ke",
+    "start": 17.888,
+    "end": 18.332
+  },
+  {
+    "word": "bajaye",
+    "start": 18.332,
+    "end": 18.776
+  },
+  {
+    "word": "poore",
+    "start": 18.776,
+    "end": 19.22
+  },
+  {
+    "word": "tank",
+    "start": 19.22,
+    "end": 19.664
+  },
+  {
+    "word": "par",
+    "start": 19.664,
+    "end": 20.108
+  },
+  {
+    "word": "brown",
+    "start": 20.108,
+    "end": 20.552
+  },
+  {
+    "word": "paint",
+    "start": 20.552,
+    "end": 20.996
+  },
+  {
+    "word": "laga",
+    "start": 20.996,
+    "end": 21.44
+  },
+  {
+    "word": "diya",
+    "start": 21.44,
+    "end": 21.884
+  },
+  {
+    "word": "taaki",
+    "start": 21.884,
+    "end": 22.328
+  },
+  {
+    "word": "leak",
+    "start": 22.328,
+    "end": 22.772
+  },
+  {
+    "word": "dikhe",
+    "start": 22.772,
+    "end": 23.216
+  },
+  {
+    "word": "hi",
+    "start": 23.216,
+    "end": 23.66
+  },
+  {
+    "word": "na!",
+    "start": 23.66,
+    "end": 24.104
+  },
+  {
+    "word": "Phir",
+    "start": 24.184,
+    "end": 24.641
+  },
+  {
+    "word": "15",
+    "start": 24.641,
+    "end": 25.098
+  },
+  {
+    "word": "January",
+    "start": 25.098,
+    "end": 25.555
+  },
+  {
+    "word": "ko",
+    "start": 25.555,
+    "end": 26.012
+  },
+  {
+    "word": "achanak",
+    "start": 26.012,
+    "end": 26.469
+  },
+  {
+    "word": "dhoop",
+    "start": 26.469,
+    "end": 26.926
+  },
+  {
+    "word": "nikli",
+    "start": 26.926,
+    "end": 27.383
+  },
+  {
+    "word": "aur",
+    "start": 27.382,
+    "end": 27.839
+  },
+  {
+    "word": "temperature",
+    "start": 27.839,
+    "end": 28.296
+  },
+  {
+    "word": "badh",
+    "start": 28.296,
+    "end": 28.753
+  },
+  {
+    "word": "gaya!",
+    "start": 28.753,
+    "end": 29.21
+  },
+  {
+    "word": "Andar",
+    "start": 29.21,
+    "end": 29.667
+  },
+  {
+    "word": "bhara",
+    "start": 29.667,
+    "end": 30.124
+  },
+  {
+    "word": "syrup",
+    "start": 30.124,
+    "end": 30.581
+  },
+  {
+    "word": "ferment",
+    "start": 30.581,
+    "end": 31.038
+  },
+  {
+    "word": "hone",
+    "start": 31.038,
+    "end": 31.495
+  },
+  {
+    "word": "laga",
+    "start": 31.495,
+    "end": 31.952
+  },
+  {
+    "word": "aur",
+    "start": 31.952,
+    "end": 32.409
+  },
+  {
+    "word": "gas",
+    "start": 32.409,
+    "end": 32.866
+  },
+  {
+    "word": "ka",
+    "start": 32.866,
+    "end": 33.323
+  },
+  {
+    "word": "pressure",
+    "start": 33.322,
+    "end": 33.779
+  },
+  {
+    "word": "balloon",
+    "start": 33.779,
+    "end": 34.236
+  },
+  {
+    "word": "ki",
+    "start": 34.236,
+    "end": 34.693
+  },
+  {
+    "word": "tarah",
+    "start": 34.693,
+    "end": 35.15
+  },
+  {
+    "word": "phool",
+    "start": 35.15,
+    "end": 35.607
+  },
+  {
+    "word": "gaya!",
+    "start": 35.607,
+    "end": 36.064
+  },
+  {
+    "word": "Lohe",
+    "start": 36.144,
+    "end": 36.524
+  },
+  {
+    "word": "ki",
+    "start": 36.524,
+    "end": 36.904
+  },
+  {
+    "word": "chains",
+    "start": 36.904,
+    "end": 37.284
+  },
+  {
+    "word": "hilne",
+    "start": 37.284,
+    "end": 37.664
+  },
+  {
+    "word": "lagi,",
+    "start": 37.664,
+    "end": 38.044
+  },
+  {
+    "word": "aur",
+    "start": 38.044,
+    "end": 38.424
+  },
+  {
+    "word": "achanak",
+    "start": 38.424,
+    "end": 38.804
+  },
+  {
+    "word": "machine",
+    "start": 38.804,
+    "end": 39.184
+  },
+  {
+    "word": "gun",
+    "start": 39.184,
+    "end": 39.564
+  },
+  {
+    "word": "ki",
+    "start": 39.564,
+    "end": 39.944
+  },
+  {
+    "word": "tarah",
+    "start": 39.944,
+    "end": 40.324
+  },
+  {
+    "word": "lohe",
+    "start": 40.324,
+    "end": 40.704
+  },
+  {
+    "word": "ke",
+    "start": 40.704,
+    "end": 41.084
+  },
+  {
+    "word": "bolts",
+    "start": 41.084,
+    "end": 41.464
+  },
+  {
+    "word": "hawa",
+    "start": 41.464,
+    "end": 41.844
+  },
+  {
+    "word": "mein",
+    "start": 41.844,
+    "end": 42.224
+  },
+  {
+    "word": "udne",
+    "start": 42.224,
+    "end": 42.604
+  },
+  {
+    "word": "lage!",
+    "start": 42.604,
+    "end": 42.984
+  },
+  {
+    "word": "Aur",
+    "start": 43.064,
+    "end": 43.492
+  },
+  {
+    "word": "achanak",
+    "start": 43.492,
+    "end": 43.919
+  },
+  {
+    "word": "25",
+    "start": 43.919,
+    "end": 44.346
+  },
+  {
+    "word": "lakh",
+    "start": 44.347,
+    "end": 44.775
+  },
+  {
+    "word": "gallon",
+    "start": 44.774,
+    "end": 45.202
+  },
+  {
+    "word": "ka",
+    "start": 45.202,
+    "end": 45.63
+  },
+  {
+    "word": "ek",
+    "start": 45.629,
+    "end": 46.056
+  },
+  {
+    "word": "25",
+    "start": 46.057,
+    "end": 46.485
+  },
+  {
+    "word": "foot",
+    "start": 46.484,
+    "end": 46.912
+  },
+  {
+    "word": "uncha",
+    "start": 46.912,
+    "end": 47.34
+  },
+  {
+    "word": "sticky",
+    "start": 47.339,
+    "end": 47.767
+  },
+  {
+    "word": "sailaab",
+    "start": 47.767,
+    "end": 48.195
+  },
+  {
+    "word": "sadkon",
+    "start": 48.194,
+    "end": 48.622
+  },
+  {
+    "word": "par",
+    "start": 48.622,
+    "end": 49.05
+  },
+  {
+    "word": "nikal",
+    "start": 49.049,
+    "end": 49.477
+  },
+  {
+    "word": "pada!",
+    "start": 49.477,
+    "end": 49.904
+  },
+  {
+    "word": "Isne",
+    "start": 49.984,
+    "end": 50.384
+  },
+  {
+    "word": "train",
+    "start": 50.384,
+    "end": 50.784
+  },
+  {
+    "word": "ki",
+    "start": 50.783,
+    "end": 51.183
+  },
+  {
+    "word": "patriyan",
+    "start": 51.183,
+    "end": 51.583
+  },
+  {
+    "word": "tod",
+    "start": 51.582,
+    "end": 51.982
+  },
+  {
+    "word": "di,",
+    "start": 51.982,
+    "end": 52.382
+  },
+  {
+    "word": "imaaratein",
+    "start": 52.381,
+    "end": 52.781
+  },
+  {
+    "word": "gira",
+    "start": 52.781,
+    "end": 53.181
+  },
+  {
+    "word": "di,",
+    "start": 53.18,
+    "end": 53.58
+  },
+  {
+    "word": "aur",
+    "start": 53.58,
+    "end": 53.98
+  },
+  {
+    "word": "logon",
+    "start": 53.979,
+    "end": 54.379
+  },
+  {
+    "word": "ko",
+    "start": 54.379,
+    "end": 54.779
+  },
+  {
+    "word": "sadak",
+    "start": 54.778,
+    "end": 55.178
+  },
+  {
+    "word": "par",
+    "start": 55.178,
+    "end": 55.578
+  },
+  {
+    "word": "hi",
+    "start": 55.577,
+    "end": 55.977
+  },
+  {
+    "word": "chipka",
+    "start": 55.977,
+    "end": 56.377
+  },
+  {
+    "word": "diya!",
+    "start": 56.376,
+    "end": 56.776
+  },
+  {
+    "word": "Kismat",
+    "start": 56.856,
+    "end": 57.297
+  },
+  {
+    "word": "achhi",
+    "start": 57.297,
+    "end": 57.738
+  },
+  {
+    "word": "thi",
+    "start": 57.738,
+    "end": 58.179
+  },
+  {
+    "word": "ki",
+    "start": 58.179,
+    "end": 58.62
+  },
+  {
+    "word": "ye",
+    "start": 58.62,
+    "end": 59.061
+  },
+  {
+    "word": "meetha",
+    "start": 59.06,
+    "end": 59.501
+  },
+  {
+    "word": "syrup",
+    "start": 59.501,
+    "end": 59.942
+  },
+  {
+    "word": "tha.",
+    "start": 59.942,
+    "end": 60.383
+  },
+  {
+    "word": "Lekin",
+    "start": 60.383,
+    "end": 60.824
+  },
+  {
+    "word": "kismat",
+    "start": 60.824,
+    "end": 61.265
+  },
+  {
+    "word": "itni",
+    "start": 61.265,
+    "end": 61.706
+  },
+  {
+    "word": "buri",
+    "start": 61.706,
+    "end": 62.147
+  },
+  {
+    "word": "thi",
+    "start": 62.147,
+    "end": 62.588
+  },
+  {
+    "word": "ki",
+    "start": 62.588,
+    "end": 63.029
+  },
+  {
+    "word": "thanda",
+    "start": 63.028,
+    "end": 63.469
+  },
+  {
+    "word": "hone",
+    "start": 63.469,
+    "end": 63.91
+  },
+  {
+    "word": "par",
+    "start": 63.91,
+    "end": 64.351
+  },
+  {
+    "word": "ye",
+    "start": 64.351,
+    "end": 64.792
+  },
+  {
+    "word": "paani",
+    "start": 64.792,
+    "end": 65.233
+  },
+  {
+    "word": "ke",
+    "start": 65.233,
+    "end": 65.674
+  },
+  {
+    "word": "bajaye",
+    "start": 65.674,
+    "end": 66.115
+  },
+  {
+    "word": "geeli",
+    "start": 66.115,
+    "end": 66.556
+  },
+  {
+    "word": "cement",
+    "start": 66.556,
+    "end": 66.997
+  },
+  {
+    "word": "ki",
+    "start": 66.996,
+    "end": 67.437
+  },
+  {
+    "word": "tarah",
+    "start": 67.437,
+    "end": 67.878
+  },
+  {
+    "word": "jam",
+    "start": 67.878,
+    "end": 68.319
+  },
+  {
+    "word": "gaya!",
+    "start": 68.319,
+    "end": 68.76
+  },
+  {
+    "word": "Ye",
+    "start": 68.84,
+    "end": 69.347
+  },
+  {
+    "word": "non-Newtonian",
+    "start": 69.347,
+    "end": 69.854
+  },
+  {
+    "word": "fluid",
+    "start": 69.853,
+    "end": 70.36
+  },
+  {
+    "word": "tha",
+    "start": 70.36,
+    "end": 70.867
+  },
+  {
+    "word": "—",
+    "start": 70.867,
+    "end": 71.374
+  },
+  {
+    "word": "jaise",
+    "start": 71.374,
+    "end": 71.881
+  },
+  {
+    "word": "ketchup",
+    "start": 71.88,
+    "end": 72.387
+  },
+  {
+    "word": "ki",
+    "start": 72.387,
+    "end": 72.894
+  },
+  {
+    "word": "bottle",
+    "start": 72.894,
+    "end": 73.401
+  },
+  {
+    "word": "ko",
+    "start": 73.401,
+    "end": 73.908
+  },
+  {
+    "word": "thoko",
+    "start": 73.907,
+    "end": 74.414
+  },
+  {
+    "word": "toh",
+    "start": 74.414,
+    "end": 74.921
+  },
+  {
+    "word": "pehle",
+    "start": 74.921,
+    "end": 75.428
+  },
+  {
+    "word": "kuch",
+    "start": 75.428,
+    "end": 75.935
+  },
+  {
+    "word": "nahi",
+    "start": 75.934,
+    "end": 76.441
+  },
+  {
+    "word": "nikalta,",
+    "start": 76.441,
+    "end": 76.948
+  },
+  {
+    "word": "fir",
+    "start": 76.948,
+    "end": 77.455
+  },
+  {
+    "word": "achanak",
+    "start": 77.455,
+    "end": 77.962
+  },
+  {
+    "word": "poora",
+    "start": 77.961,
+    "end": 78.468
+  },
+  {
+    "word": "ketchup",
+    "start": 78.468,
+    "end": 78.975
+  },
+  {
+    "word": "gir",
+    "start": 78.975,
+    "end": 79.482
+  },
+  {
+    "word": "jaata",
+    "start": 79.482,
+    "end": 79.989
+  },
+  {
+    "word": "hai!",
+    "start": 79.988,
+    "end": 80.495
+  },
+  {
+    "word": "Aur",
+    "start": 80.495,
+    "end": 81.002
+  },
+  {
+    "word": "aaj",
+    "start": 81.002,
+    "end": 81.509
+  },
+  {
+    "word": "bhi",
+    "start": 81.509,
+    "end": 82.016
+  },
+  {
+    "word": "Boston",
+    "start": 82.015,
+    "end": 82.522
+  },
+  {
+    "word": "mein",
+    "start": 82.522,
+    "end": 83.029
+  },
+  {
+    "word": "deewaron",
+    "start": 83.029,
+    "end": 83.536
+  },
+  {
+    "word": "se",
+    "start": 83.536,
+    "end": 84.043
+  },
+  {
+    "word": "pancakes",
+    "start": 84.042,
+    "end": 84.549
+  },
+  {
+    "word": "ki",
+    "start": 84.549,
+    "end": 85.056
+  },
+  {
+    "word": "khushboo",
+    "start": 85.056,
+    "end": 85.563
+  },
+  {
+    "word": "aati",
+    "start": 85.563,
+    "end": 86.07
+  },
+  {
+    "word": "hai!",
+    "start": 86.069,
+    "end": 86.576
+  }
+]

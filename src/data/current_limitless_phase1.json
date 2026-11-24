@@ -1,0 +1,100 @@
+{
+  "title": "Card's Unhackable Brain 🛡️",
+  "tagline": "SECURE ELEMENT",
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "narration": "Your credit card literally withstands billions of brute-force attacks per second. Inside lies a tiny, dedicated cryptographic computer, a secure element designed for impenetrable transaction security.",
+      "visualConcept": "Extreme close-up on an animated credit card chip. Data streams (representing attacks) hit a glowing, impenetrable shield around it, deflecting. Frame-0: intense energy burst from chip.",
+      "heroElement": "EMV Chip / Secure Element",
+      "topRightTag": "ATTACKS // ACTIVE",
+      "bottomLeftLabel": "CRYPTOGRAPHIC CORE",
+      "bottomRightMetric": "DEFLECTIONS: 4.7B/s"
+    },
+    {
+      "sceneIndex": 2,
+      "narration": "This integrated circuit runs sophisticated encryption algorithms, creating unique, one-time transaction keys for every swipe or tap. It's a miniature fortress, always generating new digital locks.",
+      "visualConcept": "Blueprint cross-section of the chip. Logic gates animate, showing a complex flow of data transforming into discrete, glowing 'keys' that stream outwards from the core.",
+      "heroElement": "Encryption Algorithm / Key Generator",
+      "topRightTag": "KEYGEN // ACTIVE",
+      "bottomLeftLabel": "AES-256 MODULE",
+      "bottomRightMetric": "KEYS: 128-bit UNIQUE"
+    },
+    {
+      "sceneIndex": 3,
+      "narration": "Without this constant re-encryption, an attacker could easily intercept and replay old transaction data, draining your bank account with a simple digital copy-paste. Fraud would be rampant.",
+      "visualConcept": "Animated threat scenario. A shadowy, red data stream attempts to bypass the chip, trying to 'copy-paste' transaction details. Warning signals flash, but the chip's internal defenses hold.",
+      "heroElement": "Replay Attack Vector",
+      "topRightTag": "CRITICAL // ALERT",
+      "bottomLeftLabel": "REPLAY DETECTION",
+      "bottomRightMetric": "ATTEMPT: DENIED"
+    },
+    {
+      "sceneIndex": 4,
+      "narration": "It uses a hardware-based random number generator, ensuring truly unpredictable keys even against quantum attacks. Share this with anyone who still thinks their chip card is just dumb plastic.",
+      "visualConcept": "Zoom into a specific module inside the chip, showing a chaotic, swirling visual representation of true random number generation. Text: 'QUANTUM RESISTANT' appears briefly.",
+      "heroElement": "Hardware Random Number Generator",
+      "topRightTag": "RNG // SECURE",
+      "bottomLeftLabel": "QUANTUM SHIELD",
+      "bottomRightMetric": "ENTROPY: 100%"
+    },
+    {
+      "sceneIndex": 5,
+      "narration": "Every transaction is a fresh, unrepeatable cryptographic handshake, making each digital signature obsolete milliseconds later, creating an impenetrable digital fortress, meaning that...",
+      "visualConcept": "Visualizes a successful, secure transaction as two interlocking, glowing data streams forming a complete, temporary circuit. The card chip is then shown as a strong, defended castle, ready for the next interaction.",
+      "heroElement": "Cryptographic Handshake / Digital Fortress",
+      "topRightTag": "LOOP // COMPLETE",
+      "bottomLeftLabel": "SESSION INTEGRITY",
+      "bottomRightMetric": "OBSOLETE: 0.003s"
+    }
+  ],
+  "fullScript": "Your credit card literally withstands billions of brute-force attacks per second. Inside lies a tiny, dedicated cryptographic computer, a secure element designed for impenetrable transaction security. This integrated circuit runs sophisticated encryption algorithms, creating unique, one-time transaction keys for every swipe or tap. It's a miniature fortress, always generating new digital locks. Without this constant re-encryption, an attacker could easily intercept and replay old transaction data, draining your bank account with a simple digital copy-paste. Fraud would be rampant. It uses a hardware-based random number generator, ensuring truly unpredictable keys even against quantum attacks. Share this with anyone who still thinks their chip card is just dumb plastic. Every transaction is a fresh, unrepeatable cryptographic handshake, making each digital signature obsolete milliseconds later, creating an impenetrable digital fortress, meaning that...",
+  "sceneCuts": [
+    {
+      "sceneIndex": 1,
+      "startFrame": 0,
+      "durationFrames": 362,
+      "endFrame": 362,
+      "midpointSec": 6,
+      "name": "sub_cut1.jpg",
+      "label": "Cut 1: ATTACKS // ACTIVE"
+    },
+    {
+      "sceneIndex": 2,
+      "startFrame": 362,
+      "durationFrames": 395,
+      "endFrame": 757,
+      "midpointSec": 19,
+      "name": "sub_cut2.jpg",
+      "label": "Cut 2: KEYGEN // ACTIVE"
+    },
+    {
+      "sceneIndex": 3,
+      "startFrame": 757,
+      "durationFrames": 342,
+      "endFrame": 1099,
+      "midpointSec": 31,
+      "name": "sub_cut3.jpg",
+      "label": "Cut 3: CRITICAL // ALERT"
+    },
+    {
+      "sceneIndex": 4,
+      "startFrame": 1099,
+      "durationFrames": 339,
+      "endFrame": 1438,
+      "midpointSec": 42,
+      "name": "sub_cut4.jpg",
+      "label": "Cut 4: RNG // SECURE"
+    },
+    {
+      "sceneIndex": 5,
+      "startFrame": 1438,
+      "durationFrames": 368,
+      "endFrame": 1806,
+      "midpointSec": 54,
+      "name": "sub_cut5.jpg",
+      "label": "Cut 5: LOOP // COMPLETE"
+    }
+  ],
+  "totalFrames": 1806
+}

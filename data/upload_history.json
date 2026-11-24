@@ -1,0 +1,129 @@
+{
+  "uploads": [
+    {
+      "timestamp": "2026-11-16T23:57:18.240Z",
+      "episode": "#1",
+      "videoStreamMD5": "2eda9fb18d97ae4de3c18106316c41d9",
+      "title": "What If Everyone Got $1,000,000 At Midnight? 🤯💸 #Shorts #WhatIf #Paradox",
+      "results": [
+        {
+          "success": true,
+          "platform": "YouTube",
+          "videoId": "CO2tqj7uGpE",
+          "url": "https://youtube.com/shorts/CO2tqj7uGpE"
+        },
+        {
+          "success": false,
+          "platform": "Instagram",
+          "error": "Meta processing timed out."
+        },
+        {
+          "success": true,
+          "platform": "Facebook",
+          "mediaId": "122106712023545259"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-17T04:34:40.830Z",
+      "episode": "#2",
+      "videoStreamMD5": "d1176c9e60638b6f3aa3043d7c21f1c9",
+      "title": "What If the Global Internet Was Deleted for 72 Hours? 🔌⚠️ #Shorts #WhatIf #TechCollapse",
+      "results": [
+        {
+          "success": true,
+          "platform": "YouTube",
+          "videoId": "e-WY9HAKR3U",
+          "url": "https://youtube.com/shorts/e-WY9HAKR3U"
+        },
+        {
+          "success": true,
+          "platform": "Facebook",
+          "mediaId": "122106867537545259"
+        },
+        {
+          "success": true,
+          "platform": "Telegram (Instagram Backup)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-17T19:48:07.120Z",
+      "episode": "#2",
+      "title": "What If the Global Internet Was Deleted for 72 Hours? 🔌⚠️ #Shorts #WhatIf #TechCollapse",
+      "videoStreamMD5": "d1176c9e60638b6f3aa3043d7c21f1c9",
+      "results": [
+        {
+          "success": true,
+          "platform": "YouTube",
+          "videoId": "-u5IsPn_bVo",
+          "url": "https://youtube.com/shorts/-u5IsPn_bVo"
+        },
+        {
+          "success": true,
+          "platform": "Facebook",
+          "mediaId": "122107519191545259"
+        },
+        {
+          "success": true,
+          "platform": "Instagram (Telegram Dispatch)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-18T07:19:50.720Z",
+      "episode": "#3",
+      "title": "What If Every Human Slept for 7 Days Straight? 💤🌍 #Shorts #WhatIf #SilentWorld",
+      "videoStreamMD5": "48d6c1c697c0380b739584a7db72fc95",
+      "results": [
+        {
+          "success": false,
+          "platform": "YouTube",
+          "error": "invalid_grant"
+        },
+        {
+          "success": true,
+          "platform": "Facebook",
+          "mediaId": "122107869399545259"
+        },
+        {
+          "success": true,
+          "platform": "Instagram",
+          "mediaId": "18154433698552768"
+        },
+        {
+          "success": true,
+          "platform": "Instagram (Telegram Dispatch)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-18T07:58:31.880Z",
+      "episode": "#3",
+      "title": "What If Every Human Slept for 7 Days Straight? 💤🌍 #Shorts #WhatIf #SilentWorld",
+      "videoStreamMD5": "6958dbd3c1296642812c2f5e00e6fe70",
+      "results": [
+        {
+          "success": true,
+          "platform": "YouTube",
+          "videoId": "Q7G3WHCsVG4",
+          "url": "https://youtube.com/shorts/Q7G3WHCsVG4"
+        },
+        {
+          "success": true,
+          "platform": "Facebook",
+          "mediaId": "122107895691545259"
+        },
+        {
+          "success": true,
+          "platform": "Instagram",
+          "mediaId": "18028763546864961"
+        },
+        {
+          "success": true,
+          "platform": "Instagram (Telegram Dispatch)"
+        }
+      ]
+    }
+  ]
+}

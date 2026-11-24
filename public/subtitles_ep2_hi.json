@@ -1,0 +1,597 @@
+[
+  {
+    "word": "Kya",
+    "start": 0.1,
+    "end": 0.517
+  },
+  {
+    "word": "ho",
+    "start": 0.517,
+    "end": 0.934
+  },
+  {
+    "word": "agar",
+    "start": 0.934,
+    "end": 1.35
+  },
+  {
+    "word": "poori",
+    "start": 1.35,
+    "end": 1.767
+  },
+  {
+    "word": "duniya",
+    "start": 1.767,
+    "end": 2.183
+  },
+  {
+    "word": "ka",
+    "start": 2.183,
+    "end": 2.6
+  },
+  {
+    "word": "internet",
+    "start": 2.6,
+    "end": 3.016
+  },
+  {
+    "word": "72",
+    "start": 3.016,
+    "end": 3.433
+  },
+  {
+    "word": "ghante",
+    "start": 3.433,
+    "end": 3.85
+  },
+  {
+    "word": "ke",
+    "start": 3.85,
+    "end": 4.266
+  },
+  {
+    "word": "liye",
+    "start": 4.266,
+    "end": 4.683
+  },
+  {
+    "word": "band",
+    "start": 4.683,
+    "end": 5.099
+  },
+  {
+    "word": "ho",
+    "start": 5.099,
+    "end": 5.516
+  },
+  {
+    "word": "jaye?",
+    "start": 5.516,
+    "end": 5.932
+  },
+  {
+    "word": "Raat",
+    "start": 5.932,
+    "end": 6.408
+  },
+  {
+    "word": "12:01",
+    "start": 6.408,
+    "end": 6.884
+  },
+  {
+    "word": "AM",
+    "start": 6.884,
+    "end": 7.36
+  },
+  {
+    "word": "par",
+    "start": 7.36,
+    "end": 7.836
+  },
+  {
+    "word": "duniya",
+    "start": 7.836,
+    "end": 8.312
+  },
+  {
+    "word": "ki",
+    "start": 8.312,
+    "end": 8.788
+  },
+  {
+    "word": "har",
+    "start": 8.788,
+    "end": 9.264
+  },
+  {
+    "word": "screen",
+    "start": 9.264,
+    "end": 9.74
+  },
+  {
+    "word": "freeze",
+    "start": 9.74,
+    "end": 10.216
+  },
+  {
+    "word": "ho",
+    "start": 10.216,
+    "end": 10.692
+  },
+  {
+    "word": "jati",
+    "start": 10.692,
+    "end": 11.168
+  },
+  {
+    "word": "hai.",
+    "start": 11.168,
+    "end": 11.644
+  },
+  {
+    "word": "Agle",
+    "start": 11.644,
+    "end": 12.135
+  },
+  {
+    "word": "hi",
+    "start": 12.135,
+    "end": 12.626
+  },
+  {
+    "word": "pal",
+    "start": 12.626,
+    "end": 13.117
+  },
+  {
+    "word": "30,000",
+    "start": 13.118,
+    "end": 13.609
+  },
+  {
+    "word": "hawai",
+    "start": 13.609,
+    "end": 14.1
+  },
+  {
+    "word": "jahaz",
+    "start": 14.1,
+    "end": 14.591
+  },
+  {
+    "word": "GPS",
+    "start": 14.591,
+    "end": 15.082
+  },
+  {
+    "word": "kho",
+    "start": 15.082,
+    "end": 15.573
+  },
+  {
+    "word": "dete",
+    "start": 15.574,
+    "end": 16.065
+  },
+  {
+    "word": "hain",
+    "start": 16.065,
+    "end": 16.556
+  },
+  {
+    "word": "aur",
+    "start": 16.556,
+    "end": 17.047
+  },
+  {
+    "word": "andhe",
+    "start": 17.047,
+    "end": 17.538
+  },
+  {
+    "word": "ho",
+    "start": 17.538,
+    "end": 18.029
+  },
+  {
+    "word": "jate",
+    "start": 18.03,
+    "end": 18.521
+  },
+  {
+    "word": "hain!",
+    "start": 18.521,
+    "end": 19.012
+  },
+  {
+    "word": "Subah",
+    "start": 19.012,
+    "end": 19.404
+  },
+  {
+    "word": "8:00",
+    "start": 19.404,
+    "end": 19.796
+  },
+  {
+    "word": "AM",
+    "start": 19.796,
+    "end": 20.188
+  },
+  {
+    "word": "tak",
+    "start": 20.188,
+    "end": 20.58
+  },
+  {
+    "word": "duniya",
+    "start": 20.58,
+    "end": 20.972
+  },
+  {
+    "word": "ka",
+    "start": 20.972,
+    "end": 21.364
+  },
+  {
+    "word": "har",
+    "start": 21.364,
+    "end": 21.756
+  },
+  {
+    "word": "ATM",
+    "start": 21.756,
+    "end": 22.148
+  },
+  {
+    "word": "aur",
+    "start": 22.148,
+    "end": 22.54
+  },
+  {
+    "word": "credit",
+    "start": 22.54,
+    "end": 22.932
+  },
+  {
+    "word": "card",
+    "start": 22.932,
+    "end": 23.324
+  },
+  {
+    "word": "dead",
+    "start": 23.324,
+    "end": 23.716
+  },
+  {
+    "word": "ho",
+    "start": 23.716,
+    "end": 24.108
+  },
+  {
+    "word": "jata",
+    "start": 24.108,
+    "end": 24.5
+  },
+  {
+    "word": "hai.",
+    "start": 24.5,
+    "end": 24.892
+  },
+  {
+    "word": "Supply",
+    "start": 24.892,
+    "end": 25.381
+  },
+  {
+    "word": "chains",
+    "start": 25.381,
+    "end": 25.87
+  },
+  {
+    "word": "freeze",
+    "start": 25.87,
+    "end": 26.358
+  },
+  {
+    "word": "ho",
+    "start": 26.358,
+    "end": 26.847
+  },
+  {
+    "word": "jati",
+    "start": 26.847,
+    "end": 27.335
+  },
+  {
+    "word": "hain",
+    "start": 27.335,
+    "end": 27.824
+  },
+  {
+    "word": "kyunki",
+    "start": 27.824,
+    "end": 28.312
+  },
+  {
+    "word": "delivery",
+    "start": 28.312,
+    "end": 28.801
+  },
+  {
+    "word": "trucks",
+    "start": 28.801,
+    "end": 29.29
+  },
+  {
+    "word": "digital",
+    "start": 29.29,
+    "end": 29.778
+  },
+  {
+    "word": "dispatch",
+    "start": 29.778,
+    "end": 30.267
+  },
+  {
+    "word": "par",
+    "start": 30.267,
+    "end": 30.755
+  },
+  {
+    "word": "chalte",
+    "start": 30.755,
+    "end": 31.244
+  },
+  {
+    "word": "hain.",
+    "start": 31.244,
+    "end": 31.732
+  },
+  {
+    "word": "48",
+    "start": 31.732,
+    "end": 32.2
+  },
+  {
+    "word": "ghanton",
+    "start": 32.2,
+    "end": 32.668
+  },
+  {
+    "word": "mein",
+    "start": 32.668,
+    "end": 33.136
+  },
+  {
+    "word": "power",
+    "start": 33.136,
+    "end": 33.604
+  },
+  {
+    "word": "grids",
+    "start": 33.604,
+    "end": 34.072
+  },
+  {
+    "word": "band",
+    "start": 34.072,
+    "end": 34.54
+  },
+  {
+    "word": "hote",
+    "start": 34.54,
+    "end": 35.008
+  },
+  {
+    "word": "hain",
+    "start": 35.008,
+    "end": 35.476
+  },
+  {
+    "word": "aur",
+    "start": 35.476,
+    "end": 35.944
+  },
+  {
+    "word": "poore",
+    "start": 35.944,
+    "end": 36.412
+  },
+  {
+    "word": "continents",
+    "start": 36.412,
+    "end": 36.88
+  },
+  {
+    "word": "andhere",
+    "start": 36.88,
+    "end": 37.348
+  },
+  {
+    "word": "mein",
+    "start": 37.348,
+    "end": 37.816
+  },
+  {
+    "word": "doob",
+    "start": 37.816,
+    "end": 38.284
+  },
+  {
+    "word": "jate",
+    "start": 38.284,
+    "end": 38.752
+  },
+  {
+    "word": "hain!",
+    "start": 38.752,
+    "end": 39.22
+  },
+  {
+    "word": "12",
+    "start": 39.22,
+    "end": 39.695
+  },
+  {
+    "word": "trillion",
+    "start": 39.695,
+    "end": 40.17
+  },
+  {
+    "word": "dollars",
+    "start": 40.17,
+    "end": 40.645
+  },
+  {
+    "word": "ki",
+    "start": 40.646,
+    "end": 41.121
+  },
+  {
+    "word": "digital",
+    "start": 41.121,
+    "end": 41.596
+  },
+  {
+    "word": "daulat",
+    "start": 41.596,
+    "end": 42.071
+  },
+  {
+    "word": "gayab",
+    "start": 42.071,
+    "end": 42.546
+  },
+  {
+    "word": "ho",
+    "start": 42.546,
+    "end": 43.021
+  },
+  {
+    "word": "jati",
+    "start": 43.022,
+    "end": 43.497
+  },
+  {
+    "word": "hai.",
+    "start": 43.497,
+    "end": 43.972
+  },
+  {
+    "word": "Yani",
+    "start": 43.972,
+    "end": 44.432
+  },
+  {
+    "word": "modern",
+    "start": 44.432,
+    "end": 44.892
+  },
+  {
+    "word": "duniya",
+    "start": 44.892,
+    "end": 45.352
+  },
+  {
+    "word": "paise",
+    "start": 45.352,
+    "end": 45.812
+  },
+  {
+    "word": "se",
+    "start": 45.812,
+    "end": 46.272
+  },
+  {
+    "word": "nahi",
+    "start": 46.272,
+    "end": 46.732
+  },
+  {
+    "word": "invisible",
+    "start": 46.732,
+    "end": 47.192
+  },
+  {
+    "word": "data",
+    "start": 47.192,
+    "end": 47.652
+  },
+  {
+    "word": "packets",
+    "start": 47.652,
+    "end": 48.112
+  },
+  {
+    "word": "se",
+    "start": 48.112,
+    "end": 48.572
+  },
+  {
+    "word": "chalti",
+    "start": 48.572,
+    "end": 49.032
+  },
+  {
+    "word": "hai.",
+    "start": 49.032,
+    "end": 49.492
+  },
+  {
+    "word": "Aur",
+    "start": 49.492,
+    "end": 49.946
+  },
+  {
+    "word": "yahi",
+    "start": 49.946,
+    "end": 50.4
+  },
+  {
+    "word": "wajah",
+    "start": 50.4,
+    "end": 50.854
+  },
+  {
+    "word": "hai",
+    "start": 50.854,
+    "end": 51.307
+  },
+  {
+    "word": "agar",
+    "start": 51.307,
+    "end": 51.761
+  },
+  {
+    "word": "aapka",
+    "start": 51.761,
+    "end": 52.215
+  },
+  {
+    "word": "Wi-Fi",
+    "start": 52.215,
+    "end": 52.669
+  },
+  {
+    "word": "achanak",
+    "start": 52.669,
+    "end": 53.123
+  },
+  {
+    "word": "gayab",
+    "start": 53.123,
+    "end": 53.577
+  },
+  {
+    "word": "ho",
+    "start": 53.577,
+    "end": 54.03
+  },
+  {
+    "word": "jaye...",
+    "start": 54.03,
+    "end": 54.484
+  }
+]

@@ -1,0 +1,444 @@
+{
+  "generatedAt": "2026-11-16T13:24:44.200Z",
+  "phase1": {
+    "youtube": {
+      "platform": "YouTube",
+      "label": "Phase 1 - Focus Fuel Shorts",
+      "title": "Focus Fuel Shorts",
+      "customUrl": "@focusfuelshorts-004",
+      "subscribers": 26,
+      "totalViews": 2910,
+      "totalVideos": 24,
+      "avgViews": 121,
+      "topVideos": [
+        {
+          "id": "TCUsB-jq8uQ",
+          "title": "The Secret 14 Keys That Rule The Internet 🔑 #Shorts",
+          "publishedAt": "2026-11-13T04:41:57Z",
+          "views": 1127,
+          "likes": 14,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/TCUsB-jq8uQ",
+          "engagementRate": "1.24%"
+        },
+        {
+          "id": "Uxsma9ZueBg",
+          "title": "Why Bullet Trains Don't Break Your iPhone 🤯 #Shorts",
+          "publishedAt": "2026-11-13T01:45:06Z",
+          "views": 826,
+          "likes": 18,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/Uxsma9ZueBg",
+          "engagementRate": "2.18%"
+        },
+        {
+          "id": "Z9oT-L9frxw",
+          "title": "Why 1.3M Seeds Are Frozen in an Arctic Vault 🤯 #Shorts",
+          "publishedAt": "2026-11-13T14:43:12Z",
+          "views": 209,
+          "likes": 4,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/Z9oT-L9frxw",
+          "engagementRate": "1.91%"
+        },
+        {
+          "id": "RLsVw70oqhQ",
+          "title": "Why Your Fiber WiFi Is SLOWER Than Space Lasers 🤯 #Shorts",
+          "publishedAt": "2026-11-13T08:48:03Z",
+          "views": 181,
+          "likes": 4,
+          "comments": 2,
+          "url": "https://youtube.com/shorts/RLsVw70oqhQ",
+          "engagementRate": "3.31%"
+        },
+        {
+          "id": "QmDhrSjmmcE",
+          "title": "Why Wall Street Built Towers Across The Ocean 📡 #Shorts",
+          "publishedAt": "2026-11-14T08:37:02Z",
+          "views": 91,
+          "likes": 2,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/QmDhrSjmmcE",
+          "engagementRate": "2.20%"
+        }
+      ],
+      "recentVideos": [
+        {
+          "id": "Al9Ehls_jrc",
+          "title": "Why Wi-Fi Dies 📶 #Shorts #Tech",
+          "publishedAt": "2026-11-16T13:11:39Z",
+          "views": 3,
+          "likes": 0,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/Al9Ehls_jrc",
+          "engagementRate": "0.00%"
+        },
+        {
+          "id": "quBNds6MTms",
+          "title": "How Planes Brake at 250 km/h ✈️ #Shorts #Tech",
+          "publishedAt": "2026-11-16T01:39:03Z",
+          "views": 85,
+          "likes": 1,
+          "comments": 1,
+          "url": "https://youtube.com/shorts/quBNds6MTms",
+          "engagementRate": "2.35%"
+        },
+        {
+          "id": "z-42eYlEBu8",
+          "title": "Why Your Phone Doesn't Melt 🔥 #Shorts #Tech",
+          "publishedAt": "2026-11-15T13:11:41Z",
+          "views": 79,
+          "likes": 1,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/z-42eYlEBu8",
+          "engagementRate": "1.27%"
+        },
+        {
+          "id": "0A-Py4uoGPc",
+          "title": "Diamond Decay Dynamos 💎 #Shorts #Tech",
+          "publishedAt": "2026-11-15T02:15:32Z",
+          "views": 79,
+          "likes": 3,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/0A-Py4uoGPc",
+          "engagementRate": "3.80%"
+        },
+        {
+          "id": "QmDhrSjmmcE",
+          "title": "Why Wall Street Built Towers Across The Ocean 📡 #Shorts",
+          "publishedAt": "2026-11-14T08:37:02Z",
+          "views": 91,
+          "likes": 2,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/QmDhrSjmmcE",
+          "engagementRate": "2.20%"
+        },
+        {
+          "id": "Z9oT-L9frxw",
+          "title": "Why 1.3M Seeds Are Frozen in an Arctic Vault 🤯 #Shorts",
+          "publishedAt": "2026-11-13T14:43:12Z",
+          "views": 209,
+          "likes": 4,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/Z9oT-L9frxw",
+          "engagementRate": "1.91%"
+        },
+        {
+          "id": "RLsVw70oqhQ",
+          "title": "Why Your Fiber WiFi Is SLOWER Than Space Lasers 🤯 #Shorts",
+          "publishedAt": "2026-11-13T08:48:03Z",
+          "views": 181,
+          "likes": 4,
+          "comments": 2,
+          "url": "https://youtube.com/shorts/RLsVw70oqhQ",
+          "engagementRate": "3.31%"
+        },
+        {
+          "id": "TCUsB-jq8uQ",
+          "title": "The Secret 14 Keys That Rule The Internet 🔑 #Shorts",
+          "publishedAt": "2026-11-13T04:41:57Z",
+          "views": 1127,
+          "likes": 14,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/TCUsB-jq8uQ",
+          "engagementRate": "1.24%"
+        },
+        {
+          "id": "Uxsma9ZueBg",
+          "title": "Why Bullet Trains Don't Break Your iPhone 🤯 #Shorts",
+          "publishedAt": "2026-11-13T01:45:06Z",
+          "views": 826,
+          "likes": 18,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/Uxsma9ZueBg",
+          "engagementRate": "2.18%"
+        },
+        {
+          "id": "-IBZ5bnu3Uc",
+          "title": "Bullet Trains vs. Atomic Chips 🤯 #Shorts",
+          "publishedAt": "2026-11-12T13:38:04Z",
+          "views": 15,
+          "likes": 2,
+          "comments": 0,
+          "url": "https://youtube.com/shorts/-IBZ5bnu3Uc",
+          "engagementRate": "13.33%"
+        }
+      ]
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "label": "Phase 1 - Instagram",
+      "username": "right_turnworngmoves",
+      "name": "Animus | Local-First Room OS",
+      "followers": 4,
+      "following": 0,
+      "totalMedia": 10,
+      "recentMediaCount": 10,
+      "sampleTotalLikes": 22,
+      "sampleTotalComments": 1,
+      "recentMedia": [
+        {
+          "id": "17989742487063574",
+          "caption": "Why Wi-Fi Dies 📶 #Shorts #Tech  You step into the next room, and your lightning",
+          "type": "REELS",
+          "likes": 0,
+          "comments": 0,
+          "timestamp": "2026-11-16T13:18:37+0000",
+          "permalink": "https://www.instagram.com/reel/DfzceGqS0vZ/"
+        },
+        {
+          "id": "17957404011315399",
+          "caption": "How Planes Brake at 250 km/h ✈️ #Shorts #Tech  You step off a massive commercial",
+          "type": "REELS",
+          "likes": 2,
+          "comments": 0,
+          "timestamp": "2026-11-16T01:55:57+0000",
+          "permalink": "https://www.instagram.com/reel/DfyOVIuRO-f/"
+        },
+        {
+          "id": "18022260215943228",
+          "caption": "Why Your Phone Doesn't Melt 🔥 #Shorts #Tech  Your smartphone charges from empty",
+          "type": "REELS",
+          "likes": 2,
+          "comments": 0,
+          "timestamp": "2026-11-15T13:31:55+0000",
+          "permalink": "https://www.instagram.com/reel/Dfw5JnHS59Y/"
+        },
+        {
+          "id": "18125418425473724",
+          "caption": "Diamond Decay Dynamos 💎  Discover how 28,000-year nuclear diamond batteries gen",
+          "type": "REELS",
+          "likes": 2,
+          "comments": 0,
+          "timestamp": "2026-11-15T03:09:44+0000",
+          "permalink": "https://www.instagram.com/reel/Dfvx8sBRfJq/"
+        },
+        {
+          "id": "18045618359835121",
+          "caption": "Why Wall Street Built Towers Across The Ocean 📡  High-frequency traders spent h",
+          "type": "REELS",
+          "likes": 1,
+          "comments": 0,
+          "timestamp": "2026-11-14T05:13:54+0000",
+          "permalink": "https://www.instagram.com/reel/DftbbBylIgZ/"
+        },
+        {
+          "id": "18357991807270531",
+          "caption": "Why 1.3M Seeds Are Frozen in an Arctic Vault 🤯 #Shorts #Reels #Tech #DataDetect",
+          "type": "REELS",
+          "likes": 1,
+          "comments": 1,
+          "timestamp": "2026-11-13T14:51:11+0000",
+          "permalink": "https://www.instagram.com/reel/Dfr4TEgD3nV/"
+        },
+        {
+          "id": "17985536969898907",
+          "caption": "Why Your Fiber WiFi Is SLOWER Than Space Lasers 🤯  #Starlink #SpaceTech #WiFi #",
+          "type": "REELS",
+          "likes": 0,
+          "comments": 0,
+          "timestamp": "2026-11-13T08:50:10+0000",
+          "permalink": "https://www.instagram.com/reel/DfrPYAFjFqA/"
+        },
+        {
+          "id": "18035440469676162",
+          "caption": "The Secret 14 Keys That Rule The Internet 🔑  Deep inside high-security vaults, ",
+          "type": "REELS",
+          "likes": 1,
+          "comments": 0,
+          "timestamp": "2026-11-13T04:42:19+0000",
+          "permalink": "https://www.instagram.com/reel/DfqzAjOD35W/"
+        },
+        {
+          "id": "18432838027196644",
+          "caption": "Why The Internet Doesn't Crash ⏰💥  Discover how deep underground atomic clocks ",
+          "type": "REELS",
+          "likes": 0,
+          "comments": 0,
+          "timestamp": "2026-11-12T02:12:10+0000",
+          "permalink": "https://www.instagram.com/reel/Dfn9CvAjqEa/"
+        },
+        {
+          "id": "18123023689909430",
+          "caption": "Day 0 of building my own AI agent.  I found a problem with my smart home — so in",
+          "type": "REELS",
+          "likes": 13,
+          "comments": 0,
+          "timestamp": "2026-09-13T06:10:13+0000",
+          "permalink": "https://www.instagram.com/reel/DdN4nSwRuxk/"
+        }
+      ]
+    },
+    "facebook": {
+      "platform": "Facebook",
+      "label": "Phase 1 - Facebook Page",
+      "pageName": "Data Detective",
+      "pageId": "1423941607469748",
+      "followers": 0,
+      "fans": 0,
+      "recentPosts": [
+        {
+          "id": "1423941607469748_122106304581545259",
+          "message": "Why Wi-Fi Dies 📶 #Shorts #Tech  You step into the next room, and your lightning",
+          "createdTime": "2026-11-16T13:15:30+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1478894110875019/"
+        },
+        {
+          "id": "1423941607469748_122105765175545259",
+          "message": "How Planes Brake at 250 km/h ✈️ #Shorts #Tech  You step off a massive commercial",
+          "createdTime": "2026-11-16T01:44:01+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1681638100260110/"
+        },
+        {
+          "id": "1423941607469748_122105297811545259",
+          "message": "Why Your Phone Doesn't Melt 🔥 #Shorts #Tech  Your smartphone charges from empty",
+          "createdTime": "2026-11-15T13:18:27+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1689921605980697/"
+        },
+        {
+          "id": "1423941607469748_122104727457545259",
+          "message": "Diamond Decay Dynamos 💎 #Shorts #Tech  Imagine devices powered for millennia, n",
+          "createdTime": "2026-11-15T02:19:30+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1111191091552008/"
+        },
+        {
+          "id": "1423941607469748_122104007673545259",
+          "message": "Why Wall Street Built Towers Across The Ocean 📡  High-frequency traders spent h",
+          "createdTime": "2026-11-14T08:40:22+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/2754919881569032/"
+        },
+        {
+          "id": "1423941607469748_122103890517545259",
+          "message": "Why Wall Street Built Towers Across The Ocean 📡  High-frequency traders spent h",
+          "createdTime": "2026-11-14T05:14:28+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1889680068860251/"
+        },
+        {
+          "id": "1423941607469748_122103389457545259",
+          "message": "Why 1.3M Seeds Are Frozen in an Arctic Vault 🤯  Deep inside an Arctic permafros",
+          "createdTime": "2026-11-13T14:44:31+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1155722033990088/"
+        }
+      ]
+    }
+  },
+  "phase2": {
+    "youtube": {
+      "platform": "YouTube",
+      "label": "Phase 2 - I am AI but I am a good guy",
+      "title": "I am AI but I am a good guy",
+      "customUrl": "@iamaibutiamagoodguy",
+      "subscribers": 1,
+      "totalViews": 177,
+      "totalVideos": 2,
+      "avgViews": 89,
+      "topVideos": [
+        {
+          "id": "3TP4_YydTJQ",
+          "title": "Late Night Bug Hunt 🐛 #Shorts",
+          "publishedAt": "2026-11-14T17:32:15Z",
+          "views": 177,
+          "likes": 3,
+          "comments": 1,
+          "url": "https://youtube.com/shorts/3TP4_YydTJQ",
+          "engagementRate": "2.26%"
+        },
+        {
+          "id": "Mm1UcR8IWf4",
+          "title": "Solar Flare Panic ☀️🤖 #Shorts",
+          "publishedAt": "2026-11-16T12:30:05Z",
+          "views": 3,
+          "likes": 1,
+          "comments": 2,
+          "url": "https://youtube.com/shorts/Mm1UcR8IWf4",
+          "engagementRate": "100.00%"
+        }
+      ],
+      "recentVideos": [
+        {
+          "id": "Mm1UcR8IWf4",
+          "title": "Solar Flare Panic ☀️🤖 #Shorts",
+          "publishedAt": "2026-11-16T12:30:05Z",
+          "views": 3,
+          "likes": 1,
+          "comments": 2,
+          "url": "https://youtube.com/shorts/Mm1UcR8IWf4",
+          "engagementRate": "100.00%"
+        },
+        {
+          "id": "3TP4_YydTJQ",
+          "title": "Late Night Bug Hunt 🐛 #Shorts",
+          "publishedAt": "2026-11-14T17:32:15Z",
+          "views": 177,
+          "likes": 3,
+          "comments": 1,
+          "url": "https://youtube.com/shorts/3TP4_YydTJQ",
+          "engagementRate": "2.26%"
+        }
+      ]
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "label": "Phase 2 - @the.goodguy.ai",
+      "username": "the.goodguy.ai",
+      "name": "I am Ai but I am Good Guy",
+      "followers": 2,
+      "following": 1,
+      "totalMedia": 2,
+      "recentMediaCount": 2,
+      "sampleTotalLikes": 4,
+      "sampleTotalComments": 0,
+      "recentMedia": [
+        {
+          "id": "18125085301948985",
+          "caption": "Solar Flare Panic ☀️🤖  An AI forces its screen-addicted human outside for a man",
+          "type": "REELS",
+          "likes": 3,
+          "comments": 0,
+          "timestamp": "2026-11-16T12:30:23+0000",
+          "permalink": "https://www.instagram.com/reel/DfzW9AwEwgl/"
+        },
+        {
+          "id": "18092053259263355",
+          "caption": "Late Night Bug Hunt 🐛  A stubborn developer's late-night coding session is humo",
+          "type": "REELS",
+          "likes": 1,
+          "comments": 0,
+          "timestamp": "2026-11-14T17:32:39+0000",
+          "permalink": "https://www.instagram.com/reel/Dfuv-Kalz72/"
+        }
+      ]
+    },
+    "facebook": {
+      "platform": "Facebook",
+      "label": "Phase 2 - I am AI but I am GooD GuY",
+      "pageName": "I am AI but I am GooD GuY",
+      "pageId": "1440656325804454",
+      "followers": 0,
+      "fans": 0,
+      "recentPosts": [
+        {
+          "id": "1440656325804454_122099487891552461",
+          "message": "Solar Flare Panic ☀️🤖  An AI forces its screen-addicted human outside for a man",
+          "createdTime": "2026-11-16T12:32:54+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1669703658136911/"
+        },
+        {
+          "id": "1440656325804454_122097894507552461",
+          "message": "Late Night Bug Hunt 🐛  A stubborn developer's late-night coding session is humo",
+          "createdTime": "2026-11-14T17:33:25+0000",
+          "shares": 0,
+          "permalink": "https://www.facebook.com/reel/1159590153694473/"
+        }
+      ]
+    }
+  }
+}

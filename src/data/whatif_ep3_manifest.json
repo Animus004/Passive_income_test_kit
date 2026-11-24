@@ -1,0 +1,184 @@
+{
+  "title": "What If Every Human Slept for 7 Days Straight?",
+  "seriesNumber": "#3",
+  "en": {
+    "lang": "en",
+    "masterMp3": "D:\\New folder (2)\\public\\voiceover_ep3_en.mp3",
+    "subsPath": "D:\\New folder (2)\\public\\subtitles_ep3_en.json",
+    "totalFrames": 1721,
+    "totalDuration": 57.356,
+    "cuts": [
+      {
+        "sceneIndex": 1,
+        "name": "The 7-Day Sleep Hook",
+        "startFrame": 3,
+        "endFrame": 239,
+        "startSec": 0.1,
+        "endSec": 7.828,
+        "text": "What if every single human on Earth fell into a deep sleep for seven days straight? At midnight, eight billion people simultaneously collapse.",
+        "subText": "What if every single human on Earth fell into a deep sleep for seven days straight? At midnight, eight billion people simultaneously collapse."
+      },
+      {
+        "sceneIndex": 2,
+        "name": "Empty Streets & Drifting Vehicles",
+        "startFrame": 237,
+        "endFrame": 443,
+        "startSec": 7.908,
+        "endSec": 14.628,
+        "text": "Instantly, millions of moving cars and high-speed trains roll to a dead halt or crash into barricades with zero drivers awake.",
+        "subText": "Instantly, millions of moving cars and high-speed trains roll to a dead halt or crash into barricades with zero drivers awake."
+      },
+      {
+        "sceneIndex": 3,
+        "name": "Airplanes Falling Silent",
+        "startFrame": 441,
+        "endFrame": 625,
+        "startSec": 14.708,
+        "endSec": 20.684,
+        "text": "Thirty thousand commercial airliners fly on autopilot until fuel runs dry, dropping from thirty thousand feet.",
+        "subText": "Thirty thousand commercial airliners fly on autopilot until fuel runs dry, dropping from thirty thousand feet."
+      },
+      {
+        "sceneIndex": 4,
+        "name": "Automated Grid & Nuclear Scram",
+        "startFrame": 623,
+        "endFrame": 825,
+        "startSec": 20.764,
+        "endSec": 27.364,
+        "text": "Nuclear power plants detect zero operator response and automatically drop their control rods to prevent catastrophic meltdowns.",
+        "subText": "Nuclear power plants detect zero operator response and automatically drop their control rods to prevent catastrophic meltdowns."
+      },
+      {
+        "sceneIndex": 5,
+        "name": "Total Continental Blackout",
+        "startFrame": 823,
+        "endFrame": 1085,
+        "startSec": 27.444,
+        "endSec": 36.012,
+        "text": "Within seventy-two hours, coal and gas turbines exhaust their fuel. The electrical grid collapses, plunging continents into pitch-black darkness.",
+        "subText": "Within seventy-two hours, coal and gas turbines exhaust their fuel. The electrical grid collapses, plunging continents into pitch-black darkness."
+      },
+      {
+        "sceneIndex": 6,
+        "name": "Animals Reclaim the Cities",
+        "startFrame": 1083,
+        "endFrame": 1308,
+        "startSec": 36.092,
+        "endSec": 43.46,
+        "text": "With zero human activity, city skies clear completely. Wild wolves and deer cautiously wander down empty highways.",
+        "subText": "With zero human activity, city skies clear completely. Wild wolves and deer cautiously wander down empty highways."
+      },
+      {
+        "sceneIndex": 7,
+        "name": "The Day 7 Awakening",
+        "startFrame": 1306,
+        "endFrame": 1509,
+        "startSec": 43.54,
+        "endSec": 50.164,
+        "text": "On Day Seven, eight billion severely dehydrated humans wake up to dead phones, dark cities, and overgrown streets.",
+        "subText": "On Day Seven, eight billion severely dehydrated humans wake up to dead phones, dark cities, and overgrown streets."
+      },
+      {
+        "sceneIndex": 8,
+        "name": "The Infinite Loop",
+        "startFrame": 1507,
+        "endFrame": 1723,
+        "startSec": 50.244,
+        "endSec": 57.276,
+        "text": "Proving that human consciousness is the only glue holding reality together. Which is why, if everyone suddenly went to sleep...",
+        "subText": "Proving that human consciousness is the only glue holding reality together. Which is why, if everyone suddenly went to sleep..."
+      }
+    ]
+  },
+  "hi": {
+    "lang": "hi",
+    "masterMp3": "D:\\New folder (2)\\public\\voiceover_ep3_hi.mp3",
+    "subsPath": "D:\\New folder (2)\\public\\subtitles_ep3_hi.json",
+    "totalFrames": 1881,
+    "totalDuration": 62.70799999999999,
+    "cuts": [
+      {
+        "sceneIndex": 1,
+        "name": "The 7-Day Sleep Hook",
+        "startFrame": 3,
+        "endFrame": 321,
+        "startSec": 0.1,
+        "endSec": 10.54,
+        "text": "क्या हो अगर पूरी दुनिया के सारे इंसान सात दिनों के लिए एक साथ सो जाएं? रात ठीक बारह बजे, आठ सौ करोड़ लोग एक साथ बेहोश होकर गिर पड़ते हैं!",
+        "subText": "Kya ho agar poori duniya ke saare insaan 7 dino ke liye ek saath so jayein? Raat 12:00 baje 800 crore log ek saath behosh hokar gir padte hain!"
+      },
+      {
+        "sceneIndex": 2,
+        "name": "Empty Streets & Drifting Vehicles",
+        "startFrame": 319,
+        "endFrame": 532,
+        "startSec": 10.62,
+        "endSec": 17.58,
+        "text": "सड़कों पर दौड़ती करोड़ों गाड़ियां और हाई-स्पीड ट्रेनें बिना ड्राइवर के डिवाइडर और दीवारों से टकराने लगती हैं!",
+        "subText": "Sadkon par daudti karodon gaadiyan aur trains bina driver ke divider aur deewaron se takrane lagti hain!"
+      },
+      {
+        "sceneIndex": 3,
+        "name": "Airplanes Falling Silent",
+        "startFrame": 530,
+        "endFrame": 773,
+        "startSec": 17.66,
+        "endSec": 25.628,
+        "text": "हवा में उड़ते तीस हज़ार हवाई जहाज़ ऑटोपायलट पर उड़ते हैं, लेकिन फ्यूल खत्म होते ही आसमान से नीचे गिरने लगते हैं!",
+        "subText": "Hawa mein udte 30,000 airplanes autopilot par chalte hain, lekin fuel khatam hote hi aasmaan se girne lagte hain!"
+      },
+      {
+        "sceneIndex": 4,
+        "name": "Automated Grid & Nuclear Scram",
+        "startFrame": 771,
+        "endFrame": 990,
+        "startSec": 25.708,
+        "endSec": 32.836,
+        "text": "न्यूक्लियर प्लांट्स कोई ऑपरेटर न पाकर ऑटोमैटिकली कंट्रोल रॉड्स गिरा देते हैं ताकि बड़ा महा-विनाश रोका जा सके!",
+        "subText": "Nuclear plants koi operator na paakar automatically control rods gira dete hain taaki bada meltdown roka ja sake!"
+      },
+      {
+        "sceneIndex": 5,
+        "name": "Total Continental Blackout",
+        "startFrame": 987,
+        "endFrame": 1186,
+        "startSec": 32.916,
+        "endSec": 39.372,
+        "text": "बहत्तर घंटों में बिजली ग्रिड्स ठप हो जाते हैं, और पूरे महाद्वीप घुप अंधेरे में डूब जाते हैं!",
+        "subText": "72 ghanton mein bijli grids thap ho jaate hain, aur poore continents andhere mein doob jaate hain!"
+      },
+      {
+        "sceneIndex": 6,
+        "name": "Animals Reclaim the Cities",
+        "startFrame": 1184,
+        "endFrame": 1408,
+        "startSec": 39.452,
+        "endSec": 46.772,
+        "text": "इंसानों के गायब होते ही आसमान का प्रदूषण खत्म हो जाता है, और जंगली जानवर खाली सड़कों पर घूमने लगते हैं!",
+        "subText": "Insaano ke gayab hote hi pollution gayab ho jata hai, aur jungle ke janwar khali sadkon par ghoomne lagte hain!"
+      },
+      {
+        "sceneIndex": 7,
+        "name": "The Day 7 Awakening",
+        "startFrame": 1406,
+        "endFrame": 1650,
+        "startSec": 46.852,
+        "endSec": 54.844,
+        "text": "सातवें दिन जब आठ सौ करोड़ लोग एक साथ जागते हैं, तो उनके फोन डेड, घर अंधेरे में, और दुनिया बदल चुकी होती है!",
+        "subText": "Saatvein din jab 800 crore log ek saath jaagte hain, toh unke phone dead, ghar andhere mein, aur duniya badal chuki hoti hai!"
+      },
+      {
+        "sceneIndex": 8,
+        "name": "The Infinite Loop",
+        "startFrame": 1648,
+        "endFrame": 1883,
+        "startSec": 54.924,
+        "endSec": 62.628,
+        "text": "यानी इंसान ही इस मॉडर्न दुनिया को ज़िंदा रखते हैं। और यही वजह है कि अगर सब एक साथ सो जाएं...",
+        "subText": "Yani insaan hi is modern duniya ko zinda rakhte hain. Aur yahi wajah hai agar sab ek saath so jayein..."
+      }
+    ]
+  },
+  "totalFramesEn": 1721,
+  "totalFramesHi": 1881
+}

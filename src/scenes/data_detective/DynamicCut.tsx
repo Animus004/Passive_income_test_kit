@@ -2,6 +2,7 @@ import React from "react";
 import {
   AbsoluteFill,
   Img,
+  Video,
   interpolate,
   spring,
   staticFile,
@@ -9,6 +10,7 @@ import {
   useVideoConfig,
   Audio,
 } from "remotion";
+import brollManifest from "../../data/broll_manifest.json";
 
 interface StatHighlight {
   number: string;
@@ -91,7 +93,9 @@ export const DynamicCut: React.FC<DynamicCutProps> = ({
     },
   });
 
-  const mediaSrc = staticFile(`broll/cut_${cut.cutId}.jpg`);
+  const cutManifest = (brollManifest as any)?.cuts?.[`cut_${cut.cutId}`];
+  const isVideo = cutManifest?.type === "video" && cutManifest?.file?.endsWith(".mp4");
+  const mediaSrc = staticFile(cutManifest?.file || `broll/cut_${cut.cutId}.jpg`);
   const hasStat = cut.statHighlight && cut.statHighlight.number;
 
   return (
@@ -103,7 +107,7 @@ export const DynamicCut: React.FC<DynamicCutProps> = ({
         <Audio src={staticFile("sfx/whoosh.mp3")} volume={0.5} />
       )}
 
-      {/* Layer 0: Full-Bleed B-Roll Image with Smooth Ken Burns Camera */}
+      {/* Layer 0: Full-Bleed B-Roll Video/Image with Smooth Ken Burns Camera */}
       <div
         style={{
           width: "100%",
@@ -113,19 +117,33 @@ export const DynamicCut: React.FC<DynamicCutProps> = ({
           transformOrigin: "center center",
         }}
       >
-        <Img
-          src={mediaSrc}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
-          }}
-          onError={(e) => {
-            // Fallback: graceful hide if file missing
-            (e.target as HTMLElement).style.display = "none";
-          }}
-        />
+        {isVideo ? (
+          <Video
+            src={mediaSrc}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+            loop
+            muted
+          />
+        ) : (
+          <Img
+            src={mediaSrc}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+            onError={(e) => {
+              // Fallback: graceful hide if file missing
+              (e.target as HTMLElement).style.display = "none";
+            }}
+          />
+        )}
       </div>
 
       {/* Layer 1: Cinematic Color Wash matching Theme */}

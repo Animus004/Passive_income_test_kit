@@ -1,0 +1,704 @@
+[
+  {
+    "word": "What",
+    "start": 0.0,
+    "end": 0.232,
+    "duration": 0.232
+  },
+  {
+    "word": "if",
+    "start": 0.267,
+    "end": 0.337,
+    "duration": 0.07
+  },
+  {
+    "word": "every",
+    "start": 0.406,
+    "end": 0.627,
+    "duration": 0.221
+  },
+  {
+    "word": "single",
+    "start": 0.685,
+    "end": 0.998,
+    "duration": 0.313
+  },
+  {
+    "word": "person",
+    "start": 1.033,
+    "end": 1.358,
+    "duration": 0.325
+  },
+  {
+    "word": "on",
+    "start": 1.428,
+    "end": 1.509,
+    "duration": 0.081
+  },
+  {
+    "word": "Earth",
+    "start": 1.567,
+    "end": 1.788,
+    "duration": 0.221
+  },
+  {
+    "word": "received",
+    "start": 1.858,
+    "end": 2.345,
+    "duration": 0.487
+  },
+  {
+    "word": "one",
+    "start": 2.461,
+    "end": 2.775,
+    "duration": 0.314
+  },
+  {
+    "word": "million",
+    "start": 2.868,
+    "end": 3.274,
+    "duration": 0.406
+  },
+  {
+    "word": "dollars",
+    "start": 3.332,
+    "end": 3.738,
+    "duration": 0.406
+  },
+  {
+    "word": "at",
+    "start": 3.785,
+    "end": 3.878,
+    "duration": 0.093
+  },
+  {
+    "word": "midnight",
+    "start": 3.971,
+    "end": 4.458,
+    "duration": 0.487
+  },
+  {
+    "word": "tonight?",
+    "start": 4.493,
+    "end": 5.085,
+    "duration": 0.592
+  },
+  {
+    "word": "At",
+    "start": 6.2,
+    "end": 6.351,
+    "duration": 0.151
+  },
+  {
+    "word": "12:00",
+    "start": 6.397,
+    "end": 7.036,
+    "duration": 0.639
+  },
+  {
+    "word": "AM...",
+    "start": 7.129,
+    "end": 7.895,
+    "duration": 0.766
+  },
+  {
+    "word": "eight",
+    "start": 8.847,
+    "end": 9.044,
+    "duration": 0.197
+  },
+  {
+    "word": "billion",
+    "start": 9.079,
+    "end": 9.427,
+    "duration": 0.348
+  },
+  {
+    "word": "phones",
+    "start": 9.485,
+    "end": 9.834,
+    "duration": 0.349
+  },
+  {
+    "word": "buzz",
+    "start": 9.915,
+    "end": 10.321,
+    "duration": 0.406
+  },
+  {
+    "word": "with",
+    "start": 10.368,
+    "end": 10.519,
+    "duration": 0.151
+  },
+  {
+    "word": "a",
+    "start": 10.565,
+    "end": 10.588,
+    "duration": 0.023
+  },
+  {
+    "word": "direct",
+    "start": 10.658,
+    "end": 11.064,
+    "duration": 0.406
+  },
+  {
+    "word": "deposit",
+    "start": 11.122,
+    "end": 11.587,
+    "duration": 0.465
+  },
+  {
+    "word": "notification!",
+    "start": 11.645,
+    "end": 12.434,
+    "duration": 0.789
+  },
+  {
+    "word": "Instantly,",
+    "start": 12.678,
+    "end": 13.247,
+    "duration": 0.569
+  },
+  {
+    "word": "ninety-five",
+    "start": 13.282,
+    "end": 13.874,
+    "duration": 0.592
+  },
+  {
+    "word": "percent",
+    "start": 13.92,
+    "end": 14.257,
+    "duration": 0.337
+  },
+  {
+    "word": "of",
+    "start": 14.292,
+    "end": 14.338,
+    "duration": 0.046
+  },
+  {
+    "word": "workers",
+    "start": 14.42,
+    "end": 14.791,
+    "duration": 0.371
+  },
+  {
+    "word": "quit",
+    "start": 14.861,
+    "end": 15.047,
+    "duration": 0.186
+  },
+  {
+    "word": "their",
+    "start": 15.093,
+    "end": 15.244,
+    "duration": 0.151
+  },
+  {
+    "word": "jobs",
+    "start": 15.29,
+    "end": 15.65,
+    "duration": 0.36
+  },
+  {
+    "word": "to",
+    "start": 15.697,
+    "end": 15.766,
+    "duration": 0.069
+  },
+  {
+    "word": "celebrate.",
+    "start": 15.836,
+    "end": 16.521,
+    "duration": 0.685
+  },
+  {
+    "word": "But",
+    "start": 16.695,
+    "end": 16.858,
+    "duration": 0.163
+  },
+  {
+    "word": "by",
+    "start": 16.904,
+    "end": 17.044,
+    "duration": 0.14
+  },
+  {
+    "word": "9:00",
+    "start": 17.136,
+    "end": 18.054,
+    "duration": 0.918
+  },
+  {
+    "word": "AM?",
+    "start": 18.147,
+    "end": 18.762,
+    "duration": 0.615
+  },
+  {
+    "word": "You",
+    "start": 18.936,
+    "end": 19.099,
+    "duration": 0.163
+  },
+  {
+    "word": "rush",
+    "start": 19.215,
+    "end": 19.458,
+    "duration": 0.243
+  },
+  {
+    "word": "out",
+    "start": 19.528,
+    "end": 19.679,
+    "duration": 0.151
+  },
+  {
+    "word": "to",
+    "start": 19.714,
+    "end": 19.772,
+    "duration": 0.058
+  },
+  {
+    "word": "buy",
+    "start": 19.83,
+    "end": 19.993,
+    "duration": 0.163
+  },
+  {
+    "word": "a",
+    "start": 20.051,
+    "end": 20.085,
+    "duration": 0.034
+  },
+  {
+    "word": "mansion...",
+    "start": 20.143,
+    "end": 20.747,
+    "duration": 0.604
+  },
+  {
+    "word": "only",
+    "start": 21.444,
+    "end": 21.699,
+    "duration": 0.255
+  },
+  {
+    "word": "to",
+    "start": 21.746,
+    "end": 21.804,
+    "duration": 0.058
+  },
+  {
+    "word": "realize",
+    "start": 21.885,
+    "end": 22.349,
+    "duration": 0.464
+  },
+  {
+    "word": "the",
+    "start": 22.396,
+    "end": 22.465,
+    "duration": 0.069
+  },
+  {
+    "word": "real",
+    "start": 22.535,
+    "end": 22.732,
+    "duration": 0.197
+  },
+  {
+    "word": "estate",
+    "start": 22.791,
+    "end": 23.081,
+    "duration": 0.29
+  },
+  {
+    "word": "agents",
+    "start": 23.116,
+    "end": 23.475,
+    "duration": 0.359
+  },
+  {
+    "word": "and",
+    "start": 23.51,
+    "end": 23.592,
+    "duration": 0.082
+  },
+  {
+    "word": "builders",
+    "start": 23.65,
+    "end": 24.091,
+    "duration": 0.441
+  },
+  {
+    "word": "quit",
+    "start": 24.16,
+    "end": 24.404,
+    "duration": 0.244
+  },
+  {
+    "word": "too!",
+    "start": 24.474,
+    "end": 25.02,
+    "duration": 0.546
+  },
+  {
+    "word": "When",
+    "start": 25.171,
+    "end": 25.345,
+    "duration": 0.174
+  },
+  {
+    "word": "you",
+    "start": 25.391,
+    "end": 25.461,
+    "duration": 0.07
+  },
+  {
+    "word": "get",
+    "start": 25.53,
+    "end": 25.67,
+    "duration": 0.14
+  },
+  {
+    "word": "hungry,",
+    "start": 25.728,
+    "end": 26.065,
+    "duration": 0.337
+  },
+  {
+    "word": "a",
+    "start": 26.088,
+    "end": 26.123,
+    "duration": 0.035
+  },
+  {
+    "word": "single",
+    "start": 26.215,
+    "end": 26.552,
+    "duration": 0.337
+  },
+  {
+    "word": "loaf",
+    "start": 26.587,
+    "end": 26.796,
+    "duration": 0.209
+  },
+  {
+    "word": "of",
+    "start": 26.854,
+    "end": 26.924,
+    "duration": 0.07
+  },
+  {
+    "word": "bread",
+    "start": 27.005,
+    "end": 27.283,
+    "duration": 0.278
+  },
+  {
+    "word": "costs",
+    "start": 27.365,
+    "end": 27.806,
+    "duration": 0.441
+  },
+  {
+    "word": "fifty",
+    "start": 27.934,
+    "end": 28.294,
+    "duration": 0.36
+  },
+  {
+    "word": "thousand",
+    "start": 28.352,
+    "end": 28.723,
+    "duration": 0.371
+  },
+  {
+    "word": "dollars,",
+    "start": 28.77,
+    "end": 29.304,
+    "duration": 0.534
+  },
+  {
+    "word": "because",
+    "start": 29.478,
+    "end": 29.756,
+    "duration": 0.278
+  },
+  {
+    "word": "no",
+    "start": 29.814,
+    "end": 29.954,
+    "duration": 0.14
+  },
+  {
+    "word": "one",
+    "start": 30.035,
+    "end": 30.163,
+    "duration": 0.128
+  },
+  {
+    "word": "is",
+    "start": 30.198,
+    "end": 30.256,
+    "duration": 0.058
+  },
+  {
+    "word": "driving",
+    "start": 30.302,
+    "end": 30.662,
+    "duration": 0.36
+  },
+  {
+    "word": "delivery",
+    "start": 30.732,
+    "end": 31.173,
+    "duration": 0.441
+  },
+  {
+    "word": "trucks.",
+    "start": 31.219,
+    "end": 31.811,
+    "duration": 0.592
+  },
+  {
+    "word": "Within",
+    "start": 32.322,
+    "end": 32.612,
+    "duration": 0.29
+  },
+  {
+    "word": "seventy-two",
+    "start": 32.694,
+    "end": 33.286,
+    "duration": 0.592
+  },
+  {
+    "word": "hours,",
+    "start": 33.379,
+    "end": 33.924,
+    "duration": 0.545
+  },
+  {
+    "word": "paper",
+    "start": 34.075,
+    "end": 34.447,
+    "duration": 0.372
+  },
+  {
+    "word": "money",
+    "start": 34.528,
+    "end": 34.76,
+    "duration": 0.232
+  },
+  {
+    "word": "is",
+    "start": 34.842,
+    "end": 34.934,
+    "duration": 0.092
+  },
+  {
+    "word": "completely",
+    "start": 34.992,
+    "end": 35.468,
+    "duration": 0.476
+  },
+  {
+    "word": "worthless,",
+    "start": 35.538,
+    "end": 36.235,
+    "duration": 0.697
+  },
+  {
+    "word": "and",
+    "start": 36.409,
+    "end": 36.56,
+    "duration": 0.151
+  },
+  {
+    "word": "society",
+    "start": 36.629,
+    "end": 37.187,
+    "duration": 0.558
+  },
+  {
+    "word": "begins",
+    "start": 37.256,
+    "end": 37.581,
+    "duration": 0.325
+  },
+  {
+    "word": "trading",
+    "start": 37.64,
+    "end": 37.976,
+    "duration": 0.336
+  },
+  {
+    "word": "chocolate",
+    "start": 38.046,
+    "end": 38.51,
+    "duration": 0.464
+  },
+  {
+    "word": "bars",
+    "start": 38.534,
+    "end": 38.87,
+    "duration": 0.336
+  },
+  {
+    "word": "like",
+    "start": 38.94,
+    "end": 39.114,
+    "duration": 0.174
+  },
+  {
+    "word": "gold",
+    "start": 39.184,
+    "end": 39.497,
+    "duration": 0.313
+  },
+  {
+    "word": "bars!",
+    "start": 39.555,
+    "end": 40.182,
+    "duration": 0.627
+  },
+  {
+    "word": "Proving",
+    "start": 40.623,
+    "end": 41.099,
+    "duration": 0.476
+  },
+  {
+    "word": "that",
+    "start": 41.181,
+    "end": 41.32,
+    "duration": 0.139
+  },
+  {
+    "word": "when",
+    "start": 41.355,
+    "end": 41.506,
+    "duration": 0.151
+  },
+  {
+    "word": "everyone",
+    "start": 41.575,
+    "end": 42.051,
+    "duration": 0.476
+  },
+  {
+    "word": "is",
+    "start": 42.098,
+    "end": 42.179,
+    "duration": 0.081
+  },
+  {
+    "word": "rich...",
+    "start": 42.249,
+    "end": 42.736,
+    "duration": 0.487
+  },
+  {
+    "word": "nobody",
+    "start": 43.119,
+    "end": 43.677,
+    "duration": 0.558
+  },
+  {
+    "word": "is",
+    "start": 43.793,
+    "end": 43.955,
+    "duration": 0.162
+  },
+  {
+    "word": "rich.",
+    "start": 44.048,
+    "end": 44.547,
+    "duration": 0.499
+  },
+  {
+    "word": "Which",
+    "start": 45.058,
+    "end": 45.256,
+    "duration": 0.198
+  },
+  {
+    "word": "is",
+    "start": 45.302,
+    "end": 45.383,
+    "duration": 0.081
+  },
+  {
+    "word": "why,",
+    "start": 45.441,
+    "end": 45.929,
+    "duration": 0.488
+  },
+  {
+    "word": "if",
+    "start": 46.022,
+    "end": 46.138,
+    "duration": 0.116
+  },
+  {
+    "word": "you",
+    "start": 46.184,
+    "end": 46.266,
+    "duration": 0.082
+  },
+  {
+    "word": "woke",
+    "start": 46.335,
+    "end": 46.544,
+    "duration": 0.209
+  },
+  {
+    "word": "up",
+    "start": 46.591,
+    "end": 46.695,
+    "duration": 0.104
+  },
+  {
+    "word": "to",
+    "start": 46.742,
+    "end": 46.811,
+    "duration": 0.069
+  },
+  {
+    "word": "a",
+    "start": 46.904,
+    "end": 46.939,
+    "duration": 0.035
+  },
+  {
+    "word": "million",
+    "start": 47.02,
+    "end": 47.38,
+    "duration": 0.36
+  },
+  {
+    "word": "dollars",
+    "start": 47.45,
+    "end": 47.821,
+    "duration": 0.371
+  },
+  {
+    "word": "at",
+    "start": 47.868,
+    "end": 47.949,
+    "duration": 0.081
+  },
+  {
+    "word": "midnight...",
+    "start": 48.007,
+    "end": 48.715,
+    "duration": 0.708
+  }
+]

@@ -4,17 +4,23 @@ import {
   Img,
   Video,
   interpolate,
-  spring,
   staticFile,
   useCurrentFrame,
-  useVideoConfig,
   Audio,
 } from "remotion";
-import { KurzgesagtCharacter, CharacterEmotion, CharacterProp } from "../../components/kurzgesagt/KurzgesagtCharacter";
-import { KurzgesagtBackground } from "../../components/kurzgesagt/KurzgesagtBackground";
 import { CutData } from "../data_detective/DynamicCut";
 import { SubtitleWord } from "../../types";
 import brollManifest from "../../data/broll_manifest.json";
+import { PovDoodleScene } from "../../components/animations/PovDoodleScene";
+import { IcebergScene } from "../../components/animations/IcebergScene";
+import { TeardownScene } from "../../components/animations/TeardownScene";
+import { SplitFlapScene } from "../../components/animations/SplitFlapScene";
+import { StatChartScene } from "../../components/animations/StatChartScene";
+import { TechTerminalScene } from "../../components/director/TechTerminalScene";
+import { AlertThreatScene } from "../../components/director/AlertThreatScene";
+import { FiberVsAirScene } from "../../components/animations/FiberVsAirScene";
+import { CableSnapScene } from "../../components/animations/CableSnapScene";
+import { EarthCurvatureRelayScene } from "../../components/animations/EarthCurvatureRelayScene";
 
 interface KurzgesagtCutProps {
   cut: CutData;
@@ -37,14 +43,6 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
   totalCuts,
 }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  // Snappy Scene Entry Punch
-  const sceneEntry = spring({
-    frame,
-    fps,
-    config: { damping: 12, stiffness: 160, mass: 0.5 },
-  });
 
   // Dynamic Camera Drift (slow, playful zoom)
   const camScale = interpolate(frame, [0, durationInFrames], [1.0, 1.05], {
@@ -56,31 +54,59 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
     extrapolateRight: "clamp",
   });
 
-  // Alternating character position for visual energy (Left on even, Right on odd facing in)
-  const isRightSide = cutIndex % 2 === 1;
-
-  // Determine Character Emotion & Props dynamically based on actual cut content
-  const hasStat = Boolean(cut.statHighlight && cut.statHighlight.number);
-  let emotion: CharacterEmotion = "explaining";
-  let handProp: CharacterProp = "none";
-
-  if (hasStat) {
-    emotion = "shocked";
-    handProp = "none";
-  } else if (cutIndex === 0) {
-    emotion = "pointing";
-    handProp = "magnifying_glass";
-  } else if (cutIndex === totalCuts - 1) {
-    emotion = "thinking";
-    handProp = "none";
-  } else {
-    emotion = cutIndex % 2 === 0 ? "pointing" : "explaining";
-    handProp = "none";
-  }
-
   const cutManifest = (brollManifest as any)?.cuts?.[`cut_${cut.cutId}`];
-  const isVideo = cutManifest?.type === "video" && cutManifest?.file?.endsWith(".mp4");
+  const hasBroll = cutManifest?.file && (cutManifest.type === "video" || cutManifest.type === "image");
+  
+  const cutArchetype = (cut as any).animationArchetype;
+  const isProceduralArchetype = [
+    "pov_doodle",
+    "iceberg",
+    "the_iceberg",
+    "teardown",
+    "exploded_view",
+    "split_flap",
+    "globe_arcs",
+    "stat_chart",
+    "terminal_bloom",
+    "alert_threat",
+    "speedometer_gauge",
+    "comparison_split",
+  ].includes(cutArchetype);
+
+  // If LLM selected a procedural motion graphic archetype, render it dynamically; otherwise render authentic B-roll
+  const animType = isProceduralArchetype
+    ? cutArchetype
+    : (hasBroll ? "broll" : "stat_chart");
+    
+  const isVideo = animType === "broll" && cutManifest?.type === "video" && cutManifest?.file?.endsWith(".mp4");
   const mediaSrc = staticFile(cutManifest?.file || `broll/cut_${cut.cutId}.jpg`);
+
+  // Dynamic Scene Props derived directly from LLM Script Directives:
+  const povStamp = cut.statHighlight?.number
+    ? `${cut.statHighlight.label || "METRIC"}: ${cut.statHighlight.number}`
+    : ((cut as any).causeAndEffect?.finalState?.match(/'([^']+)'/)?.[1] || "SYSTEM ACTIVE");
+  const povSub = (cut as any).visualMetaphor?.slice(0, 36)?.toUpperCase() || "CRITICAL INVESTIGATION";
+
+  const icebergTop = "WHAT YOU SEE";
+  const icebergTopSub = (cut as any).causeAndEffect?.initialState?.slice(0, 38) || "The visible surface infrastructure";
+  const icebergBottom = "THE HIDDEN TRUTH";
+  const icebergBottomSub = cut.statHighlight?.number
+    ? `${cut.statHighlight.number} • ${cut.statHighlight.label}`
+    : ((cut as any).causeAndEffect?.finalState?.slice(0, 42) || "Massive submerged subterranean network");
+
+  const teardownTitle = (cut as any).visualMetaphor?.slice(0, 32)?.toUpperCase() || "CORE ARCHITECTURE";
+  const teardownCount = cut.statHighlight?.number
+    ? `${cut.statHighlight.number} ${cut.statHighlight.label}`
+    : ((cut as any).tangibleItems?.length ? `${(cut as any).tangibleItems.length} HARDWARE MODULES` : "HIGH-PRECISION HARDWARE");
+
+  const splitMetric = cut.statHighlight?.number || "0.001 ms";
+  const splitLabel = cut.statHighlight?.label || "SYSTEM LATENCY";
+
+  const globeTitle = (cut as any).causeAndEffect?.finalState?.match(/'([^']+)'/)?.[1]
+    || ((cut as any).visualMetaphor?.slice(0, 32)?.toUpperCase() || "GLOBAL NETWORK ACTIVE");
+  const globeSub = cut.statHighlight?.number
+    ? `${cut.statHighlight.number} ${cut.statHighlight.label}`.toUpperCase()
+    : "CONTINENTAL NODES SYNCHRONIZED";
 
   return (
     <AbsoluteFill
@@ -98,7 +124,7 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
         <Audio src={staticFile("sfx/whoosh.mp3")} volume={0.45} />
       )}
 
-      {/* 1. Full-Bleed 1080x1920 Cinematic Video / Motion Footage */}
+      {/* 1. Full-Bleed 1080x1920 Cinematic Bespoke Motion Graphics Scene */}
       <div
         style={{
           position: "absolute",
@@ -109,7 +135,69 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           zIndex: 1,
         }}
       >
-        {isVideo ? (
+        {animType === "pov_doodle" ? (
+          <PovDoodleScene
+            stampText={povStamp}
+            subtext={povSub}
+            topic={cut.voiceoverText}
+          />
+        ) : animType === "iceberg" || animType === "the_iceberg" ? (
+          <IcebergScene
+            topLabel={icebergTop}
+            topSubtext={icebergTopSub}
+            bottomLabel={icebergBottom}
+            bottomSubtext={icebergBottomSub}
+            subterraneanTag={cut.statHighlight?.number ? `${cut.statHighlight.label} • ${cut.statHighlight.number}` : "DEEP INFRASTRUCTURE • 90% HIDDEN"}
+          />
+        ) : animType === "teardown" || animType === "exploded_view" ? (
+          <TeardownScene
+            title={teardownTitle}
+            countLabel={teardownCount}
+            topic={cut.voiceoverText}
+          />
+        ) : animType === "split_flap" ? (
+          <SplitFlapScene
+            targetTemp={splitMetric}
+            metricLabel={splitLabel}
+          />
+        ) : animType === "globe_arcs" || animType === "earth_curvature" ? (
+          <EarthCurvatureRelayScene
+            title={globeTitle}
+            subtext={globeSub}
+          />
+        ) : animType === "stat_chart" ? (
+          <StatChartScene
+            title="REWRITING GEOGRAPHY FOR SPEED"
+            metricNumber="0.000003s"
+            metricLabel="FINANCIAL ADVANTAGE"
+            subtext="BILLIONS IN HIGH-FREQUENCY ARBITRAGE"
+            color="#10b981"
+          />
+        ) : animType === "terminal_bloom" ? (
+          <TechTerminalScene
+            title={teardownTitle}
+            codeSnippet={`execute_relay_stream(nodes=24, latency='0.001ms');`}
+            status="RELAY LINK: ACTIVE & ENCRYPTED"
+            color={themeConfig.primary}
+          />
+        ) : animType === "alert_threat" ? (
+          <AlertThreatScene
+            title="CRITICAL WARNING"
+            subtitle={(cut as any).visualMetaphor?.slice(0, 36) || "INFRASTRUCTURE RISK"}
+            alertText={cut.statHighlight?.number ? `${cut.statHighlight.label}: ${cut.statHighlight.number}` : "SYSTEM ANOMALY DETECTED"}
+            color="#ef4444"
+          />
+        ) : animType === "speedometer_gauge" || animType === "cable_snap" ? (
+          <CableSnapScene
+            title="THE 3.0 MS SACRIFICE"
+            metricLabel="SYSTEM LATENCY"
+          />
+        ) : animType === "comparison_split" ? (
+          <FiberVsAirScene
+            title="SPEED OF LIGHT SHOWDOWN"
+            subtext="OPEN AIR MICROWAVE VS. SOLID GLASS FIBER"
+          />
+        ) : isVideo ? (
           <Video
             src={mediaSrc}
             style={{
@@ -145,8 +233,9 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "linear-gradient(180deg, rgba(3, 7, 18, 0.78) 0%, rgba(3, 7, 18, 0.18) 22%, rgba(3, 7, 18, 0.15) 55%, rgba(3, 7, 18, 0.88) 100%)",
+            background: animType !== "broll"
+              ? "linear-gradient(180deg, rgba(3, 7, 18, 0.25) 0%, transparent 22%, transparent 55%, rgba(3, 7, 18, 0.88) 100%)"
+              : "linear-gradient(180deg, rgba(3, 7, 18, 0.78) 0%, rgba(3, 7, 18, 0.18) 22%, rgba(3, 7, 18, 0.15) 55%, rgba(3, 7, 18, 0.88) 100%)",
             pointerEvents: "none",
           }}
         />
@@ -159,182 +248,6 @@ export const KurzgesagtCut: React.FC<KurzgesagtCutProps> = ({
             pointerEvents: "none",
           }}
         />
-      </div>
-
-      {/* 2. Visual Reel Indicator Tag (Top Right) */}
-      <div
-        style={{
-          position: "absolute",
-          top: 60,
-          right: 60,
-          padding: "10px 22px",
-          borderRadius: 100,
-          background: "rgba(15, 23, 42, 0.88)",
-          border: `2px solid ${themeConfig.primary}`,
-          color: themeConfig.primary,
-          fontSize: 18,
-          fontWeight: 800,
-          letterSpacing: 2,
-          textTransform: "uppercase",
-          boxShadow: `0 8px 25px rgba(0,0,0,0.5)`,
-          zIndex: 30,
-        }}
-      >
-        REEL #{cut.cutId}
-      </div>
-
-      {/* 3. Floating Contextual Metric Telemetry Card (when this cut has a key statistic) */}
-      {hasStat && (() => {
-        const num = cut.statHighlight!.number;
-        const isFinance = num.includes("$") || /billion|million|trillion/i.test(num);
-        const isThermal = /°|deg|kelvin/i.test(num);
-        const isSpeed = /ms|μs|us|s|hz|ghz|km|mph/i.test(num);
-        const isStorage = /tb|gb|pb|mb|kb|byte|bit/i.test(num);
-        const isPercent = num.includes("%");
-
-        const accentColor = isFinance
-          ? "#f59e0b"
-          : isThermal
-          ? "#ef4444"
-          : isStorage
-          ? "#a855f7"
-          : isPercent
-          ? "#10b981"
-          : themeConfig.primary;
-
-        const categoryLabel = isFinance
-          ? "FINANCE"
-          : isThermal
-          ? "THERMAL"
-          : isSpeed
-          ? "SPEED"
-          : isStorage
-          ? "STORAGE"
-          : isPercent
-          ? "RATIO"
-          : "DATA";
-
-        return (
-          <div
-            style={{
-              position: "absolute",
-              top: 150,
-              left: "6%",
-              width: "88%",
-              padding: "20px 28px",
-              borderRadius: 28,
-              background: "rgba(10, 15, 30, 0.90)",
-              backdropFilter: "blur(24px)",
-              border: `2.5px solid ${accentColor}`,
-              boxShadow: `0 20px 50px rgba(0,0,0,0.8), 0 0 35px ${accentColor}44`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              transform: `scale(${0.9 + sceneEntry * 0.1})`,
-              opacity: sceneEntry,
-              zIndex: 25,
-            }}
-          >
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <span
-                style={{
-                  color: "rgba(255, 255, 255, 0.8)",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  letterSpacing: 3,
-                  textTransform: "uppercase",
-                }}
-              >
-                {cut.statHighlight!.label}
-              </span>
-              <span
-                style={{
-                  color: accentColor,
-                  fontSize: 60,
-                  fontWeight: 900,
-                  letterSpacing: -1,
-                  lineHeight: 1.1,
-                  textShadow: `0 0 25px ${accentColor}88`,
-                }}
-              >
-                {num}
-              </span>
-            </div>
-            <div
-              style={{
-                padding: "10px 22px",
-                borderRadius: 100,
-                backgroundColor: `${accentColor}22`,
-                border: `2px solid ${accentColor}`,
-                color: "#ffffff",
-                fontSize: 18,
-                fontWeight: 800,
-                letterSpacing: 2,
-              }}
-            >
-              {categoryLabel}
-            </div>
-          </div>
-        );
-      })()}
-
-      {/* 4. Bottom Co-Host: Animated Mascot Character */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 25,
-          left: isRightSide ? "auto" : 35,
-          right: isRightSide ? 35 : "auto",
-          filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.9))",
-          zIndex: 20,
-        }}
-      >
-        <KurzgesagtCharacter
-          emotion={emotion}
-          prop={handProp}
-          subtitles={subtitles}
-          scale={1.15}
-          flipX={isRightSide}
-        />
-      </div>
-
-      {/* 4. Playful Kurzgesagt Channel Header Pill at Top */}
-      <div
-        style={{
-          position: "absolute",
-          top: 60,
-          left: 60,
-          display: "flex",
-          alignItems: "center",
-          gap: 12,
-          padding: "12px 26px",
-          borderRadius: 100,
-          background: "rgba(15, 23, 42, 0.88)",
-          border: `2.5px solid ${themeConfig.primary}`,
-          boxShadow: `0 10px 30px rgba(0,0,0,0.5)`,
-          zIndex: 30,
-        }}
-      >
-        <div
-          style={{
-            width: 14,
-            height: 14,
-            borderRadius: "50%",
-            backgroundColor: "#facc15",
-            boxShadow: "0 0 12px #facc15",
-          }}
-        />
-        <span
-          style={{
-            color: "#ffffff",
-            fontSize: 22,
-            fontWeight: 900,
-            letterSpacing: 2,
-            textTransform: "uppercase",
-          }}
-        >
-          DATA DETECTIVE • EXPLAINED
-        </span>
       </div>
     </AbsoluteFill>
   );

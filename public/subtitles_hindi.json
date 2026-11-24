@@ -1,0 +1,860 @@
+[
+  {
+    "word": "क्या",
+    "start": 0.092,
+    "end": 0.269,
+    "duration": 0.177
+  },
+  {
+    "word": "हो",
+    "start": 0.269,
+    "end": 0.435,
+    "duration": 0.167
+  },
+  {
+    "word": "अगर",
+    "start": 0.435,
+    "end": 0.706,
+    "duration": 0.271
+  },
+  {
+    "word": "आज",
+    "start": 0.779,
+    "end": 1.019,
+    "duration": 0.24
+  },
+  {
+    "word": "आधी",
+    "start": 1.06,
+    "end": 1.352,
+    "duration": 0.292
+  },
+  {
+    "word": "रात",
+    "start": 1.373,
+    "end": 1.644,
+    "duration": 0.271
+  },
+  {
+    "word": "को",
+    "start": 1.644,
+    "end": 1.758,
+    "duration": 0.115
+  },
+  {
+    "word": "दुनिया",
+    "start": 1.758,
+    "end": 2.071,
+    "duration": 0.312
+  },
+  {
+    "word": "के",
+    "start": 2.071,
+    "end": 2.227,
+    "duration": 0.156
+  },
+  {
+    "word": "हर",
+    "start": 2.227,
+    "end": 2.415,
+    "duration": 0.188
+  },
+  {
+    "word": "इंसान",
+    "start": 2.487,
+    "end": 2.873,
+    "duration": 0.385
+  },
+  {
+    "word": "के",
+    "start": 2.883,
+    "end": 3.029,
+    "duration": 0.146
+  },
+  {
+    "word": "बैंक",
+    "start": 3.029,
+    "end": 3.321,
+    "duration": 0.292
+  },
+  {
+    "word": "खाते",
+    "start": 3.321,
+    "end": 3.665,
+    "duration": 0.344
+  },
+  {
+    "word": "में",
+    "start": 3.665,
+    "end": 3.79,
+    "duration": 0.125
+  },
+  {
+    "word": "दस",
+    "start": 3.79,
+    "end": 4.04,
+    "duration": 0.25
+  },
+  {
+    "word": "लाख",
+    "start": 4.04,
+    "end": 4.279,
+    "duration": 0.24
+  },
+  {
+    "word": "रुपये",
+    "start": 4.279,
+    "end": 4.571,
+    "duration": 0.292
+  },
+  {
+    "word": "आ",
+    "start": 4.592,
+    "end": 4.706,
+    "duration": 0.115
+  },
+  {
+    "word": "जाएं",
+    "start": 4.706,
+    "end": 5.06,
+    "duration": 0.354
+  },
+  {
+    "word": "रात",
+    "start": 5.885,
+    "end": 6.177,
+    "duration": 0.292
+  },
+  {
+    "word": "बारह",
+    "start": 6.177,
+    "end": 6.5,
+    "duration": 0.323
+  },
+  {
+    "word": "बजे",
+    "start": 6.5,
+    "end": 6.833,
+    "duration": 0.333
+  },
+  {
+    "word": "आठ",
+    "start": 7.0,
+    "end": 7.208,
+    "duration": 0.208
+  },
+  {
+    "word": "सौ",
+    "start": 7.219,
+    "end": 7.448,
+    "duration": 0.229
+  },
+  {
+    "word": "करोड़",
+    "start": 7.448,
+    "end": 7.781,
+    "duration": 0.333
+  },
+  {
+    "word": "फोनों",
+    "start": 7.781,
+    "end": 8.083,
+    "duration": 0.302
+  },
+  {
+    "word": "पर",
+    "start": 8.083,
+    "end": 8.26,
+    "duration": 0.177
+  },
+  {
+    "word": "अचानक",
+    "start": 8.323,
+    "end": 8.74,
+    "duration": 0.417
+  },
+  {
+    "word": "नोटिफिकेशन",
+    "start": 8.74,
+    "end": 9.417,
+    "duration": 0.677
+  },
+  {
+    "word": "बजती",
+    "start": 9.427,
+    "end": 9.812,
+    "duration": 0.385
+  },
+  {
+    "word": "है",
+    "start": 9.812,
+    "end": 10.073,
+    "duration": 0.26
+  },
+  {
+    "word": "अगले",
+    "start": 11.198,
+    "end": 11.479,
+    "duration": 0.281
+  },
+  {
+    "word": "ही",
+    "start": 11.5,
+    "end": 11.635,
+    "duration": 0.135
+  },
+  {
+    "word": "पल",
+    "start": 11.646,
+    "end": 11.927,
+    "duration": 0.281
+  },
+  {
+    "word": "पंचानवे",
+    "start": 11.969,
+    "end": 12.521,
+    "duration": 0.552
+  },
+  {
+    "word": "प्रतिशत",
+    "start": 12.531,
+    "end": 13.031,
+    "duration": 0.5
+  },
+  {
+    "word": "लोग",
+    "start": 13.062,
+    "end": 13.365,
+    "duration": 0.302
+  },
+  {
+    "word": "अपनी",
+    "start": 13.365,
+    "end": 13.708,
+    "duration": 0.344
+  },
+  {
+    "word": "नौकरियां",
+    "start": 13.708,
+    "end": 14.198,
+    "duration": 0.49
+  },
+  {
+    "word": "छोड़कर",
+    "start": 14.198,
+    "end": 14.635,
+    "duration": 0.438
+  },
+  {
+    "word": "जश्न",
+    "start": 14.635,
+    "end": 14.927,
+    "duration": 0.292
+  },
+  {
+    "word": "मनाने",
+    "start": 14.938,
+    "end": 15.312,
+    "duration": 0.375
+  },
+  {
+    "word": "लगते",
+    "start": 15.323,
+    "end": 15.656,
+    "duration": 0.333
+  },
+  {
+    "word": "हैं",
+    "start": 15.667,
+    "end": 16.312,
+    "duration": 0.646
+  },
+  {
+    "word": "लेकिन",
+    "start": 17.083,
+    "end": 17.469,
+    "duration": 0.385
+  },
+  {
+    "word": "सुबह",
+    "start": 17.479,
+    "end": 17.771,
+    "duration": 0.292
+  },
+  {
+    "word": "नौ",
+    "start": 17.771,
+    "end": 17.979,
+    "duration": 0.208
+  },
+  {
+    "word": "बजे",
+    "start": 17.979,
+    "end": 18.281,
+    "duration": 0.302
+  },
+  {
+    "word": "जब",
+    "start": 18.479,
+    "end": 18.719,
+    "duration": 0.24
+  },
+  {
+    "word": "आप",
+    "start": 18.792,
+    "end": 18.99,
+    "duration": 0.198
+  },
+  {
+    "word": "बंगला",
+    "start": 18.99,
+    "end": 19.385,
+    "duration": 0.396
+  },
+  {
+    "word": "खरीदने",
+    "start": 19.385,
+    "end": 19.875,
+    "duration": 0.49
+  },
+  {
+    "word": "निकलते",
+    "start": 19.875,
+    "end": 20.323,
+    "duration": 0.448
+  },
+  {
+    "word": "हैं",
+    "start": 20.333,
+    "end": 20.552,
+    "duration": 0.219
+  },
+  {
+    "word": "तो",
+    "start": 20.729,
+    "end": 20.885,
+    "duration": 0.156
+  },
+  {
+    "word": "पता",
+    "start": 20.885,
+    "end": 21.177,
+    "duration": 0.292
+  },
+  {
+    "word": "चलता",
+    "start": 21.188,
+    "end": 21.531,
+    "duration": 0.344
+  },
+  {
+    "word": "है",
+    "start": 21.531,
+    "end": 21.729,
+    "duration": 0.198
+  },
+  {
+    "word": "कि",
+    "start": 21.885,
+    "end": 22.01,
+    "duration": 0.125
+  },
+  {
+    "word": "रियल",
+    "start": 22.01,
+    "end": 22.292,
+    "duration": 0.281
+  },
+  {
+    "word": "एस्टेट",
+    "start": 22.354,
+    "end": 22.687,
+    "duration": 0.333
+  },
+  {
+    "word": "वाले",
+    "start": 22.688,
+    "end": 22.979,
+    "duration": 0.292
+  },
+  {
+    "word": "भी",
+    "start": 22.99,
+    "end": 23.115,
+    "duration": 0.125
+  },
+  {
+    "word": "काम",
+    "start": 23.115,
+    "end": 23.396,
+    "duration": 0.281
+  },
+  {
+    "word": "छोड़",
+    "start": 23.417,
+    "end": 23.667,
+    "duration": 0.25
+  },
+  {
+    "word": "चुके",
+    "start": 23.677,
+    "end": 23.948,
+    "duration": 0.271
+  },
+  {
+    "word": "हैं",
+    "start": 23.948,
+    "end": 24.615,
+    "duration": 0.667
+  },
+  {
+    "word": "दोपहर",
+    "start": 25.385,
+    "end": 25.854,
+    "duration": 0.469
+  },
+  {
+    "word": "को",
+    "start": 25.854,
+    "end": 26.0,
+    "duration": 0.146
+  },
+  {
+    "word": "जब",
+    "start": 26.0,
+    "end": 26.25,
+    "duration": 0.25
+  },
+  {
+    "word": "भूख",
+    "start": 26.25,
+    "end": 26.531,
+    "duration": 0.281
+  },
+  {
+    "word": "लगती",
+    "start": 26.531,
+    "end": 26.896,
+    "duration": 0.365
+  },
+  {
+    "word": "है",
+    "start": 26.896,
+    "end": 27.115,
+    "duration": 0.219
+  },
+  {
+    "word": "तो",
+    "start": 27.24,
+    "end": 27.437,
+    "duration": 0.198
+  },
+  {
+    "word": "एक",
+    "start": 27.5,
+    "end": 27.698,
+    "duration": 0.198
+  },
+  {
+    "word": "ब्रेड",
+    "start": 27.698,
+    "end": 27.979,
+    "duration": 0.281
+  },
+  {
+    "word": "का",
+    "start": 27.99,
+    "end": 28.115,
+    "duration": 0.125
+  },
+  {
+    "word": "पैकेट",
+    "start": 28.135,
+    "end": 28.479,
+    "duration": 0.344
+  },
+  {
+    "word": "पचास",
+    "start": 28.479,
+    "end": 28.927,
+    "duration": 0.448
+  },
+  {
+    "word": "हज़ार",
+    "start": 28.927,
+    "end": 29.229,
+    "duration": 0.302
+  },
+  {
+    "word": "रुपये",
+    "start": 29.229,
+    "end": 29.51,
+    "duration": 0.281
+  },
+  {
+    "word": "का",
+    "start": 29.521,
+    "end": 29.656,
+    "duration": 0.135
+  },
+  {
+    "word": "मिलता",
+    "start": 29.656,
+    "end": 29.99,
+    "duration": 0.333
+  },
+  {
+    "word": "है",
+    "start": 29.99,
+    "end": 30.198,
+    "duration": 0.208
+  },
+  {
+    "word": "क्योंकि",
+    "start": 30.375,
+    "end": 30.688,
+    "duration": 0.312
+  },
+  {
+    "word": "डिलीवरी",
+    "start": 30.708,
+    "end": 31.094,
+    "duration": 0.385
+  },
+  {
+    "word": "ट्रक",
+    "start": 31.115,
+    "end": 31.344,
+    "duration": 0.229
+  },
+  {
+    "word": "कोई",
+    "start": 31.344,
+    "end": 31.604,
+    "duration": 0.26
+  },
+  {
+    "word": "नहीं",
+    "start": 31.604,
+    "end": 31.865,
+    "duration": 0.26
+  },
+  {
+    "word": "चला",
+    "start": 31.875,
+    "end": 32.135,
+    "duration": 0.26
+  },
+  {
+    "word": "रहा",
+    "start": 32.135,
+    "end": 32.396,
+    "duration": 0.26
+  },
+  {
+    "word": "बहत्तर",
+    "start": 33.24,
+    "end": 33.708,
+    "duration": 0.469
+  },
+  {
+    "word": "घंटों",
+    "start": 33.708,
+    "end": 34.042,
+    "duration": 0.333
+  },
+  {
+    "word": "में",
+    "start": 34.042,
+    "end": 34.187,
+    "duration": 0.146
+  },
+  {
+    "word": "सारे",
+    "start": 34.188,
+    "end": 34.531,
+    "duration": 0.344
+  },
+  {
+    "word": "नोट",
+    "start": 34.542,
+    "end": 34.823,
+    "duration": 0.281
+  },
+  {
+    "word": "रद्दी",
+    "start": 34.823,
+    "end": 35.146,
+    "duration": 0.323
+  },
+  {
+    "word": "बन",
+    "start": 35.146,
+    "end": 35.302,
+    "duration": 0.156
+  },
+  {
+    "word": "जाते",
+    "start": 35.312,
+    "end": 35.635,
+    "duration": 0.323
+  },
+  {
+    "word": "हैं",
+    "start": 35.656,
+    "end": 35.885,
+    "duration": 0.229
+  },
+  {
+    "word": "और",
+    "start": 36.156,
+    "end": 36.333,
+    "duration": 0.177
+  },
+  {
+    "word": "लोग",
+    "start": 36.333,
+    "end": 36.615,
+    "duration": 0.281
+  },
+  {
+    "word": "सोने",
+    "start": 36.615,
+    "end": 36.927,
+    "duration": 0.312
+  },
+  {
+    "word": "के",
+    "start": 36.927,
+    "end": 37.062,
+    "duration": 0.135
+  },
+  {
+    "word": "बदले",
+    "start": 37.062,
+    "end": 37.385,
+    "duration": 0.323
+  },
+  {
+    "word": "चॉकलेट",
+    "start": 37.417,
+    "end": 37.812,
+    "duration": 0.396
+  },
+  {
+    "word": "बार",
+    "start": 37.812,
+    "end": 38.052,
+    "duration": 0.24
+  },
+  {
+    "word": "से",
+    "start": 38.052,
+    "end": 38.219,
+    "duration": 0.167
+  },
+  {
+    "word": "लेन-देन",
+    "start": 38.25,
+    "end": 38.615,
+    "duration": 0.365
+  },
+  {
+    "word": "शुरू",
+    "start": 38.635,
+    "end": 38.854,
+    "duration": 0.219
+  },
+  {
+    "word": "कर",
+    "start": 38.854,
+    "end": 39.042,
+    "duration": 0.188
+  },
+  {
+    "word": "देते",
+    "start": 39.042,
+    "end": 39.354,
+    "duration": 0.312
+  },
+  {
+    "word": "हैं",
+    "start": 39.375,
+    "end": 40.031,
+    "duration": 0.656
+  },
+  {
+    "word": "यानी",
+    "start": 40.771,
+    "end": 41.115,
+    "duration": 0.344
+  },
+  {
+    "word": "जब",
+    "start": 41.115,
+    "end": 41.354,
+    "duration": 0.24
+  },
+  {
+    "word": "सब",
+    "start": 41.354,
+    "end": 41.615,
+    "duration": 0.26
+  },
+  {
+    "word": "अमीर",
+    "start": 41.615,
+    "end": 41.948,
+    "duration": 0.333
+  },
+  {
+    "word": "होते",
+    "start": 41.948,
+    "end": 42.25,
+    "duration": 0.302
+  },
+  {
+    "word": "हैं",
+    "start": 42.26,
+    "end": 42.49,
+    "duration": 0.229
+  },
+  {
+    "word": "तो",
+    "start": 42.677,
+    "end": 42.865,
+    "duration": 0.188
+  },
+  {
+    "word": "असल",
+    "start": 42.875,
+    "end": 43.146,
+    "duration": 0.271
+  },
+  {
+    "word": "में",
+    "start": 43.146,
+    "end": 43.281,
+    "duration": 0.135
+  },
+  {
+    "word": "कोई",
+    "start": 43.281,
+    "end": 43.552,
+    "duration": 0.271
+  },
+  {
+    "word": "भी",
+    "start": 43.573,
+    "end": 43.719,
+    "duration": 0.146
+  },
+  {
+    "word": "अमीर",
+    "start": 43.74,
+    "end": 44.073,
+    "duration": 0.333
+  },
+  {
+    "word": "नहीं",
+    "start": 44.073,
+    "end": 44.323,
+    "duration": 0.25
+  },
+  {
+    "word": "होता",
+    "start": 44.323,
+    "end": 44.667,
+    "duration": 0.344
+  },
+  {
+    "word": "और",
+    "start": 45.531,
+    "end": 45.698,
+    "duration": 0.167
+  },
+  {
+    "word": "यही",
+    "start": 45.719,
+    "end": 45.979,
+    "duration": 0.26
+  },
+  {
+    "word": "वजह",
+    "start": 45.99,
+    "end": 46.292,
+    "duration": 0.302
+  },
+  {
+    "word": "है",
+    "start": 46.292,
+    "end": 46.531,
+    "duration": 0.24
+  },
+  {
+    "word": "कि",
+    "start": 46.698,
+    "end": 46.833,
+    "duration": 0.135
+  },
+  {
+    "word": "अगर",
+    "start": 46.833,
+    "end": 47.115,
+    "duration": 0.281
+  },
+  {
+    "word": "आज",
+    "start": 47.198,
+    "end": 47.469,
+    "duration": 0.271
+  },
+  {
+    "word": "रात",
+    "start": 47.469,
+    "end": 47.729,
+    "duration": 0.26
+  },
+  {
+    "word": "आपको",
+    "start": 47.802,
+    "end": 48.156,
+    "duration": 0.354
+  },
+  {
+    "word": "अचानक",
+    "start": 48.177,
+    "end": 48.594,
+    "duration": 0.417
+  },
+  {
+    "word": "दस",
+    "start": 48.594,
+    "end": 48.854,
+    "duration": 0.26
+  },
+  {
+    "word": "लाख",
+    "start": 48.854,
+    "end": 49.104,
+    "duration": 0.25
+  },
+  {
+    "word": "रुपये",
+    "start": 49.104,
+    "end": 49.417,
+    "duration": 0.312
+  },
+  {
+    "word": "मिल",
+    "start": 49.417,
+    "end": 49.594,
+    "duration": 0.177
+  },
+  {
+    "word": "जाएं",
+    "start": 49.604,
+    "end": 49.958,
+    "duration": 0.354
+  }
+]

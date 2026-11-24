@@ -1,0 +1,817 @@
+[
+  {
+    "word": "Kya",
+    "start": 0.1,
+    "end": 0.46
+  },
+  {
+    "word": "ho",
+    "start": 0.46,
+    "end": 0.82
+  },
+  {
+    "word": "agar",
+    "start": 0.82,
+    "end": 1.18
+  },
+  {
+    "word": "poori",
+    "start": 1.18,
+    "end": 1.54
+  },
+  {
+    "word": "duniya",
+    "start": 1.54,
+    "end": 1.9
+  },
+  {
+    "word": "ke",
+    "start": 1.9,
+    "end": 2.26
+  },
+  {
+    "word": "saare",
+    "start": 2.26,
+    "end": 2.62
+  },
+  {
+    "word": "insaan",
+    "start": 2.62,
+    "end": 2.98
+  },
+  {
+    "word": "7",
+    "start": 2.98,
+    "end": 3.34
+  },
+  {
+    "word": "dino",
+    "start": 3.34,
+    "end": 3.7
+  },
+  {
+    "word": "ke",
+    "start": 3.7,
+    "end": 4.06
+  },
+  {
+    "word": "liye",
+    "start": 4.06,
+    "end": 4.42
+  },
+  {
+    "word": "ek",
+    "start": 4.42,
+    "end": 4.78
+  },
+  {
+    "word": "saath",
+    "start": 4.78,
+    "end": 5.14
+  },
+  {
+    "word": "so",
+    "start": 5.14,
+    "end": 5.5
+  },
+  {
+    "word": "jayein?",
+    "start": 5.5,
+    "end": 5.86
+  },
+  {
+    "word": "Raat",
+    "start": 5.86,
+    "end": 6.22
+  },
+  {
+    "word": "12:00",
+    "start": 6.22,
+    "end": 6.58
+  },
+  {
+    "word": "baje",
+    "start": 6.58,
+    "end": 6.94
+  },
+  {
+    "word": "800",
+    "start": 6.94,
+    "end": 7.3
+  },
+  {
+    "word": "crore",
+    "start": 7.3,
+    "end": 7.66
+  },
+  {
+    "word": "log",
+    "start": 7.66,
+    "end": 8.02
+  },
+  {
+    "word": "ek",
+    "start": 8.02,
+    "end": 8.38
+  },
+  {
+    "word": "saath",
+    "start": 8.38,
+    "end": 8.74
+  },
+  {
+    "word": "behosh",
+    "start": 8.74,
+    "end": 9.1
+  },
+  {
+    "word": "hokar",
+    "start": 9.1,
+    "end": 9.46
+  },
+  {
+    "word": "gir",
+    "start": 9.46,
+    "end": 9.82
+  },
+  {
+    "word": "padte",
+    "start": 9.82,
+    "end": 10.18
+  },
+  {
+    "word": "hain!",
+    "start": 10.18,
+    "end": 10.54
+  },
+  {
+    "word": "Sadkon",
+    "start": 10.62,
+    "end": 11.029
+  },
+  {
+    "word": "par",
+    "start": 11.029,
+    "end": 11.438
+  },
+  {
+    "word": "daudti",
+    "start": 11.439,
+    "end": 11.848
+  },
+  {
+    "word": "karodon",
+    "start": 11.848,
+    "end": 12.257
+  },
+  {
+    "word": "gaadiyan",
+    "start": 12.258,
+    "end": 12.667
+  },
+  {
+    "word": "aur",
+    "start": 12.667,
+    "end": 13.076
+  },
+  {
+    "word": "trains",
+    "start": 13.076,
+    "end": 13.485
+  },
+  {
+    "word": "bina",
+    "start": 13.486,
+    "end": 13.895
+  },
+  {
+    "word": "driver",
+    "start": 13.895,
+    "end": 14.304
+  },
+  {
+    "word": "ke",
+    "start": 14.305,
+    "end": 14.714
+  },
+  {
+    "word": "divider",
+    "start": 14.714,
+    "end": 15.123
+  },
+  {
+    "word": "aur",
+    "start": 15.124,
+    "end": 15.533
+  },
+  {
+    "word": "deewaron",
+    "start": 15.533,
+    "end": 15.942
+  },
+  {
+    "word": "se",
+    "start": 15.942,
+    "end": 16.351
+  },
+  {
+    "word": "takrane",
+    "start": 16.352,
+    "end": 16.761
+  },
+  {
+    "word": "lagti",
+    "start": 16.761,
+    "end": 17.17
+  },
+  {
+    "word": "hain!",
+    "start": 17.171,
+    "end": 17.58
+  },
+  {
+    "word": "Hawa",
+    "start": 17.66,
+    "end": 18.079
+  },
+  {
+    "word": "mein",
+    "start": 18.079,
+    "end": 18.498
+  },
+  {
+    "word": "udte",
+    "start": 18.499,
+    "end": 18.918
+  },
+  {
+    "word": "30,000",
+    "start": 18.918,
+    "end": 19.337
+  },
+  {
+    "word": "airplanes",
+    "start": 19.337,
+    "end": 19.756
+  },
+  {
+    "word": "autopilot",
+    "start": 19.757,
+    "end": 20.176
+  },
+  {
+    "word": "par",
+    "start": 20.176,
+    "end": 20.595
+  },
+  {
+    "word": "chalte",
+    "start": 20.596,
+    "end": 21.015
+  },
+  {
+    "word": "hain,",
+    "start": 21.015,
+    "end": 21.434
+  },
+  {
+    "word": "lekin",
+    "start": 21.434,
+    "end": 21.853
+  },
+  {
+    "word": "fuel",
+    "start": 21.854,
+    "end": 22.273
+  },
+  {
+    "word": "khatam",
+    "start": 22.273,
+    "end": 22.692
+  },
+  {
+    "word": "hote",
+    "start": 22.692,
+    "end": 23.111
+  },
+  {
+    "word": "hi",
+    "start": 23.112,
+    "end": 23.531
+  },
+  {
+    "word": "aasmaan",
+    "start": 23.531,
+    "end": 23.95
+  },
+  {
+    "word": "se",
+    "start": 23.951,
+    "end": 24.37
+  },
+  {
+    "word": "girne",
+    "start": 24.37,
+    "end": 24.789
+  },
+  {
+    "word": "lagte",
+    "start": 24.789,
+    "end": 25.208
+  },
+  {
+    "word": "hain!",
+    "start": 25.209,
+    "end": 25.628
+  },
+  {
+    "word": "Nuclear",
+    "start": 25.708,
+    "end": 26.104
+  },
+  {
+    "word": "plants",
+    "start": 26.104,
+    "end": 26.5
+  },
+  {
+    "word": "koi",
+    "start": 26.5,
+    "end": 26.896
+  },
+  {
+    "word": "operator",
+    "start": 26.896,
+    "end": 27.292
+  },
+  {
+    "word": "na",
+    "start": 27.292,
+    "end": 27.688
+  },
+  {
+    "word": "paakar",
+    "start": 27.688,
+    "end": 28.084
+  },
+  {
+    "word": "automatically",
+    "start": 28.084,
+    "end": 28.48
+  },
+  {
+    "word": "control",
+    "start": 28.48,
+    "end": 28.876
+  },
+  {
+    "word": "rods",
+    "start": 28.876,
+    "end": 29.272
+  },
+  {
+    "word": "gira",
+    "start": 29.272,
+    "end": 29.668
+  },
+  {
+    "word": "dete",
+    "start": 29.668,
+    "end": 30.064
+  },
+  {
+    "word": "hain",
+    "start": 30.064,
+    "end": 30.46
+  },
+  {
+    "word": "taaki",
+    "start": 30.46,
+    "end": 30.856
+  },
+  {
+    "word": "bada",
+    "start": 30.856,
+    "end": 31.252
+  },
+  {
+    "word": "meltdown",
+    "start": 31.252,
+    "end": 31.648
+  },
+  {
+    "word": "roka",
+    "start": 31.648,
+    "end": 32.044
+  },
+  {
+    "word": "ja",
+    "start": 32.044,
+    "end": 32.44
+  },
+  {
+    "word": "sake!",
+    "start": 32.44,
+    "end": 32.836
+  },
+  {
+    "word": "72",
+    "start": 32.916,
+    "end": 33.296
+  },
+  {
+    "word": "ghanton",
+    "start": 33.296,
+    "end": 33.676
+  },
+  {
+    "word": "mein",
+    "start": 33.676,
+    "end": 34.056
+  },
+  {
+    "word": "bijli",
+    "start": 34.055,
+    "end": 34.435
+  },
+  {
+    "word": "grids",
+    "start": 34.435,
+    "end": 34.815
+  },
+  {
+    "word": "thap",
+    "start": 34.815,
+    "end": 35.195
+  },
+  {
+    "word": "ho",
+    "start": 35.195,
+    "end": 35.575
+  },
+  {
+    "word": "jaate",
+    "start": 35.574,
+    "end": 35.954
+  },
+  {
+    "word": "hain,",
+    "start": 35.954,
+    "end": 36.334
+  },
+  {
+    "word": "aur",
+    "start": 36.334,
+    "end": 36.714
+  },
+  {
+    "word": "poore",
+    "start": 36.714,
+    "end": 37.094
+  },
+  {
+    "word": "continents",
+    "start": 37.093,
+    "end": 37.473
+  },
+  {
+    "word": "andhere",
+    "start": 37.473,
+    "end": 37.853
+  },
+  {
+    "word": "mein",
+    "start": 37.853,
+    "end": 38.233
+  },
+  {
+    "word": "doob",
+    "start": 38.233,
+    "end": 38.613
+  },
+  {
+    "word": "jaate",
+    "start": 38.612,
+    "end": 38.992
+  },
+  {
+    "word": "hain!",
+    "start": 38.992,
+    "end": 39.372
+  },
+  {
+    "word": "Insaano",
+    "start": 39.452,
+    "end": 39.818
+  },
+  {
+    "word": "ke",
+    "start": 39.818,
+    "end": 40.184
+  },
+  {
+    "word": "gayab",
+    "start": 40.184,
+    "end": 40.55
+  },
+  {
+    "word": "hote",
+    "start": 40.55,
+    "end": 40.916
+  },
+  {
+    "word": "hi",
+    "start": 40.916,
+    "end": 41.282
+  },
+  {
+    "word": "pollution",
+    "start": 41.282,
+    "end": 41.648
+  },
+  {
+    "word": "gayab",
+    "start": 41.648,
+    "end": 42.014
+  },
+  {
+    "word": "ho",
+    "start": 42.014,
+    "end": 42.38
+  },
+  {
+    "word": "jata",
+    "start": 42.38,
+    "end": 42.746
+  },
+  {
+    "word": "hai,",
+    "start": 42.746,
+    "end": 43.112
+  },
+  {
+    "word": "aur",
+    "start": 43.112,
+    "end": 43.478
+  },
+  {
+    "word": "jungle",
+    "start": 43.478,
+    "end": 43.844
+  },
+  {
+    "word": "ke",
+    "start": 43.844,
+    "end": 44.21
+  },
+  {
+    "word": "janwar",
+    "start": 44.21,
+    "end": 44.576
+  },
+  {
+    "word": "khali",
+    "start": 44.576,
+    "end": 44.942
+  },
+  {
+    "word": "sadkon",
+    "start": 44.942,
+    "end": 45.308
+  },
+  {
+    "word": "par",
+    "start": 45.308,
+    "end": 45.674
+  },
+  {
+    "word": "ghoomne",
+    "start": 45.674,
+    "end": 46.04
+  },
+  {
+    "word": "lagte",
+    "start": 46.04,
+    "end": 46.406
+  },
+  {
+    "word": "hain!",
+    "start": 46.406,
+    "end": 46.772
+  },
+  {
+    "word": "Saatvein",
+    "start": 46.852,
+    "end": 47.199
+  },
+  {
+    "word": "din",
+    "start": 47.199,
+    "end": 47.546
+  },
+  {
+    "word": "jab",
+    "start": 47.547,
+    "end": 47.894
+  },
+  {
+    "word": "800",
+    "start": 47.894,
+    "end": 48.241
+  },
+  {
+    "word": "crore",
+    "start": 48.242,
+    "end": 48.589
+  },
+  {
+    "word": "log",
+    "start": 48.589,
+    "end": 48.936
+  },
+  {
+    "word": "ek",
+    "start": 48.937,
+    "end": 49.284
+  },
+  {
+    "word": "saath",
+    "start": 49.284,
+    "end": 49.631
+  },
+  {
+    "word": "jaagte",
+    "start": 49.632,
+    "end": 49.979
+  },
+  {
+    "word": "hain,",
+    "start": 49.979,
+    "end": 50.326
+  },
+  {
+    "word": "toh",
+    "start": 50.327,
+    "end": 50.674
+  },
+  {
+    "word": "unke",
+    "start": 50.674,
+    "end": 51.021
+  },
+  {
+    "word": "phone",
+    "start": 51.022,
+    "end": 51.369
+  },
+  {
+    "word": "dead,",
+    "start": 51.369,
+    "end": 51.716
+  },
+  {
+    "word": "ghar",
+    "start": 51.717,
+    "end": 52.064
+  },
+  {
+    "word": "andhere",
+    "start": 52.064,
+    "end": 52.411
+  },
+  {
+    "word": "mein,",
+    "start": 52.412,
+    "end": 52.759
+  },
+  {
+    "word": "aur",
+    "start": 52.759,
+    "end": 53.106
+  },
+  {
+    "word": "duniya",
+    "start": 53.107,
+    "end": 53.454
+  },
+  {
+    "word": "badal",
+    "start": 53.454,
+    "end": 53.801
+  },
+  {
+    "word": "chuki",
+    "start": 53.802,
+    "end": 54.149
+  },
+  {
+    "word": "hoti",
+    "start": 54.149,
+    "end": 54.496
+  },
+  {
+    "word": "hai!",
+    "start": 54.497,
+    "end": 54.844
+  },
+  {
+    "word": "Yani",
+    "start": 54.924,
+    "end": 55.309
+  },
+  {
+    "word": "insaan",
+    "start": 55.309,
+    "end": 55.694
+  },
+  {
+    "word": "hi",
+    "start": 55.694,
+    "end": 56.079
+  },
+  {
+    "word": "is",
+    "start": 56.08,
+    "end": 56.465
+  },
+  {
+    "word": "modern",
+    "start": 56.465,
+    "end": 56.85
+  },
+  {
+    "word": "duniya",
+    "start": 56.85,
+    "end": 57.235
+  },
+  {
+    "word": "ko",
+    "start": 57.235,
+    "end": 57.62
+  },
+  {
+    "word": "zinda",
+    "start": 57.62,
+    "end": 58.005
+  },
+  {
+    "word": "rakhte",
+    "start": 58.006,
+    "end": 58.391
+  },
+  {
+    "word": "hain.",
+    "start": 58.391,
+    "end": 58.776
+  },
+  {
+    "word": "Aur",
+    "start": 58.776,
+    "end": 59.161
+  },
+  {
+    "word": "yahi",
+    "start": 59.161,
+    "end": 59.546
+  },
+  {
+    "word": "wajah",
+    "start": 59.546,
+    "end": 59.931
+  },
+  {
+    "word": "hai",
+    "start": 59.932,
+    "end": 60.317
+  },
+  {
+    "word": "agar",
+    "start": 60.317,
+    "end": 60.702
+  },
+  {
+    "word": "sab",
+    "start": 60.702,
+    "end": 61.087
+  },
+  {
+    "word": "ek",
+    "start": 61.087,
+    "end": 61.472
+  },
+  {
+    "word": "saath",
+    "start": 61.472,
+    "end": 61.857
+  },
+  {
+    "word": "so",
+    "start": 61.858,
+    "end": 62.243
+  },
+  {
+    "word": "jayein...",
+    "start": 62.243,
+    "end": 62.628
+  }
+]

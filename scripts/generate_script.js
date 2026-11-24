@@ -136,6 +136,27 @@ function formatMonetizedDescription(rawDescription, tags = []) {
   return formattedDescription;
 }
 
+function inferAnimationArchetype(text, idx) {
+  const t = text.toLowerCase();
+  if (/chart|stock|market|trade|price|growth|percent|index|nasdaq|dow|gain|candlestick/i.test(t)) return 'stat_chart';
+  if (/terminal|code|algorithm|software|hack|cyber|kernel|linux|script|server|data/i.test(t)) return 'terminal_bloom';
+  if (/speed|latency|microsecond|nanosecond|millisecond|fast|velocity|tachometer|gauge|mph|kmh|clock/i.test(t)) return 'speedometer_gauge';
+  if (/warning|threat|danger|crisis|breach|alarm|hazard|risk|fail|collapse/i.test(t)) return 'alert_threat';
+  if (/versus|vs|compare|difference|alternative|compete|faster than/i.test(t)) return 'comparison_split';
+  if (/notification|ping|alert|message|feed|app|push/i.test(t)) return 'notifications_stack';
+  if (/cost|dollar|bill|expense|receipt|price tag|expensive|budget/i.test(t)) return 'thermal_receipt';
+  if (/route|street|city|map|building|path|transit|track|gps/i.test(t)) return 'map_route';
+  if (/underground|buried|feet|deep|depth|trench|iceberg|hidden|abyss|submerged/i.test(t)) return 'the_iceberg';
+  if (/chip|hardware|fpga|transceiver|circuit|component|inside|layer|core|teardown|explode/i.test(t)) return 'teardown';
+  if (/flip|departure|split flap|counter|board/i.test(t)) return 'split_flap';
+  if (/global|earth|world|planet|orbit|across the ocean|transatlantic|intercontinental|relay|network/i.test(t)) return 'globe_arcs';
+  if (/phone|desk|blueprint|hand|craft|doodle|schematic|workspace/i.test(t)) return 'pov_doodle';
+  
+  // Topic-adaptive natural rotation: prioritize authentic B-roll and high-retention motion graphics
+  const defaultRotation = ['broll', 'stat_chart', 'teardown', 'speedometer_gauge', 'globe_arcs'];
+  return defaultRotation[idx % defaultRotation.length];
+}
+
 async function generateScript() {
   const { topicArg } = parseArgs();
   const selected = selectTopic(topicArg);
@@ -151,52 +172,105 @@ async function generateScript() {
     throw new Error('GEMINI_API_KEY is missing from .env');
   }
 
+  // Load Live Content Intelligence & Winning Formulas
+  let audienceFormulaPrompt = '';
+  const intelligencePath = path.join(PROJECT_ROOT, 'data', 'content_intelligence.json');
+  if (fs.existsSync(intelligencePath)) {
+    try {
+      const intel = JSON.parse(fs.readFileSync(intelligencePath, 'utf-8'));
+      audienceFormulaPrompt = `
+AUDIENCE INTELLIGENCE & PROVEN VIRAL PATTERNS ON THIS CHANNEL:
+- Top performing Short: "${intel.topPerformerTitle}" (${intel.topPerformerViews} views vs ${intel.channelAverageViews} avg).
+- WINNING FORMULA: Pair a universally familiar everyday object (iPhone, WiFi, headphones, coffee, battery) with an extreme physical scale or secret hidden system.
+- TITLE STYLE: Use irresistible curiosity gaps with high-contrast verbs and a punchy emoji (e.g. "Why Bullet Trains Don't Break Your iPhone 🤯").
+`;
+    } catch (e) {}
+  }
+
   const ai = new GoogleGenAI({ apiKey, apiVersion: 'v1beta' });
-  const prompt = `You are the lead showrunner and investigative visual director for a viral YouTube Shorts documentary channel ("Data Detective" in the cinematic style of Vox, Polymatter, and ColdFusion).
-Create a 30-35 second high-retention vertical video script about: "${selected.topic}".
-Key angle: "${selected.hookAngle}".
+  const prompt = `You are the Executive Showrunner and Lead Visual Director for "Data Detective", a viral YouTube Shorts investigative documentary channel in the visual tier of Vox, Kurzgesagt, and Polymatter.
 
-CRITICAL DOCUMENTARY PRODUCTION RULES:
-1. TOTAL WORD COUNT: STRICTLY 75 to 95 words total across all cuts. Keep sentences fast-paced, punchy, and conversational.
-2. DYNAMIC VISUAL CUTS (5 to 7 cuts total):
-   - Do NOT use rigid slides or PowerPoint templates. Instead, structure the script as 5 to 7 dynamic cinematic cuts corresponding to natural speech beats.
-   - Cut 1 (The Hook): A gripping question or startling paradox that hooks the viewer in the first 2 seconds.
-   - Middle Cuts: Contrast widespread myths with jaw-dropping physical realities, engineering extremes, and real-world bottlenecks.
-   - Final Cut (The Conclusion): End on a powerful, authoritative, and complete mic-drop conclusion that delivers the core takeaway or a profound realization. NEVER use incomplete trailing phrases like "leaving everyone still asking..." or cliffhangers. The final sentence MUST be grammatically complete, impactful, and memorable.
-3. AUTHENTIC B-ROLL QUERIES:
-   - For every single cut, provide a specific 2-4 word visual query targeting real photography or footage (e.g., "server immersion cooling liquid", "microchip silicon wafer glow", "undersea telecommunications cable deck", "high speed data center fiber").
-   - NEVER use generic or cartoon queries.
-4. SELECTIVE DATA HIGHLIGHTS:
-   - If a cut explicitly speaks a number, percentage, or metric, include "statHighlight": { "number": "e.g. 99% or 100°C or $300M", "label": "CONCISE LABEL IN CAPS" }.
-   - If no number is spoken in that cut, set "statHighlight": null.
+Create a 30-35 second high-retention vertical video script (strictly 5 cuts total, 75 to 90 words total) about: "${selected.topic}".
+Key investigative angle: "${selected.hookAngle}".
+${audienceFormulaPrompt}
 
-Return ONLY valid JSON with this exact schema:
+================================================================================
+CRITICAL DIRECTORIAL RULES: CINEMATIC MULTI-LAYER CAUSE-AND-EFFECT STORYTELLING
+================================================================================
+Never output a static graphic, a generic bullet-point slide, or icons floating in an empty void.
+Every cut MUST be treated as a fully staged film set with THREE DISTINCT VISUAL LAYERS:
+1. BACKGROUND STAGE (Environment, depth planes, horizons, lighting, atmospheric haze, god rays)
+2. FOREGROUND PROPS (Physical tactile objects, mechanical instruments, moving meters, ambient particles)
+3. CAUSE-AND-EFFECT TRANSFORMATION (The voiceover triggers an active physical change: items vanish, crates explode, arrows plunge down, thermometers drop, or crops sprout around the world).
+
+THE ANIMATION ARCHETYPES CATALOG (Assign the best-matching archetype to each cut based on the topic):
+1. "broll": Authentic documentary video/photo of the real-world facility, hardware, city, or environment with kinetic HUD overlay and Popapus mascot.
+2. "stat_chart": Real-time glowing neon vector line graph, stock chart, or exponential curve with animated tracer and live numeric counter. Perfect for stats, finances, or metrics.
+3. "speedometer_gauge": High-tech circular neon tachometer or latency dial sweeping up to an extreme limit. Perfect for speed, microseconds, pressure, or bandwidth.
+4. "split_flap": Mechanical split-flap departure board clattering numbers/letters into place.
+5. "the_iceberg": 3D iceberg showing the tiny visible surface (10%) versus the massive submerged infrastructure or secret reality (90%). Perfect for hidden systems, subsea cables, dark data, or underground structures.
+6. "teardown": 3D exploded view of physical hardware, circuit boards, microchips, mechanical engines, or secure modules separated into floating suspended tiers with callout leader lines.
+7. "pov_doodle": Top-down craftsman desk with a physical device or document (e.g. smartphone with active trading app, technical schematic blueprint, or classified dossier) triggering an active event.
+8. "globe_arcs": 3D vector Earth globe with luminous parabolic network arcs connecting continents, orbital satellites, or telecommunication relay nodes. Perfect for global scale, intercontinental transit, or planetary systems.
+9. "terminal_bloom": Hacker dark console / CLI typing real-time shell commands, kernel overrides, or live data stream. Perfect for software, algorithms, or cyber security.
+10. "alert_threat": High-urgency flashing emergency matrix with seismic camera vibration. Perfect for hazards, crisis, or system collapse.
+11. "comparison_split": High-contrast side-by-side vertical split comparing two competing technologies, scales, or methods.
+12. "notifications_stack": Rapid cascading mobile notifications stacking with spring physics.
+13. "type_slam": Bold kinetic text impact for high-energy declarations.
+14. "thermal_receipt": Itemized printed paper tape feeding downward with running cost tally.
+15. "map_route": Isometric 3D city blocks tracing an ultra-fast route between coordinates.
+
+ABSOLUTE TOPIC FIDELITY RULE:
+Under NO circumstances should you use agricultural seeds, crops, Svalbard vaults, or refrigerators unless the topic explicitly is about seeds, crops, Svalbard, or groceries!
+Every single cut's foregroundProps, visualMetaphor, causeAndEffect, and visualQuery MUST be directly derived from the specified topic: "${selected.topic}".
+
+===============================================================================
+SCRIPT & PACING RULES:
+===============================================================================
+- Strictly 5 cuts total.
+- Total spoken voiceover length: strictly 75 to 90 words (12 to 16 words per cut).
+- Cut 1 MUST be a gripping paradox or relatable crisis.
+- Middle Cuts MUST contrast myths with jaw-dropping physical realities and engineering extremes.
+- Final Cut MUST deliver an authoritative, complete, mic-drop conclusion (NEVER end on a cliffhanger).
+
+Return ONLY valid JSON matching this exact structure:
 {
   "topic": "${selected.topic}",
-  "visualTheme": "One of: space | cyber | finance | quantum | ocean | infrastructure that best fits the subject",
-  "videoTitle": "Catchy viral YouTube Shorts title with emoji (< 60 chars)",
+  "visualTheme": "One of: space | cyber | finance | quantum | ocean | infrastructure",
+  "videoTitle": "Ultra-catchy curiosity gap title with emoji (< 60 chars)",
   "youtubeDescription": "2-3 engaging sentences explaining the short with 4-5 relevant #hashtags.",
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8"],
   "cuts": [
     {
       "cutId": 1,
-      "voiceoverText": "Cut 1 spoken sentence (12-16 words).",
-      "visualQuery": "2-4 word real visual footage query",
+      "voiceoverText": "Cut 1 sentence (12-16 words).",
+      "animationArchetype": "One of the archetypes above (e.g. 'broll', 'pov_doodle', 'stat_chart')",
+      "visualMetaphor": "Direct visual metaphor specific to this topic.",
+      "backgroundStage": "Stage environment describing depth, lighting, and mood specific to this topic.",
+      "foregroundProps": ["prop_1", "prop_2", "prop_3"],
+      "causeAndEffect": {
+        "initialState": "Starting state of the props/environment before transformation.",
+        "transformation": "Active physical action triggered as words are spoken.",
+        "finalState": "Resulting state with dynamic HUD badge or metric."
+      },
+      "cameraChoreography": {
+        "startFraming": "Initial camera position",
+        "motionTrajectory": "Dynamic camera movement (zoom_in, pan_right, orbit, etc.)",
+        "endFraming": "Final framing on focal object or HUD"
+      },
+      "tangibleItems": ["item1", "item2", "item3"],
+      "visualQuery": "Search query for authentic stock footage or image matching this exact cut",
       "cameraMotion": "zoom_in",
-      "statHighlight": null
-    },
-    {
-      "cutId": 2,
-      "voiceoverText": "Cut 2 spoken sentence (12-16 words).",
-      "visualQuery": "2-4 word real visual footage query",
-      "cameraMotion": "zoom_out",
       "statHighlight": {
-        "number": "e.g. 80%",
-        "label": "CONCISE LABEL"
+        "number": "Key stat or null if none",
+        "label": "Short label for stat"
       }
     }
   ]
-}`;
+}
+  ]
+}
+`;
 
   const primaryModel = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
   const modelsToTry = [
@@ -263,14 +337,37 @@ Return ONLY valid JSON with this exact schema:
     }));
   }
 
-  // Ensure every cut has clean, sanitized properties
-  parsed.cuts = (parsed.cuts || []).map((c, idx) => ({
-    cutId: c.cutId || idx + 1,
-    voiceoverText: (c.voiceoverText || '').trim(),
-    visualQuery: (c.visualQuery || `${selected.topic} technology`).trim(),
-    cameraMotion: c.cameraMotion || (idx % 2 === 0 ? 'zoom_in' : 'zoom_out'),
-    statHighlight: c.statHighlight && c.statHighlight.number ? c.statHighlight : null,
-  }));
+  // Ensure every cut has clean, sanitized properties with full Cause-and-Effect Storytelling directives
+  parsed.cuts = (parsed.cuts || []).map((c, idx) => {
+    const archetype = c.animationArchetype || inferAnimationArchetype(c.voiceoverText, idx);
+    const bgStage = c.backgroundStage || c.environmentalStage || '';
+    const fgProps = Array.isArray(c.foregroundProps) ? c.foregroundProps : (Array.isArray(c.tangibleItems) ? c.tangibleItems : []);
+    const cameraChoreo = {
+      startFraming: (c.cameraChoreography && c.cameraChoreography.startFraming) || '',
+      motionTrajectory: (c.cameraChoreography && c.cameraChoreography.motionTrajectory) || c.cameraTrajectory || (idx % 2 === 0 ? 'zoom_in' : 'zoom_out'),
+      endFraming: (c.cameraChoreography && c.cameraChoreography.endFraming) || '',
+    };
+    return {
+      cutId: c.cutId || idx + 1,
+      voiceoverText: (c.voiceoverText || '').trim(),
+      animationArchetype: archetype,
+      visualMetaphor: c.visualMetaphor || '',
+      backgroundStage: bgStage,
+      environmentalStage: bgStage,
+      foregroundProps: fgProps,
+      tangibleItems: fgProps,
+      causeAndEffect: {
+        initialState: (c.causeAndEffect && c.causeAndEffect.initialState) || '',
+        transformation: (c.causeAndEffect && (c.causeAndEffect.transformation || c.causeAndEffect.transformationAction)) || '',
+        finalState: (c.causeAndEffect && c.causeAndEffect.finalState) || '',
+      },
+      cameraChoreography: cameraChoreo,
+      cameraTrajectory: cameraChoreo.motionTrajectory,
+      visualQuery: (c.visualQuery || `${selected.topic} technology`).trim(),
+      cameraMotion: c.cameraMotion || (idx % 2 === 0 ? 'zoom_in' : 'zoom_out'),
+      statHighlight: c.statHighlight && c.statHighlight.number ? c.statHighlight : null,
+    };
+  });
 
   // Clean full voiceover concatenated from cuts
   parsed.fullVoiceover = parsed.cuts.map((c) => c.voiceoverText).join(' ');

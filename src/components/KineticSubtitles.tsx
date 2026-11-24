@@ -117,7 +117,12 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
     let currentWords: SubtitleWord[] = [];
 
     for (let i = 0; i < words.length; i++) {
-      const w = words[i];
+      const rawW = words[i];
+      const cleanWord = (rawW.word || "").replace(/\*/g, "");
+      const w = {
+        ...rawW,
+        word: cleanWord,
+      };
       currentWords.push(w);
 
       const hasPunctuation = /[.?!,;:]$/.test(w.word);
@@ -169,15 +174,15 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
     <div
       style={{
         position: "absolute",
-        top: "60%",
-        left: "5%",
+        top: "76%",
+        left: "4%",
         transform: "translateY(-50%)",
-        width: "90%",
+        width: "68%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "0 20px",
+        padding: "0 10px",
         boxSizing: "border-box",
         zIndex: 50,
         pointerEvents: "none",
@@ -189,7 +194,7 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
           flexWrap: "nowrap",
           justifyContent: "center",
           alignItems: "center",
-          gap: "28px",
+          gap: "18px",
           transform: `scale(${0.92 + chunkSpring * 0.08})`,
         }}
       >
@@ -210,8 +215,8 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
             },
           });
 
-          // Check if clean word matches an emoji
-          const cleanWord = w.word.toLowerCase().replace(/[^a-z0-9%]/g, "");
+          // Check if clean word matches an emoji (strip any remaining asterisks)
+          const cleanWord = (w.word || "").replace(/\*/g, "").toLowerCase().replace(/[^a-z0-9%]/g, "");
           const emoji = KEYWORD_EMOJIS[cleanWord];
 
           // Alternate highlight styles: electric yellow (#FFE600) and electric cyan (#00F5FF)
@@ -223,15 +228,17 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
             ? 1 + wordSpring * 0.18
             : 1.0;
 
+          const displayWord = (w.word || "").replace(/\*/g, "");
+
           return (
             <div
-              key={`${activeChunk.index}-${index}-${w.word}`}
+              key={`${activeChunk.index}-${index}-${displayWord}`}
               style={{
                 position: "relative",
                 display: "inline-flex",
                 flexDirection: "column",
                 alignItems: "center",
-                margin: "0 12px",
+                margin: "0 6px",
               }}
             >
               {/* Animated Floating Keyword Sticker / Emoji */}
@@ -255,7 +262,7 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
                   transform: `scale(${scale})`,
                   fontFamily:
                     "'Impact', 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                  fontSize: "72px",
+                  fontSize: "64px",
                   fontWeight: 900,
                   letterSpacing: "2.5px",
                   lineHeight: "1.05",
@@ -266,12 +273,12 @@ export const KineticSubtitles: React.FC<KineticSubtitlesProps> = ({ words }) => 
                   textShadow: isActive
                     ? `0 0 45px ${highlightColor}ee, 0 10px 25px rgba(0,0,0,0.95)`
                     : "0 8px 24px rgba(0,0,0,0.9)",
-                  padding: "4px 16px",
+                  padding: "4px 14px",
                   borderRadius: "14px",
                   backgroundColor: isActive ? "rgba(0,0,0,0.55)" : "transparent",
                 }}
               >
-                {w.word}
+                {displayWord}
               </span>
             </div>
           );

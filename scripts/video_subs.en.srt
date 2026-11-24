@@ -1,0 +1,3245 @@
+1
+00:00:00,000 --> 00:00:02,190
+ 
+Look at these two videos. This one has
+
+2
+00:00:02,190 --> 00:00:02,200
+Look at these two videos. This one has
+ 
+
+3
+00:00:02,200 --> 00:00:05,190
+Look at these two videos. This one has
+29 million views and it's not a one-off.
+
+4
+00:00:05,190 --> 00:00:05,200
+29 million views and it's not a one-off.
+ 
+
+5
+00:00:05,200 --> 00:00:07,690
+29 million views and it's not a one-off.
+That channel is brand new, and its last
+
+6
+00:00:07,690 --> 00:00:07,700
+That channel is brand new, and its last
+ 
+
+7
+00:00:07,700 --> 00:00:10,790
+That channel is brand new, and its last
+80 shorts got over 200 million views.
+
+8
+00:00:10,790 --> 00:00:10,800
+80 shorts got over 200 million views.
+ 
+
+9
+00:00:10,800 --> 00:00:12,790
+80 shorts got over 200 million views.
+The other one? That's mine. And no, it
+
+10
+00:00:12,790 --> 00:00:12,800
+The other one? That's mine. And no, it
+ 
+
+11
+00:00:12,800 --> 00:00:14,190
+The other one? That's mine. And no, it
+didn't come out of an AI video
+
+12
+00:00:14,190 --> 00:00:14,200
+didn't come out of an AI video
+ 
+
+13
+00:00:14,200 --> 00:00:16,990
+didn't come out of an AI video
+generator. Claude built it in 3D with
+
+14
+00:00:16,990 --> 00:00:17,000
+generator. Claude built it in 3D with
+ 
+
+15
+00:00:17,000 --> 00:00:19,690
+generator. Claude built it in 3D with
+code every single frame. In this video,
+
+16
+00:00:19,690 --> 00:00:19,700
+code every single frame. In this video,
+ 
+
+17
+00:00:19,700 --> 00:00:21,790
+code every single frame. In this video,
+I'll show you exactly how I made this
+
+18
+00:00:21,790 --> 00:00:21,800
+I'll show you exactly how I made this
+ 
+
+19
+00:00:21,800 --> 00:00:23,790
+I'll show you exactly how I made this
+animated short, how I trained Claude on
+
+20
+00:00:23,790 --> 00:00:23,800
+animated short, how I trained Claude on
+ 
+
+21
+00:00:23,800 --> 00:00:25,990
+animated short, how I trained Claude on
+this style frame by frame, what went
+
+22
+00:00:25,990 --> 00:00:26,000
+this style frame by frame, what went
+ 
+
+23
+00:00:26,000 --> 00:00:28,590
+this style frame by frame, what went
+wrong, and how I fixed it, and how you
+
+24
+00:00:28,590 --> 00:00:28,600
+wrong, and how I fixed it, and how you
+ 
+
+25
+00:00:28,600 --> 00:00:30,690
+wrong, and how I fixed it, and how you
+can get it too. You're going to get all
+
+26
+00:00:30,690 --> 00:00:30,700
+can get it too. You're going to get all
+ 
+
+27
+00:00:30,700 --> 00:00:33,290
+can get it too. You're going to get all
+of that for completely free. All right,
+
+28
+00:00:33,290 --> 00:00:33,300
+of that for completely free. All right,
+ 
+
+29
+00:00:33,300 --> 00:00:34,990
+of that for completely free. All right,
+let's get into it. If you've never seen
+
+30
+00:00:34,990 --> 00:00:35,000
+let's get into it. If you've never seen
+ 
+
+31
+00:00:35,000 --> 00:00:36,890
+let's get into it. If you've never seen
+this type of short, it's this. The
+
+32
+00:00:36,890 --> 00:00:36,900
+this type of short, it's this. The
+ 
+
+33
+00:00:36,900 --> 00:00:39,190
+this type of short, it's this. The
+characters are 2D, but the world around
+
+34
+00:00:39,190 --> 00:00:39,200
+characters are 2D, but the world around
+ 
+
+35
+00:00:39,200 --> 00:00:41,690
+characters are 2D, but the world around
+them is 3D. So how do you train Claude
+
+36
+00:00:41,690 --> 00:00:41,700
+them is 3D. So how do you train Claude
+ 
+
+37
+00:00:41,700 --> 00:00:43,590
+them is 3D. So how do you train Claude
+to make this? First, you need
+
+38
+00:00:43,590 --> 00:00:43,600
+to make this? First, you need
+ 
+
+39
+00:00:43,600 --> 00:00:45,790
+to make this? First, you need
+references, a lot of them. I went to the
+
+40
+00:00:45,790 --> 00:00:45,800
+references, a lot of them. I went to the
+ 
+
+41
+00:00:45,800 --> 00:00:47,790
+references, a lot of them. I went to the
+channel and had Claude download the last
+
+42
+00:00:47,790 --> 00:00:47,800
+channel and had Claude download the last
+ 
+
+43
+00:00:47,800 --> 00:00:49,690
+channel and had Claude download the last
+20 shorts in this style, the ones that
+
+44
+00:00:49,690 --> 00:00:49,700
+20 shorts in this style, the ones that
+ 
+
+45
+00:00:49,700 --> 00:00:51,690
+20 shorts in this style, the ones that
+look this good. Now here's the thing. If
+
+46
+00:00:51,690 --> 00:00:51,700
+look this good. Now here's the thing. If
+ 
+
+47
+00:00:51,700 --> 00:00:53,790
+look this good. Now here's the thing. If
+you just tell Claude to analyze a video,
+
+48
+00:00:53,790 --> 00:00:53,800
+you just tell Claude to analyze a video,
+ 
+
+49
+00:00:53,800 --> 00:00:55,890
+you just tell Claude to analyze a video,
+it won't look at every frame. It grabs a
+
+50
+00:00:55,890 --> 00:00:55,900
+it won't look at every frame. It grabs a
+ 
+
+51
+00:00:55,900 --> 00:00:57,890
+it won't look at every frame. It grabs a
+few here and there, but a normal video
+
+52
+00:00:57,890 --> 00:00:57,900
+few here and there, but a normal video
+ 
+
+53
+00:00:57,900 --> 00:00:59,990
+few here and there, but a normal video
+runs at 30 frames per second, and you've
+
+54
+00:00:59,990 --> 00:01:00,000
+runs at 30 frames per second, and you've
+ 
+
+55
+00:01:00,000 --> 00:01:01,790
+runs at 30 frames per second, and you've
+probably seen this style all over your
+
+56
+00:01:01,790 --> 00:01:01,800
+probably seen this style all over your
+ 
+
+57
+00:01:01,800 --> 00:01:04,090
+probably seen this style all over your
+feed. Most of those look trash. The
+
+58
+00:01:04,090 --> 00:01:04,100
+feed. Most of those look trash. The
+ 
+
+59
+00:01:04,100 --> 00:01:06,190
+feed. Most of those look trash. The
+reason is the tiny stuff, micro
+
+60
+00:01:06,190 --> 00:01:06,200
+reason is the tiny stuff, micro
+ 
+
+61
+00:01:06,200 --> 00:01:08,190
+reason is the tiny stuff, micro
+animations, a little camera move, a
+
+62
+00:01:08,190 --> 00:01:08,200
+animations, a little camera move, a
+ 
+
+63
+00:01:08,200 --> 00:01:10,090
+animations, a little camera move, a
+little shading, a little light. That's
+
+64
+00:01:10,090 --> 00:01:10,100
+little shading, a little light. That's
+ 
+
+65
+00:01:10,100 --> 00:01:11,990
+little shading, a little light. That's
+what makes it feel real, and you only
+
+66
+00:01:11,990 --> 00:01:12,000
+what makes it feel real, and you only
+ 
+
+67
+00:01:12,000 --> 00:01:13,990
+what makes it feel real, and you only
+catch that at 30 frames per second,
+
+68
+00:01:13,990 --> 00:01:14,000
+catch that at 30 frames per second,
+ 
+
+69
+00:01:14,000 --> 00:01:16,290
+catch that at 30 frames per second,
+every single frame, every camera move,
+
+70
+00:01:16,290 --> 00:01:16,300
+every single frame, every camera move,
+ 
+
+71
+00:01:16,300 --> 00:01:17,990
+every single frame, every camera move,
+every little change in the light. So
+
+72
+00:01:17,990 --> 00:01:18,000
+every little change in the light. So
+ 
+
+73
+00:01:18,000 --> 00:01:19,790
+every little change in the light. So
+that's the main thing I told Claude,
+
+74
+00:01:19,790 --> 00:01:19,800
+that's the main thing I told Claude,
+ 
+
+75
+00:01:19,800 --> 00:01:21,790
+that's the main thing I told Claude,
+watch all of them at 30 frames per
+
+76
+00:01:21,790 --> 00:01:21,800
+watch all of them at 30 frames per
+ 
+
+77
+00:01:21,800 --> 00:01:23,590
+watch all of them at 30 frames per
+second and check everything, the
+
+78
+00:01:23,590 --> 00:01:23,600
+second and check everything, the
+ 
+
+79
+00:01:23,600 --> 00:01:25,890
+second and check everything, the
+lighting, the contrast, the shadows, the
+
+80
+00:01:25,890 --> 00:01:25,900
+lighting, the contrast, the shadows, the
+ 
+
+81
+00:01:25,900 --> 00:01:27,890
+lighting, the contrast, the shadows, the
+movement, the effects, the cuts,
+
+82
+00:01:27,890 --> 00:01:27,900
+movement, the effects, the cuts,
+ 
+
+83
+00:01:27,900 --> 00:01:30,590
+movement, the effects, the cuts,
+everything. 20 shorts, about 18 minutes
+
+84
+00:01:30,590 --> 00:01:30,600
+everything. 20 shorts, about 18 minutes
+ 
+
+85
+00:01:30,600 --> 00:01:33,390
+everything. 20 shorts, about 18 minutes
+of video, over 32,000 frames, and it
+
+86
+00:01:33,390 --> 00:01:33,400
+of video, over 32,000 frames, and it
+ 
+
+87
+00:01:33,400 --> 00:01:35,790
+of video, over 32,000 frames, and it
+came back with a rule book. So what's
+
+88
+00:01:35,790 --> 00:01:35,800
+came back with a rule book. So what's
+ 
+
+89
+00:01:35,800 --> 00:01:38,190
+came back with a rule book. So what's
+the actual workflow behind these shorts?
+
+90
+00:01:38,190 --> 00:01:38,200
+the actual workflow behind these shorts?
+ 
+
+91
+00:01:38,200 --> 00:01:40,090
+the actual workflow behind these shorts?
+It comes down to three layers, how the
+
+92
+00:01:40,090 --> 00:01:40,100
+It comes down to three layers, how the
+ 
+
+93
+00:01:40,100 --> 00:01:42,090
+It comes down to three layers, how the
+script is engineered, how the visuals
+
+94
+00:01:42,090 --> 00:01:42,100
+script is engineered, how the visuals
+ 
+
+95
+00:01:42,100 --> 00:01:44,190
+script is engineered, how the visuals
+are constructed, and how Claude measured
+
+96
+00:01:44,190 --> 00:01:44,200
+are constructed, and how Claude measured
+ 
+
+97
+00:01:44,200 --> 00:01:46,590
+are constructed, and how Claude measured
+all of it. First, the script. To decode
+
+98
+00:01:46,590 --> 00:01:46,600
+all of it. First, the script. To decode
+ 
+
+99
+00:01:46,600 --> 00:01:48,390
+all of it. First, the script. To decode
+it, Claude needed the audio, and the
+
+100
+00:01:48,390 --> 00:01:48,400
+it, Claude needed the audio, and the
+ 
+
+101
+00:01:48,400 --> 00:01:50,690
+it, Claude needed the audio, and the
+first time YouTube handed it the German
+
+102
+00:01:50,690 --> 00:01:50,700
+first time YouTube handed it the German
+ 
+
+103
+00:01:50,700 --> 00:01:53,390
+first time YouTube handed it the German
+dub, classic. So it pulled the original
+
+104
+00:01:53,390 --> 00:01:53,400
+dub, classic. So it pulled the original
+ 
+
+105
+00:01:53,400 --> 00:01:55,590
+dub, classic. So it pulled the original
+English track and transcribed all 20
+
+106
+00:01:55,590 --> 00:01:55,600
+English track and transcribed all 20
+ 
+
+107
+00:01:55,600 --> 00:01:57,990
+English track and transcribed all 20
+itself, and every single one opens like
+
+108
+00:01:57,990 --> 00:01:58,000
+itself, and every single one opens like
+ 
+
+109
+00:01:58,000 --> 00:01:58,790
+itself, and every single one opens like
+this.
+
+110
+00:01:58,790 --> 00:01:58,800
+this.
+ 
+
+111
+00:01:58,800 --> 00:02:00,782
+this.
+>> They buried a man alive with
+
+112
+00:02:00,782 --> 00:02:00,792
+>> They buried a man alive with
+ 
+
+113
+00:02:00,792 --> 00:02:02,482
+>> They buried a man alive with
+>> tied to his finger. He bet his life
+
+114
+00:02:02,482 --> 00:02:02,492
+>> tied to his finger. He bet his life
+ 
+
+115
+00:02:02,492 --> 00:02:04,382
+>> tied to his finger. He bet his life
+savings on the slowest horse in the
+
+116
+00:02:04,382 --> 00:02:04,392
+savings on the slowest horse in the
+ 
+
+117
+00:02:04,392 --> 00:02:06,282
+savings on the slowest horse in the
+race. A night paid a priest to forgive a
+
+118
+00:02:06,282 --> 00:02:06,292
+race. A night paid a priest to forgive a
+ 
+
+119
+00:02:06,292 --> 00:02:08,382
+race. A night paid a priest to forgive a
+crime he hadn't committed yet. There's a
+
+120
+00:02:08,382 --> 00:02:08,392
+crime he hadn't committed yet. There's a
+ 
+
+121
+00:02:08,392 --> 00:02:09,982
+crime he hadn't committed yet. There's a
+button in the middle of town and
+
+122
+00:02:09,982 --> 00:02:09,992
+button in the middle of town and
+ 
+
+123
+00:02:09,992 --> 00:02:11,582
+button in the middle of town and
+nobody's allowed to press it.
+
+124
+00:02:11,582 --> 00:02:11,592
+nobody's allowed to press it.
+ 
+
+125
+00:02:11,592 --> 00:02:14,282
+nobody's allowed to press it.
+>> A paradox in the very first sentence. No
+
+126
+00:02:14,282 --> 00:02:14,292
+>> A paradox in the very first sentence. No
+ 
+
+127
+00:02:14,292 --> 00:02:17,282
+>> A paradox in the very first sentence. No
+intro, no setup. Then it escalates. Then
+
+128
+00:02:17,282 --> 00:02:17,292
+intro, no setup. Then it escalates. Then
+ 
+
+129
+00:02:17,292 --> 00:02:19,082
+intro, no setup. Then it escalates. Then
+comes the pivot where the real reason
+
+130
+00:02:19,082 --> 00:02:19,092
+comes the pivot where the real reason
+ 
+
+131
+00:02:19,092 --> 00:02:21,382
+comes the pivot where the real reason
+comes out. Then the payoff. One last
+
+132
+00:02:21,382 --> 00:02:21,392
+comes out. Then the payoff. One last
+ 
+
+133
+00:02:21,392 --> 00:02:23,682
+comes out. Then the payoff. One last
+line and the twist lands. And there's a
+
+134
+00:02:23,682 --> 00:02:23,692
+line and the twist lands. And there's a
+ 
+
+135
+00:02:23,692 --> 00:02:26,282
+line and the twist lands. And there's a
+signature move. 14 of the 20 flip into
+
+136
+00:02:26,282 --> 00:02:26,292
+signature move. 14 of the 20 flip into
+ 
+
+137
+00:02:26,292 --> 00:02:28,582
+signature move. 14 of the 20 flip into
+the explanation with the exact same two
+
+138
+00:02:28,582 --> 00:02:28,592
+the explanation with the exact same two
+ 
+
+139
+00:02:28,592 --> 00:02:29,382
+the explanation with the exact same two
+words.
+
+140
+00:02:29,382 --> 00:02:29,392
+words.
+ 
+
+141
+00:02:29,392 --> 00:02:32,182
+words.
+>> You see you see you see you see you see
+
+142
+00:02:32,182 --> 00:02:32,192
+>> You see you see you see you see you see
+ 
+
+143
+00:02:32,192 --> 00:02:34,382
+>> You see you see you see you see you see
+>> And the delivery is relentless. Almost
+
+144
+00:02:34,382 --> 00:02:34,392
+>> And the delivery is relentless. Almost
+ 
+
+145
+00:02:34,392 --> 00:02:36,682
+>> And the delivery is relentless. Almost
+four words a second with basically zero
+
+146
+00:02:36,682 --> 00:02:36,692
+four words a second with basically zero
+ 
+
+147
+00:02:36,692 --> 00:02:38,782
+four words a second with basically zero
+dead air. Second, the visuals. The
+
+148
+00:02:38,782 --> 00:02:38,792
+dead air. Second, the visuals. The
+ 
+
+149
+00:02:38,792 --> 00:02:40,782
+dead air. Second, the visuals. The
+characters are flat, two-dimensional,
+
+150
+00:02:40,782 --> 00:02:40,792
+characters are flat, two-dimensional,
+ 
+
+151
+00:02:40,792 --> 00:02:42,282
+characters are flat, two-dimensional,
+but they're lit like they physically
+
+152
+00:02:42,282 --> 00:02:42,292
+but they're lit like they physically
+ 
+
+153
+00:02:42,292 --> 00:02:44,282
+but they're lit like they physically
+exist in that world. They catch the key
+
+154
+00:02:44,282 --> 00:02:44,292
+exist in that world. They catch the key
+ 
+
+155
+00:02:44,292 --> 00:02:46,382
+exist in that world. They catch the key
+light and they cast real shadows. The
+
+156
+00:02:46,382 --> 00:02:46,392
+light and they cast real shadows. The
+ 
+
+157
+00:02:46,392 --> 00:02:48,982
+light and they cast real shadows. The
+world is real 3D geometry traced with
+
+158
+00:02:48,982 --> 00:02:48,992
+world is real 3D geometry traced with
+ 
+
+159
+00:02:48,992 --> 00:02:51,182
+world is real 3D geometry traced with
+black ink outlines like a comic book.
+
+160
+00:02:51,182 --> 00:02:51,192
+black ink outlines like a comic book.
+ 
+
+161
+00:02:51,192 --> 00:02:53,282
+black ink outlines like a comic book.
+The colors are heavily saturated. Warm
+
+162
+00:02:53,282 --> 00:02:53,292
+The colors are heavily saturated. Warm
+ 
+
+163
+00:02:53,292 --> 00:02:55,382
+The colors are heavily saturated. Warm
+highlights, cool blue shadows. And the
+
+164
+00:02:55,382 --> 00:02:55,392
+highlights, cool blue shadows. And the
+ 
+
+165
+00:02:55,392 --> 00:02:57,382
+highlights, cool blue shadows. And the
+lighting follows the story. Warm and
+
+166
+00:02:57,382 --> 00:02:57,392
+lighting follows the story. Warm and
+ 
+
+167
+00:02:57,392 --> 00:02:59,082
+lighting follows the story. Warm and
+bright while it sets things up, then a
+
+168
+00:02:59,082 --> 00:02:59,092
+bright while it sets things up, then a
+ 
+
+169
+00:02:59,092 --> 00:03:01,282
+bright while it sets things up, then a
+deep night blue right as the explanation
+
+170
+00:03:01,282 --> 00:03:01,292
+deep night blue right as the explanation
+ 
+
+171
+00:03:01,292 --> 00:03:03,382
+deep night blue right as the explanation
+begins. And the camera almost never
+
+172
+00:03:03,382 --> 00:03:03,392
+begins. And the camera almost never
+ 
+
+173
+00:03:03,392 --> 00:03:06,182
+begins. And the camera almost never
+cuts. 12 of the 20 have one hard cut or
+
+174
+00:03:06,182 --> 00:03:06,192
+cuts. 12 of the 20 have one hard cut or
+ 
+
+175
+00:03:06,192 --> 00:03:07,882
+cuts. 12 of the 20 have one hard cut or
+none at all. Instead, the camera
+
+176
+00:03:07,882 --> 00:03:07,892
+none at all. Instead, the camera
+ 
+
+177
+00:03:07,892 --> 00:03:10,082
+none at all. Instead, the camera
+physically travels into the next moment.
+
+178
+00:03:10,082 --> 00:03:10,092
+physically travels into the next moment.
+ 
+
+179
+00:03:10,092 --> 00:03:12,482
+physically travels into the next moment.
+Third, and this is the real secret, how
+
+180
+00:03:12,482 --> 00:03:12,492
+Third, and this is the real secret, how
+ 
+
+181
+00:03:12,492 --> 00:03:14,382
+Third, and this is the real secret, how
+Claude analyzed all of it. It didn't
+
+182
+00:03:14,382 --> 00:03:14,392
+Claude analyzed all of it. It didn't
+ 
+
+183
+00:03:14,392 --> 00:03:16,282
+Claude analyzed all of it. It didn't
+just eyeball it. It wrote its own
+
+184
+00:03:16,282 --> 00:03:16,292
+just eyeball it. It wrote its own
+ 
+
+185
+00:03:16,292 --> 00:03:18,182
+just eyeball it. It wrote its own
+measuring tool. Every two seconds of
+
+186
+00:03:18,182 --> 00:03:18,192
+measuring tool. Every two seconds of
+ 
+
+187
+00:03:18,192 --> 00:03:20,482
+measuring tool. Every two seconds of
+video became one contact sheet. 60
+
+188
+00:03:20,482 --> 00:03:20,492
+video became one contact sheet. 60
+ 
+
+189
+00:03:20,492 --> 00:03:23,582
+video became one contact sheet. 60
+frames on a single image. 549 of them.
+
+190
+00:03:23,582 --> 00:03:23,592
+frames on a single image. 549 of them.
+ 
+
+191
+00:03:23,592 --> 00:03:25,382
+frames on a single image. 549 of them.
+Then it tracked the camera with phase
+
+192
+00:03:25,382 --> 00:03:25,392
+Then it tracked the camera with phase
+ 
+
+193
+00:03:25,392 --> 00:03:27,382
+Then it tracked the camera with phase
+correlation, measuring how far the image
+
+194
+00:03:27,382 --> 00:03:27,392
+correlation, measuring how far the image
+ 
+
+195
+00:03:27,392 --> 00:03:29,982
+correlation, measuring how far the image
+shifts frame by frame. It flagged every
+
+196
+00:03:29,982 --> 00:03:29,992
+shifts frame by frame. It flagged every
+ 
+
+197
+00:03:29,992 --> 00:03:32,082
+shifts frame by frame. It flagged every
+hard cut and it measured the brightness,
+
+198
+00:03:32,082 --> 00:03:32,092
+hard cut and it measured the brightness,
+ 
+
+199
+00:03:32,092 --> 00:03:34,082
+hard cut and it measured the brightness,
+the contrast, and the saturation of
+
+200
+00:03:34,082 --> 00:03:34,092
+the contrast, and the saturation of
+ 
+
+201
+00:03:34,092 --> 00:03:35,882
+the contrast, and the saturation of
+every shot. That's how it found that in
+
+202
+00:03:35,882 --> 00:03:35,892
+every shot. That's how it found that in
+ 
+
+203
+00:03:35,892 --> 00:03:38,182
+every shot. That's how it found that in
+about 80% of the frames the camera is
+
+204
+00:03:38,182 --> 00:03:38,192
+about 80% of the frames the camera is
+ 
+
+205
+00:03:38,192 --> 00:03:40,382
+about 80% of the frames the camera is
+almost perfectly still. Just tiny
+
+206
+00:03:40,382 --> 00:03:40,392
+almost perfectly still. Just tiny
+ 
+
+207
+00:03:40,392 --> 00:03:42,582
+almost perfectly still. Just tiny
+drifts. So here's the tip. Don't ask
+
+208
+00:03:42,582 --> 00:03:42,592
+drifts. So here's the tip. Don't ask
+ 
+
+209
+00:03:42,592 --> 00:03:44,382
+drifts. So here's the tip. Don't ask
+Claude what it thinks of a video. Make
+
+210
+00:03:44,382 --> 00:03:44,392
+Claude what it thinks of a video. Make
+ 
+
+211
+00:03:44,392 --> 00:03:46,182
+Claude what it thinks of a video. Make
+it measure. You can't recreate an
+
+212
+00:03:46,182 --> 00:03:46,192
+it measure. You can't recreate an
+ 
+
+213
+00:03:46,192 --> 00:03:48,782
+it measure. You can't recreate an
+opinion. You can recreate a number. So
+
+214
+00:03:48,782 --> 00:03:48,792
+opinion. You can recreate a number. So
+ 
+
+215
+00:03:48,792 --> 00:03:51,282
+opinion. You can recreate a number. So
+now I had the whole blueprint. Now the
+
+216
+00:03:51,282 --> 00:03:51,292
+now I had the whole blueprint. Now the
+ 
+
+217
+00:03:51,292 --> 00:03:53,482
+now I had the whole blueprint. Now the
+story. We made the same type of short,
+
+218
+00:03:53,482 --> 00:03:53,492
+story. We made the same type of short,
+ 
+
+219
+00:03:53,492 --> 00:03:55,782
+story. We made the same type of short,
+but with our own story. Same lighting,
+
+220
+00:03:55,782 --> 00:03:55,792
+but with our own story. Same lighting,
+ 
+
+221
+00:03:55,792 --> 00:03:58,282
+but with our own story. Same lighting,
+same camera, same cuts, same script
+
+222
+00:03:58,282 --> 00:03:58,292
+same camera, same cuts, same script
+ 
+
+223
+00:03:58,292 --> 00:04:00,382
+same camera, same cuts, same script
+formula, just our own characters. My
+
+224
+00:04:00,382 --> 00:04:00,392
+formula, just our own characters. My
+ 
+
+225
+00:04:00,392 --> 00:04:02,884
+formula, just our own characters. My
+first topic was why time seems to slow
+
+226
+00:04:02,884 --> 00:04:02,894
+first topic was why time seems to slow
+ 
+
+227
+00:04:02,894 --> 00:04:04,484
+first topic was why time seems to slow
+down when you're in danger? But while
+
+228
+00:04:04,484 --> 00:04:04,494
+down when you're in danger? But while
+ 
+
+229
+00:04:04,494 --> 00:04:06,784
+down when you're in danger? But while
+Claude studied the 20, it noticed one of
+
+230
+00:04:06,784 --> 00:04:06,794
+Claude studied the 20, it noticed one of
+ 
+
+231
+00:04:06,794 --> 00:04:08,684
+Claude studied the 20, it noticed one of
+them already covered the exact same
+
+232
+00:04:08,684 --> 00:04:08,694
+them already covered the exact same
+ 
+
+233
+00:04:08,694 --> 00:04:12,284
+them already covered the exact same
+experiment with 5.7 million views. So,
+
+234
+00:04:12,284 --> 00:04:12,294
+experiment with 5.7 million views. So,
+ 
+
+235
+00:04:12,294 --> 00:04:14,184
+experiment with 5.7 million views. So,
+we threw it out and picked a new story,
+
+236
+00:04:14,184 --> 00:04:14,194
+we threw it out and picked a new story,
+ 
+
+237
+00:04:14,194 --> 00:04:17,684
+we threw it out and picked a new story,
+one the channel had never told. 1831, 74
+
+238
+00:04:17,684 --> 00:04:17,694
+one the channel had never told. 1831, 74
+ 
+
+239
+00:04:17,694 --> 00:04:19,884
+one the channel had never told. 1831, 74
+soldiers march across an iron bridge,
+
+240
+00:04:19,884 --> 00:04:19,894
+soldiers march across an iron bridge,
+ 
+
+241
+00:04:19,894 --> 00:04:21,784
+soldiers march across an iron bridge,
+all in step, and one end of the bridge
+
+242
+00:04:21,784 --> 00:04:21,794
+all in step, and one end of the bridge
+ 
+
+243
+00:04:21,794 --> 00:04:23,684
+all in step, and one end of the bridge
+drops into the river. Before writing a
+
+244
+00:04:23,684 --> 00:04:23,694
+drops into the river. Before writing a
+ 
+
+245
+00:04:23,694 --> 00:04:26,284
+drops into the river. Before writing a
+single word, Claude checked every fact,
+
+246
+00:04:26,284 --> 00:04:26,294
+single word, Claude checked every fact,
+ 
+
+247
+00:04:26,294 --> 00:04:28,484
+single word, Claude checked every fact,
+the date, the number of soldiers, even
+
+248
+00:04:28,484 --> 00:04:28,494
+the date, the number of soldiers, even
+ 
+
+249
+00:04:28,494 --> 00:04:30,884
+the date, the number of soldiers, even
+how deep the river was, 2 ft. And that
+
+250
+00:04:30,884 --> 00:04:30,894
+how deep the river was, 2 ft. And that
+ 
+
+251
+00:04:30,894 --> 00:04:32,684
+how deep the river was, 2 ft. And that
+turned into the best joke in the whole
+
+252
+00:04:32,684 --> 00:04:32,694
+turned into the best joke in the whole
+ 
+
+253
+00:04:32,694 --> 00:04:33,884
+turned into the best joke in the whole
+short.
+
+254
+00:04:33,884 --> 00:04:33,894
+short.
+ 
+
+255
+00:04:33,894 --> 00:04:36,484
+short.
+Luckily, the river was only 2 ft deep.
+
+256
+00:04:36,484 --> 00:04:36,494
+Luckily, the river was only 2 ft deep.
+ 
+
+257
+00:04:36,494 --> 00:04:39,884
+Luckily, the river was only 2 ft deep.
+Unluckily, the river was only 2 ft deep.
+
+258
+00:04:39,884 --> 00:04:39,894
+Unluckily, the river was only 2 ft deep.
+ 
+
+259
+00:04:39,894 --> 00:04:41,784
+Unluckily, the river was only 2 ft deep.
+Then it wrote the script with the exact
+
+260
+00:04:41,784 --> 00:04:41,794
+Then it wrote the script with the exact
+ 
+
+261
+00:04:41,794 --> 00:04:43,884
+Then it wrote the script with the exact
+formula from the 20, a paradox in the
+
+262
+00:04:43,884 --> 00:04:43,894
+formula from the 20, a paradox in the
+ 
+
+263
+00:04:43,894 --> 00:04:46,883
+formula from the 20, a paradox in the
+very first line. 74 soldiers knock
+
+264
+00:04:46,883 --> 00:04:46,893
+very first line. 74 soldiers knock
+ 
+
+265
+00:04:46,893 --> 00:04:48,484
+very first line. 74 soldiers knock
+[music] down an iron bridge just by
+
+266
+00:04:48,484 --> 00:04:48,494
+[music] down an iron bridge just by
+ 
+
+267
+00:04:48,494 --> 00:04:50,884
+[music] down an iron bridge just by
+walking across it. Then it builds up,
+
+268
+00:04:50,884 --> 00:04:50,894
+walking across it. Then it builds up,
+ 
+
+269
+00:04:50,894 --> 00:04:53,584
+walking across it. Then it builds up,
+then you see, then the twist. After
+
+270
+00:04:53,584 --> 00:04:53,594
+then you see, then the twist. After
+ 
+
+271
+00:04:53,594 --> 00:04:56,284
+then you see, then the twist. After
+that, Claude started building. At first,
+
+272
+00:04:56,284 --> 00:04:56,294
+that, Claude started building. At first,
+ 
+
+273
+00:04:56,294 --> 00:04:58,484
+that, Claude started building. At first,
+it used Blender, same as my very first
+
+274
+00:04:58,484 --> 00:04:58,494
+it used Blender, same as my very first
+ 
+
+275
+00:04:58,494 --> 00:05:00,984
+it used Blender, same as my very first
+test. Before any of this, I asked Claude
+
+276
+00:05:00,984 --> 00:05:00,994
+test. Before any of this, I asked Claude
+ 
+
+277
+00:05:00,994 --> 00:05:03,184
+test. Before any of this, I asked Claude
+for a quick 5-second test just to see
+
+278
+00:05:03,184 --> 00:05:03,194
+for a quick 5-second test just to see
+ 
+
+279
+00:05:03,194 --> 00:05:04,784
+for a quick 5-second test just to see
+the look. Claude designed its own
+
+280
+00:05:04,784 --> 00:05:04,794
+the look. Claude designed its own
+ 
+
+281
+00:05:04,794 --> 00:05:06,984
+the look. Claude designed its own
+character, a little courier. It grabbed
+
+282
+00:05:06,984 --> 00:05:06,994
+character, a little courier. It grabbed
+ 
+
+283
+00:05:06,994 --> 00:05:09,484
+character, a little courier. It grabbed
+free 3D buildings, made flat cartoon
+
+284
+00:05:09,484 --> 00:05:09,494
+free 3D buildings, made flat cartoon
+ 
+
+285
+00:05:09,494 --> 00:05:11,384
+free 3D buildings, made flat cartoon
+clouds, and matched the camera timing
+
+286
+00:05:11,384 --> 00:05:11,394
+clouds, and matched the camera timing
+ 
+
+287
+00:05:11,394 --> 00:05:12,884
+clouds, and matched the camera timing
+from the channel's frames. There was
+
+288
+00:05:12,884 --> 00:05:12,894
+from the channel's frames. There was
+ 
+
+289
+00:05:12,894 --> 00:05:14,984
+from the channel's frames. There was
+just one problem. On the third camera
+
+290
+00:05:14,984 --> 00:05:14,994
+just one problem. On the third camera
+ 
+
+291
+00:05:14,994 --> 00:05:16,984
+just one problem. On the third camera
+push, the camera flew right past the
+
+292
+00:05:16,984 --> 00:05:16,994
+push, the camera flew right past the
+ 
+
+293
+00:05:16,994 --> 00:05:19,084
+push, the camera flew right past the
+character. So, for the bridge, Claude
+
+294
+00:05:19,084 --> 00:05:19,094
+character. So, for the bridge, Claude
+ 
+
+295
+00:05:19,094 --> 00:05:20,984
+character. So, for the bridge, Claude
+started in Blender again. It tested the
+
+296
+00:05:20,984 --> 00:05:20,994
+started in Blender again. It tested the
+ 
+
+297
+00:05:20,994 --> 00:05:23,084
+started in Blender again. It tested the
+inclines there and drew the whole cast
+
+298
+00:05:23,084 --> 00:05:23,094
+inclines there and drew the whole cast
+ 
+
+299
+00:05:23,094 --> 00:05:25,684
+inclines there and drew the whole cast
+in code, soldiers, an officer, people
+
+300
+00:05:25,684 --> 00:05:25,694
+in code, soldiers, an officer, people
+ 
+
+301
+00:05:25,694 --> 00:05:28,284
+in code, soldiers, an officer, people
+from the town, a kid, and a parent. Then
+
+302
+00:05:28,284 --> 00:05:28,294
+from the town, a kid, and a parent. Then
+ 
+
+303
+00:05:28,294 --> 00:05:30,084
+from the town, a kid, and a parent. Then
+I had a hunch. Maybe these shorts are
+
+304
+00:05:30,084 --> 00:05:30,094
+I had a hunch. Maybe these shorts are
+ 
+
+305
+00:05:30,094 --> 00:05:32,984
+I had a hunch. Maybe these shorts are
+made with 3.js. That's 3D built with
+
+306
+00:05:32,984 --> 00:05:32,994
+made with 3.js. That's 3D built with
+ 
+
+307
+00:05:32,994 --> 00:05:34,884
+made with 3.js. That's 3D built with
+code right in the browser. Claude
+
+308
+00:05:34,884 --> 00:05:34,894
+code right in the browser. Claude
+ 
+
+309
+00:05:34,894 --> 00:05:36,884
+code right in the browser. Claude
+checked the frames, flat characters
+
+310
+00:05:36,884 --> 00:05:36,894
+checked the frames, flat characters
+ 
+
+311
+00:05:36,894 --> 00:05:39,784
+checked the frames, flat characters
+standing in a real 3D world. 3.js can do
+
+312
+00:05:39,784 --> 00:05:39,794
+standing in a real 3D world. 3.js can do
+ 
+
+313
+00:05:39,794 --> 00:05:42,084
+standing in a real 3D world. 3.js can do
+exactly that. So, it moved everything
+
+314
+00:05:42,084 --> 00:05:42,094
+exactly that. So, it moved everything
+ 
+
+315
+00:05:42,094 --> 00:05:44,584
+exactly that. So, it moved everything
+over and Remotion turns it into a video
+
+316
+00:05:44,584 --> 00:05:44,594
+over and Remotion turns it into a video
+ 
+
+317
+00:05:44,594 --> 00:05:47,184
+over and Remotion turns it into a video
+frame by frame. Then it built the world,
+
+318
+00:05:47,184 --> 00:05:47,194
+frame by frame. Then it built the world,
+ 
+
+319
+00:05:47,194 --> 00:05:50,584
+frame by frame. Then it built the world,
+37 free 3D models, trees, rocks,
+
+320
+00:05:50,584 --> 00:05:50,594
+37 free 3D models, trees, rocks,
+ 
+
+321
+00:05:50,594 --> 00:05:53,284
+37 free 3D models, trees, rocks,
+flowers, market stalls, a cart, even a
+
+322
+00:05:53,284 --> 00:05:53,294
+flowers, market stalls, a cart, even a
+ 
+
+323
+00:05:53,294 --> 00:05:55,884
+flowers, market stalls, a cart, even a
+windmill. And every texture, the grass,
+
+324
+00:05:55,884 --> 00:05:55,894
+windmill. And every texture, the grass,
+ 
+
+325
+00:05:55,894 --> 00:05:58,184
+windmill. And every texture, the grass,
+the cobblestones, the roofs, the water
+
+326
+00:05:58,184 --> 00:05:58,194
+the cobblestones, the roofs, the water
+ 
+
+327
+00:05:58,194 --> 00:06:00,284
+the cobblestones, the roofs, the water
+was painted by code. The characters got
+
+328
+00:06:00,284 --> 00:06:00,294
+was painted by code. The characters got
+ 
+
+329
+00:06:00,294 --> 00:06:03,284
+was painted by code. The characters got
+14 different faces, laughing, whistling,
+
+330
+00:06:03,284 --> 00:06:03,294
+14 different faces, laughing, whistling,
+ 
+
+331
+00:06:03,294 --> 00:06:05,885
+14 different faces, laughing, whistling,
+nervous, shocked. Then the bridge, Two
+
+332
+00:06:05,885 --> 00:06:05,895
+nervous, shocked. Then the bridge, Two
+ 
+
+333
+00:06:05,895 --> 00:06:09,285
+nervous, shocked. Then the bridge, Two
+towers, iron chains, and a deck 5m wide.
+
+334
+00:06:09,285 --> 00:06:09,295
+towers, iron chains, and a deck 5m wide.
+ 
+
+335
+00:06:09,295 --> 00:06:11,985
+towers, iron chains, and a deck 5m wide.
+74 soldiers march across it, four side
+
+336
+00:06:11,985 --> 00:06:11,995
+74 soldiers march across it, four side
+ 
+
+337
+00:06:11,995 --> 00:06:14,485
+74 soldiers march across it, four side
+by side. Every step makes it bounce, and
+
+338
+00:06:14,485 --> 00:06:14,495
+by side. Every step makes it bounce, and
+ 
+
+339
+00:06:14,495 --> 00:06:16,885
+by side. Every step makes it bounce, and
+the bounce keeps growing until it snaps.
+
+340
+00:06:16,885 --> 00:06:16,895
+the bounce keeps growing until it snaps.
+ 
+
+341
+00:06:16,895 --> 00:06:18,785
+the bounce keeps growing until it snaps.
+For the inclines, Claude wrote its own
+
+342
+00:06:18,785 --> 00:06:18,795
+For the inclines, Claude wrote its own
+ 
+
+343
+00:06:18,795 --> 00:06:20,785
+For the inclines, Claude wrote its own
+effect. It finds the edges in the 3D
+
+344
+00:06:20,785 --> 00:06:20,795
+effect. It finds the edges in the 3D
+ 
+
+345
+00:06:20,795 --> 00:06:22,785
+effect. It finds the edges in the 3D
+world and draws a black line on them.
+
+346
+00:06:22,785 --> 00:06:22,795
+world and draws a black line on them.
+ 
+
+347
+00:06:22,795 --> 00:06:25,185
+world and draws a black line on them.
+About an hour after the switch, all 15
+
+348
+00:06:25,185 --> 00:06:25,195
+About an hour after the switch, all 15
+ 
+
+349
+00:06:25,195 --> 00:06:28,285
+About an hour after the switch, all 15
+shots were working. 2025 frames. But
+
+350
+00:06:28,285 --> 00:06:28,295
+shots were working. 2025 frames. But
+ 
+
+351
+00:06:28,295 --> 00:06:30,185
+shots were working. 2025 frames. But
+before rendering any video, Claude
+
+352
+00:06:30,185 --> 00:06:30,195
+before rendering any video, Claude
+ 
+
+353
+00:06:30,195 --> 00:06:32,285
+before rendering any video, Claude
+checked still frames. Good thing it did.
+
+354
+00:06:32,285 --> 00:06:32,295
+checked still frames. Good thing it did.
+ 
+
+355
+00:06:32,295 --> 00:06:34,385
+checked still frames. Good thing it did.
+In three shots, the camera was stuck
+
+356
+00:06:34,385 --> 00:06:34,395
+In three shots, the camera was stuck
+ 
+
+357
+00:06:34,395 --> 00:06:36,785
+In three shots, the camera was stuck
+inside a house. The trees were teal, and
+
+358
+00:06:36,785 --> 00:06:36,795
+inside a house. The trees were teal, and
+ 
+
+359
+00:06:36,795 --> 00:06:38,585
+inside a house. The trees were teal, and
+a chain was right in front of everyone's
+
+360
+00:06:38,585 --> 00:06:38,595
+a chain was right in front of everyone's
+ 
+
+361
+00:06:38,595 --> 00:06:40,685
+a chain was right in front of everyone's
+faces. While Claude was fixing that, I
+
+362
+00:06:40,685 --> 00:06:40,695
+faces. While Claude was fixing that, I
+ 
+
+363
+00:06:40,695 --> 00:06:42,285
+faces. While Claude was fixing that, I
+put one of our frames next to the
+
+364
+00:06:42,285 --> 00:06:42,295
+put one of our frames next to the
+ 
+
+365
+00:06:42,295 --> 00:06:44,485
+put one of our frames next to the
+original, and it looked cheap. Here's
+
+366
+00:06:44,485 --> 00:06:44,495
+original, and it looked cheap. Here's
+ 
+
+367
+00:06:44,495 --> 00:06:46,585
+original, and it looked cheap. Here's
+what I told Claude. The original is
+
+368
+00:06:46,585 --> 00:06:46,595
+what I told Claude. The original is
+ 
+
+369
+00:06:46,595 --> 00:06:48,885
+what I told Claude. The original is
+colorful, high contrast. It looks
+
+370
+00:06:48,885 --> 00:06:48,895
+colorful, high contrast. It looks
+ 
+
+371
+00:06:48,895 --> 00:06:51,885
+colorful, high contrast. It looks
+premium. Ours looks dull. So go analyze
+
+372
+00:06:51,885 --> 00:06:51,895
+premium. Ours looks dull. So go analyze
+ 
+
+373
+00:06:51,895 --> 00:06:54,485
+premium. Ours looks dull. So go analyze
+it frame by frame. Take your time. Use
+
+374
+00:06:54,485 --> 00:06:54,495
+it frame by frame. Take your time. Use
+ 
+
+375
+00:06:54,495 --> 00:06:56,485
+it frame by frame. Take your time. Use
+10 agents if you have to. Just make it
+
+376
+00:06:56,485 --> 00:06:56,495
+10 agents if you have to. Just make it
+ 
+
+377
+00:06:56,495 --> 00:06:58,985
+10 agents if you have to. Just make it
+as close as you possibly can. And Claude
+
+378
+00:06:58,985 --> 00:06:58,995
+as close as you possibly can. And Claude
+ 
+
+379
+00:06:58,995 --> 00:07:01,485
+as close as you possibly can. And Claude
+agreed. Ours looked cheap. Then it broke
+
+380
+00:07:01,485 --> 00:07:01,495
+agreed. Ours looked cheap. Then it broke
+ 
+
+381
+00:07:01,495 --> 00:07:04,185
+agreed. Ours looked cheap. Then it broke
+down exactly why. The original has black
+
+382
+00:07:04,185 --> 00:07:04,195
+down exactly why. The original has black
+ 
+
+383
+00:07:04,195 --> 00:07:06,785
+down exactly why. The original has black
+inclines on the whole 3D world. Ours had
+
+384
+00:07:06,785 --> 00:07:06,795
+inclines on the whole 3D world. Ours had
+ 
+
+385
+00:07:06,795 --> 00:07:09,385
+inclines on the whole 3D world. Ours had
+almost none. Their colors are bold with
+
+386
+00:07:09,385 --> 00:07:09,395
+almost none. Their colors are bold with
+ 
+
+387
+00:07:09,395 --> 00:07:12,085
+almost none. Their colors are bold with
+long blue shadows and deep darks. Ours
+
+388
+00:07:12,085 --> 00:07:12,095
+long blue shadows and deep darks. Ours
+ 
+
+389
+00:07:12,095 --> 00:07:14,085
+long blue shadows and deep darks. Ours
+were pastel and flat. Their wood and
+
+390
+00:07:14,085 --> 00:07:14,095
+were pastel and flat. Their wood and
+ 
+
+391
+00:07:14,095 --> 00:07:16,185
+were pastel and flat. Their wood and
+stone look hand painted. You can see the
+
+392
+00:07:16,185 --> 00:07:16,195
+stone look hand painted. You can see the
+ 
+
+393
+00:07:16,195 --> 00:07:18,085
+stone look hand painted. You can see the
+grain and the dark gaps between the
+
+394
+00:07:18,085 --> 00:07:18,095
+grain and the dark gaps between the
+ 
+
+395
+00:07:18,095 --> 00:07:19,985
+grain and the dark gaps between the
+planks. Ours were plain. Their
+
+396
+00:07:19,985 --> 00:07:19,995
+planks. Ours were plain. Their
+ 
+
+397
+00:07:19,995 --> 00:07:21,885
+planks. Ours were plain. Their
+backgrounds are blurry, so your eye goes
+
+398
+00:07:21,885 --> 00:07:21,895
+backgrounds are blurry, so your eye goes
+ 
+
+399
+00:07:21,895 --> 00:07:23,585
+backgrounds are blurry, so your eye goes
+straight to the character. Ours were
+
+400
+00:07:23,585 --> 00:07:23,595
+straight to the character. Ours were
+ 
+
+401
+00:07:23,595 --> 00:07:25,785
+straight to the character. Ours were
+mostly sharp. And the characters, theirs
+
+402
+00:07:25,785 --> 00:07:25,795
+mostly sharp. And the characters, theirs
+ 
+
+403
+00:07:25,795 --> 00:07:27,685
+mostly sharp. And the characters, theirs
+have egg shaped heads and thin little
+
+404
+00:07:27,685 --> 00:07:27,695
+have egg shaped heads and thin little
+ 
+
+405
+00:07:27,695 --> 00:07:30,285
+have egg shaped heads and thin little
+limbs. Ours had perfect circle heads and
+
+406
+00:07:30,285 --> 00:07:30,295
+limbs. Ours had perfect circle heads and
+ 
+
+407
+00:07:30,295 --> 00:07:32,285
+limbs. Ours had perfect circle heads and
+chunky bodies. They look like clip art
+
+408
+00:07:32,285 --> 00:07:32,295
+chunky bodies. They look like clip art
+ 
+
+409
+00:07:32,295 --> 00:07:34,485
+chunky bodies. They look like clip art
+pasted on top. And this is where it gets
+
+410
+00:07:34,485 --> 00:07:34,495
+pasted on top. And this is where it gets
+ 
+
+411
+00:07:34,495 --> 00:07:37,085
+pasted on top. And this is where it gets
+interesting. I asked for 10 agents.
+
+412
+00:07:37,085 --> 00:07:37,095
+interesting. I asked for 10 agents.
+ 
+
+413
+00:07:37,095 --> 00:07:39,485
+interesting. I asked for 10 agents.
+Claude used 12. And it didn't just throw
+
+414
+00:07:39,485 --> 00:07:39,495
+Claude used 12. And it didn't just throw
+ 
+
+415
+00:07:39,495 --> 00:07:41,685
+Claude used 12. And it didn't just throw
+them at the problem. It built a team.
+
+416
+00:07:41,685 --> 00:07:41,695
+them at the problem. It built a team.
+ 
+
+417
+00:07:41,695 --> 00:07:43,785
+them at the problem. It built a team.
+Seven agents to study the gap. One for
+
+418
+00:07:43,785 --> 00:07:43,795
+Seven agents to study the gap. One for
+ 
+
+419
+00:07:43,795 --> 00:07:46,185
+Seven agents to study the gap. One for
+color, one for the inclines, one for
+
+420
+00:07:46,185 --> 00:07:46,195
+color, one for the inclines, one for
+ 
+
+421
+00:07:46,195 --> 00:07:48,685
+color, one for the inclines, one for
+light and shadows, one for textures, one
+
+422
+00:07:48,685 --> 00:07:48,695
+light and shadows, one for textures, one
+ 
+
+423
+00:07:48,695 --> 00:07:50,585
+light and shadows, one for textures, one
+for the characters, one for depth and
+
+424
+00:07:50,585 --> 00:07:50,595
+for the characters, one for depth and
+ 
+
+425
+00:07:50,595 --> 00:07:52,985
+for the characters, one for depth and
+framing, and one for motion, the camera
+
+426
+00:07:52,985 --> 00:07:52,995
+framing, and one for motion, the camera
+ 
+
+427
+00:07:52,995 --> 00:07:54,785
+framing, and one for motion, the camera
+and the characters. Each one put the
+
+428
+00:07:54,785 --> 00:07:54,795
+and the characters. Each one put the
+ 
+
+429
+00:07:54,795 --> 00:07:56,885
+and the characters. Each one put the
+original frames next to ours and
+
+430
+00:07:56,885 --> 00:07:56,895
+original frames next to ours and
+ 
+
+431
+00:07:56,895 --> 00:07:58,785
+original frames next to ours and
+measured the difference. No guessing,
+
+432
+00:07:58,785 --> 00:07:58,795
+measured the difference. No guessing,
+ 
+
+433
+00:07:58,795 --> 00:08:00,885
+measured the difference. No guessing,
+real numbers. An eighth agent worked on
+
+434
+00:08:00,885 --> 00:08:00,895
+real numbers. An eighth agent worked on
+ 
+
+435
+00:08:00,895 --> 00:08:03,285
+real numbers. An eighth agent worked on
+the sound. Then four more agents to
+
+436
+00:08:03,285 --> 00:08:03,295
+the sound. Then four more agents to
+ 
+
+437
+00:08:03,295 --> 00:08:05,485
+the sound. Then four more agents to
+rebuild everything. One for the camera,
+
+438
+00:08:05,485 --> 00:08:05,495
+rebuild everything. One for the camera,
+ 
+
+439
+00:08:05,495 --> 00:08:06,785
+rebuild everything. One for the camera,
+one for the world, one for the
+
+440
+00:08:06,785 --> 00:08:06,795
+one for the world, one for the
+ 
+
+441
+00:08:06,795 --> 00:08:09,187
+one for the world, one for the
+characters, and one for the final look.
+
+442
+00:08:09,187 --> 00:08:09,197
+characters, and one for the final look.
+ 
+
+443
+00:08:09,197 --> 00:08:11,087
+characters, and one for the final look.
+But here's the problem. Four agents
+
+444
+00:08:11,087 --> 00:08:11,097
+But here's the problem. Four agents
+ 
+
+445
+00:08:11,097 --> 00:08:13,087
+But here's the problem. Four agents
+working on the same project can break
+
+446
+00:08:13,087 --> 00:08:13,097
+working on the same project can break
+ 
+
+447
+00:08:13,097 --> 00:08:15,287
+working on the same project can break
+each other's work. So, Claude gave each
+
+448
+00:08:15,287 --> 00:08:15,297
+each other's work. So, Claude gave each
+ 
+
+449
+00:08:15,297 --> 00:08:17,487
+each other's work. So, Claude gave each
+one its own copy of the project, and
+
+450
+00:08:17,487 --> 00:08:17,497
+one its own copy of the project, and
+ 
+
+451
+00:08:17,497 --> 00:08:20,187
+one its own copy of the project, and
+each agent owned its own files. Nobody
+
+452
+00:08:20,187 --> 00:08:20,197
+each agent owned its own files. Nobody
+ 
+
+453
+00:08:20,197 --> 00:08:21,487
+each agent owned its own files. Nobody
+else could touch them. When they were
+
+454
+00:08:21,487 --> 00:08:21,497
+else could touch them. When they were
+ 
+
+455
+00:08:21,497 --> 00:08:24,187
+else could touch them. When they were
+done, Claude merged everything back file
+
+456
+00:08:24,187 --> 00:08:24,197
+done, Claude merged everything back file
+ 
+
+457
+00:08:24,197 --> 00:08:26,087
+done, Claude merged everything back file
+by file. So, here's the tip. When you
+
+458
+00:08:26,087 --> 00:08:26,097
+by file. So, here's the tip. When you
+ 
+
+459
+00:08:26,097 --> 00:08:28,087
+by file. So, here's the tip. When you
+use a lot of agents, don't just split
+
+460
+00:08:28,087 --> 00:08:28,097
+use a lot of agents, don't just split
+ 
+
+461
+00:08:28,097 --> 00:08:30,787
+use a lot of agents, don't just split
+the jobs, split the files. Then I gave
+
+462
+00:08:30,787 --> 00:08:30,797
+the jobs, split the files. Then I gave
+ 
+
+463
+00:08:30,797 --> 00:08:33,487
+the jobs, split the files. Then I gave
+Claude 10 hours, 10 hours to learn this
+
+464
+00:08:33,487 --> 00:08:33,497
+Claude 10 hours, 10 hours to learn this
+ 
+
+465
+00:08:33,497 --> 00:08:35,487
+Claude 10 hours, 10 hours to learn this
+style and make the finished video.
+
+466
+00:08:35,487 --> 00:08:35,497
+style and make the finished video.
+ 
+
+467
+00:08:35,497 --> 00:08:37,287
+style and make the finished video.
+Here's what the seven agents found.
+
+468
+00:08:37,287 --> 00:08:37,297
+Here's what the seven agents found.
+ 
+
+469
+00:08:37,297 --> 00:08:39,887
+Here's what the seven agents found.
+First, the ink lines. The original has
+
+470
+00:08:39,887 --> 00:08:39,897
+First, the ink lines. The original has
+ 
+
+471
+00:08:39,897 --> 00:08:42,187
+First, the ink lines. The original has
+black lines on almost three out of four
+
+472
+00:08:42,187 --> 00:08:42,197
+black lines on almost three out of four
+ 
+
+473
+00:08:42,197 --> 00:08:44,887
+black lines on almost three out of four
+edges. On ours, the agent found zero.
+
+474
+00:08:44,887 --> 00:08:44,897
+edges. On ours, the agent found zero.
+ 
+
+475
+00:08:44,897 --> 00:08:46,487
+edges. On ours, the agent found zero.
+The ink effect was there, but the blur
+
+476
+00:08:46,487 --> 00:08:46,497
+The ink effect was there, but the blur
+ 
+
+477
+00:08:46,497 --> 00:08:48,687
+The ink effect was there, but the blur
+effect ran in the same step and wiped it
+
+478
+00:08:48,687 --> 00:08:48,697
+effect ran in the same step and wiped it
+ 
+
+479
+00:08:48,697 --> 00:08:51,187
+effect ran in the same step and wiped it
+out. And the blur itself, it was so weak
+
+480
+00:08:51,187 --> 00:08:51,197
+out. And the blur itself, it was so weak
+ 
+
+481
+00:08:51,197 --> 00:08:53,087
+out. And the blur itself, it was so weak
+you couldn't see it anywhere. Next, the
+
+482
+00:08:53,087 --> 00:08:53,097
+you couldn't see it anywhere. Next, the
+ 
+
+483
+00:08:53,097 --> 00:08:55,487
+you couldn't see it anywhere. Next, the
+camera. Ours snapped from one spot to
+
+484
+00:08:55,487 --> 00:08:55,497
+camera. Ours snapped from one spot to
+ 
+
+485
+00:08:55,497 --> 00:08:57,787
+camera. Ours snapped from one spot to
+the next in three frames. The original
+
+486
+00:08:57,787 --> 00:08:57,797
+the next in three frames. The original
+ 
+
+487
+00:08:57,797 --> 00:09:01,187
+the next in three frames. The original
+glides over about 23 frames. Slow in,
+
+488
+00:09:01,187 --> 00:09:01,197
+glides over about 23 frames. Slow in,
+ 
+
+489
+00:09:01,197 --> 00:09:03,287
+glides over about 23 frames. Slow in,
+slow out. Then the color. The original
+
+490
+00:09:03,287 --> 00:09:03,297
+slow out. Then the color. The original
+ 
+
+491
+00:09:03,297 --> 00:09:05,987
+slow out. Then the color. The original
+has no pure black anywhere. Ours went
+
+492
+00:09:05,987 --> 00:09:05,997
+has no pure black anywhere. Ours went
+ 
+
+493
+00:09:05,997 --> 00:09:07,787
+has no pure black anywhere. Ours went
+almost black, and at sunset their
+
+494
+00:09:07,787 --> 00:09:07,797
+almost black, and at sunset their
+ 
+
+495
+00:09:07,797 --> 00:09:10,187
+almost black, and at sunset their
+shadows are purple. Ours were brown. And
+
+496
+00:09:10,187 --> 00:09:10,197
+shadows are purple. Ours were brown. And
+ 
+
+497
+00:09:10,197 --> 00:09:12,087
+shadows are purple. Ours were brown. And
+the characters, their bodies are three
+
+498
+00:09:12,087 --> 00:09:12,097
+the characters, their bodies are three
+ 
+
+499
+00:09:12,097 --> 00:09:14,287
+the characters, their bodies are three
+and a half heads tall. Ours were under
+
+500
+00:09:14,287 --> 00:09:14,297
+and a half heads tall. Ours were under
+ 
+
+501
+00:09:14,297 --> 00:09:16,487
+and a half heads tall. Ours were under
+three, and our arms and legs were five
+
+502
+00:09:16,487 --> 00:09:16,497
+three, and our arms and legs were five
+ 
+
+503
+00:09:16,497 --> 00:09:18,487
+three, and our arms and legs were five
+times too thick. But the agents also
+
+504
+00:09:18,487 --> 00:09:18,497
+times too thick. But the agents also
+ 
+
+505
+00:09:18,497 --> 00:09:20,487
+times too thick. But the agents also
+found something I didn't expect. Some of
+
+506
+00:09:20,487 --> 00:09:20,497
+found something I didn't expect. Some of
+ 
+
+507
+00:09:20,497 --> 00:09:22,487
+found something I didn't expect. Some of
+our own notes were wrong. Remember the
+
+508
+00:09:22,487 --> 00:09:22,497
+our own notes were wrong. Remember the
+ 
+
+509
+00:09:22,497 --> 00:09:24,887
+our own notes were wrong. Remember the
+egg-shaped heads? The agent measured 38
+
+510
+00:09:24,887 --> 00:09:24,897
+egg-shaped heads? The agent measured 38
+ 
+
+511
+00:09:24,897 --> 00:09:26,387
+egg-shaped heads? The agent measured 38
+of them. Their heads are actually
+
+512
+00:09:26,387 --> 00:09:26,397
+of them. Their heads are actually
+ 
+
+513
+00:09:26,397 --> 00:09:28,187
+of them. Their heads are actually
+rounder than ours. Ours were the
+
+514
+00:09:28,187 --> 00:09:28,197
+rounder than ours. Ours were the
+ 
+
+515
+00:09:28,197 --> 00:09:29,587
+rounder than ours. Ours were the
+egg-shaped ones. And remember the
+
+516
+00:09:29,587 --> 00:09:29,597
+egg-shaped ones. And remember the
+ 
+
+517
+00:09:29,597 --> 00:09:31,387
+egg-shaped ones. And remember the
+measuring tool from the start? It said
+
+518
+00:09:31,387 --> 00:09:31,397
+measuring tool from the start? It said
+ 
+
+519
+00:09:31,397 --> 00:09:33,787
+measuring tool from the start? It said
+the camera is almost still 80% of the
+
+520
+00:09:33,787 --> 00:09:33,797
+the camera is almost still 80% of the
+ 
+
+521
+00:09:33,797 --> 00:09:35,987
+the camera is almost still 80% of the
+time. It's not. The camera is moving in
+
+522
+00:09:35,987 --> 00:09:35,997
+time. It's not. The camera is moving in
+ 
+
+523
+00:09:35,997 --> 00:09:39,287
+time. It's not. The camera is moving in
+65% of the frames, slowly pushing in.
+
+524
+00:09:39,287 --> 00:09:39,297
+65% of the frames, slowly pushing in.
+ 
+
+525
+00:09:39,297 --> 00:09:40,987
+65% of the frames, slowly pushing in.
+The tool just couldn't see moves that
+
+526
+00:09:40,987 --> 00:09:40,997
+The tool just couldn't see moves that
+ 
+
+527
+00:09:40,997 --> 00:09:43,487
+The tool just couldn't see moves that
+slow. And this is exactly the part other
+
+528
+00:09:43,487 --> 00:09:43,497
+slow. And this is exactly the part other
+ 
+
+529
+00:09:43,497 --> 00:09:46,087
+slow. And this is exactly the part other
+tutorials skip. I found only two other
+
+530
+00:09:46,087 --> 00:09:46,097
+tutorials skip. I found only two other
+ 
+
+531
+00:09:46,097 --> 00:09:48,287
+tutorials skip. I found only two other
+tutorials on this style. One sells it
+
+532
+00:09:48,287 --> 00:09:48,297
+tutorials on this style. One sells it
+ 
+
+533
+00:09:48,297 --> 00:09:52,487
+tutorials on this style. One sells it
+inside an app, $67 a month or $97 for
+
+534
+00:09:52,487 --> 00:09:52,497
+inside an app, $67 a month or $97 for
+ 
+
+535
+00:09:52,497 --> 00:09:54,187
+inside an app, $67 a month or $97 for
+everything. The other one gives you a
+
+536
+00:09:54,187 --> 00:09:54,197
+everything. The other one gives you a
+ 
+
+537
+00:09:54,197 --> 00:09:56,487
+everything. The other one gives you a
+few prompts, and it says your first
+
+538
+00:09:56,487 --> 00:09:56,497
+few prompts, and it says your first
+ 
+
+539
+00:09:56,497 --> 00:09:58,687
+few prompts, and it says your first
+results might not look as clean. So,
+
+540
+00:09:58,687 --> 00:09:58,697
+results might not look as clean. So,
+ 
+
+541
+00:09:58,697 --> 00:10:00,487
+results might not look as clean. So,
+here's how you can get mine. Everything
+
+542
+00:10:00,487 --> 00:10:00,497
+here's how you can get mine. Everything
+ 
+
+543
+00:10:00,497 --> 00:10:02,787
+here's how you can get mine. Everything
+from this video, every rule, and every
+
+544
+00:10:02,787 --> 00:10:02,797
+from this video, every rule, and every
+ 
+
+545
+00:10:02,797 --> 00:10:05,487
+from this video, every rule, and every
+fix I saved as one skill for Claude, and
+
+546
+00:10:05,487 --> 00:10:05,497
+fix I saved as one skill for Claude, and
+ 
+
+547
+00:10:05,497 --> 00:10:07,687
+fix I saved as one skill for Claude, and
+I'm giving it away fully free on my
+
+548
+00:10:07,687 --> 00:10:07,697
+I'm giving it away fully free on my
+ 
+
+549
+00:10:07,697 --> 00:10:09,787
+I'm giving it away fully free on my
+GitHub. You get the whole repository
+
+550
+00:10:09,787 --> 00:10:09,797
+GitHub. You get the whole repository
+ 
+
+551
+00:10:09,797 --> 00:10:12,688
+GitHub. You get the whole repository
+with 5,000 images. The link is in the
+
+552
+00:10:12,688 --> 00:10:12,698
+with 5,000 images. The link is in the
+ 
+
+553
+00:10:12,698 --> 00:10:14,388
+with 5,000 images. The link is in the
+description. So you don't have to do
+
+554
+00:10:14,388 --> 00:10:14,398
+description. So you don't have to do
+ 
+
+555
+00:10:14,398 --> 00:10:16,488
+description. So you don't have to do
+anything. Just install it and start
+
+556
+00:10:16,488 --> 00:10:16,498
+anything. Just install it and start
+ 
+
+557
+00:10:16,498 --> 00:10:18,588
+anything. Just install it and start
+making videos. Everything is already set
+
+558
+00:10:18,588 --> 00:10:18,598
+making videos. Everything is already set
+ 
+
+559
+00:10:18,598 --> 00:10:20,788
+making videos. Everything is already set
+up, so the output should be as polished
+
+560
+00:10:20,788 --> 00:10:20,798
+up, so the output should be as polished
+ 
+
+561
+00:10:20,798 --> 00:10:22,588
+up, so the output should be as polished
+as it gets. And I'm going to keep
+
+562
+00:10:22,588 --> 00:10:22,598
+as it gets. And I'm going to keep
+ 
+
+563
+00:10:22,598 --> 00:10:24,288
+as it gets. And I'm going to keep
+uploading new things there. I'll keep
+
+564
+00:10:24,288 --> 00:10:24,298
+uploading new things there. I'll keep
+ 
+
+565
+00:10:24,298 --> 00:10:26,088
+uploading new things there. I'll keep
+updating it and making it better, and
+
+566
+00:10:26,088 --> 00:10:26,098
+updating it and making it better, and
+ 
+
+567
+00:10:26,098 --> 00:10:28,288
+updating it and making it better, and
+you get all of that for free. And here's
+
+568
+00:10:28,288 --> 00:10:28,298
+you get all of that for free. And here's
+ 
+
+569
+00:10:28,298 --> 00:10:30,188
+you get all of that for free. And here's
+one more thing. I'm making a video on it
+
+570
+00:10:30,188 --> 00:10:30,198
+one more thing. I'm making a video on it
+ 
+
+571
+00:10:30,198 --> 00:10:32,888
+one more thing. I'm making a video on it
+tomorrow. This realistic 3D video. As
+
+572
+00:10:32,888 --> 00:10:32,898
+tomorrow. This realistic 3D video. As
+ 
+
+573
+00:10:32,898 --> 00:10:34,788
+tomorrow. This realistic 3D video. As
+you can see, I made it. That's my name
+
+574
+00:10:34,788 --> 00:10:34,798
+you can see, I made it. That's my name
+ 
+
+575
+00:10:34,798 --> 00:10:37,488
+you can see, I made it. That's my name
+on it. Here's something wild. Pull every
+
+576
+00:10:37,488 --> 00:10:37,498
+on it. Here's something wild. Pull every
+ 
+
+577
+00:10:37,498 --> 00:10:39,388
+on it. Here's something wild. Pull every
+blood vessel out of your body and lay
+
+578
+00:10:39,388 --> 00:10:39,398
+blood vessel out of your body and lay
+ 
+
+579
+00:10:39,398 --> 00:10:41,488
+blood vessel out of your body and lay
+them in one straight line. Most people
+
+580
+00:10:41,488 --> 00:10:41,498
+them in one straight line. Most people
+ 
+
+581
+00:10:41,498 --> 00:10:43,088
+them in one straight line. Most people
+guess it would reach across a football
+
+582
+00:10:43,088 --> 00:10:43,098
+guess it would reach across a football
+ 
+
+583
+00:10:43,098 --> 00:10:46,088
+guess it would reach across a football
+field. Not even close. Your body hides
+
+584
+00:10:46,088 --> 00:10:46,098
+field. Not even close. Your body hides
+ 
+
+585
+00:10:46,098 --> 00:10:48,388
+field. Not even close. Your body hides
+billions of microscopic tubes branching
+
+586
+00:10:48,388 --> 00:10:48,398
+billions of microscopic tubes branching
+ 
+
+587
+00:10:48,398 --> 00:10:50,788
+billions of microscopic tubes branching
+through every muscle, every organ, even
+
+588
+00:10:50,788 --> 00:10:50,798
+through every muscle, every organ, even
+ 
+
+589
+00:10:50,798 --> 00:10:51,788
+through every muscle, every organ, even
+your bones. [music]
+
+590
+00:10:51,788 --> 00:10:51,798
+your bones. [music]
+ 
+
+591
+00:10:51,798 --> 00:10:53,188
+your bones. [music]
+Lay them all out and the line would
+
+592
+00:10:53,188 --> 00:10:53,198
+Lay them all out and the line would
+ 
+
+593
+00:10:53,198 --> 00:10:55,788
+Lay them all out and the line would
+leave your city, cross entire countries,
+
+594
+00:10:55,788 --> 00:10:55,798
+leave your city, cross entire countries,
+ 
+
+595
+00:10:55,798 --> 00:10:58,272
+leave your city, cross entire countries,
+stretch over oceans, and keep on going.
+
+596
+00:10:58,272 --> 00:10:58,282
+stretch over oceans, and keep on going.
+ 
+
+597
+00:10:58,282 --> 00:10:59,488
+stretch over oceans, and keep on going.
+[music] Scientists estimate about
+
+598
+00:10:59,488 --> 00:10:59,498
+[music] Scientists estimate about
+ 
+
+599
+00:10:59,498 --> 00:11:02,388
+[music] Scientists estimate about
+100,000 km. That's enough to wrap around
+
+600
+00:11:02,388 --> 00:11:02,398
+100,000 km. That's enough to wrap around
+ 
+
+601
+00:11:02,398 --> 00:11:04,288
+100,000 km. That's enough to wrap around
+the whole earth roughly two and a half
+
+602
+00:11:04,288 --> 00:11:04,298
+the whole earth roughly two and a half
+ 
+
+603
+00:11:04,298 --> 00:11:05,288
+the whole earth roughly two and a half
+times.
+
+604
+00:11:05,288 --> 00:11:05,298
+times.
+ 
+
+605
+00:11:05,298 --> 00:11:07,088
+times.
+Just so you know, I've never seen
+
+606
+00:11:07,088 --> 00:11:07,098
+Just so you know, I've never seen
+ 
+
+607
+00:11:07,098 --> 00:11:09,088
+Just so you know, I've never seen
+anything like this made with AI. Other
+
+608
+00:11:09,088 --> 00:11:09,098
+anything like this made with AI. Other
+ 
+
+609
+00:11:09,098 --> 00:11:10,888
+anything like this made with AI. Other
+people have made this style with Claude,
+
+610
+00:11:10,888 --> 00:11:10,898
+people have made this style with Claude,
+ 
+
+611
+00:11:10,898 --> 00:11:12,988
+people have made this style with Claude,
+but not like this. I looked and I
+
+612
+00:11:12,988 --> 00:11:12,998
+but not like this. I looked and I
+ 
+
+613
+00:11:12,998 --> 00:11:14,788
+but not like this. I looked and I
+couldn't find a single tutorial that
+
+614
+00:11:14,788 --> 00:11:14,798
+couldn't find a single tutorial that
+ 
+
+615
+00:11:14,798 --> 00:11:16,788
+couldn't find a single tutorial that
+gets this close. If this showed up on
+
+616
+00:11:16,788 --> 00:11:16,798
+gets this close. If this showed up on
+ 
+
+617
+00:11:16,798 --> 00:11:19,088
+gets this close. If this showed up on
+your feed, you'd never guess AI touched
+
+618
+00:11:19,088 --> 00:11:19,098
+your feed, you'd never guess AI touched
+ 
+
+619
+00:11:19,098 --> 00:11:21,288
+your feed, you'd never guess AI touched
+it. In that video, I'll show you exactly
+
+620
+00:11:21,288 --> 00:11:21,298
+it. In that video, I'll show you exactly
+ 
+
+621
+00:11:21,298 --> 00:11:22,788
+it. In that video, I'll show you exactly
+how I made it. How to animate a
+
+622
+00:11:22,788 --> 00:11:22,798
+how I made it. How to animate a
+ 
+
+623
+00:11:22,798 --> 00:11:25,188
+how I made it. How to animate a
+realistic face with an open source AI
+
+624
+00:11:25,188 --> 00:11:25,198
+realistic face with an open source AI
+ 
+
+625
+00:11:25,198 --> 00:11:27,388
+realistic face with an open source AI
+model. How to rig the character for free
+
+626
+00:11:27,388 --> 00:11:27,398
+model. How to rig the character for free
+ 
+
+627
+00:11:27,398 --> 00:11:28,988
+model. How to rig the character for free
+on your own computer. How to make the
+
+628
+00:11:28,988 --> 00:11:28,998
+on your own computer. How to make the
+ 
+
+629
+00:11:28,998 --> 00:11:31,088
+on your own computer. How to make the
+world look real. How to cut the render
+
+630
+00:11:31,088 --> 00:11:31,098
+world look real. How to cut the render
+ 
+
+631
+00:11:31,098 --> 00:11:34,088
+world look real. How to cut the render
+from 7 and 1/2 hours to 1 hour. And how
+
+632
+00:11:34,088 --> 00:11:34,098
+from 7 and 1/2 hours to 1 hour. And how
+ 
+
+633
+00:11:34,098 --> 00:11:36,388
+from 7 and 1/2 hours to 1 hour. And how
+to render it smaller, then upscale it so
+
+634
+00:11:36,388 --> 00:11:36,398
+to render it smaller, then upscale it so
+ 
+
+635
+00:11:36,398 --> 00:11:38,588
+to render it smaller, then upscale it so
+it renders as fast as it gets. You can
+
+636
+00:11:38,588 --> 00:11:38,598
+it renders as fast as it gets. You can
+ 
+
+637
+00:11:38,598 --> 00:11:40,088
+it renders as fast as it gets. You can
+find the skill and everything in the
+
+638
+00:11:40,088 --> 00:11:40,098
+find the skill and everything in the
+ 
+
+639
+00:11:40,098 --> 00:11:41,688
+find the skill and everything in the
+description. The link to the GitHub
+
+640
+00:11:41,688 --> 00:11:41,698
+description. The link to the GitHub
+ 
+
+641
+00:11:41,698 --> 00:11:43,988
+description. The link to the GitHub
+repository is right there, completely
+
+642
+00:11:43,988 --> 00:11:43,998
+repository is right there, completely
+ 
+
+643
+00:11:43,998 --> 00:11:45,788
+repository is right there, completely
+free. That's all for today. Make sure to
+
+644
+00:11:45,788 --> 00:11:45,798
+free. That's all for today. Make sure to
+ 
+
+645
+00:11:45,798 --> 00:11:47,888
+free. That's all for today. Make sure to
+subscribe and like. And with this type
+
+646
+00:11:47,888 --> 00:11:47,898
+subscribe and like. And with this type
+ 
+
+647
+00:11:47,898 --> 00:11:49,888
+subscribe and like. And with this type
+of workflow, you can pretty much clone
+
+648
+00:11:49,888 --> 00:11:49,898
+of workflow, you can pretty much clone
+ 
+
+649
+00:11:49,898 --> 00:11:53,198
+of workflow, you can pretty much clone
+any style. Bye.
+

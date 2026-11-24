@@ -1,482 +1,782 @@
 [
   {
-    "word": "The",
-    "start": 0.098,
-    "end": 0.242,
-    "duration": 0.144
+    "word": "Your",
+    "start": 0.0,
+    "end": 0.221,
+    "duration": 0.221
   },
   {
-    "word": "internet",
-    "start": 0.254,
-    "end": 0.651,
-    "duration": 0.397
+    "word": "credit",
+    "start": 0.29,
+    "end": 0.557,
+    "duration": 0.267
   },
   {
-    "word": "almost",
-    "start": 0.663,
-    "end": 1.012,
-    "duration": 0.349
+    "word": "card",
+    "start": 0.604,
+    "end": 0.824,
+    "duration": 0.22
   },
   {
-    "word": "vanished",
-    "start": 1.024,
-    "end": 1.468,
-    "duration": 0.445
+    "word": "literally",
+    "start": 0.917,
+    "end": 1.289,
+    "duration": 0.372
   },
   {
-    "word": "in 2018",
-    "start": 1.48,
-    "end": 2.682,
-    "duration": 1.202
+    "word": "withstands",
+    "start": 1.347,
+    "end": 1.846,
+    "duration": 0.499
   },
   {
-    "word": "A",
-    "start": 3.51,
-    "end": 3.606,
-    "duration": 0.096
+    "word": "billions",
+    "start": 1.962,
+    "end": 2.415,
+    "duration": 0.453
   },
   {
-    "word": "Nigerian",
-    "start": 3.618,
-    "end": 4.279,
-    "duration": 0.661
+    "word": "of",
+    "start": 2.473,
+    "end": 2.543,
+    "duration": 0.07
   },
   {
-    "word": "ISP",
-    "start": 4.291,
-    "end": 4.88,
-    "duration": 0.589
+    "word": "brute-force",
+    "start": 2.624,
+    "end": 3.158,
+    "duration": 0.534
   },
   {
-    "word": "rerouted",
-    "start": 4.892,
-    "end": 5.409,
-    "duration": 0.517
+    "word": "attacks",
+    "start": 3.181,
+    "end": 3.529,
+    "duration": 0.348
   },
   {
-    "word": "Google",
-    "start": 5.421,
-    "end": 5.829,
-    "duration": 0.409
+    "word": "per",
+    "start": 3.587,
+    "end": 3.738,
+    "duration": 0.151
   },
   {
-    "word": "and",
-    "start": 5.841,
-    "end": 5.949,
-    "duration": 0.108
+    "word": "second.",
+    "start": 3.808,
+    "end": 4.296,
+    "duration": 0.488
   },
   {
-    "word": "Cloudflare",
-    "start": 5.962,
-    "end": 6.587,
-    "duration": 0.625
+    "word": "Inside",
+    "start": 4.992,
+    "end": 5.503,
+    "duration": 0.511
   },
   {
-    "word": "traffic",
-    "start": 6.599,
-    "end": 7.007,
-    "duration": 0.409
-  },
-  {
-    "word": "globally.",
-    "start": 7.019,
-    "end": 7.56,
-    "duration": 0.541
-  },
-  {
-    "word": "Not",
-    "start": 8.389,
-    "end": 8.666,
-    "duration": 0.276
+    "word": "lies",
+    "start": 5.55,
+    "end": 5.747,
+    "duration": 0.197
   },
   {
     "word": "a",
-    "start": 8.678,
-    "end": 8.726,
-    "duration": 0.048
+    "start": 5.782,
+    "end": 5.817,
+    "duration": 0.035
   },
   {
-    "word": "hack,",
-    "start": 8.738,
-    "end": 9.219,
-    "duration": 0.481
+    "word": "tiny,",
+    "start": 5.875,
+    "end": 6.235,
+    "duration": 0.36
   },
   {
-    "word": "but",
-    "start": 9.411,
-    "end": 9.555,
-    "duration": 0.144
+    "word": "dedicated",
+    "start": 6.281,
+    "end": 6.769,
+    "duration": 0.488
   },
   {
-    "word": "accidental",
-    "start": 9.567,
-    "end": 10.18,
-    "duration": 0.613
+    "word": "cryptographic",
+    "start": 6.815,
+    "end": 7.465,
+    "duration": 0.65
   },
   {
-    "word": "BGP",
-    "start": 10.192,
-    "end": 10.817,
-    "duration": 0.625
-  },
-  {
-    "word": "hijack.",
-    "start": 10.829,
-    "end": 11.538,
-    "duration": 0.709
-  },
-  {
-    "word": "Incorrect",
-    "start": 12.368,
-    "end": 12.933,
-    "duration": 0.565
-  },
-  {
-    "word": "routing",
-    "start": 12.945,
-    "end": 13.305,
-    "duration": 0.361
-  },
-  {
-    "word": "redirected",
-    "start": 13.317,
-    "end": 13.858,
-    "duration": 0.541
-  },
-  {
-    "word": "global",
-    "start": 13.87,
-    "end": 14.207,
-    "duration": 0.337
-  },
-  {
-    "word": "traffic",
-    "start": 14.219,
-    "end": 14.651,
-    "duration": 0.433
-  },
-  {
-    "word": "into",
-    "start": 14.663,
-    "end": 14.88,
-    "duration": 0.216
+    "word": "computer,",
+    "start": 7.5,
+    "end": 8.115,
+    "duration": 0.615
   },
   {
     "word": "a",
-    "start": 14.892,
-    "end": 14.976,
-    "duration": 0.084
+    "start": 8.557,
+    "end": 8.626,
+    "duration": 0.069
   },
   {
-    "word": "digital",
-    "start": 14.988,
-    "end": 15.361,
-    "duration": 0.373
+    "word": "secure",
+    "start": 8.696,
+    "end": 9.067,
+    "duration": 0.371
   },
   {
-    "word": "black",
-    "start": 15.373,
-    "end": 15.661,
-    "duration": 0.288
+    "word": "element",
+    "start": 9.137,
+    "end": 9.451,
+    "duration": 0.314
   },
   {
-    "word": "hole.",
-    "start": 15.673,
-    "end": 16.046,
-    "duration": 0.373
-  },
-  {
-    "word": "BGP,",
-    "start": 16.875,
-    "end": 17.632,
-    "duration": 0.757
-  },
-  {
-    "word": "the",
-    "start": 17.825,
-    "end": 17.933,
-    "duration": 0.108
-  },
-  {
-    "word": "internet's",
-    "start": 17.945,
-    "end": 18.377,
-    "duration": 0.433
-  },
-  {
-    "word": "GPS,",
-    "start": 18.389,
-    "end": 19.062,
-    "duration": 0.673
-  },
-  {
-    "word": "tells",
-    "start": 19.291,
-    "end": 19.579,
-    "duration": 0.288
-  },
-  {
-    "word": "data",
-    "start": 19.591,
-    "end": 19.844,
-    "duration": 0.252
-  },
-  {
-    "word": "packets",
-    "start": 19.856,
-    "end": 20.3,
-    "duration": 0.445
-  },
-  {
-    "word": "their",
-    "start": 20.312,
-    "end": 20.457,
-    "duration": 0.144
-  },
-  {
-    "word": "fastest",
-    "start": 20.469,
-    "end": 20.998,
-    "duration": 0.529
-  },
-  {
-    "word": "route.",
-    "start": 21.01,
-    "end": 21.394,
-    "duration": 0.385
-  },
-  {
-    "word": "Essential,",
-    "start": 22.224,
-    "end": 22.849,
-    "duration": 0.625
-  },
-  {
-    "word": "yet",
-    "start": 23.089,
-    "end": 23.281,
-    "duration": 0.192
-  },
-  {
-    "word": "vulnerable,",
-    "start": 23.293,
-    "end": 23.894,
-    "duration": 0.601
-  },
-  {
-    "word": "system.",
-    "start": 24.123,
-    "end": 24.675,
-    "duration": 0.553
-  },
-  {
-    "word": "The",
-    "start": 25.505,
-    "end": 25.613,
-    "duration": 0.108
-  },
-  {
-    "word": "Nigerian",
-    "start": 25.625,
-    "end": 26.226,
-    "duration": 0.601
-  },
-  {
-    "word": "provider,",
-    "start": 26.238,
-    "end": 26.743,
-    "duration": 0.505
-  },
-  {
-    "word": "MainOne,",
-    "start": 26.971,
-    "end": 27.416,
-    "duration": 0.445
-  },
-  {
-    "word": "mistakenly",
-    "start": 27.656,
-    "end": 28.245,
-    "duration": 0.589
-  },
-  {
-    "word": "announced",
-    "start": 28.257,
-    "end": 28.678,
-    "duration": 0.421
-  },
-  {
-    "word": "Google",
-    "start": 28.69,
-    "end": 29.075,
-    "duration": 0.385
-  },
-  {
-    "word": "and",
-    "start": 29.087,
-    "end": 29.195,
-    "duration": 0.108
-  },
-  {
-    "word": "Cloudflare's",
-    "start": 29.207,
-    "end": 29.892,
-    "duration": 0.685
-  },
-  {
-    "word": "IP",
-    "start": 29.904,
-    "end": 30.276,
-    "duration": 0.373
-  },
-  {
-    "word": "addresses.",
-    "start": 30.288,
-    "end": 30.913,
-    "duration": 0.625
-  },
-  {
-    "word": "For",
-    "start": 31.743,
-    "end": 31.971,
-    "duration": 0.228
-  },
-  {
-    "word": "74",
-    "start": 31.983,
-    "end": 32.596,
-    "duration": 0.613
-  },
-  {
-    "word": "minutes,",
-    "start": 32.608,
-    "end": 33.041,
-    "duration": 0.433
-  },
-  {
-    "word": "vast",
-    "start": 33.233,
-    "end": 33.57,
-    "duration": 0.337
-  },
-  {
-    "word": "internet",
-    "start": 33.582,
-    "end": 33.966,
-    "duration": 0.385
-  },
-  {
-    "word": "traffic",
-    "start": 33.978,
-    "end": 34.447,
-    "duration": 0.469
+    "word": "designed",
+    "start": 9.497,
+    "end": 9.845,
+    "duration": 0.348
   },
   {
     "word": "for",
-    "start": 34.459,
-    "end": 34.603,
-    "duration": 0.144
+    "start": 9.88,
+    "end": 9.973,
+    "duration": 0.093
   },
   {
-    "word": "these",
-    "start": 34.615,
-    "end": 34.856,
-    "duration": 0.24
+    "word": "impenetrable",
+    "start": 10.054,
+    "end": 10.728,
+    "duration": 0.674
   },
   {
-    "word": "giants",
-    "start": 34.868,
-    "end": 35.276,
-    "duration": 0.409
+    "word": "transaction",
+    "start": 10.751,
+    "end": 11.331,
+    "duration": 0.58
   },
   {
-    "word": "simply",
-    "start": 35.288,
-    "end": 35.577,
-    "duration": 0.288
-  },
-  {
-    "word": "vanished.",
-    "start": 35.589,
-    "end": 36.166,
-    "duration": 0.577
+    "word": "security.",
+    "start": 11.389,
+    "end": 12.074,
+    "duration": 0.685
   },
   {
     "word": "This",
-    "start": 36.995,
-    "end": 37.248,
-    "duration": 0.252
+    "start": 13.026,
+    "end": 13.293,
+    "duration": 0.267
   },
   {
-    "word": "exposed",
-    "start": 37.26,
-    "end": 37.788,
-    "duration": 0.529
+    "word": "integrated",
+    "start": 13.41,
+    "end": 13.932,
+    "duration": 0.522
   },
   {
-    "word": "internet",
-    "start": 37.8,
-    "end": 38.173,
-    "duration": 0.373
+    "word": "circuit",
+    "start": 13.978,
+    "end": 14.304,
+    "duration": 0.326
   },
   {
-    "word": "fragility:",
-    "start": 38.185,
-    "end": 38.786,
-    "duration": 0.601
+    "word": "runs",
+    "start": 14.362,
+    "end": 14.64,
+    "duration": 0.278
+  },
+  {
+    "word": "sophisticated",
+    "start": 14.814,
+    "end": 15.569,
+    "duration": 0.755
+  },
+  {
+    "word": "encryption",
+    "start": 15.604,
+    "end": 16.045,
+    "duration": 0.441
+  },
+  {
+    "word": "algorithms,",
+    "start": 16.126,
+    "end": 16.939,
+    "duration": 0.813
+  },
+  {
+    "word": "creating",
+    "start": 17.183,
+    "end": 17.543,
+    "duration": 0.36
+  },
+  {
+    "word": "unique,",
+    "start": 17.612,
+    "end": 17.972,
+    "duration": 0.36
+  },
+  {
+    "word": "one-time",
+    "start": 18.03,
+    "end": 18.506,
+    "duration": 0.476
+  },
+  {
+    "word": "transaction",
+    "start": 18.541,
+    "end": 19.157,
+    "duration": 0.616
+  },
+  {
+    "word": "keys",
+    "start": 19.215,
+    "end": 19.447,
+    "duration": 0.232
+  },
+  {
+    "word": "for",
+    "start": 19.493,
+    "end": 19.609,
+    "duration": 0.116
+  },
+  {
+    "word": "every",
+    "start": 19.679,
+    "end": 19.9,
+    "duration": 0.221
+  },
+  {
+    "word": "swipe",
+    "start": 19.969,
+    "end": 20.259,
+    "duration": 0.29
+  },
+  {
+    "word": "or",
+    "start": 20.283,
+    "end": 20.341,
+    "duration": 0.058
+  },
+  {
+    "word": "tap.",
+    "start": 20.399,
+    "end": 20.863,
+    "duration": 0.464
+  },
+  {
+    "word": "It's",
+    "start": 21.467,
+    "end": 21.653,
+    "duration": 0.186
   },
   {
     "word": "a",
-    "start": 39.062,
-    "end": 39.111,
-    "duration": 0.048
+    "start": 21.687,
+    "end": 21.711,
+    "duration": 0.024
   },
   {
-    "word": "single",
-    "start": 39.123,
-    "end": 39.507,
-    "duration": 0.385
+    "word": "miniature",
+    "start": 21.757,
+    "end": 22.14,
+    "duration": 0.383
   },
   {
-    "word": "BGP",
-    "start": 39.519,
-    "end": 40.12,
-    "duration": 0.601
+    "word": "fortress,",
+    "start": 22.187,
+    "end": 22.976,
+    "duration": 0.789
   },
   {
-    "word": "misconfiguration",
-    "start": 40.132,
-    "end": 41.154,
-    "duration": 1.022
+    "word": "always",
+    "start": 23.15,
+    "end": 23.522,
+    "duration": 0.372
   },
   {
-    "word": "can",
-    "start": 41.166,
-    "end": 41.31,
-    "duration": 0.144
+    "word": "generating",
+    "start": 23.568,
+    "end": 24.009,
+    "duration": 0.441
   },
   {
-    "word": "disrupt",
-    "start": 41.322,
-    "end": 41.791,
-    "duration": 0.469
+    "word": "new",
+    "start": 24.079,
+    "end": 24.195,
+    "duration": 0.116
   },
   {
-    "word": "global",
-    "start": 41.803,
-    "end": 42.163,
-    "duration": 0.361
+    "word": "digital",
+    "start": 24.265,
+    "end": 24.602,
+    "duration": 0.337
   },
   {
-    "word": "connectivity",
-    "start": 42.175,
-    "end": 42.812,
-    "duration": 0.637
+    "word": "locks.",
+    "start": 24.648,
+    "end": 25.217,
+    "duration": 0.569
   },
   {
-    "word": "instantly.",
-    "start": 42.825,
-    "end": 43.401,
-    "duration": 0.577
+    "word": "Without",
+    "start": 25.31,
+    "end": 25.612,
+    "duration": 0.302
+  },
+  {
+    "word": "this",
+    "start": 25.647,
+    "end": 25.774,
+    "duration": 0.127
+  },
+  {
+    "word": "constant",
+    "start": 25.844,
+    "end": 26.262,
+    "duration": 0.418
+  },
+  {
+    "word": "re-encryption,",
+    "start": 26.332,
+    "end": 27.144,
+    "duration": 0.812
+  },
+  {
+    "word": "an",
+    "start": 27.318,
+    "end": 27.434,
+    "duration": 0.116
+  },
+  {
+    "word": "attacker",
+    "start": 27.481,
+    "end": 27.852,
+    "duration": 0.371
+  },
+  {
+    "word": "could",
+    "start": 27.899,
+    "end": 28.05,
+    "duration": 0.151
+  },
+  {
+    "word": "easily",
+    "start": 28.119,
+    "end": 28.491,
+    "duration": 0.372
+  },
+  {
+    "word": "intercept",
+    "start": 28.561,
+    "end": 29.095,
+    "duration": 0.534
+  },
+  {
+    "word": "and",
+    "start": 29.269,
+    "end": 29.431,
+    "duration": 0.162
+  },
+  {
+    "word": "replay",
+    "start": 29.513,
+    "end": 30.0,
+    "duration": 0.487
+  },
+  {
+    "word": "old",
+    "start": 30.093,
+    "end": 30.314,
+    "duration": 0.221
+  },
+  {
+    "word": "transaction",
+    "start": 30.349,
+    "end": 30.906,
+    "duration": 0.557
+  },
+  {
+    "word": "data,",
+    "start": 30.964,
+    "end": 31.382,
+    "duration": 0.418
+  },
+  {
+    "word": "draining",
+    "start": 31.707,
+    "end": 32.032,
+    "duration": 0.325
+  },
+  {
+    "word": "your",
+    "start": 32.067,
+    "end": 32.16,
+    "duration": 0.093
+  },
+  {
+    "word": "bank",
+    "start": 32.195,
+    "end": 32.357,
+    "duration": 0.162
+  },
+  {
+    "word": "account",
+    "start": 32.404,
+    "end": 32.636,
+    "duration": 0.232
+  },
+  {
+    "word": "with",
+    "start": 32.671,
+    "end": 32.775,
+    "duration": 0.104
+  },
+  {
+    "word": "a",
+    "start": 32.81,
+    "end": 32.833,
+    "duration": 0.023
+  },
+  {
+    "word": "simple",
+    "start": 32.903,
+    "end": 33.344,
+    "duration": 0.441
+  },
+  {
+    "word": "digital",
+    "start": 33.46,
+    "end": 33.832,
+    "duration": 0.372
+  },
+  {
+    "word": "copy-paste.",
+    "start": 33.89,
+    "end": 34.668,
+    "duration": 0.778
+  },
+  {
+    "word": "Fraud",
+    "start": 35.48,
+    "end": 35.794,
+    "duration": 0.314
+  },
+  {
+    "word": "would",
+    "start": 35.829,
+    "end": 35.956,
+    "duration": 0.127
+  },
+  {
+    "word": "be",
+    "start": 35.991,
+    "end": 36.061,
+    "duration": 0.07
+  },
+  {
+    "word": "rampant.",
+    "start": 36.119,
+    "end": 36.63,
+    "duration": 0.511
+  },
+  {
+    "word": "It",
+    "start": 36.955,
+    "end": 37.094,
+    "duration": 0.139
+  },
+  {
+    "word": "uses",
+    "start": 37.152,
+    "end": 37.407,
+    "duration": 0.255
+  },
+  {
+    "word": "a",
+    "start": 37.454,
+    "end": 37.477,
+    "duration": 0.023
+  },
+  {
+    "word": "hardware-based",
+    "start": 37.593,
+    "end": 38.348,
+    "duration": 0.755
+  },
+  {
+    "word": "random",
+    "start": 38.429,
+    "end": 38.789,
+    "duration": 0.36
+  },
+  {
+    "word": "number",
+    "start": 38.859,
+    "end": 39.079,
+    "duration": 0.22
+  },
+  {
+    "word": "generator,",
+    "start": 39.149,
+    "end": 39.753,
+    "duration": 0.604
+  },
+  {
+    "word": "ensuring",
+    "start": 39.962,
+    "end": 40.414,
+    "duration": 0.452
+  },
+  {
+    "word": "truly",
+    "start": 40.461,
+    "end": 40.832,
+    "duration": 0.371
+  },
+  {
+    "word": "unpredictable",
+    "start": 40.925,
+    "end": 41.541,
+    "duration": 0.616
+  },
+  {
+    "word": "keys",
+    "start": 41.575,
+    "end": 41.866,
+    "duration": 0.291
+  },
+  {
+    "word": "even",
+    "start": 41.982,
+    "end": 42.226,
+    "duration": 0.244
+  },
+  {
+    "word": "against",
+    "start": 42.272,
+    "end": 42.551,
+    "duration": 0.279
+  },
+  {
+    "word": "quantum",
+    "start": 42.62,
+    "end": 42.992,
+    "duration": 0.372
+  },
+  {
+    "word": "attacks.",
+    "start": 43.038,
+    "end": 43.619,
+    "duration": 0.581
+  },
+  {
+    "word": "Share",
+    "start": 44.315,
+    "end": 44.559,
+    "duration": 0.244
+  },
+  {
+    "word": "this",
+    "start": 44.594,
+    "end": 44.71,
+    "duration": 0.116
+  },
+  {
+    "word": "with",
+    "start": 44.757,
+    "end": 44.873,
+    "duration": 0.116
+  },
+  {
+    "word": "anyone",
+    "start": 44.931,
+    "end": 45.267,
+    "duration": 0.336
+  },
+  {
+    "word": "who",
+    "start": 45.291,
+    "end": 45.384,
+    "duration": 0.093
+  },
+  {
+    "word": "still",
+    "start": 45.453,
+    "end": 45.686,
+    "duration": 0.233
+  },
+  {
+    "word": "thinks",
+    "start": 45.744,
+    "end": 45.941,
+    "duration": 0.197
+  },
+  {
+    "word": "their",
+    "start": 45.976,
+    "end": 46.127,
+    "duration": 0.151
+  },
+  {
+    "word": "chip",
+    "start": 46.185,
+    "end": 46.359,
+    "duration": 0.174
+  },
+  {
+    "word": "card",
+    "start": 46.429,
+    "end": 46.603,
+    "duration": 0.174
+  },
+  {
+    "word": "is",
+    "start": 46.638,
+    "end": 46.708,
+    "duration": 0.07
+  },
+  {
+    "word": "just",
+    "start": 46.754,
+    "end": 46.916,
+    "duration": 0.162
+  },
+  {
+    "word": "dumb",
+    "start": 46.986,
+    "end": 47.23,
+    "duration": 0.244
+  },
+  {
+    "word": "plastic.",
+    "start": 47.253,
+    "end": 47.938,
+    "duration": 0.685
+  },
+  {
+    "word": "Every",
+    "start": 48.751,
+    "end": 48.995,
+    "duration": 0.244
+  },
+  {
+    "word": "transaction",
+    "start": 49.041,
+    "end": 49.726,
+    "duration": 0.685
+  },
+  {
+    "word": "is",
+    "start": 49.807,
+    "end": 49.889,
+    "duration": 0.082
+  },
+  {
+    "word": "a",
+    "start": 49.947,
+    "end": 49.97,
+    "duration": 0.023
+  },
+  {
+    "word": "fresh,",
+    "start": 50.063,
+    "end": 50.504,
+    "duration": 0.441
+  },
+  {
+    "word": "unrepeatable",
+    "start": 50.597,
+    "end": 51.259,
+    "duration": 0.662
+  },
+  {
+    "word": "cryptographic",
+    "start": 51.293,
+    "end": 51.978,
+    "duration": 0.685
+  },
+  {
+    "word": "handshake,",
+    "start": 52.048,
+    "end": 52.721,
+    "duration": 0.673
+  },
+  {
+    "word": "making",
+    "start": 53.0,
+    "end": 53.279,
+    "duration": 0.279
+  },
+  {
+    "word": "each",
+    "start": 53.395,
+    "end": 53.615,
+    "duration": 0.22
+  },
+  {
+    "word": "digital",
+    "start": 53.673,
+    "end": 53.987,
+    "duration": 0.314
+  },
+  {
+    "word": "signature",
+    "start": 54.057,
+    "end": 54.509,
+    "duration": 0.452
+  },
+  {
+    "word": "obsolete",
+    "start": 54.591,
+    "end": 55.287,
+    "duration": 0.696
+  },
+  {
+    "word": "milliseconds",
+    "start": 55.612,
+    "end": 56.309,
+    "duration": 0.697
+  },
+  {
+    "word": "later,",
+    "start": 56.379,
+    "end": 56.82,
+    "duration": 0.441
+  },
+  {
+    "word": "creating",
+    "start": 57.064,
+    "end": 57.447,
+    "duration": 0.383
+  },
+  {
+    "word": "an",
+    "start": 57.482,
+    "end": 57.54,
+    "duration": 0.058
+  },
+  {
+    "word": "impenetrable",
+    "start": 57.621,
+    "end": 58.341,
+    "duration": 0.72
+  },
+  {
+    "word": "digital",
+    "start": 58.387,
+    "end": 58.677,
+    "duration": 0.29
+  },
+  {
+    "word": "fortress,",
+    "start": 58.747,
+    "end": 59.246,
+    "duration": 0.499
+  },
+  {
+    "word": "meaning",
+    "start": 59.293,
+    "end": 59.56,
+    "duration": 0.267
+  },
+  {
+    "word": "that...",
+    "start": 59.606,
+    "end": 60.14,
+    "duration": 0.534
   }
 ]

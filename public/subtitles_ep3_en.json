@@ -1,0 +1,757 @@
+[
+  {
+    "word": "What",
+    "start": 0.1,
+    "end": 0.436
+  },
+  {
+    "word": "if",
+    "start": 0.436,
+    "end": 0.772
+  },
+  {
+    "word": "every",
+    "start": 0.772,
+    "end": 1.108
+  },
+  {
+    "word": "single",
+    "start": 1.108,
+    "end": 1.444
+  },
+  {
+    "word": "human",
+    "start": 1.444,
+    "end": 1.78
+  },
+  {
+    "word": "on",
+    "start": 1.78,
+    "end": 2.116
+  },
+  {
+    "word": "Earth",
+    "start": 2.116,
+    "end": 2.452
+  },
+  {
+    "word": "fell",
+    "start": 2.452,
+    "end": 2.788
+  },
+  {
+    "word": "into",
+    "start": 2.788,
+    "end": 3.124
+  },
+  {
+    "word": "a",
+    "start": 3.124,
+    "end": 3.46
+  },
+  {
+    "word": "deep",
+    "start": 3.46,
+    "end": 3.796
+  },
+  {
+    "word": "sleep",
+    "start": 3.796,
+    "end": 4.132
+  },
+  {
+    "word": "for",
+    "start": 4.132,
+    "end": 4.468
+  },
+  {
+    "word": "seven",
+    "start": 4.468,
+    "end": 4.804
+  },
+  {
+    "word": "days",
+    "start": 4.804,
+    "end": 5.14
+  },
+  {
+    "word": "straight?",
+    "start": 5.14,
+    "end": 5.476
+  },
+  {
+    "word": "At",
+    "start": 5.476,
+    "end": 5.812
+  },
+  {
+    "word": "midnight,",
+    "start": 5.812,
+    "end": 6.148
+  },
+  {
+    "word": "eight",
+    "start": 6.148,
+    "end": 6.484
+  },
+  {
+    "word": "billion",
+    "start": 6.484,
+    "end": 6.82
+  },
+  {
+    "word": "people",
+    "start": 6.82,
+    "end": 7.156
+  },
+  {
+    "word": "simultaneously",
+    "start": 7.156,
+    "end": 7.492
+  },
+  {
+    "word": "collapse.",
+    "start": 7.492,
+    "end": 7.828
+  },
+  {
+    "word": "Instantly,",
+    "start": 7.908,
+    "end": 8.228
+  },
+  {
+    "word": "millions",
+    "start": 8.228,
+    "end": 8.548
+  },
+  {
+    "word": "of",
+    "start": 8.548,
+    "end": 8.868
+  },
+  {
+    "word": "moving",
+    "start": 8.868,
+    "end": 9.188
+  },
+  {
+    "word": "cars",
+    "start": 9.188,
+    "end": 9.508
+  },
+  {
+    "word": "and",
+    "start": 9.508,
+    "end": 9.828
+  },
+  {
+    "word": "high-speed",
+    "start": 9.828,
+    "end": 10.148
+  },
+  {
+    "word": "trains",
+    "start": 10.148,
+    "end": 10.468
+  },
+  {
+    "word": "roll",
+    "start": 10.468,
+    "end": 10.788
+  },
+  {
+    "word": "to",
+    "start": 10.788,
+    "end": 11.108
+  },
+  {
+    "word": "a",
+    "start": 11.108,
+    "end": 11.428
+  },
+  {
+    "word": "dead",
+    "start": 11.428,
+    "end": 11.748
+  },
+  {
+    "word": "halt",
+    "start": 11.748,
+    "end": 12.068
+  },
+  {
+    "word": "or",
+    "start": 12.068,
+    "end": 12.388
+  },
+  {
+    "word": "crash",
+    "start": 12.388,
+    "end": 12.708
+  },
+  {
+    "word": "into",
+    "start": 12.708,
+    "end": 13.028
+  },
+  {
+    "word": "barricades",
+    "start": 13.028,
+    "end": 13.348
+  },
+  {
+    "word": "with",
+    "start": 13.348,
+    "end": 13.668
+  },
+  {
+    "word": "zero",
+    "start": 13.668,
+    "end": 13.988
+  },
+  {
+    "word": "drivers",
+    "start": 13.988,
+    "end": 14.308
+  },
+  {
+    "word": "awake.",
+    "start": 14.308,
+    "end": 14.628
+  },
+  {
+    "word": "Thirty",
+    "start": 14.708,
+    "end": 15.082
+  },
+  {
+    "word": "thousand",
+    "start": 15.081,
+    "end": 15.454
+  },
+  {
+    "word": "commercial",
+    "start": 15.455,
+    "end": 15.829
+  },
+  {
+    "word": "airliners",
+    "start": 15.828,
+    "end": 16.201
+  },
+  {
+    "word": "fly",
+    "start": 16.202,
+    "end": 16.576
+  },
+  {
+    "word": "on",
+    "start": 16.575,
+    "end": 16.948
+  },
+  {
+    "word": "autopilot",
+    "start": 16.949,
+    "end": 17.323
+  },
+  {
+    "word": "until",
+    "start": 17.322,
+    "end": 17.695
+  },
+  {
+    "word": "fuel",
+    "start": 17.696,
+    "end": 18.07
+  },
+  {
+    "word": "runs",
+    "start": 18.069,
+    "end": 18.442
+  },
+  {
+    "word": "dry,",
+    "start": 18.443,
+    "end": 18.817
+  },
+  {
+    "word": "dropping",
+    "start": 18.816,
+    "end": 19.189
+  },
+  {
+    "word": "from",
+    "start": 19.19,
+    "end": 19.564
+  },
+  {
+    "word": "thirty",
+    "start": 19.563,
+    "end": 19.936
+  },
+  {
+    "word": "thousand",
+    "start": 19.937,
+    "end": 20.311
+  },
+  {
+    "word": "feet.",
+    "start": 20.31,
+    "end": 20.683
+  },
+  {
+    "word": "Nuclear",
+    "start": 20.764,
+    "end": 21.152
+  },
+  {
+    "word": "power",
+    "start": 21.152,
+    "end": 21.54
+  },
+  {
+    "word": "plants",
+    "start": 21.54,
+    "end": 21.928
+  },
+  {
+    "word": "detect",
+    "start": 21.929,
+    "end": 22.317
+  },
+  {
+    "word": "zero",
+    "start": 22.317,
+    "end": 22.705
+  },
+  {
+    "word": "operator",
+    "start": 22.705,
+    "end": 23.093
+  },
+  {
+    "word": "response",
+    "start": 23.093,
+    "end": 23.481
+  },
+  {
+    "word": "and",
+    "start": 23.482,
+    "end": 23.87
+  },
+  {
+    "word": "automatically",
+    "start": 23.87,
+    "end": 24.258
+  },
+  {
+    "word": "drop",
+    "start": 24.258,
+    "end": 24.646
+  },
+  {
+    "word": "their",
+    "start": 24.646,
+    "end": 25.034
+  },
+  {
+    "word": "control",
+    "start": 25.035,
+    "end": 25.423
+  },
+  {
+    "word": "rods",
+    "start": 25.423,
+    "end": 25.811
+  },
+  {
+    "word": "to",
+    "start": 25.811,
+    "end": 26.199
+  },
+  {
+    "word": "prevent",
+    "start": 26.199,
+    "end": 26.587
+  },
+  {
+    "word": "catastrophic",
+    "start": 26.588,
+    "end": 26.976
+  },
+  {
+    "word": "meltdowns.",
+    "start": 26.976,
+    "end": 27.364
+  },
+  {
+    "word": "Within",
+    "start": 27.444,
+    "end": 27.895
+  },
+  {
+    "word": "seventy-two",
+    "start": 27.895,
+    "end": 28.346
+  },
+  {
+    "word": "hours,",
+    "start": 28.346,
+    "end": 28.797
+  },
+  {
+    "word": "coal",
+    "start": 28.797,
+    "end": 29.248
+  },
+  {
+    "word": "and",
+    "start": 29.248,
+    "end": 29.699
+  },
+  {
+    "word": "gas",
+    "start": 29.699,
+    "end": 30.15
+  },
+  {
+    "word": "turbines",
+    "start": 30.15,
+    "end": 30.601
+  },
+  {
+    "word": "exhaust",
+    "start": 30.601,
+    "end": 31.052
+  },
+  {
+    "word": "their",
+    "start": 31.052,
+    "end": 31.503
+  },
+  {
+    "word": "fuel.",
+    "start": 31.503,
+    "end": 31.954
+  },
+  {
+    "word": "The",
+    "start": 31.953,
+    "end": 32.404
+  },
+  {
+    "word": "electrical",
+    "start": 32.404,
+    "end": 32.855
+  },
+  {
+    "word": "grid",
+    "start": 32.855,
+    "end": 33.306
+  },
+  {
+    "word": "collapses,",
+    "start": 33.306,
+    "end": 33.757
+  },
+  {
+    "word": "plunging",
+    "start": 33.757,
+    "end": 34.208
+  },
+  {
+    "word": "continents",
+    "start": 34.208,
+    "end": 34.659
+  },
+  {
+    "word": "into",
+    "start": 34.659,
+    "end": 35.11
+  },
+  {
+    "word": "pitch-black",
+    "start": 35.11,
+    "end": 35.561
+  },
+  {
+    "word": "darkness.",
+    "start": 35.561,
+    "end": 36.012
+  },
+  {
+    "word": "With",
+    "start": 36.092,
+    "end": 36.525
+  },
+  {
+    "word": "zero",
+    "start": 36.525,
+    "end": 36.958
+  },
+  {
+    "word": "human",
+    "start": 36.959,
+    "end": 37.392
+  },
+  {
+    "word": "activity,",
+    "start": 37.392,
+    "end": 37.825
+  },
+  {
+    "word": "city",
+    "start": 37.826,
+    "end": 38.259
+  },
+  {
+    "word": "skies",
+    "start": 38.259,
+    "end": 38.692
+  },
+  {
+    "word": "clear",
+    "start": 38.692,
+    "end": 39.125
+  },
+  {
+    "word": "completely.",
+    "start": 39.126,
+    "end": 39.559
+  },
+  {
+    "word": "Wild",
+    "start": 39.559,
+    "end": 39.992
+  },
+  {
+    "word": "wolves",
+    "start": 39.993,
+    "end": 40.426
+  },
+  {
+    "word": "and",
+    "start": 40.426,
+    "end": 40.859
+  },
+  {
+    "word": "deer",
+    "start": 40.86,
+    "end": 41.293
+  },
+  {
+    "word": "cautiously",
+    "start": 41.293,
+    "end": 41.726
+  },
+  {
+    "word": "wander",
+    "start": 41.726,
+    "end": 42.159
+  },
+  {
+    "word": "down",
+    "start": 42.16,
+    "end": 42.593
+  },
+  {
+    "word": "empty",
+    "start": 42.593,
+    "end": 43.026
+  },
+  {
+    "word": "highways.",
+    "start": 43.027,
+    "end": 43.46
+  },
+  {
+    "word": "On",
+    "start": 43.54,
+    "end": 43.908
+  },
+  {
+    "word": "Day",
+    "start": 43.908,
+    "end": 44.276
+  },
+  {
+    "word": "Seven,",
+    "start": 44.276,
+    "end": 44.644
+  },
+  {
+    "word": "eight",
+    "start": 44.644,
+    "end": 45.012
+  },
+  {
+    "word": "billion",
+    "start": 45.012,
+    "end": 45.38
+  },
+  {
+    "word": "severely",
+    "start": 45.38,
+    "end": 45.748
+  },
+  {
+    "word": "dehydrated",
+    "start": 45.748,
+    "end": 46.116
+  },
+  {
+    "word": "humans",
+    "start": 46.116,
+    "end": 46.484
+  },
+  {
+    "word": "wake",
+    "start": 46.484,
+    "end": 46.852
+  },
+  {
+    "word": "up",
+    "start": 46.852,
+    "end": 47.22
+  },
+  {
+    "word": "to",
+    "start": 47.22,
+    "end": 47.588
+  },
+  {
+    "word": "dead",
+    "start": 47.588,
+    "end": 47.956
+  },
+  {
+    "word": "phones,",
+    "start": 47.956,
+    "end": 48.324
+  },
+  {
+    "word": "dark",
+    "start": 48.324,
+    "end": 48.692
+  },
+  {
+    "word": "cities,",
+    "start": 48.692,
+    "end": 49.06
+  },
+  {
+    "word": "and",
+    "start": 49.06,
+    "end": 49.428
+  },
+  {
+    "word": "overgrown",
+    "start": 49.428,
+    "end": 49.796
+  },
+  {
+    "word": "streets.",
+    "start": 49.796,
+    "end": 50.164
+  },
+  {
+    "word": "Proving",
+    "start": 50.244,
+    "end": 50.596
+  },
+  {
+    "word": "that",
+    "start": 50.596,
+    "end": 50.948
+  },
+  {
+    "word": "human",
+    "start": 50.947,
+    "end": 51.299
+  },
+  {
+    "word": "consciousness",
+    "start": 51.299,
+    "end": 51.651
+  },
+  {
+    "word": "is",
+    "start": 51.65,
+    "end": 52.002
+  },
+  {
+    "word": "the",
+    "start": 52.002,
+    "end": 52.354
+  },
+  {
+    "word": "only",
+    "start": 52.354,
+    "end": 52.706
+  },
+  {
+    "word": "glue",
+    "start": 52.705,
+    "end": 53.057
+  },
+  {
+    "word": "holding",
+    "start": 53.057,
+    "end": 53.409
+  },
+  {
+    "word": "reality",
+    "start": 53.408,
+    "end": 53.76
+  },
+  {
+    "word": "together.",
+    "start": 53.76,
+    "end": 54.112
+  },
+  {
+    "word": "Which",
+    "start": 54.112,
+    "end": 54.464
+  },
+  {
+    "word": "is",
+    "start": 54.463,
+    "end": 54.815
+  },
+  {
+    "word": "why,",
+    "start": 54.815,
+    "end": 55.167
+  },
+  {
+    "word": "if",
+    "start": 55.166,
+    "end": 55.518
+  },
+  {
+    "word": "everyone",
+    "start": 55.518,
+    "end": 55.87
+  },
+  {
+    "word": "suddenly",
+    "start": 55.87,
+    "end": 56.222
+  },
+  {
+    "word": "went",
+    "start": 56.221,
+    "end": 56.573
+  },
+  {
+    "word": "to",
+    "start": 56.573,
+    "end": 56.925
+  },
+  {
+    "word": "sleep...",
+    "start": 56.924,
+    "end": 57.276
+  }
+]

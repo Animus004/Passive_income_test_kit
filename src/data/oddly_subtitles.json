@@ -1,0 +1,352 @@
+[
+  {
+    "word": "Your",
+    "start": 0.6,
+    "end": 0.82
+  },
+  {
+    "word": "brain",
+    "start": 0.83,
+    "end": 1.16
+  },
+  {
+    "word": "burns",
+    "start": 1.18,
+    "end": 1.51
+  },
+  {
+    "word": "twenty",
+    "start": 1.52,
+    "end": 1.8
+  },
+  {
+    "word": "percent",
+    "start": 1.81,
+    "end": 2.18
+  },
+  {
+    "word": "of",
+    "start": 2.19,
+    "end": 2.24
+  },
+  {
+    "word": "your",
+    "start": 2.25,
+    "end": 2.37
+  },
+  {
+    "word": "body's",
+    "start": 2.38,
+    "end": 2.77
+  },
+  {
+    "word": "energy",
+    "start": 2.78,
+    "end": 3.17
+  },
+  {
+    "word": "every",
+    "start": 3.18,
+    "end": 3.44
+  },
+  {
+    "word": "single",
+    "start": 3.46,
+    "end": 3.78
+  },
+  {
+    "word": "day",
+    "start": 3.79,
+    "end": 4.14
+  },
+  {
+    "word": "You",
+    "start": 6.9,
+    "end": 7.05
+  },
+  {
+    "word": "think",
+    "start": 7.06,
+    "end": 7.26
+  },
+  {
+    "word": "it's",
+    "start": 7.27,
+    "end": 7.38
+  },
+  {
+    "word": "working",
+    "start": 7.39,
+    "end": 7.72
+  },
+  {
+    "word": "hard",
+    "start": 7.73,
+    "end": 7.98
+  },
+  {
+    "word": "on",
+    "start": 8.0,
+    "end": 8.13
+  },
+  {
+    "word": "math",
+    "start": 8.15,
+    "end": 8.55
+  },
+  {
+    "word": "coding",
+    "start": 8.7,
+    "end": 9.11
+  },
+  {
+    "word": "or",
+    "start": 9.3,
+    "end": 9.44
+  },
+  {
+    "word": "big",
+    "start": 9.45,
+    "end": 9.7
+  },
+  {
+    "word": "life",
+    "start": 9.71,
+    "end": 9.96
+  },
+  {
+    "word": "decisions",
+    "start": 9.97,
+    "end": 10.68
+  },
+  {
+    "word": "Nope",
+    "start": 14.6,
+    "end": 15.05
+  },
+  {
+    "word": "Eighty",
+    "start": 15.83,
+    "end": 16.07
+  },
+  {
+    "word": "percent",
+    "start": 16.09,
+    "end": 16.46
+  },
+  {
+    "word": "of",
+    "start": 16.47,
+    "end": 16.53
+  },
+  {
+    "word": "that",
+    "start": 16.54,
+    "end": 16.73
+  },
+  {
+    "word": "power",
+    "start": 16.75,
+    "end": 17.07
+  },
+  {
+    "word": "goes",
+    "start": 17.08,
+    "end": 17.3
+  },
+  {
+    "word": "to",
+    "start": 17.31,
+    "end": 17.39
+  },
+  {
+    "word": "background",
+    "start": 17.41,
+    "end": 17.91
+  },
+  {
+    "word": "autopilot",
+    "start": 17.93,
+    "end": 18.57
+  },
+  {
+    "word": "Until",
+    "start": 22.6,
+    "end": 22.96
+  },
+  {
+    "word": "2 AM",
+    "start": 22.97,
+    "end": 23.65
+  },
+  {
+    "word": "when",
+    "start": 23.87,
+    "end": 23.97
+  },
+  {
+    "word": "it",
+    "start": 23.99,
+    "end": 24.08
+  },
+  {
+    "word": "suddenly",
+    "start": 24.09,
+    "end": 24.49
+  },
+  {
+    "word": "reboots",
+    "start": 24.51,
+    "end": 25.0
+  },
+  {
+    "word": "to",
+    "start": 25.02,
+    "end": 25.13
+  },
+  {
+    "word": "replay",
+    "start": 25.14,
+    "end": 25.51
+  },
+  {
+    "word": "an",
+    "start": 25.52,
+    "end": 25.63
+  },
+  {
+    "word": "awkward",
+    "start": 25.64,
+    "end": 26.0
+  },
+  {
+    "word": "thing",
+    "start": 26.01,
+    "end": 26.22
+  },
+  {
+    "word": "you",
+    "start": 26.23,
+    "end": 26.33
+  },
+  {
+    "word": "said",
+    "start": 26.35,
+    "end": 26.6
+  },
+  {
+    "word": "in 2016",
+    "start": 26.61,
+    "end": 27.8
+  },
+  {
+    "word": "And",
+    "start": 30.6,
+    "end": 30.77
+  },
+  {
+    "word": "right",
+    "start": 30.78,
+    "end": 30.99
+  },
+  {
+    "word": "before",
+    "start": 31.0,
+    "end": 31.31
+  },
+  {
+    "word": "you",
+    "start": 31.33,
+    "end": 31.43
+  },
+  {
+    "word": "fall",
+    "start": 31.44,
+    "end": 31.68
+  },
+  {
+    "word": "asleep",
+    "start": 31.7,
+    "end": 32.14
+  },
+  {
+    "word": "it",
+    "start": 32.36,
+    "end": 32.45
+  },
+  {
+    "word": "drops",
+    "start": 32.46,
+    "end": 32.81
+  },
+  {
+    "word": "one",
+    "start": 32.82,
+    "end": 33.07
+  },
+  {
+    "word": "random",
+    "start": 33.08,
+    "end": 33.39
+  },
+  {
+    "word": "million-dollar",
+    "start": 33.4,
+    "end": 34.0
+  },
+  {
+    "word": "startup",
+    "start": 34.01,
+    "end": 34.39
+  },
+  {
+    "word": "idea",
+    "start": 34.4,
+    "end": 34.89
+  },
+  {
+    "word": "Which",
+    "start": 37.6,
+    "end": 37.82
+  },
+  {
+    "word": "you",
+    "start": 37.83,
+    "end": 37.96
+  },
+  {
+    "word": "completely",
+    "start": 37.97,
+    "end": 38.48
+  },
+  {
+    "word": "forget",
+    "start": 38.49,
+    "end": 38.88
+  },
+  {
+    "word": "by",
+    "start": 38.89,
+    "end": 39.08
+  },
+  {
+    "word": "8 AM",
+    "start": 39.09,
+    "end": 39.75
+  },
+  {
+    "word": "Good",
+    "start": 40.54,
+    "end": 40.74
+  },
+  {
+    "word": "luck",
+    "start": 40.75,
+    "end": 40.97
+  },
+  {
+    "word": "tomorrow",
+    "start": 40.98,
+    "end": 41.5
+  }
+]

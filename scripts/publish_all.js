@@ -16,6 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { execSync } = require('child_process');
 const { google } = require('googleapis');
 require('dotenv').config();
 
@@ -65,6 +66,21 @@ function findLatestVideo() {
 }
 
 function loadMetadata() {
+  const LIMITLESS_PATH = path.join(PROJECT_ROOT, 'src', 'data', 'current_limitless_phase1.json');
+  if (fs.existsSync(LIMITLESS_PATH)) {
+    try {
+      const lim = JSON.parse(fs.readFileSync(LIMITLESS_PATH, 'utf-8'));
+      return {
+        videoTitle: `${lim.title} #Shorts #Tech`,
+        youtubeDescription: `${lim.fullScript}\n\n🔍 Discover the hidden physical reality behind technology you use every day with Data Detective.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ FREE Tech Newsletter: https://datadetective.substack.com\n🔒 Recommended Tech Toolkit: https://bit.ly/data-detective-tools\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n#Shorts #Tech #Engineering #Physics #DataDetective`,
+        tags: ['Shorts', 'Tech', 'Physics', 'Engineering', 'DataDetective', 'Science'],
+        topic: lim.title,
+      };
+    } catch (e) {
+      console.warn('⚠️ Could not parse current_limitless_phase1.json, falling back.');
+    }
+  }
+
   if (fs.existsSync(CURRENT_SHORT_PATH)) {
     try {
       return JSON.parse(fs.readFileSync(CURRENT_SHORT_PATH, 'utf-8'));
@@ -482,6 +498,22 @@ async function uploadToFacebook(videoPath, metadata, isDryRun = false) {
   return { success: true, platform: 'Facebook', mediaId: finishData.post_id || fbVideoId };
 }
 
+// -------------------------------------------------------------
+// Telegram Bot & Manual Fallback Notifier
+// -------------------------------------------------------------
+const { sendTelegramReelAlert } = require('./telegram_notifier.js');
+
+async function sendTelegramAlert({ videoPath, title, caption, reason }) {
+  return await sendTelegramReelAlert({
+    videoPath,
+    title,
+    caption,
+    reason,
+    platform: 'Instagram Reels',
+    manualPkgFilename: 'manual_instagram_upload.txt',
+  });
+}
+
 async function main() {
   const { videoPath: specifiedPath, dryRun } = parseArgs();
   const videoPath = specifiedPath || findLatestVideo();
@@ -512,6 +544,13 @@ async function main() {
   } catch (err) {
     console.error(`❌ Instagram Upload Failed:`, err.message || err);
     results.push({ success: false, platform: 'Instagram', error: err.message });
+    const igCaption = `${metadata.videoTitle}\n\n${metadata.youtubeDescription || ''}\n\n#reels #tech #datadetective #technology #science #innovation`;
+    await sendTelegramAlert({
+      videoPath,
+      title: metadata.videoTitle,
+      caption: igCaption,
+      reason: err.message || 'Instagram API container processing error',
+    });
   }
 
   // Facebook Page Reels Upload

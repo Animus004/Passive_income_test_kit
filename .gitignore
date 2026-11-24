@@ -1,19 +1,75 @@
-node_modules
-dist
+# Dependencies & Environments
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Production & Build outputs
+dist/
+out/
+output/
+Remotion/
 .DS_Store
+
+# Environment & Sensitive Credentials
 .env
-.env.local
+.env.*
+!.env.example
 client_secret*.json
 tokens*.json
+meta_*.json
+*.pem
+*.key
+
+# Local Data, Scratch & Automation Logs
+scratch/
+*.log
 Pi node/
 *.vhdx
+models/
+qa_refined_hud/
 
-# Ignore the output video from Git but not videos you import into src/.
-out
+# Ephemeral runtime media & temporary frames
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+*.mp3
+*.wav
+*.m4a
+*.aac
+dummy.jpg*
+test_*
 
-# Ephemeral runtime B-roll downloads
+# Ephemeral public audio and TTS temp directories
+public/*.mp3
+public/*.wav
+public/*.ass
+public/*.srt
+public/*.txt
+public/temp_tts_*/
 public/broll/*.jpg
 public/broll/*.png
 public/broll/*.mp4
 public/broll/*.jpeg
 
+# Keep Essential Static SFX & Mascots
+!public/sfx/
+!public/sfx/*.mp3
+!public/sfx/*.wav
+!public/backgrounds/
+!public/vectors/
+
+# Heavy 3D Assets, Renders & Binary Downloads
+assets/
+data/desi_3d_library/
+blender_engine/output/
+blender_engine/renders/
+blender_engine/assets/
+blender_engine/textures/
+*.blend
+*.blend1
+*.glb
+*.gltf

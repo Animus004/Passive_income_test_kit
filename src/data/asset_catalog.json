@@ -1,0 +1,247 @@
+{
+  "version": "1.0.0",
+  "name": "Oddly 2D Vector Modular Rig Catalog",
+  "characters": {
+    "heads": [
+      {
+        "id": "messy_bedhead",
+        "label": "Messy Bedhead",
+        "tags": ["morning", "bedhead", "messy", "tired", "sleepy", "disheveled", "chaotic"],
+        "description": "Unkempt, wildly sticking out comic hair clumps suitable for morning and panic scenes."
+      },
+      {
+        "id": "curly",
+        "label": "Curly Hair",
+        "tags": ["curly", "casual", "student", "everyday", "round"],
+        "description": "Stylized voluminous curls with bold outlines."
+      },
+      {
+        "id": "beanie",
+        "label": "Slacker Beanie",
+        "tags": ["beanie", "slacker", "winter", "cozy", "hat", "dev"],
+        "description": "Slouched knit beanie pulled down to eyebrows."
+      },
+      {
+        "id": "slick",
+        "label": "Corporate Slick",
+        "tags": ["slick", "office", "formal", "corporate", "parted"],
+        "description": "Side-parted corporate hair with clean sharp silhouette."
+      },
+      {
+        "id": "ponytail",
+        "label": "High Ponytail",
+        "tags": ["ponytail", "perky", "casual", "female", "active", "student"],
+        "description": "High perky ponytail with swept bangs and colored elastic band."
+      },
+      {
+        "id": "bob_cut",
+        "label": "Modern Bob Cut",
+        "tags": ["bob_cut", "female", "clean", "stylish", "bangs"],
+        "description": "Classic chin-length curved bob framing the jawline."
+      },
+      {
+        "id": "hoodie",
+        "label": "Overhead Hoodie",
+        "tags": ["hoodie", "hood", "hiding", "introvert", "shadow"],
+        "description": "Deep hood framing the face in heavy shadow."
+      },
+      {
+        "id": "bald",
+        "label": "Smooth Oval Bald",
+        "tags": ["bald", "clean", "minimal", "shiny"],
+        "description": "Clean egg-shaped cranium with subtle highlight gleam."
+      }
+    ],
+    "faces": [
+      {
+        "id": "shock_alarm",
+        "label": "Alarm Jump-Scare Shock",
+        "tags": ["shock", "alarm", "jump_scare", "panic", "wide_eyes", "scared"],
+        "description": "Pinpoint pupils, wide bulging eyes, dropped open jaw, trembling brow."
+      },
+      {
+        "id": "dead_inside",
+        "label": "Dead Inside / Numb",
+        "tags": ["dead_inside", "exhausted", "numb", "glazed", "existential", "stare", "blank"],
+        "description": "Half-lidded unblinking eyes, heavy dark under-eye bags, flat straight mouth."
+      },
+      {
+        "id": "dazed_asymmetric",
+        "label": "Dazed & Uncoordinated",
+        "tags": ["dazed", "clumsy", "coffee", "spill", "confused", "stumble", "morning"],
+        "description": "Mismatched eye sizes, spiraled pupil, crooked open mouth, tongue peeking."
+      },
+      {
+        "id": "floating_ghost",
+        "label": "Victorian Bewilderment",
+        "tags": ["ghost", "victorian", "floating", "hollow", "spectral", "translucent"],
+        "description": "Hollow oval eyes, faint glowing teal pupils, bewildered open mouth."
+      },
+      {
+        "id": "keyboard_slump",
+        "label": "Melted Brain / X Eyes",
+        "tags": ["melt", "brain_drain", "exhaustion", "keyboard", "x_eyes", "collapse"],
+        "description": "X_X eyes, squashed cheeks, mouth flattened against surface."
+      },
+      {
+        "id": "bliss_dreaming",
+        "label": "Sweet Pillow Bliss",
+        "tags": ["bliss", "pillow", "sleep", "craving", "sweet", "dreaming", "peace"],
+        "description": "Curved happy sleeping eye arcs, serene soft smile, gentle rosy cheeks."
+      },
+      {
+        "id": "dread_loop",
+        "label": "Late Night Dread",
+        "tags": ["dread", "night", "phone", "alarm", "tomorrow", "loop", "sweat"],
+        "description": "Glanced downward eyes illuminated by phone screen, nervous sweat drop."
+      }
+    ],
+    "poses": [
+      {
+        "id": "recoil_bed",
+        "label": "Bed Alarm Recoil",
+        "tags": ["recoil", "alarm", "jolt", "bed", "shock", "jump"],
+        "description": "Upper torso thrust backward at 25 degrees, hands thrown up in defense."
+      },
+      {
+        "id": "duvet_cocoon",
+        "label": "Mummified Duvet Cocoon",
+        "tags": ["duvet", "cocoon", "mummy", "heavy", "slab", "bed", "gravity"],
+        "description": "Body wrapped entirely in thick quilted duvet, only face/eyes peeking out."
+      },
+      {
+        "id": "floating_ghost",
+        "label": "Spectral Phantom Float",
+        "tags": ["ghost", "victorian", "floating", "levitate", "nightgown", "ethereal"],
+        "description": "Translucent flowing nightgown hovering 4 inches off floor with trailing vapor."
+      },
+      {
+        "id": "standing_dazed",
+        "label": "Blind Kitchen Stumble",
+        "tags": ["kitchen", "stumble", "dazed", "coffee", "morning", "blind"],
+        "description": "Forward-leaning zombie stumble, long droopy sleeves swallowing hands."
+      },
+      {
+        "id": "slouched_chair",
+        "label": "Deflated Chair Slouch",
+        "tags": ["slouch", "chair", "deflated", "limp", "grind", "existential"],
+        "description": "Spine slumped into deep C-curve on a chair, arms hanging down limply."
+      },
+      {
+        "id": "desk_typing",
+        "label": "Catatonic Desk Stare",
+        "tags": ["desk", "typing", "computer", "productivity", "office", "staring"],
+        "description": "Rigid upright seated pose, hand motionless on mouse, staring at monitor."
+      },
+      {
+        "id": "keyboard_collapse",
+        "label": "Head Melted on Keyboard",
+        "tags": ["keyboard", "collapse", "melted", "balloon", "deflated", "nap"],
+        "description": "Torso collapsed flat onto desk, head squashed horizontally across keys."
+      },
+      {
+        "id": "fetal_reach",
+        "label": "Fetal Pillow Craving",
+        "tags": ["fetal", "pillow", "craving", "reach", "curled", "sleep"],
+        "description": "Curled on floor or sofa, one arm extended yearningly upward toward cloud."
+      },
+      {
+        "id": "holding_phone",
+        "label": "Bedside Phone Alarm Setup",
+        "tags": ["phone", "alarm", "screen", "night", "dread", "hands"],
+        "description": "Two-handed phone grip in dark room, thumb hovering over alarm toggle."
+      }
+    ]
+  },
+  "props": [
+    {
+      "id": "alarm_clock_retro",
+      "label": "Vintage Twin-Bell Alarm Clock",
+      "tags": ["alarm", "clock", "bells", "ringing", "shockwave", "5am", "jump_scare"],
+      "defaultScale": 1.2,
+      "microAnimations": ["bell_vibration", "shockwave_pulse", "red_glow"]
+    },
+    {
+      "id": "duvet_cocoon",
+      "label": "Quilted Weighted Bed Cocoon",
+      "tags": ["duvet", "bed", "cocoon", "heavy", "mummy", "slab", "anchor"],
+      "defaultScale": 1.4,
+      "microAnimations": ["crease_breathing", "heavy_rumble"]
+    },
+    {
+      "id": "candelabra_vintage",
+      "label": "Victorian Brass Candelabra",
+      "tags": ["ghost", "victorian", "candle", "candelabra", "flame", "smoke"],
+      "defaultScale": 1.1,
+      "microAnimations": ["flame_flicker", "smoke_drift"]
+    },
+    {
+      "id": "coffee_mug_spill",
+      "label": "Spilling Coffee Mug & Milk Splash",
+      "tags": ["coffee", "mug", "spill", "milk", "splash", "kitchen"],
+      "defaultScale": 1.2,
+      "microAnimations": ["liquid_wobble", "droplet_burst"]
+    },
+    {
+      "id": "poster_rise_grind",
+      "label": "Crooked Motivational Poster",
+      "tags": ["poster", "motivational", "grind", "wall", "crooked", "hustle"],
+      "defaultScale": 1.3,
+      "microAnimations": ["swing_sway", "peeling_corner"]
+    },
+    {
+      "id": "desk_monitor_clock",
+      "label": "Ultrawide Monitor & Desk Digital Clock",
+      "tags": ["desk", "computer", "monitor", "clock", "digital", "5am", "work"],
+      "defaultScale": 1.4,
+      "microAnimations": ["screen_glow_pulse", "digits_tick"]
+    },
+    {
+      "id": "deflated_balloon_brain",
+      "label": "Deflating Balloon Head & Steam",
+      "tags": ["balloon", "deflated", "brain", "steam", "drain", "exhausted"],
+      "defaultScale": 1.2,
+      "microAnimations": ["squash_wobble", "steam_puff"]
+    },
+    {
+      "id": "pillow_cloud_heaven",
+      "label": "Heavenly Cloud Pillow with Halo",
+      "tags": ["pillow", "cloud", "heaven", "halo", "craving", "thought_bubble"],
+      "defaultScale": 1.3,
+      "microAnimations": ["cloud_bob", "halo_gleam", "sparkle_orbit"]
+    },
+    {
+      "id": "phone_alarm_toggle",
+      "label": "Smartphone 5 AM Alarm Toggle UI",
+      "tags": ["phone", "screen", "alarm", "toggle", "5am", "night", "dread"],
+      "defaultScale": 1.3,
+      "microAnimations": ["slider_pulse", "time_glow"]
+    }
+  ],
+  "environments": [
+    {
+      "id": "bedroom_dark",
+      "label": "Dark 5 AM Bedroom",
+      "tags": ["bedroom", "dark", "nightstand", "bed", "shadows", "5am"],
+      "theme": "MIDNIGHT_INDIGO"
+    },
+    {
+      "id": "kitchen_morning",
+      "label": "Cold Morning Kitchen",
+      "tags": ["kitchen", "tiles", "counter", "cold", "morning", "coffee"],
+      "theme": "ICE_SLATE"
+    },
+    {
+      "id": "office_desk",
+      "label": "Sterile Productivity Desk",
+      "tags": ["office", "desk", "wall", "workplace", "screen_glow"],
+      "theme": "TECH_SLATE"
+    },
+    {
+      "id": "abstract_pop",
+      "label": "High-Energy Pop Comic Stage",
+      "tags": ["pop", "comic", "speedlines", "halftone", "abstract"],
+      "theme": "SUNNY_GOLD"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "title": "The Great Boston Molasses Tsunami of 1919",
+  "series": "Absurd History Anomalies",
+  "en": {
+    "lang": "en",
+    "masterMp3": "D:\\New folder (2)\\public\\voiceover_molasses_en.mp3",
+    "subsPath": "D:\\New folder (2)\\public\\subtitles_molasses_en.json",
+    "totalFrames": 2375,
+    "totalDuration": 79.167999,
+    "cuts": [
+      {
+        "sceneIndex": 1,
+        "name": "The Impossible Hook",
+        "startFrame": 0,
+        "endFrame": 210,
+        "startSec": 0.0,
+        "endSec": 6.869,
+        "text": "In 1919, a two-million-gallon wave of warm syrup drowned a city at thirty-five miles an hour.",
+        "subText": "In 1919, a two-million-gallon wave of warm syrup drowned a city at thirty-five miles an hour."
+      },
+      {
+        "sceneIndex": 2,
+        "name": "The Brown Paint Hack",
+        "startFrame": 208,
+        "endFrame": 597,
+        "startSec": 6.949,
+        "endSec": 19.792,
+        "text": "The problem? The company built the giant steel tank way too thin. When locals complained that syrup was dripping through the seams, the company literally painted the entire tank brown so nobody could see the leaks.",
+        "subText": "The problem? The company built the giant steel tank way too thin. When locals complained that syrup was dripping through the seams, the company literally painted the entire tank brown so nobody could see the leaks."
+      },
+      {
+        "sceneIndex": 3,
+        "name": "The January Heatwave",
+        "startFrame": 596,
+        "endFrame": 929,
+        "startSec": 19.872,
+        "endSec": 30.837,
+        "text": "Then, on January fifteenth, the temperature jumped thirty degrees in a few hours. The cold molasses began fermenting, releasing gas, and ballooning the internal pressure.",
+        "subText": "Then, on January fifteenth, the temperature jumped thirty degrees in a few hours. The cold molasses began fermenting, releasing gas, and ballooning the internal pressure."
+      },
+      {
+        "sceneIndex": 4,
+        "name": "Machine-Gun Rivets",
+        "startFrame": 928,
+        "endFrame": 1133,
+        "startSec": 30.917,
+        "endSec": 37.637,
+        "text": "Chains groaned, the steel warped, and suddenly the heavy iron rivets sheared off like machine-gun fire.",
+        "subText": "Chains groaned, the steel warped, and suddenly the heavy iron rivets sheared off like machine-gun fire."
+      },
+      {
+        "sceneIndex": 5,
+        "name": "The 25-Foot Tsunami",
+        "startFrame": 1132,
+        "endFrame": 1387,
+        "startSec": 37.717,
+        "endSec": 46.123,
+        "text": "Two point three million gallons of sticky syrup exploded into the street as a twenty-five-foot tidal wave moving at thirty-five miles an hour.",
+        "subText": "Two point three million gallons of sticky syrup exploded into the street as a twenty-five-foot tidal wave moving at thirty-five miles an hour."
+      },
+      {
+        "sceneIndex": 6,
+        "name": "The Buckling Tracks",
+        "startFrame": 1386,
+        "endFrame": 1591,
+        "startSec": 46.203,
+        "endSec": 52.901,
+        "text": "It snapped elevated train tracks like matchsticks, flattened brick buildings, and knocked horses right off their feet.",
+        "subText": "It snapped elevated train tracks like matchsticks, flattened brick buildings, and knocked horses right off their feet."
+      },
+      {
+        "sceneIndex": 7,
+        "name": "Luckily / Unluckily",
+        "startFrame": 1589,
+        "endFrame": 1916,
+        "startSec": 52.981,
+        "endSec": 63.755,
+        "text": "Luckily, it was sweet molasses, not boiling acid. Unluckily, cold molasses doesn't splash like water — it sets like wet concrete, gluing people to the sidewalk.",
+        "subText": "Luckily, it was sweet molasses, not boiling acid. Unluckily, cold molasses doesn't splash like water — it sets like wet concrete, gluing people to the sidewalk."
+      },
+      {
+        "sceneIndex": 8,
+        "name": "The Ketchup & Pancake Ending",
+        "startFrame": 1915,
+        "endFrame": 2376,
+        "startSec": 63.835,
+        "endSec": 79.088,
+        "text": "You see, syrup is a non-Newtonian fluid. Ever banged a cold ketchup bottle? Nothing moves, until the whole bottle dumps on your plate at once. And even today, Boston locals swear that on a hot summer day, the old bricks still smell of pancakes.",
+        "subText": "You see, syrup is a non-Newtonian fluid. Ever banged a cold ketchup bottle? Nothing moves, until the whole bottle dumps on your plate at once. And even today, Boston locals swear that on a hot summer day, the old bricks still smell of pancakes."
+      }
+    ]
+  },
+  "hi": {
+    "lang": "hi",
+    "masterMp3": "D:\\New folder (2)\\public\\voiceover_molasses_hi.mp3",
+    "subsPath": "D:\\New folder (2)\\public\\subtitles_molasses_hi.json",
+    "totalFrames": 2600,
+    "totalDuration": 86.656,
+    "cuts": [
+      {
+        "sceneIndex": 1,
+        "name": "The Impossible Hook",
+        "startFrame": 0,
+        "endFrame": 298,
+        "startSec": 0.0,
+        "endSec": 9.816,
+        "text": "1919 mein, pachees lakh gallon meetha syrup paintis mile per hour ki speed se poore shahar ko baha le gaya!",
+        "subText": "1919 mein, 25 lakh gallon meetha syrup 35 mph ki speed se poore shahar ko baha le gaya!"
+      },
+      {
+        "sceneIndex": 2,
+        "name": "The Brown Paint Hack",
+        "startFrame": 297,
+        "endFrame": 727,
+        "startSec": 9.896,
+        "endSec": 24.104,
+        "text": "Lekin company ne tank ko itna patla banaya tha ki syrup tapakta rehta tha. Aur unhone is leak ko theek karne ke bajaye poore tank par dark brown paint laga diya taaki kisi ko leak dikhe hi na!",
+        "subText": "Lekin company ne tank itna patla banaya tha ki syrup tapakta tha. Unhone is leak ko theek karne ke bajaye poore tank par brown paint laga diya taaki leak dikhe hi na!"
+      },
+      {
+        "sceneIndex": 3,
+        "name": "The January Heatwave",
+        "startFrame": 726,
+        "endFrame": 1086,
+        "startSec": 24.184,
+        "endSec": 36.064,
+        "text": "Phir 15 January ko achanak dhoop nikli aur temperature tezi se badh gaya! Andar bhara syrup ferment hone laga aur gas ka pressure balloon ki tarah phool gaya!",
+        "subText": "Phir 15 January ko achanak dhoop nikli aur temperature badh gaya! Andar bhara syrup ferment hone laga aur gas ka pressure balloon ki tarah phool gaya!"
+      },
+      {
+        "sceneIndex": 4,
+        "name": "Machine-Gun Rivets",
+        "startFrame": 1084,
+        "endFrame": 1293,
+        "startSec": 36.144,
+        "endSec": 42.984,
+        "text": "Lohe ki chains hilne lagi, aur achanak machine gun ki tarah lohe ke bolts hawa mein udne lage!",
+        "subText": "Lohe ki chains hilne lagi, aur achanak machine gun ki tarah lohe ke bolts hawa mein udne lage!"
+      },
+      {
+        "sceneIndex": 5,
+        "name": "The 25-Foot Tsunami",
+        "startFrame": 1292,
+        "endFrame": 1501,
+        "startSec": 43.064,
+        "endSec": 49.904,
+        "text": "Aur achanak pachees lakh gallon ka ek pachees foot uncha sticky sailaab sadkon par nikal pada!",
+        "subText": "Aur achanak 25 lakh gallon ka ek 25 foot uncha sticky sailaab sadkon par nikal pada!"
+      },
+      {
+        "sceneIndex": 6,
+        "name": "The Buckling Tracks",
+        "startFrame": 1500,
+        "endFrame": 1707,
+        "startSec": 49.984,
+        "endSec": 56.776,
+        "text": "Isne train ki patriyan tod di, imaaratein gira di, aur logon ko sadak par hi chipka diya!",
+        "subText": "Isne train ki patriyan tod di, imaaratein gira di, aur logon ko sadak par hi chipka diya!"
+      },
+      {
+        "sceneIndex": 7,
+        "name": "Luckily / Unluckily",
+        "startFrame": 1706,
+        "endFrame": 2066,
+        "startSec": 56.856,
+        "endSec": 68.76,
+        "text": "Kismat achhi thi ki ye meetha syrup tha, koi acid nahi. Lekin kismat itni buri thi ki thanda hone par ye paani ke bajaye geeli cement ki tarah jam gaya!",
+        "subText": "Kismat achhi thi ki ye meetha syrup tha. Lekin kismat itni buri thi ki thanda hone par ye paani ke bajaye geeli cement ki tarah jam gaya!"
+      },
+      {
+        "sceneIndex": 8,
+        "name": "The Ketchup & Pancake Ending",
+        "startFrame": 2065,
+        "endFrame": 2601,
+        "startSec": 68.84,
+        "endSec": 86.576,
+        "text": "Ye non-Newtonian fluid tha — jaise ketchup ki bottle ko thoko toh pehle kuch nahi nikalta, fir achanak poora ketchup plate par gir jaata hai! Aur aaj bhi Boston ke log kehte hain ki garmiyon mein deewaron se pancakes ki khushboo aati hai!",
+        "subText": "Ye non-Newtonian fluid tha — jaise ketchup ki bottle ko thoko toh pehle kuch nahi nikalta, fir achanak poora ketchup gir jaata hai! Aur aaj bhi Boston mein deewaron se pancakes ki khushboo aati hai!"
+      }
+    ]
+  },
+  "totalFramesEn": 2375,
+  "totalFramesHi": 2600
+}

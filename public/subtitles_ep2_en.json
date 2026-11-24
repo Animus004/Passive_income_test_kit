@@ -1,0 +1,537 @@
+[
+  {
+    "word": "What",
+    "start": 0.103,
+    "end": 0.329
+  },
+  {
+    "word": "if",
+    "start": 0.343,
+    "end": 0.462
+  },
+  {
+    "word": "the",
+    "start": 0.476,
+    "end": 0.555
+  },
+  {
+    "word": "entire",
+    "start": 0.569,
+    "end": 1.127
+  },
+  {
+    "word": "global",
+    "start": 1.14,
+    "end": 1.526
+  },
+  {
+    "word": "internet",
+    "start": 1.539,
+    "end": 1.978
+  },
+  {
+    "word": "was",
+    "start": 1.992,
+    "end": 2.164
+  },
+  {
+    "word": "deleted",
+    "start": 2.178,
+    "end": 2.63
+  },
+  {
+    "word": "for",
+    "start": 2.643,
+    "end": 2.803
+  },
+  {
+    "word": "seventy-two",
+    "start": 2.816,
+    "end": 3.481
+  },
+  {
+    "word": "hours?",
+    "start": 3.494,
+    "end": 4.079
+  },
+  {
+    "word": "At",
+    "start": 5,
+    "end": 5.213
+  },
+  {
+    "word": "12:01 AM",
+    "start": 5.226,
+    "end": 6.543
+  },
+  {
+    "word": "every",
+    "start": 6.755,
+    "end": 7.061
+  },
+  {
+    "word": "screen",
+    "start": 7.074,
+    "end": 7.513
+  },
+  {
+    "word": "on",
+    "start": 7.527,
+    "end": 7.686
+  },
+  {
+    "word": "Earth",
+    "start": 7.699,
+    "end": 7.939
+  },
+  {
+    "word": "freezes.",
+    "start": 7.952,
+    "end": 8.657
+  },
+  {
+    "word": "Instantly",
+    "start": 9.574,
+    "end": 10.239
+  },
+  {
+    "word": "thirty",
+    "start": 10.519,
+    "end": 10.811
+  },
+  {
+    "word": "thousand",
+    "start": 10.824,
+    "end": 11.303
+  },
+  {
+    "word": "commercial",
+    "start": 11.316,
+    "end": 11.809
+  },
+  {
+    "word": "airplanes",
+    "start": 11.822,
+    "end": 12.407
+  },
+  {
+    "word": "lose",
+    "start": 12.42,
+    "end": 12.713
+  },
+  {
+    "word": "GPS",
+    "start": 12.726,
+    "end": 13.364
+  },
+  {
+    "word": "navigation",
+    "start": 13.378,
+    "end": 14.189
+  },
+  {
+    "word": "and",
+    "start": 14.202,
+    "end": 14.335
+  },
+  {
+    "word": "are",
+    "start": 14.348,
+    "end": 14.455
+  },
+  {
+    "word": "forced",
+    "start": 14.468,
+    "end": 14.867
+  },
+  {
+    "word": "to",
+    "start": 14.88,
+    "end": 14.96
+  },
+  {
+    "word": "fly",
+    "start": 14.973,
+    "end": 15.279
+  },
+  {
+    "word": "blind!",
+    "start": 15.293,
+    "end": 15.904
+  },
+  {
+    "word": "By",
+    "start": 16.822,
+    "end": 17.114
+  },
+  {
+    "word": "8:00 AM",
+    "start": 17.128,
+    "end": 17.832
+  },
+  {
+    "word": "every",
+    "start": 18.032,
+    "end": 18.324
+  },
+  {
+    "word": "credit",
+    "start": 18.338,
+    "end": 18.657
+  },
+  {
+    "word": "card",
+    "start": 18.67,
+    "end": 19.016
+  },
+  {
+    "word": "and",
+    "start": 19.029,
+    "end": 19.202
+  },
+  {
+    "word": "ATM",
+    "start": 19.215,
+    "end": 19.787
+  },
+  {
+    "word": "on",
+    "start": 19.801,
+    "end": 19.92
+  },
+  {
+    "word": "the",
+    "start": 19.933,
+    "end": 20.013
+  },
+  {
+    "word": "planet",
+    "start": 20.027,
+    "end": 20.465
+  },
+  {
+    "word": "is",
+    "start": 20.479,
+    "end": 20.638
+  },
+  {
+    "word": "dead",
+    "start": 20.652,
+    "end": 21.011
+  },
+  {
+    "word": "leaving",
+    "start": 21.317,
+    "end": 21.662
+  },
+  {
+    "word": "billions",
+    "start": 21.676,
+    "end": 22.141
+  },
+  {
+    "word": "of",
+    "start": 22.154,
+    "end": 22.261
+  },
+  {
+    "word": "people",
+    "start": 22.274,
+    "end": 22.66
+  },
+  {
+    "word": "unable",
+    "start": 22.673,
+    "end": 23.072
+  },
+  {
+    "word": "to",
+    "start": 23.085,
+    "end": 23.192
+  },
+  {
+    "word": "buy",
+    "start": 23.205,
+    "end": 23.391
+  },
+  {
+    "word": "food.",
+    "start": 23.404,
+    "end": 23.923
+  },
+  {
+    "word": "Supply",
+    "start": 24.84,
+    "end": 25.386
+  },
+  {
+    "word": "chains",
+    "start": 25.399,
+    "end": 25.838
+  },
+  {
+    "word": "completely",
+    "start": 25.851,
+    "end": 26.436
+  },
+  {
+    "word": "freeze",
+    "start": 26.449,
+    "end": 26.941
+  },
+  {
+    "word": "because",
+    "start": 26.955,
+    "end": 27.301
+  },
+  {
+    "word": "delivery",
+    "start": 27.314,
+    "end": 27.793
+  },
+  {
+    "word": "trucks",
+    "start": 27.806,
+    "end": 28.205
+  },
+  {
+    "word": "rely",
+    "start": 28.218,
+    "end": 28.63
+  },
+  {
+    "word": "on",
+    "start": 28.644,
+    "end": 28.763
+  },
+  {
+    "word": "digital",
+    "start": 28.777,
+    "end": 29.149
+  },
+  {
+    "word": "dispatch.",
+    "start": 29.162,
+    "end": 29.92
+  },
+  {
+    "word": "Within",
+    "start": 30.838,
+    "end": 31.277
+  },
+  {
+    "word": "forty-eight",
+    "start": 31.29,
+    "end": 31.835
+  },
+  {
+    "word": "hours?",
+    "start": 31.848,
+    "end": 32.34
+  },
+  {
+    "word": "power",
+    "start": 32.473,
+    "end": 32.846
+  },
+  {
+    "word": "grids",
+    "start": 32.859,
+    "end": 33.218
+  },
+  {
+    "word": "begin",
+    "start": 33.231,
+    "end": 33.577
+  },
+  {
+    "word": "desyncing",
+    "start": 33.59,
+    "end": 34.295
+  },
+  {
+    "word": "plunging",
+    "start": 34.574,
+    "end": 35.013
+  },
+  {
+    "word": "entire",
+    "start": 35.027,
+    "end": 35.519
+  },
+  {
+    "word": "continents",
+    "start": 35.532,
+    "end": 36.024
+  },
+  {
+    "word": "into",
+    "start": 36.037,
+    "end": 36.303
+  },
+  {
+    "word": "pitch",
+    "start": 36.316,
+    "end": 36.649
+  },
+  {
+    "word": "black",
+    "start": 36.662,
+    "end": 37.008
+  },
+  {
+    "word": "darkness!",
+    "start": 37.021,
+    "end": 37.726
+  },
+  {
+    "word": "Erasing",
+    "start": 38.644,
+    "end": 39.269
+  },
+  {
+    "word": "over",
+    "start": 39.282,
+    "end": 39.495
+  },
+  {
+    "word": "twelve",
+    "start": 39.508,
+    "end": 39.907
+  },
+  {
+    "word": "trillion",
+    "start": 39.92,
+    "end": 40.359
+  },
+  {
+    "word": "dollars",
+    "start": 40.372,
+    "end": 40.824
+  },
+  {
+    "word": "in",
+    "start": 40.838,
+    "end": 40.997
+  },
+  {
+    "word": "digital",
+    "start": 41.011,
+    "end": 41.41
+  },
+  {
+    "word": "wealth.",
+    "start": 41.423,
+    "end": 41.862
+  },
+  {
+    "word": "Proving",
+    "start": 42.779,
+    "end": 43.205
+  },
+  {
+    "word": "that",
+    "start": 43.218,
+    "end": 43.378
+  },
+  {
+    "word": "modern",
+    "start": 43.391,
+    "end": 43.777
+  },
+  {
+    "word": "civilization",
+    "start": 43.79,
+    "end": 44.668
+  },
+  {
+    "word": "doesn't",
+    "start": 44.681,
+    "end": 45.013
+  },
+  {
+    "word": "run",
+    "start": 45.027,
+    "end": 45.253
+  },
+  {
+    "word": "on",
+    "start": 45.266,
+    "end": 45.412
+  },
+  {
+    "word": "money",
+    "start": 45.426,
+    "end": 45.785
+  },
+  {
+    "word": "it",
+    "start": 46.117,
+    "end": 46.263
+  },
+  {
+    "word": "runs",
+    "start": 46.277,
+    "end": 46.582
+  },
+  {
+    "word": "on",
+    "start": 46.596,
+    "end": 46.729
+  },
+  {
+    "word": "invisible",
+    "start": 46.742,
+    "end": 47.261
+  },
+  {
+    "word": "data",
+    "start": 47.274,
+    "end": 47.58
+  },
+  {
+    "word": "packets.",
+    "start": 47.593,
+    "end": 48.298
+  },
+  {
+    "word": "Which",
+    "start": 49.215,
+    "end": 49.481
+  },
+  {
+    "word": "is",
+    "start": 49.495,
+    "end": 49.641
+  },
+  {
+    "word": "why",
+    "start": 49.654,
+    "end": 50.066
+  },
+  {
+    "word": "if",
+    "start": 50.346,
+    "end": 50.505
+  },
+  {
+    "word": "your",
+    "start": 50.519,
+    "end": 50.691
+  },
+  {
+    "word": "Wi-Fi",
+    "start": 50.705,
+    "end": 51.223
+  },
+  {
+    "word": "suddenly",
+    "start": 51.237,
+    "end": 51.729
+  },
+  {
+    "word": "disappeared...",
+    "start": 51.742,
+    "end": 52.527
+  }
+]

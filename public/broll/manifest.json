@@ -1,68 +1,68 @@
 {
-  "updatedAt": "2026-11-13T14:28:25.822Z",
-  "topic": "The Svalbard Arctic Doomsday Seed Vault",
+  "updatedAt": "2026-11-14T03:00:50.571Z",
+  "topic": "Ultra-Low Latency Financial Microwave Relay Towers",
   "cuts": {
     "cut_1": {
-      "type": "image",
-      "file": "broll/cut_1.jpg",
-      "source": "unsplash",
-      "query": "cracked earth drought"
+      "type": "video",
+      "file": "broll/cut_1.mp4",
+      "query": "stock trading phone visual scale desk",
+      "source": "coverr"
     },
     "cut_2": {
-      "type": "image",
-      "file": "broll/cut_2.jpg",
-      "source": "wikimedia",
-      "query": "Svalbard Global Seed Vault Exterior"
+      "type": "video",
+      "file": "broll/cut_2.mp4",
+      "query": "undersea fiber optic cable seabed",
+      "source": "coverr"
     },
     "cut_3": {
-      "type": "image",
-      "file": "broll/cut_3.jpg",
-      "source": "wikimedia",
-      "query": "Svalbard Seed Vault Storage Boxes"
+      "type": "video",
+      "file": "broll/cut_3.mp4",
+      "query": "microwave tower antenna technical detail",
+      "source": "coverr"
     },
     "cut_4": {
-      "type": "image",
-      "file": "broll/cut_4.jpg",
-      "source": "unsplash",
-      "query": "ice tunnel cave"
+      "type": "video",
+      "file": "broll/cut_4.mp4",
+      "query": "digital telemetry timing display close up",
+      "source": "coverr"
     },
     "cut_5": {
-      "type": "image",
-      "file": "broll/cut_5.jpg",
-      "query": "arctic mountain tundra aerial",
-      "source": "nasa"
+      "type": "video",
+      "file": "broll/cut_5.mp4",
+      "query": "global financial network earth 3d",
+      "source": "coverr"
     }
   },
   "scenes": {
     "scene1": {
-      "type": "image",
-      "file": "broll/cut_1.jpg",
-      "query": "barren dry farmland crack",
-      "source": "unsplash"
+      "type": "video",
+      "file": "broll/cut_1.mp4",
+      "query": "stock trading phone visual scale desk",
+      "source": "coverr"
     },
     "scene2": {
-      "type": "image",
-      "file": "broll/cut_2.jpg",
-      "query": "svalbard seed vault exterior",
-      "source": "unsplash"
+      "type": "video",
+      "file": "broll/cut_2.mp4",
+      "query": "undersea fiber optic cable seabed",
+      "source": "coverr"
     },
     "scene3": {
       "type": "video",
       "file": "broll/cut_3.mp4",
-      "query": "black box seed vault storage",
+      "query": "microwave tower antenna technical detail",
       "source": "coverr"
     },
     "scene4": {
-      "type": "image",
-      "file": "broll/cut_4.jpg",
-      "query": "frozen underground ice tunnel",
-      "source": "unsplash"
+      "type": "video",
+      "file": "broll/cut_4.mp4",
+      "query": "digital telemetry timing display close up",
+      "source": "coverr"
     },
     "scene5": {
-      "type": "image",
-      "file": "broll/cut_5.jpg",
-      "query": "arctic mountain tundra aerial",
-      "source": "nasa"
+      "type": "video",
+      "file": "broll/cut_5.mp4",
+      "query": "global financial network earth 3d",
+      "source": "coverr"
     }
   }
 }

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "47-open-browser-tabs",
+    "topic": "Why I Need 47 Open Browser Tabs",
+    "premise": "Dev claims every single open tab is mission-critical. Gemini reads the tab titles into evidence: two are from 2021, and one is a 4-hour lo-fi stream currently paused.",
+    "clockTime": "02:15",
+    "lightingMood": "late_night_neon",
+    "endingAction": "laptop_slam_slump",
+    "used": true,
+    "lastUsedAt": "2026-11-15T07:44:07.388Z",
+    "adaptiveScore": 95
+  },
+  {
+    "id": "diet-cheat-meal-logic",
+    "topic": "The Midnight Cheat Meal Equation",
+    "premise": "Dev argues that eating leftover cold pizza over the kitchen sink burns calories because standing upright counts as core cardio. Gemini calculates the thermodynamics of guilt.",
+    "clockTime": "00:45",
+    "lightingMood": "late_night_neon",
+    "endingAction": "dramatic_desk_head_drop",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 94
+  },
+  {
+    "id": "snoozing-six-morning-alarms",
+    "topic": "The Five-Minute Snooze Lie",
+    "premise": "Dev sets 6 sequential phone alarms starting at 7:00 AM. Gemini informs him that his brain has entered REM confusion and his manager is already typing in Slack.",
+    "clockTime": "07:15",
+    "lightingMood": "morning_warm",
+    "endingAction": "slow_turn_stare",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 92
+  },
+  {
+    "id": "overthinking-two-word-text",
+    "topic": "Deconstructing 'K. Cool.'",
+    "premise": "Dev spends 25 minutes analyzing the geopolitical implications of a period after 'Cool'. Gemini calculates an 89% probability the recipient was just eating soup.",
+    "clockTime": "23:30",
+    "lightingMood": "evening_cozy",
+    "endingAction": "popapus_victory_spin",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 91
+  },
+  {
+    "id": "midnight-gym-motivation",
+    "topic": "The 1 AM Bodybuilder Delusion",
+    "premise": "Dev watches one fitness reel at 1 AM and declares tomorrow is Day 1 of his Olympian routine. Gemini cross-references his Amazon cart containing whey protein and family-size potato chips.",
+    "clockTime": "01:18",
+    "lightingMood": "late_night_neon",
+    "endingAction": "dramatic_desk_head_drop",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 90
+  },
+  {
+    "id": "git-commit-message-decay",
+    "topic": "The Git Commit Message Descent",
+    "premise": "Dev begins the evening with 'Feature: refactor payment routing' and ends at 4 AM with 'please work i beg you aaaaa'. Gemini reads his commit log into official court testimony.",
+    "clockTime": "04:12",
+    "lightingMood": "late_night_neon",
+    "endingAction": "laptop_slam_slump",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 89
+  },
+  {
+    "id": "online-shopping-cart-paralysis",
+    "topic": "The 3-Week Abandoned Cart",
+    "premise": "Dev leaves a $14 ergonomic mousepad in his cart for three weeks waiting for a $1.20 coupon. Gemini points out he just spent $42 on delivery burgers while waiting.",
+    "clockTime": "21:30",
+    "lightingMood": "evening_cozy",
+    "endingAction": "slow_turn_stare",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 88
+  },
+  {
+    "id": "coffee-intake-vs-productivity",
+    "topic": "Cup Number 4: Shaking at the Screen",
+    "premise": "Dev downs his fourth espresso claiming it enhances hyper-focus. Gemini notes that while his typing speed has tripled, his code currently consists of 400 misplaced semicolons.",
+    "clockTime": "15:45",
+    "lightingMood": "morning_warm",
+    "endingAction": "popapus_victory_spin",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 87
+  },
+  {
+    "id": "unread-email-anxiety",
+    "topic": "The 4,281 Unread Email Strategy",
+    "premise": "Dev insists his inbox strategy is 'bankruptcy by volume'—if it's important, someone will call. Gemini flags that three of the unopened emails are from payroll asking where to send money.",
+    "clockTime": "11:20",
+    "lightingMood": "morning_warm",
+    "endingAction": "dramatic_desk_head_drop",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 86
+  },
+  {
+    "id": "reorganizing-desktop-procrastination",
+    "topic": "Productivity Through Icon Sorting",
+    "premise": "Facing an imminent project deadline, Dev decides today is the day to color-code his desktop folders. Gemini observes that organizing garbage into symmetrical piles does not take out the trash.",
+    "clockTime": "16:10",
+    "lightingMood": "evening_cozy",
+    "endingAction": "slow_turn_stare",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 85
+  },
+  {
+    "id": "buying-books-vs-reading",
+    "topic": "Tsundoku: The Book Tower",
+    "premise": "Dev orders three dense technical books to 'level up' his career. Gemini scans the unopened stack and observes that knowledge does not transfer through pillows via cranial osmosis.",
+    "clockTime": "22:05",
+    "lightingMood": "evening_cozy",
+    "endingAction": "popapus_victory_spin",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 84
+  },
+  {
+    "id": "late-night-side-project-fever",
+    "topic": "Starting My Billion-Dollar Startup at 2 AM",
+    "premise": "Dev registers a new .io domain at 2 AM for a brand new startup idea, completely abandoning his previous 8 unfinished domains. Gemini offers to set up a support group for his credit card.",
+    "clockTime": "02:40",
+    "lightingMood": "late_night_neon",
+    "endingAction": "laptop_slam_slump",
+    "used": false,
+    "lastUsedAt": null,
+    "adaptiveScore": 84
+  }
+]

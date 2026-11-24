@@ -1,0 +1,60 @@
+{
+  "totalDuration": 54.384,
+  "totalFrames": 1632,
+  "sentences": [
+    {
+      "id": 1,
+      "start": 0.1,
+      "end": 5.932,
+      "duration": 5.832
+    },
+    {
+      "id": 2,
+      "start": 5.932,
+      "end": 11.644,
+      "duration": 5.712
+    },
+    {
+      "id": 3,
+      "start": 11.644,
+      "end": 19.012,
+      "duration": 7.368
+    },
+    {
+      "id": 4,
+      "start": 19.012,
+      "end": 24.892,
+      "duration": 5.88
+    },
+    {
+      "id": 5,
+      "start": 24.892,
+      "end": 31.732,
+      "duration": 6.84
+    },
+    {
+      "id": 6,
+      "start": 31.732,
+      "end": 39.22,
+      "duration": 7.488
+    },
+    {
+      "id": 7,
+      "start": 39.22,
+      "end": 43.972,
+      "duration": 4.752
+    },
+    {
+      "id": 8,
+      "start": 43.972,
+      "end": 49.492,
+      "duration": 5.52
+    },
+    {
+      "id": 9,
+      "start": 49.492,
+      "end": 54.484,
+      "duration": 4.992
+    }
+  ]
+}

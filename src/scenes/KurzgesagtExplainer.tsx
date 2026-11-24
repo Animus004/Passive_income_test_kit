@@ -3,6 +3,7 @@ import { Series, useVideoConfig } from "remotion";
 import { KurzgesagtCut } from "./kurzgesagt/KurzgesagtCut";
 import { SubtitleWord } from "../types";
 import currentShortData from "../data/current_short.json";
+import defaultMetadata from "../../public/metadata.json";
 
 interface KurzgesagtExplainerProps {
   subtitles?: SubtitleWord[];
@@ -16,7 +17,7 @@ export const KurzgesagtExplainer: React.FC<KurzgesagtExplainerProps> = ({
   const data = currentShortData as any;
   const rawCuts = data?.cuts || data?.scenes || [];
   const cutTimings: Array<{ cutId: number; durationInFrames: number }> =
-    data?.cutTimings || [];
+    data?.cutTimings || (defaultMetadata as any)?.cutTimings || [];
 
   const themeConfig = data?.themeConfig || {
     primary: "#38bdf8",
