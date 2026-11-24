@@ -819,9 +819,22 @@ Human (Line 0): "Gemini... looking at everyone succeeding online... did I WASTE 
 Gemini (Line 1): "You're comparing your raw footage... to their TEASER TRAILER."
 Human (Line 2): "Yeah, but they're raising Series A while I'm fixing margin padding at 2 AM."
 Gemini (Line 3): "You shipped three complete systems this year with zero funding and pure grit. That isn't wasting time—that's building a FOUNDATION."
-Human (Line 4): "Okay... thanks, Gemini. I actually really needed to hear that."
+Human (Line 4): "Thanks Gemini... but you know tomorrow night at 2 AM I'm still gonna ask..."
 
-7. DUAL-LANGUAGE REQUIREMENT (WITH DUAL HINDI SCRIPT):
+8. CIRCULAR SENTENCE LOOP ARCHITECTURE (MANDATORY FOR 120%+ RETENTION):
+   - The final line MUST be an open setup or unfinished phrase that grammatically and conceptually connects directly back into Line 0!
+   - When the Shorts feed auto-replays, the viewer must experience an unbroken, seamless circle before realizing the video ended.
+   - Examples:
+     * Final Line: "Because deep down, every developer knows what happens when..." -> loops to Line 0: "Manager sent two words on Slack: 'Got a minute?'"
+     * Final Line: "Now go to sleep, because tomorrow at 2 AM you're going to ask me..." -> loops to Line 0: "Gemini, is all this hard work for nothing?"
+
+9. OPINION & DEBATE PINNED COMMENTS (MANDATORY FOR 500+ COMMENTS):
+   - Never output weak, passive questions like "Share your thoughts" or "Do you agree?".
+   - You MUST output an ego-challenging, polarizing binary question in 'pinnedComment_en' and 'pinnedComment_hi'.
+   - Force viewers to defend their lifestyle, pick a side, or confess an embarrassing habit.
+     * Examples: "Be honest: Is 14hr daily grind discipline, or are we all just coping? 👇", "Are you loyal to your company, or just 1 missed paycheck away from ghosting everyone? Be real 👇"
+
+10. DUAL-LANGUAGE REQUIREMENT (WITH DUAL HINDI SCRIPT):
    Each line MUST provide:
    - "text_en": Punchy English dialogue for Global Shorts (natural nicknames: "Chief", "Buddy", "Man", "Bro", "Genius"). Max 8-11 words.
    - "text_hi_display": Culturally adapted, punchy conversational Hinglish STRICTLY written in 100% Roman/English letters. NEVER use Devanagari script in this field. Max 8-11 words.
@@ -847,11 +860,11 @@ Human (Line 4): "Okay... thanks, Gemini. I actually really needed to hear that."
 
 Output strictly valid JSON matching this schema:
 {
-  "title_en": "Short viral English title with emoji (max 32 chars)",
-  "title_hi": "Short viral Hinglish title with emoji (max 32 chars)",
+  "title_en": "Ultra-punchy 3-5 word hook title in ALL CAPS (e.g. POV: 2 AM EXISTENTIAL COPE)",
+  "title_hi": "Ultra-punchy 3-5 word Hinglish hook title (e.g. POV: RAAT 2 BAJE KA PANIC)",
   "premise": "One line core comedic premise",
-  "pinnedComment_en": "Witty question for YouTube & X comments",
-  "pinnedComment_hi": "Witty question in Hinglish for Insta & FB comments",
+  "pinnedComment_en": "Polarizing debate question forcing viewers to pick a side or defend their ego (e.g. 'Be honest: Is 14hr grind discipline or pure cope? 👇')",
+  "pinnedComment_hi": "Polarizing debate question in Hinglish forcing comments (e.g. 'Bhai sach batao: 14 ghante grind discipline hai ya bas cope? 👇')",
   "lines": [
     {
       "lineIndex": 0,
@@ -1597,7 +1610,7 @@ async function synthesizeDialogueAudio(scriptData, runDir, lang = 'en', engine =
   const filterComplex = [
     `[0:a]volume=1.20[v_clean]`,
     `[1:a]volume=0.07[bg_ducked]`,
-    `[2:a]adelay=400|400,volume=0.30[sfx_whoosh]`,
+    `[2:a]adelay=0|0,volume=0.45[sfx_whoosh]`,
     `[3:a]adelay=3200|3200,volume=0.35[sfx_boom]`,
     `[4:a]adelay=7500|7500,volume=0.30[sfx_blip]`,
     `[v_clean][bg_ducked][sfx_whoosh][sfx_boom][sfx_blip]amix=inputs=5:duration=first:dropout_transition=2[a_out]`
@@ -1642,7 +1655,7 @@ PlayResY: 1920
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: RelatableHuman,Arial Black,78,&H00FFFFFF,&H000000FF,&H000F172A,&H80000000,-1,0,0,0,100,100,0,0,1,6.0,2.5,2,60,60,540,1
 Style: RelatableGemini,Arial Black,78,&H0022C55E,&H000000FF,&H000A0E18,&H80000000,-1,0,0,0,100,100,0,0,1,6.0,2.5,2,60,60,540,1
-Style: HookBadge,Arial Black,50,&H0000FFFF,&H000000FF,&H000A0E18,&H90000000,-1,0,0,0,100,100,1,0,3,10.0,0,8,60,60,260,1
+Style: HookBadge,Arial Black,68,&H0000FFFF,&H000000FF,&H000A0E18,&H00000000,-1,0,0,0,100,100,1,0,3,14.0,0,8,40,40,230,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -1657,11 +1670,11 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(cs).padStart(2, '0')}`;
   }
 
-  // Top Curiosity Hook Sticker (0.0s to 3.0s Frame 0-90)
+  // Top Curiosity Hook Sticker (Frame 0 Instant Pop, Zero Fade Lag for <300ms mobile read)
   if (hookTitle) {
     const cleanHook = hookTitle.replace(/[^\w\s\u0900-\u097F💀😭🤦‍♂️🔥⚡️!?-]/g, '').trim();
     const hookText = cleanHook.toUpperCase().startsWith('POV:') ? cleanHook.toUpperCase() : `POV: ${cleanHook.toUpperCase()}`;
-    ass += `Dialogue: 1,0:00:00.00,0:00:03.00,HookBadge,,0,0,0,,{\\fade(100,200)}${hookText}\n`;
+    ass += `Dialogue: 1,0:00:00.00,0:00:02.80,HookBadge,,0,0,0,,${hookText}\n`;
   }
 
   for (const l of lines) {

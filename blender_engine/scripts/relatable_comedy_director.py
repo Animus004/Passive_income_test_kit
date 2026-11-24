@@ -2412,6 +2412,13 @@ def setup_master_cinematography_and_acting(manifest):
             marker = scene.timeline_markers.new(f"Turn_{idx}_{tag}", frame=s_frame)
             marker.camera = target_cam
 
+    # 1b. SEAMLESS LOOP MARKER: In the final 10 frames (trailing tail), snap camera back to shot1_cam
+    # so the ending frame visually and cinematographically matches Frame 1's starting camera angle!
+    if total_frames > 24:
+        loop_snap_frame = max(1, total_frames - 10)
+        marker_loop = scene.timeline_markers.new("Seamless_Loop_Snap", frame=loop_snap_frame)
+        marker_loop.camera = shot1_cam
+
     # 2. Reset Moving Cars animation data for daylight_walk (animated continuously in frame loop)
     if car1:
         car1.animation_data_clear()
@@ -2560,8 +2567,14 @@ def setup_master_cinematography_and_acting(manifest):
             for f in range(st, en + 1):
                 local_f = f - st
                 if local_f < attack_frames:
-                    p_raw = local_f / float(attack_frames)
-                    p_ease = 1.0 - math.pow(1.0 - p_raw, 3.0)  # Snappy 0.35s attack pop
+                    if i == 0 and st <= 3:
+                        # CRITICAL RETENTION HOOK: Frame 1 must NOT start in neutral rest pose!
+                        # Start at 0.65+ velocity so speaker is ALREADY in sudden motion at 0.0s
+                        p_raw = min(1.0, 0.65 + (local_f / float(max(1, attack_frames))) * 0.35)
+                        p_ease = p_raw
+                    else:
+                        p_raw = local_f / float(attack_frames)
+                        p_ease = 1.0 - math.pow(1.0 - p_raw, 3.0)  # Snappy 0.35s attack pop
                 elif local_f > (dur - release_frames):
                     p_raw = (en - f) / float(release_frames)
                     p_ease = p_raw * p_raw  # Clean settle back to neutral
@@ -2682,15 +2695,29 @@ def setup_master_cinematography_and_acting(manifest):
                 )
                 gemini_root.keyframe_insert(data_path="location", frame=f)
 
+            # RETENTION HOOK: Frame 1 Visual Crash-Zoom Punch-In (first 8 frames / 0.26s)
+            crash_zoom_offset = 0.0
+            crash_dutch_roll = 0.0
+            if f <= 8:
+                crash_prog = f / 8.0
+                crash_zoom_offset = -0.35 * math.pow(1.0 - crash_prog, 2.5)  # 0.35m back, punching in
+                crash_dutch_roll = math.radians(4.0) * math.pow(1.0 - crash_prog, 2.0)  # 4-degree Dutch roll settling to 0
+
             # Cameras Dolly along -Y
             if cam_wide:
                 cam_wide.location = (base_cam_wide_loc.x, base_cam_wide_loc.y + y_walk, base_cam_wide_loc.z)
                 cam_wide.keyframe_insert(data_path="location", frame=f)
             if cam_human:
-                cam_human.location = (base_cam_human_loc.x, base_cam_human_loc.y + y_walk, base_cam_human_loc.z)
+                cam_human.location = (base_cam_human_loc.x, base_cam_human_loc.y + y_walk + crash_zoom_offset, base_cam_human_loc.z)
+                cam_human.rotation_euler.y = crash_dutch_roll
                 cam_human.keyframe_insert(data_path="location", frame=f)
+                cam_human.keyframe_insert(data_path="rotation_euler", frame=f)
             if cam_gemini:
-                cam_gemini.location = (base_cam_gemini_loc.x, base_cam_gemini_loc.y + y_walk, base_cam_gemini_loc.z)
+                gemini_cam_offset = crash_zoom_offset if shot1_cam == cam_gemini else 0.0
+                cam_gemini.location = (base_cam_gemini_loc.x, base_cam_gemini_loc.y + y_walk + gemini_cam_offset, base_cam_gemini_loc.z)
+                if shot1_cam == cam_gemini:
+                    cam_gemini.rotation_euler.y = crash_dutch_roll
+                    cam_gemini.keyframe_insert(data_path="rotation_euler", frame=f)
                 cam_gemini.keyframe_insert(data_path="location", frame=f)
 
             # Environmental Detail: Gentle Wind Sway on Tree Canopies (Daylight Walk Only)
