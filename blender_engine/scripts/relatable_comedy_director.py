@@ -2339,6 +2339,13 @@ def setup_master_cinematography_and_acting(manifest):
         'yellow': bpy.data.objects.get("Orb_Antigravity_Yellow"),
     }
 
+    stage_recipe = manifest.get('stage_recipe') or {}
+    env_type = stage_recipe.get('theme') or manifest.get('environment', 'daylight_walk')
+    is_walk_scene = env_type in ['daylight_walk', 'neon_datacenter', 'datacenter', 'server_room', 'daylight_server_room']
+    walk_speed = 0.35 if is_walk_scene else 0.0
+    is_couch = 'couch' in env_type.lower()
+    is_balcony = 'balcony' in env_type.lower()
+
     car1 = bpy.data.objects.get("Car_Red_Sedan")
     car2 = bpy.data.objects.get("Car_White_Hatch")
 
@@ -2533,6 +2540,47 @@ def setup_master_cinematography_and_acting(manifest):
     base_cam_human_rot = cam_human.rotation_euler.copy() if cam_human else Euler((math.radians(85.5), 0, 0))
     base_cam_gemini_rot = cam_gemini.rotation_euler.copy() if cam_gemini else Euler((math.radians(87.5), 0, 0))
     base_cam_wide_rot = cam_wide.rotation_euler.copy() if cam_wide else Euler((math.radians(88.0), 0, 0))
+
+    # =========================================================================
+    # PROCEDURAL HOOK CAMERA PROFILE SELECTION
+    # =========================================================================
+    # Camera angles are emotional amplifiers. The hook style dynamically adapts
+    # to the episode's topic, emotion, and environment for maximum 35%+ retention.
+    hook_profile = manifest.get('camera_hook_profile')
+    if not hook_profile:
+        theme_str = (str(manifest.get('theme', '')) + ' ' + str(manifest.get('category', '')) + ' ' + str(manifest.get('title', ''))).lower()
+        l0_emotion = lines[0].get('emotion', '').lower() if lines else ''
+        l0_action = lines[0].get('action', '').lower() if lines else ''
+        l0_text = lines[0].get('text', '').lower() if lines else ''
+        combined_meta = f"{theme_str} {l0_emotion} {l0_action} {l0_text}".lower()
+
+        if is_walk_scene:
+            hook_profile = 'tracking_stroll'
+        elif any(k in combined_meta for k in ['existential', 'crisis', 'burnout', '2 am', '2am', 'hard work', 'pointless', 'overthinking', 'exhausted', 'cope', 'failure', 'stress', 'why am i', 'question', 'doubt']):
+            hook_profile = 'crisis_low_angle'
+        elif any(k in combined_meta for k in ['panic', 'caught', 'boss', 'emergency', 'freakout', 'alarm', 'crash in prod', 'fired', 'danger', 'deadline']):
+            hook_profile = 'panic_overhead'
+        elif any(k in combined_meta for k in ['secret', 'conspiracy', 'truth', 'rant', 'nobody tells you', 'replace', 'dirty secret', 'whisper', 'gossip', 'unpopular']):
+            hook_profile = 'dutch_whisper'
+        elif any(k in combined_meta for k in ['roast', 'sarcasm', 'mockery', 'deadpan', 'smug', 'laugh', 'banter', 'resume', 'linkedin', 'interview', 'comedy']):
+            hook_profile = 'mockumentary_snap'
+        else:
+            hook_profile = 'crisis_low_angle' if any(k in env_type.lower() for k in ['desk', 'balcony', 'latenight']) else 'mockumentary_snap'
+
+    print(f"🎬 PROCEDURAL HOOK CAMERA PROFILE: [{hook_profile.upper()}]")
+
+    # Dynamic Focal Length Tuning based on Hook Profile
+    if shot1_cam:
+        if hook_profile == 'crisis_low_angle':
+            shot1_cam.data.lens = 28.0  # Dynamic wide-angle portrait lens for late night crisis
+        elif hook_profile == 'panic_overhead':
+            shot1_cam.data.lens = 28.0  # Wide-angle overhead view
+        elif hook_profile == 'mockumentary_snap':
+            shot1_cam.data.lens = 45.0  # Crisp comedy documentary portrait lens
+        elif hook_profile == 'dutch_whisper':
+            shot1_cam.data.lens = 32.0  # Cinematic conspiratorial wide
+        elif hook_profile == 'tracking_stroll':
+            shot1_cam.data.lens = 30.0  # Environmental walking 2-shot lens
 
     base_arm_r_rot = arm_r.rotation_euler.copy() if arm_r else Euler((math.radians(10), 0, math.radians(5)))
     base_mouth_scale = mouth.scale.copy() if mouth else Vector((1.0, 1.0, 1.0))
@@ -2810,34 +2858,80 @@ def setup_master_cinematography_and_acting(manifest):
                 )
                 gemini_root.keyframe_insert(data_path="location", frame=f)
 
-        # 4b. RETENTION HOOK: Frame 1 Visual Crash-Zoom Punch-In & Dutch Tilt (Universal across ALL stages)
-        # YouTube Shorts Retention Rule: Lead with unexpected visual motion & dynamic angle in Frame 1 (< 0.5s).
-        # Starts 0.70m pulled back with a 7.5 deg Dutch roll at Frame 1, punch-zooming exponentially
-        # into tight chest-and-face framing by frame 10 (0.33s).
+        # 4b. PROCEDURAL RETENTION HOOK: Context-Aware Dynamic Camera Motion (Frames 1-10)
+        # Driven by the detected hook_profile (crisis_low_angle, mockumentary_snap, panic_overhead, etc.)
         crash_zoom_offset = 0.0
+        crash_z_offset = 0.0
+        crash_x_offset = 0.0
+        crash_pitch_offset = 0.0
         crash_dutch_roll = 0.0
-        if f <= 10:
-            crash_prog = (f - 1) / 9.0
-            crash_zoom_offset = -0.70 * math.pow(1.0 - crash_prog, 2.2)
-            crash_dutch_roll = math.radians(7.5) * math.pow(1.0 - crash_prog, 2.0)
+
+        if hook_profile == 'crisis_low_angle':
+            # Low-angle upward crisis punch (+16 deg pitch, 12 deg Dutch roll, -0.28m Z elevation)
+            if f <= 10:
+                prog = (f - 1) / 9.0
+                ease = math.pow(1.0 - prog, 2.2)
+                crash_zoom_offset = -0.75 * ease
+                crash_z_offset = -0.28 * ease
+                crash_pitch_offset = math.radians(16.0) * ease
+                crash_dutch_roll = math.radians(12.0) * ease
+        elif hook_profile == 'mockumentary_snap':
+            # Snappy The-Office style crash zoom (0.2s rapid snap into extreme close-up)
+            if f <= 6:
+                prog = (f - 1) / 5.0
+                ease = math.pow(1.0 - prog, 3.0)
+                crash_zoom_offset = -1.10 * ease
+        elif hook_profile == 'panic_overhead':
+            # Overhead panic cam (-20 deg down-tilt, +0.38m high Z, diving into desk)
+            if f <= 10:
+                prog = (f - 1) / 9.0
+                ease = math.pow(1.0 - prog, 2.2)
+                crash_zoom_offset = -0.50 * ease
+                crash_z_offset = 0.38 * ease
+                crash_pitch_offset = math.radians(-20.0) * ease
+                crash_dutch_roll = math.radians(-10.0) * ease
+        elif hook_profile == 'dutch_whisper':
+            # Leaked POV / dramatic conspiracy slant (15 deg roll, X sweep)
+            if f <= 10:
+                prog = (f - 1) / 9.0
+                ease = math.pow(1.0 - prog, 2.0)
+                crash_zoom_offset = -0.60 * ease
+                crash_x_offset = 0.18 * ease
+                crash_pitch_offset = math.radians(6.0) * ease
+                crash_dutch_roll = math.radians(15.0) * ease
+        elif hook_profile == 'tracking_stroll':
+            # Dynamic tracking with slight 4 deg organic roll
+            if f <= 8:
+                prog = (f - 1) / 7.0
+                ease = math.pow(1.0 - prog, 2.0)
+                crash_zoom_offset = -0.45 * ease
+                crash_dutch_roll = math.radians(4.0) * ease
 
         if cam_wide:
             cam_wide.location = (base_cam_wide_loc.x, base_cam_wide_loc.y + y_walk, base_cam_wide_loc.z)
             cam_wide.keyframe_insert(data_path="location", frame=f)
 
         if cam_human:
-            human_cam_offset = crash_zoom_offset if shot1_cam == cam_human else 0.0
-            human_cam_roll = crash_dutch_roll if shot1_cam == cam_human else 0.0
-            cam_human.location = (base_cam_human_loc.x, base_cam_human_loc.y + y_walk + human_cam_offset, base_cam_human_loc.z)
-            cam_human.rotation_euler = (base_cam_human_rot.x, base_cam_human_rot.y + human_cam_roll, base_cam_human_rot.z)
+            h_y = crash_zoom_offset if shot1_cam == cam_human else 0.0
+            h_z = crash_z_offset if shot1_cam == cam_human else 0.0
+            h_x = crash_x_offset if shot1_cam == cam_human else 0.0
+            h_roll = crash_dutch_roll if shot1_cam == cam_human else 0.0
+            h_pitch = crash_pitch_offset if shot1_cam == cam_human else 0.0
+
+            cam_human.location = (base_cam_human_loc.x + h_x, base_cam_human_loc.y + y_walk + h_y, base_cam_human_loc.z + h_z)
+            cam_human.rotation_euler = (base_cam_human_rot.x + h_pitch, base_cam_human_rot.y + h_roll, base_cam_human_rot.z)
             cam_human.keyframe_insert(data_path="location", frame=f)
             cam_human.keyframe_insert(data_path="rotation_euler", frame=f)
 
         if cam_gemini:
-            gemini_cam_offset = crash_zoom_offset if shot1_cam == cam_gemini else 0.0
-            gemini_cam_roll = crash_dutch_roll if shot1_cam == cam_gemini else 0.0
-            cam_gemini.location = (base_cam_gemini_loc.x, base_cam_gemini_loc.y + y_walk + gemini_cam_offset, base_cam_gemini_loc.z)
-            cam_gemini.rotation_euler = (base_cam_gemini_rot.x, base_cam_gemini_rot.y + gemini_cam_roll, base_cam_gemini_rot.z)
+            g_y = crash_zoom_offset if shot1_cam == cam_gemini else 0.0
+            g_z = crash_z_offset if shot1_cam == cam_gemini else 0.0
+            g_x = crash_x_offset if shot1_cam == cam_gemini else 0.0
+            g_roll = crash_dutch_roll if shot1_cam == cam_gemini else 0.0
+            g_pitch = crash_pitch_offset if shot1_cam == cam_gemini else 0.0
+
+            cam_gemini.location = (base_cam_gemini_loc.x + g_x, base_cam_gemini_loc.y + y_walk + g_y, base_cam_gemini_loc.z + g_z)
+            cam_gemini.rotation_euler = (base_cam_gemini_rot.x + g_pitch, base_cam_gemini_rot.y + g_roll, base_cam_gemini_rot.z)
             cam_gemini.keyframe_insert(data_path="location", frame=f)
             cam_gemini.keyframe_insert(data_path="rotation_euler", frame=f)
 
