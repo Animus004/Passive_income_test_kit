@@ -120,7 +120,8 @@ export const SceneExampleSolo: React.FC = () => {
             <span>EMI TRAP • 36 MONTHS PRISON</span>
           </div>
 
-          <HeroProp type="credit_card_trap" x={540} y={820} scale={1.38} shakeIntensity={propSpring} />
+          {/* Solo Monolith firmly grounded on Y=1220 floor horizon (y=960, scale=1.35) */}
+          <HeroProp type="credit_card_trap" x={540} y={960} scale={1.35} shakeIntensity={propSpring} />
         </RoomEnvironment>
       </div>
     </AbsoluteFill>
@@ -175,7 +176,7 @@ export const SceneExampleConfrontation: React.FC = () => {
             />
           </div>
 
-          <HeroProp type="salary_slip_drain" x={540} y={860} scale={1.05} shakeIntensity={centerPropSpring} />
+          <HeroProp type="salary_slip_drain" x={540} y={940} scale={1.05} shakeIntensity={centerPropSpring} />
 
           <div style={{ opacity: rightCharSpring }}>
             <CharacterRig
@@ -300,7 +301,8 @@ export const SceneExampleSolo: React.FC = () => {
             <span>SERVER MELTDOWN • 99.9% FAILURE</span>
           </div>
 
-          <HeroProp type="server_rack_overheat" x={540} y={820} scale={1.38} shakeIntensity={propSpring} />
+          {/* Solo Monolith firmly grounded on Y=1220 floor horizon (y=960, scale=1.35) */}
+          <HeroProp type="server_rack_overheat" x={540} y={960} scale={1.35} shakeIntensity={propSpring} />
         </RoomEnvironment>
       </div>
     </AbsoluteFill>
@@ -355,7 +357,7 @@ export const SceneExampleConfrontation: React.FC = () => {
             />
           </div>
 
-          <HeroProp type="macbook_pro" x={540} y={860} scale={1.05} shakeIntensity={centerPropSpring} />
+          <HeroProp type="macbook_pro" x={540} y={940} scale={1.05} shakeIntensity={centerPropSpring} />
 
           <div style={{ opacity: rightCharSpring }}>
             <CharacterRig
@@ -492,7 +494,8 @@ export const SceneExampleSolo: React.FC = () => {
             <span>VAULT B • THE NAGA LOCK</span>
           </div>
 
-          <HeroProp type="vault_b_door" x={540} y={820} scale={1.38} shakeIntensity={propSpring} />
+          {/* Solo Monolith firmly grounded on Y=1220 floor horizon (y=960, scale=1.35) */}
+          <HeroProp type="vault_b_door" x={540} y={960} scale={1.35} shakeIntensity={propSpring} />
         </RoomEnvironment>
       </div>
     </AbsoluteFill>
@@ -546,7 +549,7 @@ export const SceneExampleConfrontation: React.FC = () => {
             />
           </div>
 
-          <HeroProp type="sword_shield_emblem" x={540} y={860} scale={1.05} shakeIntensity={centerPropSpring} />
+          <HeroProp type="sword_shield_emblem" x={540} y={940} scale={1.05} shakeIntensity={centerPropSpring} />
 
           <div style={{ opacity: rightCharSpring }}>
             <CharacterRig

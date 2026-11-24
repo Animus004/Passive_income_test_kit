@@ -204,18 +204,18 @@ export const HeroProp: React.FC<HeroPropProps> = ({
               <rect x="-14" y="0" width="28" height="14" rx="7" fill="#ECB22E" stroke={STROKE} strokeWidth="3" />
             </g>
 
-            {/* Header: Manager Name & Timestamp */}
+            {/* Header: Dynamic Sender & Timestamp */}
             <text x="135" y="215" fill="#FFFFFF" fontSize="22" fontWeight="900" fontFamily="sans-serif">
-              Manager (Direct Message)
+              {customSubtext || 'System Alert'}
             </text>
             <text x="135" y="240" fill="#94A3B8" fontSize="16" fontWeight="700" fontFamily="sans-serif">
-              Today at 9:02 AM • 🔴 Urgent
+              🔴 Direct Message • Urgent
             </text>
 
-            {/* Two Fatal Words with Red Highlight Box */}
+            {/* Main Alert Message */}
             <rect x="70" y="265" width="360" height="85" rx="18" fill="#EF4444" stroke={STROKE} strokeWidth="6" />
             <text x="250" y="320" textAnchor="middle" fill="#FFFFFF" fontSize="34" fontWeight="900" fontFamily="sans-serif">
-              {customText || '"Got a minute?"'}
+              {customText || 'CRITICAL NOTICE'}
             </text>
           </g>
         );
@@ -406,7 +406,7 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             {/* Background Folder 1 */}
             <g transform="rotate(-15, 230, 250)">
               <rect x="100" y="110" width="260" height="320" rx="16" fill="#FDE68A" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
-              <text x="130" y="170" fill="#78350F" fontSize="20" fontWeight="900">INCIDENT #404</text>
+              <text x="130" y="170" fill="#78350F" fontSize="18" fontWeight="900">{customSubtext || 'AUDIT #01'}</text>
               <line x1="130" y1="200" x2="310" y2="200" stroke="#B45309" strokeWidth="6" strokeLinecap="round" />
               <line x1="130" y1="230" x2="280" y2="230" stroke="#B45309" strokeWidth="6" strokeLinecap="round" />
             </g>
@@ -414,7 +414,7 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             {/* Middle Folder 2 */}
             <g transform="rotate(12, 270, 240)">
               <rect x="140" y="100" width="260" height="320" rx="16" fill="#FCA5A5" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
-              <text x="170" y="160" fill="#991B1B" fontSize="20" fontWeight="900">DB PROD DROP</text>
+              <text x="170" y="160" fill="#991B1B" fontSize="18" fontWeight="900">{customText ? customText.slice(0, 12) : 'URGENT'}</text>
               <line x1="170" y1="190" x2="350" y2="190" stroke="#DC2626" strokeWidth="6" strokeLinecap="round" />
               <line x1="170" y1="220" x2="320" y2="220" stroke="#DC2626" strokeWidth="6" strokeLinecap="round" />
             </g>
@@ -427,11 +427,11 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             <line x1="140" y1="235" x2="350" y2="235" stroke="#94A3B8" strokeWidth="6" strokeLinecap="round" />
             <line x1="140" y1="260" x2="280" y2="260" stroke="#94A3B8" strokeWidth="6" strokeLinecap="round" />
 
-            {/* Bloody Red Rubber Stamp */}
+            {/* Red Rubber Stamp */}
             <g transform="rotate(-18, 250, 320)">
               <rect x="130" y="280" width="240" height="75" rx="12" fill="none" stroke="#EF4444" strokeWidth="12" />
-              <text x="250" y="332" textAnchor="middle" fill="#EF4444" fontSize="32" fontWeight="900" fontFamily="sans-serif">
-                GUILTY
+              <text x="250" y="332" textAnchor="middle" fill="#EF4444" fontSize="30" fontWeight="900" fontFamily="sans-serif">
+                {customText ? customText.slice(0, 10).toUpperCase() : 'CRITICAL'}
               </text>
             </g>
           </g>
@@ -472,47 +472,49 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             </text>
             <circle cx="365" cy="140" r="5" fill="#22C55E" />
 
-            {/* Ingoing Message 1 (Salary Credit Card) */}
+            {/* Ingoing Message 1 */}
             <rect x="115" y="172" width="270" height="68" rx="16" fill="#1E293B" stroke={STROKE} strokeWidth="4" />
-            <text x="130" y="198" fill="#94A3B8" fontSize="13" fontWeight="700">A/C **4892: SALARY CREDITED</text>
-            <text x="130" y="226" fill="#10B981" fontSize="20" fontWeight="900">+ ₹ 75,000.00</text>
+            <text x="130" y="198" fill="#94A3B8" fontSize="13" fontWeight="700">{customSubtext || 'TRANSACTION ALERT'}</text>
+            <text x="130" y="226" fill="#10B981" fontSize="20" fontWeight="900">{customText ? customText.slice(0, 16) : '₹ VERIFIED'}</text>
 
-            {/* Urgent Alert Bubble 2 (Zero Balance Trap) */}
+            {/* Urgent Alert Bubble 2 */}
             <rect x="115" y="250" width="270" height="100" rx="18" fill="#7F1D1D" stroke="#EF4444" strokeWidth="5" />
-            <rect x="125" y="258" width="96" height="22" rx="6" fill="#EF4444" />
-            <text x="173" y="274" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="900">5TH OF MONTH</text>
-            <text x="130" y="306" fill="#FCA5A5" fontSize="14" fontWeight="800">CURRENT AVAILABLE BAL</text>
-            <text x="130" y="338" fill="#FFFFFF" fontSize="28" fontWeight="900" fontFamily="sans-serif">
-              {customText || '₹ 0.00'}
+            <rect x="125" y="258" width="120" height="22" rx="6" fill="#EF4444" />
+            <text x="185" y="274" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="900">SYSTEM UPDATE</text>
+            <text x="130" y="306" fill="#FCA5A5" fontSize="14" fontWeight="800">CURRENT STATUS</text>
+            <text x="130" y="338" fill="#FFFFFF" fontSize="26" fontWeight="900" fontFamily="sans-serif">
+              {customText || 'CRITICAL'}
             </text>
 
             {/* Warning Pill at Bottom */}
             <rect x="135" y="362" width="230" height="32" rx="16" fill="#DC2626" stroke={STROKE} strokeWidth="3" />
             <text x="250" y="384" textAnchor="middle" fill="#FFFFFF" fontSize="13" fontWeight="900">
-              🚨 100% SALARY DRAINED
+              {customSubtext ? `⚠️ ${customSubtext.slice(0, 18)}` : '⚠️ HIGH PRIORITY'}
             </text>
           </g>
         );
       }
 
-      case 'mom_browser_meme': {
+      case 'mom_browser_meme':
+      case 'urgent_chat_screen': {
         const phoneTremble = Math.sin(frame * 1.8) * 4;
+        const contactTitle = customSubtext || 'CONFIDENTIAL';
+        const mainMessage = customText || 'CRITICAL ALERT';
         return (
-          <g id="prop_mom_browser_meme" transform={`translate(${phoneTremble}, 0)`}>
+          <g id="prop_urgent_chat_screen" transform={`translate(${phoneTremble}, 0)`}>
             <rect x="90" y="60" width="320" height="400" rx="40" fill="#0F172A" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <rect x="105" y="80" width="290" height="360" rx="28" fill="#1E293B" stroke={STROKE} strokeWidth="6" />
             <rect x="105" y="80" width="290" height="60" rx="18" fill="#334155" />
-            <circle cx="140" cy="110" r="18" fill="#EC4899" stroke={STROKE} strokeWidth="4" />
-            <text x="170" y="116" fill="#FFFFFF" fontSize="20" fontWeight="900" fontFamily="sans-serif">
-              Mom 💖
+            <circle cx="140" cy="110" r="18" fill="#38BDF8" stroke={STROKE} strokeWidth="4" />
+            <text x="170" y="116" fill="#FFFFFF" fontSize="18" fontWeight="900" fontFamily="sans-serif">
+              {contactTitle}
             </text>
             <circle cx="360" cy="110" r="6" fill="#22C55E" />
-            <rect x="120" y="160" width="180" height="55" rx="16" fill="#475569" stroke={STROKE} strokeWidth="4" />
-            <text x="135" y="195" fill="#FFFFFF" fontSize="16" fontWeight="700">Beta dinner kar liya?</text>
-            <rect x="140" y="235" width="240" height="110" rx="18" fill="#0284C7" stroke={STROKE} strokeWidth="5" />
-            <text x="155" y="270" fill="#FFFFFF" fontSize="16" fontWeight="800">Mom if anything</text>
-            <text x="155" y="295" fill="#FFFFFF" fontSize="16" fontWeight="800">happens... I love you</text>
-            <text x="155" y="325" fill="#FDE047" fontSize="15" fontWeight="900">DELETE MY BROWSER 😭</text>
+            <rect x="120" y="160" width="210" height="55" rx="16" fill="#475569" stroke={STROKE} strokeWidth="4" />
+            <text x="135" y="195" fill="#FFFFFF" fontSize="15" fontWeight="700">INCOMING MESSAGE</text>
+            <rect x="130" y="235" width="250" height="110" rx="18" fill="#0284C7" stroke={STROKE} strokeWidth="5" />
+            <text x="145" y="275" fill="#FFFFFF" fontSize="16" fontWeight="800">ALERT DISPATCH:</text>
+            <text x="145" y="315" fill="#FDE047" fontSize="18" fontWeight="900">{mainMessage.slice(0, 20)}</text>
           </g>
         );
       }
@@ -529,7 +531,7 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             {/* Header bar with Green LIVE dot */}
             <rect x="50" y="90" width="400" height="50" rx="16" fill="#0F172A" />
             <circle cx="85" cy="115" r="8" fill="#22C55E" />
-            <text x="110" y="122" fill="#FFFFFF" fontSize="18" fontWeight="800">HUDDLE • Boss (Smiling)</text>
+            <text x="110" y="122" fill="#FFFFFF" fontSize="18" fontWeight="800">{customSubtext || 'VIDEO CONFERENCE • LIVE'}</text>
 
             {/* Happy Boss Cartoon Torso */}
             <circle cx="250" cy="220" r="60" fill="#FED7AA" stroke={STROKE} strokeWidth="8" />
@@ -552,11 +554,11 @@ export const HeroProp: React.FC<HeroPropProps> = ({
               <text x="27" y="42" textAnchor="middle" fill="#EF4444" fontSize="18" fontWeight="900">#1</text>
             </g>
 
-            {/* Innocent Speech Bubble: "PDF link?" */}
-            <g transform="translate(190, 40)">
-              <rect x="0" y="0" width="220" height="60" rx="20" fill="#FFFFFF" stroke={STROKE} strokeWidth="6" />
-              <text x="110" y="38" textAnchor="middle" fill="#000000" fontSize="18" fontWeight="900">
-                "Hey, send that PDF?"
+            {/* Speech Bubble */}
+            <g transform="translate(160, 40)">
+              <rect x="0" y="0" width="280" height="60" rx="20" fill="#FFFFFF" stroke={STROKE} strokeWidth="6" />
+              <text x="140" y="38" textAnchor="middle" fill="#000000" fontSize="16" fontWeight="900">
+                {customText || '"Can we talk now?"'}
               </text>
             </g>
           </g>
@@ -943,13 +945,13 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             <rect x="90" y="60" width="320" height="150" rx="20" fill="#FFFFFF" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <rect x="90" y="60" width="320" height="38" rx="18" fill="#0F172A" />
             <text x="250" y="85" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="900">
-              SALARY STATEMENT • 1ST OF MONTH
+              {customSubtext || 'FINANCIAL FLOW'}
             </text>
-            <text x="120" y="130" fill="#64748B" fontSize="18" fontWeight="700">
-              CREDITED: ₹1,00,000
+            <text x="120" y="130" fill="#64748B" fontSize="16" fontWeight="700">
+              INITIAL ASSETS
             </text>
-            <text x="120" y="175" fill="#EF4444" fontSize="28" fontWeight="900">
-              5TH: ₹0.00 (DRAINED)
+            <text x="120" y="175" fill="#EF4444" fontSize="26" fontWeight="900">
+              {customText || 'DRAINED: ₹ 0.00'}
             </text>
             <line x1="110" y1="125" x2="350" y2="125" stroke="#EF4444" strokeWidth="6" />
           </g>
@@ -968,8 +970,8 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             {/* Magnetic Stripe / Chip */}
             <rect x="80" y="150" width="340" height="40" fill="#0F172A" />
             <rect x="120" y="210" width="55" height="42" rx="8" fill="#E2E8F0" stroke={STROKE} strokeWidth="4" />
-            <text x="200" y="240" fill="#0F172A" fontSize="22" fontWeight="900" fontFamily="monospace">
-              **** 0000 0% EMI
+            <text x="200" y="240" fill="#0F172A" fontSize="20" fontWeight="900" fontFamily="monospace">
+              **** **** **** 0000
             </text>
             {/* Bear Trap Teeth Along Edges */}
             <polygon points="80,110 105,70 130,110 155,70 180,110 205,70 230,110 255,70 280,110 305,70 330,110 355,70 380,110 405,70 420,110" fill="#64748B" stroke={STROKE} strokeWidth="5" />
@@ -984,7 +986,7 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             <circle cx="250" cy="295" r="14" fill="#0F172A" />
             <polygon points="246,295 254,295 256,325 244,325" fill="#0F172A" />
             <text x="250" y="348" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="900">
-              TRAP LOCKED
+              {customText || 'TRAP LOCKED'}
             </text>
           </g>
         );
@@ -1041,12 +1043,12 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             <path d="M 250 90 L 390 200 L 250 220 Z" fill="#FEF08A" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             {/* Spice Sacks on Deck */}
             <circle cx="150" cy="225" r="28" fill="#D97706" stroke={STROKE} strokeWidth="6" />
-            <text x="150" y="232" textAnchor="middle" fill="#000000" fontSize="12" fontWeight="900">
-              PEPPER
+            <text x="150" y="232" textAnchor="middle" fill="#000000" fontSize="11" fontWeight="900">
+              CARGO
             </text>
             <circle cx="200" cy="225" r="28" fill="#FACC15" stroke={STROKE} strokeWidth="6" />
-            <text x="200" y="232" textAnchor="middle" fill="#000000" fontSize="12" fontWeight="900">
-              GOLD
+            <text x="200" y="232" textAnchor="middle" fill="#000000" fontSize="11" fontWeight="900">
+              WEALTH
             </text>
             {/* Ocean Waves Beneath */}
             <path
@@ -1075,8 +1077,8 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             <line x1="80" y1="110" x2="40" y2="200" stroke="#000000" strokeWidth="5" />
             <line x1="80" y1="110" x2="120" y2="200" stroke="#000000" strokeWidth="5" />
             <path d="M 30 200 Q 80 240 130 200 Z" fill="#FBBF24" stroke={STROKE} strokeWidth="6" />
-            <text x="80" y="220" textAnchor="middle" fill="#000000" fontSize="14" fontWeight="900">
-              PAPER
+            <text x="80" y="220" textAnchor="middle" fill="#000000" fontSize="12" fontWeight="900">
+              {customSubtext || 'DEBT'}
             </text>
             {/* Right Pan (Heavy Solid Gold) */}
             <line x1="420" y1="170" x2="380" y2="260" stroke="#000000" strokeWidth="5" />
@@ -1390,7 +1392,7 @@ export const HeroProp: React.FC<HeroPropProps> = ({
               ❤️
             </text>
             <text x="150" y="183" fill="#0F172A" fontSize="24" fontWeight="900" fontFamily="sans-serif">
-              {customText || 'KABHI MAT BATAO!'}
+              {customText || 'CRITICAL REVEAL'}
             </text>
 
             {/* Lower Reply Bubble */}
@@ -1409,7 +1411,7 @@ export const HeroProp: React.FC<HeroPropProps> = ({
               🔥
             </text>
             <text x="205" y="318" fill="#FFFFFF" fontSize="22" fontWeight="900" fontFamily="sans-serif">
-              {customSubtext || '100% Sach!'}
+              {customSubtext || 'VERIFIED'}
             </text>
           </g>
         );
@@ -1560,16 +1562,17 @@ export const HeroProp: React.FC<HeroPropProps> = ({
               <circle cx="250" cy="240" r="140" fill="#F59E0B" opacity="0.18" />
 
               {/* Floor Contact Ground Shadow */}
-              <ellipse cx="250" cy="505" rx="95" ry="14" fill="#000000" opacity="0.35" />
+              <ellipse cx="250" cy="505" rx="140" ry="16" fill="#000000" opacity="0.4" />
 
-              {/* Carved Stone Plinth Base */}
-              <rect x="180" y="440" width="140" height="60" rx="8" fill="#475569" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
-              <rect x="160" y="420" width="180" height="25" rx="6" fill="#64748B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              {/* Regal Carved Plinth Base */}
+              <rect x="140" y="440" width="220" height="60" rx="8" fill="#334155" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              <rect x="120" y="415" width="260" height="28" rx="8" fill="#475569" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              <line x1="130" y1="428" x2="370" y2="428" stroke="#F59E0B" strokeWidth="4" />
 
-              {/* Dynamic Open-Source Vector Graphic (Auto-Scaled & Centered at X=250, Y=220 on Stone Plinth) */}
+              {/* Dynamic Open-Source Vector Graphic - Resting flush on plinth base */}
               <svg
                 x="120"
-                y="100"
+                y="155"
                 width="260"
                 height="260"
                 viewBox={onlineEntry.viewBox || '0 0 512 512'}

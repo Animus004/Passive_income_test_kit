@@ -462,16 +462,16 @@ Respond strictly in valid JSON matching this schema:
 ARCHETYPE D: DYNAMIC CONFRONTATION (Spender vs Disciplined Saver / Financial Conflict)
 - Use for internal financial divide (Impulse Spender vs Wealth Builder):
   Left (Impulse Spender): <CharacterRig era="modern" role="modern_creator" head="curly" clothColor="#EF4444" x={280} y={940} scale={1.1} flipHorizontal={false} breathing={true} blinking={true} />
-  Center Dividing Metric: <HeroProp type="salary_slip_drain" x={540} y={860} scale={1.05} shakeIntensity={propSpring} />
+  Center Dividing Metric: <HeroProp type="salary_slip_drain" x={540} y={940} scale={1.05} shakeIntensity={propSpring} />
   Right (Disciplined Saver): <CharacterRig era="modern" role="modern_creator" head="slick" clothColor="#10B981" x={800} y={940} scale={1.1} flipHorizontal={true} breathing={true} blinking={true} />` : activeGenre.id === 'silicon_valley_tech' ? `
 ARCHETYPE D: DYNAMIC CONFRONTATION (Junior Dev vs Lead Architect / Tech Conflict)
   Left: <CharacterRig era="modern" role="modern_creator" head="beanie" clothColor="#DC2626" x={280} y={940} scale={1.1} flipHorizontal={false} breathing={true} blinking={true} />
-  Center Dividing Metric: <HeroProp type="macbook_pro" x={540} y={860} scale={1.05} shakeIntensity={propSpring} />
+  Center Dividing Metric: <HeroProp type="macbook_pro" x={540} y={940} scale={1.05} shakeIntensity={propSpring} />
   Right: <CharacterRig era="modern" role="modern_creator" head="slick" clothColor="#1E293B" glasses={true} x={800} y={940} scale={1.1} flipHorizontal={true} breathing={true} blinking={true} />` : `
 ARCHETYPE D: DYNAMIC CONFRONTATION (Character vs Character / Brother Divide)
 - Use for internal rifts, rivalries, or brotherly divide (e.g. Kaurava vs Pandava, Shakuni vs King):
   Left: <CharacterRig era="ancient" role="pandava" x={280} y={940} scale={1.1} flipHorizontal={false} breathing={true} blinking={true} />
-  Center Dividing Emblem: <HeroProp type="sword_shield_emblem" x={540} y={860} scale={1.05} shakeIntensity={propSpring} />
+  Center Dividing Emblem: <HeroProp type="sword_shield_emblem" x={540} y={940} scale={1.05} shakeIntensity={propSpring} />
   Right: <CharacterRig era="ancient" role="duryodhana" x={800} y={940} scale={1.1} flipHorizontal={true} breathing={true} blinking={true} />`;
 
     const connectorRules = activeGenre.allowCrowns ? `
@@ -555,8 +555,8 @@ RULE 3: THE 4 STRICT STAGING ARCHETYPES (NO CLUTTER, ZERO OVERLAPS!)
 You MUST stage the scene in one of these 4 clean architectural layouts:
 
 ARCHETYPE A: SOLO HERO MONOLITH (Center Stage)
-- Use when featuring a single legendary object:
-  <HeroProp type="..." x={540} y={820} scale={1.38} shakeIntensity={propSpring} />
+- Use when featuring a single legendary object (Grounded on Y=1220 floor horizon):
+  <HeroProp type="..." x={540} y={960} scale={1.35} shakeIntensity={propSpring} />
   Optional secondary flanking props: x={160} and x={920} at y={1160}, scale={0.85}.
 
 ARCHETYPE B: CLEAN SPLIT DUO (Character vs Prop - ZERO OVERLAP & GROUNDED!)
@@ -801,9 +801,9 @@ MANDATORY RULES FOR MODULAR REPAIR:
 2. Ground the scene with a proper <RoomEnvironment type=${allowedEnvironments}>.
 3. FIX STAGING TO MATCH ONE OF 4 STRICT ARCHETYPES:
    - If Duo (Character + Prop): <HeroProp x={340} y={960} scale={1.15} /> and <CharacterRig role="..." x={760} y={940} scale={1.15} breathing={true} blinking={true} />. ZERO OVERLAP & GROUNDED!
-   - If Solo Object: <HeroProp x={540} y={820} scale={1.38} /> with flanking props at x={160} and x={920}.
+   - If Solo Object: <HeroProp x={540} y={960} scale={1.35} /> with flanking props at x={160} and x={920}. Grounded on Y=1220 horizon!
    - If Reaction Face: <CharacterRig role="..." x={540} y={800} scale={1.5} breathing={true} blinking={true} />.
-   - If Confrontation: Left <CharacterRig role="pandava" x={280} y={940} scale={1.1} />, Center <HeroProp type="sword_shield_emblem" x={540} y={860} scale={1.05} />, Right <CharacterRig role="duryodhana" x={800} y={940} scale={1.1} flipHorizontal={true} />.
+   - If Confrontation: Left <CharacterRig role="pandava" x={280} y={940} scale={1.1} />, Center <HeroProp type="sword_shield_emblem" x={540} y={940} scale={1.05} />, Right <CharacterRig role="duryodhana" x={800} y={940} scale={1.1} flipHorizontal={true} />.
 4. ROLE & ATTIRE: Use role="shakuni" | "duryodhana" | "pandava" | "chanakya" | "commoner" on <CharacterRig> for authentic Indian look.
 5. TEMPORAL STAGGER: Stagger badge (frame 0), prop (frame 10-15), character (frame 25-35), and subtle camera push.
 6. GROUNDING: The floor horizon is at Y=1220. HeroProp must have y=960 (scale 1.15) and CharacterRig must have y=940 (scale 1.15) so pedestal and Padukas sit firmly on the floor at Y=1236-1262. NO FLOATING IN MID-AIR!

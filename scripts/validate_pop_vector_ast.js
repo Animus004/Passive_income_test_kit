@@ -218,5 +218,55 @@ export function validatePopVectorSceneCode(code, sceneContext = {}) {
     };
   }
 
+  // 7. Grounding & Horizon Levitation Check (Layer 4 Grounding Gate)
+  // Floor horizon is at Y=1220. Floor-anchored hero props and full-body characters
+  // must sit firmly on the ground plane. Setting y < 900 leaves them floating mid-air!
+  const floorHorizonEnvironments = [
+    'ancient_palace', 'durbar_throne_room', 'temple_vault', 'chaupar_board_arena',
+    'subterranean_dungeon_vault', 'puppet_stage_shadow', 'modern_finance', 'office_desk'
+  ];
+  const hasFloorEnv = floorHorizonEnvironments.some(env => code.includes(`"${env}"`) || code.includes(`'${env}'`));
+
+  if (hasFloorEnv) {
+    const floorAnchoredProps = [
+      'royal_throne', 'vault_b_door', 'gold_coins_overflow_chest', 'money_drain_sink',
+      'desk_laptop_open', 'office_chair_empty', 'weighing_scale_gold', 'incident_report_stack',
+      'credit_card_trap', 'server_rack_overheat', 'spices_trade_ship'
+    ];
+
+    for (const m of heroPropMatches) {
+      const typeMatch = m.match(/type\s*=\s*[{'"]\s*([^}'"\s]+)\s*[}'"]/);
+      const yMatch = m.match(/y\s*=\s*[{'"]\s*([0-9.]+)\s*[}'"]/);
+      if (typeMatch && yMatch) {
+        const propType = typeMatch[1];
+        const yVal = parseFloat(yMatch[1]);
+        if (floorAnchoredProps.includes(propType) && yVal < 900) {
+          return {
+            valid: false,
+            reason: 'UNGROUNDED_LEVITATION_VIOLATION',
+            message: `Floor-anchored HeroProp '${propType}' has y={${yVal}} < 900! The floor horizon is at Y=1220. Setting y < 900 causes it to float in mid-air. Grounded props MUST have y between 940 and 1000 (standard: y={960}).`,
+          };
+        }
+      }
+    }
+
+    for (const m of charRigMatches) {
+      const scaleMatch = m.match(/scale\s*=\s*[{'"]\s*([0-9.]+)\s*[}'"]/);
+      const yMatch = m.match(/y\s*=\s*[{'"]\s*([0-9.]+)\s*[}'"]/);
+      const scale = scaleMatch ? parseFloat(scaleMatch[1]) : 1.0;
+      if (yMatch) {
+        const yVal = parseFloat(yMatch[1]);
+        // For full body characters (scale <= 1.25), y must be grounded (>= 900)
+        if (scale <= 1.25 && yVal < 900) {
+          return {
+            valid: false,
+            reason: 'UNGROUNDED_LEVITATION_VIOLATION',
+            message: `CharacterRig has y={${yVal}} < 900 (scale: ${scale})! The floor horizon is at Y=1220. Grounded characters MUST have y between 920 and 960 (standard: y={940}) so feet touch the floor.`,
+          };
+        }
+      }
+    }
+  }
+
   return { valid: true };
 }

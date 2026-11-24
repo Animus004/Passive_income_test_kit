@@ -1,890 +1,613 @@
 {
   "language": "hi",
-  "totalFrames": 900,
-  "totalDurationSec": 30.01,
+  "totalFrames": 1068,
+  "totalDurationSec": 35.6,
   "fps": 30,
   "beats": [
     {
       "id": 1,
-      "title": "BRUTAL SACH",
-      "badge": "ANCIENT TRUTH",
-      "badgeEmoji": "🔥",
-      "audio_text": "चाणक्य ने 2300 साल पहले एक brutal सच बताया था।",
+      "title": "TRUTH BOMB!",
+      "badge": "KRISHNA'S CHAL",
+      "badgeEmoji": "👑",
+      "audio_text": "कृष्ण का महाभारत में एक दाँव, जिसने योद्धा की ज़िंदगी पलट दी।",
       "display_tokens": [
-        "Chanakya",
-        "ne",
-        "2300",
-        "saal",
-        "pehle",
-        "brutal",
-        "sach",
-        "kaha"
+        "KRISHNA",
+        "ka",
+        "EK DAAV",
+        "ZINDAGI PALAT DI"
       ],
-      "heroElement": "chanakya_scroll",
-      "environment": "subterranean_dungeon_vault",
+      "heroElement": "royal_throne",
+      "environment": "durbar_throne_room",
       "director_staging": {
-        "archetype": "SOLO_HERO_MONOLITH",
-        "visual_metaphor": "A mastermind strategist revealing a hidden danger in a dark, conspiratorial vault.",
+        "archetype": "REACTION_CLOSEUP",
+        "visual_metaphor": "Karna (Duryodhana rig) stands before a grand throne, his world shattering as an unseen truth is revealed.",
         "left_stage": {
           "type": "HeroProp",
-          "prop": "chanakya_scroll",
-          "x": 340,
-          "y": 960
+          "prop": "royal_throne",
+          "x": 300,
+          "y": 980
         },
         "right_stage": {
           "type": "CharacterRig",
-          "role": "chanakya",
-          "pose": "chanakya_pointing",
+          "role": "duryodhana",
+          "pose": "shock_hands_on_head",
           "x": 760,
-          "y": 940
+          "y": 940,
+          "scale": 1.45
         },
         "timeline": [
           {
             "time_sec": "0:00.0",
             "focus": "badge",
-            "action": "Badge 'ANCIENT TRUTH' crashes onto screen with dust particles."
+            "action": "Badge snaps in with bounce: 'KRISHNA'S CHAL'"
           },
           {
-            "time_sec": "0:00.5",
-            "focus": "character",
-            "action": "Chanakya steps out of shadow, pointing finger directly at camera."
-          },
-          {
-            "time_sec": "0:01.5",
+            "time_sec": "0:00.6",
             "focus": "prop",
-            "action": "Scroll on left pulses with red alert light, emphasizing urgency."
+            "action": "Royal throne glows, then darkens with dramatic shift."
+          },
+          {
+            "time_sec": "0:01.2",
+            "focus": "character",
+            "action": "Karna (Duryodhana rig) puts hands on head in shock, face twists in disbelief."
           }
         ]
       },
       "startSec": 0.06,
-      "durationSec": 4.13,
+      "durationSec": 4.41,
       "startFrame": 2,
-      "durationInFrames": 128,
-      "endFrame": 130
+      "durationInFrames": 136,
+      "endFrame": 138
     },
     {
       "id": 2,
-      "title": "NOT A DOST",
-      "badge": "FAKE ALLY",
-      "badgeEmoji": "😈",
-      "audio_text": "अगर कोई हर बात में हाँ बोले, वो दोस्त नहीं है।",
+      "title": "SECRET EXPOSED",
+      "badge": "HIDDEN TRUTH",
+      "badgeEmoji": "🎭",
+      "audio_text": "युद्ध से ठीक पहले, अपनी सच्चाई जानना... क्या असर पड़ेगा?",
       "display_tokens": [
-        "Agar",
-        "koi",
-        "har",
-        "baat",
-        "mein",
-        "HAAN",
-        "bole,",
-        "woh",
-        "dost",
-        "nahi"
+        "YUDDH",
+        "se pehle",
+        "APNI SACHHAI",
+        "KAISA ASAR?"
       ],
       "heroElement": "two_faced_mask",
-      "environment": "ancient_palace",
+      "environment": "subterranean_dungeon_vault",
       "director_staging": {
-        "archetype": "CLEAN_SPLIT_DUO",
-        "visual_metaphor": "The illusion of friendship shattering to reveal deception behind the smile.",
+        "archetype": "SOLO_HERO_MONOLITH",
+        "visual_metaphor": "Krishna (Shakuni rig) reveals a two-faced mask symbolizing hidden identities, a sly look on his face.",
         "left_stage": {
           "type": "HeroProp",
           "prop": "two_faced_mask",
-          "x": 340,
+          "x": 380,
           "y": 960
         },
         "right_stage": {
           "type": "CharacterRig",
-          "role": "commoner",
+          "role": "shakuni",
           "pose": "whispering_sly",
           "x": 760,
           "y": 940
         },
         "timeline": [
           {
-            "time_sec": "0:03.5",
+            "time_sec": "0:04.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'HIDDEN TRUTH'"
+          },
+          {
+            "time_sec": "0:04.6",
             "focus": "prop",
-            "action": "Mask rotates: Front face smiles warmly, back face reveals sharp dagger eyes."
+            "action": "Two-faced mask spins slowly, revealing its sinister side."
           },
           {
-            "time_sec": "0:04.5",
+            "time_sec": "0:05.2",
             "focus": "character",
-            "action": "Commoner character (fake friend) nods aggressively, mouthing 'Yes' repeatedly."
-          },
-          {
-            "time_sec": "0:05.5",
-            "focus": "transition",
-            "action": "Red 'X' stamp slams over the character's face."
+            "action": "Krishna (Shakuni rig) gestures towards the mask with a knowing smirk."
           }
         ]
       },
-      "startSec": 4.33,
-      "durationSec": 3.1,
-      "startFrame": 130,
-      "durationInFrames": 97,
-      "endFrame": 227
+      "startSec": 4.61,
+      "durationSec": 4.19,
+      "startFrame": 138,
+      "durationInFrames": 130,
+      "endFrame": 268
     },
     {
       "id": 3,
-      "title": "TOXIC DOST",
-      "badge": "SLOW POISON",
-      "badgeEmoji": "☠️",
-      "audio_text": "ये तुम्हारा slow poison है, जो धीरे धीरे खाता है।",
+      "title": "FATAL BOND",
+      "badge": "LOYALTY VS RIVALRY",
+      "badgeEmoji": "⚔️",
+      "audio_text": "कर्ण, दुर्योधन का वफादार दोस्त, पांडवों के लिए सबसे बड़ा खतरा।",
       "display_tokens": [
-        "Yeh",
-        "tumhara",
-        "slow",
-        "poison",
-        "hai,",
-        "dheere",
-        "dheere",
-        "khata",
-        "hai"
+        "KARNA",
+        "DURYODHAN ka DOST",
+        "PANDAVON",
+        "KA KHATRA"
       ],
-      "heroElement": "poison_kanya_goblet",
-      "environment": "durbar_throne_room",
+      "heroElement": "chaupar_board_macro",
+      "environment": "chaupar_board_arena",
       "director_staging": {
-        "archetype": "SOLO_HERO_MONOLITH",
-        "visual_metaphor": "The subtle danger of accepting flattery like drinking poison without knowing it.",
+        "archetype": "DYNAMIC_CONFRONTATION",
+        "visual_metaphor": "A grand Chaupar board symbolizes the war, Karna (Duryodhana rig) stands defiant, while a subtle divide hints at future conflict.",
         "left_stage": {
-          "type": "HeroProp",
-          "prop": "poison_kanya_goblet",
+          "type": "CharacterRig",
+          "role": "duryodhana",
+          "pose": "warrior_stand",
           "x": 340,
-          "y": 960
+          "y": 940
         },
         "right_stage": {
-          "type": "CharacterRig",
-          "role": "chanakya",
-          "pose": "calm_warning",
-          "x": 760,
-          "y": 940
+          "type": "HeroProp",
+          "prop": "chaupar_board_macro",
+          "x": 700,
+          "y": 960
         },
         "timeline": [
           {
-            "time_sec": "0:07.5",
-            "focus": "prop",
-            "action": "Purple vapor rises slowly from the goblet, wrapping around the base."
+            "time_sec": "0:08.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'LOYALTY VS RIVALRY'"
           },
           {
-            "time_sec": "0:08.5",
+            "time_sec": "0:08.6",
             "focus": "character",
-            "action": "Chanakya shakes his head slowly, looking disappointed at the viewer's gullibility."
+            "action": "Karna (Duryodhana rig) stands firm, gaze fixed ahead."
           },
           {
-            "time_sec": "0:09.5",
-            "focus": "effect",
-            "action": "Screen tint turns slightly sickly green to represent the 'poison' effect."
+            "time_sec": "0:09.2",
+            "focus": "prop",
+            "action": "Chaupar board pawns subtly shift, indicating upcoming moves."
           }
         ]
       },
-      "startSec": 7.57,
-      "durationSec": 3.36,
-      "startFrame": 227,
-      "durationInFrames": 105,
-      "endFrame": 332
+      "startSec": 8.93,
+      "durationSec": 4.56,
+      "startFrame": 268,
+      "durationInFrames": 141,
+      "endFrame": 409
     },
     {
       "id": 4,
-      "title": "YOUR FATAL FLAW",
-      "badge": "WEAKNESS LEAK",
-      "badgeEmoji": "🗡️",
-      "audio_text": "अपनी कमज़ोरी बताओगे, तो वही तुम्हारी सबसे बड़ी ताकत बनेगी।",
+      "title": "SECRET RENDEZVOUS",
+      "badge": "MASTERMIND'S MOVE",
+      "badgeEmoji": "🤫",
+      "audio_text": "युद्ध से पहले, कृष्ण ने कर्ण से मिलने का एक सीक्रेट प्लान बनाया।",
       "display_tokens": [
-        "Kamzori",
-        "bataoge,",
-        "toh",
-        "wohi",
-        "tumhari",
-        "sabse",
-        "badi",
-        "taqat",
-        "banegi"
+        "YUDDH se pehle",
+        "KRISHNA",
+        "KARNA",
+        "SECRET PLAN"
       ],
-      "heroElement": "dagger",
-      "environment": "subterranean_dungeon_vault",
+      "heroElement": "puppet_control_cross",
+      "environment": "puppet_stage_shadow",
       "director_staging": {
-        "archetype": "DYNAMIC_CONFRONTATION",
-        "visual_metaphor": "Handing over your defense (weakness) to an enemy who immediately weaponizes it.",
+        "archetype": "CLEAN_SPLIT_DUO",
+        "visual_metaphor": "Krishna (Shakuni rig) as the puppet master, controlling the flow of events from the shadows.",
         "left_stage": {
-          "type": "CharacterRig",
-          "role": "commoner",
-          "pose": "handing_over",
+          "type": "HeroProp",
+          "prop": "puppet_control_cross",
           "x": 340,
           "y": 960
         },
         "right_stage": {
-          "type": "HeroProp",
-          "prop": "dagger",
+          "type": "CharacterRig",
+          "role": "shakuni",
+          "pose": "puppeteer_strings",
           "x": 760,
           "y": 940
         },
         "timeline": [
           {
-            "time_sec": "0:11.5",
-            "focus": "character",
-            "action": "Commoner character hands a glowing blue orb (weakness) to a shadowy silhouette."
+            "time_sec": "0:12.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'MASTERMIND'S MOVE'"
           },
           {
-            "time_sec": "0:12.5",
+            "time_sec": "0:12.6",
             "focus": "prop",
-            "action": "Shadowy figure catches the orb, and it transforms into a sharp dagger."
+            "action": "Puppet cross rotates, strings subtly swaying."
           },
           {
-            "time_sec": "0:13.5",
-            "focus": "effect",
-            "action": "Dagger is thrust forward towards the viewer, creating a 'shock' ripple."
+            "time_sec": "0:13.2",
+            "focus": "character",
+            "action": "Krishna (Shakuni rig) looks slyly at the viewer, hand gesturing control."
           }
         ]
       },
-      "startSec": 11.07,
-      "durationSec": 4.3,
-      "startFrame": 332,
-      "durationInFrames": 133,
-      "endFrame": 465
+      "startSec": 13.63,
+      "durationSec": 4.18,
+      "startFrame": 409,
+      "durationInFrames": 130,
+      "endFrame": 539
     },
     {
       "id": 5,
-      "title": "LONELY TALKS",
-      "badge": "RULE 01",
-      "badgeEmoji": "🕯️",
-      "audio_text": "Rule 1: वो जिससे तुम तनहाई में बात करते हो।",
+      "title": "BLOOD TIES",
+      "badge": "THE REVELATION",
+      "badgeEmoji": "🔪",
+      "audio_text": "कृष्ण ने कर्ण को एक सच बताया: \"तुम पांडवों के बड़े भाई हो।\"",
       "display_tokens": [
-        "Rule",
-        "1:",
-        "woh",
-        "jisse",
-        "tum",
-        "tanhai",
-        "mein",
-        "baat",
-        "karte",
-        "ho"
+        "KRISHNA",
+        "ne KARNA ko",
+        "SACH bataya",
+        "PANDAVON ke BHAI ho"
       ],
-      "heroElement": "burning_torch",
-      "environment": "ancient_palace",
+      "heroElement": "dagger",
+      "environment": "durbar_throne_room",
       "director_staging": {
-        "archetype": "CLEAN_SPLIT_DUO",
-        "visual_metaphor": "The danger of sharing private thoughts with those who may not have your best interest.",
+        "archetype": "DYNAMIC_CONFRONTATION",
+        "visual_metaphor": "A dagger symbolizing the brutal truth slices the scene, Krishna (Shakuni rig) points accusatorily at Karna (Pandava rig).",
         "left_stage": {
-          "type": "HeroProp",
-          "prop": "burning_torch",
+          "type": "CharacterRig",
+          "role": "shakuni",
+          "pose": "chanakya_pointing",
           "x": 340,
-          "y": 960
+          "y": 940
         },
         "right_stage": {
           "type": "CharacterRig",
-          "role": "commoner",
-          "pose": "whispering_sly",
+          "role": "pandava",
+          "pose": "shock_hands_on_head",
           "x": 760,
           "y": 940
         },
+        "connector": {
+          "type": "dagger_line",
+          "attachCrowns": false
+        },
         "timeline": [
           {
-            "time_sec": "0:15.5",
-            "focus": "prop",
-            "action": "Torch flickers, casting long, unstable shadows on the wall."
+            "time_sec": "0:16.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'THE REVELATION'"
           },
           {
-            "time_sec": "0:16.5",
+            "time_sec": "0:16.6",
             "focus": "character",
-            "action": "Commoner leans in close, whispering, with a 'recording' red dot appearing on their eye."
+            "action": "Krishna (Shakuni rig) points accusingly at Karna (Pandava rig)."
           },
           {
-            "time_sec": "0:17.5",
-            "focus": "text",
-            "action": "Text 'SECRET LEAKED' flashes briefly in the background."
+            "time_sec": "0:17.2",
+            "focus": "connector",
+            "action": "A shimmering dagger icon forms a dividing line between them, then splits."
           }
         ]
       },
-      "startSec": 15.51,
-      "durationSec": 3.22,
-      "startFrame": 465,
-      "durationInFrames": 101,
-      "endFrame": 566
+      "startSec": 17.95,
+      "durationSec": 4.19,
+      "startFrame": 538,
+      "durationInFrames": 130,
+      "endFrame": 668
     },
     {
       "id": 6,
-      "title": "MEMORY OF SINS",
-      "badge": "RULE 02",
-      "badgeEmoji": "📝",
-      "audio_text": "Rule 2: वो जो तुम्हारी हर गलती को याद रखता है।",
+      "title": "HEARTBREAKING TRUTH",
+      "badge": "INTERNAL CONFLICT",
+      "badgeEmoji": "💔",
+      "audio_text": "जिस दुश्मन को मारना चाहो, वो तुम्हारा भाई निकले...कैसा लगेगा?",
       "display_tokens": [
-        "Rule",
-        "2:",
-        "woh",
-        "jo",
-        "tumhari",
-        "har",
-        "galti",
-        "ko",
-        "yaad",
-        "rakhta",
-        "hai"
+        "DUSHMAN",
+        "maarana chaho",
+        "BHAI nikle",
+        "KAISA LAGEGA?"
       ],
-      "heroElement": "chanakya_scroll",
-      "environment": "durbar_throne_room",
+      "heroElement": "sword_shield_emblem",
+      "environment": "subterranean_dungeon_vault",
       "director_staging": {
-        "archetype": "SOLO_HERO_MONOLITH",
-        "visual_metaphor": "The enemy's ledger: Every slip-up is recorded and saved for later use.",
+        "archetype": "CLEAN_SPLIT_DUO",
+        "visual_metaphor": "Karna (Duryodhana rig) torn between duty and blood, represented by crossed swords and shield.",
         "left_stage": {
-          "type": "HeroProp",
-          "prop": "chanakya_scroll",
+          "type": "CharacterRig",
+          "role": "duryodhana",
+          "pose": "warrior_stand",
           "x": 340,
-          "y": 960
+          "y": 940
         },
         "right_stage": {
-          "type": "CharacterRig",
-          "role": "commoner",
-          "pose": "writing_intensely",
+          "type": "HeroProp",
+          "prop": "sword_shield_emblem",
           "x": 760,
-          "y": 940
+          "y": 960
         },
         "timeline": [
           {
-            "time_sec": "0:19.5",
+            "time_sec": "0:20.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'INTERNAL CONFLICT'"
+          },
+          {
+            "time_sec": "0:20.6",
             "focus": "character",
-            "action": "Commoner character frantically writes on the scroll with a chisel."
+            "action": "Karna (Duryodhana rig) looks conflicted, then shakes his head."
           },
           {
-            "time_sec": "0:20.5",
+            "time_sec": "0:21.2",
             "focus": "prop",
-            "action": "The scroll fills up with red ink marks, showing accumulation of 'mistakes'."
-          },
-          {
-            "time_sec": "0:21.5",
-            "focus": "effect",
-            "action": "A 'ding' sound effect visualizes as a bell icon popping up."
+            "action": "Sword and shield emblem clashes and sparks, showing inner battle."
           }
         ]
       },
-      "startSec": 18.88,
-      "durationSec": 3.32,
-      "startFrame": 566,
-      "durationInFrames": 104,
-      "endFrame": 670
+      "startSec": 22.28,
+      "durationSec": 4.59,
+      "startFrame": 668,
+      "durationInFrames": 142,
+      "endFrame": 810
     },
     {
       "id": 7,
-      "title": "ENJOY YOUR WIN?",
-      "badge": "RULE 03",
-      "badgeEmoji": "🏆",
-      "audio_text": "Rule 3: वो जो तुम्हारी सफलता पर सच में खुश नहीं।",
+      "title": "MIND GAME",
+      "badge": "PSYCHOLOGICAL WARFARE",
+      "badgeEmoji": "🧠",
+      "audio_text": "कृष्ण की मास्टरस्ट्रोक थी: कर्ण का मनोबल तोड़ा, उसकी वफादारी हिलाई।",
       "display_tokens": [
-        "Rule",
-        "3:",
-        "woh",
-        "jo",
-        "tumhari",
-        "safalta",
-        "par",
-        "sach",
-        "mein",
-        "khush",
-        "nahi"
+        "KRISHNA ki",
+        "MASTERSTROKE",
+        "KARNA ka MANOBAL",
+        "WAFAADARI HILAI"
       ],
-      "heroElement": "gold_coins_overflow_chest",
-      "environment": "temple_vault",
+      "heroElement": "puppet_strings",
+      "environment": "puppet_stage_shadow",
       "director_staging": {
         "archetype": "CLEAN_SPLIT_DUO",
-        "visual_metaphor": "Jealousy masked as friendship; the enemy celebrates your win only to plot your fall.",
+        "visual_metaphor": "Krishna (Shakuni rig) pulls puppet strings, visually representing Karna's (Pandava rig) shaken resolve.",
         "left_stage": {
-          "type": "HeroProp",
-          "prop": "gold_coins_overflow_chest",
+          "type": "CharacterRig",
+          "role": "shakuni",
+          "pose": "puppeteer_strings",
           "x": 340,
-          "y": 960
+          "y": 940
         },
         "right_stage": {
           "type": "CharacterRig",
-          "role": "commoner",
-          "pose": "smiling_with_dagger",
+          "role": "pandava",
+          "pose": "shock_hands_on_head",
           "x": 760,
           "y": 940
         },
+        "connector": {
+          "type": "puppet_strings",
+          "attachCrowns": false
+        },
         "timeline": [
           {
-            "time_sec": "0:23.5",
-            "focus": "prop",
-            "action": "Gold coins spill out of the chest, symbolizing success/wealth."
+            "time_sec": "0:24.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'PSYCHOLOGICAL WARFARE'"
           },
           {
-            "time_sec": "0:24.5",
+            "time_sec": "0:24.6",
             "focus": "character",
-            "action": "Commoner character claps happily, but their shadow reveals a dagger shape."
+            "action": "Krishna (Shakuni rig) subtly pulls strings, a smirk forming."
           },
           {
-            "time_sec": "0:25.5",
-            "focus": "transition",
-            "action": "The shadow dagger stabs into the ground, cracking the floor."
+            "time_sec": "0:25.2",
+            "focus": "connector",
+            "action": "Invisible puppet strings attach to Karna (Pandava rig), making him waver."
           }
         ]
       },
-      "startSec": 22.34,
-      "durationSec": 3.5,
-      "startFrame": 670,
-      "durationInFrames": 109,
-      "endFrame": 779
+      "startSec": 27.0,
+      "durationSec": 4.66,
+      "startFrame": 810,
+      "durationInFrames": 144,
+      "endFrame": 954
     },
     {
       "id": 8,
-      "title": "ARE YOU SECURE?",
-      "badge": "COMMENT TRAP",
+      "title": "DEBATE",
+      "badge": "YOUR THOUGHTS?",
       "badgeEmoji": "💬",
-      "audio_text": "अगर तुमने ये 3 लोगों को छुपाया, तो कमेंट में 'SECURE' लिखो।",
+      "audio_text": "क्या ये सच जानना सही था? या कृष्ण का सिर्फ छल था?",
       "display_tokens": [
-        "Agar",
-        "tumne",
-        "ye",
-        "3",
-        "logon",
-        "ko",
-        "chupaya,",
-        "toh",
-        "comment",
-        "mein",
-        "'SECURE'",
-        "likho"
+        "SACH JANNA",
+        "SAHI THA?",
+        "YA SIRF",
+        "CHHAL THA?"
       ],
       "heroElement": "viral_comment_bubbles",
-      "environment": "subterranean_dungeon_vault",
+      "environment": "durbar_throne_room",
       "director_staging": {
         "archetype": "SOLO_HERO_MONOLITH",
-        "visual_metaphor": "The call to action: Secure your mind and prove you've applied the strategy.",
+        "visual_metaphor": "Retro comment bubbles appear, inviting viewers to share their polarizing opinions.",
         "left_stage": {
           "type": "HeroProp",
           "prop": "viral_comment_bubbles",
-          "x": 340,
+          "x": 540,
           "y": 960
         },
         "right_stage": {
           "type": "CharacterRig",
-          "role": "chanakya",
-          "pose": "arms_folded_confident",
+          "role": "shakuni",
+          "pose": "calm_stance",
           "x": 760,
           "y": 940
         },
         "timeline": [
           {
-            "time_sec": "0:27.5",
-            "focus": "character",
-            "action": "Chanakya stands with arms folded, looking unshakeable and confident."
+            "time_sec": "0:28.0",
+            "focus": "badge",
+            "action": "Badge snaps in with bounce: 'YOUR THOUGHTS?'"
           },
           {
-            "time_sec": "0:28.5",
+            "time_sec": "0:28.6",
             "focus": "prop",
-            "action": "Three comment bubbles pop up: 'SECURE', 'TRAPPED', 'LEARNING'."
+            "action": "Three comment bubbles pop up with increasing size, then pulsate."
           },
           {
-            "time_sec": "0:29.5",
-            "focus": "cta",
-            "action": "Text 'WRITE SECURE' pulses in bright neon orange, urging immediate action."
+            "time_sec": "0:29.2",
+            "focus": "character",
+            "action": "Krishna (Shakuni rig) looks directly at the camera with an enigmatic expression."
           }
         ]
       },
-      "startSec": 25.97,
-      "durationSec": 3.79,
-      "startFrame": 779,
-      "durationInFrames": 121,
-      "endFrame": 900
+      "startSec": 31.8,
+      "durationSec": 3.55,
+      "startFrame": 954,
+      "durationInFrames": 114,
+      "endFrame": 1068
     }
   ],
   "words": [
     {
-      "word": "Chanakya",
+      "word": "KRISHNA",
       "start": 0.06,
-      "end": 0.95
+      "end": 1.02
     },
     {
-      "word": "ne",
-      "start": 0.95,
-      "end": 1.17
+      "word": "ka",
+      "start": 1.02,
+      "end": 1.3
     },
     {
-      "word": "2300",
-      "start": 1.18,
-      "end": 1.63
+      "word": "EK DAAV",
+      "start": 1.3,
+      "end": 2.26
     },
     {
-      "word": "saal",
-      "start": 1.62,
-      "end": 2.07
+      "word": "ZINDAGI PALAT DI",
+      "start": 2.27,
+      "end": 4.47
     },
     {
-      "word": "pehle",
-      "start": 2.07,
-      "end": 2.63
+      "word": "YUDDH",
+      "start": 4.61,
+      "end": 5.19
     },
     {
-      "word": "brutal",
-      "start": 2.63,
-      "end": 3.3
+      "word": "se pehle",
+      "start": 5.19,
+      "end": 6.12
     },
     {
-      "word": "sach",
-      "start": 3.3,
-      "end": 3.75
-    },
-    {
-      "word": "kaha",
-      "start": 3.74,
-      "end": 4.19
-    },
-    {
-      "word": "Agar",
-      "start": 4.33,
-      "end": 4.66
-    },
-    {
-      "word": "koi",
-      "start": 4.66,
-      "end": 4.9
-    },
-    {
-      "word": "har",
-      "start": 4.9,
-      "end": 5.14
-    },
-    {
-      "word": "baat",
-      "start": 5.15,
-      "end": 5.48
-    },
-    {
-      "word": "mein",
-      "start": 5.47,
-      "end": 5.8
-    },
-    {
-      "word": "HAAN",
-      "start": 5.8,
-      "end": 6.13
-    },
-    {
-      "word": "bole,",
+      "word": "APNI SACHHAI",
       "start": 6.12,
-      "end": 6.53
+      "end": 7.52
     },
     {
-      "word": "woh",
-      "start": 6.53,
-      "end": 6.77
+      "word": "KAISA ASAR?",
+      "start": 7.52,
+      "end": 8.8
     },
     {
-      "word": "dost",
-      "start": 6.78,
-      "end": 7.11
+      "word": "KARNA",
+      "start": 8.93,
+      "end": 9.51
     },
     {
-      "word": "nahi",
-      "start": 7.1,
-      "end": 7.43
+      "word": "DURYODHAN ka DOST",
+      "start": 9.51,
+      "end": 11.5
     },
     {
-      "word": "Yeh",
-      "start": 7.57,
-      "end": 7.8
+      "word": "PANDAVON",
+      "start": 11.5,
+      "end": 12.44
     },
     {
-      "word": "tumhara",
-      "start": 7.8,
-      "end": 8.33
+      "word": "KA KHATRA",
+      "start": 12.44,
+      "end": 13.49
     },
     {
-      "word": "slow",
-      "start": 8.33,
-      "end": 8.64
+      "word": "YUDDH se pehle",
+      "start": 13.63,
+      "end": 15.21
     },
     {
-      "word": "poison",
-      "start": 8.64,
-      "end": 9.1
+      "word": "KRISHNA",
+      "start": 15.21,
+      "end": 16.0
     },
     {
-      "word": "hai,",
-      "start": 9.1,
-      "end": 9.41
+      "word": "KARNA",
+      "start": 16.0,
+      "end": 16.56
     },
     {
-      "word": "dheere",
-      "start": 9.4,
-      "end": 9.86
+      "word": "SECRET PLAN",
+      "start": 16.57,
+      "end": 17.81
     },
     {
-      "word": "dheere",
-      "start": 9.86,
-      "end": 10.32
-    },
-    {
-      "word": "khata",
-      "start": 10.32,
-      "end": 10.7
-    },
-    {
-      "word": "hai",
-      "start": 10.7,
-      "end": 10.93
-    },
-    {
-      "word": "Kamzori",
-      "start": 11.07,
-      "end": 11.68
-    },
-    {
-      "word": "bataoge,",
-      "start": 11.68,
-      "end": 12.38
-    },
-    {
-      "word": "toh",
-      "start": 12.39,
-      "end": 12.65
-    },
-    {
-      "word": "wohi",
-      "start": 12.65,
-      "end": 13.0
-    },
-    {
-      "word": "tumhari",
-      "start": 13.0,
-      "end": 13.61
-    },
-    {
-      "word": "sabse",
-      "start": 13.61,
-      "end": 14.05
-    },
-    {
-      "word": "badi",
-      "start": 14.05,
-      "end": 14.4
-    },
-    {
-      "word": "taqat",
-      "start": 14.4,
-      "end": 14.84
-    },
-    {
-      "word": "banegi",
-      "start": 14.84,
-      "end": 15.37
-    },
-    {
-      "word": "Rule",
-      "start": 15.51,
-      "end": 15.85
-    },
-    {
-      "word": "1:",
-      "start": 15.85,
-      "end": 16.02
-    },
-    {
-      "word": "woh",
-      "start": 16.02,
-      "end": 16.27
-    },
-    {
-      "word": "jisse",
-      "start": 16.27,
-      "end": 16.69
-    },
-    {
-      "word": "tum",
-      "start": 16.7,
-      "end": 16.95
-    },
-    {
-      "word": "tanhai",
-      "start": 16.95,
-      "end": 17.46
-    },
-    {
-      "word": "mein",
-      "start": 17.46,
-      "end": 17.8
-    },
-    {
-      "word": "baat",
-      "start": 17.8,
-      "end": 18.14
-    },
-    {
-      "word": "karte",
-      "start": 18.14,
+      "word": "KRISHNA",
+      "start": 17.95,
       "end": 18.56
     },
     {
-      "word": "ho",
+      "word": "ne KARNA ko",
       "start": 18.56,
-      "end": 18.73
+      "end": 19.52
     },
     {
-      "word": "Rule",
-      "start": 18.88,
-      "end": 19.2
+      "word": "SACH bataya",
+      "start": 19.52,
+      "end": 20.48
     },
     {
-      "word": "2:",
-      "start": 19.2,
-      "end": 19.36
+      "word": "PANDAVON ke BHAI ho",
+      "start": 20.48,
+      "end": 22.14
     },
     {
-      "word": "woh",
-      "start": 19.37,
-      "end": 19.61
+      "word": "DUSHMAN",
+      "start": 22.28,
+      "end": 23.03
     },
     {
-      "word": "jo",
-      "start": 19.61,
-      "end": 19.77
+      "word": "maarana chaho",
+      "start": 23.03,
+      "end": 24.42
     },
     {
-      "word": "tumhari",
-      "start": 19.77,
-      "end": 20.34
+      "word": "BHAI nikle",
+      "start": 24.41,
+      "end": 25.48
     },
     {
-      "word": "har",
-      "start": 20.34,
-      "end": 20.58
+      "word": "KAISA LAGEGA?",
+      "start": 25.48,
+      "end": 26.87
     },
     {
-      "word": "galti",
-      "start": 20.58,
-      "end": 20.98
+      "word": "KRISHNA ki",
+      "start": 27.0,
+      "end": 27.88
     },
     {
-      "word": "ko",
-      "start": 20.99,
-      "end": 21.15
+      "word": "MASTERSTROKE",
+      "start": 27.88,
+      "end": 28.94
     },
     {
-      "word": "yaad",
-      "start": 21.15,
-      "end": 21.47
+      "word": "KARNA ka MANOBAL",
+      "start": 28.93,
+      "end": 30.34
     },
     {
-      "word": "rakhta",
-      "start": 21.47,
-      "end": 21.96
+      "word": "WAFAADARI HILAI",
+      "start": 30.34,
+      "end": 31.66
     },
     {
-      "word": "hai",
-      "start": 21.96,
-      "end": 22.2
+      "word": "SACH JANNA",
+      "start": 31.8,
+      "end": 32.79
     },
     {
-      "word": "Rule",
-      "start": 22.34,
-      "end": 22.65
+      "word": "SAHI THA?",
+      "start": 32.79,
+      "end": 33.68
     },
     {
-      "word": "3:",
-      "start": 22.65,
-      "end": 22.81
+      "word": "YA SIRF",
+      "start": 33.67,
+      "end": 34.36
     },
     {
-      "word": "woh",
-      "start": 22.81,
-      "end": 23.04
-    },
-    {
-      "word": "jo",
-      "start": 23.04,
-      "end": 23.2
-    },
-    {
-      "word": "tumhari",
-      "start": 23.2,
-      "end": 23.74
-    },
-    {
-      "word": "safalta",
-      "start": 23.74,
-      "end": 24.28
-    },
-    {
-      "word": "par",
-      "start": 24.28,
-      "end": 24.51
-    },
-    {
-      "word": "sach",
-      "start": 24.52,
-      "end": 24.83
-    },
-    {
-      "word": "mein",
-      "start": 24.83,
-      "end": 25.14
-    },
-    {
-      "word": "khush",
-      "start": 25.14,
-      "end": 25.53
-    },
-    {
-      "word": "nahi",
-      "start": 25.53,
-      "end": 25.84
-    },
-    {
-      "word": "Agar",
-      "start": 25.97,
-      "end": 26.25
-    },
-    {
-      "word": "tumne",
-      "start": 26.25,
-      "end": 26.6
-    },
-    {
-      "word": "ye",
-      "start": 26.6,
-      "end": 26.74
-    },
-    {
-      "word": "3",
-      "start": 26.74,
-      "end": 26.81
-    },
-    {
-      "word": "logon",
-      "start": 26.81,
-      "end": 27.16
-    },
-    {
-      "word": "ko",
-      "start": 27.16,
-      "end": 27.3
-    },
-    {
-      "word": "chupaya,",
-      "start": 27.3,
-      "end": 27.86
-    },
-    {
-      "word": "toh",
-      "start": 27.86,
-      "end": 28.07
-    },
-    {
-      "word": "comment",
-      "start": 28.08,
-      "end": 28.57
-    },
-    {
-      "word": "mein",
-      "start": 28.57,
-      "end": 28.85
-    },
-    {
-      "word": "'SECURE'",
-      "start": 28.85,
-      "end": 29.41
-    },
-    {
-      "word": "likho",
-      "start": 29.41,
-      "end": 29.76
+      "word": "CHHAL THA?",
+      "start": 34.36,
+      "end": 35.35
     }
   ]
 }

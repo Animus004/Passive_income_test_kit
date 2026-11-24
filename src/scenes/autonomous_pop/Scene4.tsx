@@ -1,210 +1,127 @@
 import React from 'react';
-import {
-  AbsoluteFill,
-  useCurrentFrame,
-  useVideoConfig,
-  spring,
-  interpolate,
-} from 'remotion';
-import {
-  RoomEnvironment,
-  CharacterRig,
-  HeroProp,
-  StageConnector,
-} from '../../components/rigs';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from 'remotion';
+import { RoomEnvironment, CharacterRig, HeroProp, StageConnector } from '../../components/rigs';
 
-// Beat 4 of 8 — "INDIA: THE HUB" / GLOBAL DEMAND
-// Archetype B: Clean Split Duo (Chanakya + Ashoka Pillar)
-
-interface Scene4Props {
-  sceneMeta?: { badgeText?: string };
-}
-
-const Scene4: React.FC<Scene4Props> = ({ sceneMeta }) => {
+export const Scene4: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // --- Core cinematic springs (local scene timings, frame 0 = scene start) ---
-  const badgeSpring = spring({
-    frame,
-    fps,
-    config: { damping: 12, stiffness: 220 },
-  });
+  // 1. Badge snaps in with bounce: 'MASTERMIND'S MOVE' - starts at frame 0
+  const badgeSpring = spring({ frame, fps, config: { damping: 12, stiffness: 220 } });
 
-  const propSpring = spring({
-    frame: Math.max(0, frame - 8),
-    fps,
-    config: { damping: 14, stiffness: 190 },
-  });
+  // 6. Camera Creep: Subtle cinematic camera push
+  const cameraZoom = interpolate(frame, [0, 133], [1.0, 1.05], { extrapolateRight: 'clamp' });
 
-  const charSpring = spring({
-    frame: Math.max(0, frame - 15),
-    fps,
-    config: { damping: 15, stiffness: 160 },
-  });
-  const charSlide = interpolate(charSpring, [0, 1], [35, 0]);
+  // Timings for visual elements based on milestones and rules:
+  // • [0:12.6] PROP: Puppet cross rotates, strings subtly swaying. (Prop appears/starts moving around frame 11-12)
+  const propSpringStartFrame = 11; // Spring starts at frame 11 for visible motion by ~frame 12.6
+  const propSpring = spring({ frame: Math.max(0, frame - propSpringStartFrame), fps, config: { damping: 14, stiffness: 190 } });
 
-  // Arm extension for the "chanakya_pointing" pose
-  const armSweep = spring({
-    frame: Math.max(0, frame - 30),
-    fps,
-    config: { damping: 14, stiffness: 180 },
-  });
+  // • [0:13.2] CHARACTER: Krishna (Shakuni rig) looks slyly at the viewer, hand gesturing control. (Character appears/starts moving around frame 12-13)
+  const charSpringStartFrame = 12; // Spring starts at frame 12 for visible motion by ~frame 13.2
+  const charSpring = spring({ frame: Math.max(0, frame - charSpringStartFrame), fps, config: { damping: 15, stiffness: 160 } });
+  const charSlide = interpolate(charSpring, [0, 1], [35, 0]); // Character slides in from top
 
-  // --- Word-hit scale punch (from word timings) ---
-  const wordHits = [0, 17, 39, 65, 96, 135];
-  const wordPunch = wordHits.reduce((acc, wf) => {
-    const local = Math.max(0, frame - wf);
-    const s = spring({
-      frame: local,
-      fps,
-      config: { damping: 10, stiffness: 260 },
-    });
-    return Math.max(acc, s);
-  }, 0);
-  const wordScale = 1 + Math.min(wordPunch * 0.18, 0.22);
+  // 4. Dynamic Arm Kinematics & Tugging (Puppeteer gesture starts after character emergence)
+  const armSweepStartFrame = 15;
+  const armSweep = spring({ frame: Math.max(0, frame - armSweepStartFrame), fps, config: { damping: 14, stiffness: 180 } });
 
-  // Subtle hub "pulse" for the emblem (bounded, decays)
-  const pulse = Math.sin((frame / fps) * Math.PI * 1.5) * 0.03 * propSpring;
+  // 4. Continuous string/gesture tension (base handTug as per Rule 10.4)
+  const baseHandTug = Math.sin((frame / fps) * Math.PI * 4) * 6;
 
-  // --- Cinematic camera creep ---
-  const cameraZoom = interpolate(frame, [0, 183], [1.0, 1.05], {
-    extrapolateRight: 'clamp',
-  });
+  // Word Timings for "scale/spring punch on word hits" - these are subtle pulses
+  const krishnaWordFrame = 49;
+  const karnaWordFrame = 73;
+  const secretPlanWordFrame = 91;
+
+  const wordPulseSpringConfig = { damping: 10, stiffness: 120 }; // Quick, subtle pulse configuration
+
+  const krishnaPulse = spring({ frame: Math.max(0, frame - krishnaWordFrame), fps, config: wordPulseSpringConfig });
+  const karnaPulse = spring({ frame: Math.max(0, frame - karnaWordFrame), fps, config: wordPulseSpringConfig });
+  const secretPlanPulse = spring({ frame: Math.max(0, frame - secretPlanWordFrame), fps, config: wordPulseSpringConfig });
+
+  // Combine base handTug with word hit pulses for dynamic tugging
+  const handTugPulseStrength = 8;
+  const handTugWithPulses = baseHandTug +
+    interpolate(krishnaPulse, [0, 1], [0, handTugPulseStrength], { extrapolateRight: 'clamp' }) +
+    interpolate(karnaPulse, [0, 1], [0, handTugPulseStrength], { extrapolateRight: 'clamp' }) +
+    interpolate(secretPlanPulse, [0, 1], [0, handTugPulseStrength], { extrapolateRight: 'clamp' });
+
+  // Subtle continuous prop rotation (sway) + word hit pulses for emphasis
+  // Using Math.sin for subtle rotation/sway is allowed for rotation (not shakeIntensity)
+  const basePropRotation = Math.sin(frame / 20) * 5;
+  const propRotationPulseStrength = 10;
+  const propRotationWithPulses = basePropRotation +
+    interpolate(krishnaPulse, [0, 1], [0, propRotationPulseStrength], { extrapolateRight: 'clamp' }) +
+    interpolate(karnaPulse, [0, 1], [0, propRotationPulseStrength], { extrapolateRight: 'clamp' }) +
+    interpolate(secretPlanPulse, [0, 1], [0, propRotationPulseStrength], { extrapolateRight: 'clamp' });
+
 
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          transform: `scale(${cameraZoom})`,
-          transformOrigin: '50% 60%',
-        }}
-      >
-        <RoomEnvironment type="ancient_palace">
-          {/* STATUS BADGE — top center, punches in at frame 0 */}
-          <div
-            style={{
-              position: 'absolute',
-              top: 130,
-              left: '50%',
-              transform: `translateX(-50%) scale(${badgeSpring * wordScale})`,
-              backgroundColor: '#D97706',
-              color: '#FFFFFF',
-              border: '8px solid #000000',
-              borderRadius: 36,
-              padding: '14px 40px',
-              fontSize: 34,
-              fontWeight: 900,
-              boxShadow: '0 10px 0 #000000',
-              zIndex: 40,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 14,
-              whiteSpace: 'nowrap',
-              letterSpacing: 1,
-            }}
-          >
-            <span>🌐</span>
-            <span>{sceneMeta?.badgeText || 'GLOBAL DEMAND'}</span>
-            <span>👑</span>
+      <div style={{ width: '100%', height: '100%', transform: `scale(${cameraZoom})`, transformOrigin: '50% 60%' }}>
+        <RoomEnvironment type="puppet_stage_shadow">
+          {/* Rule 9: Punchy Comic Status Badge */}
+          <div style={{
+            position: 'absolute', top: 130, left: '50%',
+            transform: `translateX(-50%) scale(${badgeSpring})`,
+            backgroundColor: '#059669', // Strategic green for "Mastermind"
+            color: '#FFFFFF',
+            border: '8px solid #000000', borderRadius: 36,
+            padding: '14px 40px', fontSize: 32, fontWeight: 900,
+            boxShadow: '0 10px 0 #000000', zIndex: 40,
+            display: 'flex', alignItems: 'center', gap: 14,
+            whiteSpace: 'nowrap'
+          }}>
+            <span>🤫</span> {/* Emoji for "SECRET" */}
+            <span>MASTERMIND'S MOVE</span>
           </div>
 
-          {/* HERO PROP — Ashoka Pillar emblem, LEFT stage, the "HUB" */}
-          <div
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-              transform: `scale(${1 + pulse})`,
-              // REQUIRED FIX: Prop Y changed to 860
-              transformOrigin: '340px 860px', // Adjusted transformOrigin for new prop Y
-              opacity: propSpring,
-              zIndex: 20,
-              pointerEvents: 'none',
-            }}
-          >
-            {/* REQUIRED FIX: Changed type to 'ashoka_pillar_emblem', adjusted y and scale */}
-            <HeroProp
-              type="ashoka_pillar_emblem" // AD Fix: Add HeroProp 'ashoka_pillar_emblem'
-              x={340} // AD Fix: x=340
-              y={860} // AD Fix: y=860
-              scale={1.3} // AD Fix: scale=1.3
-              shakeIntensity={propSpring}
-            />
-            {/* Hub glow halo behind the emblem */}
-            <div
-              style={{
-                position: 'absolute',
-                left: 340, // Consistent with prop x
-                // REQUIRED FIX: Prop Y changed to 860, so halo top adjusted relative to new prop Y
-                top: 720, // (860 - 140, assuming original 960 - 140 = 820 offset)
-                width: 360,
-                height: 360,
-                marginLeft: -180,
-                marginTop: -180,
-                borderRadius: '50%',
-                background:
-                  'radial-gradient(circle, rgba(251,191,36,0.35) 0%, rgba(251,191,36,0.0) 70%)',
-                opacity: propSpring,
-                zIndex: 10,
-              }}
-            />
-          </div>
-
-          {/* STAGE CONNECTOR — trade-route tether across the hub gap */}
-          <StageConnector
-            type="tension_cords"
-            // REQUIRED FIX: CharacterRig x changed to 740
-            fromX={740} // Adjusted to new character x
-            // REQUIRED FIX: CharacterRig y changed to 900, so fromY adjusted to maintain visual connection height
-            fromY={600} // Adjusted (original 640 - (old charY 940 - new charY 900) = 600)
-            // Prop x, y are now 340, 860 as per AD Fixes, so toX/toY matches
-            toX={340} // Matches new prop x
-            toY={860} // Matches new prop y
-            tension={1.0}
-            tugIntensity={Math.sin((frame / fps) * Math.PI * 1.5) * 5}
-            opacity={charSpring}
+          {/* LEFT STAGE: Hero Element (puppet_control_cross) */}
+          {/* Rule 3.1: HeroProp on Left Stage */}
+          <HeroProp
+            type="puppet_control_cross"
+            x={340}
+            y={960}
+            scale={1.15}
+            shakeIntensity={propSpring} // Initial impact animation
+            rotation={propRotationWithPulses} // Continuous subtle rotation + word timing pulses
+            opacity={propSpring} // Fade in with the spring
           />
 
-          {/* CHARACTER — Chanakya, RIGHT stage, calm conviction pointing the hub */}
-          <div
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-              opacity: charSpring,
-              transform: `translateY(${charSlide}px)`,
-              zIndex: 30,
-            }}
-          >
-            {/* REQUIRED FIX: CharacterRig x changed to 740, y changed to 900 to establish Clean Split Duo Archetype B */}
+          {/* RIGHT STAGE: Character Rig (Krishna as Shakuni rig) */}
+          {/* Rule 3.1: CharacterRig on Right Stage */}
+          <div style={{ opacity: charSpring, transform: `translateY(${charSlide}px)` }}>
             <CharacterRig
               era="ancient"
-              role="chanakya"
-              head="chanakya_shikha"
-              face="bliss_dreaming"
-              pose="chanakya_pointing"
-              x={740} // AD Fix: x=740
-              y={900} // AD Fix: y=900
-              scale={1.15} // Scale maintained as no specific change was requested for character scale
-              clothColor="#EA580C"
-              attireOverlay="dhoti_janeu"
-              facialHair="clean_shaven"
+              role="shakuni" // Visual metaphor: Krishna (Shakuni rig) as the puppet master
+              pose="puppeteer_strings"
+              x={760}
+              y={940}
+              scale={1.15}
+              clothColor="#4F46E5" // Royal blue for Krishna's persona
               breathing={true}
               blinking={true}
-              armProgress={armSweep}
+              armProgress={armSweep} // Drives the puppeteer pose
+              handTug={handTugWithPulses} // Continuous tugging motion + word timing pulses
             />
           </div>
+
+          {/* 5. StageConnector: Puppet strings from character to prop */}
+          <StageConnector
+            type="puppet_strings"
+            fromX={760}
+            fromY={640} // Origin from character's hand level
+            toX={340}
+            toY={760} // Destination to the puppet cross
+            tension={1.0}
+            tugIntensity={handTugWithPulses} // Connects to the character's hand tugging motion
+            attachCrowns={true} // Emphasize the mastermind's royal control
+            crownBob={handTugWithPulses * 1.5} // Crown bobs with the tugging
+            opacity={charSpring} // Fade in with character emergence
+          />
         </RoomEnvironment>
       </div>
     </AbsoluteFill>
   );
 };
-
-export default Scene4;

@@ -507,7 +507,7 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
           <g id="head_royal_mukut">
             {/* Base Face Cranium */}
             <ellipse cx="290" cy="235" rx="95" ry="105" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
-            
+
             {/* Grand Golden 3-Tier Mukut / Crown */}
             {/* Tier 1: Heavy Golden Brow Band with Inset Gemstones */}
             <rect x="180" y="140" width="220" height="42" rx="8" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
@@ -520,7 +520,7 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
 
             {/* Tier 2: Arched Royal Finial Body */}
             <polygon points="195,140 290,50 385,140" fill="#FACC15" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
-            
+
             {/* Tier 3: Sharp Golden Kalash Finial Peak */}
             <polygon points="275,50 290,10 305,50" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
 
@@ -1093,9 +1093,11 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
             <circle cx="455" cy="180" r="12" fill="#38BDF8" stroke={STROKE} strokeWidth="4" />
             {/* Ground Contact Shadow */}
             <ellipse cx="290" cy="710" rx="140" ry="20" fill="#000000" opacity="0.4" />
-            {/* Legs with Padukas */}
-            <line x1="240" y1="580" x2="235" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
-            <line x1="340" y1="580" x2="345" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
+            {/* Legs with Padukas - Two-pass rendering ensures visibility against dark floors */}
+            <line x1="240" y1="580" x2="235" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="240" y1="580" x2="235" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="340" y1="580" x2="345" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="340" y1="580" x2="345" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
             <rect x="200" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <circle cx="220" cy="672" r="7" fill="#FDE047" stroke={STROKE} strokeWidth="4" />
             <rect x="310" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
@@ -1150,9 +1152,11 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
             <circle cx="385" cy="460" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             {/* Ground Contact Shadow */}
             <ellipse cx="290" cy="710" rx="140" ry="20" fill="#000000" opacity="0.4" />
-            {/* Solid Grounded Legs with Padukas */}
-            <line x1="235" y1="580" x2="235" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
-            <line x1="345" y1="580" x2="345" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
+            {/* Solid Grounded Legs with Padukas - Two-pass visible contrast */}
+            <line x1="235" y1="580" x2="235" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="235" y1="580" x2="235" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="345" y1="580" x2="345" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="345" y1="580" x2="345" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
             <rect x="200" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <circle cx="220" cy="672" r="7" fill="#FDE047" stroke={STROKE} strokeWidth="4" />
             <rect x="310" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
@@ -1185,9 +1189,11 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
             <path d="M 360 360 L 410 460 L 370 520" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
             <path d="M 360 360 L 410 460 L 370 520" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
 
-            {/* Grounded Legs with Padukas */}
-            <line x1="220" y1="590" x2="220" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
-            <line x1="330" y1="590" x2="330" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
+            {/* Grounded Legs with Padukas - Two-pass visible contrast */}
+            <line x1="220" y1="590" x2="220" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="220" y1="590" x2="220" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="330" y1="590" x2="330" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="330" y1="590" x2="330" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
             <rect x="185" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <circle cx="205" cy="672" r="7" fill="#FDE047" stroke={STROKE} strokeWidth="4" />
             <rect x="295" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
@@ -1224,9 +1230,11 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
             <path d="M 180 370 L 110 440" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
             <circle cx="110" cy="440" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
 
-            {/* Grounded Legs with Padukas */}
-            <line x1="200" y1="590" x2="190" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
-            <line x1="320" y1="590" x2="330" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
+            {/* Grounded Legs with Padukas - Two-pass visible contrast */}
+            <line x1="200" y1="590" x2="190" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="200" y1="590" x2="190" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="320" y1="590" x2="330" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="320" y1="590" x2="330" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
             <rect x="155" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <circle cx="175" cy="672" r="7" fill="#FDE047" stroke={STROKE} strokeWidth="4" />
             <rect x="295" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
@@ -1282,9 +1290,11 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
             <line x1={handRX} y1={handRY} x2={handRX - 40} y2={handRY + 280 * p} stroke="#F59E0B" strokeWidth="4" strokeDasharray="8 4" opacity={p} />
             <line x1={handRX} y1={handRY} x2={handRX + 20} y2={handRY + 280 * p} stroke="#EF4444" strokeWidth="4" strokeDasharray="8 4" opacity={p} />
 
-            {/* Grounded Legs with Padukas */}
-            <line x1="230" y1="590" x2="230" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
-            <line x1="350" y1="590" x2="350" y2="685" stroke={STROKE} strokeWidth="24" strokeLinecap="round" />
+            {/* Grounded Legs with Padukas - Two-pass visible contrast */}
+            <line x1="230" y1="590" x2="230" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="230" y1="590" x2="230" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
             <rect x="195" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <circle cx="215" cy="672" r="7" fill="#FDE047" stroke={STROKE} strokeWidth="4" />
             <rect x="315" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
@@ -1335,6 +1345,11 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
               strokeWidth={STROKE_WIDTH}
               strokeLinecap="round"
             />
+            {/* Grounded Legs connecting Torso to Slippers */}
+            <line x1="240" y1="580" x2="240" y2="670" stroke={skinColor} strokeWidth="22" strokeLinecap="round" />
+            <line x1="240" y1="580" x2="240" y2="670" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="340" y1="580" x2="340" y2="670" stroke={skinColor} strokeWidth="22" strokeLinecap="round" />
+            <line x1="340" y1="580" x2="340" y2="670" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
             {/* Slippers */}
             <rect x="210" y="670" width="60" height="30" rx="15" fill="#F1F5F9" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
             <rect x="310" y="670" width="60" height="30" rx="15" fill="#F1F5F9" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
