@@ -1,35 +1,33 @@
 {
   "language": "hi",
-  "totalFrames": 1369,
-  "totalDurationSec": 45.62,
+  "totalFrames": 1263,
+  "totalDurationSec": 42.11,
   "fps": 30,
   "beats": [
     {
       "id": 1,
-      "title": "THE LIE FLYS",
+      "title": "THE DIVINE WEAPON",
       "badge": "RULE 1",
       "badgeEmoji": "📜",
-      "audio_text": "सुनो, जो हर बात में तुम्हारी तारीफ़ करता है, वो तुम्हें मारने की सबसे ज़्यादा चापलूसी है।",
+      "audio_text": "सुदर्शन चक्र योद्धाओं के लिए नहीं, बल्कि युद्ध के नियमों को तोड़ने के लिए बना था।",
       "display_tokens": [
-        "HAAN",
-        "KAHNE",
-        "WALA",
-        "DOST",
-        "SLOW",
-        "POISON!"
+        "SUDARSHAN",
+        "CHAKRA",
+        "ASLI",
+        "RAHASYA!"
       ],
       "environment": "ancient_palace",
-      "heroElement": "two_faced_mask",
-      "role": "chanakya",
+      "heroElement": "sudarshan_chakra_divine",
+      "role": "krishna",
       "archetype": "MACRO_HOOK_PUNCH",
       "startSec": 0.06,
-      "durationSec": 5.9,
+      "durationSec": 5.14,
       "startFrame": 2,
-      "durationInFrames": 181,
-      "endFrame": 183,
+      "durationInFrames": 158,
+      "endFrame": 160,
       "character": {
-        "role": "chanakya",
-        "pose": "shock_hands_on_head"
+        "role": "krishna",
+        "pose": "spinning_chakra"
       },
       "director_staging": {
         "archetype": "MACRO_HOOK_PUNCH"
@@ -37,34 +35,33 @@
     },
     {
       "id": 2,
-      "title": "THE SLY WHISPER",
+      "title": "THE STRATEGIC INSTRUCTION",
       "badge": "RULE 2",
-      "badgeEmoji": "🐍",
-      "audio_text": "शकुन की तरह, वो दोस्त तुम्हें गुलाम बनाता है बिना किसी ज़बरदस्ती के, सिर्फ़ मीठे शब्दों से।",
+      "badgeEmoji": "🏹",
+      "audio_text": "कृष्ण ने अर्जुन को सिखाया कि धनुष और तीर ही असली शक्ति है, चक्र तब तक नहीं।",
       "display_tokens": [
-        "SHAKUNI",
-        "NE",
-        "PHEKA",
-        "PASHA...",
-        "ASLI",
-        "KHATRA!"
+        "KRISHNA",
+        "ARJUNA",
+        "KO",
+        "SICHA",
+        "DIYA"
       ],
       "environment": "durbar_throne_room",
-      "heroElement": "shakuni_dice",
-      "role": "shakuni",
+      "heroElement": "gandiva_bow_arrow",
+      "role": "krishna",
       "archetype": "DUAL_CONFRONTATION",
-      "startSec": 6.1,
-      "durationSec": 6.2,
-      "startFrame": 183,
-      "durationInFrames": 190,
-      "endFrame": 373,
+      "startSec": 5.34,
+      "durationSec": 5.91,
+      "startFrame": 160,
+      "durationInFrames": 181,
+      "endFrame": 341,
       "character": {
-        "role": "shakuni",
-        "pose": "whispering_sly"
+        "role": "krishna",
+        "pose": "divine_calm"
       },
       "secondCharacter": {
-        "role": "duryodhana",
-        "pose": "wealth_proud_chest"
+        "role": "arjuna",
+        "pose": "drawing_bow"
       },
       "director_staging": {
         "archetype": "DUAL_CONFRONTATION"
@@ -72,29 +69,28 @@
     },
     {
       "id": 3,
-      "title": "THE PUPPET STRING",
+      "title": "THE BATTLE MAP",
       "badge": "RULE 3",
-      "badgeEmoji": "🎭",
-      "audio_text": "चौपड़ के खेल की तरह, वो तुम्हारी हर चाल को जानता है और तुम्हें अपने इरादों में उलझाता है।",
+      "badgeEmoji": "🗺️",
+      "audio_text": "कुरुक्षेत्र का मैदान एक चेपार था, जहाँ हर कदम की गणना की गई थी।",
       "display_tokens": [
-        "CHAUPAR",
-        "GAME",
-        "MEIN",
-        "TUM",
-        "HAI",
-        "PAISA!"
+        "KURUKSHETRA",
+        "KA",
+        "MAIDAN",
+        "CHAUPIR",
+        "THA"
       ],
       "environment": "chaupar_board_arena",
-      "heroElement": "puppet_strings",
-      "role": "chanakya",
+      "heroElement": "ancient_war_map_bharat",
+      "role": "krishna",
       "archetype": "STRATEGY_MAP_ARENA",
-      "startSec": 12.44,
-      "durationSec": 5.87,
-      "startFrame": 373,
-      "durationInFrames": 180,
-      "endFrame": 553,
+      "startSec": 11.38,
+      "durationSec": 4.44,
+      "startFrame": 341,
+      "durationInFrames": 138,
+      "endFrame": 479,
       "character": {
-        "role": "chanakya",
+        "role": "krishna",
         "pose": "puppeteer_strings"
       },
       "director_staging": {
@@ -103,30 +99,28 @@
     },
     {
       "id": 4,
-      "title": "CHANAKYA'S EDICT",
+      "title": "THE CODE OF WAR",
       "badge": "RULE 4",
-      "badgeEmoji": "⚖️",
-      "audio_text": "चार्णक्य ने लिखा है: वो दोस्त जो कभी आपस में मतलब न रखे, वो असल में तुम्हारा शत्रु है।",
+      "badgeEmoji": "📜",
+      "audio_text": "धर्म के नियमों में था कि चक्र केवल देवताओं या विशेष स्थिति में ही उपयोग हो।",
       "display_tokens": [
-        "CHANAKYA",
-        "SUKH",
-        "MEIN",
-        "SATHI",
-        "DUKHI",
-        "MEIN!",
-        "DUSHMAN!"
+        "DHARM",
+        "KE",
+        "NIYAM",
+        "CHAKRA",
+        "LIMITED"
       ],
       "environment": "temple_vault",
-      "heroElement": "chanakya_scroll",
-      "role": "chanakya",
+      "heroElement": "holy_bhagavad_gita_scroll",
+      "role": "krishna",
       "archetype": "DOCUMENT_EDICT_UNROLL",
-      "startSec": 18.45,
-      "durationSec": 6.05,
-      "startFrame": 554,
-      "durationInFrames": 186,
-      "endFrame": 740,
+      "startSec": 15.96,
+      "durationSec": 4.73,
+      "startFrame": 479,
+      "durationInFrames": 146,
+      "endFrame": 625,
       "character": {
-        "role": "chanakya",
+        "role": "krishna",
         "pose": "chanakya_pointing"
       },
       "director_staging": {
@@ -135,29 +129,27 @@
     },
     {
       "id": 5,
-      "title": "DECEIT GAUGE SPiking",
+      "title": "TENSION PEAKS",
       "badge": "RULE 5",
-      "badgeEmoji": "📈",
-      "audio_text": "जितना वो तुम्हारे साथ 'हाँ' बोलेगा, तुम्हारा भरोसा उतना ही कमजोर हो जाएगा।",
+      "badgeEmoji": "⚠️",
+      "audio_text": "जब युद्ध का स्तर आसमान छू गया, तब ही चक्र का प्रयोग ज़रूरी हुआ।",
       "display_tokens": [
-        "TRUST",
-        "LEVEL",
-        "DROP",
-        "HO",
-        "RAHA",
-        "HAI!"
+        "TENSION",
+        "99%",
+        "CHAKRA",
+        "READY"
       ],
       "environment": "subterranean_dungeon_vault",
       "heroElement": "tension_gauge_hud",
-      "role": "ancient_commoner",
+      "role": "krishna",
       "archetype": "TENSION_HUD_METER",
-      "startSec": 24.64,
-      "durationSec": 4.49,
-      "startFrame": 739,
-      "durationInFrames": 139,
-      "endFrame": 878,
+      "startSec": 20.84,
+      "durationSec": 4.44,
+      "startFrame": 625,
+      "durationInFrames": 137,
+      "endFrame": 762,
       "character": {
-        "role": "ancient_commoner",
+        "role": "krishna",
         "pose": "shock_hands_on_head"
       },
       "director_staging": {
@@ -166,30 +158,28 @@
     },
     {
       "id": 6,
-      "title": "SHATTERED CROWN",
+      "title": "THE SYMBOLIC WEIGHT",
       "badge": "RULE 6",
-      "badgeEmoji": "👑",
-      "audio_text": "अहंकार की ताज तुम्हारी बनावटी दोस्ती के थप्पड़ों में टूट जाएगा, और तब तक तुम अकेले रह जाओगे।",
+      "badgeEmoji": "⚖️",
+      "audio_text": "चक्र का घूमना सत्ता के संतुलन को डोला दिया, जो साधारण हथियारों से संभव नहीं था।",
       "display_tokens": [
-        "AHANKAR",
-        "KI",
-        "TAJ",
-        "TOOT",
-        "JAAYE",
-        "GA!"
+        "BALANCE",
+        "TIPPED",
+        "CHAKRA",
+        "POWER"
       ],
       "environment": "puppet_stage_shadow",
-      "heroElement": "shattered_crown",
-      "role": "duryodhana",
+      "heroElement": "weighing_scales_deceit",
+      "role": "krishna",
       "archetype": "METAPHOR_MONOLITH",
-      "startSec": 29.27,
-      "durationSec": 6.07,
-      "startFrame": 878,
-      "durationInFrames": 186,
-      "endFrame": 1064,
+      "startSec": 25.41,
+      "durationSec": 5.49,
+      "startFrame": 762,
+      "durationInFrames": 169,
+      "endFrame": 931,
       "character": {
-        "role": "duryodhana",
-        "pose": "shock_hands_on_head"
+        "role": "krishna",
+        "pose": "divine_calm"
       },
       "director_staging": {
         "archetype": "METAPHOR_MONOLITH"
@@ -197,31 +187,29 @@
     },
     {
       "id": 7,
-      "title": "THE REAL TEST",
+      "title": "THE TACTICAL ADVISORY",
       "badge": "RULE 7",
-      "badgeEmoji": "🛡️",
-      "audio_text": "असली दोस्त वो है जो तुम्हें सच बताए, भले ही वो बात कानों में खरोंचदार हो।",
+      "badgeEmoji": "🎯",
+      "audio_text": "कृष्ण ने समझाया कि अंतिम हथियार का उपयोग केवल निर्णायक क्षण में ही किया जाए।",
       "display_tokens": [
-        "ASLI",
-        "DOST",
-        "WO",
-        "HAI",
-        "JO",
-        "SACH",
-        "KAHE!"
+        "LAST",
+        "RESORT",
+        "ONLY",
+        "DECISIVE",
+        "MOMENT"
       ],
       "environment": "ancient_palace",
-      "heroElement": "sword_shield_emblem",
-      "role": "pandava",
+      "heroElement": "sudarshan_chakra_divine",
+      "role": "krishna",
       "archetype": "CLEAN_SPLIT_DUO",
-      "startSec": 35.48,
-      "durationSec": 4.43,
-      "startFrame": 1064,
-      "durationInFrames": 137,
-      "endFrame": 1201,
+      "startSec": 31.05,
+      "durationSec": 4.83,
+      "startFrame": 932,
+      "durationInFrames": 149,
+      "endFrame": 1081,
       "character": {
-        "role": "pandava",
-        "pose": "chanakya_pointing"
+        "role": "krishna",
+        "pose": "divine_calm"
       },
       "director_staging": {
         "archetype": "CLEAN_SPLIT_DUO"
@@ -229,30 +217,29 @@
     },
     {
       "id": 8,
-      "title": "THE POLARIZING QUESTION",
+      "title": "THE FINAL QUESTION",
       "badge": "RULE 8",
       "badgeEmoji": "❓",
-      "audio_text": "बताओ, क्या तुम्हारे पास ऐसा दोस्त है जो कभी तुम्हारी गलती पर मुँह खोलता नहीं?",
+      "audio_text": "तो सवाल यह है: क्या सुदर्शन चक्र कभी भी उपयोग किया जा सकता था, या सिर्फ़ ज़रूरत में?",
       "display_tokens": [
-        "KYA",
-        "TUMHARE",
-        "PAS",
-        "AISA",
-        "DOST",
-        "HAI?"
+        "KAHI",
+        "BHI",
+        "YA",
+        "ZAROORAT",
+        "ME?"
       ],
-      "environment": "temple_vault",
-      "heroElement": "viral_comment_bubbles",
-      "role": "chanakya",
+      "environment": "durbar_throne_room",
+      "heroElement": "sudarshan_chakra_divine",
+      "role": "krishna",
       "archetype": "REACTION_CLOSEUP",
-      "startSec": 40.06,
-      "durationSec": 5.32,
-      "startFrame": 1202,
-      "durationInFrames": 167,
-      "endFrame": 1369,
+      "startSec": 36.01,
+      "durationSec": 5.85,
+      "startFrame": 1080,
+      "durationInFrames": 183,
+      "endFrame": 1263,
       "character": {
-        "role": "chanakya",
-        "pose": "shock_hands_on_head"
+        "role": "krishna",
+        "pose": "spinning_chakra"
       },
       "director_staging": {
         "archetype": "REACTION_CLOSEUP"
@@ -261,254 +248,189 @@
   ],
   "words": [
     {
-      "word": "HAAN",
+      "word": "SUDARSHAN",
       "start": 0.06,
-      "end": 0.9
+      "end": 1.77
     },
     {
-      "word": "KAHNE",
-      "start": 0.9,
-      "end": 1.95
-    },
-    {
-      "word": "WALA",
-      "start": 1.96,
-      "end": 2.8
-    },
-    {
-      "word": "DOST",
-      "start": 2.8,
-      "end": 3.64
-    },
-    {
-      "word": "SLOW",
-      "start": 3.64,
-      "end": 4.48
-    },
-    {
-      "word": "POISON!",
-      "start": 4.49,
-      "end": 5.96
-    },
-    {
-      "word": "SHAKUNI",
-      "start": 6.1,
-      "end": 7.42
-    },
-    {
-      "word": "NE",
-      "start": 7.42,
-      "end": 7.8
-    },
-    {
-      "word": "PHEKA",
-      "start": 7.79,
-      "end": 8.73
-    },
-    {
-      "word": "PASHA...",
-      "start": 8.73,
-      "end": 10.23
+      "word": "CHAKRA",
+      "start": 1.77,
+      "end": 2.91
     },
     {
       "word": "ASLI",
-      "start": 10.23,
-      "end": 10.98
+      "start": 2.92,
+      "end": 3.68
     },
     {
-      "word": "KHATRA!",
-      "start": 10.98,
-      "end": 12.3
+      "word": "RAHASYA!",
+      "start": 3.68,
+      "end": 5.2
     },
     {
-      "word": "CHAUPAR",
-      "start": 12.44,
-      "end": 13.96
+      "word": "KRISHNA",
+      "start": 5.34,
+      "end": 7.06
     },
     {
-      "word": "GAME",
-      "start": 13.96,
-      "end": 14.83
+      "word": "ARJUNA",
+      "start": 7.06,
+      "end": 8.54
     },
     {
-      "word": "MEIN",
-      "start": 14.83,
-      "end": 15.7
+      "word": "KO",
+      "start": 8.54,
+      "end": 9.03
     },
     {
-      "word": "TUM",
-      "start": 15.7,
-      "end": 16.35
+      "word": "SICHA",
+      "start": 9.03,
+      "end": 10.26
     },
     {
-      "word": "HAI",
-      "start": 16.35,
-      "end": 17
+      "word": "DIYA",
+      "start": 10.27,
+      "end": 11.25
     },
     {
-      "word": "PAISA!",
-      "start": 17.01,
-      "end": 18.31
+      "word": "KURUKSHETRA",
+      "start": 11.38,
+      "end": 13.06
     },
     {
-      "word": "CHANAKYA",
-      "start": 18.45,
-      "end": 19.69
+      "word": "KA",
+      "start": 13.06,
+      "end": 13.37
     },
     {
-      "word": "SUKH",
-      "start": 19.69,
-      "end": 20.31
+      "word": "MAIDAN",
+      "start": 13.37,
+      "end": 14.29
     },
     {
-      "word": "MEIN",
-      "start": 20.31,
-      "end": 20.93
+      "word": "CHAUPIR",
+      "start": 14.29,
+      "end": 15.36
     },
     {
-      "word": "SATHI",
-      "start": 20.93,
-      "end": 21.71
+      "word": "THA",
+      "start": 15.36,
+      "end": 15.82
     },
     {
-      "word": "DUKHI",
-      "start": 21.71,
-      "end": 22.49
+      "word": "DHARM",
+      "start": 15.96,
+      "end": 16.91
     },
     {
-      "word": "MEIN!",
-      "start": 22.48,
-      "end": 23.26
+      "word": "KE",
+      "start": 16.91,
+      "end": 17.29
     },
     {
-      "word": "DUSHMAN!",
-      "start": 23.26,
-      "end": 24.5
+      "word": "NIYAM",
+      "start": 17.28,
+      "end": 18.23
     },
     {
-      "word": "TRUST",
-      "start": 24.64,
-      "end": 25.58
+      "word": "CHAKRA",
+      "start": 18.23,
+      "end": 19.37
     },
     {
-      "word": "LEVEL",
-      "start": 25.58,
-      "end": 26.52
+      "word": "LIMITED",
+      "start": 19.37,
+      "end": 20.69
     },
     {
-      "word": "DROP",
-      "start": 26.51,
-      "end": 27.26
+      "word": "TENSION",
+      "start": 20.84,
+      "end": 22.32
     },
     {
-      "word": "HO",
-      "start": 27.26,
-      "end": 27.63
+      "word": "99%",
+      "start": 22.32,
+      "end": 22.95
     },
     {
-      "word": "RAHA",
-      "start": 27.63,
+      "word": "CHAKRA",
+      "start": 22.95,
+      "end": 24.22
+    },
+    {
+      "word": "READY",
+      "start": 24.22,
+      "end": 25.28
+    },
+    {
+      "word": "BALANCE",
+      "start": 25.41,
+      "end": 27.01
+    },
+    {
+      "word": "TIPPED",
+      "start": 27.01,
       "end": 28.38
     },
     {
-      "word": "HAI!",
+      "word": "CHAKRA",
       "start": 28.38,
-      "end": 29.13
+      "end": 29.75
     },
     {
-      "word": "AHANKAR",
-      "start": 29.27,
-      "end": 31.04
+      "word": "POWER",
+      "start": 29.76,
+      "end": 30.9
     },
     {
-      "word": "KI",
-      "start": 31.04,
-      "end": 31.55
+      "word": "LAST",
+      "start": 31.05,
+      "end": 31.74
     },
     {
-      "word": "TAJ",
-      "start": 31.55,
-      "end": 32.31
+      "word": "RESORT",
+      "start": 31.74,
+      "end": 32.77
     },
     {
-      "word": "TOOT",
-      "start": 32.3,
-      "end": 33.31
+      "word": "ONLY",
+      "start": 32.77,
+      "end": 33.46
     },
     {
-      "word": "JAAYE",
-      "start": 33.32,
-      "end": 34.58
+      "word": "DECISIVE",
+      "start": 33.46,
+      "end": 34.84
     },
     {
-      "word": "GA!",
-      "start": 34.58,
-      "end": 35.34
+      "word": "MOMENT",
+      "start": 34.84,
+      "end": 35.88
     },
     {
-      "word": "ASLI",
-      "start": 35.48,
-      "end": 36.22
+      "word": "KAHI",
+      "start": 36.01,
+      "end": 37.18
     },
     {
-      "word": "DOST",
-      "start": 36.22,
-      "end": 36.96
+      "word": "BHI",
+      "start": 37.18,
+      "end": 38.06
     },
     {
-      "word": "WO",
-      "start": 36.96,
-      "end": 37.33
+      "word": "YA",
+      "start": 38.06,
+      "end": 38.65
     },
     {
-      "word": "HAI",
-      "start": 37.33,
-      "end": 37.88
+      "word": "ZAROORAT",
+      "start": 38.64,
+      "end": 40.98
     },
     {
-      "word": "JO",
-      "start": 37.88,
-      "end": 38.25
-    },
-    {
-      "word": "SACH",
-      "start": 38.25,
-      "end": 38.99
-    },
-    {
-      "word": "KAHE!",
-      "start": 38.99,
-      "end": 39.91
-    },
-    {
-      "word": "KYA",
-      "start": 40.06,
-      "end": 40.7
-    },
-    {
-      "word": "TUMHARE",
-      "start": 40.7,
-      "end": 42.19
-    },
-    {
-      "word": "PAS",
-      "start": 42.19,
-      "end": 42.83
-    },
-    {
-      "word": "AISA",
-      "start": 42.83,
-      "end": 43.68
-    },
-    {
-      "word": "DOST",
-      "start": 43.68,
-      "end": 44.53
-    },
-    {
-      "word": "HAI?",
-      "start": 44.53,
-      "end": 45.38
+      "word": "ME?",
+      "start": 40.98,
+      "end": 41.86
     }
   ]
 }

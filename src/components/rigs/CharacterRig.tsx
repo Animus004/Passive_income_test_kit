@@ -5,11 +5,21 @@ export type CharacterRole =
   | 'shakuni'
   | 'duryodhana'
   | 'chanakya'
+  | 'krishna'
+  | 'arjuna'
+  | 'karna'
+  | 'shivaji'
+  | 'ashoka'
+  | 'guru_sage'
   | 'pandava'
   | 'kaurava'
   | 'king'
   | 'commoner'
   | 'ancient_commoner'
+  | 'middle_class_uncle'
+  | 'toxic_boss'
+  | 'it_engineer'
+  | 'genz_student'
   | 'modern_commoner'
   | 'modern_creator'
   | string;
@@ -27,11 +37,20 @@ export type CharacterHeadType =
   | 'royal_pagdi'
   | 'royal_mukut'
   | 'shakuni_cowl'
+  | 'mor_pankh_mukut'
+  | 'maratha_jiratop'
+  | 'ashoka_stone_crest'
+  | 'sage_rishi_bun'
+  | 'uncle_comb_over'
+  | 'boss_bald_fringe'
   | string;
 export type CharacterFaceType =
   | 'shock_alarm'
   | 'dead_inside'
   | 'dazed_asymmetric'
+  | 'divine_calm'
+  | 'warrior_focus'
+  | 'cunning_smirk'
   | 'floating_ghost'
   | 'keyboard_slump'
   | 'bliss_dreaming'
@@ -41,6 +60,9 @@ export type CharacterFacialHair =
   | 'none'
   | 'royal_moustache'
   | 'elder_beard'
+  | 'shivaji_beard'
+  | 'white_rishi_beard'
+  | 'thick_uncle_mustache'
   | 'stubble'
   | string;
 export type CharacterAttire =
@@ -49,6 +71,12 @@ export type CharacterAttire =
   | 'dark_shawl'
   | 'dhoti_janeu'
   | 'royal_mala'
+  | 'pitambar_silk'
+  | 'maratha_angarkha'
+  | 'ashoka_armor'
+  | 'sage_saffron'
+  | 'uncle_sweater_vest'
+  | 'boss_suit_tie'
   | string;
 export type CharacterPoseType =
   | 'recoil_bed'
@@ -69,6 +97,12 @@ export type CharacterPoseType =
   | 'whispering_sly'
   | 'rolling_dice'
   | 'puppeteer_strings'
+  | 'drawing_bow'
+  | 'spinning_chakra'
+  | 'unsheathing_talwar'
+  | 'sipping_chai'
+  | 'holding_termination_slip'
+  | 'holding_laptop'
   | string;
 
 export interface CharacterRigProps {
@@ -124,9 +158,41 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
   // -------------------------------------------------------------
   // Layer 2: Era Guardrails & Normalization (Physically refuse anachronisms)
   // -------------------------------------------------------------
-  const ancientRoles = ['shakuni', 'duryodhana', 'chanakya', 'pandava', 'kaurava', 'king', 'ancient_commoner'];
-  const ancientHeads = ['royal_mukut', 'royal_pagdi', 'shakuni_cowl', 'chanakya_shikha'];
-  const ancientAttires = ['warrior_kavach', 'dark_shawl', 'dhoti_janeu', 'royal_mala'];
+  const ancientRoles = [
+    'shakuni',
+    'duryodhana',
+    'chanakya',
+    'krishna',
+    'arjuna',
+    'karna',
+    'shivaji',
+    'ashoka',
+    'guru_sage',
+    'pandava',
+    'kaurava',
+    'king',
+    'ancient_commoner'
+  ];
+  const ancientHeads = [
+    'royal_mukut',
+    'royal_pagdi',
+    'shakuni_cowl',
+    'chanakya_shikha',
+    'mor_pankh_mukut',
+    'maratha_jiratop',
+    'ashoka_stone_crest',
+    'sage_rishi_bun'
+  ];
+  const ancientAttires = [
+    'warrior_kavach',
+    'dark_shawl',
+    'dhoti_janeu',
+    'royal_mala',
+    'pitambar_silk',
+    'maratha_angarkha',
+    'ashoka_armor',
+    'sage_saffron'
+  ];
 
   let role = rawRole;
   let explicitHead = rawHead;
@@ -163,7 +229,88 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
   let defaultHair = '#1E293B'; // Dark slate
   let defaultAccent = '#EF4444';
 
-  if (role === 'duryodhana') {
+  if (role === 'krishna') {
+    defaultHead = 'mor_pankh_mukut';
+    defaultFacialHair = 'none';
+    defaultAttire = 'pitambar_silk';
+    defaultPose = 'spinning_chakra';
+    defaultCloth = '#FACC15'; // Pitambar radiant gold
+    defaultHair = '#0F172A';
+    defaultAccent = '#F59E0B';
+    defaultSkin = '#38BDF8'; // Shyam sundar divine azure blue
+  } else if (role === 'arjuna') {
+    defaultHead = 'royal_mukut';
+    defaultFacialHair = 'none';
+    defaultAttire = 'warrior_kavach';
+    defaultPose = 'drawing_bow';
+    defaultCloth = '#1E3A8A'; // Deep royal warrior blue
+    defaultHair = '#0F172A';
+    defaultAccent = '#F59E0B';
+    defaultSkin = '#FBBF24';
+  } else if (role === 'karna') {
+    defaultHead = 'royal_mukut';
+    defaultFacialHair = 'none';
+    defaultAttire = 'warrior_kavach';
+    defaultPose = 'wealth_proud_chest';
+    defaultCloth = '#B45309'; // Solar bronze gold
+    defaultHair = '#0F172A';
+    defaultAccent = '#FDE047';
+    defaultSkin = '#FDE68A';
+  } else if (role === 'shivaji') {
+    defaultHead = 'maratha_jiratop';
+    defaultFacialHair = 'shivaji_beard';
+    defaultAttire = 'maratha_angarkha';
+    defaultPose = 'unsheathing_talwar';
+    defaultCloth = '#EA580C'; // Saffron Maratha angarkha
+    defaultHair = '#0F172A';
+    defaultAccent = '#FACC15';
+    defaultSkin = '#FED7AA';
+  } else if (role === 'ashoka') {
+    defaultHead = 'ashoka_stone_crest';
+    defaultFacialHair = 'royal_moustache';
+    defaultAttire = 'ashoka_armor';
+    defaultPose = 'chanakya_pointing';
+    defaultCloth = '#831843'; // Imperial Mauryan crimson
+    defaultHair = '#0F172A';
+    defaultAccent = '#FACC15';
+    defaultSkin = '#FED7AA';
+  } else if (role === 'guru_sage') {
+    defaultHead = 'sage_rishi_bun';
+    defaultFacialHair = 'white_rishi_beard';
+    defaultAttire = 'sage_saffron';
+    defaultPose = 'chanakya_pointing';
+    defaultCloth = '#EA580C'; // Ascetic saffron
+    defaultHair = '#F8FAFC'; // Silver-white rishi hair
+    defaultAccent = '#92400E';
+    defaultSkin = '#FED7AA';
+  } else if (role === 'middle_class_uncle') {
+    defaultHead = 'uncle_comb_over';
+    defaultFacialHair = 'thick_uncle_mustache';
+    defaultAttire = 'uncle_sweater_vest';
+    defaultPose = 'sipping_chai';
+    defaultCloth = '#65A30D'; // Olive sweater vest
+    defaultHair = '#475569';
+    defaultAccent = '#F59E0B';
+    defaultSkin = '#FED7AA';
+  } else if (role === 'toxic_boss') {
+    defaultHead = 'boss_bald_fringe';
+    defaultFacialHair = 'royal_moustache';
+    defaultAttire = 'boss_suit_tie';
+    defaultPose = 'holding_termination_slip';
+    defaultCloth = '#0F172A'; // Obsidian corporate suit
+    defaultHair = '#334155';
+    defaultAccent = '#DC2626';
+    defaultSkin = '#FED7AA';
+  } else if (role === 'it_engineer') {
+    defaultHead = 'slick';
+    defaultFacialHair = 'stubble';
+    defaultAttire = 'default';
+    defaultPose = 'holding_laptop';
+    defaultCloth = '#2563EB'; // Casual tech blue
+    defaultHair = '#0F172A';
+    defaultAccent = '#38BDF8';
+    defaultSkin = '#FED7AA';
+  } else if (role === 'duryodhana') {
     defaultHead = 'royal_mukut';
     defaultFacialHair = 'royal_moustache';
     defaultAttire = 'warrior_kavach';
@@ -252,6 +399,9 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
   // Natural organic micro-animations
   const breathOffset = breathing ? Math.sin((frame / fps) * Math.PI * 2) * 5 : 0;
   const isBlinkFrame = blinking && frame % 78 < 3 && face !== 'keyboard_slump' && face !== 'bliss_dreaming';
+  const isSpeakingFrame = frame % 9 > 2;
+  const headBob = breathing ? Math.sin((frame / fps) * Math.PI * 3.5) * 3 : 0;
+  const headTilt = breathing ? Math.sin((frame / fps) * Math.PI * 1.8) * 3.2 : 0;
   const floatBob = pose === 'floating_ghost' ? Math.sin((frame / fps) * Math.PI * 1.5) * 16 : 0;
 
   const STROKE = '#000000';
@@ -558,6 +708,117 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
           </g>
         );
 
+      case 'mor_pankh_mukut':
+        return (
+          <g id="head_mor_pankh_mukut">
+            {/* Base Face Cranium */}
+            <ellipse cx="290" cy="235" rx="95" ry="105" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Radiant Golden Crown Band with Gems */}
+            <rect x="180" y="145" width="220" height="38" rx="8" fill="#FACC15" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <circle cx="210" cy="164" r="7" fill="#DC2626" />
+            <circle cx="250" cy="164" r="7" fill="#10B981" />
+            <circle cx="290" cy="164" r="9" fill="#DC2626" />
+            <circle cx="330" cy="164" r="7" fill="#10B981" />
+            <circle cx="370" cy="164" r="7" fill="#DC2626" />
+
+            {/* Sacred Peacock Feather (Mor-Pankh) standing proudly on left crown */}
+            <path d="M 230 145 Q 210 70 190 20" stroke="#047857" strokeWidth="8" fill="none" strokeLinecap="round" />
+            {/* Outer Emerald Eye */}
+            <ellipse cx="190" cy="20" rx="36" ry="48" fill="#047857" stroke={STROKE} strokeWidth="5" transform="rotate(-20 190 20)" />
+            {/* Royal Azure Ring */}
+            <ellipse cx="190" cy="20" rx="24" ry="32" fill="#2563EB" stroke="#000000" strokeWidth="3" transform="rotate(-20 190 20)" />
+            {/* Radiant Golden Ring */}
+            <ellipse cx="190" cy="20" rx="14" ry="18" fill="#FACC15" transform="rotate(-20 190 20)" />
+            {/* Deep Core Pupil */}
+            <ellipse cx="190" cy="20" rx="7" ry="9" fill="#0F172A" transform="rotate(-20 190 20)" />
+
+            {/* Chandan & Kumkum Urdhva Pundra Tilak on Forehead */}
+            <path d="M 278 160 L 290 195 L 302 160" stroke="#FEF08A" strokeWidth="5" fill="none" strokeLinecap="round" />
+            <circle cx="290" cy="180" r="5" fill="#DC2626" />
+          </g>
+        );
+
+      case 'maratha_jiratop':
+        return (
+          <g id="head_maratha_jiratop">
+            {/* Base Face Cranium */}
+            <ellipse cx="290" cy="235" rx="95" ry="105" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Grand Maratha Royal Crimson Pagadi (Jiratop Base) */}
+            <path
+              d="M 160 220 C 130 130 190 55 290 55 C 370 55 430 110 410 210 C 380 230 200 230 160 220 Z"
+              fill="#DC2626"
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+            />
+            {/* Forward-leaning Angled Peak of Jiratop */}
+            <polygon points="260,58 290,10 320,58" fill="#B91C1C" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Royal Pearl Strand Brooch */}
+            <path d="M 180 145 Q 290 185 400 145" fill="none" stroke="#FDE047" strokeWidth="8" strokeDasharray="12 6" />
+            <circle cx="290" cy="65" r="14" fill="#FACC15" stroke={STROKE} strokeWidth="4" />
+            <circle cx="290" cy="65" r="7" fill="#10B981" />
+
+            {/* Saffron Plume (Kalgi) */}
+            <path d="M 290 50 Q 315 0 300 -25" stroke="#F97316" strokeWidth="10" fill="none" strokeLinecap="round" />
+
+            {/* Maratha Crescent Moon (Chandrakor) Tilak */}
+            <path d="M 276 172 A 14 14 0 0 0 304 172" fill="none" stroke="#DC2626" strokeWidth="6" strokeLinecap="round" />
+          </g>
+        );
+
+      case 'sage_rishi_bun':
+        return (
+          <g id="head_sage_rishi_bun">
+            {/* Base Face Cranium */}
+            <ellipse cx="290" cy="235" rx="95" ry="105" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Topknot Hair Bun (Jata) */}
+            <circle cx="290" cy="95" r="48" fill={hairColor || '#F8FAFC'} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Rudraksha Mala Ring binding the hair bun */}
+            <circle cx="290" cy="95" r="28" fill="#78350F" stroke={STROKE} strokeWidth="4" strokeDasharray="8 6" />
+
+            {/* Sacred Tripundra Tilak on Forehead (3 White Ash Lines + Red Bindi) */}
+            <line x1="250" y1="166" x2="330" y2="166" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+            <line x1="250" y1="174" x2="330" y2="174" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+            <line x1="250" y1="182" x2="330" y2="182" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+            <circle cx="290" cy="174" r="5" fill="#DC2626" />
+          </g>
+        );
+
+      case 'uncle_comb_over':
+        return (
+          <g id="head_uncle_comb_over">
+            {/* Base Face Cranium */}
+            <ellipse cx="290" cy="230" rx="96" ry="110" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Salt-and-Pepper Comb-Over Hair Cap */}
+            <path
+              d="M 185 220 C 180 90 260 70 340 85 C 385 95 395 140 390 220"
+              fill="none"
+              stroke={hairColor || '#475569'}
+              strokeWidth="16"
+              strokeLinecap="round"
+            />
+            {/* Grey Comb-Over Strands */}
+            <path d="M 205 125 Q 290 100 375 135" fill="none" stroke="#94A3B8" strokeWidth="6" strokeLinecap="round" />
+            <path d="M 215 150 Q 290 120 375 160" fill="none" stroke="#94A3B8" strokeWidth="5" strokeLinecap="round" />
+          </g>
+        );
+
+      case 'boss_bald_fringe':
+        return (
+          <g id="head_boss_bald_fringe">
+            {/* Bald Cranium with shiny highlight */}
+            <ellipse cx="290" cy="225" rx="98" ry="112" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <path d="M 255 145 Q 290 130 325 145" fill="none" stroke="#FFFFFF" strokeWidth="6" opacity="0.6" strokeLinecap="round" />
+            {/* Fringe hair only on sides */}
+            <path d="M 185 200 Q 180 260 200 280" fill="none" stroke={hairColor || '#334155'} strokeWidth="18" strokeLinecap="round" />
+            <path d="M 395 200 Q 400 260 380 280" fill="none" stroke={hairColor || '#334155'} strokeWidth="18" strokeLinecap="round" />
+          </g>
+        );
+
       case 'bald':
       default:
         return (
@@ -646,8 +907,50 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
               </>
             )}
 
-            {/* Completely Flat Straight Mouth */}
-            <line x1="260" y1="290" x2="320" y2="290" stroke={STROKE} strokeWidth="8" strokeLinecap="round" />
+            {/* Dynamic Viseme Speaking Mouth Flap */}
+            {isSpeakingFrame ? (
+              <g id="viseme_speaking_mouth">
+                <ellipse cx="290" cy="292" rx="16" ry="13" fill="#0F172A" stroke={STROKE} strokeWidth="6" />
+                <path d="M 276 287 Q 290 293 304 287" fill="#FFFFFF" />
+                <ellipse cx="290" cy="298" rx="10" ry="6" fill="#F43F5E" />
+              </g>
+            ) : (
+              <line x1="260" y1="290" x2="320" y2="290" stroke={STROKE} strokeWidth="8" strokeLinecap="round" />
+            )}
+          </g>
+        );
+
+      case 'divine_calm':
+        return (
+          <g id="face_divine_calm">
+            {/* Gentle Benevolent Eye Arcs */}
+            <path d="M 225 215 Q 245 228 265 215" stroke={STROKE} strokeWidth="7" fill="none" strokeLinecap="round" />
+            <circle cx="245" cy="217" r="6" fill="#0F172A" />
+            <path d="M 315 215 Q 335 228 355 215" stroke={STROKE} strokeWidth="7" fill="none" strokeLinecap="round" />
+            <circle cx="335" cy="217" r="6" fill="#0F172A" />
+
+            {/* Rosy Cheeks */}
+            <ellipse cx="225" cy="235" rx="14" ry="8" fill="#F472B6" opacity="0.4" />
+            <ellipse cx="355" cy="235" rx="14" ry="8" fill="#F472B6" opacity="0.4" />
+
+            {/* Soft Divine Smile */}
+            <path d="M 270 285 Q 290 305 310 285" stroke={STROKE} strokeWidth="7" strokeLinecap="round" fill="none" />
+          </g>
+        );
+
+      case 'warrior_focus':
+        return (
+          <g id="face_warrior_focus">
+            {/* Sharp Piercing Eyebrows */}
+            <line x1="220" y1="185" x2="270" y2="195" stroke={STROKE} strokeWidth="9" strokeLinecap="round" />
+            <line x1="360" y1="185" x2="310" y2="195" stroke={STROKE} strokeWidth="9" strokeLinecap="round" />
+            {/* Focused Archer Eyes */}
+            <circle cx="245" cy="215" r="22" fill="#FFFFFF" stroke={STROKE} strokeWidth="7" />
+            <circle cx="248" cy="215" r="9" fill="#0F172A" />
+            <circle cx="335" cy="215" r="22" fill="#FFFFFF" stroke={STROKE} strokeWidth="7" />
+            <circle cx="332" cy="215" r="9" fill="#0F172A" />
+            {/* Determined Firm Mouth */}
+            <line x1="265" y1="290" x2="315" y2="290" stroke={STROKE} strokeWidth="8" strokeLinecap="round" />
           </g>
         );
 
@@ -1303,6 +1606,273 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
         );
       }
 
+      // =========================================================================
+      // 17. SPINNIG CHAKRA (KRISHNA CELESTIAL POSE)
+      // =========================================================================
+      case 'spinning_chakra': {
+        const chakraRot = frame * 18;
+        return (
+          <g id="pose_spinning_chakra">
+            {/* Ground Contact Shadow */}
+            <ellipse cx="290" cy="710" rx="140" ry="20" fill="#000000" opacity="0.4" />
+            {/* Elegant Tribhanga/Upright Royal Torso */}
+            <path
+              d="M 190 330 Q 170 450 185 590 L 395 590 Q 410 450 390 330 Z"
+              fill={clothColor}
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+            {/* Royal Gold Angavastram Stole */}
+            <path d="M 200 330 Q 290 480 380 330" fill="none" stroke="#F59E0B" strokeWidth="16" strokeLinecap="round" />
+
+            {/* Left Arm relaxed or blessing */}
+            <path d="M 190 350 L 130 440 L 180 470" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 190 350 L 130 440 L 180 470" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="180" cy="470" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Right Arm Raised - Index Finger Pointing Upwards Holding Chakra */}
+            <path d="M 390 350 L 460 320 L 470 210" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 390 350 L 460 320 L 470 210" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="470" cy="205" r="20" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <line x1="470" y1="205" x2="470" y2="140" stroke={skinColor} strokeWidth="16" strokeLinecap="round" />
+            <line x1="470" y1="205" x2="470" y2="140" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+
+            {/* Spinning Sudarshan Chakra on Fingertip (X=470, Y=135) */}
+            <g transform={`translate(470, 135) rotate(${chakraRot})`}>
+              {/* Outer Golden Aura Glow */}
+              <circle cx="0" cy="0" r="65" fill="#FACC15" opacity="0.3" />
+              {/* 108 Fiery Serrated Razor Blades */}
+              <circle cx="0" cy="0" r="45" fill="#F59E0B" stroke={STROKE} strokeWidth="5" />
+              {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
+                <polygon
+                  key={deg}
+                  points="0,-52 -8,-40 8,-40"
+                  fill="#FEF08A"
+                  stroke={STROKE}
+                  strokeWidth="3"
+                  transform={`rotate(${deg})`}
+                />
+              ))}
+              <circle cx="0" cy="0" r="22" fill="#DC2626" stroke={STROKE} strokeWidth="4" />
+              <circle cx="0" cy="0" r="10" fill="#FEF08A" />
+            </g>
+
+            {/* Padukas */}
+            <line x1="230" y1="590" x2="230" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="230" y1="590" x2="230" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <rect x="195" y="680" width="70" height="24" rx="8" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="315" y="680" width="70" height="24" rx="8" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 18. DRAWING BOW (ARJUNA GANDIVA ARCHER POSE)
+      // =========================================================================
+      case 'drawing_bow': {
+        return (
+          <g id="pose_drawing_bow">
+            {/* Ground Contact Shadow */}
+            <ellipse cx="290" cy="710" rx="150" ry="20" fill="#000000" opacity="0.4" />
+            {/* Dynamic Angled Warrior Torso */}
+            <path
+              d="M 180 330 L 160 590 L 380 590 L 390 330 Z"
+              fill={clothColor}
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+            {/* Golden Warrior Kavach Plate */}
+            <polygon points="230,350 350,350 330,500 250,500" fill="#F59E0B" stroke={STROKE} strokeWidth="6" />
+
+            {/* Left Arm extended forward gripping Gandiva Bow */}
+            <path d="M 190 360 L 110 370 L 60 380" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 190 360 L 110 370 L 60 380" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="60" cy="380" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Gandiva Divine Golden Bow held in Left Hand */}
+            <path d="M 60 170 Q 20 380 60 590" fill="none" stroke="#F59E0B" strokeWidth="18" strokeLinecap="round" />
+            <path d="M 60 170 Q 20 380 60 590" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            {/* Glowing Taut Bowstring drawn back to cheek */}
+            <line x1="60" y1="170" x2="310" y2="350" stroke="#FEF08A" strokeWidth="5" />
+            <line x1="60" y1="590" x2="310" y2="350" stroke="#FEF08A" strokeWidth="5" />
+
+            {/* Right Arm pulled back to cheek drawing arrow */}
+            <path d="M 390 360 L 450 320 L 310 350" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 390 360 L 450 320 L 310 350" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="310" cy="350" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Glowing Golden Arrow */}
+            <line x1="50" y1="365" x2="320" y2="365" stroke="#FACC15" strokeWidth="8" strokeLinecap="round" />
+            <polygon points="40,365 60,355 60,375" fill="#EF4444" stroke={STROKE} strokeWidth="4" />
+
+            {/* Warrior Stance Legs */}
+            <line x1="200" y1="590" x2="170" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="200" y1="590" x2="170" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="340" y1="590" x2="370" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="340" y1="590" x2="370" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <rect x="135" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="335" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 19. UNSHEATHING TALWAR (SHIVAJI MAHARAJ ROYAL WARRIOR POSE)
+      // =========================================================================
+      case 'unsheathing_talwar': {
+        return (
+          <g id="pose_unsheathing_talwar">
+            {/* Ground Contact Shadow */}
+            <ellipse cx="290" cy="710" rx="140" ry="20" fill="#000000" opacity="0.4" />
+            {/* Proud Royal Maratha Angarkha Torso */}
+            <path
+              d="M 185 330 Q 165 440 185 590 L 395 590 Q 415 440 395 330 Z"
+              fill={clothColor}
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+            {/* Golden Pearl Mala across chest */}
+            <path d="M 210 340 Q 290 450 370 340" fill="none" stroke="#FEF08A" strokeWidth="12" strokeDasharray="14 6" />
+
+            {/* Left Arm holding Royal Scabbard on Hip */}
+            <path d="M 190 360 L 140 440 L 210 460" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 190 360 L 140 440 L 210 460" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="210" cy="460" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Crimson Velvet Sword Scabbard on Waist */}
+            <rect x="180" y="440" width="40" height="180" rx="10" fill="#991B1B" stroke={STROKE} strokeWidth="7" transform="rotate(25 200 450)" />
+
+            {/* Right Arm gripping the Bhavani Talwar Hilt drawing it forth */}
+            <path d="M 390 360 L 460 410 L 350 440" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 390 360 L 460 410 L 350 440" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="350" cy="440" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Golden Curved Bhavani Talwar Blade Gleaming */}
+            <path d="M 350 435 Q 460 380 520 280" fill="none" stroke="#E2E8F0" strokeWidth="16" strokeLinecap="round" />
+            <path d="M 350 435 Q 460 380 520 280" fill="none" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            {/* Golden Hilt Disc */}
+            <circle cx="350" cy="435" r="16" fill="#FACC15" stroke={STROKE} strokeWidth="5" />
+
+            {/* Royal Padukas */}
+            <line x1="230" y1="590" x2="230" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="230" y1="590" x2="230" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={skinColor} strokeWidth="24" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <rect x="195" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="315" y="680" width="70" height="24" rx="8" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 20. SIPPING CHAI (MIDDLE CLASS UNCLE POSE)
+      // =========================================================================
+      case 'sipping_chai': {
+        return (
+          <g id="pose_sipping_chai">
+            {/* Ground Contact Shadow */}
+            <ellipse cx="290" cy="710" rx="140" ry="20" fill="#000000" opacity="0.4" />
+            {/* Torso in Sweater Vest over Collared Shirt */}
+            <path
+              d="M 190 330 Q 170 440 185 590 L 395 590 Q 415 440 395 330 Z"
+              fill={clothColor}
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+            {/* White Shirt Collar Peeking Out */}
+            <polygon points="260,330 290,370 320,330" fill="#FFFFFF" stroke={STROKE} strokeWidth="5" />
+
+            {/* Left Arm holding rolled Hindi Newspaper under arm */}
+            <path d="M 190 360 L 130 450 L 180 480" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 190 360 L 130 450 L 180 480" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="180" cy="480" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Rolled Newspaper */}
+            <rect x="130" y="440" width="90" height="30" rx="12" fill="#F1F5F9" stroke={STROKE} strokeWidth="5" transform="rotate(-20 175 455)" />
+
+            {/* Right Arm raised holding Cutting Chai Glass */}
+            <path d="M 390 360 L 460 380 L 400 310" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 390 360 L 460 380 L 400 310" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="400" cy="310" r="20" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Cutting Chai Glass with Steam */}
+            <g transform="translate(390, 275)">
+              <polygon points="5,15 25,15 22,48 8,48" fill="#FDE68A" opacity="0.8" stroke={STROKE} strokeWidth="4" />
+              <rect x="7" y="24" width="16" height="20" fill="#B45309" />
+              {/* Hot Steam wisps */}
+              <path d="M 10 10 Q 15 0 10 -10" fill="none" stroke="#94A3B8" strokeWidth="3" strokeLinecap="round" opacity="0.6" />
+              <path d="M 20 12 Q 25 2 20 -8" fill="none" stroke="#94A3B8" strokeWidth="3" strokeLinecap="round" opacity="0.6" />
+            </g>
+
+            {/* Formal Trousers & Leather Shoes */}
+            <line x1="230" y1="590" x2="230" y2="685" stroke="#334155" strokeWidth="26" strokeLinecap="round" />
+            <line x1="230" y1="590" x2="230" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke="#334155" strokeWidth="26" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <rect x="195" y="680" width="70" height="24" rx="8" fill="#1E293B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="315" y="680" width="70" height="24" rx="8" fill="#1E293B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 21. HOLDING TERMINATION SLIP (CORPORATE BOSS POSE)
+      // =========================================================================
+      case 'holding_termination_slip': {
+        return (
+          <g id="pose_holding_termination_slip">
+            {/* Ground Contact Shadow */}
+            <ellipse cx="290" cy="710" rx="140" ry="20" fill="#000000" opacity="0.4" />
+            {/* Dark Corporate Suit Torso */}
+            <path
+              d="M 185 330 Q 165 440 185 590 L 395 590 Q 415 440 395 330 Z"
+              fill={clothColor}
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+              strokeLinejoin="round"
+            />
+            {/* Red Corporate Necktie */}
+            <polygon points="280,340 300,340 305,480 290,505 275,480" fill="#DC2626" stroke={STROKE} strokeWidth="5" />
+
+            {/* Left Arm on hip asserting power */}
+            <path d="M 190 360 L 120 440 L 190 460" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 190 360 L 120 440 L 190 460" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="190" cy="460" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Right Arm thrusting forth the Pink Slip / PIP Notice */}
+            <path d="M 390 360 L 480 410 L 440 450" fill="none" stroke={clothColor} strokeWidth="44" strokeLinecap="round" />
+            <path d="M 390 360 L 480 410 L 440 450" fill="none" stroke={STROKE} strokeWidth={STROKE_WIDTH} strokeLinecap="round" />
+            <circle cx="440" cy="450" r="22" fill={skinColor} stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+
+            {/* Pink Termination Notice with Red Stamp */}
+            <g transform="translate(420, 420) rotate(-15 50 40)">
+              <rect x="0" y="0" width="90" height="110" rx="6" fill="#FFE4E6" stroke={STROKE} strokeWidth="5" />
+              <line x1="12" y1="20" x2="78" y2="20" stroke="#E11D48" strokeWidth="4" />
+              <line x1="12" y1="36" x2="60" y2="36" stroke="#94A3B8" strokeWidth="4" />
+              <line x1="12" y1="50" x2="70" y2="50" stroke="#94A3B8" strokeWidth="4" />
+              {/* Red Stamp "FIRED / PIP" */}
+              <rect x="15" y="65" width="60" height="24" rx="4" fill="#DC2626" stroke="#000000" strokeWidth="3" />
+              <text x="45" y="81" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="900" fontFamily="sans-serif">
+                TERMINATED
+              </text>
+            </g>
+
+            {/* Dark Suit Trousers & Polished Shoes */}
+            <line x1="230" y1="590" x2="230" y2="685" stroke="#1E293B" strokeWidth="26" strokeLinecap="round" />
+            <line x1="230" y1="590" x2="230" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke="#1E293B" strokeWidth="26" strokeLinecap="round" />
+            <line x1="350" y1="590" x2="350" y2="685" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            <rect x="195" y="680" width="70" height="24" rx="8" fill="#000000" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="315" y="680" width="70" height="24" rx="8" fill="#000000" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+          </g>
+        );
+      }
+
       case 'standing_dazed':
       default:
         return (
@@ -1450,6 +2020,56 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
           </g>
         );
 
+      case 'shivaji_beard':
+        return (
+          <g id="facial_shivaji_beard">
+            {/* Trimmed Royal Maratha Goatee Beard */}
+            <polygon points="275,290 290,345 305,290" fill="#0F172A" stroke={STROKE} strokeWidth="6" strokeLinejoin="round" />
+            <circle cx="290" cy="315" r="4" fill="#334155" />
+            {/* Elegant Sharp Upturned Maratha Mustache */}
+            <path
+              d="M 225 272 Q 260 258 290 270 Q 320 258 355 272 Q 375 280 380 262 Q 355 248 320 254 Q 290 260 260 254 Q 225 248 200 262 Q 205 280 225 272 Z"
+              fill="#0F172A"
+              stroke={STROKE}
+              strokeWidth="6"
+              strokeLinejoin="round"
+            />
+          </g>
+        );
+
+      case 'white_rishi_beard':
+        return (
+          <g id="facial_white_rishi_beard">
+            {/* Flowing White Sage Beard */}
+            <path
+              d="M 225 270 Q 210 360 250 430 L 290 480 L 330 430 Q 370 360 355 270 Q 320 290 290 285 Q 260 290 225 270 Z"
+              fill="#F8FAFC"
+              stroke={STROKE}
+              strokeWidth="7"
+              strokeLinejoin="round"
+            />
+            {/* Flowing Beard Hair Strands */}
+            <path d="M 260 320 Q 275 400 290 460" stroke="#CBD5E1" strokeWidth="5" fill="none" strokeLinecap="round" />
+            <path d="M 320 320 Q 305 400 290 460" stroke="#CBD5E1" strokeWidth="5" fill="none" strokeLinecap="round" />
+            {/* Dignified White Mustache */}
+            <path d="M 240 270 Q 290 285 340 270" stroke="#E2E8F0" strokeWidth="8" fill="none" strokeLinecap="round" />
+          </g>
+        );
+
+      case 'thick_uncle_mustache':
+        return (
+          <g id="facial_thick_uncle_mustache">
+            {/* Classic Bushy Indian Uncle Mustache */}
+            <path
+              d="M 230 280 Q 290 265 350 280 Q 330 305 290 300 Q 250 305 230 280 Z"
+              fill="#1E293B"
+              stroke={STROKE}
+              strokeWidth="6"
+              strokeLinejoin="round"
+            />
+          </g>
+        );
+
       case 'elder_beard':
         return (
           <g id="facial_elder_beard">
@@ -1512,26 +2132,29 @@ export const CharacterRig: React.FC<CharacterRigProps> = ({
         {/* Render Attire & Armor Overlay */}
         {renderAttireOverlay()}
 
-        {/* Render Head & Hair */}
-        {renderHead()}
+        {/* Render Articulated Head with Natural Speaking Bob & Tilt */}
+        <g id="articulated_head_group" transform={`translate(0, ${headBob}) rotate(${headTilt} 290 280)`}>
+          {/* Render Head & Hair */}
+          {renderHead()}
 
-        {/* Render Facial Expression */}
-        {renderFace()}
+          {/* Render Facial Expression */}
+          {renderFace()}
 
-        {/* Render Facial Grooming (Moustache/Beard) */}
-        {renderFacialHair()}
+          {/* Render Facial Grooming (Moustache/Beard) */}
+          {renderFacialHair()}
 
-        {/* Optional Comic Glasses */}
-        {glasses && (
-          <g id="accessory_glasses">
-            <rect x="210" y="190" width="70" height="50" rx="14" fill="none" stroke="#000000" strokeWidth="8" />
-            <rect x="300" y="190" width="70" height="50" rx="14" fill="none" stroke="#000000" strokeWidth="8" />
-            <line x1="280" y1="210" x2="300" y2="210" stroke="#000000" strokeWidth="8" />
-            {/* Glasses reflection glint */}
-            <line x1="220" y1="200" x2="235" y2="200" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" />
-            <line x1="310" y1="200" x2="325" y2="200" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" />
-          </g>
-        )}
+          {/* Optional Comic Glasses */}
+          {glasses && (
+            <g id="accessory_glasses">
+              <rect x="210" y="190" width="70" height="50" rx="14" fill="none" stroke="#000000" strokeWidth="8" />
+              <rect x="300" y="190" width="70" height="50" rx="14" fill="none" stroke="#000000" strokeWidth="8" />
+              <line x1="280" y1="210" x2="300" y2="210" stroke="#000000" strokeWidth="8" />
+              {/* Glasses reflection glint */}
+              <line x1="220" y1="200" x2="235" y2="200" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" />
+              <line x1="310" y1="200" x2="325" y2="200" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" />
+            </g>
+          )}
+        </g>
       </svg>
     </div>
   );

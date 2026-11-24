@@ -559,7 +559,8 @@ async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="pi
     for idx, beat in enumerate(manifest_beats):
         b_start = beat["startSec"]
         if idx == 0:
-            # Beat 1: Hook Swish, Badge Pop & Heavy Impact
+            # Beat 1: Frame 0 Seismic Sub-Bass Drop, Hook Swish, Badge Pop & Heavy Impact
+            overlay_sfx("sub_boom", 0.0, volume=0.58)
             overlay_sfx("whoosh", 0.02, volume=0.45)
             overlay_sfx("pop", 0.12, volume=0.42)
             overlay_sfx("thud", 0.28, volume=0.45)

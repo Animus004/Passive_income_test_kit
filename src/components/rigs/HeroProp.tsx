@@ -55,6 +55,22 @@ export type HeroPropType =
   | 'forbidden_temple_lock'
   | 'kuldhara_abandoned_ruin'
   | 'mystic_diya_flame'
+  // Expanded Indian & Epic Storytelling Props (Phase 1 9.5 Upgrade)
+  | 'sudarshan_chakra_divine'
+  | 'gandiva_bow_arrow'
+  | 'maratha_bhavani_talwar'
+  | 'shivaji_rajmudra_seal'
+  | 'holy_bhagavad_gita_scroll'
+  | 'rudraksha_rosary_mala'
+  | 'chai_glass_cutting'
+  | 'pink_slip_termination'
+  | 'corporate_id_badge'
+  | 'broken_credit_chains'
+  | 'ashoka_lion_capital_statue'
+  | 'karna_kavach_kundal'
+  | 'mace_gada_battle'
+  | 'bansuri_divine_flute'
+  | 'mor_pankh_quill'
   | string;
 
 export interface HeroPropProps {
@@ -1761,6 +1777,469 @@ export const HeroProp: React.FC<HeroPropProps> = ({
             <text x="250" y="338" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="900" fontFamily="sans-serif">
               99% DANGER
             </text>
+          </g>
+        );
+      }
+
+      // =========================================================================
+      // 27. EXPANDED INDIAN & MODERN STORYTELLING PROPS (PHASE 1 9.5 ENGINE)
+      // =========================================================================
+
+      // 1. SUDARSHAN CHAKRA (Divine Spinning Weapon of Krishna)
+      case 'sudarshan_chakra_divine': {
+        const spinAngle = (frame * 14) % 360;
+        return (
+          <g id="prop_sudarshan_chakra_divine">
+            <ellipse cx="250" cy="460" rx="140" ry="20" fill="#000000" opacity="0.3" />
+            <circle cx="250" cy="250" r="180" fill="#38BDF8" opacity="0.16" />
+            <circle cx="250" cy="250" r="150" fill="#F59E0B" opacity="0.25" />
+            <g transform={`rotate(${spinAngle} 250 250)`}>
+              <circle cx="250" cy="250" r="110" fill="#FDE047" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              <circle cx="250" cy="250" r="95" fill="#FEF08A" stroke="#F59E0B" strokeWidth="6" />
+              {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
+                <path
+                  key={deg}
+                  d={`M ${250 + 110 * Math.cos((deg * Math.PI) / 180)} ${250 + 110 * Math.sin((deg * Math.PI) / 180)} L ${250 + 145 * Math.cos(((deg + 15) * Math.PI) / 180)} ${250 + 145 * Math.sin(((deg + 15) * Math.PI) / 180)} L ${250 + 110 * Math.cos(((deg + 30) * Math.PI) / 180)} ${250 + 110 * Math.sin(((deg + 30) * Math.PI) / 180)} Z`}
+                  fill="#F59E0B"
+                  stroke={STROKE}
+                  strokeWidth="6"
+                />
+              ))}
+              <circle cx="250" cy="250" r="42" fill="#0284C7" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              <circle cx="250" cy="250" r="24" fill="#38BDF8" />
+              <circle cx="250" cy="250" r="12" fill="#FFFFFF" />
+            </g>
+          </g>
+        );
+      }
+
+      // 2. GANDIVA BOW & ARROW (Arjuna's Celestial Weapon)
+      case 'gandiva_bow_arrow': {
+        const arrowPull = Math.sin((frame / fps) * Math.PI * 3) * 12;
+        return (
+          <g id="prop_gandiva_bow_arrow">
+            <ellipse cx="250" cy="470" rx="130" ry="18" fill="#000000" opacity="0.32" />
+            {/* Celestial Bow Arc */}
+            <path
+              d="M 120 420 Q 90 250 180 120 Q 230 60 250 80 Q 270 60 320 120 Q 410 250 380 420"
+              fill="none"
+              stroke="#D97706"
+              strokeWidth="24"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 120 420 Q 90 250 180 120 Q 230 60 250 80 Q 270 60 320 120 Q 410 250 380 420"
+              fill="none"
+              stroke={STROKE}
+              strokeWidth="6"
+            />
+            {/* Golden Filigree Grip */}
+            <rect x="235" y="60" width="30" height="40" rx="6" fill="#F59E0B" stroke={STROKE} strokeWidth="6" />
+            <circle cx="250" cy="80" r="8" fill="#EF4444" stroke={STROKE} strokeWidth="3" />
+            {/* Taut Bowstring */}
+            <line x1="120" y1="420" x2="250" y2={220 + arrowPull} stroke="#FEF08A" strokeWidth="6" />
+            <line x1="380" y1="420" x2="250" y2={220 + arrowPull} stroke="#FEF08A" strokeWidth="6" />
+            {/* Nocked Celestial Arrow */}
+            <g transform={`translate(0, ${arrowPull})`}>
+              <line x1="250" y1="90" x2="250" y2="280" stroke="#FDE047" strokeWidth="10" strokeLinecap="round" />
+              <polygon points="250,50 232,95 268,95" fill="#38BDF8" stroke={STROKE} strokeWidth="5" />
+              {/* Arrow Feathers */}
+              <polygon points="250,260 230,290 250,280" fill="#EF4444" stroke={STROKE} strokeWidth="4" />
+              <polygon points="250,260 270,290 250,280" fill="#EF4444" stroke={STROKE} strokeWidth="4" />
+            </g>
+          </g>
+        );
+      }
+
+      // 3. MARATHA BHAVANI TALWAR (Shivaji Maharaj's Legendary Sword)
+      case 'maratha_bhavani_talwar': {
+        return (
+          <g id="prop_maratha_bhavani_talwar">
+            <ellipse cx="250" cy="460" rx="140" ry="18" fill="#000000" opacity="0.35" />
+            {/* Radiant Saffron Aura */}
+            <circle cx="260" cy="220" r="160" fill="#EA580C" opacity="0.16" />
+            {/* Curved Steel Talwar Blade */}
+            <path
+              d="M 180 400 Q 230 260 280 150 Q 330 60 360 40 Q 340 90 280 220 Q 230 320 200 400 Z"
+              fill="#E2E8F0"
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+            />
+            {/* Gleaming Edge Highlight */}
+            <path d="M 200 390 Q 240 260 290 150 Q 335 75 355 45" fill="none" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
+            {/* Maratha Basket Hilt */}
+            <path d="M 160 390 Q 180 430 220 420 Q 240 390 200 380 Z" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="180" y="385" width="40" height="20" rx="6" fill="#D97706" stroke={STROKE} strokeWidth="6" />
+            <circle cx="170" cy="425" r="12" fill="#DC2626" stroke={STROKE} strokeWidth="4" />
+            {/* Red Silk Pommel Tassel */}
+            <path d="M 170 435 Q 160 470 175 490" fill="none" stroke="#DC2626" strokeWidth="8" strokeLinecap="round" />
+          </g>
+        );
+      }
+
+      // 4. SHIVAJI RAJMUDRA SEAL (Octagonal Sanskrit Royal Seal)
+      case 'shivaji_rajmudra_seal': {
+        return (
+          <g id="prop_shivaji_rajmudra_seal">
+            <ellipse cx="250" cy="465" rx="140" ry="18" fill="#000000" opacity="0.32" />
+            {/* Radiant Sunburst behind Seal */}
+            <circle cx="250" cy="240" r="160" fill="#F97316" opacity="0.22" />
+            {/* Octagonal Royal Gold Plate */}
+            <polygon
+              points="190,110 310,110 390,190 390,310 310,390 190,390 110,310 110,190"
+              fill="#F59E0B"
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+            />
+            <polygon
+              points="198,125 302,125 375,198 375,302 302,375 198,375 125,302 125,198"
+              fill="#D97706"
+              stroke="#78350F"
+              strokeWidth="6"
+            />
+            {/* Sanskrit Inscription Lines */}
+            <rect x="150" y="165" width="200" height="18" rx="6" fill="#FEF08A" stroke={STROKE} strokeWidth="4" />
+            <rect x="140" y="200" width="220" height="18" rx="6" fill="#FEF08A" stroke={STROKE} strokeWidth="4" />
+            <rect x="145" y="235" width="210" height="18" rx="6" fill="#FEF08A" stroke={STROKE} strokeWidth="4" />
+            <rect x="160" y="270" width="180" height="18" rx="6" fill="#FEF08A" stroke={STROKE} strokeWidth="4" />
+            <rect x="180" y="305" width="140" height="18" rx="6" fill="#FEF08A" stroke={STROKE} strokeWidth="4" />
+            {/* Center Royal Crescent Moon */}
+            <path d="M 235 340 A 18 18 0 0 0 265 340 A 12 12 0 0 1 235 340 Z" fill="#FFFFFF" stroke={STROKE} strokeWidth="3" />
+          </g>
+        );
+      }
+
+      // 5. HOLY BHAGAVAD GITA SCROLL / GRANTHA (Sacred Manuscript)
+      case 'holy_bhagavad_gita_scroll': {
+        return (
+          <g id="prop_holy_bhagavad_gita_scroll">
+            <ellipse cx="250" cy="460" rx="140" ry="18" fill="#000000" opacity="0.32" />
+            <circle cx="250" cy="250" r="150" fill="#FDE047" opacity="0.18" />
+            {/* Open Sacred Palm-Leaf Pages */}
+            <rect x="80" y="190" width="165" height="150" rx="10" fill="#FEF3C7" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="255" y="190" width="165" height="150" rx="10" fill="#FEF3C7" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Center Binding Cord & Gold Spine */}
+            <rect x="235" y="180" width="30" height="170" rx="8" fill="#DC2626" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <circle cx="250" cy="220" r="6" fill="#F59E0B" />
+            <circle cx="250" cy="265" r="6" fill="#F59E0B" />
+            <circle cx="250" cy="310" r="6" fill="#F59E0B" />
+            {/* Sacred Sanskrit Text Lines */}
+            {[215, 240, 265, 290, 315].map((y) => (
+              <React.Fragment key={y}>
+                <line x1="100" y1={y} x2="225" y2={y} stroke="#78350F" strokeWidth="5" strokeLinecap="round" />
+                <line x1="275" y1={y} x2="400" y2={y} stroke="#78350F" strokeWidth="5" strokeLinecap="round" />
+              </React.Fragment>
+            ))}
+            {/* Golden Silk Ribbon Bookmark */}
+            <path d="M 250 350 Q 260 410 240 440 L 255 450 L 265 420 Z" fill="#F59E0B" stroke={STROKE} strokeWidth="4" />
+          </g>
+        );
+      }
+
+      // 6. RUDRAKSHA ROSARY MALA (Sacred 108 Beads)
+      case 'rudraksha_rosary_mala': {
+        return (
+          <g id="prop_rudraksha_rosary_mala">
+            <ellipse cx="250" cy="460" rx="130" ry="18" fill="#000000" opacity="0.32" />
+            <circle cx="250" cy="240" r="140" fill="#EA580C" opacity="0.12" />
+            {/* Circular String of Rudraksha Beads */}
+            {[0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340].map((deg) => {
+              const bx = 250 + 115 * Math.cos((deg * Math.PI) / 180);
+              const by = 220 + 95 * Math.sin((deg * Math.PI) / 180);
+              return (
+                <g key={deg}>
+                  <circle cx={bx} cy={by} r="16" fill="#78350F" stroke={STROKE} strokeWidth="5" />
+                  <line x1={bx - 8} y1={by} x2={bx + 8} y2={by} stroke="#451A03" strokeWidth="3" />
+                  <line x1={bx} y1={by - 8} x2={bx} y2={by + 8} stroke="#451A03" strokeWidth="3" />
+                </g>
+              );
+            })}
+            {/* Golden Guru Bead at Bottom */}
+            <circle cx="250" cy="330" r="22" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Saffron Tassel */}
+            <path d="M 238 350 L 262 350 L 275 440 L 225 440 Z" fill="#EA580C" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <line x1="250" y1="355" x2="250" y2="435" stroke="#C2410C" strokeWidth="4" />
+          </g>
+        );
+      }
+
+      // 7. CUTTING CHAI GLASS (Indian Street Tea & Modern Habit)
+      case 'chai_glass_cutting': {
+        const steamOffset = (frame * 2) % 60;
+        return (
+          <g id="prop_chai_glass_cutting">
+            <ellipse cx="250" cy="460" rx="120" ry="18" fill="#000000" opacity="0.35" />
+            {/* Wire Rack Base */}
+            <rect x="170" y="420" width="160" height="24" rx="8" fill="#64748B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <line x1="200" y1="420" x2="200" y2="450" stroke={STROKE} strokeWidth="8" />
+            <line x1="300" y1="420" x2="300" y2="450" stroke={STROKE} strokeWidth="8" />
+            {/* Tapered Cutting Chai Glass */}
+            <polygon points="180,180 320,180 295,410 205,410" fill="#E0F2FE" opacity="0.85" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Hot Golden-Brown Chai Liquid (Cutting level = 60% full) */}
+            <polygon points="190,260 310,260 290,400 210,400" fill="#B45309" stroke={STROKE} strokeWidth="6" />
+            {/* Cream Foam Layer */}
+            <ellipse cx="250" cy="260" rx="60" ry="12" fill="#FDE68A" stroke={STROKE} strokeWidth="4" />
+            {/* Glass Ribs / Ridges */}
+            <line x1="225" y1="190" x2="235" y2="400" stroke="#BAE6FD" strokeWidth="5" />
+            <line x1="275" y1="190" x2="265" y2="400" stroke="#BAE6FD" strokeWidth="5" />
+            {/* Rising Steam Vapor Paths */}
+            <path
+              d={`M 230 ${170 - steamOffset} Q 215 ${140 - steamOffset} 230 ${110 - steamOffset}`}
+              fill="none"
+              stroke="#CBD5E1"
+              strokeWidth="6"
+              strokeLinecap="round"
+              opacity={Math.max(0, 1 - steamOffset / 60)}
+            />
+            <path
+              d={`M 270 ${160 - steamOffset} Q 285 ${130 - steamOffset} 270 ${100 - steamOffset}`}
+              fill="none"
+              stroke="#CBD5E1"
+              strokeWidth="6"
+              strokeLinecap="round"
+              opacity={Math.max(0, 1 - steamOffset / 60)}
+            />
+          </g>
+        );
+      }
+
+      // 8. PINK SLIP TERMINATION NOTICE (Corporate Layoff Metaphor)
+      case 'pink_slip_termination': {
+        return (
+          <g id="prop_pink_slip_termination">
+            <ellipse cx="250" cy="465" rx="140" ry="18" fill="#000000" opacity="0.32" />
+            {/* White/Pink Letter Sheet */}
+            <rect x="140" y="110" width="220" height="310" rx="12" fill="#FFE4E6" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Severed Lanyard Clip */}
+            <path d="M 210 110 L 210 60 Q 250 40 290 60 L 290 110" fill="none" stroke="#DC2626" strokeWidth="12" strokeLinecap="round" />
+            {/* Header Red Bar */}
+            <rect x="160" y="140" width="180" height="28" rx="6" fill="#DC2626" />
+            <text x="250" y="160" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="900" fontFamily="sans-serif">
+              IMMEDIATE TERMINATION
+            </text>
+            {/* Letter Body Lines */}
+            {[190, 215, 240, 265, 290].map((y) => (
+              <line key={y} x1="165" y1={y} x2="335" y2={y} stroke="#FDA4AF" strokeWidth="6" strokeLinecap="round" />
+            ))}
+            {/* Red Stamp Slammed Diagonally */}
+            <g transform="translate(250, 340) rotate(-18)">
+              <rect x="-85" y="-24" width="170" height="48" rx="8" fill="#DC2626" stroke={STROKE} strokeWidth="5" />
+              <text x="0" y="8" textAnchor="middle" fill="#FFFFFF" fontSize="20" fontWeight="900" fontFamily="sans-serif">
+                REVOKED
+              </text>
+            </g>
+          </g>
+        );
+      }
+
+      // 9. CORPORATE ID BADGE (IT Engineer Symbol)
+      case 'corporate_id_badge': {
+        return (
+          <g id="prop_corporate_id_badge">
+            <ellipse cx="250" cy="460" rx="120" ry="16" fill="#000000" opacity="0.3" />
+            {/* Hanging Lanyard Strap */}
+            <path d="M 210 50 L 240 120 L 260 120 L 290 50" fill="none" stroke="#2563EB" strokeWidth="14" strokeLinecap="round" />
+            <rect x="238" y="115" width="24" height="24" rx="4" fill="#94A3B8" stroke={STROKE} strokeWidth="5" />
+            {/* White Plastic ID Card */}
+            <rect x="150" y="135" width="200" height="290" rx="16" fill="#FFFFFF" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Top Blue Header Bar */}
+            <path d="M 150 151 A 16 16 0 0 1 166 135 L 334 135 A 16 16 0 0 1 350 151 L 350 185 L 150 185 Z" fill="#1D4ED8" />
+            <circle cx="250" cy="160" r="12" fill="#FFFFFF" />
+            {/* Employee Avatar Silhouette */}
+            <rect x="195" y="205" width="110" height="100" rx="10" fill="#E2E8F0" stroke={STROKE} strokeWidth="5" />
+            <circle cx="250" cy="240" r="22" fill="#94A3B8" />
+            <path d="M 225 295 Q 250 270 275 295" fill="#94A3B8" />
+            {/* Barcode & Chip */}
+            <rect x="175" y="325" width="35" height="25" rx="4" fill="#F59E0B" stroke={STROKE} strokeWidth="3" />
+            <line x1="225" y1="330" x2="325" y2="330" stroke="#334155" strokeWidth="4" />
+            <line x1="225" y1="342" x2="305" y2="342" stroke="#334155" strokeWidth="4" />
+            {/* Barcode lines */}
+            <line x1="175" y1="375" x2="325" y2="375" stroke="#000000" strokeWidth="16" strokeDasharray="6 4 10 3 8 5" />
+          </g>
+        );
+      }
+
+      // 10. BROKEN CREDIT CHAINS (Financial Liberation)
+      case 'broken_credit_chains': {
+        const breakGap = Math.min(30, frame * 2);
+        return (
+          <g id="prop_broken_credit_chains">
+            <ellipse cx="250" cy="460" rx="140" ry="18" fill="#000000" opacity="0.32" />
+            {/* Left Snapped Shackle */}
+            <g transform={`translate(${-breakGap}, 0)`}>
+              <rect x="120" y="240" width="110" height="130" rx="14" fill="#64748B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              <path d="M 150 240 L 150 150 Q 200 120 200 170" fill="none" stroke="#94A3B8" strokeWidth="22" strokeLinecap="round" />
+              <path d="M 150 240 L 150 150 Q 200 120 200 170" fill="none" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            </g>
+            {/* Right Snapped Shackle */}
+            <g transform={`translate(${breakGap}, 0)`}>
+              <rect x="270" y="240" width="110" height="130" rx="14" fill="#64748B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              <path d="M 350 240 L 350 150 Q 300 120 300 170" fill="none" stroke="#94A3B8" strokeWidth="22" strokeLinecap="round" />
+              <path d="M 350 240 L 350 150 Q 300 120 300 170" fill="none" stroke={STROKE} strokeWidth="6" strokeLinecap="round" />
+            </g>
+            {/* Flying Golden Coins Bursting Free */}
+            <circle cx="210" cy="180" r="22" fill="#FDE047" stroke={STROKE} strokeWidth="5" />
+            <text x="210" y="188" textAnchor="middle" fill="#78350F" fontSize="18" fontWeight="900">₹</text>
+            <circle cx="290" cy="170" r="24" fill="#FDE047" stroke={STROKE} strokeWidth="5" />
+            <text x="290" y="179" textAnchor="middle" fill="#78350F" fontSize="20" fontWeight="900">₹</text>
+            <circle cx="250" cy="120" r="26" fill="#FDE047" stroke={STROKE} strokeWidth="5" />
+            <text x="250" y="130" textAnchor="middle" fill="#78350F" fontSize="22" fontWeight="900">₹</text>
+            {/* Impact Sparks */}
+            <polygon points="250,220 255,235 270,240 255,245 250,260 245,245 230,240 245,235" fill="#EF4444" />
+          </g>
+        );
+      }
+
+      // 11. ASHOKA LION CAPITAL STATUE (Universal Indian Sovereignty Monument)
+      case 'ashoka_lion_capital_statue': {
+        return (
+          <g id="prop_ashoka_lion_capital_statue">
+            <ellipse cx="250" cy="470" rx="140" ry="18" fill="#000000" opacity="0.35" />
+            {/* Golden Aura Glow */}
+            <circle cx="250" cy="220" r="170" fill="#F59E0B" opacity="0.2" />
+            {/* Inverted Lotus Bell Base */}
+            <path d="M 180 430 Q 250 390 320 430 L 330 450 L 170 450 Z" fill="#D97706" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Circular Abacus Wheel */}
+            <rect x="160" y="340" width="180" height="55" rx="8" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* 24-spoke Ashoka Wheel on Abacus */}
+            <circle cx="250" cy="367" r="22" fill="#1D4ED8" stroke={STROKE} strokeWidth="4" />
+            <circle cx="250" cy="367" r="6" fill="#FFFFFF" />
+            {/* Four Stylized Lions Back to Back */}
+            {/* Left Lion Profile */}
+            <path d="M 190 340 L 160 230 Q 140 180 180 160 Q 210 180 210 240 Z" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Right Lion Profile */}
+            <path d="M 310 340 L 340 230 Q 360 180 320 160 Q 290 180 290 240 Z" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Center Front Lion */}
+            <path d="M 210 340 L 210 200 Q 210 120 250 110 Q 290 120 290 200 L 290 340 Z" fill="#FDE047" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Center Lion Mane Curls */}
+            <circle cx="230" cy="180" r="14" fill="#D97706" stroke={STROKE} strokeWidth="4" />
+            <circle cx="270" cy="180" r="14" fill="#D97706" stroke={STROKE} strokeWidth="4" />
+            <circle cx="250" cy="150" r="16" fill="#D97706" stroke={STROKE} strokeWidth="4" />
+            {/* Lion Face Eyes & Mouth */}
+            <circle cx="238" cy="135" r="5" fill="#000000" />
+            <circle cx="262" cy="135" r="5" fill="#000000" />
+            <polygon points="250,145 242,155 258,155" fill="#DC2626" />
+          </g>
+        );
+      }
+
+      // 12. KARNA KAVACH & KUNDAL (Solar Golden Armor & Divine Earrings)
+      case 'karna_kavach_kundal': {
+        return (
+          <g id="prop_karna_kavach_kundal">
+            <ellipse cx="250" cy="460" rx="140" ry="18" fill="#000000" opacity="0.32" />
+            {/* Blazing Surya Solar Radiance */}
+            <circle cx="250" cy="240" r="160" fill="#F59E0B" opacity="0.22" />
+            {/* Golden Chest Plate Kavach */}
+            <path
+              d="M 160 140 L 340 140 L 320 370 Q 250 420 180 370 Z"
+              fill="#FDE047"
+              stroke={STROKE}
+              strokeWidth={STROKE_WIDTH}
+            />
+            {/* Surya Sun Disc on Center Breastplate */}
+            <circle cx="250" cy="240" r="50" fill="#EA580C" stroke={STROKE} strokeWidth="6" />
+            <circle cx="250" cy="240" r="32" fill="#FDE047" stroke={STROKE} strokeWidth="4" />
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+              <line
+                key={deg}
+                x1={250 + 50 * Math.cos((deg * Math.PI) / 180)}
+                y1={240 + 50 * Math.sin((deg * Math.PI) / 180)}
+                x2={250 + 70 * Math.cos((deg * Math.PI) / 180)}
+                y2={240 + 70 * Math.sin((deg * Math.PI) / 180)}
+                stroke="#EA580C"
+                strokeWidth="6"
+                strokeLinecap="round"
+              />
+            ))}
+            {/* Left Glowing Kundal (Earring) */}
+            <circle cx="110" cy="160" r="26" fill="#F59E0B" stroke={STROKE} strokeWidth="6" />
+            <circle cx="110" cy="160" r="12" fill="#FEF08A" />
+            <circle cx="110" cy="200" r="10" fill="#FFFFFF" stroke={STROKE} strokeWidth="3" />
+            {/* Right Glowing Kundal (Earring) */}
+            <circle cx="390" cy="160" r="26" fill="#F59E0B" stroke={STROKE} strokeWidth="6" />
+            <circle cx="390" cy="160" r="12" fill="#FEF08A" />
+            <circle cx="390" cy="200" r="10" fill="#FFFFFF" stroke={STROKE} strokeWidth="3" />
+          </g>
+        );
+      }
+
+      // 13. MACE / GADA BATTLE WEAPON (Bhima / Duryodhana War Symbol)
+      case 'mace_gada_battle': {
+        return (
+          <g id="prop_mace_gada_battle">
+            <ellipse cx="250" cy="465" rx="130" ry="18" fill="#000000" opacity="0.35" />
+            {/* Heavy Iron / Golden Mace Handle */}
+            <rect x="238" y="180" width="24" height="260" rx="8" fill="#92400E" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            {/* Grip Wrappings */}
+            {[230, 260, 290, 320, 350, 380].map((y) => (
+              <line key={y} x1="238" y1={y} x2="262" y2={y} stroke="#D97706" strokeWidth="6" />
+            ))}
+            {/* Mace Pommel Base */}
+            <circle cx="250" cy="445" r="18" fill="#F59E0B" stroke={STROKE} strokeWidth="6" />
+            {/* Massive Fluted Golden Mace Head */}
+            <ellipse cx="250" cy="130" rx="85" ry="75" fill="#F59E0B" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <ellipse cx="250" cy="130" rx="60" ry="75" fill="#FDE047" stroke={STROKE} strokeWidth="5" />
+            <ellipse cx="250" cy="130" rx="30" ry="75" fill="#FEF08A" stroke={STROKE} strokeWidth="4" />
+            {/* Lethal Top Spike */}
+            <polygon points="250,30 235,60 265,60" fill="#EF4444" stroke={STROKE} strokeWidth="5" />
+          </g>
+        );
+      }
+
+      // 14. BANSURI DIVINE FLUTE (Krishna's Flute with Peacock Feather)
+      case 'bansuri_divine_flute': {
+        return (
+          <g id="prop_bansuri_divine_flute">
+            <ellipse cx="250" cy="460" rx="140" ry="18" fill="#000000" opacity="0.32" />
+            {/* Celestial Blue Aura */}
+            <circle cx="250" cy="240" r="150" fill="#38BDF8" opacity="0.2" />
+            {/* Polished Bamboo Flute Angled at -25 deg */}
+            <g transform="translate(250, 240) rotate(-22)">
+              <rect x="-180" y="-14" width="360" height="28" rx="8" fill="#D97706" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+              {/* Gold Binding Bands */}
+              <rect x="-160" y="-14" width="16" height="28" fill="#FDE047" stroke={STROKE} strokeWidth="3" />
+              <rect x="140" y="-14" width="16" height="28" fill="#FDE047" stroke={STROKE} strokeWidth="3" />
+              {/* 7 Finger Holes */}
+              {[-80, -45, -10, 25, 60, 95, 125].map((hx) => (
+                <circle key={hx} cx={hx} cy="0" r="5" fill="#451A03" />
+              ))}
+              {/* Tied Peacock Feather at Flute End */}
+              <g transform="translate(-160, -25)">
+                <path d="M 0 0 Q -40 -60 10 -80 Q 50 -60 0 0 Z" fill="#0284C7" stroke={STROKE} strokeWidth="5" />
+                <path d="M 0 -15 Q -25 -55 5 -70 Q 30 -55 0 -15 Z" fill="#10B981" />
+                <circle cx="5" cy="-50" r="10" fill="#F59E0B" />
+                <circle cx="5" cy="-50" r="5" fill="#1E1B4B" />
+              </g>
+            </g>
+            {/* Floating Music Notes */}
+            <text x="350" y="160" fontSize="32" fill="#38BDF8" fontWeight="bold">♪</text>
+            <text x="380" y="120" fontSize="40" fill="#F59E0B" fontWeight="bold">♫</text>
+          </g>
+        );
+      }
+
+      // 15. MOR PANKH QUILL & INK (Chanakya & Vyasa Manuscript Quill)
+      case 'mor_pankh_quill': {
+        return (
+          <g id="prop_mor_pankh_quill">
+            <ellipse cx="250" cy="460" rx="130" ry="18" fill="#000000" opacity="0.32" />
+            {/* Antique Bronze Inkpot */}
+            <path d="M 200 440 L 220 370 L 280 370 L 300 440 Z" fill="#78350F" stroke={STROKE} strokeWidth={STROKE_WIDTH} />
+            <rect x="225" y="355" width="50" height="18" rx="6" fill="#B45309" stroke={STROKE} strokeWidth="5" />
+            {/* Dipping Peacock Feather Quill */}
+            <g transform="translate(250, 360) rotate(25)">
+              <line x1="0" y1="0" x2="0" y2="-280" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" />
+              <line x1="0" y1="0" x2="0" y2="-280" stroke={STROKE} strokeWidth="3" />
+              {/* Iridescent Feather Fan */}
+              <path d="M 0 -100 Q -50 -180 -10 -250 Q 20 -280 0 -300 Q 60 -250 10 -180 Z" fill="#0284C7" stroke={STROKE} strokeWidth="6" />
+              <path d="M 0 -140 Q -35 -190 -5 -240 Q 15 -260 0 -275 Q 40 -240 10 -190 Z" fill="#10B981" />
+              {/* Eye of the Feather */}
+              <circle cx="0" cy="-210" r="18" fill="#F59E0B" stroke={STROKE} strokeWidth="3" />
+              <circle cx="0" cy="-210" r="10" fill="#1E1B4B" />
+              {/* Golden Ink Droplet at Nib */}
+              <circle cx="0" cy="5" r="7" fill="#F59E0B" />
+            </g>
           </g>
         );
       }

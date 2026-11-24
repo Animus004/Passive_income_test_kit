@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, useCurrentFrame } from 'remotion';
 
 export type RoomEnvironmentType =
   | 'bedroom_dark'
@@ -25,6 +25,7 @@ export const RoomEnvironment: React.FC<RoomEnvironmentProps> = ({
   accentColor = '#EF4444',
   children,
 }) => {
+  const frame = useCurrentFrame();
   const renderBackgroundPlate = () => {
     switch (type) {
       case 'bedroom_dark':
@@ -533,10 +534,161 @@ export const RoomEnvironment: React.FC<RoomEnvironmentProps> = ({
     }
   };
 
+  const renderForegroundLayer = () => {
+    const isAncient = [
+      'ancient_palace',
+      'durbar_throne_room',
+      'temple_vault',
+      'chaupar_board_arena',
+      'subterranean_dungeon_vault',
+      'puppet_stage_shadow',
+    ].includes(type);
+
+    // Warm atmospheric breathing god-ray pulse
+    const beamPulse = 0.08 + Math.sin((frame / 30) * Math.PI) * 0.025;
+
+    return (
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          zIndex: 35,
+          overflow: 'hidden',
+          boxShadow: isAncient
+            ? 'inset 0 0 160px rgba(0,0,0,0.7), inset 0 0 60px rgba(0,0,0,0.9)'
+            : 'inset 0 0 120px rgba(0,0,0,0.45)',
+        }}
+      >
+        {isAncient ? (
+          <svg
+            width="1080"
+            height="1920"
+            viewBox="0 0 1080 1920"
+            fill="none"
+            style={{ position: 'absolute', inset: 0 }}
+          >
+            {/* Volumetric Warm God Ray angled from top-right window */}
+            <polygon
+              points="1080,0 800,0 200,1920 600,1920"
+              fill="url(#godRayGrad)"
+              opacity={beamPulse}
+            />
+            <defs>
+              <linearGradient id="godRayGrad" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.5" />
+                <stop offset="70%" stopColor="#FEF08A" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#F59E0B" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+
+            {/* Top Rajputana Scalloped Jharokha Arch Valence */}
+            <path
+              d="M 0 0 L 1080 0 L 1080 80 Q 980 120 880 80 Q 780 130 680 80 Q 540 140 400 80 Q 300 130 200 80 Q 100 120 0 80 Z"
+              fill="#1C1917"
+              stroke="#000000"
+              strokeWidth="6"
+            />
+            {/* Golden Carved Trim on Arch */}
+            <path
+              d="M 0 70 Q 100 110 200 70 Q 300 120 400 70 Q 540 130 680 70 Q 780 120 880 70 Q 980 110 1080 70"
+              fill="none"
+              stroke="#D97706"
+              strokeWidth="4"
+            />
+
+            {/* Left Foreground Framing Pillar (Carved Royal Sandstone) */}
+            <g id="fg_left_pillar">
+              <rect x="-30" y="0" width="130" height="1920" fill="#1C1917" stroke="#000000" strokeWidth="8" />
+              {/* Pillar Inner Shadow */}
+              <rect x="85" y="0" width="15" height="1920" fill="#000000" opacity="0.4" />
+              {/* Capital & Base Flutes */}
+              <rect x="-30" y="80" width="145" height="24" rx="4" fill="#292524" stroke="#000000" strokeWidth="4" />
+              <rect x="-30" y="104" width="135" height="12" fill="#D97706" />
+              <line x1="25" y1="120" x2="25" y2="1850" stroke="#292524" strokeWidth="6" />
+              <line x1="55" y1="120" x2="55" y2="1850" stroke="#44403C" strokeWidth="6" />
+              {/* Pillar Base Plinth */}
+              <rect x="-30" y="1840" width="145" height="80" fill="#292524" stroke="#000000" strokeWidth="6" />
+              <rect x="-30" y="1830" width="135" height="10" fill="#D97706" />
+            </g>
+
+            {/* Right Foreground Framing Pillar */}
+            <g id="fg_right_pillar">
+              <rect x="980" y="0" width="130" height="1920" fill="#1C1917" stroke="#000000" strokeWidth="8" />
+              {/* Pillar Inner Shadow */}
+              <rect x="980" y="0" width="15" height="1920" fill="#000000" opacity="0.4" />
+              {/* Capital & Base Flutes */}
+              <rect x="965" y="80" width="145" height="24" rx="4" fill="#292524" stroke="#000000" strokeWidth="4" />
+              <rect x="975" y="104" width="135" height="12" fill="#D97706" />
+              <line x1="1025" y1="120" x2="1025" y2="1850" stroke="#44403C" strokeWidth="6" />
+              <line x1="1055" y1="120" x2="1055" y2="1850" stroke="#292524" strokeWidth="6" />
+              {/* Pillar Base Plinth */}
+              <rect x="965" y="1840" width="145" height="80" fill="#292524" stroke="#000000" strokeWidth="6" />
+              <rect x="975" y="1830" width="135" height="10" fill="#D97706" />
+            </g>
+
+            {/* Drifting Golden Embers & Sacred Temple Dust Particles */}
+            {[
+              { x: 180, speed: 2.2, size: 7, seed: 120 },
+              { x: 320, speed: 1.8, size: 5, seed: 450 },
+              { x: 460, speed: 2.5, size: 8, seed: 890 },
+              { x: 620, speed: 1.6, size: 6, seed: 310 },
+              { x: 740, speed: 2.1, size: 5, seed: 720 },
+              { x: 860, speed: 2.8, size: 7, seed: 150 },
+              { x: 260, speed: 1.9, size: 4, seed: 620 },
+              { x: 530, speed: 2.4, size: 6, seed: 980 },
+              { x: 800, speed: 1.7, size: 5, seed: 400 },
+            ].map((p, i) => {
+              const currentY = 1920 - ((frame * p.speed * 4 + p.seed) % 1920);
+              const driftX = p.x + Math.sin((frame / 20) + i) * 16;
+              const alpha = Math.sin((currentY / 1920) * Math.PI) * 0.75;
+              return (
+                <g key={i}>
+                  <circle cx={driftX} cy={currentY} r={p.size * 1.8} fill="#F59E0B" opacity={alpha * 0.3} />
+                  <circle cx={driftX} cy={currentY} r={p.size} fill="#FEF08A" opacity={alpha} />
+                </g>
+              );
+            })}
+          </svg>
+        ) : (
+          <svg
+            width="1080"
+            height="1920"
+            viewBox="0 0 1080 1920"
+            fill="none"
+            style={{ position: 'absolute', inset: 0 }}
+          >
+            {/* Modern Subtle Diagonal Screen Sheen */}
+            <polygon points="0,0 450,0 150,1920 0,1920" fill="#FFFFFF" opacity="0.02" />
+            {/* Minimalist Micro Dust Motes in Workplace Light */}
+            {[
+              { x: 250, speed: 1.2, size: 4, seed: 200 },
+              { x: 520, speed: 1.5, size: 3, seed: 600 },
+              { x: 780, speed: 1.1, size: 4, seed: 900 },
+            ].map((p, i) => {
+              const currentY = 1920 - ((frame * p.speed * 3 + p.seed) % 1920);
+              const driftX = p.x + Math.cos((frame / 25) + i) * 12;
+              const alpha = Math.sin((currentY / 1920) * Math.PI) * 0.4;
+              return (
+                <circle key={i} cx={driftX} cy={currentY} r={p.size} fill="#FFFFFF" opacity={alpha} />
+              );
+            })}
+          </svg>
+        )}
+      </div>
+    );
+  };
+
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
+      {/* 1. Background Environment Plate */}
       {renderBackgroundPlate()}
+
+      {/* 2. Midground Stage Actors & Interactive Props */}
       {children}
+
+      {/* 3. Foreground Framing & Cinematic Atmospheric Depth */}
+      {renderForegroundLayer()}
     </AbsoluteFill>
   );
 };

@@ -108,6 +108,28 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
   );
   const transitionOpacity = interpolate(enterSpring, [0, 1], [0.6, 1.0]);
 
+  // Frame 0 Seismic Shock Shake (Impacts on Frame 0..12)
+  const hookImpactShake = sceneIndex === 1 && frame < 12
+    ? Math.sin(frame * 3.8) * Math.max(0, 1 - frame / 12) * 16
+    : 0;
+
+  // Frame 0 Kinetic Center Shock Hook Card (Scene 1 only, frames 0..28)
+  const isHookFrame = sceneIndex === 1 && frame < 30;
+  const shockCardSpring = spring({
+    frame,
+    fps,
+    config: { damping: 12, stiffness: 260 },
+  });
+  const shockCardScale = interpolate(shockCardSpring, [0, 1], [2.2, 1.0]);
+  const shockCardFade = interpolate(frame, [22, 28], [1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const shockCardSlideUp = interpolate(frame, [22, 28], [0, -60], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
   // 3. Staging & Asset Recipe Normalization
   const rawEnv = (beat.environment || 'ancient_palace').toLowerCase();
   const isAncient =
@@ -202,12 +224,77 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
         style={{
           width: '100%',
           height: '100%',
-          transform: `translateX(${transitionSlideX}px) scale(${cameraZoom}) rotate(${cameraTilt}deg)`,
+          transform: `translateX(${transitionSlideX + hookImpactShake}px) translateY(${hookImpactShake * 0.7}px) scale(${cameraZoom}) rotate(${cameraTilt}deg)`,
           transformOrigin: '50% 60%',
           opacity: transitionOpacity,
         }}
       >
         <RoomEnvironment type={envType as any}>
+          {/* FRAME-0 KINETIC CENTER SHOCK IMPACT CARD (Scene 1 Viral 9.5 Thumb-Stop) */}
+          {isHookFrame && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '40%',
+                left: '50%',
+                transform: `translate(-50%, -50%) translateY(${shockCardSlideUp}px) scale(${shockCardScale})`,
+                opacity: shockCardFade,
+                zIndex: 60,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 16,
+                pointerEvents: 'none',
+                width: 940,
+              }}
+            >
+              {/* High Stakes Danger Warning Pill */}
+              <div
+                style={{
+                  backgroundColor: '#DC2626',
+                  color: '#FFFFFF',
+                  border: '6px solid #000000',
+                  borderRadius: 24,
+                  padding: '10px 32px',
+                  fontSize: 26,
+                  fontWeight: 900,
+                  boxShadow: '0 6px 0 #000000',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                ⚠️ 100% UNTOLD TRUTH
+              </div>
+
+              {/* Massive Center Shock Typography Card */}
+              <div
+                style={{
+                  backgroundColor: '#FDE047',
+                  border: '10px solid #000000',
+                  borderRadius: 36,
+                  padding: '24px 36px',
+                  boxShadow: '0 16px 0 #000000',
+                  textAlign: 'center',
+                  width: '100%',
+                }}
+              >
+                <div
+                  style={{
+                    color: '#000000',
+                    fontSize: 56,
+                    fontWeight: 900,
+                    lineHeight: 1.15,
+                    fontFamily: 'Impact, sans-serif',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  {beat.hookHeadline || beat.title || 'STOP SCROLLING!'}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* TOP STATUS BADGE (Punches in Frame 0) */}
           <div
             style={{

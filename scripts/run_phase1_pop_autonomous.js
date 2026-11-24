@@ -19,7 +19,7 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.mkdirSync(SCRATCH_DIR, { recursive: true });
 fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
 
-// Verified Pre-Cooked Era Catalogues
+// Verified Pre-Cooked Era Catalogues (Phase 1 9.5 Engine with Full Indian Archetypes)
 const ERA_CATALOG = {
   ancient: {
     environments: [
@@ -30,8 +30,32 @@ const ERA_CATALOG = {
       'chaupar_board_arena',
       'puppet_stage_shadow'
     ],
-    roles: ['chanakya', 'shakuni', 'duryodhana', 'pandava', 'king', 'ancient_commoner'],
+    roles: [
+      'krishna',
+      'arjuna',
+      'karna',
+      'shivaji',
+      'ashoka',
+      'guru_sage',
+      'chanakya',
+      'shakuni',
+      'duryodhana',
+      'pandava',
+      'king',
+      'ancient_commoner'
+    ],
     props: [
+      'sudarshan_chakra_divine',
+      'gandiva_bow_arrow',
+      'maratha_bhavani_talwar',
+      'shivaji_rajmudra_seal',
+      'holy_bhagavad_gita_scroll',
+      'rudraksha_rosary_mala',
+      'ashoka_lion_capital_statue',
+      'karna_kavach_kundal',
+      'mace_gada_battle',
+      'bansuri_divine_flute',
+      'mor_pankh_quill',
       'chanakya_scroll',
       'poison_kanya_goblet',
       'sword_shield_emblem',
@@ -59,8 +83,19 @@ const ERA_CATALOG = {
       'bedroom_dark',
       'kitchen_morning'
     ],
-    roles: ['modern_creator', 'modern_commoner'],
+    roles: [
+      'modern_creator',
+      'modern_commoner',
+      'middle_class_uncle',
+      'toxic_boss',
+      'it_engineer',
+      'genz_student'
+    ],
     props: [
+      'chai_glass_cutting',
+      'pink_slip_termination',
+      'corporate_id_badge',
+      'broken_credit_chains',
       'salary_slip_drain',
       'bank_balance_zero',
       'emi_chains_lock',
@@ -82,7 +117,17 @@ const ERA_CATALOG = {
 
 const SEED_TOPIC_PRESETS = [
   {
+    topic: "Krishna's Supreme Strategy: Why the Sudarshan Chakra was the absolute last resort in Kurukshetra",
+    era: "ancient",
+    genre: "ancient_strategy"
+  },
+  {
     topic: "Chanakya Niti: Why the friend who agrees with everything you say is your slow poison",
+    era: "ancient",
+    genre: "ancient_strategy"
+  },
+  {
+    topic: "Shivaji Maharaj's Guerilla Warfare: How 300 Marathas neutralized imperial armies of 10,000",
     era: "ancient",
     genre: "ancient_strategy"
   },
@@ -92,17 +137,7 @@ const SEED_TOPIC_PRESETS = [
     genre: "ancient_strategy"
   },
   {
-    topic: "The Hidden Padmanabhaswamy Vault B: Why opening the 7th cobra door was halted",
-    era: "ancient",
-    genre: "ancient_mystery"
-  },
-  {
-    topic: "Salary Credited on 1st, Zero Balance on 5th: The invisible credit card and EMI wealth trap",
-    era: "modern",
-    genre: "modern_finance"
-  },
-  {
-    topic: "Lifestyle Inflation: How earning 3x more still leaves your bank account completely dry",
+    topic: "The 9-to-5 Middle Class Trap: Cutting Chai, Pink Slips, and Invisible EMI Chains",
     era: "modern",
     genre: "modern_finance"
   }
@@ -116,13 +151,22 @@ export async function runPhase1PopAutonomous(topicOverride = null, options = {})
   // Step 0: Determine Topic & Era Lock
   const selectedPreset = SEED_TOPIC_PRESETS[Math.floor(Math.random() * SEED_TOPIC_PRESETS.length)];
   const topic = topicOverride || options.topic || selectedPreset.topic;
-  const isAncient = topic.toLowerCase().includes('chanakya') ||
-                    topic.toLowerCase().includes('shakuni') ||
-                    topic.toLowerCase().includes('vault') ||
-                    topic.toLowerCase().includes('mahabharata') ||
-                    topic.toLowerCase().includes('ancient') ||
-                    topic.toLowerCase().includes('palace') ||
-                    options.era === 'ancient';
+  const isAncient = options.era === 'ancient' ||
+                    (options.era !== 'modern' && (
+                      (selectedPreset && selectedPreset.era === 'ancient' && !topicOverride) ||
+                      topic.toLowerCase().includes('chanakya') ||
+                      topic.toLowerCase().includes('shakuni') ||
+                      topic.toLowerCase().includes('krishna') ||
+                      topic.toLowerCase().includes('shivaji') ||
+                      topic.toLowerCase().includes('arjuna') ||
+                      topic.toLowerCase().includes('karna') ||
+                      topic.toLowerCase().includes('ashoka') ||
+                      topic.toLowerCase().includes('kurukshetra') ||
+                      topic.toLowerCase().includes('vault') ||
+                      topic.toLowerCase().includes('mahabharata') ||
+                      topic.toLowerCase().includes('ancient') ||
+                      topic.toLowerCase().includes('palace')
+                    ));
   const era = isAncient ? 'ancient' : 'modern';
   const catalog = ERA_CATALOG[era];
 
@@ -139,13 +183,17 @@ MANDATES:
 1. Exactly 8 rapid micro-beats (~32-38 seconds total).
 2. Spoken Hindi ("narration_hi"): Conversational, intelligent Hindi (like Nitish Rajput / Think School). Avoid textbook archaic Sanskrit Hindi.
 3. Subtitle Tokens ("display_tokens_hi"): 3 to 6 Romanized Hinglish words per beat (e.g. ["SHAKUNI", "NE", "PHEKA", "PASHA...", "ASLI KHATRA!"]).
-4. STRICT ERA ASSETS:
+4. STRICT ERA ASSETS & THEMATIC ALIGNMENT:
    - "environment" MUST be strictly one of: ${JSON.stringify(catalog.environments)}
    - "heroElement" MUST be strictly one of: ${JSON.stringify(catalog.props)}
    - "role" MUST be strictly one of: ${JSON.stringify(catalog.roles)}
+   - THEMATIC ACCURACY (CRITICAL):
+     • If topic is about Krishna/Mahabharata: Use role "krishna" (pose: "spinning_chakra" or "divine_calm"), "arjuna" (pose: "drawing_bow"), "karna", "shakuni". Use props: "sudarshan_chakra_divine", "gandiva_bow_arrow", "holy_bhagavad_gita_scroll", "karna_kavach_kundal", "bansuri_divine_flute".
+     • If topic is about Shivaji: Use role "shivaji" (pose: "unsheathing_talwar"), props: "maratha_bhavani_talwar", "shivaji_rajmudra_seal".
+     • If topic is about Modern Work/Finance: Use role "it_engineer", "middle_class_uncle", "toxic_boss", props: "chai_glass_cutting", "pink_slip_termination", "broken_credit_chains".
 5. MANDATORY 7 DYNAMIC SCENE ARCHETYPES (Crucial to prevent visual monotony!):
-   - Beat 1: "MACRO_HOOK_PUNCH" (Extreme 1.4x thumb-stopping hook shot with dice/weapon flying into lens, pose: "rolling_dice" or "shock_hands_on_head")
-   - Beat 2: "DUAL_CONFRONTATION" (Two characters face-to-face conspiratorially, role: "shakuni", pose: "whispering_sly", secondCharacter: {"role": "duryodhana", "pose": "wealth_proud_chest"})
+   - Beat 1: "MACRO_HOOK_PUNCH" (Extreme 1.4x thumb-stopping hook shot with hookHeadline, e.g. "SUDARSHAN CHAKRA: ASLI RAHASYA!", heroElement: "sudarshan_chakra_divine", role: "krishna", pose: "spinning_chakra")
+   - Beat 2: "DUAL_CONFRONTATION" (Two characters face-to-face conspiratorially or strategically, e.g. Krishna instructing Arjuna or Shakuni corrupting Duryodhana, secondCharacter: {"role": "arjuna" or "duryodhana", "pose": "drawing_bow" or "wealth_proud_chest"})
    - Beat 3: "STRATEGY_MAP_ARENA" (Overview of tactical war map or Chaupar board, pose: "puppeteer_strings")
    - Beat 4: "DOCUMENT_EDICT_UNROLL" (Unrolled ancient decree or parchment rule, pose: "chanakya_pointing")
    - Beat 5: "TENSION_HUD_METER" (Dynamic risk/deceit gauge spiking to 99%, pose: "shock_hands_on_head")
@@ -199,7 +247,8 @@ MANDATES:
         {
           id: 1,
           title: "FATAL ROLL",
-          badge: "HOOK",
+          hookHeadline: "BINA HATHIYAR PURA VAMSH KHATAM!",
+          badge: "CRITICAL HOOK",
           badgeEmoji: "🎲",
           narration_hi: "शकुनि ने बिना कोई हथियार उठाए पूरे कुरुक्षेत्र को आग में झोंक दिया.",
           display_tokens_hi: ["BINA", "HATHIYAR", "PURAA", "VAMSH", "KHATAM!"],
@@ -406,7 +455,9 @@ MANDATES:
   console.log('\n📸 [STEP 5/5] Extracting Dynamic Archetype QA Keyframe Stills & Copying Artifacts...');
   // Extract stills near the middle of each distinct archetype beat
   let accumSeconds = 0;
-  const keyframes = [];
+  const keyframes = [
+    { name: 'p1_00_frame0_shock_title', time: '00:00:00.350', label: 'Beat 1: Frame-0 Kinetic Shock Title (Center Impact & Warning Pill)' }
+  ];
   const archetypeLabels = [
     { name: 'p1_01_macro_hook_punch', label: 'Beat 1: Macro Hook Punch (Crash Zoom & Speed Rays)' },
     { name: 'p1_02_dual_confrontation', label: 'Beat 2: Dual Confrontation (Shakuni vs Duryodhana)' },
@@ -486,7 +537,8 @@ MANDATES:
 }
 
 if (process.argv[1] && process.argv[1].endsWith('run_phase1_pop_autonomous.js')) {
-  runPhase1PopAutonomous().catch(err => {
+  const cliTopic = process.argv[2] || null;
+  runPhase1PopAutonomous(cliTopic).catch(err => {
     console.error('❌ Phase 1 runner failed:', err);
     process.exit(1);
   });
