@@ -115,14 +115,20 @@ async function main() {
         }
 
         // Immediately flush any backlogged buffered Shorts waiting in D:\factory_workspace\ready
-        try {
-          console.log('🚀 Checking D:\\factory_workspace\\ready for any backlogged Shorts to schedule...');
-          execSync('node --no-warnings scripts/factory_orchestrator.mjs --mode publish', {
-            cwd: PROJECT_ROOT,
-            stdio: 'inherit',
-          });
-        } catch (flushErr) {
-          console.warn('⚠️ Post-auth flush notice:', flushErr.message);
+        if (!process.argv.includes('--no-flush')) {
+          const forwardFlags = process.argv
+            .slice(2)
+            .filter((f) => f === '--publish-now' || f === '--social')
+            .join(' ');
+          try {
+            console.log(`🚀 Running post-auth publish dispatch (--mode publish ${forwardFlags})...`);
+            execSync(`node --no-warnings scripts/factory_orchestrator.mjs --mode publish ${forwardFlags}`.trim(), {
+              cwd: PROJECT_ROOT,
+              stdio: 'inherit',
+            });
+          } catch (flushErr) {
+            console.warn('⚠️ Post-auth flush notice:', flushErr.message);
+          }
         }
 
         server.close();

@@ -59,6 +59,7 @@ async function main() {
   const mode = (modeIdx >= 0 && args[modeIdx + 1]) ? args[modeIdx + 1] : 'status';
   const isDryRun = args.includes('--dry-run');
   const withSocial = args.includes('--social');
+  const publishNow = args.includes('--publish-now');
 
   if (mode === 'status') {
     printStatus();
@@ -78,7 +79,7 @@ async function main() {
       console.log('⚠️ Ready buffer empty at publish tick — producing 1 fresh episode safely under lock...');
       await runFactoryBufferBatch({ maxProduce: 1, targetBuffer: 1 });
     }
-    await dispatchScheduledPublishes({ maxYouTubeSchedules: 3, publishSocialNow: withSocial, isDryRun });
+    await dispatchScheduledPublishes({ maxYouTubeSchedules: 3, publishSocialNow: withSocial, publishNow, isDryRun });
     pruneArchivedWorkspaceMedia(7);
     printStatus();
     return;

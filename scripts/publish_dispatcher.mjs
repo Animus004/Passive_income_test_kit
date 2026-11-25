@@ -86,6 +86,7 @@ function findNextAvailablePublishSlot(db) {
 export async function dispatchScheduledPublishes({
   maxYouTubeSchedules = 3,
   publishSocialNow = false,
+  publishNow = false,
   isDryRun = false,
 } = {}) {
   const db = getFactoryDb();
@@ -108,6 +109,7 @@ export async function dispatchScheduledPublishes({
   let scheduledCount = 0;
   let youtubePausedForReauth = false;
   let socialDispatchedThisTick = false;
+  let publishedImmediateThisTick = false;
 
   for (const job of readyJobs) {
     if (!job.video_path || !fs.existsSync(job.video_path)) {
@@ -115,7 +117,8 @@ export async function dispatchScheduledPublishes({
       continue;
     }
 
-    const publishAtIso = findNextAvailablePublishSlot(db);
+    const sendImmediate = publishNow && !publishedImmediateThisTick;
+    const publishAtIso = sendImmediate ? null : findNextAvailablePublishSlot(db);
     const title = job.title_hi
       ? `${job.title_hinglish || job.topic_text} | ${job.title_hi}`
       : job.topic_text;
@@ -126,23 +129,26 @@ export async function dispatchScheduledPublishes({
           videoPath: job.video_path,
           title,
           description: job.description_hi || job.topic_text,
+          privacyStatus: sendImmediate ? 'public' : 'private',
           publishAt: isDryRun ? null : publishAtIso,
           isDryRun,
         });
 
         if (!isDryRun && ytRes.success) {
+          const uploadState = sendImmediate ? 'published' : 'scheduled';
+          if (sendImmediate) publishedImmediateThisTick = true;
           db.prepare(
             `INSERT INTO uploads (job_id, platform, stream_md5, remote_id, remote_url, scheduled_publish_at, status, attempts)
-             VALUES (?, 'youtube', ?, ?, ?, ?, 'scheduled', 1)
+             VALUES (?, 'youtube', ?, ?, ?, ?, ?, 1)
              ON CONFLICT(job_id, platform) DO UPDATE SET
                remote_id = excluded.remote_id,
                remote_url = excluded.remote_url,
                scheduled_publish_at = excluded.scheduled_publish_at,
-               status = 'scheduled',
+               status = excluded.status,
                attempts = attempts + 1,
                last_error = NULL,
                updated_at = datetime('now')`
-          ).run(job.id, job.stream_md5, ytRes.videoId, ytRes.url, publishAtIso);
+          ).run(job.id, job.stream_md5, ytRes.videoId, ytRes.url, publishAtIso, uploadState);
 
           db.prepare(`UPDATE jobs SET status = 'published', updated_at = datetime('now') WHERE id = ?`).run(job.id);
           scheduledCount++;
@@ -373,13 +379,14 @@ export function pruneArchivedWorkspaceMedia(retentionDays = 7) {
 if (process.argv[1] && process.argv[1].endsWith('publish_dispatcher.mjs')) {
   const isDryRun = process.argv.includes('--dry-run');
   const publishSocialNow = process.argv.includes('--social');
+  const publishNow = process.argv.includes('--publish-now');
   const syncStats = process.argv.includes('--sync-analytics');
 
   (async () => {
     if (syncStats) {
       await syncAnalyticsFeedback();
     } else {
-      await dispatchScheduledPublishes({ maxYouTubeSchedules: 3, publishSocialNow, isDryRun });
+      await dispatchScheduledPublishes({ maxYouTubeSchedules: 3, publishSocialNow, publishNow, isDryRun });
       pruneArchivedWorkspaceMedia(7);
     }
   })().catch((err) => {
