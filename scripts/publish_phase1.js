@@ -59,6 +59,9 @@ export async function getYouTubeClient() {
       fs.writeFileSync(TOKEN_PATH, JSON.stringify(updated, null, 2));
       console.log('✅ YouTube access token refreshed.');
     } catch (err) {
+      if (String(err.message || '').includes('invalid_grant')) {
+        throw new Error('YOUTUBE_REAUTH_REQUIRED: Google OAuth Testing token expired after 7 days. Run npm run auth:phase1');
+      }
       console.warn('⚠️ Token refresh warning:', err.message);
     }
   }

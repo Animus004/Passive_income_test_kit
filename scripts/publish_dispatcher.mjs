@@ -92,7 +92,7 @@ export async function dispatchScheduledPublishes({
     .prepare(
       `SELECT j.* FROM jobs j
        LEFT JOIN uploads u ON j.id = u.job_id AND u.platform = 'youtube'
-       WHERE j.status = 'ready' AND u.id IS NULL
+       WHERE j.status = 'ready' AND (u.id IS NULL OR u.status = 'pending_retry')
        ORDER BY j.created_at ASC
        LIMIT ?`
     )
@@ -127,18 +127,46 @@ export async function dispatchScheduledPublishes({
       if (!isDryRun && ytRes.success) {
         db.prepare(
           `INSERT INTO uploads (job_id, platform, stream_md5, remote_id, remote_url, scheduled_publish_at, status, attempts)
-           VALUES (?, 'youtube', ?, ?, ?, ?, 'scheduled', 1)`
+           VALUES (?, 'youtube', ?, ?, ?, ?, 'scheduled', 1)
+           ON CONFLICT(job_id, platform) DO UPDATE SET
+             remote_id = excluded.remote_id,
+             remote_url = excluded.remote_url,
+             scheduled_publish_at = excluded.scheduled_publish_at,
+             status = 'scheduled',
+             attempts = attempts + 1,
+             last_error = NULL,
+             updated_at = datetime('now')`
         ).run(job.id, job.stream_md5, ytRes.videoId, ytRes.url, publishAtIso);
 
         db.prepare(`UPDATE jobs SET status = 'published', updated_at = datetime('now') WHERE id = ?`).run(job.id);
         scheduledCount++;
       }
     } catch (err) {
-      console.error(`❌ YouTube dispatch error [${job.id}]: ${err.message}`);
+      const msg = String(err.message || '');
+      const isReauth = msg.includes('YOUTUBE_REAUTH_REQUIRED') || msg.includes('invalid_grant');
+      console.error(`❌ YouTube dispatch error [${job.id}]: ${msg}`);
       db.prepare(
         `INSERT OR REPLACE INTO uploads (job_id, platform, stream_md5, scheduled_publish_at, status, attempts, last_error)
-         VALUES (?, 'youtube', ?, ?, 'failed', 1, ?)`
-      ).run(job.id, job.stream_md5, publishAtIso, err.message);
+         VALUES (?, 'youtube', ?, ?, ?, 1, ?)`
+      ).run(job.id, job.stream_md5, publishAtIso, isReauth ? 'pending_retry' : 'failed', msg);
+
+      if (isReauth) {
+        const botToken = process.env.TELEGRAM_BOT_TOKEN;
+        const chatId = process.env.TELEGRAM_CHAT_ID;
+        if (botToken && chatId) {
+          try {
+            await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                chat_id: chatId,
+                text: `🔑 YouTube 7-Day Testing Token Expired!\nYour videos are safely buffered in D:\\factory_workspace\\ready.\nRun once on PC: npm run auth:phase1`,
+              }),
+            });
+          } catch (_) {}
+        }
+        break;
+      }
     }
 
     // Immediate Meta Social Dispatch (only 1 per window when triggered during an active publish window)
