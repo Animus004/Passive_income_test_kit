@@ -33,13 +33,19 @@ export async function auditPopVectorStill({
   const base64Data = imageBuffer.toString('base64');
 
   const prompt = `
-You are the Senior Art Director & Ruthless Quality Watchdog for a top-tier viral 2D Pop-Vector animation studio ("Oddly Told" / "Kurzgesagt" comedy style).
+You are the Senior Art Director & Ruthless Quality Watchdog for a top-tier viral 2D animation studio ("Oddly Told India").
 Inspect this rendered snapshot frame from Scene ${sceneIndex} of our automated pipeline.
 
 Context:
 - Video Topic: "${topic}"
 - Spoken Narration: "${narration}"
 - Expected Hero Element: "${expectedHero}"
+
+DUAL-STYLE QUALITY STANDARD (CRITICAL):
+- If the scene depicts **Everyday Modern Comedy / Corporate Life** (office workers, tech bros, uncles, bosses): evaluate bold Oddly Told Pop-Vector comedy aesthetic & expressive cartoon googly/stylized eyes.
+- If the scene depicts **Indian Historical, Mythological or Legendary Icons** (Krishna, Arjuna, Karna, Rama, Hanuman, Shiva, Ravana, Chanakya, Shivaji, Maharana Pratap, Ashoka, Lakshmibai, Vivekananda):
+  * Characters MUST use the dignified Heroic Cel-Shaded Legend Library (4.8-head proportions, almond lotus eyes, authentic crowns/pagadis/weapons) — NEVER goofy googly comedy eyes or silly tongues!
+  * Do NOT penalize historical/mythological scenes for lacking comedic googly eyes! Instead verify heroic presence (*Tejas*), authentic attire/weapons, and visual dignity.
 
 RUTHLESS ART CRITIQUE & SPATIAL STAGING CRITERIA (BE STRICT - DO NOT RUBBER-STAMP):
 1. NO CHARACTER-PROP COLLISIONS OR AWKWARD OCCLUSION:

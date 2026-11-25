@@ -34,14 +34,19 @@ const ERA_CATALOG = {
       'krishna',
       'arjuna',
       'karna',
-      'shivaji',
-      'ashoka',
-      'guru_sage',
-      'chanakya',
+      'bhishma',
       'shakuni',
       'duryodhana',
-      'pandava',
-      'king',
+      'rama',
+      'hanuman',
+      'shiva',
+      'ravana',
+      'chanakya',
+      'shivaji',
+      'maharana_pratap',
+      'ashoka',
+      'lakshmibai',
+      'vivekananda',
       'ancient_commoner'
     ],
     props: [
@@ -160,8 +165,17 @@ export async function runPhase1PopAutonomous(topicOverride = null, options = {})
                       topic.toLowerCase().includes('shivaji') ||
                       topic.toLowerCase().includes('arjuna') ||
                       topic.toLowerCase().includes('karna') ||
+                      topic.toLowerCase().includes('bhishma') ||
+                      topic.toLowerCase().includes('rama') ||
+                      topic.toLowerCase().includes('hanuman') ||
+                      topic.toLowerCase().includes('shiva') ||
+                      topic.toLowerCase().includes('ravana') ||
+                      topic.toLowerCase().includes('pratap') ||
+                      topic.toLowerCase().includes('lakshmibai') ||
+                      topic.toLowerCase().includes('vivekananda') ||
                       topic.toLowerCase().includes('ashoka') ||
                       topic.toLowerCase().includes('kurukshetra') ||
+                      topic.toLowerCase().includes('ramayana') ||
                       topic.toLowerCase().includes('vault') ||
                       topic.toLowerCase().includes('mahabharata') ||
                       topic.toLowerCase().includes('ancient') ||
@@ -187,13 +201,15 @@ MANDATES:
    - "environment" MUST be strictly one of: ${JSON.stringify(catalog.environments)}
    - "heroElement" MUST be strictly one of: ${JSON.stringify(catalog.props)}
    - "role" MUST be strictly one of: ${JSON.stringify(catalog.roles)}
-   - THEMATIC ACCURACY (CRITICAL):
-     • If topic is about Krishna/Mahabharata: Use role "krishna" (pose: "spinning_chakra" or "divine_calm"), "arjuna" (pose: "drawing_bow"), "karna", "shakuni". Use props: "sudarshan_chakra_divine", "gandiva_bow_arrow", "holy_bhagavad_gita_scroll", "karna_kavach_kundal", "bansuri_divine_flute".
-     • If topic is about Shivaji: Use role "shivaji" (pose: "unsheathing_talwar"), props: "maratha_bhavani_talwar", "shivaji_rajmudra_seal".
-     • If topic is about Modern Work/Finance: Use role "it_engineer", "middle_class_uncle", "toxic_boss", props: "chai_glass_cutting", "pink_slip_termination", "broken_credit_chains".
+   - THEMATIC ACCURACY & HERO RIG ROUTING (CRITICAL):
+     • Historical/Mythological Legends automatically route to our high-craft Heroic Legends Library (4.8-head anatomy, authentic crowns & weapons). Choose heroic poses strictly from: "heroic_idle", "guru_updesh", "wielding_chakra", "playing_bansuri", "archer_aiming", "warrior_stance", "holding_scroll", "orator_folded", "chaupar_scheme".
+     • If topic is about Krishna/Mahabharata: Use "krishna" ("wielding_chakra", "guru_updesh", "playing_bansuri"), "arjuna" ("archer_aiming"), "karna" ("archer_aiming"), "bhishma" ("warrior_stance"), "shakuni" ("chaupar_scheme"), "duryodhana" ("warrior_stance").
+     • If topic is about Ramayana/Shiva: Use "rama" ("archer_aiming", "heroic_idle"), "hanuman" ("warrior_stance"), "shiva" ("warrior_stance", "heroic_idle"), "ravana" ("warrior_stance").
+     • If topic is about Shivaji / Pratap / History: Use "shivaji" ("warrior_stance"), "maharana_pratap" ("warrior_stance"), "lakshmibai" ("warrior_stance"), "ashoka" ("guru_updesh"), "chanakya" ("holding_scroll"), "vivekananda" ("orator_folded").
+     • If topic is about Modern Work/Finance: Use everyday comedy rig "it_engineer", "middle_class_uncle", "toxic_boss", "modern_creator", props: "chai_glass_cutting", "pink_slip_termination", "broken_credit_chains".
 5. MANDATORY 7 DYNAMIC SCENE ARCHETYPES (Crucial to prevent visual monotony!):
-   - Beat 1: "MACRO_HOOK_PUNCH" (Extreme 1.4x thumb-stopping hook shot with hookHeadline, e.g. "SUDARSHAN CHAKRA: ASLI RAHASYA!", heroElement: "sudarshan_chakra_divine", role: "krishna", pose: "spinning_chakra")
-   - Beat 2: "DUAL_CONFRONTATION" (Two characters face-to-face conspiratorially or strategically, e.g. Krishna instructing Arjuna or Shakuni corrupting Duryodhana, secondCharacter: {"role": "arjuna" or "duryodhana", "pose": "drawing_bow" or "wealth_proud_chest"})
+   - Beat 1: "MACRO_HOOK_PUNCH" (Extreme thumb-stopping hook shot; MUST include "hookHeadline" max 5 words in ALL CAPS)
+   - Beat 2: "DUAL_CONFRONTATION" (Two figures face-to-face, e.g. krishna + arjuna, shivaji + opponent, or shakuni + duryodhana, with secondCharacter: {"role": "arjuna", "pose": "archer_aiming"})
    - Beat 3: "STRATEGY_MAP_ARENA" (Overview of tactical war map or Chaupar board, pose: "puppeteer_strings")
    - Beat 4: "DOCUMENT_EDICT_UNROLL" (Unrolled ancient decree or parchment rule, pose: "chanakya_pointing")
    - Beat 5: "TENSION_HUD_METER" (Dynamic risk/deceit gauge spiking to 99%, pose: "shock_hands_on_head")
@@ -398,35 +414,32 @@ MANDATES:
   manifestHi.beats = manifestHi.beats.map((b, idx) => {
     const s = scriptData.beats[idx] || {};
     const defaultArchetype = idx === 0 ? 'MACRO_HOOK_PUNCH' :
-                             idx === 1 ? 'DUAL_CONFRONTATION' :
-                             idx === 2 ? 'STRATEGY_MAP_ARENA' :
-                             idx === 3 ? 'DOCUMENT_EDICT_UNROLL' :
-                             idx === 4 ? 'TENSION_HUD_METER' :
-                             idx === 5 ? 'METAPHOR_MONOLITH' :
-                             idx === 6 ? 'CLEAN_SPLIT_DUO' : 'REACTION_CLOSEUP';
+      idx === 1 ? 'DUAL_CONFRONTATION' :
+        idx === 2 ? 'STRATEGY_MAP_ARENA' :
+          idx === 3 ? 'DOCUMENT_EDICT_UNROLL' :
+            idx === 4 ? 'TENSION_HUD_METER' :
+              idx === 5 ? 'METAPHOR_MONOLITH' :
+                idx === 6 ? 'CLEAN_SPLIT_DUO' : 'REACTION_CLOSEUP';
     const chosenArchetype = s.archetype || defaultArchetype;
 
     return {
       ...b,
       title: s.title || b.title,
+      hookHeadline: s.hookHeadline || b.hookHeadline,
       badge: s.badge || 'RULE',
       badgeEmoji: s.badgeEmoji || (isAncient ? '📜' : '🚨'),
       environment: s.environment || b.environment || (isAncient ? 'ancient_palace' : 'modern_finance'),
       heroElement: s.heroElement || b.heroElement || (isAncient ? 'chanakya_scroll' : 'salary_slip_drain'),
       character: {
-        role: s.role || (isAncient ? (chosenArchetype === 'STRATEGY_MAP_ARENA' || chosenArchetype === 'DOCUMENT_EDICT_UNROLL' ? 'chanakya' : 'shakuni') : 'modern_creator'),
-        pose: s.pose || (chosenArchetype === 'MACRO_HOOK_PUNCH' ? 'rolling_dice' :
-                         chosenArchetype === 'DUAL_CONFRONTATION' ? 'whispering_sly' :
-                         chosenArchetype === 'STRATEGY_MAP_ARENA' ? 'puppeteer_strings' :
-                         chosenArchetype === 'DOCUMENT_EDICT_UNROLL' ? 'chanakya_pointing' :
-                         chosenArchetype === 'TENSION_HUD_METER' ? 'shock_hands_on_head' :
-                         chosenArchetype === 'REACTION_CLOSEUP' ? 'shock_hands_on_head' :
-                         (isAncient ? 'chanakya_pointing' : 'holding_phone'))
+        role: s.role || (isAncient ? (chosenArchetype === 'STRATEGY_MAP_ARENA' || chosenArchetype === 'DOCUMENT_EDICT_UNROLL' ? 'chanakya' : 'krishna') : 'modern_creator'),
+        pose: s.pose,
+        face: s.face || s.expression,
+        head: s.head,
+        weapon: s.weapon
       },
       secondCharacter: s.secondCharacter || (chosenArchetype === 'DUAL_CONFRONTATION' ? {
-        role: isAncient ? 'duryodhana' : 'modern_commoner',
-        pose: isAncient ? 'wealth_proud_chest' : 'standing_dazed',
-        face: 'shock_alarm'
+        role: isAncient ? 'arjuna' : 'modern_commoner',
+        pose: isAncient ? 'archer_aiming' : 'standing_dazed'
       } : undefined),
       director_staging: {
         archetype: chosenArchetype

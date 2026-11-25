@@ -12,6 +12,57 @@ import {
   HeroProp,
   StageConnector,
 } from '../components/rigs';
+import {
+  isLegendRole,
+  LegendCharacterRig,
+  LegendExpression,
+  LegendLookAt,
+  LegendPose,
+} from '../components/legends';
+
+function mapToLegendPose(rawPose?: string): LegendPose | undefined {
+  if (!rawPose) return undefined;
+  const p = rawPose.toLowerCase().trim();
+  const valid: LegendPose[] = [
+    'heroic_idle',
+    'guru_updesh',
+    'wielding_chakra',
+    'playing_bansuri',
+    'archer_aiming',
+    'warrior_stance',
+    'holding_scroll',
+    'orator_folded',
+    'chaupar_scheme',
+  ];
+  if (valid.includes(p as LegendPose)) return p as LegendPose;
+  if (p === 'spinning_chakra') return 'wielding_chakra';
+  if (p === 'drawing_bow') return 'archer_aiming';
+  if (p === 'unsheathing_talwar' || p === 'wealth_proud_chest') return 'warrior_stance';
+  if (p === 'chanakya_pointing') return 'holding_scroll';
+  if (p === 'whispering_sly' || p === 'rolling_dice') return 'chaupar_scheme';
+  if (p === 'puppeteer_strings') return 'guru_updesh';
+  return undefined;
+}
+
+function mapToLegendExpression(rawExpr?: string): LegendExpression | undefined {
+  if (!rawExpr) return undefined;
+  const e = rawExpr.toLowerCase().trim();
+  const valid: LegendExpression[] = [
+    'calm_updesh',
+    'focused_aim',
+    'fierce_resolve',
+    'compassionate',
+    'strategic_smirk',
+    'commanding',
+    'orator_fire',
+    'meditative',
+  ];
+  if (valid.includes(e as LegendExpression)) return e as LegendExpression;
+  if (e === 'divine_calm' || e === 'bliss_dreaming') return 'calm_updesh';
+  if (e === 'warrior_focus') return 'focused_aim';
+  if (e === 'cunning_smirk') return 'strategic_smirk';
+  return undefined;
+}
 
 export interface DeclarativeBeatProps {
   beat: any;
@@ -172,17 +223,15 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
 
   const charPose = (() => {
     if (characterSpec.pose) return characterSpec.pose;
+    if (isLegendRole(charRole)) return '';
     if (sceneIndex === 1) return 'shock_hands_on_head';
-    if (isAncient) {
-      if (charRole === 'chanakya') return 'chanakya_pointing';
-      if (charRole === 'shakuni') return 'whispering_sly';
-      return 'wealth_proud_chest';
-    }
+    if (isAncient) return 'standing_dazed';
     return sceneIndex % 2 === 0 ? 'holding_phone' : 'shock_hands_on_head';
   })();
 
   const charFace = (() => {
     if (characterSpec.face) return characterSpec.face;
+    if (isLegendRole(charRole)) return '';
     if (sceneIndex === 1) return 'shock_alarm';
     if (isAncient) return 'dead_inside';
     return sceneIndex % 2 === 0 ? 'dazed_asymmetric' : 'shock_alarm';
@@ -203,9 +252,17 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
 
   // Secondary Character for Confrontation Archetypes
   const secondCharSpec = beat.secondCharacter || {};
-  const secondCharRole = secondCharSpec.role || (isAncient ? (charRole === 'shakuni' ? 'duryodhana' : 'king') : 'modern_commoner');
-  const secondCharPose = secondCharSpec.pose || (isAncient ? 'wealth_proud_chest' : 'standing_dazed');
-  const secondCharFace = secondCharSpec.face || 'shock_alarm';
+  const secondCharRole =
+    secondCharSpec.role ||
+    (isAncient
+      ? charRole === 'shakuni'
+        ? 'duryodhana'
+        : charRole === 'krishna'
+        ? 'arjuna'
+        : 'karna'
+      : 'modern_commoner');
+  const secondCharPose = secondCharSpec.pose || (isLegendRole(secondCharRole) ? '' : isAncient ? 'wealth_proud_chest' : 'standing_dazed');
+  const secondCharFace = secondCharSpec.face || (isLegendRole(secondCharRole) ? '' : 'shock_alarm');
   const secondCharHead = secondCharSpec.head || (isAncient ? 'royal_mukut' : 'slick');
 
   // Badge text & color
@@ -216,6 +273,85 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
     if (isAncient) return '#D97706'; // Royal amber
     return '#EF4444'; // Red alert
   })();
+
+  const beatStartSec = beat.startSec || 0;
+
+  // Dual-Cast Actor Router: Routes Mythological/Historical Heroes to LegendCharacterRig,
+  // while preserving CharacterRig strictly for Everyday Modern / Generic characters.
+  const renderActor = ({
+    role,
+    head,
+    face,
+    pose,
+    weapon,
+    x,
+    y,
+    scale = 1.0,
+    flipHorizontal = false,
+    lookAt = 'center' as LegendLookAt,
+    defaultLegendPose,
+    defaultLegendExpression,
+  }: {
+    role: string;
+    head: string;
+    face: string;
+    pose: string;
+    weapon?: any;
+    x: number;
+    y: number;
+    scale?: number;
+    flipHorizontal?: boolean;
+    lookAt?: LegendLookAt;
+    defaultLegendPose?: LegendPose;
+    defaultLegendExpression?: LegendExpression;
+  }) => {
+    if (isLegendRole(role)) {
+      const effectiveLookAt: LegendLookAt =
+        flipHorizontal && lookAt !== 'center'
+          ? lookAt === 'left'
+            ? 'right'
+            : 'left'
+          : lookAt;
+      const mappedPose = mapToLegendPose(pose) ?? defaultLegendPose;
+      const mappedExpr = mapToLegendExpression(face) ?? defaultLegendExpression;
+
+      return (
+        <LegendCharacterRig
+          legendId={role}
+          pose={mappedPose}
+          expression={mappedExpr}
+          lookAt={effectiveLookAt}
+          weapon={weapon}
+          x={x}
+          y={y - 25}
+          scale={scale * 0.88}
+          flipHorizontal={flipHorizontal}
+          beatWords={beatWords}
+          beatStartSec={beatStartSec}
+          breathing={true}
+          blinking={true}
+        />
+      );
+    }
+
+    return (
+      <CharacterRig
+        era={isAncient ? 'ancient' : 'modern'}
+        role={role}
+        head={head}
+        face={face}
+        pose={pose}
+        x={x}
+        y={y}
+        scale={scale}
+        flipHorizontal={flipHorizontal}
+        breathing={true}
+        blinking={true}
+        armProgress={armProgress}
+        handTug={handTug}
+      />
+    );
+  };
 
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
@@ -350,63 +486,66 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                 ))}
               </svg>
 
-              {/* Character Rig (Large Scale in Background) */}
+              {/* Character Rig (Heroic Legend or Comedy Bean) */}
               <div
                 style={{
                   opacity: charSpring,
                   transform: `translateY(${charSlide}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face="shock_alarm"
-                  pose={isAncient && charRole === 'shakuni' ? 'rolling_dice' : 'shock_hands_on_head'}
-                  x={660}
-                  y={860}
-                  scale={1.42}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: isLegendRole(charRole) ? (characterSpec.face || '') : 'shock_alarm',
+                  pose: isLegendRole(charRole)
+                    ? (characterSpec.pose || '')
+                    : isAncient && charRole === 'shakuni'
+                    ? 'rolling_dice'
+                    : 'shock_hands_on_head',
+                  weapon: characterSpec.weapon,
+                  x: 685,
+                  y: 880,
+                  scale: 1.32,
+                  lookAt: 'left',
+                  defaultLegendExpression: 'commanding',
+                })}
               </div>
 
               {/* Massive Foreground Hero Element Slamming into Camera */}
               <HeroProp
-                type={heroPropType === 'chanakya_scroll' ? (isAncient ? 'shakuni_dice' : 'credit_card_trap') : heroPropType}
-                x={340}
+                type={heroPropType === 'chanakya_scroll' && !isAncient ? 'credit_card_trap' : heroPropType}
+                x={330}
                 y={920}
-                scale={1.65}
+                scale={1.55}
                 shakeIntensity={propSpring * 2.2}
               />
             </>
           ) : archetype === 'DUAL_CONFRONTATION' ? (
             <>
-              {/* Left Character (Schemer / Whisperer) */}
+              {/* Left Actor (Hero / Guru / Strategist) */}
               <div
                 style={{
                   opacity: charSpring,
                   transform: `translateX(${interpolate(charSpring, [0, 1], [-40, 0])}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face="dazed_asymmetric"
-                  pose="whispering_sly"
-                  x={300}
-                  y={980}
-                  scale={1.14}
-                  flipHorizontal={false}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: isLegendRole(charRole) ? (characterSpec.face || '') : 'dazed_asymmetric',
+                  pose: isLegendRole(charRole) ? (characterSpec.pose || '') : 'whispering_sly',
+                  weapon: characterSpec.weapon,
+                  x: 265,
+                  y: 950,
+                  scale: 1.05,
+                  flipHorizontal: false,
+                  lookAt: 'right',
+                  defaultLegendPose: charRole === 'krishna' ? 'guru_updesh' : undefined,
+                  defaultLegendExpression: 'calm_updesh',
+                })}
               </div>
 
-              {/* Central Conspiratorial Energy Spark & Question Mark */}
+              {/* Central Confrontation Energy Spark */}
               <svg
                 width="1080"
                 height="1920"
@@ -414,74 +553,79 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                 fill="none"
                 style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 25 }}
               >
-                {/* Electric Tension Arc connecting their heads */}
                 <path
-                  d="M 360 700 Q 540 640 720 700"
+                  d="M 350 640 Q 540 580 730 640"
                   stroke="#F59E0B"
                   strokeWidth="8"
                   strokeDasharray="16 10"
                   fill="none"
                   opacity={charSpring}
                 />
-                <circle cx="540" cy="670" r="32" fill="#DC2626" stroke="#000000" strokeWidth="6" />
-                <text x="540" y="682" textAnchor="middle" fill="#FFFFFF" fontSize="28" fontWeight="900" fontFamily="sans-serif">
+                <circle cx="540" cy="610" r="30" fill="#DC2626" stroke="#000000" strokeWidth="6" />
+                <text x="540" y="621" textAnchor="middle" fill="#FFFFFF" fontSize="26" fontWeight="900" fontFamily="sans-serif">
                   ⚡
                 </text>
               </svg>
 
-              {/* Right Character (Victim / Target / Partner in Crime) */}
+              {/* Right Actor (Warrior / Counterpart facing Left Actor) */}
               <div
                 style={{
                   opacity: charSpring,
                   transform: `translateX(${interpolate(charSpring, [0, 1], [40, 0])}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={secondCharRole}
-                  head={secondCharHead}
-                  face={secondCharFace}
-                  pose={secondCharPose}
-                  x={780}
-                  y={980}
-                  scale={1.14}
-                  flipHorizontal={true}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: secondCharRole,
+                  head: secondCharHead,
+                  face: isLegendRole(secondCharRole) ? (secondCharSpec.face || '') : secondCharFace,
+                  pose: isLegendRole(secondCharRole) ? (secondCharSpec.pose || '') : secondCharPose,
+                  weapon: secondCharSpec.weapon,
+                  x: 815,
+                  y: 950,
+                  scale: 1.05,
+                  flipHorizontal:
+                    isLegendRole(secondCharRole) &&
+                    (mapToLegendPose(secondCharSpec.pose) === 'archer_aiming' ||
+                      secondCharRole === 'arjuna' ||
+                      secondCharRole === 'karna' ||
+                      secondCharRole === 'rama')
+                      ? false
+                      : true,
+                  lookAt: 'left',
+                  defaultLegendExpression: 'focused_aim',
+                })}
               </div>
             </>
           ) : archetype === 'STRATEGY_MAP_ARENA' ? (
             <>
-              {/* Strategist Character (Hovering Above as Puppet Master / Commander) */}
+              {/* Strategist / Commander Centered Above Map */}
               <div
                 style={{
                   opacity: charSpring,
                   transform: `translateY(${charSlide}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face="dead_inside"
-                  pose="puppeteer_strings"
-                  x={540}
-                  y={680}
-                  scale={1.05}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: isLegendRole(charRole) ? (characterSpec.face || '') : 'dead_inside',
+                  pose: isLegendRole(charRole) ? (characterSpec.pose || '') : 'puppeteer_strings',
+                  weapon: characterSpec.weapon,
+                  x: 540,
+                  y: 660,
+                  scale: 1.0,
+                  lookAt: 'center',
+                  defaultLegendPose: 'guru_updesh',
+                  defaultLegendExpression: 'commanding',
+                })}
               </div>
 
               {/* Big Isometric Tactical Strategy Board / War Map */}
               <HeroProp
                 type={isAncient ? 'ancient_war_map_bharat' : 'desk_laptop_open'}
                 x={540}
-                y={1060}
-                scale={1.55}
+                y={1070}
+                scale={1.5}
                 shakeIntensity={propSpring}
               />
             </>
@@ -529,35 +673,36 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
             </>
           ) : archetype === 'DOCUMENT_EDICT_UNROLL' ? (
             <>
-              {/* Unrolled Grand Edict / Scroll in Center */}
+              {/* Unrolled Grand Edict / Gita Grantha / Scroll on Left */}
               <HeroProp
-                type={isAncient ? 'chanakya_scroll' : 'incident_report_stack'}
-                x={440}
+                type={isAncient ? heroPropType || 'chanakya_scroll' : 'incident_report_stack'}
+                x={390}
                 y={940}
-                scale={1.45}
+                scale={1.36}
                 shakeIntensity={propSpring}
               />
 
-              {/* Character Rig on Right Stamping Authority */}
+              {/* Actor on Right Presenting & Explaining Edict (Flipped inward so arms/weapons never clip right pillar) */}
               <div
                 style={{
                   opacity: charSpring,
                   transform: `translateY(${charSlide}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face="dead_inside"
-                  pose="chanakya_pointing"
-                  x={820}
-                  y={960}
-                  scale={1.12}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: isLegendRole(charRole) ? (characterSpec.face || '') : 'dead_inside',
+                  pose: isLegendRole(charRole) ? 'guru_updesh' : 'chanakya_pointing',
+                  weapon: characterSpec.weapon,
+                  x: 755,
+                  y: 940,
+                  scale: 1.08,
+                  flipHorizontal: isLegendRole(charRole) && !['archer_aiming', 'orator_folded'].includes(mapToLegendPose(characterSpec.pose) || ''),
+                  lookAt: 'left',
+                  defaultLegendPose: 'guru_updesh',
+                  defaultLegendExpression: 'calm_updesh',
+                })}
               </div>
             </>
           ) : archetype === 'TENSION_HUD_METER' ? (
@@ -565,32 +710,32 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
               {/* Tactical Gauge Center-Left */}
               <HeroProp
                 type="tension_gauge_hud"
-                x={380}
+                x={355}
                 y={890}
-                scale={1.48}
+                scale={1.42}
                 shakeIntensity={propSpring * 1.5}
               />
 
-              {/* Alarmed / Scheming Character on Right */}
+              {/* Hero / Reactor on Right facing Left */}
               <div
                 style={{
                   opacity: charSpring,
                   transform: `translateY(${charSlide}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face="shock_alarm"
-                  pose="shock_hands_on_head"
-                  x={780}
-                  y={940}
-                  scale={1.18}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: isLegendRole(charRole) ? (characterSpec.face || '') : 'shock_alarm',
+                  pose: isLegendRole(charRole) ? (characterSpec.pose || '') : 'shock_hands_on_head',
+                  weapon: characterSpec.weapon,
+                  x: 755,
+                  y: 930,
+                  scale: 1.1,
+                  flipHorizontal: isLegendRole(charRole) && !['archer_aiming', 'orator_folded'].includes(mapToLegendPose(characterSpec.pose) || ''),
+                  lookAt: 'left',
+                  defaultLegendExpression: 'fierce_resolve',
+                })}
               </div>
             </>
           ) : archetype === 'REACTION_CLOSEUP' ? (
@@ -607,9 +752,9 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                   <line
                     key={deg}
                     x1="540"
-                    y1="820"
+                    y1="860"
                     x2={540 + 800 * Math.cos((deg * Math.PI) / 180)}
-                    y2={820 + 800 * Math.sin((deg * Math.PI) / 180)}
+                    y2={860 + 800 * Math.sin((deg * Math.PI) / 180)}
                     stroke="#F59E0B"
                     strokeWidth="10"
                     strokeDasharray="60 140"
@@ -624,39 +769,37 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                   transform: `translateY(${charSlide}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face="shock_alarm"
-                  pose="shock_hands_on_head"
-                  x={540}
-                  y={820}
-                  scale={1.62}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: isLegendRole(charRole) ? (characterSpec.face || '') : 'shock_alarm',
+                  pose: isLegendRole(charRole) ? (characterSpec.pose || '') : 'shock_hands_on_head',
+                  weapon: characterSpec.weapon,
+                  x: 540,
+                  y: 920,
+                  scale: 1.28,
+                  lookAt: 'center',
+                  defaultLegendExpression: 'orator_fire',
+                })}
               </div>
 
               {/* Floating Viral Comment Bubbles */}
               <HeroProp
                 type="viral_comment_bubbles"
                 x={540}
-                y={1180}
-                scale={1.15}
+                y={1245}
+                scale={1.12}
                 shakeIntensity={propSpring}
               />
             </>
-          ) :
-          (
+          ) : (
             <>
               {/* Left Stage: Hero Prop */}
               <HeroProp
                 type={heroPropType}
-                x={340}
+                x={335}
                 y={960}
-                scale={1.18}
+                scale={1.15}
                 shakeIntensity={propSpring}
               />
 
@@ -667,28 +810,26 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                   transform: `translateY(${charSlide}px)`,
                 }}
               >
-                <CharacterRig
-                  era={isAncient ? 'ancient' : 'modern'}
-                  role={charRole}
-                  head={charHead}
-                  face={charFace}
-                  pose={charPose}
-                  x={760}
-                  y={940}
-                  scale={1.15}
-                  flipHorizontal={false}
-                  breathing={true}
-                  blinking={true}
-                  armProgress={armProgress}
-                  handTug={handTug}
-                />
+                {renderActor({
+                  role: charRole,
+                  head: charHead,
+                  face: charFace,
+                  pose: charPose,
+                  weapon: characterSpec.weapon,
+                  x: 755,
+                  y: 940,
+                  scale: 1.1,
+                  flipHorizontal: isLegendRole(charRole) && !['archer_aiming', 'orator_folded'].includes(mapToLegendPose(charPose) || ''),
+                  lookAt: 'left',
+                  defaultLegendExpression: 'calm_updesh',
+                })}
               </div>
 
               {/* Dynamic Stage Tethering (Puppet strings / Tension cords) */}
               {(envType === 'puppet_stage_shadow' || heroPropType.includes('puppet') || heroPropType.includes('chain')) && (
                 <StageConnector
                   type={isAncient ? 'puppet_strings' : 'tension_cords'}
-                  fromX={760}
+                  fromX={770}
                   fromY={640}
                   toX={340}
                   toY={860}

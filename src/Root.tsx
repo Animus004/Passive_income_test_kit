@@ -22,6 +22,7 @@ import { TestMascotPreview } from "./scenes/TestMascotPreview";
 import { Whalter3dDioramaStage } from "./components/whalter3d/Whalter3dDioramaStage";
 import { OddlyToldTestShort } from "./scenes/OddlyToldTestShort";
 import { AutonomousPopVectorExplainer } from "./scenes/AutonomousPopVectorExplainer";
+import { LegendGallery } from "./scenes/LegendGallery";
 import { PilotRigScene } from "./scenes/test_pilot/PilotRigScene";
 import { TestNewGenreScene } from "./scenes/test_pilot/TestNewGenreScene";
 import manifestEn from "./data/oddly_manifest_en.json";
@@ -410,6 +411,16 @@ export const RemotionRoot: React.FC = () => {
         id="TestNewGenre"
         component={TestNewGenreScene}
         durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* 16-Hero Indian Legends Visual QA Gallery */}
+      <Composition
+        id="LegendGallery"
+        component={LegendGallery}
+        durationInFrames={40}
         fps={30}
         width={1080}
         height={1920}

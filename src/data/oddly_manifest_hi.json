@@ -1,33 +1,35 @@
 {
   "language": "hi",
-  "totalFrames": 1263,
-  "totalDurationSec": 42.11,
+  "totalFrames": 1402,
+  "totalDurationSec": 46.73,
   "fps": 30,
   "beats": [
     {
       "id": 1,
-      "title": "THE DIVINE WEAPON",
+      "title": "THE FORBIDDEN WEAPON",
       "badge": "RULE 1",
       "badgeEmoji": "📜",
-      "audio_text": "सुदर्शन चक्र योद्धाओं के लिए नहीं, बल्कि युद्ध के नियमों को तोड़ने के लिए बना था।",
+      "audio_text": "कुरुक्षेत्र में ऐसा एक हथियार था जो केवल तभी निकलता, जब सारे राजनीतिक और धार्मिक नियम टूट चुकते।",
       "display_tokens": [
-        "SUDARSHAN",
-        "CHAKRA",
-        "ASLI",
-        "RAHASYA!"
+        "KURUKSHETRA",
+        "MEIN",
+        "EK",
+        "HATHIYAAR",
+        "THA"
       ],
       "environment": "ancient_palace",
       "heroElement": "sudarshan_chakra_divine",
       "role": "krishna",
       "archetype": "MACRO_HOOK_PUNCH",
       "startSec": 0.06,
-      "durationSec": 5.14,
+      "durationSec": 7.55,
       "startFrame": 2,
-      "durationInFrames": 158,
-      "endFrame": 160,
+      "durationInFrames": 231,
+      "endFrame": 233,
+      "hookHeadline": "SUDARSHAN: THE LAST CARD",
       "character": {
         "role": "krishna",
-        "pose": "spinning_chakra"
+        "pose": "wielding_chakra"
       },
       "director_staging": {
         "archetype": "MACRO_HOOK_PUNCH"
@@ -35,33 +37,33 @@
     },
     {
       "id": 2,
-      "title": "THE STRATEGIC INSTRUCTION",
+      "title": "GURU VS DISCIPLE",
       "badge": "RULE 2",
-      "badgeEmoji": "🏹",
-      "audio_text": "कृष्ण ने अर्जुन को सिखाया कि धनुष और तीर ही असली शक्ति है, चक्र तब तक नहीं।",
+      "badgeEmoji": "⚔️",
+      "audio_text": "कृष्ण ने अर्जुन को सिखाया कि चक्रा देवताओं का हथियार है, सामान्य सैनिकों के लिए नहीं।",
       "display_tokens": [
         "KRISHNA",
+        "NE",
         "ARJUNA",
         "KO",
-        "SICHA",
-        "DIYA"
+        "SIKHAYA"
       ],
       "environment": "durbar_throne_room",
-      "heroElement": "gandiva_bow_arrow",
+      "heroElement": "sudarshan_chakra_divine",
       "role": "krishna",
       "archetype": "DUAL_CONFRONTATION",
-      "startSec": 5.34,
-      "durationSec": 5.91,
-      "startFrame": 160,
-      "durationInFrames": 181,
-      "endFrame": 341,
+      "startSec": 7.75,
+      "durationSec": 5.58,
+      "startFrame": 232,
+      "durationInFrames": 172,
+      "endFrame": 404,
       "character": {
         "role": "krishna",
-        "pose": "divine_calm"
+        "pose": "guru_updesh"
       },
       "secondCharacter": {
         "role": "arjuna",
-        "pose": "drawing_bow"
+        "pose": "archer_aiming"
       },
       "director_staging": {
         "archetype": "DUAL_CONFRONTATION"
@@ -69,29 +71,29 @@
     },
     {
       "id": 3,
-      "title": "THE BATTLE MAP",
+      "title": "TACTICAL MAP",
       "badge": "RULE 3",
       "badgeEmoji": "🗺️",
-      "audio_text": "कुरुक्षेत्र का मैदान एक चेपार था, जहाँ हर कदम की गणना की गई थी।",
+      "audio_text": "यह केवल युद्ध नहीं था, यह एक ऐसे मैदान का खेल था जहाँ नियम बनाए गए थे।",
       "display_tokens": [
-        "KURUKSHETRA",
-        "KA",
-        "MAIDAN",
-        "CHAUPIR",
-        "THA"
+        "YUDDH",
+        "NAHI",
+        "THA",
+        "RAJNITIKA",
+        "CHEES"
       ],
       "environment": "chaupar_board_arena",
       "heroElement": "ancient_war_map_bharat",
       "role": "krishna",
       "archetype": "STRATEGY_MAP_ARENA",
-      "startSec": 11.38,
-      "durationSec": 4.44,
-      "startFrame": 341,
-      "durationInFrames": 138,
-      "endFrame": 479,
+      "startSec": 13.47,
+      "durationSec": 5.66,
+      "startFrame": 404,
+      "durationInFrames": 174,
+      "endFrame": 578,
       "character": {
         "role": "krishna",
-        "pose": "puppeteer_strings"
+        "pose": "chaupar_scheme"
       },
       "director_staging": {
         "archetype": "STRATEGY_MAP_ARENA"
@@ -101,27 +103,27 @@
       "id": 4,
       "title": "THE CODE OF WAR",
       "badge": "RULE 4",
-      "badgeEmoji": "📜",
-      "audio_text": "धर्म के नियमों में था कि चक्र केवल देवताओं या विशेष स्थिति में ही उपयोग हो।",
+      "badgeEmoji": "📖",
+      "audio_text": "धर्म के अनुसार, अस्त्रों का प्रयोग तभी जब सामान्य हथियार अप्रभावी हो जाते।",
       "display_tokens": [
         "DHARM",
         "KE",
-        "NIYAM",
-        "CHAKRA",
-        "LIMITED"
+        "ANUSAR",
+        "ASTRA",
+        "PRAYOG"
       ],
       "environment": "temple_vault",
       "heroElement": "holy_bhagavad_gita_scroll",
       "role": "krishna",
       "archetype": "DOCUMENT_EDICT_UNROLL",
-      "startSec": 15.96,
-      "durationSec": 4.73,
-      "startFrame": 479,
-      "durationInFrames": 146,
-      "endFrame": 625,
+      "startSec": 19.26,
+      "durationSec": 5.36,
+      "startFrame": 578,
+      "durationInFrames": 165,
+      "endFrame": 743,
       "character": {
         "role": "krishna",
-        "pose": "chanakya_pointing"
+        "pose": "holding_scroll"
       },
       "director_staging": {
         "archetype": "DOCUMENT_EDICT_UNROLL"
@@ -132,25 +134,26 @@
       "title": "TENSION PEAKS",
       "badge": "RULE 5",
       "badgeEmoji": "⚠️",
-      "audio_text": "जब युद्ध का स्तर आसमान छू गया, तब ही चक्र का प्रयोग ज़रूरी हुआ।",
+      "audio_text": "जब युद्ध में अनैतिक तर्क आते, तब तनाव का स्तर 99% पर पहुँच जाता।",
       "display_tokens": [
-        "TENSION",
-        "99%",
-        "CHAKRA",
-        "READY"
+        "ANAITIK",
+        "TARK",
+        "AATE",
+        "TANAAB",
+        "99%"
       ],
       "environment": "subterranean_dungeon_vault",
       "heroElement": "tension_gauge_hud",
       "role": "krishna",
       "archetype": "TENSION_HUD_METER",
-      "startSec": 20.84,
-      "durationSec": 4.44,
-      "startFrame": 625,
-      "durationInFrames": 137,
-      "endFrame": 762,
+      "startSec": 24.76,
+      "durationSec": 5.45,
+      "startFrame": 743,
+      "durationInFrames": 168,
+      "endFrame": 911,
       "character": {
         "role": "krishna",
-        "pose": "shock_hands_on_head"
+        "pose": "warrior_stance"
       },
       "director_staging": {
         "archetype": "TENSION_HUD_METER"
@@ -158,28 +161,29 @@
     },
     {
       "id": 6,
-      "title": "THE SYMBOLIC WEIGHT",
+      "title": "SYMBOLIC POWER",
       "badge": "RULE 6",
-      "badgeEmoji": "⚖️",
-      "audio_text": "चक्र का घूमना सत्ता के संतुलन को डोला दिया, जो साधारण हथियारों से संभव नहीं था।",
+      "badgeEmoji": "🏛️",
+      "audio_text": "सुदर्शन चक्रा का प्रयोग यानी धर्म की अंतिम रक्षा, एक विशाल प्रतीक।",
       "display_tokens": [
-        "BALANCE",
-        "TIPPED",
+        "SUDARSHAN",
         "CHAKRA",
-        "POWER"
+        "PRAYOG",
+        "DHARM",
+        "RAKSHA"
       ],
       "environment": "puppet_stage_shadow",
-      "heroElement": "weighing_scales_deceit",
+      "heroElement": "sudarshan_chakra_divine",
       "role": "krishna",
       "archetype": "METAPHOR_MONOLITH",
-      "startSec": 25.41,
-      "durationSec": 5.49,
-      "startFrame": 762,
-      "durationInFrames": 169,
-      "endFrame": 931,
+      "startSec": 30.35,
+      "durationSec": 4.7,
+      "startFrame": 910,
+      "durationInFrames": 145,
+      "endFrame": 1055,
       "character": {
         "role": "krishna",
-        "pose": "divine_calm"
+        "pose": "wielding_chakra"
       },
       "director_staging": {
         "archetype": "METAPHOR_MONOLITH"
@@ -187,29 +191,29 @@
     },
     {
       "id": 7,
-      "title": "THE TACTICAL ADVISORY",
+      "title": "TACTICAL ADVICE",
       "badge": "RULE 7",
       "badgeEmoji": "🎯",
-      "audio_text": "कृष्ण ने समझाया कि अंतिम हथियार का उपयोग केवल निर्णायक क्षण में ही किया जाए।",
+      "audio_text": "कृष्ण का सलाह था: हमेशा सबसे कम आक्रामक विकल्प चुनें, अंतिम विकल्प असली हथियार है।",
       "display_tokens": [
-        "LAST",
-        "RESORT",
-        "ONLY",
-        "DECISIVE",
-        "MOMENT"
+        "KRISHNA",
+        "KA",
+        "SALAAH",
+        "THA",
+        "CHUNEN"
       ],
       "environment": "ancient_palace",
       "heroElement": "sudarshan_chakra_divine",
       "role": "krishna",
       "archetype": "CLEAN_SPLIT_DUO",
-      "startSec": 31.05,
-      "durationSec": 4.83,
-      "startFrame": 932,
-      "durationInFrames": 149,
-      "endFrame": 1081,
+      "startSec": 35.2,
+      "durationSec": 6.39,
+      "startFrame": 1056,
+      "durationInFrames": 196,
+      "endFrame": 1252,
       "character": {
         "role": "krishna",
-        "pose": "divine_calm"
+        "pose": "guru_updesh"
       },
       "director_staging": {
         "archetype": "CLEAN_SPLIT_DUO"
@@ -217,29 +221,29 @@
     },
     {
       "id": 8,
-      "title": "THE FINAL QUESTION",
+      "title": "DEBATE QUESTION",
       "badge": "RULE 8",
       "badgeEmoji": "❓",
-      "audio_text": "तो सवाल यह है: क्या सुदर्शन चक्र कभी भी उपयोग किया जा सकता था, या सिर्फ़ ज़रूरत में?",
+      "audio_text": "आप क्या मानते हैं? क्या कभी भी अंतिम हथियार का इस्तेमाल करना उचित होता है?",
       "display_tokens": [
-        "KAHI",
+        "KYA",
+        "KABHI",
         "BHI",
-        "YA",
-        "ZAROORAT",
-        "ME?"
+        "ANTIM",
+        "HATHIYAAR"
       ],
       "environment": "durbar_throne_room",
       "heroElement": "sudarshan_chakra_divine",
       "role": "krishna",
       "archetype": "REACTION_CLOSEUP",
-      "startSec": 36.01,
-      "durationSec": 5.85,
-      "startFrame": 1080,
-      "durationInFrames": 183,
-      "endFrame": 1263,
+      "startSec": 41.72,
+      "durationSec": 4.75,
+      "startFrame": 1252,
+      "durationInFrames": 150,
+      "endFrame": 1402,
       "character": {
         "role": "krishna",
-        "pose": "spinning_chakra"
+        "pose": "orator_folded"
       },
       "director_staging": {
         "archetype": "REACTION_CLOSEUP"
@@ -248,189 +252,204 @@
   ],
   "words": [
     {
-      "word": "SUDARSHAN",
-      "start": 0.06,
-      "end": 1.77
-    },
-    {
-      "word": "CHAKRA",
-      "start": 1.77,
-      "end": 2.91
-    },
-    {
-      "word": "ASLI",
-      "start": 2.92,
-      "end": 3.68
-    },
-    {
-      "word": "RAHASYA!",
-      "start": 3.68,
-      "end": 5.2
-    },
-    {
-      "word": "KRISHNA",
-      "start": 5.34,
-      "end": 7.06
-    },
-    {
-      "word": "ARJUNA",
-      "start": 7.06,
-      "end": 8.54
-    },
-    {
-      "word": "KO",
-      "start": 8.54,
-      "end": 9.03
-    },
-    {
-      "word": "SICHA",
-      "start": 9.03,
-      "end": 10.26
-    },
-    {
-      "word": "DIYA",
-      "start": 10.27,
-      "end": 11.25
-    },
-    {
       "word": "KURUKSHETRA",
-      "start": 11.38,
-      "end": 13.06
+      "start": 0.06,
+      "end": 2.92
     },
     {
-      "word": "KA",
-      "start": 13.06,
-      "end": 13.37
+      "word": "MEIN",
+      "start": 2.92,
+      "end": 3.96
     },
     {
-      "word": "MAIDAN",
-      "start": 13.37,
-      "end": 14.29
+      "word": "EK",
+      "start": 3.97,
+      "end": 4.49
     },
     {
-      "word": "CHAUPIR",
-      "start": 14.29,
-      "end": 15.36
+      "word": "HATHIYAAR",
+      "start": 4.49,
+      "end": 6.83
     },
     {
       "word": "THA",
-      "start": 15.36,
-      "end": 15.82
+      "start": 6.83,
+      "end": 7.61
+    },
+    {
+      "word": "KRISHNA",
+      "start": 7.75,
+      "end": 9.38
+    },
+    {
+      "word": "NE",
+      "start": 9.38,
+      "end": 9.85
+    },
+    {
+      "word": "ARJUNA",
+      "start": 9.84,
+      "end": 11.23
+    },
+    {
+      "word": "KO",
+      "start": 11.24,
+      "end": 11.71
+    },
+    {
+      "word": "SIKHAYA",
+      "start": 11.7,
+      "end": 13.33
+    },
+    {
+      "word": "YUDDH",
+      "start": 13.47,
+      "end": 14.56
+    },
+    {
+      "word": "NAHI",
+      "start": 14.56,
+      "end": 15.43
+    },
+    {
+      "word": "THA",
+      "start": 15.43,
+      "end": 16.08
+    },
+    {
+      "word": "RAJNITIKA",
+      "start": 16.08,
+      "end": 18.04
+    },
+    {
+      "word": "CHEES",
+      "start": 18.04,
+      "end": 19.13
     },
     {
       "word": "DHARM",
-      "start": 15.96,
-      "end": 16.91
+      "start": 19.26,
+      "end": 20.38
     },
     {
       "word": "KE",
-      "start": 16.91,
-      "end": 17.29
+      "start": 20.38,
+      "end": 20.83
     },
     {
-      "word": "NIYAM",
-      "start": 17.28,
-      "end": 18.23
+      "word": "ANUSAR",
+      "start": 20.82,
+      "end": 22.16
     },
     {
-      "word": "CHAKRA",
-      "start": 18.23,
-      "end": 19.37
+      "word": "ASTRA",
+      "start": 22.16,
+      "end": 23.28
     },
     {
-      "word": "LIMITED",
-      "start": 19.37,
-      "end": 20.69
+      "word": "PRAYOG",
+      "start": 23.28,
+      "end": 24.62
     },
     {
-      "word": "TENSION",
-      "start": 20.84,
-      "end": 22.32
+      "word": "ANAITIK",
+      "start": 24.76,
+      "end": 26.35
+    },
+    {
+      "word": "TARK",
+      "start": 26.35,
+      "end": 27.26
+    },
+    {
+      "word": "AATE",
+      "start": 27.26,
+      "end": 28.17
+    },
+    {
+      "word": "TANAAB",
+      "start": 28.17,
+      "end": 29.53
     },
     {
       "word": "99%",
-      "start": 22.32,
-      "end": 22.95
+      "start": 29.53,
+      "end": 30.21
+    },
+    {
+      "word": "SUDARSHAN",
+      "start": 30.35,
+      "end": 31.67
     },
     {
       "word": "CHAKRA",
-      "start": 22.95,
-      "end": 24.22
+      "start": 31.67,
+      "end": 32.55
     },
     {
-      "word": "READY",
-      "start": 24.22,
-      "end": 25.28
+      "word": "PRAYOG",
+      "start": 32.55,
+      "end": 33.43
     },
     {
-      "word": "BALANCE",
-      "start": 25.41,
-      "end": 27.01
+      "word": "DHARM",
+      "start": 33.43,
+      "end": 34.16
     },
     {
-      "word": "TIPPED",
-      "start": 27.01,
-      "end": 28.38
+      "word": "RAKSHA",
+      "start": 34.17,
+      "end": 35.05
     },
     {
-      "word": "CHAKRA",
-      "start": 28.38,
-      "end": 29.75
+      "word": "KRISHNA",
+      "start": 35.2,
+      "end": 37.06
     },
     {
-      "word": "POWER",
-      "start": 29.76,
-      "end": 30.9
+      "word": "KA",
+      "start": 37.06,
+      "end": 37.59
     },
     {
-      "word": "LAST",
-      "start": 31.05,
-      "end": 31.74
+      "word": "SALAAH",
+      "start": 37.6,
+      "end": 39.2
     },
     {
-      "word": "RESORT",
-      "start": 31.74,
-      "end": 32.77
+      "word": "THA",
+      "start": 39.19,
+      "end": 39.99
     },
     {
-      "word": "ONLY",
-      "start": 32.77,
-      "end": 33.46
+      "word": "CHUNEN",
+      "start": 39.99,
+      "end": 41.59
     },
     {
-      "word": "DECISIVE",
-      "start": 33.46,
-      "end": 34.84
+      "word": "KYA",
+      "start": 41.72,
+      "end": 42.29
     },
     {
-      "word": "MOMENT",
-      "start": 34.84,
-      "end": 35.88
-    },
-    {
-      "word": "KAHI",
-      "start": 36.01,
-      "end": 37.18
+      "word": "KABHI",
+      "start": 42.29,
+      "end": 43.24
     },
     {
       "word": "BHI",
-      "start": 37.18,
-      "end": 38.06
+      "start": 43.24,
+      "end": 43.81
     },
     {
-      "word": "YA",
-      "start": 38.06,
-      "end": 38.65
+      "word": "ANTIM",
+      "start": 43.81,
+      "end": 44.76
     },
     {
-      "word": "ZAROORAT",
-      "start": 38.64,
-      "end": 40.98
-    },
-    {
-      "word": "ME?",
-      "start": 40.98,
-      "end": 41.86
+      "word": "HATHIYAAR",
+      "start": 44.76,
+      "end": 46.47
     }
   ]
 }
