@@ -25,8 +25,10 @@ import {
   uploadPhase1Instagram,
   uploadPhase1Facebook,
   getInstagramPublishingLimit,
+  getYouTubeRefreshTokenAgeDays,
+  checkMetaTokenHealth,
 } from './publish_phase1.js';
-import { sendTelegramReelAlert } from './telegram_notifier.js';
+import { sendTelegramReelAlert, sendTelegramText } from './telegram_notifier.js';
 import { google } from 'googleapis';
 
 ensureWorkspaceAndEnv();
@@ -104,6 +106,9 @@ export async function dispatchScheduledPublishes({
   }
 
   let scheduledCount = 0;
+  let youtubePausedForReauth = false;
+  let socialDispatchedThisTick = false;
+
   for (const job of readyJobs) {
     if (!job.video_path || !fs.existsSync(job.video_path)) {
       console.warn(`⚠️ Skipping job ${job.id}: video missing at ${job.video_path}`);
@@ -115,110 +120,148 @@ export async function dispatchScheduledPublishes({
       ? `${job.title_hinglish || job.topic_text} | ${job.title_hi}`
       : job.topic_text;
 
-    try {
-      const ytRes = await uploadPhase1YouTube({
-        videoPath: job.video_path,
-        title,
-        description: job.description_hi || job.topic_text,
-        publishAt: isDryRun ? null : publishAtIso,
-        isDryRun,
-      });
-
-      if (!isDryRun && ytRes.success) {
-        db.prepare(
-          `INSERT INTO uploads (job_id, platform, stream_md5, remote_id, remote_url, scheduled_publish_at, status, attempts)
-           VALUES (?, 'youtube', ?, ?, ?, ?, 'scheduled', 1)
-           ON CONFLICT(job_id, platform) DO UPDATE SET
-             remote_id = excluded.remote_id,
-             remote_url = excluded.remote_url,
-             scheduled_publish_at = excluded.scheduled_publish_at,
-             status = 'scheduled',
-             attempts = attempts + 1,
-             last_error = NULL,
-             updated_at = datetime('now')`
-        ).run(job.id, job.stream_md5, ytRes.videoId, ytRes.url, publishAtIso);
-
-        db.prepare(`UPDATE jobs SET status = 'published', updated_at = datetime('now') WHERE id = ?`).run(job.id);
-        scheduledCount++;
-      }
-    } catch (err) {
-      const msg = String(err.message || '');
-      const isReauth = msg.includes('YOUTUBE_REAUTH_REQUIRED') || msg.includes('invalid_grant');
-      console.error(`❌ YouTube dispatch error [${job.id}]: ${msg}`);
-      db.prepare(
-        `INSERT OR REPLACE INTO uploads (job_id, platform, stream_md5, scheduled_publish_at, status, attempts, last_error)
-         VALUES (?, 'youtube', ?, ?, ?, 1, ?)`
-      ).run(job.id, job.stream_md5, publishAtIso, isReauth ? 'pending_retry' : 'failed', msg);
-
-      if (isReauth) {
-        const botToken = process.env.TELEGRAM_BOT_TOKEN;
-        const chatId = process.env.TELEGRAM_CHAT_ID;
-        if (botToken && chatId) {
-          try {
-            await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                chat_id: chatId,
-                text: `🔑 YouTube 7-Day Testing Token Expired!\nYour videos are safely buffered in D:\\factory_workspace\\ready.\nRun once on PC: npm run auth:phase1`,
-              }),
-            });
-          } catch (_) {}
-        }
-        break;
-      }
-    }
-
-    // Immediate Meta Social Dispatch (only 1 per window when triggered during an active publish window)
-    if (publishSocialNow && scheduledCount === 1) {
-      const igQuota = await getInstagramPublishingLimit();
-      if (igQuota.available) {
-        try {
-          const igRes = await uploadPhase1Instagram({
-            videoPath: job.video_path,
-            caption: job.title_hi || title,
-            isDryRun,
-          });
-          if (!isDryRun && igRes.success) {
-            db.prepare(
-              `INSERT OR IGNORE INTO uploads (job_id, platform, stream_md5, remote_id, status, attempts)
-               VALUES (?, 'instagram', ?, ?, 'published', 1)`
-            ).run(job.id, job.stream_md5, igRes.id);
-          }
-        } catch (igErr) {
-          console.warn(`⚠️ IG publish failed, sending Telegram fallback: ${igErr.message}`);
-          await sendTelegramReelAlert({
-            videoPath: job.video_path,
-            title,
-            caption: `${job.title_hi || title}\n\n#Reels #HindiShorts #IndianHistory`,
-            reason: igErr.message,
-            platform: 'Instagram',
-          });
-        }
-      } else {
-        console.log(`⏳ Instagram 24h limit reached (${igQuota.quotaUsage}/${igQuota.quotaTotal}). Skipping IG.`);
-      }
-
+    if (!youtubePausedForReauth) {
       try {
-        const fbRes = await uploadPhase1Facebook({
+        const ytRes = await uploadPhase1YouTube({
           videoPath: job.video_path,
-          title: job.title_hi || title,
-          description: job.description_hi || '',
+          title,
+          description: job.description_hi || job.topic_text,
+          publishAt: isDryRun ? null : publishAtIso,
           isDryRun,
         });
-        if (!isDryRun && fbRes.success) {
+
+        if (!isDryRun && ytRes.success) {
           db.prepare(
-            `INSERT OR IGNORE INTO uploads (job_id, platform, stream_md5, remote_id, status, attempts)
-             VALUES (?, 'facebook', ?, ?, 'published', 1)`
-          ).run(job.id, job.stream_md5, fbRes.videoId);
+            `INSERT INTO uploads (job_id, platform, stream_md5, remote_id, remote_url, scheduled_publish_at, status, attempts)
+             VALUES (?, 'youtube', ?, ?, ?, ?, 'scheduled', 1)
+             ON CONFLICT(job_id, platform) DO UPDATE SET
+               remote_id = excluded.remote_id,
+               remote_url = excluded.remote_url,
+               scheduled_publish_at = excluded.scheduled_publish_at,
+               status = 'scheduled',
+               attempts = attempts + 1,
+               last_error = NULL,
+               updated_at = datetime('now')`
+          ).run(job.id, job.stream_md5, ytRes.videoId, ytRes.url, publishAtIso);
+
+          db.prepare(`UPDATE jobs SET status = 'published', updated_at = datetime('now') WHERE id = ?`).run(job.id);
+          scheduledCount++;
         }
-      } catch (fbErr) {
-        console.warn(`⚠️ Facebook Reel notice: ${fbErr.message}`);
+      } catch (err) {
+        const msg = String(err.message || '');
+        const isReauth = msg.includes('YOUTUBE_REAUTH_REQUIRED') || msg.includes('invalid_grant');
+        console.error(`❌ YouTube dispatch error [${job.id}]: ${msg}`);
+        db.prepare(
+          `INSERT OR REPLACE INTO uploads (job_id, platform, stream_md5, scheduled_publish_at, status, attempts, last_error)
+           VALUES (?, 'youtube', ?, ?, ?, 1, ?)`
+        ).run(job.id, job.stream_md5, publishAtIso, isReauth ? 'pending_retry' : 'failed', msg);
+
+        if (isReauth) {
+          youtubePausedForReauth = true;
+          await sendTelegramText(
+            `🔑 YouTube 7-Day Testing Token Expired!\nAll ready Shorts remain buffered safely in D:\\factory_workspace\\ready.\nRun once on PC: npm run auth:phase1`,
+            { cooldownKey: 'yt_reauth', cooldownMs: 12 * 3600 * 1000 }
+          );
+        }
       }
     }
+
+    // Decoupled Meta Social Dispatch (runs cleanly even if YouTube is awaiting 7-day re-auth!)
+    if (publishSocialNow && !socialDispatchedThisTick) {
+      socialDispatchedThisTick = true;
+      const alreadyIg = db
+        .prepare(`SELECT id FROM uploads WHERE job_id = ? AND platform = 'instagram' AND status = 'published'`)
+        .get(job.id);
+
+      if (!alreadyIg) {
+        const igQuota = await getInstagramPublishingLimit();
+        if (igQuota.available) {
+          try {
+            const igRes = await uploadPhase1Instagram({
+              videoPath: job.video_path,
+              caption: job.title_hi || title,
+              isDryRun,
+            });
+            if (!isDryRun && igRes.success) {
+              db.prepare(
+                `INSERT OR IGNORE INTO uploads (job_id, platform, stream_md5, remote_id, status, attempts)
+                 VALUES (?, 'instagram', ?, ?, 'published', 1)`
+              ).run(job.id, job.stream_md5, igRes.id);
+            }
+          } catch (igErr) {
+            const igMsg = String(igErr.message || '');
+            console.warn(`⚠️ IG publish failed: ${igMsg}`);
+            if (igMsg.includes('OAuthException') || igMsg.includes('"code":190')) {
+              await sendTelegramText(
+                `🔑 Instagram Access Token Expired (60-Day Limit)!\nUpdate INSTAGRAM_ACCESS_TOKEN in .env.`,
+                { cooldownKey: 'meta_reauth', cooldownMs: 12 * 3600 * 1000 }
+              );
+            }
+            await sendTelegramReelAlert({
+              videoPath: job.video_path,
+              title,
+              caption: `${job.title_hi || title}\n\n#Reels #HindiShorts #IndianHistory`,
+              reason: igMsg,
+              platform: 'Instagram',
+            });
+          }
+        } else {
+          console.log(`⏳ Instagram 24h limit reached (${igQuota.quotaUsage}/${igQuota.quotaTotal}). Skipping IG.`);
+        }
+      }
+
+      const alreadyFb = db
+        .prepare(`SELECT id FROM uploads WHERE job_id = ? AND platform = 'facebook' AND status = 'published'`)
+        .get(job.id);
+      if (!alreadyFb) {
+        try {
+          const fbRes = await uploadPhase1Facebook({
+            videoPath: job.video_path,
+            title: job.title_hi || title,
+            description: job.description_hi || '',
+            isDryRun,
+          });
+          if (!isDryRun && fbRes.success) {
+            db.prepare(
+              `INSERT OR IGNORE INTO uploads (job_id, platform, stream_md5, remote_id, status, attempts)
+               VALUES (?, 'facebook', ?, ?, 'published', 1)`
+            ).run(job.id, job.stream_md5, fbRes.videoId);
+          }
+        } catch (fbErr) {
+          console.warn(`⚠️ Facebook Reel notice: ${fbErr.message}`);
+        }
+      }
+    }
+
+    if (youtubePausedForReauth) break;
   }
 
-  return { scheduled: scheduledCount };
+  return { scheduled: scheduledCount, youtubePausedForReauth };
+}
+
+/**
+ * Daily proactive token monitor: pings Telegram on Day 6 before YouTube's 7-day
+ * Testing refresh token expires, and verifies Meta Graph token health.
+ */
+export async function checkWeeklyAuthHealth() {
+  const ageDays = getYouTubeRefreshTokenAgeDays();
+  if (ageDays !== null && ageDays >= 5.5) {
+    await sendTelegramText(
+      `🗓️ Proactive Day-${Math.floor(ageDays) + 1} Reminder: YouTube 7-day Testing token will expire soon.\nRun ` +
+        `npm run auth:phase1 anytime today for zero upload downtime!`,
+      { cooldownKey: 'yt_day6_warn', cooldownMs: 20 * 3600 * 1000 }
+    );
+  }
+
+  const metaHealth = await checkMetaTokenHealth();
+  if (!metaHealth.ok && metaHealth.isOAuth) {
+    await sendTelegramText(
+      `🔑 Meta/Instagram Access Token Expired (${metaHealth.message}). Please refresh INSTAGRAM_ACCESS_TOKEN in .env.`,
+      { cooldownKey: 'meta_reauth', cooldownMs: 12 * 3600 * 1000 }
+    );
+  }
+
+  return { ytTokenAgeDays: ageDays, metaOk: metaHealth.ok };
 }
 
 /**
@@ -241,7 +284,16 @@ export async function syncAnalyticsFeedback() {
     return { synced: 0 };
   }
 
-  const auth = await getYouTubeClient();
+  let auth;
+  try {
+    auth = await getYouTubeClient();
+  } catch (err) {
+    if (String(err.message || '').includes('YOUTUBE_REAUTH_REQUIRED')) {
+      console.warn('⚠️ Analytics sync skipped cleanly: awaiting 7-day YouTube re-auth.');
+      return { synced: 0, reauthRequired: true };
+    }
+    throw err;
+  }
   const youtube = google.youtube({ version: 'v3', auth });
   const ids = rows.map((r) => r.remote_id);
 
@@ -298,8 +350,15 @@ export function pruneArchivedWorkspaceMedia(retentionDays = 7) {
     )
     .all(`-${retentionDays} days`);
 
+  const oldDeadLetters = db
+    .prepare(
+      `SELECT id, video_path, job_dir FROM jobs
+       WHERE status = 'dead_letter' AND updated_at < datetime('now', ?)`
+    )
+    .all(`-${retentionDays} days`);
+
   let pruned = 0;
-  for (const item of oldUploaded) {
+  for (const item of [...oldUploaded, ...oldDeadLetters]) {
     try {
       if (item.video_path && fs.existsSync(item.video_path)) fs.unlinkSync(item.video_path);
       if (item.job_dir && fs.existsSync(item.job_dir)) fs.rmSync(item.job_dir, { recursive: true, force: true });
@@ -307,7 +366,7 @@ export function pruneArchivedWorkspaceMedia(retentionDays = 7) {
     } catch (_) {}
   }
 
-  if (pruned > 0) console.log(`🧹 [HYGIENE] Pruned ${pruned} archived >${retentionDays}-day jobs from D:\\factory_workspace.`);
+  if (pruned > 0) console.log(`🧹 [HYGIENE] Pruned ${pruned} archived/stale >${retentionDays}-day jobs from D:\\factory_workspace.`);
   return pruned;
 }
 

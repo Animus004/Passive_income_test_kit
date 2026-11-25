@@ -55,7 +55,11 @@ export async function getYouTubeClient() {
     try {
       const { credentials } = await oauth2Client.refreshAccessToken();
       oauth2Client.setCredentials(credentials);
-      const updated = { ...tokens, ...credentials };
+      const updated = {
+        ...tokens,
+        ...credentials,
+        refreshTokenIssuedAt: tokens.refreshTokenIssuedAt || null,
+      };
       fs.writeFileSync(TOKEN_PATH, JSON.stringify(updated, null, 2));
       console.log('✅ YouTube access token refreshed.');
     } catch (err) {
@@ -67,6 +71,41 @@ export async function getYouTubeClient() {
   }
 
   return oauth2Client;
+}
+
+/**
+ * Returns age in fractional days since `tokens.json` refresh token was minted,
+ * or null if not yet stamped by auth_phase1.js.
+ */
+export function getYouTubeRefreshTokenAgeDays() {
+  if (!fs.existsSync(TOKEN_PATH)) return null;
+  try {
+    const tokens = JSON.parse(fs.readFileSync(TOKEN_PATH, 'utf8'));
+    if (!tokens.refreshTokenIssuedAt) return null;
+    return Number(((Date.now() - tokens.refreshTokenIssuedAt) / (24 * 3600 * 1000)).toFixed(2));
+  } catch (_) {
+    return null;
+  }
+}
+
+/**
+ * Lightweight Meta IG + FB token validity check (detects 60-day token expiry).
+ */
+export async function checkMetaTokenHealth() {
+  const igUserId = process.env.INSTAGRAM_USER_ID;
+  const igToken = process.env.INSTAGRAM_ACCESS_TOKEN || process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
+  if (!igUserId || !igToken) return { ok: true, skipped: true };
+  try {
+    const res = await fetch(`https://graph.facebook.com/v21.0/${igUserId}?fields=id,username&access_token=${igToken}`);
+    const data = await res.json();
+    if (data?.error) {
+      const isOAuth = data.error.code === 190 || data.error.type === 'OAuthException';
+      return { ok: false, isOAuth, message: data.error.message || 'Meta token error' };
+    }
+    return { ok: true, username: data.username || igUserId };
+  } catch (e) {
+    return { ok: false, isOAuth: false, message: e.message };
+  }
 }
 
 /**

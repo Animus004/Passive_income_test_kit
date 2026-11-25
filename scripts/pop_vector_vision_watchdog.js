@@ -181,40 +181,46 @@ Respond strictly in valid JSON matching this exact structure:
 
   // OpenRouter Multimodal Fallback for Watchdog
   if (process.env.OPENROUTER_API_KEY) {
-    try {
-      console.log('   👀 [WATCHDOG FAILOVER] Engaging OpenRouter Vision (nvidia/nemotron-3.5-super-vl:free)...');
-      const orRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        signal: AbortSignal.timeout(30000),
-        body: JSON.stringify({
-          model: 'nvidia/nemotron-3.5-super-vl:free',
-          messages: [
-            {
-              role: 'user',
-              content: [
-                { type: 'text', text: prompt + '\nRespond strictly with raw valid JSON.' },
-                { type: 'image_url', image_url: { url: `data:image/jpeg;base64,${base64Data}` } }
-              ]
-            }
-          ]
-        })
-      });
+    const orCooldownUntil = globalThis.__visionQuotaCooldown?.openrouter || 0;
+    if (Date.now() >= orCooldownUntil) {
+      try {
+        console.log('   👀 [WATCHDOG FAILOVER] Engaging OpenRouter Vision (nvidia/nemotron-3.5-super-vl:free)...');
+        const orRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          signal: AbortSignal.timeout(25000),
+          body: JSON.stringify({
+            model: 'nvidia/nemotron-3.5-super-vl:free',
+            messages: [
+              {
+                role: 'user',
+                content: [
+                  { type: 'text', text: prompt + '\nRespond strictly with raw valid JSON.' },
+                  { type: 'image_url', image_url: { url: `data:image/jpeg;base64,${base64Data}` } }
+                ]
+              }
+            ]
+          })
+        });
 
-      if (orRes.ok) {
-        const orData = await orRes.json();
-        const text = orData.choices?.[0]?.message?.content || '';
-        const orStart = text.indexOf('{');
-        const orEnd = text.lastIndexOf('}');
-        if (orStart !== -1 && orEnd !== -1 && orEnd > orStart) {
-          return JSON.parse(text.slice(orStart, orEnd + 1));
+        if (orRes.ok) {
+          const orData = await orRes.json();
+          const text = orData.choices?.[0]?.message?.content || '';
+          const orStart = text.indexOf('{');
+          const orEnd = text.lastIndexOf('}');
+          if (orStart !== -1 && orEnd !== -1 && orEnd > orStart) {
+            return JSON.parse(text.slice(orStart, orEnd + 1));
+          }
+        } else if (orRes.status === 429 || orRes.status >= 500) {
+          globalThis.__visionQuotaCooldown.openrouter = Date.now() + 3 * 60 * 1000;
         }
+      } catch (orErr) {
+        globalThis.__visionQuotaCooldown.openrouter = Date.now() + 3 * 60 * 1000;
+        console.warn(`   ⚠️ OpenRouter vision watchdog fallback failed: ${orErr.message?.slice(0, 80)}`);
       }
-    } catch (orErr) {
-      console.warn(`   ⚠️ OpenRouter vision watchdog fallback failed: ${orErr.message?.slice(0, 80)}`);
     }
   }
 

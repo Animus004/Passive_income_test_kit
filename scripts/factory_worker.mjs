@@ -37,6 +37,7 @@ import {
 } from './pop_script_generator.mjs';
 import { auditOddlyVideo, getVideoStreamMD5 } from './oddly_watchdog.js';
 import { auditPopVectorStill } from './pop_vector_vision_watchdog.js';
+import { sendTelegramText } from './telegram_notifier.js';
 
 // Redirect temp directories immediately BEFORE initializing Chromium/Remotion
 ensureWorkspaceAndEnv();
@@ -340,19 +341,6 @@ async function evaluateRenderedJob(db, jobId, topicText, era, videoPath, manifes
   };
 }
 
-async function sendTelegramAlertSafe(message) {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) return;
-  try {
-    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text: message }),
-    });
-  } catch (_) {}
-}
-
 /**
  * Executes one complete stateless job from topic selection -> TTS -> NVENC Render -> QA Heal -> Ready Buffer.
  */
@@ -498,7 +486,7 @@ async function produceSingleJob(db, ctx, options = {}) {
         qaResult?.reason || 'Unknown QA rejection',
         jobId
       );
-      await sendTelegramAlertSafe(`⚠️ Factory Dead-Letter [${jobId}]\nTopic: ${topicRow.topic_text}\nReason: ${qaResult?.reason}`);
+      await sendTelegramText(`⚠️ Factory Dead-Letter [${jobId}]\nTopic: ${topicRow.topic_text}\nReason: ${qaResult?.reason}`);
       console.error(`❌ [DEAD LETTER] ${jobId}: ${qaResult?.reason}`);
       return { success: false, jobId, reason: qaResult?.reason };
     }
@@ -527,7 +515,7 @@ async function produceSingleJob(db, ctx, options = {}) {
       err.message,
       jobId
     );
-    await sendTelegramAlertSafe(`💥 Factory Worker Error [${jobId}]: ${err.message}`);
+    await sendTelegramText(`💥 Factory Worker Error [${jobId}]: ${err.message}`);
     console.error(`💥 [JOB FAILED ${jobId}]`, err);
     return { success: false, jobId, reason: err.message };
   }

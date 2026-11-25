@@ -9,7 +9,7 @@ import http from 'http';
 import url from 'url';
 import { google } from 'googleapis';
 import { fileURLToPath } from 'url';
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -77,10 +77,23 @@ async function main() {
 
         console.log('📥 Authorization code received! Exchanging for tokens...');
         const { tokens } = await oauth2Client.getToken(code);
-        oauth2Client.setCredentials(tokens);
+        const enrichedTokens = {
+          ...tokens,
+          refreshTokenIssuedAt: Date.now(),
+        };
+        oauth2Client.setCredentials(enrichedTokens);
 
-        fs.writeFileSync(TOKEN_PATH, JSON.stringify(tokens, null, 2));
-        console.log(`💾 Saved fresh credentials to: ${TOKEN_PATH}`);
+        fs.writeFileSync(TOKEN_PATH, JSON.stringify(enrichedTokens, null, 2));
+        console.log(`💾 Saved fresh credentials to: ${TOKEN_PATH} (7-day cycle timer reset)`);
+
+        // Clear any pending Telegram re-auth cooldown locks so future warnings reset cleanly
+        const ytLock = 'D:\\factory_workspace\\locks\\tg_cooldown_yt_reauth.json';
+        const ytWarnLock = 'D:\\factory_workspace\\locks\\tg_cooldown_yt_day6_warn.json';
+        for (const lf of [ytLock, ytWarnLock]) {
+          if (fs.existsSync(lf)) {
+            try { fs.unlinkSync(lf); } catch (_) {}
+          }
+        }
 
         // Verify connected channel info
         const youtube = google.youtube({ version: 'v3', auth: oauth2Client });
@@ -99,6 +112,17 @@ async function main() {
           console.log('===============================================================\n');
         } else {
           console.log('✅ Tokens verified!');
+        }
+
+        // Immediately flush any backlogged buffered Shorts waiting in D:\factory_workspace\ready
+        try {
+          console.log('🚀 Checking D:\\factory_workspace\\ready for any backlogged Shorts to schedule...');
+          execSync('node --no-warnings scripts/factory_orchestrator.mjs --mode publish', {
+            cwd: PROJECT_ROOT,
+            stdio: 'inherit',
+          });
+        } catch (flushErr) {
+          console.warn('⚠️ Post-auth flush notice:', flushErr.message);
         }
 
         server.close();

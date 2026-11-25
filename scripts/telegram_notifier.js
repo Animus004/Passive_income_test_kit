@@ -293,12 +293,56 @@ async function sendTelegramReelAlert({
   }
 }
 
+/**
+ * Sends a plain/HTML Telegram alert with optional file-backed cooldown throttling
+ * so recurring automation ticks never spam duplicate reminders.
+ */
+async function sendTelegramText(text, { cooldownKey = null, cooldownMs = 0, parseMode = null } = {}) {
+  const config = getTelegramConfig();
+  if (!config || !text) return { ok: false, skipped: true };
+
+  let lockPath = null;
+  if (cooldownKey && cooldownMs > 0) {
+    const lockDir = fs.existsSync('D:\\factory_workspace\\locks')
+      ? 'D:\\factory_workspace\\locks'
+      : path.join(PROJECT_ROOT, 'scratch');
+    lockPath = path.join(lockDir, `tg_cooldown_${cooldownKey}.json`);
+    if (fs.existsSync(lockPath)) {
+      try {
+        const meta = JSON.parse(fs.readFileSync(lockPath, 'utf-8'));
+        if (Date.now() - (meta.sentAt || 0) < cooldownMs) {
+          return { ok: true, throttled: true };
+        }
+      } catch (_) {}
+    }
+  }
+
+  try {
+    const body = { chat_id: config.chatId, text };
+    if (parseMode) body.parse_mode = parseMode;
+    const res = await fetch(`https://api.telegram.org/bot${config.botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (data.ok && lockPath) {
+      fs.mkdirSync(path.dirname(lockPath), { recursive: true });
+      fs.writeFileSync(lockPath, JSON.stringify({ sentAt: Date.now() }));
+    }
+    return data;
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
 export {
   getTelegramConfig,
   probeVideoMetadata,
   createVideoThumbnail,
   prepareVideoForTelegram,
   sendTelegramReelAlert,
+  sendTelegramText,
   escapeHtml,
 };
 
@@ -308,5 +352,6 @@ export default {
   createVideoThumbnail,
   prepareVideoForTelegram,
   sendTelegramReelAlert,
+  sendTelegramText,
   escapeHtml,
 };

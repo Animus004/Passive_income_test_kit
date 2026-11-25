@@ -17,8 +17,10 @@ import { runFactoryBufferBatch } from './factory_worker.mjs';
 import {
   dispatchScheduledPublishes,
   syncAnalyticsFeedback,
+  checkWeeklyAuthHealth,
   pruneArchivedWorkspaceMedia,
 } from './publish_dispatcher.mjs';
+import { getYouTubeRefreshTokenAgeDays } from './publish_phase1.js';
 import { ensureTopicMatrixSeeded } from './topic_matrix_engine.mjs';
 
 ensureWorkspaceAndEnv();
@@ -33,6 +35,8 @@ function printStatus() {
   const publishedJobs = db.prepare("SELECT COUNT(*) as c FROM jobs WHERE status = 'published'").get().c;
   const dlqJobs = db.prepare("SELECT COUNT(*) as c FROM jobs WHERE status = 'dead_letter'").get().c;
   const scheduledYt = db.prepare("SELECT COUNT(*) as c FROM uploads WHERE platform = 'youtube' AND status = 'scheduled'").get().c;
+  const pendingRetryYt = db.prepare("SELECT COUNT(*) as c FROM uploads WHERE platform = 'youtube' AND status = 'pending_retry'").get().c;
+  const ytTokenAge = getYouTubeRefreshTokenAgeDays();
 
   console.log('===============================================================');
   console.log('🏭 PHASE 1 AUTONOMOUS 1,000+ VIDEO FACTORY — LIVE STATUS');
@@ -42,6 +46,8 @@ function printStatus() {
   console.log(`🧠 Topic Matrix      : ${unusedTopics} unused / ${totalTopics} total coherent seeds`);
   console.log(`🎞️ Ready Buffer      : ${readyJobs} QA-verified MP4s ready in ${PATHS.ready}`);
   console.log(`📅 YouTube Scheduled : ${scheduledYt} queued ahead (Option A: 3/day spaced IST)`);
+  if (pendingRetryYt > 0) console.log(`⏳ Pending Re-Auth   : ${pendingRetryYt} job(s) waiting in buffer`);
+  if (ytTokenAge !== null) console.log(`🔑 YouTube OAuth Age : ${ytTokenAge} / 7.0 days`);
   console.log(`🚀 Total Published   : ${publishedJobs}`);
   console.log(`⚠️ Dead-Letter Queue : ${dlqJobs}`);
   console.log('===============================================================');
@@ -79,6 +85,7 @@ async function main() {
   }
 
   if (mode === 'analytics') {
+    await checkWeeklyAuthHealth();
     await syncAnalyticsFeedback();
     pruneArchivedWorkspaceMedia(7);
     printStatus();
@@ -86,6 +93,7 @@ async function main() {
   }
 
   if (mode === 'daily') {
+    await checkWeeklyAuthHealth();
     await runFactoryBufferBatch({ targetBuffer: 6 });
     await dispatchScheduledPublishes({ maxYouTubeSchedules: 3, publishSocialNow: withSocial, isDryRun });
     try { await syncAnalyticsFeedback(); } catch (_) {}
