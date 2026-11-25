@@ -34,7 +34,7 @@ const HISTORY_PATH = path.join(PROJECT_ROOT, 'data', 'upload_history.json');
 /**
  * YouTube OAuth2 Client Initialization & Token Auto-Refresh
  */
-async function getYouTubeClient() {
+export async function getYouTubeClient() {
   if (!fs.existsSync(TOKEN_PATH) || !fs.existsSync(SECRET_PATH)) {
     throw new Error('Phase 1 YouTube credentials not found (tokens.json or client_secret.json missing).');
   }
@@ -69,10 +69,19 @@ async function getYouTubeClient() {
 /**
  * 1. Upload to YouTube Shorts (English Master)
  */
-export async function uploadPhase1YouTube({ videoPath, title, description, tags = [], isDryRun = false }) {
+export async function uploadPhase1YouTube({
+  videoPath,
+  title,
+  description,
+  tags = [],
+  privacyStatus = null,
+  publishAt = null,
+  isDryRun = false,
+}) {
   console.log('\n======================================================');
-  console.log('🎬 [PHASE 1 YOUTUBE] Uploading to "Focus Fuel Shorts"...');
+  console.log('🎬 [PHASE 1 YOUTUBE] Uploading to Channel...');
   console.log(`🎯 Video: ${path.basename(videoPath)}`);
+  if (publishAt) console.log(`📅 Scheduled PublishAt: ${publishAt}`);
   console.log('======================================================');
 
   const authClient = await getYouTubeClient();
@@ -89,21 +98,25 @@ export async function uploadPhase1YouTube({ videoPath, title, description, tags 
   const finalTitle = cleanTitle.includes('#Shorts') ? cleanTitle : `${cleanTitle} #Shorts`;
 
   const videoStream = fs.createReadStream(videoPath);
-  const fileSize = fs.statSync(videoPath).size;
+  const resolvedPrivacy = publishAt ? 'private' : (privacyStatus || 'public');
+  const statusPayload = {
+    privacyStatus: resolvedPrivacy,
+    selfDeclaredMadeForKids: false,
+  };
+  if (publishAt) {
+    statusPayload.publishAt = publishAt;
+  }
 
   const res = await youtube.videos.insert({
     part: ['snippet', 'status'],
     requestBody: {
       snippet: {
         title: finalTitle,
-        description: `${description || title}\n\n#Shorts #FocusFuel #OddlyTold #Psychology #BrainHacks #Animation`,
-        tags: ['shorts', 'oddly told', 'brain facts', 'animation', 'science', ...tags],
+        description: `${description || title}\n\n#Shorts #OddlyTold #IndianHistory #Strategy #Mindset #Animation`,
+        tags: ['shorts', 'oddly told', 'indian strategy', 'chanakya', 'mahabharata', 'animation', ...tags],
         categoryId: '27', // Education
       },
-      status: {
-        privacyStatus: 'public',
-        selfDeclaredMadeForKids: false,
-      },
+      status: statusPayload,
     },
     media: {
       body: videoStream,
@@ -112,8 +125,28 @@ export async function uploadPhase1YouTube({ videoPath, title, description, tags 
 
   const videoId = res.data.id;
   const ytUrl = `https://youtube.com/shorts/${videoId}`;
-  console.log(`🚀 [YOUTUBE SUCCESS] Published! ${ytUrl}`);
-  return { success: true, platform: 'YouTube', videoId, url: ytUrl };
+  console.log(`🚀 [YOUTUBE SUCCESS] ${publishAt ? `Scheduled (${publishAt})` : 'Published'}! ${ytUrl}`);
+  return { success: true, platform: 'YouTube', videoId, url: ytUrl, scheduledPublishAt: publishAt || null };
+}
+
+/**
+ * Checks Instagram 24-hour rolling Graph API publishing quota before creating containers
+ */
+export async function getInstagramPublishingLimit() {
+  const igUserId = process.env.INSTAGRAM_USER_ID;
+  const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN || process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
+  if (!igUserId || !accessToken) return { available: false, reason: 'missing_credentials' };
+  try {
+    const res = await fetch(`https://graph.facebook.com/v21.0/${igUserId}/content_publishing_limit?fields=quota_usage,config&access_token=${accessToken}`);
+    const data = await res.json();
+    const item = data?.data?.[0];
+    if (!item) return { available: true, quotaUsage: 0, quotaTotal: 100 };
+    const total = item.config?.quota_total ?? 100;
+    const used = item.quota_usage ?? 0;
+    return { available: used < total, quotaUsage: used, quotaTotal: total };
+  } catch (e) {
+    return { available: true, warning: e.message };
+  }
 }
 
 /**

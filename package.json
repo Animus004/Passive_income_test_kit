@@ -52,6 +52,10 @@
     "oddly:daily": "node scripts/run_oddly_autonomous.js",
     "oddly:schedule": "powershell -ExecutionPolicy Bypass -File scripts/setup_phase1_scheduler.ps1",
     "oddly:watchdog": "node scripts/oddly_watchdog.js",
+    "factory:status": "node --no-warnings scripts/factory_orchestrator.mjs --mode status",
+    "factory:produce": "node --no-warnings scripts/factory_orchestrator.mjs --mode produce",
+    "factory:publish": "node --no-warnings scripts/factory_orchestrator.mjs --mode publish --social",
+    "factory:schedule": "powershell -ExecutionPolicy Bypass -File scripts/setup_phase1_scheduler.ps1",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"

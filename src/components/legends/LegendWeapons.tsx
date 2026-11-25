@@ -48,7 +48,7 @@ export const LegendWeapon: React.FC<WeaponRenderProps> = ({ weapon, frame, fps, 
 
     case 'bansuri':
       return (
-        <g id="weapon_bansuri" transform="translate(-88, -14) rotate(-8)">
+        <g id="weapon_bansuri" transform="translate(-130, -34) rotate(-5)">
           <rect x="-135" y="-7" width="270" height="14" rx="5" fill="#D97706" stroke={ink} strokeWidth="3" />
           <rect x="-125" y="-7" width="12" height="14" fill="#FDE047" />
           <rect x="108" y="-7" width="12" height="14" fill="#FDE047" />

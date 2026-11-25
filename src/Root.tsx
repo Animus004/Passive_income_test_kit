@@ -387,7 +387,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{ language: 'en' as const }}
       />
 
-      {/* 2D Autonomous Pop-Vector Engine (True AI Visual Coder + Vision Watchdog with Eyes) */}
+      {/* 2D Autonomous Pop-Vector Engine (Stateless inputProps + Fallback Manifest) */}
       <Composition
         id="AutonomousPopVector"
         component={AutonomousPopVectorExplainer}
@@ -396,6 +396,10 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{ language: 'en' as const }}
+        calculateMetadata={({ props }: { props: any }) => {
+          const frames = props?.manifest?.totalFrames || manifestEn.totalFrames || 1120;
+          return { durationInFrames: Math.max(90, Math.round(frames)) };
+        }}
       />
       <Composition
         id="AutonomousPopVectorHi"
@@ -405,6 +409,10 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{ language: 'hi' as const }}
+        calculateMetadata={({ props }: { props: any }) => {
+          const frames = props?.manifest?.totalFrames || manifestHi.totalFrames || 1220;
+          return { durationInFrames: Math.max(90, Math.round(frames)) };
+        }}
       />
       {/* 4-Slot Daily Genre & Rig Verification Composition */}
       <Composition

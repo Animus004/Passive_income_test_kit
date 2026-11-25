@@ -139,6 +139,7 @@ export async function auditOddlyVideo({
   manifestPath,
   language = 'en',
   topicTitle = 'Oddly Told Short',
+  skipVisionGate = false,
 }) {
   console.log('\n===============================================================');
   console.log(`🛡️ [ODDLY WATCHDOG] Running Quality Audit: [${language.toUpperCase()}]`);
@@ -293,6 +294,7 @@ export async function auditOddlyVideo({
   }
 
   // Gate 7: Multimodal Vision Quality Audit (Gemini Multimodal Eyes on Rendered Keyframes)
+  if (!skipVisionGate) {
   fs.mkdirSync(AUDIT_DIR, { recursive: true });
   const keyframes = [
     { sec: '00:00:02.000', name: `audit_${language}_hook.jpg`, label: 'Hook (Scene 1)' },
@@ -363,6 +365,7 @@ export async function auditOddlyVideo({
 
   report.checks.push({ gate: 'VISUAL_AUDIT', passed: true, detail: `${framesExtracted} keyframes passed Multimodal Vision Inspection` });
   console.log(`✅ Gate 7 PASSED: Multimodal Vision Inspection verified all keyframes.`);
+  }
 
   // Gate 8: Scene Diversity & Layout Entropy Guard
   if (manifestPath && fs.existsSync(manifestPath)) {

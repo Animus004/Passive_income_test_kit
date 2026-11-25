@@ -107,6 +107,28 @@ PHONETIC_REPLACEMENTS = [
     (r'\bNotification\b|\bnotification\b', "नोटिफ़िकेशन"),
     (r'\bNotifications\b|\bnotifications\b', "नोटिफ़िकेशन्स"),
     (r'\bBrain\b|\bbrain\b', "दिमाग"),
+    # Iconic Indian Legends & Lore Phonetic Clarifiers
+    (r'\bKurukshetra\b', "कुरुक्षेत्र"),
+    (r'\bSudarshan\b', "सुदर्शन"),
+    (r'\bGandiva\b', "गांडीव"),
+    (r'\bChanakya\b', "चाणक्य"),
+    (r'\bChhatrapati\b', "छत्रपति"),
+    (r'\bShivaji\b', "शिवाजी"),
+    (r'\bMaharana Pratap\b|\bPratap\b', "महाराणा प्रताप"),
+    (r'\bLakshmibai\b', "लक्ष्मीबाई"),
+    (r'\bVivekananda\b', "विवेकानंद"),
+    (r'\bDuryodhana\b', "दुर्योधन"),
+    (r'\bShakuni\b', "शकुनि"),
+    (r'\bBhishma\b', "भीष्म"),
+    (r'\bAshoka\b', "अशोक"),
+    (r'\bArjuna\b|\bArjun\b', "अर्जुन"),
+    (r'\bKarna\b|\bKarn\b', "कर्ण"),
+    (r'\bHanuman\b', "हनुमान"),
+    (r'\bRavana\b|\bRavan\b', "रावण"),
+    (r'\bMahabharata\b|\bMahabharat\b', "महाभारत"),
+    (r'\bRamayana\b|\bRamayan\b', "रामायण"),
+    (r'\bDwarka\b', "द्वारका"),
+    (r'\bHaldighati\b', "हल्दीघाटी"),
 ]
 
 def normalize_hindi_text(text):
@@ -344,17 +366,24 @@ async def synthesize_edge_hindi_beat(text, beat_id, voice="hi-IN-MadhurNeural", 
 # -------------------------------------------------------------
 gemini_tts_disabled = False
 
-async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="piper"):
+async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="piper", job_dir=None, mood="epic"):
     """
     Synthesizes complete master audio & manifest for either English or Hindi.
+    When `job_dir` is provided, all intermediate WAVs, final MP3, and JSON manifest
+    stay strictly isolated inside `job_dir` (stateless worker safe).
     """
-    global gemini_tts_disabled
+    global gemini_tts_disabled, SCRATCH_DIR
     fps = 30
     lead_in_sec = 0.06
     pause_sec = 0.14
     outro_sec = 0.25
 
-    print(f"\n🎙️ [SYNTHESIZER] Generating {lang_code.upper()} Audio (Hindi Engine: {hindi_engine})...")
+    work_dir = os.path.join(job_dir, "audio_work") if job_dir else SCRATCH_DIR
+    os.makedirs(work_dir, exist_ok=True)
+    if job_dir:
+        SCRATCH_DIR = work_dir
+
+    print(f"\n🎙️ [SYNTHESIZER] Generating {lang_code.upper()} Audio (Engine: {hindi_engine}, Mood: {mood})...")
     wav_files = []
     beat_durations = []
     beat_raw_words = []
@@ -512,7 +541,7 @@ async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="pi
     # Multi-Beat Procedural Sound Design Engine (Zero-Latency NumPy Staging)
     # -------------------------------------------------------------
     ambient_mp3 = os.path.join(PROJECT_ROOT, "public", "ambient.mp3").replace("\\", "/")
-    master_mp3 = os.path.join(PROJECT_ROOT, "public", f"oddly_master_{lang_code}.mp3")
+    master_mp3 = os.path.join(job_dir, f"master_{lang_code}.mp3") if job_dir else os.path.join(PROJECT_ROOT, "public", f"oddly_master_{lang_code}.mp3")
 
     sfx_dir = os.path.join(PROJECT_ROOT, "public", "sfx")
     sfx_files = {
@@ -602,9 +631,16 @@ async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="pi
         "acompressor=threshold=-18dB:ratio=3.5:attack=8:release=60:makeup=2.8dB"
     )
 
+    mood_bg_filter = {
+        "epic": "equalizer=f=90:width_type=o:width=1.4:g=4.5,lowpass=f=3000,volume=0.075",
+        "mystery": "asetrate=44100*0.86,aresample=48000,lowpass=f=2200,volume=0.072",
+        "strategy": "equalizer=f=140:width_type=o:width=1.2:g=3.0,lowpass=f=3600,volume=0.068",
+        "modern": "highpass=f=180,volume=0.065",
+    }.get(mood, "volume=0.065")
+
     filter_complex = (
         f"[0:a]{vocal_mastering}[vocal];"
-        f"[1:a]volume=0.065[bg];"
+        f"[1:a]{mood_bg_filter}[bg];"
         f"[2:a]volume=0.90[sfx];"
         f"[vocal][bg][sfx]amix=inputs=3:duration=first:dropout_transition=0:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=10[aout]"
     )
@@ -628,15 +664,21 @@ async def synthesize_oddly_channel(script_data, lang_code="en", hindi_engine="pi
         "totalFrames": total_frames,
         "totalDurationSec": round(full_dur, 2),
         "fps": fps,
+        "mood": mood,
         "beats": manifest_beats,
         "words": all_words
     }
 
-    manifest_dest = os.path.join(PROJECT_ROOT, "src", "data", f"oddly_manifest_{lang_code}.json")
+    manifest_dest = os.path.join(job_dir, f"manifest_{lang_code}.json") if job_dir else os.path.join(PROJECT_ROOT, "src", "data", f"oddly_manifest_{lang_code}.json")
     with open(manifest_dest, "w", encoding="utf-8") as f:
         json.dump(manifest_data, f, indent=2, ensure_ascii=False)
 
-    print(f"✅ {lang_code.upper()} Master Audio & Manifest Generated ({full_dur:.2f}s, {total_frames} frames)!")
+    # Clean up intermediate WAVs in stateless job mode to keep D: storage lean
+    if job_dir:
+        import shutil
+        shutil.rmtree(work_dir, ignore_errors=True)
+
+    print(f"✅ {lang_code.upper()} Master Audio & Manifest Generated ({full_dur:.2f}s, {total_frames} frames) -> {manifest_dest}")
     return manifest_data
 
 if __name__ == "__main__":
@@ -645,6 +687,8 @@ if __name__ == "__main__":
     parser.add_argument("--script", required=True, help="Path to json script file")
     parser.add_argument("--lang", default="all", choices=["en", "hi", "all"])
     parser.add_argument("--hindi-engine", default="piper", choices=["piper", "cartesia", "elevenlabs", "edge"], help="Hindi speech engine (piper is 100% free offline local)")
+    parser.add_argument("--job-dir", default=None, help="Isolated output directory for stateless factory worker")
+    parser.add_argument("--mood", default="epic", choices=["epic", "mystery", "strategy", "modern"], help="Era-appropriate ambient mastering preset")
     args = parser.parse_args()
 
     with open(args.script, "r", encoding="utf-8") as f:
@@ -652,8 +696,8 @@ if __name__ == "__main__":
 
     if args.lang in ["en", "all"]:
         en_script = data["en"] if "en" in data else data
-        asyncio.run(synthesize_oddly_channel(en_script, "en", hindi_engine=args.hindi_engine))
+        asyncio.run(synthesize_oddly_channel(en_script, "en", hindi_engine=args.hindi_engine, job_dir=args.job_dir, mood=args.mood))
 
     if args.lang in ["hi", "all"]:
         hi_script = data["hi"] if "hi" in data else data
-        asyncio.run(synthesize_oddly_channel(hi_script, "hi", hindi_engine=args.hindi_engine))
+        asyncio.run(synthesize_oddly_channel(hi_script, "hi", hindi_engine=args.hindi_engine, job_dir=args.job_dir, mood=args.mood))

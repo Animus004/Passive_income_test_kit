@@ -137,8 +137,11 @@ Respond strictly in valid JSON matching this exact structure:
 
   const roles = ['showrunner', 'coder', 'debugger'];
   let lastErr = null;
+  globalThis.__visionQuotaCooldown = globalThis.__visionQuotaCooldown || {};
 
   for (const role of roles) {
+    const cooldownUntil = globalThis.__visionQuotaCooldown[role] || 0;
+    if (Date.now() < cooldownUntil) continue;
     try {
       const { client, model } = getClientForRole(role);
       const response = await client.models.generateContent({
@@ -168,7 +171,11 @@ Respond strictly in valid JSON matching this exact structure:
       return JSON.parse(raw.trim());
     } catch (err) {
       lastErr = err;
-      console.warn(`   ⚠️ Watchdog inspection attempt on role "${role}" failed: ${err.message?.slice(0, 80)}. Retrying next...`);
+      const msg = err.message || '';
+      if (msg.includes('429') || msg.toLowerCase().includes('quota')) {
+        globalThis.__visionQuotaCooldown[role] = Date.now() + 5 * 60 * 1000;
+      }
+      console.warn(`   ⚠️ Watchdog inspection attempt on role "${role}" failed: ${msg.slice(0, 80)}. Retrying next...`);
     }
   }
 
@@ -182,6 +189,7 @@ Respond strictly in valid JSON matching this exact structure:
           'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
           'Content-Type': 'application/json'
         },
+        signal: AbortSignal.timeout(30000),
         body: JSON.stringify({
           model: 'nvidia/nemotron-3.5-super-vl:free',
           messages: [

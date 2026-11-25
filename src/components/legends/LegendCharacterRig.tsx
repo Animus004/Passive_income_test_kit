@@ -44,7 +44,13 @@ export const LegendCharacterRig: React.FC<LegendCharacterRigProps> = ({
 
   const pose = explicitPose ?? profile.defaultPose;
   const expression = explicitExpression ?? profile.defaultExpression;
-  const weapon = explicitWeapon ?? profile.defaultWeapon;
+  const weapon =
+    explicitWeapon ??
+    (pose === 'playing_bansuri'
+      ? 'bansuri'
+      : pose === 'holding_scroll'
+      ? 'arthashastra_scroll'
+      : profile.defaultWeapon);
 
   // Breathing cadence & natural organic head bob
   const breathY = breathing ? Math.sin((frame / fps) * Math.PI * 1.6) * 4 : 0;

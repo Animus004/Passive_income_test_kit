@@ -8,14 +8,19 @@ import manifestHi from "../data/oddly_manifest_hi.json";
 
 export interface AutonomousPopVectorExplainerProps {
   language?: "en" | "hi";
+  manifest?: any;
+  audioSrc?: string;
 }
 
 export const AutonomousPopVectorExplainer: React.FC<AutonomousPopVectorExplainerProps> = ({
   language = "hi",
+  manifest: manifestOverride,
+  audioSrc,
 }) => {
   const isHindi = language === "hi";
-  const manifest = isHindi ? manifestHi : manifestEn;
-  const audioFile = isHindi ? "oddly_master_hi.mp3" : "oddly_master_en.mp3";
+  const manifest = manifestOverride || (isHindi ? manifestHi : manifestEn);
+  const resolvedAudio =
+    audioSrc || staticFile(isHindi ? "oddly_master_hi.mp3" : "oddly_master_en.mp3");
   const beats = manifest?.beats || [];
   const words = manifest?.words || [];
 
@@ -29,7 +34,7 @@ export const AutonomousPopVectorExplainer: React.FC<AutonomousPopVectorExplainer
       }}
     >
       {/* Master Audio Track (Voiceover + Multi-Beat Foley SFX) */}
-      <Audio src={staticFile(audioFile)} volume={1.0} />
+      <Audio src={resolvedAudio} volume={1.0} />
 
       {/* High-Contrast Frame Border (Oddly Told / Kurzgesagt Aesthetic) */}
       <div

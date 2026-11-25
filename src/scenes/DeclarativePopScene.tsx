@@ -258,8 +258,8 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
       ? charRole === 'shakuni'
         ? 'duryodhana'
         : charRole === 'krishna'
-        ? 'arjuna'
-        : 'karna'
+          ? 'arjuna'
+          : 'karna'
       : 'modern_commoner');
   const secondCharPose = secondCharSpec.pose || (isLegendRole(secondCharRole) ? '' : isAncient ? 'wealth_proud_chest' : 'standing_dazed');
   const secondCharFace = secondCharSpec.face || (isLegendRole(secondCharRole) ? '' : 'shock_alarm');
@@ -500,23 +500,24 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                   pose: isLegendRole(charRole)
                     ? (characterSpec.pose || '')
                     : isAncient && charRole === 'shakuni'
-                    ? 'rolling_dice'
-                    : 'shock_hands_on_head',
+                      ? 'rolling_dice'
+                      : 'shock_hands_on_head',
                   weapon: characterSpec.weapon,
-                  x: 685,
-                  y: 880,
-                  scale: 1.32,
+                  x: 765,
+                  y: 910,
+                  scale: 1.12,
+                  flipHorizontal: isLegendRole(charRole) && !['archer_aiming', 'orator_folded'].includes(mapToLegendPose(characterSpec.pose) || ''),
                   lookAt: 'left',
                   defaultLegendExpression: 'commanding',
                 })}
               </div>
 
-              {/* Massive Foreground Hero Element Slamming into Camera */}
+              {/* Massive Foreground Hero Element Slamming into Camera with Clean 90px Buffer */}
               <HeroProp
                 type={heroPropType === 'chanakya_scroll' && !isAncient ? 'credit_card_trap' : heroPropType}
-                x={330}
-                y={920}
-                scale={1.55}
+                x={300}
+                y={940}
+                scale={1.18}
                 shakeIntensity={propSpring * 2.2}
               />
             </>
@@ -585,10 +586,10 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                   scale: 1.05,
                   flipHorizontal:
                     isLegendRole(secondCharRole) &&
-                    (mapToLegendPose(secondCharSpec.pose) === 'archer_aiming' ||
-                      secondCharRole === 'arjuna' ||
-                      secondCharRole === 'karna' ||
-                      secondCharRole === 'rama')
+                      (mapToLegendPose(secondCharSpec.pose) === 'archer_aiming' ||
+                        secondCharRole === 'arjuna' ||
+                        secondCharRole === 'karna' ||
+                        secondCharRole === 'rama')
                       ? false
                       : true,
                   lookAt: 'left',
@@ -776,8 +777,8 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
                   pose: isLegendRole(charRole) ? (characterSpec.pose || '') : 'shock_hands_on_head',
                   weapon: characterSpec.weapon,
                   x: 540,
-                  y: 920,
-                  scale: 1.28,
+                  y: 860,
+                  scale: 1.18,
                   lookAt: 'center',
                   defaultLegendExpression: 'orator_fire',
                 })}
@@ -787,8 +788,8 @@ export const DeclarativePopScene: React.FC<DeclarativeBeatProps> = ({
               <HeroProp
                 type="viral_comment_bubbles"
                 x={540}
-                y={1245}
-                scale={1.12}
+                y={1265}
+                scale={0.96}
                 shakeIntensity={propSpring}
               />
             </>

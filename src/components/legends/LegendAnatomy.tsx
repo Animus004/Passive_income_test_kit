@@ -46,10 +46,10 @@ export function getPoseKinematics(
 
     case 'playing_bansuri':
       return {
-        leftArm: { upperDeg: -124, foreDeg: 102, handMode: 'mudra' },
-        rightArm: { upperDeg: 124, foreDeg: -102, handMode: 'mudra' },
+        leftArm: { upperDeg: -80 + sway * 0.3, foreDeg: 135, handMode: 'mudra' },
+        rightArm: { upperDeg: 80 - sway * 0.3, foreDeg: -135, handMode: 'mudra' },
         weaponMount: 'right',
-        torsoTiltDeg: -3.0 + sway * 0.3,
+        torsoTiltDeg: -2.0 + sway * 0.3,
       };
 
     case 'archer_aiming':

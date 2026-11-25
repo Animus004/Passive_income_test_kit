@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { generateWithCluster } from './gemini_cluster.js';
+import { ERA_CATALOG, detectEra, enrichManifestWithChoreography } from './pop_script_generator.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,107 +19,6 @@ const ARTIFACT_DIR = process.env.ARTIFACT_DIR || path.join(OUT_DIR, 'artifacts')
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.mkdirSync(SCRATCH_DIR, { recursive: true });
 fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
-
-// Verified Pre-Cooked Era Catalogues (Phase 1 9.5 Engine with Full Indian Archetypes)
-const ERA_CATALOG = {
-  ancient: {
-    environments: [
-      'ancient_palace',
-      'durbar_throne_room',
-      'temple_vault',
-      'subterranean_dungeon_vault',
-      'chaupar_board_arena',
-      'puppet_stage_shadow'
-    ],
-    roles: [
-      'krishna',
-      'arjuna',
-      'karna',
-      'bhishma',
-      'shakuni',
-      'duryodhana',
-      'rama',
-      'hanuman',
-      'shiva',
-      'ravana',
-      'chanakya',
-      'shivaji',
-      'maharana_pratap',
-      'ashoka',
-      'lakshmibai',
-      'vivekananda',
-      'ancient_commoner'
-    ],
-    props: [
-      'sudarshan_chakra_divine',
-      'gandiva_bow_arrow',
-      'maratha_bhavani_talwar',
-      'shivaji_rajmudra_seal',
-      'holy_bhagavad_gita_scroll',
-      'rudraksha_rosary_mala',
-      'ashoka_lion_capital_statue',
-      'karna_kavach_kundal',
-      'mace_gada_battle',
-      'bansuri_divine_flute',
-      'mor_pankh_quill',
-      'chanakya_scroll',
-      'poison_kanya_goblet',
-      'sword_shield_emblem',
-      'two_faced_mask',
-      'mystic_diya_flame',
-      'ashoka_pillar_emblem',
-      'gold_coins_overflow_chest',
-      'vault_b_door',
-      'shakuni_dice',
-      'shattered_crown',
-      'weighing_scales_deceit',
-      'ancient_war_map_bharat',
-      'tension_gauge_hud',
-      'chaupar_board_macro',
-      'puppet_control_cross',
-      'puppet_strings',
-      'golden_sparrow_bird',
-      'viral_comment_bubbles'
-    ]
-  },
-  modern: {
-    environments: [
-      'modern_finance',
-      'office_desk',
-      'bedroom_dark',
-      'kitchen_morning'
-    ],
-    roles: [
-      'modern_creator',
-      'modern_commoner',
-      'middle_class_uncle',
-      'toxic_boss',
-      'it_engineer',
-      'genz_student'
-    ],
-    props: [
-      'chai_glass_cutting',
-      'pink_slip_termination',
-      'corporate_id_badge',
-      'broken_credit_chains',
-      'salary_slip_drain',
-      'bank_balance_zero',
-      'emi_chains_lock',
-      'credit_card_trap',
-      'desk_laptop_open',
-      'glowing_laptop',
-      'smartphone_message',
-      'bank_sms_alert',
-      'coffee_mug_spill',
-      'alarm_clock_retro',
-      'siren_red_beacon',
-      'slack_card',
-      'typing_dots_bubble',
-      'bomb_wires_defusal',
-      'viral_comment_bubbles'
-    ]
-  }
-};
 
 const SEED_TOPIC_PRESETS = [
   {
@@ -156,32 +56,8 @@ export async function runPhase1PopAutonomous(topicOverride = null, options = {})
   // Step 0: Determine Topic & Era Lock
   const selectedPreset = SEED_TOPIC_PRESETS[Math.floor(Math.random() * SEED_TOPIC_PRESETS.length)];
   const topic = topicOverride || options.topic || selectedPreset.topic;
-  const isAncient = options.era === 'ancient' ||
-                    (options.era !== 'modern' && (
-                      (selectedPreset && selectedPreset.era === 'ancient' && !topicOverride) ||
-                      topic.toLowerCase().includes('chanakya') ||
-                      topic.toLowerCase().includes('shakuni') ||
-                      topic.toLowerCase().includes('krishna') ||
-                      topic.toLowerCase().includes('shivaji') ||
-                      topic.toLowerCase().includes('arjuna') ||
-                      topic.toLowerCase().includes('karna') ||
-                      topic.toLowerCase().includes('bhishma') ||
-                      topic.toLowerCase().includes('rama') ||
-                      topic.toLowerCase().includes('hanuman') ||
-                      topic.toLowerCase().includes('shiva') ||
-                      topic.toLowerCase().includes('ravana') ||
-                      topic.toLowerCase().includes('pratap') ||
-                      topic.toLowerCase().includes('lakshmibai') ||
-                      topic.toLowerCase().includes('vivekananda') ||
-                      topic.toLowerCase().includes('ashoka') ||
-                      topic.toLowerCase().includes('kurukshetra') ||
-                      topic.toLowerCase().includes('ramayana') ||
-                      topic.toLowerCase().includes('vault') ||
-                      topic.toLowerCase().includes('mahabharata') ||
-                      topic.toLowerCase().includes('ancient') ||
-                      topic.toLowerCase().includes('palace')
-                    ));
-  const era = isAncient ? 'ancient' : 'modern';
+  const era = detectEra(topic, options.era || (selectedPreset && !topicOverride ? selectedPreset.era : null));
+  const isAncient = era === 'ancient';
   const catalog = ERA_CATALOG[era];
 
   console.log(`🎬 Target Topic: "${topic}"`);
@@ -410,42 +286,8 @@ MANDATES:
   const manifestPath = path.join(PROJECT_ROOT, 'src', 'data', 'oddly_manifest_hi.json');
   const manifestHi = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
 
-  // Merge script beat recipe into manifest beats
-  manifestHi.beats = manifestHi.beats.map((b, idx) => {
-    const s = scriptData.beats[idx] || {};
-    const defaultArchetype = idx === 0 ? 'MACRO_HOOK_PUNCH' :
-      idx === 1 ? 'DUAL_CONFRONTATION' :
-        idx === 2 ? 'STRATEGY_MAP_ARENA' :
-          idx === 3 ? 'DOCUMENT_EDICT_UNROLL' :
-            idx === 4 ? 'TENSION_HUD_METER' :
-              idx === 5 ? 'METAPHOR_MONOLITH' :
-                idx === 6 ? 'CLEAN_SPLIT_DUO' : 'REACTION_CLOSEUP';
-    const chosenArchetype = s.archetype || defaultArchetype;
-
-    return {
-      ...b,
-      title: s.title || b.title,
-      hookHeadline: s.hookHeadline || b.hookHeadline,
-      badge: s.badge || 'RULE',
-      badgeEmoji: s.badgeEmoji || (isAncient ? '📜' : '🚨'),
-      environment: s.environment || b.environment || (isAncient ? 'ancient_palace' : 'modern_finance'),
-      heroElement: s.heroElement || b.heroElement || (isAncient ? 'chanakya_scroll' : 'salary_slip_drain'),
-      character: {
-        role: s.role || (isAncient ? (chosenArchetype === 'STRATEGY_MAP_ARENA' || chosenArchetype === 'DOCUMENT_EDICT_UNROLL' ? 'chanakya' : 'krishna') : 'modern_creator'),
-        pose: s.pose,
-        face: s.face || s.expression,
-        head: s.head,
-        weapon: s.weapon
-      },
-      secondCharacter: s.secondCharacter || (chosenArchetype === 'DUAL_CONFRONTATION' ? {
-        role: isAncient ? 'arjuna' : 'modern_commoner',
-        pose: isAncient ? 'archer_aiming' : 'standing_dazed'
-      } : undefined),
-      director_staging: {
-        archetype: chosenArchetype
-      }
-    };
-  });
+  // Merge script beat recipe into manifest beats using shared choreography helper
+  enrichManifestWithChoreography(manifestHi, scriptData, era);
 
   fs.writeFileSync(manifestPath, JSON.stringify(manifestHi, null, 2), 'utf-8');
   console.log(`✅ Manifest saved with ${manifestHi.beats.length} beats, total: ${manifestHi.totalFrames} frames (${(manifestHi.totalFrames / 30).toFixed(1)}s).`);
