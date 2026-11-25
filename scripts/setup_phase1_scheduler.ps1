@@ -1,4 +1,4 @@
-# PowerShell script to register daily autonomous 1,000+ Video Factory tasks for Phase 1
+﻿# PowerShell script to register daily autonomous 1,000+ Video Factory tasks for Phase 1
 # Workspace, temp Chromium caches, SQLite DB, and 7-day buffer live safely on D:\factory_workspace
 # Option A Safest Cadence (Single Flagship Channel, max 3 spaced Shorts/day):
 #   - 03:30 AM IST : Overnight NVENC buffer producer (tops up D:\factory_workspace\ready to 6 videos)
@@ -32,11 +32,19 @@ foreach ($t in $LegacyTasks) {
   Unregister-ScheduledTask -TaskName $t -Confirm:$false -ErrorAction SilentlyContinue
 }
 
-Register-ScheduledTask -TaskName "Phase1_Factory_Buffer_0330AM" -Action $ActionProduce -Trigger (New-ScheduledTaskTrigger -Daily -At "03:30AM") -Description "Phase 1 Autonomous Legends & Pop-Vector Factory Buffer Producer (NVENC -> D:\factory_workspace\ready)" -Force
-Register-ScheduledTask -TaskName "Phase1_Factory_Analytics_0600AM" -Action $ActionAnalytics -Trigger (New-ScheduledTaskTrigger -Daily -At "06:00AM") -Description "Phase 1 Factory YouTube Analytics Feedback Sync & 7d Archive Pruner" -Force
-Register-ScheduledTask -TaskName "Phase1_Factory_Publish_1000AM" -Action $ActionPublish -Trigger (New-ScheduledTaskTrigger -Daily -At "10:00AM") -Description "Phase 1 Factory Publish Slot 1 (10:00 AM IST: YT + IG + FB)" -Force
-Register-ScheduledTask -TaskName "Phase1_Factory_Publish_0200PM" -Action $ActionPublish -Trigger (New-ScheduledTaskTrigger -Daily -At "02:00PM") -Description "Phase 1 Factory Publish Slot 2 (02:00 PM IST: YT + IG + FB)" -Force
-Register-ScheduledTask -TaskName "Phase1_Factory_Publish_0900PM" -Action $ActionPublish -Trigger (New-ScheduledTaskTrigger -Daily -At "09:00PM") -Description "Phase 1 Factory Publish Slot 3 (09:00 PM IST: YT + IG + FB)" -Force
+$TaskSettings = New-ScheduledTaskSettingsSet `
+  -StartWhenAvailable `
+  -AllowStartIfOnBatteries `
+  -DontStopIfGoingOnBatteries `
+  -ExecutionTimeLimit (New-TimeSpan -Hours 2) `
+  -RestartCount 2 `
+  -RestartInterval (New-TimeSpan -Minutes 5)
+
+Register-ScheduledTask -TaskName "Phase1_Factory_Buffer_0330AM" -Action $ActionProduce -Trigger (New-ScheduledTaskTrigger -Daily -At "03:30AM") -Settings $TaskSettings -Description "Phase 1 Autonomous Legends & Pop-Vector Factory Buffer Producer (NVENC -> D:\factory_workspace\ready)" -Force
+Register-ScheduledTask -TaskName "Phase1_Factory_Analytics_0600AM" -Action $ActionAnalytics -Trigger (New-ScheduledTaskTrigger -Daily -At "06:00AM") -Settings $TaskSettings -Description "Phase 1 Factory YouTube Analytics Feedback Sync & 7d Archive Pruner" -Force
+Register-ScheduledTask -TaskName "Phase1_Factory_Publish_1000AM" -Action $ActionPublish -Trigger (New-ScheduledTaskTrigger -Daily -At "10:00AM") -Settings $TaskSettings -Description "Phase 1 Factory Publish Slot 1 (10:00 AM IST: YT + IG + FB)" -Force
+Register-ScheduledTask -TaskName "Phase1_Factory_Publish_0200PM" -Action $ActionPublish -Trigger (New-ScheduledTaskTrigger -Daily -At "02:00PM") -Settings $TaskSettings -Description "Phase 1 Factory Publish Slot 2 (02:00 PM IST: YT + IG + FB)" -Force
+Register-ScheduledTask -TaskName "Phase1_Factory_Publish_0900PM" -Action $ActionPublish -Trigger (New-ScheduledTaskTrigger -Daily -At "09:00PM") -Settings $TaskSettings -Description "Phase 1 Factory Publish Slot 3 (09:00 PM IST: YT + IG + FB)" -Force
 
 Write-Host "=======================================================" -ForegroundColor Green
 Write-Host "✅ PHASE 1 HANDS-OFF 1,000+ VIDEO FACTORY SCHEDULED:" -ForegroundColor Green
